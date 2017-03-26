@@ -171,11 +171,11 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        Tikematic\Providers\AppServiceProvider::class,
+        Tikematic\Providers\AuthServiceProvider::class,
+        // Tikematic\Providers\BroadcastServiceProvider::class,
+        Tikematic\Providers\EventServiceProvider::class,
+        Tikematic\Providers\RouteServiceProvider::class,
 
     ],
 

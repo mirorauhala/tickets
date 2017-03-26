@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace Tikematic;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
