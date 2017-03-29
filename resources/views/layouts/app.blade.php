@@ -80,7 +80,7 @@
             </div>
         </nav>
 
-        @yield('content')
+        @yield('base.content')
     </div>
 
     <!-- Scripts -->
