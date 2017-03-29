@@ -13,4 +13,6 @@
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index');
+Route::get('/', 'EventController@index')->name('events.details');
+Route::get('/tickets', 'TicketController@index')->name('tickets');
+Route::get('/tournaments', 'TournamentController@index')->name('tournaments');
