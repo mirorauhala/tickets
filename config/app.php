@@ -228,7 +228,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Sentry' => Sentry\SentryLaravel\SentryFacade::class,
-        'Helper' => App\Http\Helper::class,
+        'Helper' => Tikematic\Http\Helper::class,
 
     ],
 
