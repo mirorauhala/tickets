@@ -33,6 +33,7 @@ class Kernel extends HttpKernel
             // \Illuminate\Session\Middleware\AuthenticateSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \Tikematic\Http\Middleware\VerifyCsrfToken::class,
+            \Tikematic\Http\Middleware\PreferredLanguage::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
 
