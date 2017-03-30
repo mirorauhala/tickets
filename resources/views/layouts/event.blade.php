@@ -14,10 +14,14 @@
             <p class="text-center lead">Alaseinäjoenkatu 15, 60220 Seinäjoki</p>
 
             <p class="text-center">
-                <a role="presentation" class="btn btn-sm btn-primary" href="{{ route('events.details') }}">Details</a></li>
-                <a role="presentation" class="btn btn-sm btn-link" href="#">Maps</a></li>
-                <a role="presentation" class="btn btn-sm btn-link" href="#">Tickets</a></li>
-                <a role="presentation" class="btn btn-sm btn-link" href="#">Tournaments</a></li>
+                <a role="presentation" class="btn btn-sm {{ Helper::route_active(['events.details'], 'btn-primary', 'btn-link') }}" href="{{ route('events.details') }}" href="{{ route('events.details') }}">Details</a></li>
+
+                <a role="presentation" class="btn btn-sm {{ Helper::route_active(['events.maps*'], 'btn-primary', 'btn-link') }}" href="{{ route('events.maps') }}">Maps</a></li>
+
+                <a role="presentation" class="btn btn-sm {{ Helper::route_active(['events.tickets*'], 'btn-primary', 'btn-link') }}" href="{{ route('events.tickets') }}">Tickets</a></li>
+
+                <a role="presentation" class="btn btn-sm {{ Helper::route_active(['events.tournaments*'], 'btn-primary', 'btn-link') }}" href="{{ route('events.tournaments') }}">Tournaments</a></li>
+
             </p>
 
             <br>

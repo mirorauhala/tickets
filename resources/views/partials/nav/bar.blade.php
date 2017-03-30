@@ -19,9 +19,9 @@
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
             <!-- Left Side Of Navbar -->
             <ul class="nav navbar-nav">
-                <li><a href="{{ route('events.details') }}">Event</a></li>
-                <li><a href="{{ route('tickets') }}">Tickets</a></li>
-                <li><a href="{{ route('tournaments') }}">Tournaments</a></li>
+                <li class="{{ Helper::route_active(['events*']) }}"><a href="{{ route('events.details') }}">Event</a></li>
+                <li class="{{ Helper::route_active(['tickets*']) }}"><a href="{{ route('tickets') }}">Tickets</a></li>
+                <li class="{{ Helper::route_active(['tournaments*']) }}"><a href="{{ route('tournaments') }}">Tournaments</a></li>
             </ul>
 
             <!-- Right Side Of Navbar -->
@@ -37,7 +37,7 @@
                         </a>
 
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="{{ route('settings.profile') }}">Settings</a></li>
+                            <li class="{{ Helper::route_active(['settings*']) }}"><a href="{{ route('settings.profile') }}">Settings</a></li>
                             <li>
                                 <a href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
