@@ -35,4 +35,13 @@ class User extends Authenticatable
     public function full_name() {
         return $this->first_name . " " . $this->last_name;
     }
+
+    /**
+     * Password hashing mutator.
+     *
+     * @return void
+     */
+    public function setPasswordAttribute($value) {
+        $this->attributes['password'] = Hash::make($value);
+    }
 }
