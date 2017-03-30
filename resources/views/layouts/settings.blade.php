@@ -8,6 +8,13 @@
 
 <div class="container">
     <div class="row">
+        <div class="col-md-12">
+            <h1>Settings</h1>
+
+            <br>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-md-3">
             @include("partials.nav.settings")
         </div>
