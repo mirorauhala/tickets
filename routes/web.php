@@ -17,6 +17,15 @@ Route::get('/', 'EventController@index')->name('events.details');
 Route::get('/tickets', 'TicketController@index')->name('tickets');
 Route::get('/tournaments', 'TournamentController@index')->name('tournaments');
 
+/*
+|--------------------------------------------------------------------------
+| Event
+|--------------------------------------------------------------------------
+*/
+Route::get('/event/maps', 'EventController@maps')->name('events.maps');
+Route::get('/event/tickets', 'EventController@tickets')->name('events.tickets');
+Route::get('/event/tournaments', 'EventController@tournaments')->name('events.tournaments');
+
 
 /*
 |--------------------------------------------------------------------------
