@@ -15,4 +15,34 @@ class EventController extends Controller
     {
         return view('events.details');
     }
+
+    /**
+     * Show event maps.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function maps()
+    {
+        return view('events.maps');
+    }
+
+    /**
+     * Show event tickets.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function tickets()
+    {
+        return view('events.tickets');
+    }
+
+    /**
+     * Show event tournaments.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function tournaments()
+    {
+        return view('events.tournaments');
+    }
 }
