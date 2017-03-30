@@ -1,16 +1,14 @@
-@extends('layouts.base')
+@extends('layouts.tickets')
 
-@section('base.content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Tickets</div>
+@section('content')
+<div class="col-md-3">
+    <div class="panel panel-default">
+        <div class="panel-heading">Ticket #1234</div>
 
-                <div class="panel-body">
-                    You don't have any tickets.
-                </div>
-            </div>
+        <div class="panel-body">
+            <p>Pro ticket</p>
+
+            <a class="btn btn-primary" href="#" role="button">View ticket</a>
         </div>
     </div>
 </div>
