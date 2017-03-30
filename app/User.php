@@ -2,6 +2,7 @@
 
 namespace Tikematic;
 
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -51,6 +52,6 @@ class User extends Authenticatable
      * @return belongsToMany
      */
     public function events() {
-        return $this->belongsToMany('App\Event');
+        return $this->belongsToMany('Tikematic\Event');
     }
 }
