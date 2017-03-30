@@ -3,14 +3,14 @@
 $body-bg: #FAFAFA;
 
 // Borders
-$laravel-border-color: darken($body-bg, 10%);
+$laravel-border-color: #E4E4E4;
 $list-group-border: $laravel-border-color;
 $navbar-default-border: $laravel-border-color;
-$panel-default-border: $laravel-border-color;
+$panel-default-border: #fff;
 $panel-inner-border: $laravel-border-color;
 
 // Brands
-$brand-primary: #3097D1;
+$brand-primary: #ff5353;
 $brand-info: #8eb4cb;
 $brand-success: #2ab27b;
 $brand-warning: #cbb956;
@@ -21,7 +21,7 @@ $icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
 $font-family-sans-serif: "Roboto", sans-serif;
 $font-size-base: 14px;
 $line-height-base: 1.6;
-$text-color: #636b6f;
+$text-color: #222;
 
 // Headings
 $headings-font-family: "Alte DIN 1451 Mittelschrift gepraegt";
