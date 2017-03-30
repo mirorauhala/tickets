@@ -13,9 +13,9 @@ return [
     |
     */
 
-    'failed' => 'These credentials do not match our records.',
-    'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
-    'unauthenticated' => 'You need to be logged in to view this page.',
+    'failed' => 'Nämä tunnukset eivät vastaa tietojamme.',
+    'throttle' => 'Liian monta kirjautumisyritystä. Yritä uudelleen :seconds sekuntin päästä.',
+    'unauthenticated' => 'Sinun täytyy olla kirjautunut sisään nähdäksesi tämän sivun.',
 
     /*
     |--------------------------------------------------------------------------
@@ -24,27 +24,27 @@ return [
     */
 
     'login' => [
-        'title' => 'Log in',
-        'email' => 'Email',
-        'password' => 'Password',
-        'remember-me' => 'Remember me'
+        'title' => 'Kirjaudu sisään',
+        'email' => 'Sähköposti',
+        'password' => 'Salasana',
+        'remember-me' => 'Muista minut',
     ],
 
 
     'reset' => [
-        'title' => 'Reset password',
-        'email' => 'Email',
-        'new-password' => 'New password',
+        'title' => 'Palauta salasana',
+        'email' => 'Sähköposti',
+        'new-password' => 'Uusi salasana',
         'new-password-confirmation' => 'New password confirmation'
     ],
 
     'register' => [
-        'title' => 'Register',
-        'first-name' => 'First name',
-        'last-name' => 'Last name',
-        'email' => 'Email',
-        'password' => 'Password',
-        'confirm-password' => 'Verify password',
+        'title' => 'Rekisteröidy',
+        'first-name' => 'Etunimi',
+        'last-name' => 'Sukunimi',
+        'email' => 'Sähköposti',
+        'password' => 'Salasana',
+        'confirm-password' => 'Salasana uudelleen',
     ],
 
 ];
