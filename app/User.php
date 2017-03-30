@@ -44,4 +44,13 @@ class User extends Authenticatable
     public function setPasswordAttribute($value) {
         $this->attributes['password'] = Hash::make($value);
     }
+
+    /**
+     * Get events the user is associated with.
+     *
+     * @return belongsToMany
+     */
+    public function events() {
+        return $this->belongsToMany('App\Event');
+    }
 }
