@@ -2,6 +2,7 @@
 
 namespace Tikematic\Http\Controllers;
 
+use Tikematic\Event;
 use Illuminate\Http\Request;
 
 class EventAdminController extends Controller
@@ -13,7 +14,13 @@ class EventAdminController extends Controller
      */
     public function customers()
     {
-        return view('events.admin.customers');
+        // do ugly hard code for event ID
+        $event = Event::findOrFail(1);
+
+        return view('events.admin.customers')
+            ->with([
+                "event" => $event,
+            ]);
     }
 
 }
