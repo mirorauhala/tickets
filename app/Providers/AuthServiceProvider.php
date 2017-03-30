@@ -13,7 +13,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        'Tikematic\Model' => 'Tikematic\Policies\ModelPolicy',
+        'Tikematic\Event' => 'Tikematic\Policies\EventPolicy',
     ];
 
     /**
