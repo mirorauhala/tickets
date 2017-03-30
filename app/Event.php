@@ -20,7 +20,5 @@ class Event extends Model
      *
      * @var array
      */
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
+    protected $hidden = [];
 }
