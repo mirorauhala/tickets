@@ -1,6 +1,11 @@
 @extends('layouts.base')
 
+@section('base.title', 'Event')
+
 @section('base.content')
+
+@include('partials.nav.bar')
+
 <div class="container">
     <div class="row">
         <div class="col-md-12">
