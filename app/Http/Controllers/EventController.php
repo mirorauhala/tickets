@@ -2,6 +2,7 @@
 
 namespace Tikematic\Http\Controllers;
 
+use Tikematic\Event;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
@@ -13,7 +14,14 @@ class EventController extends Controller
      */
     public function index()
     {
-        return view('events.details');
+
+        // do ugly hard code for event ID
+        $event = Event::findOrFail(1);
+
+        return view('events.details')
+            ->with([
+                "event" => $event,
+            ]);
     }
 
     /**
@@ -23,7 +31,14 @@ class EventController extends Controller
      */
     public function maps()
     {
-        return view('events.maps');
+
+        // do ugly hard code for event ID
+        $event = Event::findOrFail(1);
+
+        return view('events.maps')
+            ->with([
+                "event" => $event,
+            ]);
     }
 
     /**
@@ -33,7 +48,14 @@ class EventController extends Controller
      */
     public function tickets()
     {
-        return view('events.tickets');
+
+        // do ugly hard code for event ID
+        $event = Event::findOrFail(1);
+
+        return view('events.tickets')
+            ->with([
+                "event" => $event,
+            ]);
     }
 
     /**
@@ -43,6 +65,13 @@ class EventController extends Controller
      */
     public function tournaments()
     {
-        return view('events.tournaments');
+
+        // do ugly hard code for event ID
+        $event = Event::findOrFail(1);
+
+        return view('events.tournaments')
+            ->with([
+                "event" => $event,
+            ]);
     }
 }
