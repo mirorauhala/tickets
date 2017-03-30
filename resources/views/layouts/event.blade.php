@@ -27,6 +27,10 @@
 
                 <a role="presentation" class="btn btn-sm {{ Helper::route_active(['events.tournaments*'], 'btn-primary', 'btn-link') }}" href="{{ route('events.tournaments') }}">Tournaments</a></li>
 
+                @can('update', $event)
+                    <a role="presentation" class="btn btn-sm {{ Helper::route_active(['events.admin*'], 'btn-primary', 'btn-link') }}" href="{{ route('events.admin.customers') }}">Admin</a></li>
+                @endcan
+
             </p>
 
             <br>
