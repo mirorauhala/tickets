@@ -40,7 +40,6 @@ class PopulateBasicEventData extends Command
         factory(\Tikematic\Event::create([
             'name' => 'Connection Lan: eSports 2017',
             'location' => 'Alaseinäjoenkatu 15, 60220 Seinäjoki, Finland',
-            'description' => 'Text used for SEO purposes.',
             'details' => 'Welcome to the ticket sales for Connection Lan: eSports 2017. In here you shall find event...',
             'url' => "http://connectionlan.fi",
         ]));

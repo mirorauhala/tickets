@@ -32,7 +32,6 @@ $factory->define(Tikematic\Event::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->company,
         'location' => $faker->address,
-        'description' => $faker->text,
         'details' => $faker->text,
         'url' => $faker->url,
     ];
