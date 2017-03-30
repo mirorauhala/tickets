@@ -1,19 +1,23 @@
 @extends('layouts.base')
 
+@section('base.title', 'Settings')
+
 @section('base.content')
-    <div class="row">
-        <div class="col-md-3">
-            @include("partials.nav.settings")
-        </div>
 
-        <div class="col-md-9">
-            <div class="panel panel-default">@yield('settings.title')</div>
+@include('partials.nav.bar')
 
-            <div class="panel-body">
+<div class="row">
+    <div class="col-md-3">
+        @include("partials.nav.settings")
+    </div>
 
-                @yield('content')
+    <div class="col-md-9">
+        <div class="panel panel-default">@yield('settings.title')</div>
 
-            </div>
+        <div class="panel-body">
+
+            @yield('content')
+
         </div>
     </div>
 </div>
