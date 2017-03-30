@@ -1,16 +1,14 @@
-@extends('layouts.base')
+@extends('layouts.tournaments')
 
-@section('base.content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Tournaments</div>
+@section('content')
+<div class="col-md-3">
+    <div class="panel panel-default">
+        <div class="panel-heading">Connection Lan / CS:GO</div>
 
-                <div class="panel-body">
-                    You don't participate in any tournaments.
-                </div>
-            </div>
+        <div class="panel-body">
+            <p>Participating in: <strong>CS:GO</strong></p>
+
+            <a class="btn btn-primary" href="#" role="button">View team</a>
         </div>
     </div>
 </div>
