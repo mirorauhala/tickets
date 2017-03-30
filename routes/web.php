@@ -27,6 +27,10 @@ Route::get('/event/tickets', 'EventController@tickets')->name('events.tickets');
 Route::get('/event/tournaments', 'EventController@tournaments')->name('events.tournaments');
 
 
+// Admin routes
+
+Route::get('/event/admin', 'EventAdminController@customers')->name('events.admin.customers');
+
 /*
 |--------------------------------------------------------------------------
 | Settings
