@@ -3,6 +3,7 @@
 namespace Tikematic\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Laravel\Dusk\DuskServiceProvider;
 use Barryvdh\Debugbar\ServiceProvider as DebugbarServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -26,6 +27,7 @@ class AppServiceProvider extends ServiceProvider
     {
         if ($this->app->environment('local', 'testing')) {
             $this->app->register(DebugbarServiceProvider::class);
+            $this->app->register(DuskServiceProvider::class);
         }
     }
 }

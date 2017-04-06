@@ -9,6 +9,7 @@
         "barryvdh/laravel-debugbar": "^2.3",
         "graham-campbell/markdown": "^7.1",
         "guzzlehttp/guzzle": "^6.2",
+        "laravel/dusk": "^1.0",
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
         "moneyphp/money": "^3.0",
