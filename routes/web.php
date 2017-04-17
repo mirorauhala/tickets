@@ -29,11 +29,11 @@ Route::get('/event/tournaments', 'EventController@tournaments')->name('events.to
 
 // Admin routes
 
-Route::get('/event/admin', 'EventAdminController@customers')->name('events.admin.customers');
-Route::get('/event/admin/maps', 'EventAdminController@customers')->name('events.admin.maps');
-Route::get('/event/admin/tickets', 'EventAdminController@customers')->name('events.admin.tickets');
-Route::get('/event/admin/prices', 'EventAdminController@customers')->name('events.admin.prices');
-Route::get('/event/admin/settings', 'EventAdminController@customers')->name('events.admin.settings');
+Route::get('/event/admin', 'EventAdmin\CustomerController@customers')->name('events.admin.customers');
+Route::get('/event/admin/maps', 'EventAdmin\CustomerController@customers')->name('events.admin.maps');
+Route::get('/event/admin/tickets', 'EventAdmin\CustomerController@customers')->name('events.admin.tickets');
+Route::get('/event/admin/prices', 'EventAdmin\CustomerController@customers')->name('events.admin.prices');
+Route::get('/event/admin/settings', 'EventAdmin\CustomerController@customers')->name('events.admin.settings');
 
 /*
 |--------------------------------------------------------------------------
