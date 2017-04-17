@@ -2,6 +2,9 @@
     <li role="presentation" class="{{ Helper::route_active(['events.admin.customers']) }}">
         <a href="{{ route('events.admin.customers') }}">{{ __('event.admin.nav.customers') }}</a>
     </li>
+    <li role="presentation" class="{{ Helper::route_active(['events.admin.tournaments']) }}">
+        <a href="{{ route('events.admin.tournaments') }}">{{ __('event.admin.nav.tournaments') }}</a>
+    </li>
     <li role="presentation" class="{{ Helper::route_active(['events.admin.maps']) }}">
         <a href="{{ route('events.admin.maps') }}">{{ __('event.admin.nav.maps') }}</a>
     </li>

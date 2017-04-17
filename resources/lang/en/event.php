@@ -25,6 +25,7 @@ return [
     'admin' => [
         'nav' => [
             'customers'             => 'Customers',
+            'tournaments'           => 'Tournaments',
             'maps'                  => 'Maps',
             'tickets'               => 'Tickets',
             'prices'                => 'Prices',

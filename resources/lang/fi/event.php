@@ -25,6 +25,7 @@ return [
     'admin' => [
         'nav' => [
             'customers'             => 'Asiakkaat',
+            'tournaments'           => 'Kilpailut',
             'maps'                  => 'Kartat',
             'tickets'               => 'Liput',
             'prices'                => 'Hinnat',
