@@ -21,4 +21,13 @@ class Event extends Model
      * @var array
      */
     protected $hidden = [];
+
+    /**
+     * Get events the user is associated with.
+     *
+     * @return belongsToMany
+     */
+    public function customers() {
+        return $this->belongsToMany('Tikematic\User', 'customers');
+    }
 }

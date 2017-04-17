@@ -54,4 +54,13 @@ class User extends Authenticatable
     public function events() {
         return $this->belongsToMany('Tikematic\Event');
     }
+
+    /**
+     * Get users tickets.
+     *
+     * @return belongsToMany
+     */
+    public function tickets() {
+        return $this->belongsToMany('Tikematic\Ticket');
+    }
 }
