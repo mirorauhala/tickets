@@ -23,11 +23,20 @@ class Event extends Model
     protected $hidden = [];
 
     /**
-     * Get events the user is associated with.
+     * Get events customers.
      *
      * @return belongsToMany
      */
     public function customers() {
         return $this->belongsToMany('Tikematic\User', 'customers');
+    }
+
+    /**
+     * Get event tournaments.
+     *
+     * @return belongsToMany
+     */
+    public function tournaments() {
+        return $this->belongsToMany('Tikematic\Tournament');
     }
 }
