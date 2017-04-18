@@ -43,5 +43,13 @@ class PopulateBasicEventData extends Command
             'details' => 'Welcome to the ticket sales for Connection Lan: eSports 2017. In here you shall find event...',
             'url' => "http://connectionlan.fi",
         ]));
+
+        factory(\Tikematic\User::create([
+            'first_name' => 'john',
+            'last_name' => 'doe',
+            'email' => 'john.doe@email.com',
+            'password' => 'secret', // THIS IS FOR TESTING PURPOSES, NOT PRODUCTION
+            'superuser' => true,
+        ]));
     }
 }
