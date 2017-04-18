@@ -47,7 +47,7 @@ class Helper {
         $money = new Money($amount, new Currency($currency));
         $currencies = new ISOCurrencies();
 
-        $numberFormatter = new \NumberFormatter('en', \NumberFormatter::CURRENCY);
+        $numberFormatter = new \NumberFormatter('fi', \NumberFormatter::CURRENCY);
         $moneyFormatter = new IntlMoneyFormatter($numberFormatter, $currencies);
 
         return $moneyFormatter->format($money);
