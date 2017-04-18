@@ -18,7 +18,7 @@ class CreateTicketsTable extends Migration
             $table->string('name')->nullable();
             $table->integer('price')->unsigned();
             $table->integer('vat')->unsigned();
-            $table->integer('currency')->unsigned();
+            $table->string('currency');
             $table->boolean('standalone')->default(1);
 
             $table->integer('event_id')->unsigned();
