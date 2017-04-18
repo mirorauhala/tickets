@@ -32,6 +32,15 @@ class Event extends Model
     }
 
     /**
+     * Get events tickets.
+     *
+     * @return belongsToMany
+     */
+    public function tickets() {
+        return $this->hasMany('Tikematic\Ticket');
+    }
+
+    /**
      * Get event tournaments.
      *
      * @return belongsToMany
