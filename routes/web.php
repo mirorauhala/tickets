@@ -36,6 +36,18 @@ Route::get('/event/admin/tickets', 'EventAdmin\TicketController@tickets')->name(
 Route::get('/event/admin/prices', 'EventAdmin\CustomerController@customers')->name('events.admin.prices');
 Route::get('/event/admin/settings', 'EventAdmin\CustomerController@customers')->name('events.admin.settings');
 
+
+
+/*
+|--------------------------------------------------------------------------
+| Ticket purchase routes
+|--------------------------------------------------------------------------
+*/
+
+Route::get('/buy/{ticket_id}', 'TicketController@choose')->name('buy.ticket');
+Route::get('/buy/{ticket_id}', 'TicketController@buy')->name('buy.ticket');
+
+
 /*
 |--------------------------------------------------------------------------
 | Settings
