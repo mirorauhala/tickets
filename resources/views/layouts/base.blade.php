@@ -11,7 +11,8 @@
     <title>{{ config('app.name', 'Tikematic') }} - @yield('base.title', 'Untitled')</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet" async="true">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,600,900,900i" rel="stylesheet" async="true">
 
     <!-- Scripts -->
     <script>
@@ -21,11 +22,9 @@
     </script>
 </head>
 <body>
-    <div id="app">
-        @yield('base.content')
-    </div>
+    @yield('base.content')
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}" async="true"></script>
 </body>
 </html>
