@@ -68,4 +68,15 @@
         margin-bottom: 0;
       }
     }
+    .legal {
+        font-size: 14px;
+        color: #737479;
+    }
+
+    .legal a,
+    .legal a:hover,
+    .legal a:focus {
+        text-transform: none;
+        color: #919297;
+    }
 }

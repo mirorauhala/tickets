@@ -36,6 +36,9 @@
                         </li>
                     @endif
 
+                    <p class="legal"><a href="#">Privacy Policy</a></p>
+                    <p class="legal">&copy; Tikematic 2017. Made in Finland.</p>
+
                 </ul>
             </div>
         </div>
