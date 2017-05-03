@@ -1,0 +1,17 @@
+.form-control {
+    border: none;
+    box-shadow: none;
+    background-color: #F2F2F2;
+    border-radius: 0;
+
+    height: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    transition: 200ms ease background;
+
+    &:focus {
+        box-shadow: none;
+        background-color: #e3e3e3;
+    }
+}
