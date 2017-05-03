@@ -4,11 +4,11 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Tickets Lines
+    | Tournament Lines
     |--------------------------------------------------------------------------
     */
 
-    'header' => 'My Tickets',
-    'no-tickets' => 'You don\'t have any tickets.',
+    'header' => 'Omat turnaukset',
+    'no-tickets' => 'Et ole osallisena mihinkään turnaukseen.',
 
 ];

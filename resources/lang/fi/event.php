@@ -9,7 +9,7 @@ return [
     */
 
     'nav' => [
-        'about'                     => 'Tietoa',
+        'details'                   => 'Tietoa',
         'maps'                      => 'Kartat',
         'tickets'                   => 'Liput',
         'tournaments'               => 'Kilpailut',

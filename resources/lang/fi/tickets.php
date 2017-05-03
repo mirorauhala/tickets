@@ -8,7 +8,7 @@ return [
     |--------------------------------------------------------------------------
     */
 
-    'header' => 'Liput',
+    'header' => 'Omat liput',
     'no-tickets' => 'Sinulla ei ole yhtään lippua.',
 
 ];

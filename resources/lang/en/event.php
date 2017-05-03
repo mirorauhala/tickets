@@ -9,7 +9,7 @@ return [
     */
 
     'nav' => [
-        'about'                     => 'About',
+        'details'                   => 'Details',
         'maps'                      => 'Maps',
         'tickets'                   => 'Tickets',
         'tournaments'               => 'Tournaments',
