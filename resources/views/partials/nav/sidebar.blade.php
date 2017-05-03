@@ -1,6 +1,6 @@
 <section class="sidebar">
 
-    <h1>Tikematic.</h1>
+    <a href="#" class="sidebar-logo"><image src="/images/tikematic.SVG" height="30" alt="Tikematic"></a>
     <ul class="nav nav-pills nav-stacked">
         <li class="nav-title">Featured event</li>
         <li class="{{ Helper::route_active(['events*']) }}"><a href="{{ route('events.details') }}">Connection Lan: eSports 2017</a></li>
