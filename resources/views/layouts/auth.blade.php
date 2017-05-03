@@ -2,8 +2,10 @@
 
 @section('base.content')
 
-@include('partials.nav.bar')
-<div class="container">
-    @yield('content')
-</div>
+@include('partials.nav.sidebar')
+<section class="application">
+    <div class="container">
+        @yield('content')
+    </div>
+</section>
 @endsection
