@@ -4,39 +4,40 @@
 
 @section('base.content')
 
-@include('partials.nav.bar')
+@include('partials.nav.sidebar')
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <h1 class="text-center">Connection Lan: eSports 2017</h1>
+<section class="application">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <p class="text-center">
+                    <a role="presentation" class="btn btn-sm {{ Helper::route_active(['events.details'], 'btn-link', 'btn-link') }}" href="{{ route('events.details') }}" href="{{ route('events.details') }}">Details</a></li>
 
-            <p class="text-center lead">
-                Alaseinäjoenkatu 15, 60220 Seinäjoki, Finland
-                <a target="_blank" href="https://maps.google.com/?q=OmaSp+Stadion,+Alaseinäjoenkatu,+Seinäjoki,+Finland">
-                    <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> <span class="sr-only">View in Google Maps</span>
-                </a>
-            </p>
+                    <a role="presentation" class="btn btn-sm {{ Helper::route_active(['events.maps*'], 'btn-link', 'btn-link') }}" href="{{ route('events.maps') }}">Maps</a></li>
 
-            <p class="text-center">
-                <a role="presentation" class="btn btn-sm {{ Helper::route_active(['events.details'], 'btn-primary', 'btn-link') }}" href="{{ route('events.details') }}" href="{{ route('events.details') }}">Details</a></li>
+                    <a role="presentation" class="btn btn-sm {{ Helper::route_active(['events.tickets*'], 'btn-link', 'btn-link') }}" href="{{ route('events.tickets') }}">Tickets</a></li>
 
-                <a role="presentation" class="btn btn-sm {{ Helper::route_active(['events.maps*'], 'btn-primary', 'btn-link') }}" href="{{ route('events.maps') }}">Maps</a></li>
+                    <a role="presentation" class="btn btn-sm {{ Helper::route_active(['events.tournaments*'], 'btn-link', 'btn-link') }}" href="{{ route('events.tournaments') }}">Tournaments</a></li>
 
-                <a role="presentation" class="btn btn-sm {{ Helper::route_active(['events.tickets*'], 'btn-primary', 'btn-link') }}" href="{{ route('events.tickets') }}">Tickets</a></li>
+                    @can('update', $event)
+                        <a role="presentation" class="btn btn-sm {{ Helper::route_active(['events.admin*'], 'btn-link', 'btn-link') }}" href="{{ route('events.admin.customers') }}">Admin</a></li>
+                    @endcan
 
-                <a role="presentation" class="btn btn-sm {{ Helper::route_active(['events.tournaments*'], 'btn-primary', 'btn-link') }}" href="{{ route('events.tournaments') }}">Tournaments</a></li>
+                </p>
+                <br>
 
-                @can('update', $event)
-                    <a role="presentation" class="btn btn-sm {{ Helper::route_active(['events.admin*'], 'btn-primary', 'btn-link') }}" href="{{ route('events.admin.customers') }}">Admin</a></li>
-                @endcan
+                <h1 class="text-center">Connection Lan</h1>
 
-            </p>
-
-            <br>
-
-            @yield('content')
+                <p class="text-center lead">
+                    Ankkalinnantie 13, 131313 Seinäjoki, Finland
+                    <a target="_blank" href="https://maps.google.com/?q=OmaSp+Stadion,+Alaseinäjoenkatu,+Seinäjoki,+Finland">
+                        <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> <span class="sr-only">View in Google Maps</span>
+                    </a>
+                </p>
+                <br>
+                @yield('content')
+            </div>
         </div>
     </div>
-</div>
+</section>
 @endsection
