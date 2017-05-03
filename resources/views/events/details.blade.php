@@ -6,12 +6,11 @@
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-body">
-                <div class="col-md-8 col-md-offset-2">
+                <div class="col-md-10 col-md-offset-1">
                     <div class="panel-body">
                         <h1>Details</h1>
                         <p class="lead">Welcome to the ticket sales for Connection Lan: eSports 2017. In here you shall find event maps,
                             tickets, and tournaments. Below we've briefly covered details that can come in handy.</p>
-
 
                         <h2>Tickets</h2>
                         <p>To participate in this event you'll need a ticket. We offer multiple ticket types to best suit your needs. You
