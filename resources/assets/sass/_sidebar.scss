@@ -1,0 +1,44 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 380px;
+    padding: 50px 40px;
+    background-color: #292C33;
+}
+
+
+.nav-pills {
+  margin-bottom: 40px;
+}
+
+.nav-pills>.nav-title {
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px;
+  color: #919297;
+}
+
+.nav-pills>li>a {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 0;
+  padding-right: 0;
+
+  font-size: 20px;
+  font-weight: 500;
+  color: #fff;
+  color: rgba(255,255,255,.8);
+}
+
+.nav-pills>li.active>a,
+.nav-pills>li.active>a:focus,
+.nav-pills>li.active>a:hover {
+  background-color: transparent;
+
+  color: #FF749E;
+}
