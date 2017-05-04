@@ -36,8 +36,8 @@
                         </li>
                     @endif
 
-                    <p class="legal"><a href="#">Privacy Policy</a></p>
-                    <p class="legal">&copy; Tikematic 2017. Made in Finland.</p>
+                    <p class="legal"><a href="#">{{ __('nav.privacy-policy') }}</a></p>
+                    <p class="legal">&copy; Tikematic 2017. {{ __('nav.made-in') }}</p>
 
                 </ul>
             </div>

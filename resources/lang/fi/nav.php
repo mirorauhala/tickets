@@ -24,4 +24,8 @@ return [
     'login' => 'Kirjaudu sisään',
     'logout' => 'Kirjaudu ulos',
 
+    // Legal
+    'privacy-policy' => 'Rekisteriseloste',
+    'made-in' => 'Tehty suomessa',
+
 ];

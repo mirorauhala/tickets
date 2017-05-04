@@ -24,4 +24,8 @@ return [
     'login' => 'Log In',
     'logout' => 'Log Out',
 
+    // Legal
+    'privacy-policy' => 'Privacy Policy',
+    'made-in' => 'Made in Finland',
+
 ];
