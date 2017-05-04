@@ -54,7 +54,7 @@
 
         <hr>
 
-        <a class="btn btn-link" href="{{ route('password.request') }}">
+        <a class="btn btn-link" href="{{ route('register') }}">
             Etkö omista tiliä? Rekisteröidy.
         </a>
     </div>
