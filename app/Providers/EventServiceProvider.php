@@ -13,8 +13,8 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'Tikematic\Events\Event' => [
-            'Tikematic\Listeners\EventListener',
+        \SocialiteProviders\Manager\SocialiteWasCalled::class => [
+            'SocialiteProviders\Discord\DiscordExtendSocialite@handle',
         ],
     ];
 
