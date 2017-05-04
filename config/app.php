@@ -169,6 +169,7 @@ return [
         Laravel\Tinker\TinkerServiceProvider::class,
         GrahamCampbell\Markdown\MarkdownServiceProvider::class,
         Sentry\SentryLaravel\SentryLaravelServiceProvider::class,
+        \SocialiteProviders\Manager\ServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -230,6 +231,7 @@ return [
         'Sentry' => Sentry\SentryLaravel\SentryFacade::class,
         'Helper' => Tikematic\Http\Helper::class,
 
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
     ],
 
 ];
