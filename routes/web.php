@@ -13,6 +13,19 @@
 
 Auth::routes();
 
+/*
+|--------------------------------------------------------------------------
+| Socialite
+|--------------------------------------------------------------------------
+*/
+Route::get('/auth/login/discord', 'Auth\SocialiteController@redirectDiscord')->name('auth.login.discord');
+Route::get('/auth/callback/discord', 'Auth\SocialiteController@callbackDiscord')->name('auth.callback.discord');
+
+/*
+|--------------------------------------------------------------------------
+| Basic routes
+|--------------------------------------------------------------------------
+*/
 Route::get('/', 'EventController@index')->name('events.details');
 Route::get('/tickets', 'TicketController@index')->name('tickets');
 Route::get('/tournaments', 'TournamentController@index')->name('tournaments');
