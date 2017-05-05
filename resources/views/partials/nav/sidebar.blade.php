@@ -14,7 +14,7 @@
                 <li class="{{ Helper::route_active(['tournaments*']) }}"><a href="{{ route('tournaments') }}">{{ __('nav.my-tournaments') }}</a></li>
             </ul>
 
-            @if(count(Auth::user()->events) > 0)
+            @if(Auth::user() && count(Auth::user()->events) > 0)
                 <ul class="nav nav-pills nav-stacked">
                     <li class="nav-title">{{ __('nav.title.organizations') }}</li>
                     @foreach(Auth::user()->events as $event)
