@@ -32,8 +32,7 @@ class SignInPage extends Page
      * @return void
      */
     public function signIn(Browser $browser, $email = null, $password = null) {
-        $browser->visit(new SignInPage)
-            ->type('@email', $email)
+        $browser->type('@email', $email)
             ->type('@password', $password)
             ->press('Log In');
     }
