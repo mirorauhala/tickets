@@ -14,7 +14,7 @@
 
     .sidebar-contents {
         position: relative;
-        padding: 60px 40px;
+        padding: 60px 40px 30px;
         min-height: 555px;
         height: 100vh;
     }
@@ -61,14 +61,16 @@
 
     .sidebar-nav-bottom {
       position: absolute;
-      bottom: 60px;
+      bottom: 30px;
       width: calc(100% - 80px);
 
       .nav-pills {
         margin-bottom: 0;
       }
     }
+
     .legal {
+        margin-top: 10px;
         font-size: 14px;
         color: #737479;
     }
