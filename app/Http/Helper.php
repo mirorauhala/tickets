@@ -19,10 +19,19 @@ class Helper {
      *
      * @return boolean
      */
-    static function route_active($routes, $active = 'active', $notActive = "") {
+    static function route_active($routes, $excludeRoutes = array(), $active = 'active', $notActive = "") {
 
+        // get current route
         $currentRoute = Route::currentRouteName();
 
+        // remove excluded routes
+        foreach ($excludeRoutes as $route) {
+            if(str_is($route, $currentRoute)) {
+                return false;
+            }
+        }
+
+        // check wanted routes
         foreach ($routes as $route) {
           return (str_is($route, $currentRoute)) ? $active : $notActive;
         }
