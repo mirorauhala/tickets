@@ -14,6 +14,15 @@
                 <li class="{{ Helper::route_active(['tournaments*']) }}"><a href="{{ route('tournaments') }}">{{ __('nav.my-tournaments') }}</a></li>
             </ul>
 
+            @if(count(Auth::user()->events) > 0)
+                <ul class="nav nav-pills nav-stacked">
+                    <li class="nav-title">{{ __('nav.title.organizations') }}</li>
+                    @foreach(Auth::user()->events as $event)
+                        <li class="{{ Helper::route_active(['events.admin*']) }}"><a href="{{ route('events.admin.customers') }}">{{ $event->name }}</a></li>
+                    @endforeach
+                </ul>
+            @endif
+
             <div class="sidebar-nav-bottom">
                 <ul class="nav nav-pills nav-stacked">
                     <li class="nav-title">{{ __('nav.title.account') }}</li>

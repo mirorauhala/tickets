@@ -12,6 +12,7 @@ return [
         'featured-event' => 'Suositeltu tapahtuma',
         'personal' => 'Henkilökohtainen',
         'account' => 'Oma tili',
+        'organizations' => 'Organisaatiot',
     ],
 
     // Personal

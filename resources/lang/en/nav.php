@@ -12,6 +12,7 @@ return [
         'featured-event' => 'Featured Event',
         'personal' => 'Personal',
         'account' => 'Account',
+        'organizations' => 'Organizations',
     ],
 
     // Personal
