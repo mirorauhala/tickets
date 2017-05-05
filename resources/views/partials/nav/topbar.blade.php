@@ -7,8 +7,4 @@
 
     <a role="presentation" class="btn btn-sm btn-link {{ Helper::route_active(['events.tournaments*'], [], 'active') }}" href="{{ route('events.tournaments') }}">{{ __('event.nav.tournaments') }}</a></li>
 
-    @can('update', $event)
-        <a role="presentation" class="btn btn-sm btn-link {{ Helper::route_active(['events.admin*'], [], 'active') }}" href="{{ route('events.admin.customers') }}">{{ __('event.nav.admin') }}</a></li>
-    @endcan
-
 </div>

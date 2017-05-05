@@ -12,8 +12,7 @@ return [
         'details'                   => 'Details',
         'maps'                      => 'Maps',
         'tickets'                   => 'Tickets',
-        'tournaments'               => 'Tournaments',
-        'admin'                     => 'Admin',
+        'tournaments'               => 'Tournaments'
     ],
 
     /*

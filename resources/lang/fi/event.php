@@ -13,7 +13,6 @@ return [
         'maps'                      => 'Kartat',
         'tickets'                   => 'Liput',
         'tournaments'               => 'Kilpailut',
-        'admin'                     => 'Ylläpito',
     ],
 
     /*
