@@ -12,7 +12,7 @@
             <div class="form-group{{ $errors->has('first_name') ? ' has-error' : '' }}">
                 <label for="first_name" class="control-label">First Name</label>
 
-                <input id="name" type="text" class="form-control" name="first_name" value="{{ old('first_name') }}" required autofocus>
+                <input id="first_name" type="text" class="form-control" name="first_name" value="{{ old('first_name') }}" required autofocus>
 
                 @if ($errors->has('first_name'))
                     <span class="help-block">
@@ -24,7 +24,7 @@
             <div class="form-group{{ $errors->has('last_name') ? ' has-error' : '' }}">
                 <label for="last_name" class="control-label">Last Name</label>
 
-                <input id="name" type="text" class="form-control" name="last_name" value="{{ old('last_name') }}" required autofocus>
+                <input id="last_name" type="text" class="form-control" name="last_name" value="{{ old('last_name') }}" required autofocus>
 
                 @if ($errors->has('last_name'))
                     <span class="help-block">
@@ -58,9 +58,9 @@
             </div>
 
             <div class="form-group">
-                <label for="password-confirm" class="control-label">Confirm Password</label>
+                <label for="password_confirmation" class="control-label">Confirm Password</label>
 
-                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                <input id="password_confirmation" type="password" class="form-control" name="password_confirmation" required>
             </div>
 
             <div class="form-group">
