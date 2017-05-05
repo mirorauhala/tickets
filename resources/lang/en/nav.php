@@ -26,6 +26,6 @@ return [
 
     // Legal
     'privacy-policy' => 'Privacy Policy',
-    'made-in' => 'Made in Finland',
+    'made-in' => 'Made in Finland.',
 
 ];

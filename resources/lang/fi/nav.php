@@ -26,6 +26,6 @@ return [
 
     // Legal
     'privacy-policy' => 'Rekisteriseloste',
-    'made-in' => 'Tehty suomessa',
+    'made-in' => 'Tehty Suomessa.',
 
 ];
