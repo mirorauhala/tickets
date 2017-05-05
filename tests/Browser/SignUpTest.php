@@ -13,7 +13,7 @@ class SignUpTest extends DuskTestCase
     use DatabaseMigrations;
 
     /**
-     * @test A user can sign ip.
+     * @test A user can sign up.
      *
      * @return void
      */

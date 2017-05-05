@@ -27,7 +27,7 @@ class SignUpPage extends Page
     }
 
     /**
-     * Assert that user can log in.
+     * Assert that user can sign up.
      *
      * @return void
      */
