@@ -1,9 +1,10 @@
 <?php
 
-namespace Tikematic\Http\Controllers;
+namespace Tikematic\Http\Controllers\Event;
 
 use Tikematic\Event;
 use Illuminate\Http\Request;
+use Tikematic\Http\Controllers\Controller;
 
 class EventController extends Controller
 {

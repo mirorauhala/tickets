@@ -1,12 +1,13 @@
 <?php
 
-namespace Tikematic\Http\Controllers;
+namespace Tikematic\Http\Controllers\User;
 
 use Auth;
 use Hash;
 use Helper;
 use Illuminate\Http\Request;
 use App\Http\Requests\SettingsPassword;
+use Tikematic\Http\Controllers\Controller;
 
 class SettingsController extends Controller
 {

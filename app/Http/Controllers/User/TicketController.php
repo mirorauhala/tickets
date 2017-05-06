@@ -1,10 +1,11 @@
 <?php
 
-namespace Tikematic\Http\Controllers;
+namespace Tikematic\Http\Controllers\User;
 
 use Illuminate\Http\Request;
+use Tikematic\Http\Controllers\Controller;
 
-class TournamentController extends Controller
+class TicketController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -23,6 +24,6 @@ class TournamentController extends Controller
      */
     public function index()
     {
-        return view('tournaments.all');
+        return view('tickets.all');
     }
 }
