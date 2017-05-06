@@ -55,7 +55,7 @@ class EventController extends Controller
         return view('events.tickets')
             ->with([
                 "event" => $event,
-                "tickets" => $event->tickets,
+                "tickets" => $event->tickets()->available()->get(),
             ]);
     }
 
