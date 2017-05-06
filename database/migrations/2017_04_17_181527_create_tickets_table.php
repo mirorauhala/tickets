@@ -20,9 +20,13 @@ class CreateTicketsTable extends Migration
             $table->integer('vat')->unsigned();
             $table->string('currency');
             $table->boolean('standalone')->default(1);
+            $table->boolean('maxAmountPerTransaction')->unsigned()->default(5);
+            $table->dateTimeTz('availableAt');
+            $table->dateTimeTz('unavailableAt');
 
             $table->integer('event_id')->unsigned();
             $table->foreign('event_id')->references('id')->on('events')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 
