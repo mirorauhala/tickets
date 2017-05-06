@@ -24,7 +24,7 @@
             {{ Helper::decimalMoneyFormatter($ticket->price, $ticket->currency) }}
         </div>
         <div class="col-md-2 col-md-offset-2 col-sm-4 col-sm-offset-0 col-xs-5 col-xs-offset-7">
-            Amount
+            <input type="number" min="0" max="{{ $ticket->maxAmountPerTransaction }}" value="0">
         </div>
     </div>
     @endforeach
