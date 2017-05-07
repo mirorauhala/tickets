@@ -8,6 +8,16 @@ use Tikematic\Http\Controllers\Controller;
 
 class TicketController extends Controller
 {
+  /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Show the event tournaments.
      *

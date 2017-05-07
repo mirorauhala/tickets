@@ -9,6 +9,16 @@ use Tikematic\Http\Controllers\Controller;
 class TournamentController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * Show the event tournaments.
      *
      * @return \Illuminate\Http\Response
