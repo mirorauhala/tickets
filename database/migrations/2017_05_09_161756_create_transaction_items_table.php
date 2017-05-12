@@ -13,7 +13,15 @@ class CreateTransactionItemsTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('transaction_items', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('title');
+            $table->integer('total');
+
+            $table->integer('transaction_id')->unsigned();
+            $table->foreign('transaction_id')->references('id')->on('transactions')->onDelete('cascade');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +31,6 @@ class CreateTransactionItemsTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('transaction_items');
     }
 }
