@@ -96,11 +96,15 @@ return [
 
     'transactions' => [
         'no-transactions'           => 'You have no transactions.',
-        'id'                        => 'ID',
+        'code'                      => 'ID',
         'title'                     => 'Title',
-        'cost'                      => 'Cost',
+        'payer'                     => 'Payer',
+        'amount'                    => 'Amount',
         'currency'                  => 'Currency',
         'vat'                       => 'VAT',
+        'status'                    => 'Status',
+        'date'                      => 'Date of payment',
+        'action'                    => 'Action',
     ],
 
 ];

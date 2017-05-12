@@ -4,34 +4,34 @@
 
 @section('content')
 
-@if(count(Auth::user()->transactions) > 0)
+@if(count($transactions) > 0)
     <div class="table-responsive">
-        <table class="table table-bordered">
+        <table class="table table-striped">
             <thead>
                 <tr>
-                    <td>{{ __('settings.transactions.id') }}</td>
+                    <td>{{ __('settings.transactions.code') }}</td>
                     <td>{{ __('settings.transactions.title') }}</td>
-                    <td>{{ __('settings.transactions.payer') }}</td>
-                    <td>{{ __('settings.transactions.cost') }}</td>
-                    <td>{{ __('settings.transactions.currency') }}</td>
-                    <td>{{ __('settings.transactions.vat') }}</td>
+                    <td>{{ __('settings.transactions.amount') }}</td>
+                    <td>{{ __('settings.transactions.status') }}</td>
+                    <td>{{ __('settings.transactions.date') }}</td>
+                    <td>{{ __('settings.transactions.action') }}</td>
                 </tr>
             </thead>
             <tbody>
-                @foreach(Auth::user()->transactions as $transaction)
-                    <tr>
-                        <td>{{ $transaction->id }}</td>
+                @foreach($transactions as $transaction)
+                    <tr class="{{ ($transaction->status == "pending") ? "info" : "" }}">
+                        <td>{{ $transaction->code }}</td>
                         <td>{{ $transaction->title }}</td>
-                        <td>{{ $transaction->payer->first()->full_name() }}</td>
-                        <td>{{ Helper::decimalMoneyFormatter($transaction->cost, $transaction->currency) }}</td>
-                        <td>{{ $transaction->currency }}</td>
-                        <td>{{ $transaction->vat }}</td>
+                        <td>{{ Helper::decimalMoneyFormatter($transaction->total, $transaction->currency) }}</td>
+                        <td>{{ $transaction->status }}</td>
+                        <td>{{ $transaction->created_at }}</td>
+                        <td><a href="#">View</a></td>
                     </tr>
                 @endforeach
             </tbody>
         </table>
     </div>
 @else
-    <p>{{ __('settings.transctions.no-transactions') }}</p>
+    <p>{{ __('settings.transactions.no-transactions') }}</p>
 @endif
 @endsection
