@@ -16,12 +16,18 @@ class CreateTransactionsTable extends Migration
         Schema::create('transactions', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->integer('code')->unsigned();
+            $table->string('code');
             $table->string('status');
             $table->integer('total');
             $table->string('currency');
             $table->integer('vat')->unsigned();
             $table->dateTimeTz('pending_lock');
+
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+
+            $table->integer('payer_id')->unsigned();
+            $table->foreign('payer_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
