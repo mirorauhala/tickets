@@ -32,6 +32,15 @@ class Event extends Model
     }
 
     /**
+     * Get events maps.
+     *
+     * @return belongsToMany
+     */
+    public function maps() {
+        return $this->hasMany('Tikematic\Map');
+    }
+
+    /**
      * Get events tickets.
      *
      * @return belongsToMany
