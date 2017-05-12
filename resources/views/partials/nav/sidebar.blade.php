@@ -1,4 +1,4 @@
-<section class="sidebar">
+<aside class="sidebar">
     <div class="sidebar-scrollable">
         <div class="sidebar-contents">
 
@@ -52,4 +52,4 @@
         </div>
     </div>
 
-</section>
+</aside>
