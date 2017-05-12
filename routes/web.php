@@ -75,5 +75,5 @@ Route::post('/settings/password', 'User\SettingsController@updatePassword');
 Route::get('/settings/language', 'User\SettingsController@showLanguages')->name('settings.language');
 Route::post('/settings/language', 'User\SettingsController@updateLanguage');
 
-Route::get('/settings/transactions', 'User\SettingsController@showTransactions')->name('settings.transactions.all');
-Route::get('/settings/transactions/{transaction}', 'User\SettingsController@showSpecificTransaction')->name('settings.transactions.specific');
+Route::get('/settings/transactions', 'User\Settings\TransactionsController@showTransactions')->name('settings.transactions.all');
+Route::get('/settings/transactions/{transaction}', 'User\Settings\TransactionsController@showSpecificTransaction')->name('settings.transactions.specific');
