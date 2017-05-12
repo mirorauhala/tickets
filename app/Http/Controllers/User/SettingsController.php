@@ -125,24 +125,4 @@ class SettingsController extends Controller
                 "flash_message" => Helper::tra('settings.flash.language', [], $request->language),
             ]);
     }
-
-    /**
-     * Show the password change form.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function showTransactions()
-    {
-        return view('settings.transactions.all');
-    }
-
-    /**
-     * Show the password change form.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function showSpecificTransaction()
-    {
-        return view('settings.transactions.specific');
-    }
 }
