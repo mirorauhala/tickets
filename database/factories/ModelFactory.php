@@ -24,7 +24,6 @@ $factory->define(Tikematic\User::class, function (Faker\Generator $faker) {
     ];
 });
 
-
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(Tikematic\Event::class, function (Faker\Generator $faker) {
     static $password;
@@ -34,5 +33,26 @@ $factory->define(Tikematic\Event::class, function (Faker\Generator $faker) {
         'location' => $faker->address,
         'details' => $faker->text,
         'url' => $faker->url,
+    ];
+});
+
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(Tikematic\Map::class, function (Faker\Generator $faker) {
+    static $password;
+
+    return [
+        'name' => 'Map ' . uniqid(),
+        'description' => $faker->sentence,
+    ];
+});
+
+
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(Tikematic\Seat::class, function (Faker\Generator $faker) {
+    static $password;
+
+    return [
+        'name' => uniqid(),
+        'status' => "available",
     ];
 });
