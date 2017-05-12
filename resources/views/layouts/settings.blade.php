@@ -7,31 +7,30 @@
 @include('partials.nav.sidebar')
 
 <section class="application">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h1>{{ __('settings.header') }}</h1>
+    <section class="application-header">
+        <div class="container">
+            <h1>{{ __('settings.header') }}</h1>
 
-                <br>
-            </div>
+            @include("partials.nav.settings")
         </div>
-        <div class="row">
-            <div class="col-md-3">
-                @include("partials.nav.settings")
-            </div>
+    </section>
 
-            <div class="col-md-9">
-                <div class="panel panel-default">
-                    <div class="panel-heading">@yield('settings.title', 'Untitled')</div>
+    <section class="application-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">@yield('settings.title', 'Untitled')</div>
 
-                    <div class="panel-body">
+                        <div class="panel-body">
 
-                        @yield('content')
+                            @yield('content')
 
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 </section>
 @endsection

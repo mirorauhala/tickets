@@ -1,4 +1,4 @@
-<ul class="nav nav-pills nav-stacked">
+<ul class="nav nav-pills">
     <li role="presentation" class="{{ Helper::route_active(['settings.profile']) }}">
         <a href="{{ route('settings.profile') }}">{{ __('settings.nav.profile') }}</a>
     </li>
