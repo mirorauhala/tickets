@@ -9,7 +9,7 @@
             <div class="col-md-8">
                 <a class="thumbnail clearfix" href="{{ route('events.map', ['map' => $map]) }}">
                     <div class="col-md-12">
-                        <h2>{{ $map->name }} <small>{{ count($map->seats()->status('taken')->get() ) }}/{{ count($map->seats()->status('available')->get()) }} seats</small></h2>
+                        <h2>{{ $map->name }}</h2>
                         <p>{{ $map->description }}</p>
                     </div>
                 </a>
