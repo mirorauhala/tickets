@@ -2,6 +2,7 @@
 
 namespace Tikematic\Http\Controllers\Auth;
 
+use Tikematic\Platform;
 use Socialite;
 use Tikematic\Http\Controllers\Controller;
 
@@ -34,7 +35,17 @@ class SocialiteController extends Controller
      * @return void
      */
     public function callbackDiscord() {
-        $user = Socialite::driver('discord')->user();
-        dd($user);
+        $callbackUser = Socialite::driver('discord')->user();
+
+        // Try to find an account
+        if($realUser = Platform::where('platform_id', $callbackUser->id)->first()) {
+            auth()->login($realUser);
+        } else {
+            // prefill register page with details
+            return redirect('register')->with([
+                "platform" => "Discord",
+                "email" => $callbackUser->email,
+            ]);
+        }
     }
 }
