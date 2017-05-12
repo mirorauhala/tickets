@@ -9,9 +9,13 @@
 <section class="application">
     <section class="application-header">
         <div class="container">
-            <h1>{{ __('settings.header') }}</h1>
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>{{ __('settings.header') }}</h1>
 
-            @include("partials.nav.settings")
+                    @include("partials.nav.settings")
+                </div>
+            </div>
         </div>
     </section>
 
@@ -19,15 +23,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">@yield('settings.title', 'Untitled')</div>
+                    <h2>@yield('settings.title', 'Untitled')</h2>
 
-                        <div class="panel-body">
-
-                            @yield('content')
-
-                        </div>
-                    </div>
+                    @yield('content')
                 </div>
             </div>
         </div>
