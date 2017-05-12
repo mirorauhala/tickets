@@ -1,0 +1,15 @@
+.seat {
+    position: absolute;
+    background-color: grey;
+    border: 1px solid #949494;
+}
+
+.seat-available {
+    background-color: #78cc80;
+    border-color: #519d58;
+}
+
+.seat-taken {
+    background-color: #cc7878;
+    border-color: #9d5151;
+}
