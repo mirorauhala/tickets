@@ -6,14 +6,13 @@
 
 @include('partials.nav.sidebar')
 <section class="application">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h1>{{ __('tournaments.header') }}</h1>
-
-                <br>
-            </div>
+    <section class="application-header">
+        <div class="container">
+            <h1>{{ __('tournaments.header') }}</h1>
         </div>
+    </section>
+
+    <div class="container">
         <div class="row">
             @yield('content')
         </div>
