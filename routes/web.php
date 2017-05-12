@@ -35,6 +35,7 @@ Route::get('/tournaments', 'User\TournamentController@index')->name('tournaments
 | Event
 |--------------------------------------------------------------------------
 */
+Route::get('/event/map/{map}', 'Event\MapController@map')->name('events.map');
 Route::get('/event/maps', 'Event\MapController@maps')->name('events.maps');
 Route::get('/event/tickets', 'Event\TicketController@tickets')->name('events.tickets');
 Route::get('/event/tournaments', 'Event\TournamentController@tournaments')->name('events.tournaments');
@@ -57,8 +58,7 @@ Route::get('/event/admin/settings', 'EventAdmin\CustomerController@customers')->
 |--------------------------------------------------------------------------
 */
 
-Route::post('/order/place', 'Order\OrderController@placeOrder')->name('order.place');
-Route::get('/order/{ticket_id}', 'User\TicketController@buy')->name('buy.ticket');
+Route::post('/order/view', 'Order\OrderController@viewOrder')->name('order.view');
 
 
 /*
