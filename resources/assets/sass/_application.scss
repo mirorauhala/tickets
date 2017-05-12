@@ -2,13 +2,26 @@
     margin-left: 380px;
 }
 
-.application-container {
-    margin-left: 10vh;
-    margin-right: 10vh;
-}
 
 .application-header {
     height: 150px;
     display: flex;
     align-items: flex-end;
+
+    h1 {
+        margin-bottom: 15px;
+    }
+
+    .nav-pills > li > a {
+        padding-left: 20px;
+        padding-right: 20px;
+        border-radius: 1000px;
+    }
+}
+
+.application-container {
+    padding-top: 60px;
+
+    margin-left: 10vh;
+    margin-right: 10vh;
 }
