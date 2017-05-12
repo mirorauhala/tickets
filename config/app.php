@@ -179,6 +179,7 @@ return [
         // Tikematic\Providers\BroadcastServiceProvider::class,
         Tikematic\Providers\EventServiceProvider::class,
         Tikematic\Providers\RouteServiceProvider::class,
+        Tikematic\Providers\ValidationProvider::class,
 
     ],
 
