@@ -5,7 +5,7 @@ namespace Tikematic;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
-class Transation extends Model
+class Transaction extends Model
 {
     /**
      * The attributes that are mass assignable.
@@ -13,24 +13,24 @@ class Transation extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'price', 'vat', 'currency', 'standalone', 'availableAt', 'unavailableAt', 'event_id',
+        'title', 'code', 'status', 'total', 'currency', 'vat', 'pending_lock',
     ];
-
-    protected $dates = [
-        'availableAt',
-        'unavailableAt',
-    ];
-
 
     /**
-     * Scope a query to only include available tickets.
+     * Get transaction's items.
      *
-     * @param \Illuminate\Database\Eloquent\Builder $query
-     * @return \Illuminate\Database\Eloquent\Builder
+     * @return hasMany
      */
-    public function scopeAvailable($query)
-    {
-        return $query->where('availableAt', '<', Carbon::now())
-            ->where('unavailableAt', '>', Carbon::now());
+    public function items() {
+        return $this->hasMany('Tikematic\TransactionItem');
+    }
+
+    /**
+     * Get transaction's payer.
+     *
+     * @return hasMany
+     */
+    public function payer() {
+        return $this->belongsTo('Tikematic\User');
     }
 }
