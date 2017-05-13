@@ -4,7 +4,7 @@
 
 <div class="row">
     <div class="col-md-12">
-        <h1 class="text-center">Tickets</h1>
+        <h1>Tickets</h1>
     </div>
 </div>
 
@@ -46,7 +46,7 @@
 
     </form>
 @else
-    <p class="text-center">There are no tickets to show.</p>
+    <p>There are no tickets to show.</p>
 @endif
 
 
