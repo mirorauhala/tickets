@@ -11,7 +11,7 @@
 
         </a>
 
-        <a href="#" class="sidebar-logo"><img src="/images/tikematic.SVG" alt="Tikematic"></a>
+        <a href="/" class="sidebar-logo"><img src="/images/tikematic.SVG" alt="Tikematic"></a>
 
         <a href="#" class="sidebar-pos"><span>PoS</span></a>
     </section>
@@ -19,7 +19,7 @@
     <div class="sidebar-scrollable">
         <div class="sidebar-contents">
 
-            <a href="#" class="sidebar-content-logo"><image src="/images/tikematic.SVG" height="30" alt="Tikematic"></a>
+            <a href="/" class="sidebar-content-logo"><image src="/images/tikematic.SVG" height="30" alt="Tikematic"></a>
             <ul class="nav nav-pills nav-stacked">
                 <li class="nav-title">{{ __('nav.title.featured-event') }}</li>
                 <li class="{{ Helper::route_active(['events*'], ['events.admin*']) }}"><a href="{{ route('events.details') }}">Connection Lan: eSports 2017</a></li>
