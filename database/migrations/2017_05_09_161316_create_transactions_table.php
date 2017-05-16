@@ -24,10 +24,10 @@ class CreateTransactionsTable extends Migration
             $table->dateTimeTz('pending_lock');
 
             $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users');
 
             $table->integer('payer_id')->unsigned();
-            $table->foreign('payer_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('payer_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
