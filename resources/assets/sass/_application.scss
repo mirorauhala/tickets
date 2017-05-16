@@ -1,6 +1,4 @@
-.application {
-    margin-left: 380px;
-}
+
 
 
 .application-header {
@@ -24,4 +22,10 @@
 
     margin-left: 10vh;
     margin-right: 10vh;
+}
+
+@media(min-width: 1000px) {
+    .application {
+        margin-left: 380px;
+    }
 }
