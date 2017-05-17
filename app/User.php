@@ -29,7 +29,7 @@ class User extends Authenticatable
     ];
 
     /**
-     * Returns user full name.
+     * Returns user's full name.
      *
      * @return string
      */
@@ -56,7 +56,7 @@ class User extends Authenticatable
     }
 
     /**
-     * Get users tickets.
+     * Get user's tickets.
      *
      * @return belongsToMany
      */
@@ -65,7 +65,7 @@ class User extends Authenticatable
     }
 
     /**
-     * Get users transactions.
+     * Get user's transactions.
      *
      * @return belongsToMany
      */
