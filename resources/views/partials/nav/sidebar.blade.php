@@ -62,7 +62,7 @@
                         </li>
                     @endif
 
-                    <p class="legal"><a href="#">{{ __('nav.privacy-policy') }}</a><br>&copy; Tikematic 2017. {{ __('nav.made-in') }}</p>
+                    <p class="legal"><a href="https://goo.gl/QhFTuI" target="_blank" rel="noopener">{{ __('nav.privacy-policy') }}</a><br>&copy; Tikematic 2017. {{ __('nav.made-in') }}</p>
 
                 </ul>
             </div>

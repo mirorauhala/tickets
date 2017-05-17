@@ -14,7 +14,7 @@
                 <h1 class="text-center">Connection Lan</h1>
                 <p class="text-center lead">
                     Ankkalinnantie 13, 131313 Seinäjoki, Finland
-                    <a target="_blank" href="https://maps.google.com/?q=OmaSp+Stadion,+Alaseinäjoenkatu,+Seinäjoki,+Finland">
+                    <a target="_blank" rel="noopener" href="https://maps.google.com/?q=OmaSp+Stadion,+Alaseinäjoenkatu,+Seinäjoki,+Finland">
                         <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> <span class="sr-only">View in Google Maps</span>
                     </a>
                 </p>
