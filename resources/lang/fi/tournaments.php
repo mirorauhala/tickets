@@ -9,6 +9,6 @@ return [
     */
 
     'header' => 'Omat turnaukset',
-    'no-tickets' => 'Et ole osallisena mihinkään turnaukseen.',
+    'no-tournaments' => 'Et ole osallisena mihinkään turnaukseen.',
 
 ];

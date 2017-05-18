@@ -9,6 +9,6 @@ return [
     */
 
     'header' => 'My Tournaments',
-    'no-tickets' => 'You don\'t participate in any tournaments.',
+    'no-tournaments' => 'You don\'t participate in any tournaments.',
 
 ];
