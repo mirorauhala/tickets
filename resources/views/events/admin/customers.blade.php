@@ -9,7 +9,6 @@
                 <tr>
                     <td>Name</td>
                     <td>Email</td>
-                    <td>Tickets</td>
                     <td>Action</td>
                 </tr>
             </thead>
@@ -18,7 +17,6 @@
                     <tr>
                         <td>{{ $customer->full_name() }}</td>
                         <td>{{ $customer->email }}</td>
-                        <td>{{ count($customer->tickets) }}</td>
                         <td><a href="#">Profile</a></td>
                     </tr>
                 @endforeach
