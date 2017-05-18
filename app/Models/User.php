@@ -61,7 +61,7 @@ class User extends Authenticatable
      * @return belongsToMany
      */
     public function tickets() {
-        return $this->belongsToMany('Tikematic\Ticket');
+        return $this->belongsToMany('Tikematic\Ticket', 'user_ticket');
     }
 
     /**
