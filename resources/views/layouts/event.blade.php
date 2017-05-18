@@ -1,6 +1,6 @@
 @extends('layouts.base')
 
-@section('base.title', 'Event')
+@section('base.title', 'Connection Lan')
 
 @section('base.content')
 

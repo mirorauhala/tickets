@@ -1,6 +1,6 @@
 @extends('layouts.base')
 
-@section('base.title', 'Tournaments')
+@section('base.title', __('tournaments.header'))
 
 @section('base.content')
 
