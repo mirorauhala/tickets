@@ -2,8 +2,8 @@
 
 namespace Tikematic\Http\Controllers\Event;
 
-use Tikematic\Map;
-use Tikematic\Event;
+use Tikematic\Models\Map;
+use Tikematic\Models\Event;
 use Illuminate\Http\Request;
 use Tikematic\Http\Controllers\Controller;
 

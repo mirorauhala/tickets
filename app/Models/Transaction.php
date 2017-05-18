@@ -1,6 +1,6 @@
 <?php
 
-namespace Tikematic;
+namespace Tikematic\Models;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
@@ -22,7 +22,7 @@ class Transaction extends Model
      * @return hasMany
      */
     public function items() {
-        return $this->hasMany('Tikematic\TransactionItem');
+        return $this->hasMany('Tikematic\Models\TransactionItem');
     }
 
     /**
@@ -31,6 +31,6 @@ class Transaction extends Model
      * @return hasMany
      */
     public function payer() {
-        return $this->belongsTo('Tikematic\User');
+        return $this->belongsTo('Tikematic\Models\User');
     }
 }

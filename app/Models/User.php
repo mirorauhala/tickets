@@ -1,6 +1,6 @@
 <?php
 
-namespace Tikematic;
+namespace Tikematic\Models;
 
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Notifications\Notifiable;
@@ -52,7 +52,7 @@ class User extends Authenticatable
      * @return belongsToMany
      */
     public function events() {
-        return $this->belongsToMany('Tikematic\Event');
+        return $this->belongsToMany('Tikematic\Models\Event');
     }
 
     /**
@@ -61,7 +61,7 @@ class User extends Authenticatable
      * @return belongsToMany
      */
     public function tickets() {
-        return $this->belongsToMany('Tikematic\Ticket', 'user_ticket');
+        return $this->belongsToMany('Tikematic\Models\Ticket', 'user_ticket');
     }
 
     /**
@@ -70,6 +70,6 @@ class User extends Authenticatable
      * @return belongsToMany
      */
     public function transactions() {
-        return $this->hasMany('Tikematic\Transaction');
+        return $this->hasMany('Tikematic\Models\Transaction');
     }
 }

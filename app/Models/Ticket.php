@@ -1,6 +1,6 @@
 <?php
 
-namespace Tikematic;
+namespace Tikematic\Models;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;

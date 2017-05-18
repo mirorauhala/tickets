@@ -3,8 +3,8 @@
 namespace Tikematic\Http\Controllers\Order;
 
 use Carbon\Carbon;
-use Tikematic\Event;
-use Tikematic\Transaction;
+use Tikematic\Models\Event;
+use Tikematic\Models\Transaction;
 use Illuminate\Http\Request;
 use Tikematic\Http\Requests\OrderRequest;
 use Tikematic\Http\Controllers\Controller;

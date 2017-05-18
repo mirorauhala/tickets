@@ -2,7 +2,7 @@
 
 namespace Tikematic\Http\Controllers\Event;
 
-use Tikematic\Event;
+use Tikematic\Models\Event;
 use Illuminate\Http\Request;
 use Tikematic\Http\Controllers\Controller;
 

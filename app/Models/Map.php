@@ -1,6 +1,6 @@
 <?php
 
-namespace Tikematic;
+namespace Tikematic\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -21,7 +21,7 @@ class Map extends Model
      * @return belongsToMany
      */
     public function seats() {
-        return $this->hasMany('Tikematic\Seat');
+        return $this->hasMany('Tikematic\Models\Seat');
     }
 
     /**

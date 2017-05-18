@@ -2,8 +2,8 @@
 
 namespace Tikematic\Policies;
 
-use Tikematic\User;
-use Tikematic\Event;
+use Tikematic\Models\User;
+use Tikematic\Models\Event;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class EventPolicy

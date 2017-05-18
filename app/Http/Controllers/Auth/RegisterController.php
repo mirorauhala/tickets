@@ -2,7 +2,7 @@
 
 namespace Tikematic\Http\Controllers\Auth;
 
-use Tikematic\User;
+use Tikematic\Models\User;
 use Tikematic\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;

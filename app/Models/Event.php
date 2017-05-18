@@ -1,6 +1,6 @@
 <?php
 
-namespace Tikematic;
+namespace Tikematic\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -28,7 +28,7 @@ class Event extends Model
      * @return belongsToMany
      */
     public function customers() {
-        return $this->belongsToMany('Tikematic\User', 'customers');
+        return $this->belongsToMany('Tikematic\Models\User', 'customers');
     }
 
     /**
@@ -37,7 +37,7 @@ class Event extends Model
      * @return belongsToMany
      */
     public function maps() {
-        return $this->hasMany('Tikematic\Map');
+        return $this->hasMany('Tikematic\Models\Map');
     }
 
     /**
@@ -46,7 +46,7 @@ class Event extends Model
      * @return belongsToMany
      */
     public function tickets() {
-        return $this->hasMany('Tikematic\Ticket');
+        return $this->hasMany('Tikematic\Models\Ticket');
     }
 
     /**
@@ -55,6 +55,6 @@ class Event extends Model
      * @return belongsToMany
      */
     public function tournaments() {
-        return $this->belongsToMany('Tikematic\Tournament');
+        return $this->belongsToMany('Tikematic\Models\Tournament');
     }
 }

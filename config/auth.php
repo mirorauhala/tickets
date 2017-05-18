@@ -67,7 +67,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => Tikematic\User::class,
+            'model' => Tikematic\Models\User::class,
         ],
 
         // 'users' => [
