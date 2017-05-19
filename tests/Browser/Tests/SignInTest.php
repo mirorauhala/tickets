@@ -1,8 +1,8 @@
 <?php
 
-namespace Tests\Browser;
+namespace Tests\Browser\Tests;
 
-use Tikematic\User;
+use Tikematic\Models\User;
 use Tests\DuskTestCase;
 use Tests\Browser\Pages\SignInPage;
 use Laravel\Dusk\Browser;
