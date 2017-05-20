@@ -42,6 +42,7 @@ class PopulateBasicEventData extends Command
             'location' => 'Alaseinäjoenkatu 15, 60220 Seinäjoki, Finland',
             'details' => 'Welcome to the ticket sales for Connection Lan: eSports 2017. In here you shall find event...',
             'url' => "http://connectionlan.fi",
+            'currency' => "EUR",
         ]);
 
         $map = $event->maps()->create([
