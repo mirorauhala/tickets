@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "617c032d252358eff0f653dc33aebbe2",
+    "content-hash": "c6d3ac51575d4a85260b279f81f03f54",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -1456,6 +1456,51 @@
                 "php"
             ],
             "time": "2017-03-05T18:23:57+00:00"
+        },
+        {
+            "name": "nordsoftware/paytrail-php",
+            "version": "0.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nordsoftware/paytrail-php.git",
+                "reference": "7f9de4991476707450ce18aa17dfa650563cf46a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nordsoftware/paytrail-php/zipball/7f9de4991476707450ce18aa17dfa650563cf46a",
+                "reference": "7f9de4991476707450ce18aa17dfa650563cf46a",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^6.1",
+                "php": ">=5.6"
+            },
+            "require-dev": {
+                "codeception/codeception": "@stable",
+                "satooshi/php-coveralls": "^1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Paytrail\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christoffer Niska",
+                    "email": "christoffer.niska@nordsoftware.com"
+                },
+                {
+                    "name": "Kenneth Söderlund",
+                    "email": "kenneth.soderlund@nordsoftware.com"
+                }
+            ],
+            "description": "Paytrail REST client for PHP.",
+            "time": "2016-09-13T12:05:03+00:00"
         },
         {
             "name": "paragonie/random_compat",
