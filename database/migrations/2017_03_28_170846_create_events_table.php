@@ -19,6 +19,8 @@ class CreateEventsTable extends Migration
             $table->string('location');
             $table->string('details');
             $table->string('url');
+            $table->string('currency');
+            $table->boolean('is_visible')->default(0);
             $table->timestamps();
         });
     }
