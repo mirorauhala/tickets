@@ -3,6 +3,9 @@
 @section('base.title', 'Event Admin')
 
 @section('content')
+
+@include('partials.messages.event-availability')
+
 <div class="row">
     <div class="col-md-3">
         @include('partials.nav.event-admin')

@@ -22,6 +22,12 @@ return [
     */
 
     'admin' => [
+
+        'visibility' => [
+            'offline' => '<strong>Yey!</strong> Event is live and visible to visitors. <a :attributes>Change</a>',
+            'online' => '<strong>Heads up!</strong> Event is not live yet. <a :attributes>Change</a>',
+        ],
+
         'nav' => [
             'orders'                => 'Orders',
             'tournaments'           => 'Tournaments',

@@ -22,6 +22,12 @@ return [
     */
 
     'admin' => [
+
+        'visibility' => [
+            'offline' => '<strong>Jei!</strong> Tapahtuma on näkyvissä vierailijoille. <a :attributes>Muuta</a>',
+            'online' => '<strong>Huomaathan!</strong> Tapahtuma ei ole näkyvissä vierailijoille. <a :attributes>Muuta</a>',
+        ],
+
         'nav' => [
             'orders'                => 'Tilaukset',
             'tournaments'           => 'Kilpailut',
