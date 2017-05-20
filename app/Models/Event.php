@@ -23,7 +23,7 @@ class Event extends Model
     protected $hidden = [];
 
     /**
-     * Get events customers.
+     * Get event's customers.
      *
      * @return belongsToMany
      */
@@ -32,7 +32,7 @@ class Event extends Model
     }
 
     /**
-     * Get events maps.
+     * Get event's maps.
      *
      * @return belongsToMany
      */
@@ -41,7 +41,7 @@ class Event extends Model
     }
 
     /**
-     * Get events tickets.
+     * Get event's tickets.
      *
      * @return belongsToMany
      */
@@ -50,7 +50,7 @@ class Event extends Model
     }
 
     /**
-     * Get event tournaments.
+     * Get event's tournaments.
      *
      * @return belongsToMany
      */
