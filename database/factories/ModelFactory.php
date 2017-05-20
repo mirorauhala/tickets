@@ -33,6 +33,7 @@ $factory->define(Tikematic\Models\Event::class, function (Faker\Generator $faker
         'location' => $faker->address,
         'details' => $faker->text,
         'url' => $faker->url,
+        'currency' => 'EUR',
     ];
 });
 
