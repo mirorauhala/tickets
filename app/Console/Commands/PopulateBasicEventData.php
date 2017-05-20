@@ -37,7 +37,7 @@ class PopulateBasicEventData extends Command
      */
     public function handle()
     {
-        $event = factory(\Tikematic\Event::class)->create([
+        $event = factory(\Tikematic\Models\Event::class)->create([
             'name' => 'Connection Lan: eSports 2017',
             'location' => 'Alaseinäjoenkatu 15, 60220 Seinäjoki, Finland',
             'details' => 'Welcome to the ticket sales for Connection Lan: eSports 2017. In here you shall find event...',
@@ -70,7 +70,7 @@ class PopulateBasicEventData extends Command
             ]);
         }
 
-        factory(\Tikematic\User::class)->create([
+        factory(\Tikematic\Models\User::class)->create([
             'first_name' => 'john',
             'last_name' => 'doe',
             'email' => 'john.doe@email.com',
