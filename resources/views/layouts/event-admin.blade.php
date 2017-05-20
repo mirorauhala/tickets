@@ -5,6 +5,7 @@
 @section('content')
 
 @include('partials.messages.event-availability')
+@include('partials.messages.flashbox')
 
 <div class="row">
     <div class="col-md-3">

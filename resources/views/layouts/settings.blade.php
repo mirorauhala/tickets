@@ -21,6 +21,7 @@
 
     <section class="application-container">
         <div class="container">
+            @include('partials.messages.flashbox')
             <div class="row">
                 <div class="col-md-12">
                     <h2>@yield('settings.title', 'Untitled')</h2>
