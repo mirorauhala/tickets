@@ -30,6 +30,41 @@ return [
             'prices'                => 'Hinnat',
             'settings'              => 'Asetukset',
         ],
+
+        'pages' => [
+            'orders' => [
+                'title' => 'Tilaukset',
+
+            ],
+            'tournaments'   => [],
+            'maps'          => [],
+            'tickets'       => [],
+            'prices'        => [],
+            'settings'      => [
+                'title' => 'Asetukset',
+
+                'form' => [
+                    'event-name' => 'Tapahtuman nimi',
+                    'event-name-placeholder' => 'Tapahtuman nimi',
+
+                    'event-location' => 'Tapahtuman sijainti',
+                    'event-location-placeholder' => 'Tapahtuman sijainti',
+
+                    'event-url' => 'Tapahtuman URL',
+                    'event-url-placeholder' => 'Tapahtuman URL',
+
+                    'event-currency' => 'Tapahtuman valuutta',
+                    'event-currency-placeholder' => 'Tapahtuman valuutta',
+
+                    'event-visibility' => 'Tapahtuman näkyvyys',
+                    'event-visibility-placeholder' => 'Tapahtuman näkyvyys',
+
+                    'event-visibility-offline' => 'Tapahtuma on näkymätön. Maksuja ei voida suorittaa.',
+                    'event-visibility-online' => 'Tapahtuma on näkyvissä. Maksuja voidaan suorittaa kunhan liput ovat näkyvissä.',
+
+                ],
+            ],
+        ],
     ],
 
 ];

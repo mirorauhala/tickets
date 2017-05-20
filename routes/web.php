@@ -48,7 +48,7 @@ Route::get('/event/admin/maps', 'EventAdmin\CustomerController@customers')->name
 Route::get('/event/admin/tournaments', 'EventAdmin\TournamentController@tournaments')->name('events.admin.tournaments');
 Route::get('/event/admin/tickets', 'EventAdmin\TicketController@tickets')->name('events.admin.tickets');
 Route::get('/event/admin/prices', 'EventAdmin\CustomerController@customers')->name('events.admin.prices');
-Route::get('/event/admin/settings', 'EventAdmin\CustomerController@customers')->name('events.admin.settings');
+Route::get('/event/admin/settings', 'EventAdmin\SettingsController@viewEventSettings')->name('events.admin.settings');
 
 
 
