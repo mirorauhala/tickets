@@ -49,6 +49,7 @@ Route::get('/event/admin/tournaments', 'EventAdmin\TournamentController@tourname
 Route::get('/event/admin/tickets', 'EventAdmin\TicketController@tickets')->name('events.admin.tickets');
 Route::get('/event/admin/prices', 'EventAdmin\CustomerController@customers')->name('events.admin.prices');
 Route::get('/event/admin/settings', 'EventAdmin\SettingsController@viewEventSettings')->name('events.admin.settings');
+Route::post('/event/admin/settings', 'EventAdmin\SettingsController@processEventSettings');
 
 
 

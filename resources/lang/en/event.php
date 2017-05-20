@@ -28,6 +28,8 @@ return [
             'online' => '<strong>Heads up!</strong> Event is not live yet. <a :attributes>Change</a>',
         ],
 
+        'flash' => 'Event\'s settings updated.',
+
         'nav' => [
             'orders'                => 'Orders',
             'tournaments'           => 'Tournaments',

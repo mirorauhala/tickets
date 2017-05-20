@@ -28,6 +28,8 @@ return [
             'online' => '<strong>Huomaathan!</strong> Tapahtuma ei ole näkyvissä vierailijoille. <a :attributes>Muuta</a>',
         ],
 
+        'flash' => 'Tapahtuman asetukset päivitetty.',
+
         'nav' => [
             'orders'                => 'Tilaukset',
             'tournaments'           => 'Kilpailut',
