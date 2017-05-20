@@ -43,7 +43,7 @@ Route::get('/event/tournaments', 'Event\TournamentController@tournaments')->name
 
 // Admin routes
 
-Route::get('/event/admin', 'EventAdmin\CustomerController@customers')->name('events.admin.customers');
+Route::get('/event/admin', 'EventAdmin\OrderController@viewEventOrders')->name('events.admin.orders');
 Route::get('/event/admin/maps', 'EventAdmin\CustomerController@customers')->name('events.admin.maps');
 Route::get('/event/admin/tournaments', 'EventAdmin\TournamentController@tournaments')->name('events.admin.tournaments');
 Route::get('/event/admin/tickets', 'EventAdmin\TicketController@tickets')->name('events.admin.tickets');
