@@ -23,12 +23,12 @@ class Event extends Model
     protected $hidden = [];
 
     /**
-     * Get event's customers.
+     * Get event's orders.
      *
-     * @return belongsToMany
+     * @return hasMany
      */
-    public function customers() {
-        return $this->belongsToMany('Tikematic\Models\User', 'customers');
+    public function orders() {
+        return $this->hasMany('Tikematic\Models\Orders');
     }
 
     /**

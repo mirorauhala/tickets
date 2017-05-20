@@ -1,30 +1,30 @@
 @extends('layouts.event-admin')
 
 @section('admin.content')
-    <h1>Customers</h1>
-    @if(count($customers) > 0)
-        {{ $customers->links() }}
+    <h1 id="adminTitle">Orders</h1>
+    @if(count($orders) > 0)
+        {{ $orders->links() }}
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <td>Name</td>
+                    <td>Title</td>
                     <td>Email</td>
                     <td>Action</td>
                 </tr>
             </thead>
             <tbody>
-                @foreach($customers as $customer)
+                @foreach($orders as $order)
                     <tr>
-                        <td>{{ $customer->full_name() }}</td>
-                        <td>{{ $customer->email }}</td>
+                        <td>{{ $order->title }}</td>
+                        <td>{{ $order->email }}</td>
                         <td><a href="#">Profile</a></td>
                     </tr>
                 @endforeach
             </tbody>
         </table>
 
-        {{ $customers->links() }}
+        {{ $orders->links() }}
     @else
-        <p>There are no customers to show.</p>
+        <p>There are no orders to show.</p>
     @endif
 @endsection

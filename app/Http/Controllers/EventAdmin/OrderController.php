@@ -6,7 +6,7 @@ use Tikematic\Models\Event;
 use Illuminate\Http\Request;
 use Tikematic\Http\Controllers\Controller;
 
-class CustomerController extends Controller
+class OrderController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -23,15 +23,18 @@ class CustomerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function customers()
+    public function viewEventOrders()
     {
         // do ugly hard code for event ID
-        $event = Event::with('customers')->findOrFail(1);
+        $event = Event::with('orders')->findOrFail(1);
 
-        return view('events.admin.customers')
+        // restrict access to authorized users only
+        $this->authorize('update', $event);
+
+        return view('events.admin.orders')
             ->with([
                 "event" => $event,
-                "customers" => $event->customers()->paginate(15),
+                "orders" => $event->orders()->paginate(15),
             ]);
     }
 
