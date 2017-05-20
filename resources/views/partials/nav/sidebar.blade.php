@@ -35,7 +35,7 @@
                 <ul class="nav nav-pills nav-stacked">
                     <li class="nav-title">{{ __('nav.title.organizations') }}</li>
                     @foreach(Auth::user()->events as $event)
-                        <li class="{{ Helper::route_active(['events.admin*']) }}"><a href="{{ route('events.admin.customers') }}">{{ $event->name }}</a></li>
+                        <li class="{{ Helper::route_active(['events.admin*']) }}"><a href="{{ route('events.admin.orders') }}">{{ $event->name }}</a></li>
                     @endforeach
                 </ul>
             @endif

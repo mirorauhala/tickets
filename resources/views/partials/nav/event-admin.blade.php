@@ -1,6 +1,6 @@
 <ul class="nav nav-pills nav-stacked">
-    <li role="presentation" class="{{ Helper::route_active(['events.admin.customers']) }}">
-        <a href="{{ route('events.admin.customers') }}">{{ __('event.admin.nav.customers') }}</a>
+    <li role="presentation" class="{{ Helper::route_active(['events.admin.orders']) }}">
+        <a href="{{ route('events.admin.orders') }}">{{ __('event.admin.nav.orders') }}</a>
     </li>
     <li role="presentation" class="{{ Helper::route_active(['events.admin.tournaments']) }}">
         <a href="{{ route('events.admin.tournaments') }}">{{ __('event.admin.nav.tournaments') }}</a>

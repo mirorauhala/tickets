@@ -23,7 +23,7 @@ return [
 
     'admin' => [
         'nav' => [
-            'customers'             => 'Asiakkaat',
+            'orders'                => 'Tilaukset',
             'tournaments'           => 'Kilpailut',
             'maps'                  => 'Kartat',
             'tickets'               => 'Liput',
