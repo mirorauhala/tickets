@@ -28,6 +28,9 @@ class TournamentController extends Controller
         // do ugly hard code for event ID
         $event = Event::with('customers')->findOrFail(1);
 
+        // restrict access to authorized users only
+        $this->authorize('update', $event);
+
         return view('events.admin.tournaments')
             ->with([
                 "event" => $event,
