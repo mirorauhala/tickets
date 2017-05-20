@@ -24,7 +24,7 @@ return [
     'admin' => [
 
         'visibility' => [
-            'offline' => '<strong>Jei!</strong> Tapahtuma on näkyvissä vierailijoille. <a :attributes>Muuta</a>',
+            'offline' => '<strong>Jee!</strong> Tapahtuma on näkyvissä vierailijoille. <a :attributes>Muuta</a>',
             'online' => '<strong>Huomaathan!</strong> Tapahtuma ei ole näkyvissä vierailijoille. <a :attributes>Muuta</a>',
         ],
 
