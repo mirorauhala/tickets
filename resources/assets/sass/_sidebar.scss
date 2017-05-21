@@ -77,19 +77,23 @@
     }
 
     .sidebar-nav-bottom {
-      position: absolute;
-      bottom: 30px;
-      width: calc(100% - 80px);
+        position: absolute;
+        bottom: 25px;
+        width: calc(100% - 80px);
 
-      .nav-pills {
-        margin-bottom: 0;
-      }
+        .nav-pills {
+            margin-bottom: 0;
+        }
+
+        .nav {
+            margin: 0;
+        }
     }
 
     .legal {
         margin-top: 10px;
         font-size: 14px;
-        color: #737479;
+        color: #919297;
     }
 
     .legal a,
