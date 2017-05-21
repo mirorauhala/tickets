@@ -4,114 +4,76 @@
     width: 100%;
     overflow: hidden;
     z-index: 1000;
-
-    .sidebar-top {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        height: 50px;
-        padding-left: 15px;
-        padding-right: 15px;
-        background-color: #F2F2F2;
-    }
-
-    .bar {
-        width: 30px;
-        height: 3px;
-        margin-bottom: 3px;
-        background-color: #292C33;
-    }
-
-    .bar:last-child {
-        margin-bottom: 0;
-    }
-
-    &.sidebar-open .bar {
-        background-color: #fff;
-    }
-
-    .sidebar-pos,
-    .sidebar-logo,
-    .sidebar-hamburger {
-        display: inline-block;
-    }
-
-    .sidebar-pos {
-        text-decoration: none !important;
-    }
-
-    .sidebar-pos span {
-        padding: 3px 15px;
-        background-color: #fff;
-        border-radius: 3px;
-        color: #919297;
-    }
-
-    &.sidebar-open .sidebar-pos span {
-        color: #E3E3E3;
-        background-color: rgba(255,255,255,.15);
-    }
-
-    &.sidebar-open .sidebar-top {
-        background-color: #3D4047;
-    }
-
-    &.sidebar-closed .sidebar-scrollable {
-        display: none;
-    }
+    border-right: 1px solid #D8D8D8;
 
     .sidebar-scrollable {
+        display: none;
         position: relative;
         overflow-y: auto;
         height: calc(100vh - 50px);
-        background-color: #292C33;
+        background-color: #fff;
     }
 
     .sidebar-contents {
         position: relative;
-        padding: 40px 10% 30px;
+        padding: 40px 30px 30px;
         min-height: 555px;
         height: calc(100vh - 50px);
     }
 
     .sidebar-content-logo {
-        display: none;
+        display: block;
+        margin-bottom: 60px;
+        text-decoration: none !important;
+
+        img {
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: $text-color;
+        }
+    }
+
+    .nav {
         margin-bottom: 40px;
     }
 
-    .nav-pills {
-      margin-bottom: 40px;
-    }
-
-    .nav-pills>.nav-title {
-      padding-bottom: 5px;
-
-      text-transform: uppercase;
-      font-weight: bold;
-      font-size: 14px;
-      color: #919297;
-    }
-
-    .nav-pills>li>a {
+    .nav>li>a {
       padding: 0;
-      font-size: 20px;
+      font-size: 16px;
       font-weight: 600;
-      color: #fff;
-      color: rgba(255,255,255,.8);
+      color: $text-color;
       transition: 200ms ease color;
     }
 
-    .nav-pills>li>a:hover,
-    .nav-pills>li>a:focus {
+    .nav>li>a:hover,
+    .nav>li>a:focus {
         background-color: transparent;
-        color: rgba(255,255,255,1);
     }
 
-    .nav-pills>li.active>a,
-    .nav-pills>li.active>a:focus,
-    .nav-pills>li.active>a:hover {
+    .nav>li.active>a,
+    .nav>li.active>a:focus,
+    .nav>li.active>a:hover {
       background-color: transparent;
-      color: #FF749E;
+      color: $brand-primary;
+    }
+
+    /**
+    * Subnav
+    **/
+
+    .nav>li>.nav {
+        display: none;
+        margin-top: 10px;
+    }
+    .nav>li.active>.nav {
+        display: block;
+    }
+
+    .nav>li>.nav>li>a,
+    .nav>li>.nav>li>a {
+        font-weight: 400;
     }
 
     .sidebar-nav-bottom {
@@ -138,14 +100,10 @@
     }
 }
 
-@media(min-width: 1000px) {
+@media(min-width: 1023px) {
 
     .sidebar {
-        width: 380px;
-
-        .sidebar-content-logo {
-            display: block;
-        }
+        width: 300px;
 
         .sidebar-scrollable {
             display: block !important;

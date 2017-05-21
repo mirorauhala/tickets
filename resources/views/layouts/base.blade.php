@@ -14,7 +14,7 @@
     <meta name="theme-color" content="#FF3D78">
     <link rel="manifest" href="/manifest.json">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" async="true">
-    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,600,900,900i" rel="stylesheet" async="true">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,900" rel="stylesheet" async="true">
 
     <!-- Scripts -->
     <script>

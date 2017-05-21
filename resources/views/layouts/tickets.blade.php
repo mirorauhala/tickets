@@ -6,16 +6,20 @@
 
 @include('partials.nav.sidebar')
 <section class="application">
+
     <section class="application-header">
-        <div class="container">
-            <h1>{{ __('tickets.header') }}</h1>
+        <div class="application-container">
+            <div class="application-header-wrapper">
+                <h1>{{ __('tickets.header') }}</h1>
+            </div>
         </div>
     </section>
 
-    <div class="container">
-        <div class="row">
+    <section class="application-contents">
+        <div class="application-container">
             @yield('content')
         </div>
-    </div>
+    </section>
+
 </section>
 @endsection

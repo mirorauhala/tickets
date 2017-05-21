@@ -1,18 +1,37 @@
-@extends('layouts.event')
+@extends('layouts.base')
 
 @section('base.title', 'Event Admin')
 
-@section('content')
+@section('base.content')
+@include('partials.nav.sidebar')
 
-@include('partials.messages.event-availability')
-@include('partials.messages.flashbox')
+<section class="application">
 
-<div class="row">
-    <div class="col-md-3">
-        @include('partials.nav.event-admin')
-    </div>
-    <div class="col-md-9">
-        @yield('admin.content')
-    </div>
-</div>
+    <section class="application-header application-header-image">
+        <div class="application-container">
+            <div class="application-header-wrapper">
+                <h1>{{ $event->name }}</h1>
+                <p>OmaSp Stadion, Seinäjoki, Finland.</p>
+                <p>29.9. - 1.10.2017</p>
+            </div>
+        </div>
+    </section>
+
+    @include('partials.nav.topbar-admin')
+
+    <section class="application-contents">
+        <div class="application-container">
+
+
+            @include('partials.messages.event-availability')
+            @include('partials.messages.flashbox')
+
+            <div class="col-md-9">
+                @yield('admin.content')
+            </div>
+
+        </div>
+    </section>
+
+</section>
 @endsection

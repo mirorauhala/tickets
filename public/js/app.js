@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 39);
+/******/ 	return __webpack_require__(__webpack_require__.s = 36);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -775,7 +775,7 @@ module.exports = g;
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-__webpack_require__(29);
+__webpack_require__(28);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -798,7 +798,7 @@ const app = new Vue({
 /**
  * Add scripts for the application to work.
  */
-__webpack_require__(48);
+__webpack_require__(29);
 
 /***/ }),
 /* 9 */
@@ -1648,8 +1648,7 @@ module.exports = function spread(callback) {
 
 
 /***/ }),
-/* 28 */,
-/* 29 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -1671,7 +1670,7 @@ __webpack_require__(30);
  * and simple, leaving you to focus on building your next great project.
  */
 
-window.Vue = __webpack_require__(37);
+window.Vue = __webpack_require__(34);
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
@@ -1700,6 +1699,16 @@ window.axios.defaults.headers.common = {
 //     broadcaster: 'pusher',
 //     key: 'your-pusher-key'
 // });
+
+/***/ }),
+/* 29 */
+/***/ (function(module, exports) {
+
+$(document).ready(function () {
+    $(".sidebar-hamburger").on("click tap", function () {
+        $(".sidebar").toggleClass("sidebar-closed").toggleClass("sidebar-open");
+    });
+});
 
 /***/ }),
 /* 30 */
@@ -31434,7 +31443,7 @@ return jQuery;
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7), __webpack_require__(38)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7), __webpack_require__(35)(module)))
 
 /***/ }),
 /* 33 */
@@ -31627,10 +31636,7 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 34 */,
-/* 35 */,
-/* 36 */,
-/* 37 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -41268,7 +41274,7 @@ module.exports = Vue$3;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)))
 
 /***/ }),
-/* 38 */
+/* 35 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -41296,30 +41302,12 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 39 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(8);
 module.exports = __webpack_require__(9);
 
-
-/***/ }),
-/* 40 */,
-/* 41 */,
-/* 42 */,
-/* 43 */,
-/* 44 */,
-/* 45 */,
-/* 46 */,
-/* 47 */,
-/* 48 */
-/***/ (function(module, exports) {
-
-$(document).ready(function () {
-    $(".sidebar-hamburger").on("click tap", function () {
-        $(".sidebar").toggleClass("sidebar-closed").toggleClass("sidebar-open");
-    });
-});
 
 /***/ })
 /******/ ]);
