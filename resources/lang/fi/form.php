@@ -12,6 +12,7 @@ return [
     */
 
     'button.submit'             => 'Lähetä',
+    'button.create'             => 'Luo',
     'button.update'             => 'Päivitä',
     'button.change'             => 'Vaihda',
     'button.delete'             => 'Poista',

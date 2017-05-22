@@ -12,6 +12,7 @@ return [
     */
 
     'button.submit'             => 'Submit',
+    'button.create'             => 'Create',
     'button.update'             => 'Update',
     'button.change'             => 'Change',
     'button.delete'             => 'Delete',
