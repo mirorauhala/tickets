@@ -8,7 +8,7 @@
         <div class="sidebar-contents">
 
             <a href="/" class="sidebar-content-logo">
-                <img src="/images/connectionlan-logo-blue.SVG" alt="Connectionlan">
+                <img src="/images/connectionlan-logo-blue.svg" alt="Connectionlan">
                 <p>OmaSp Stadion, Seinäjoki<br>29.9. - 1.10.2017</p>
             </a>
 
