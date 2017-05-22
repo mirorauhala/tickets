@@ -44,9 +44,32 @@ return [
                 'title' => 'Orders',
 
             ],
-            'tournaments'   => [],
+            'tickets'       => [
+                'list' => [
+                    'title' => 'Tickets',
+                    'no-tickets' => 'There are no tickets to show. Consider creating one.',
+                    'create-ticket' => 'Create a ticket',
+
+                ],
+                'new' => [
+                    'title' => 'New Ticket',
+                    'form' => [
+                        'ticket-name' => 'Name',
+                        'ticket-price' => 'Price',
+                        'ticket-vat' => 'VAT',
+                        'ticket-reserved' => 'Amount of tickets reserved',
+                        'ticket-max' => 'Max. tickets per transaction',
+                        'ticket-seatable' => 'Is seatable?',
+                        'ticket-seatable-checkbox-label' => 'Required if you want to bind this ticket type to seats',
+                        'ticket-sleepable' => 'Is sleepable?',
+                        'ticket-sleepable-checkbox-label' => 'Ask customers if they\'ll sleep at the event and if they want air mattress.',
+                        'ticket-availableAt' => 'Start date of sales',
+                        'ticket-unavailableAt' => 'End date of sales',
+                    ],
+                ],
+            ],
             'maps'          => [],
-            'tickets'       => [],
+            'ticketss'      => [],
             'prices'        => [],
             'settings'      => [
                 'title' => 'Settings',
