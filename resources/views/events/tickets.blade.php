@@ -23,7 +23,7 @@
                     </ul>
                 </div>
                 <div class="col-sm-4 col-xs-3 text-right">
-                    {{ Helper::decimalMoneyFormatter($ticket->price, $ticket->currency) }}
+                    {{ Helper::decimalMoneyFormatter($ticket->price, $event->currency) }}
                 </div>
                 <div class="col-md-2 col-md-offset-2 col-sm-4 col-sm-offset-0 col-xs-5 col-xs-offset-7">
                     <input type="hidden" name="tickets[{{ $key }}][id]" value="{{ $ticket->id }}">
