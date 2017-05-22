@@ -36,6 +36,20 @@ class OrderController extends Controller
     }
 
     /**
+     * Validate the order
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function validateOrder(OrderRequest $request)
+    {
+
+        return view('order.view')
+            ->with([
+                "tickets" => $request,
+            ]);
+    }
+
+    /**
      * Validate order and then make it self-destruct in half an hour.
      *
      * @return \Illuminate\Http\Response
