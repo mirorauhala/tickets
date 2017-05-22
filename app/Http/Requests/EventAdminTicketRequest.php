@@ -4,7 +4,7 @@ namespace Tikematic\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class EventAdminNewTicketRequest extends FormRequest
+class EventAdminTicketRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
