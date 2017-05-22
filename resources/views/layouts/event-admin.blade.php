@@ -26,8 +26,10 @@
             @include('partials.messages.event-availability')
             @include('partials.messages.flashbox')
 
-            <div class="col-md-9">
-                @yield('admin.content')
+            <div class="row">
+                <div class="col-md-12">
+                    @yield('admin.content')
+                </div>
             </div>
 
         </div>
