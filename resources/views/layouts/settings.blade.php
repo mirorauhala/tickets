@@ -5,22 +5,20 @@
 @section('base.content')
 
 @include('partials.nav.sidebar')
-
 <section class="application">
-    <section class="application-header">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h1>{{ __('settings.header') }}</h1>
 
-                    @include("partials.nav.settings")
-                </div>
+    <section class="application-header">
+        <div class="application-container">
+            <div class="application-header-wrapper">
+                <h1>{{ __('settings.header') }}</h1>
             </div>
         </div>
     </section>
 
-    <section class="application-container">
-        <div class="container">
+    @include("partials.nav.settings")
+
+    <section class="application-contents">
+        <div class="application-container">
             @include('partials.messages.flashbox')
             <div class="row">
                 <div class="col-md-12">
