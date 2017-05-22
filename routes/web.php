@@ -44,9 +44,15 @@ Route::get('/event/tournaments', 'Event\TournamentController@tournaments')->name
 // Admin routes
 
 Route::get('/event/admin', 'EventAdmin\OrderController@viewEventOrders')->name('events.admin.orders');
-Route::get('/event/admin/maps', 'EventAdmin\CustomerController@customers')->name('events.admin.maps');
+
+Route::get('/event/admin/tickets', 'EventAdmin\TicketController@viewEventTickets')->name('events.admin.tickets.list');
+Route::get('/event/admin/tickets/new', 'EventAdmin\TicketController@viewEventNewTicket')->name('events.admin.tickets.new');
+Route::post('/event/admin/tickets/new', 'EventAdmin\TicketController@processEventNewTicket');
+Route::get('/event/admin/tickets/edit/{ticket}', 'EventAdmin\TicketController@viewEventEditTicket')->name('events.admin.tickets.edit');
+Route::post('/event/admin/tickets/edit/{ticket}', 'EventAdmin\TicketController@processEventEditTicket');
+
+Route::get('/event/admin/maps', 'EventAdmin\MapsController@customers')->name('events.admin.maps');
 Route::get('/event/admin/tournaments', 'EventAdmin\TournamentController@tournaments')->name('events.admin.tournaments');
-Route::get('/event/admin/tickets', 'EventAdmin\TicketController@tickets')->name('events.admin.tickets');
 Route::get('/event/admin/prices', 'EventAdmin\CustomerController@customers')->name('events.admin.prices');
 Route::get('/event/admin/settings', 'EventAdmin\SettingsController@viewEventSettings')->name('events.admin.settings');
 Route::post('/event/admin/settings', 'EventAdmin\SettingsController@processEventSettings');
