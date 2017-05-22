@@ -12,7 +12,7 @@ class Seat extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'status', 'top', 'left', 'transaction_id', 'event_id',
+        'name', 'status', 'top', 'left', 'transaction_id', 'event_id', 'user_id',
     ];
 
     /**
