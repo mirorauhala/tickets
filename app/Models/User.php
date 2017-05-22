@@ -65,6 +65,15 @@ class User extends Authenticatable
     }
 
     /**
+     * Get user's orders.
+     *
+     * @return hasMany
+     */
+    public function orders() {
+        return $this->hasMany('Tikematic\Models\Orders');
+    }
+
+    /**
      * Get user's transactions.
      *
      * @return belongsToMany
