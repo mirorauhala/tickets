@@ -29,7 +29,10 @@
         ],
         "psr-4": {
             "Tikematic\\": "app/"
-        }
+        },
+        "files": [
+            "app/Http/Helper.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {

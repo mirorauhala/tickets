@@ -2,7 +2,7 @@
 
 namespace Tikematic\Validators;
 
-use Tikematic\Ticket;
+use Tikematic\Models\Ticket;
 
 class OrderValidator {
     public function validateTicketTypeAndAvailablility($attribute, $value, $parameters, $validator) {
