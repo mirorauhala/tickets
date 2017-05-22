@@ -17,7 +17,7 @@ class CreateEventsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('location');
-            $table->string('details');
+            $table->string('details'); // get rid of this, use 'messages' table instead, can have multiple languages
             $table->string('url');
             $table->string('currency');
             $table->boolean('is_visible')->default(0);
