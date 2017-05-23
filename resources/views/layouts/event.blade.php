@@ -21,7 +21,9 @@
 
     <section class="application-contents">
         <div class="application-container">
-            @if($event->is_visible == 0)
+            @if((Auth::user() && Auth::user()->events->contains('id', $event->id)))
+                @yield('content')
+            @elseif($event->is_visible == 0)
                 <h1>Event is not yet published.</h1>
                 <p class="lead">Come again after a while.</p>
             @else
