@@ -17,6 +17,34 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Event Pages
+    |--------------------------------------------------------------------------
+    */
+
+    'pages' => [
+        'not-published' => [
+            'title' => 'Event is not yet published',
+            'subtext' => 'Please, try again later.',
+        ],
+        'details' => [
+            'title' => 'Details',
+        ],
+        'maps' => [
+            'title' => 'Maps',
+            'no-maps' => 'There are no maps to show at this time.',
+        ],
+        'tickets' => [
+            'title' => 'Tickets',
+            'no-tickets' => 'There are no tickets to show at this time.',
+        ],
+        'tournaments' => [
+            'title' => 'Tournaments',
+            'no-tournaments' => 'There are no tournaments to show at this time.',
+        ],
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
     | Event Admin Lines
     |--------------------------------------------------------------------------
     */

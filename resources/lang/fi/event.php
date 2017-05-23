@@ -17,6 +17,34 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Event Pages
+    |--------------------------------------------------------------------------
+    */
+
+    'pages' => [
+        'not-published' => [
+            'title' => 'Tapahtumaa ei ole vielä julkaistu',
+            'subtext' => 'Yritä myöhemmin uudelleen.',
+        ],
+        'details' => [
+            'title' => 'Tiedot',
+        ],
+        'maps' => [
+            'title' => 'Kartat',
+            'no-maps' => 'Tällä hetkellä karttoja ei ole.',
+        ],
+        'tickets' => [
+            'title' => 'Liput',
+            'no-tickets' => 'Tällä hetkellä lippuja ei ole.',
+        ],
+        'tournaments' => [
+            'title' => 'Kilpailut',
+            'no-tournaments' => 'Tällä hetkellä turnauksia ei ole.',
+        ],
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
     | Event Admin Lines
     |--------------------------------------------------------------------------
     */

@@ -2,11 +2,7 @@
 
 @section('content')
 
-<div class="row">
-    <div class="col-md-12">
-        <h1>Tickets</h1>
-    </div>
-</div>
+<h1>{{ __('event.pages.tickets.title') }}</h1>
 
 <br>
 
@@ -46,7 +42,7 @@
 
     </form>
 @else
-    <p>There are no tickets to show.</p>
+    <p>{{ __('event.pages.tickets.no-tickets') }}</p>
 @endif
 
 

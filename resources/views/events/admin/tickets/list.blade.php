@@ -5,7 +5,7 @@
     <p><a href="{{ route('events.admin.tickets.new') }}" class="btn btn-primary">{{ __('event.admin.pages.tickets.list.create-ticket') }}</a></p>
     @if(count($tickets) > 0)
         <div class="table-responsive">
-            <table class="table table-bordered">
+            <table class="table table-condensed table-bordered">
 
                 <thead>
                     <tr>
@@ -32,8 +32,8 @@
                             <td>{{ $ticket->maxAmountPerTransaction }}</td>
                             <td>{{ ($ticket->is_seatable == 1) ? "True" : "False"  }}</td>
                             <td>{{ ($ticket->is_sleepable ==1) ? "True" : "False" }}</td>
-                            <td>{{ $ticket->availableAt }}</td>
-                            <td>{{ $ticket->unavailableAt }}</td>
+                            <td title="{{ $ticket->availableAt->diffForHumans() }}">{{ $ticket->availableAt }}</td>
+                            <td title="{{ $ticket->unavailableAt->diffForHumans() }}">{{ $ticket->unavailableAt }}</td>
                             <td><a href="{{ route('events.admin.tickets.edit', ['id' => $ticket->id ]) }}">Edit</a></td>
                         </tr>
                     @endforeach

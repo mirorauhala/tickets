@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1>Tournaments</h1>
+<h1>{{ __('event.pages.tournaments.title') }}</h1>
 
-<p>There are no tournaments to show at this time.</p>
+<p>{{ __('event.pages.tournaments.no-tournaments') }}</p>
 @endsection

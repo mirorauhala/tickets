@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1>Maps</h1>
+<h1>{{ __('event.pages.maps.title') }}</h1>
 @if(count($maps) > 0)
     @foreach($maps as $map)
         <div class="row ticket">
@@ -17,7 +17,7 @@
         </div>
     @endforeach
 @else
-    <p>There are no tickets to show.</p>
+    <p>{{ __('event.pages.maps.no-maps') }}</p>
 @endif
 
 @endsection
