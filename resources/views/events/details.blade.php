@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1>{{ __('event.pages.details.title') }}</h1>
+<h1>{{ Helper::tra('event.pages.details.title') }}</h1>
 <p class="lead">Welcome to the ticket sales for Connection Lan: eSports 2017. In here you shall find event maps,
     tickets, and tournaments. Below we've briefly covered details that can come in handy.</p>
 

@@ -28,6 +28,7 @@ return [
         'email' => 'Sähköposti',
         'password' => 'Salasana',
         'remember-me' => 'Muista minut',
+        'no-account' => 'Etkä omista tiliä? Rekisteröidy.',
     ],
 
 

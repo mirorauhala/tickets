@@ -22,8 +22,8 @@
                         <li class="{{ Helper::route_active(['events.tournaments*'], ['events.admin*']) }}"><a href="{{ route('events.tournaments') }}">Tournaments</a></li>
                     </ul>
                 </li>
-                <li class="{{ Helper::route_active(['tickets*']) }}"><a href="{{ route('tickets') }}">{{ __('nav.my-tickets') }}</a></li>
-                <li class="{{ Helper::route_active(['tournaments*']) }}"><a href="{{ route('tournaments') }}">{{ __('nav.my-tournaments') }}</a></li>
+                <li class="{{ Helper::route_active(['tickets*']) }}"><a href="{{ route('tickets') }}">{{ Helper::tra('nav.my-tickets') }}</a></li>
+                <li class="{{ Helper::route_active(['tournaments*']) }}"><a href="{{ route('tournaments') }}">{{ Helper::tra('nav.my-tournaments') }}</a></li>
             </ul>
 
             @if(Auth::user() && count(Auth::user()->events) > 0)
@@ -36,16 +36,16 @@
 
             <div class="sidebar-nav-bottom">
                 <ul class="nav">
-                    <li class="{{ Helper::route_active(['settings*']) }}"><a href="{{ route('settings.profile') }}">{{ __('nav.settings') }}</a></li>
+                    <li class="{{ Helper::route_active(['settings*']) }}"><a href="{{ route('settings.profile') }}">{{ Helper::tra('nav.settings') }}</a></li>
 
                     @if (Auth::guest())
-                        <li class="{{ Helper::route_active(['login*']) }}"><a href="{{ route('login') }}">{{ __('nav.login') }}</a></li>
+                        <li class="{{ Helper::route_active(['login*']) }}"><a href="{{ route('login') }}">{{ Helper::tra('nav.login') }}</a></li>
                     @else
                         <li>
                             <a href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">
-                                {{ __('nav.logout') }}
+                                {{ Helper::tra('nav.logout') }}
                             </a>
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -57,7 +57,7 @@
 
                     <p class="legal">
                         <img src="/images/tikematic-small.svg" alt="Tikematic"><br>
-                        <a href="https://goo.gl/QhFTuI" target="_blank" rel="noopener">{{ __('nav.privacy-policy') }}</a> &nbsp; {{ __('nav.made-in') }}
+                        <a href="https://goo.gl/QhFTuI" target="_blank" rel="noopener">{{ Helper::tra('nav.privacy-policy') }}</a> &nbsp; {{ Helper::tra('nav.made-in') }}
                     </p>
 
                 </ul>

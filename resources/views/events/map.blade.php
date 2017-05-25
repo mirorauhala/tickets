@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1>{{ __('event.pages.maps.title') }} / {{ $map->name }}</h1>
+<h1>{{ Helper::tra('event.pages.maps.title') }} / {{ $map->name }}</h1>
 <p>{{ $map->description }}</p>
 
 </div>

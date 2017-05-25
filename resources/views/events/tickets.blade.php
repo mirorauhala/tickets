@@ -2,13 +2,19 @@
 
 @section('content')
 
-<h1>{{ __('event.pages.tickets.title') }}</h1>
+<h1>{{ Helper::tra('event.pages.tickets.title') }}</h1>
 
 <br>
 
 @if(count($tickets) > 0)
     <form method="POST" action="{{ route('order.view') }}">
         {{ csrf_field() }}
+
+        @if(count($errors) > 0)
+            <div class="alert alert-danger">
+                {{ $errors->first() }}
+            </div>
+        @endif
         @foreach($tickets as $key=>$ticket)
             <div class="row ticket">
                 <div class="col-sm-4 col-xs-9">
@@ -42,7 +48,7 @@
 
     </form>
 @else
-    <p>{{ __('event.pages.tickets.no-tickets') }}</p>
+    <p>{{ Helper::tra('event.pages.tickets.no-tickets') }}</p>
 @endif
 
 

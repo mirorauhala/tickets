@@ -3,8 +3,7 @@
 @section('content')
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
-        <br><br>
-        <h1 class="text-center">{{ __('auth.login.title') }}</h1>
+        <h1 class="text-center">{{ Helper::tra('auth.login.title') }}</h1>
         <br>
         <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">
             {{ csrf_field() }}
@@ -20,7 +19,7 @@
             </div>
 
             <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                <label for="password" class="control-label">{{ __('auth.login.password') }}</label>
+                <label for="password" class="control-label">{{ Helper::tra('auth.login.password') }}</label>
                 <input id="password" type="password" class="form-control" name="password" required>
                 @if ($errors->has('password'))
                     <span class="help-block">
@@ -33,7 +32,7 @@
                 <div class="col-md-6">
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> {{ __('auth.login.remember-me') }}
+                            <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> {{ Helper::tra('auth.login.remember-me') }}
                         </label>
                     </div>
                 </div>
@@ -42,11 +41,11 @@
             <div class="form-group">
                 <div class="col-md-8 col-md-offset-3">
                     <button type="submit" class="btn btn-primary">
-                        {{ __('form.button.login') }}
+                        {{ Helper::tra('form.button.login') }}
                     </button>
 
                     <a class="btn btn-link" href="{{ route('password.request') }}">
-                        {{ __('form.button.forgot-password') }}
+                        {{ Helper::tra('form.button.forgot-password') }}
                     </a>
                 </div>
             </div>
@@ -55,7 +54,7 @@
         <hr>
 
         <a class="btn btn-link" href="{{ route('register') }}">
-            Etkö omista tiliä? Rekisteröidy.
+            {{ Helper::tra('auth.login.no-account') }}
         </a>
     </div>
 </div>

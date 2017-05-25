@@ -1,6 +1,6 @@
 @extends('layouts.settings')
 
-@section('settings.title', __('settings.panel.title.transactions'))
+@section('settings.title', Helper::tra('settings.panel.title.transactions'))
 
 @section('content')
 
@@ -9,12 +9,12 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <td>{{ __('settings.transactions.code') }}</td>
-                    <td>{{ __('settings.transactions.title') }}</td>
-                    <td>{{ __('settings.transactions.amount') }}</td>
-                    <td>{{ __('settings.transactions.status') }}</td>
-                    <td>{{ __('settings.transactions.date') }}</td>
-                    <td>{{ __('settings.transactions.action') }}</td>
+                    <td>{{ Helper::tra('settings.transactions.code') }}</td>
+                    <td>{{ Helper::tra('settings.transactions.title') }}</td>
+                    <td>{{ Helper::tra('settings.transactions.amount') }}</td>
+                    <td>{{ Helper::tra('settings.transactions.status') }}</td>
+                    <td>{{ Helper::tra('settings.transactions.date') }}</td>
+                    <td>{{ Helper::tra('settings.transactions.action') }}</td>
                 </tr>
             </thead>
             <tbody>
@@ -32,6 +32,6 @@
         </table>
     </div>
 @else
-    <p>{{ __('settings.transactions.no-transactions') }}</p>
+    <p>{{ Helper::tra('settings.transactions.no-transactions') }}</p>
 @endif
 @endsection
