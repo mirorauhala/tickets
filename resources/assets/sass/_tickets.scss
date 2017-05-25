@@ -7,3 +7,44 @@
         border-bottom: none;
     }
 }
+
+.ticket-card {
+    background-color: #fff;
+    box-shadow: 0 3px 6px rgba(0,0,0,.16);
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ticket-details {
+    padding: 15px;
+    min-width: 70%;
+}
+
+.ticket-details h1 {
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+.ticket-details .text-muted {
+    font-size: 14px;
+}
+
+.ticket-details p {
+    margin-bottom: 0;
+}
+
+.ticket-action {
+    padding: 15px;
+    min-width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none !important;
+}
+
+.ticket-action {
+    min-width: 30%;
+}
