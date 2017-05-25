@@ -4,8 +4,10 @@
 
 @include('partials.nav.sidebar')
 <section class="application">
-    <div class="container">
-        @yield('content')
-    </div>
+    <section class="application-contents">
+        <div class="container">
+            @yield('content')
+        </div>
+    </section>
 </section>
 @endsection
