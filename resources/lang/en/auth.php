@@ -27,7 +27,8 @@ return [
         'title' => 'Log in',
         'email' => 'Email',
         'password' => 'Password',
-        'remember-me' => 'Remember me'
+        'remember-me' => 'Remember me',
+        'no-account' => 'Don\'t have an account? Register.',
     ],
 
 
