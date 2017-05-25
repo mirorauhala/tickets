@@ -65,11 +65,11 @@ class User extends Authenticatable
     }
 
     /**
-     * Get user's transactions.
+     * Get user's order items e.g. tickets.
      *
      * @return belongsToMany
      */
-    public function transactions() {
-        return $this->hasMany('Tikematic\Models\Transaction');
+    public function orderItems() {
+        return $this->hasMany('Tikematic\Models\Seat');
     }
 }
