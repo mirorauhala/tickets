@@ -91,11 +91,11 @@ return [
     |
     */
 
-    'nav.transactions'              => 'Transactions',
-    'panel.title.transactions'      => 'Transactions',
+    'nav.orders'                    => 'Orders',
+    'panel.title.orders'            => 'Orders',
 
-    'transactions' => [
-        'no-transactions'           => 'You have no transactions.',
+    'orders' => [
+        'no-orders'                 => 'You have no orders.',
         'code'                      => 'ID',
         'title'                     => 'Title',
         'payer'                     => 'Payer',
