@@ -28,7 +28,7 @@ class Event extends Model
      * @return hasMany
      */
     public function orders() {
-        return $this->hasMany('Tikematic\Models\Orders');
+        return $this->hasMany('Tikematic\Models\Order');
     }
 
     /**
