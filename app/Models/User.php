@@ -56,15 +56,6 @@ class User extends Authenticatable
     }
 
     /**
-     * Get user's tickets.
-     *
-     * @return belongsToMany
-     */
-    public function tickets() {
-        return $this->belongsToMany('Tikematic\Models\Ticket', 'user_ticket');
-    }
-
-    /**
      * Get user's orders.
      *
      * @return hasMany
