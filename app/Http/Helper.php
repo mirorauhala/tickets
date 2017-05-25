@@ -3,7 +3,7 @@
 namespace Tikematic\Http;
 
 use Log;
-use App\Exceptions\TranslationStringNotFoundException;
+use Tikematic\Exceptions\TranslationStringNotFoundException;
 use Illuminate\Support\Facades\Route;
 use GrahamCampbell\Markdown\Facades\Markdown;
 use Money\Currencies\ISOCurrencies;
