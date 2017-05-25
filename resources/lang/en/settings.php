@@ -83,25 +83,32 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Transactions
+    | Orders
     |--------------------------------------------------------------------------
     |
-    | The following language lines are used within the transactions table in
+    | The following language lines are used within the orders table in
     | settings.
     |
     */
 
     'nav.orders'                    => 'Orders',
-    'panel.title.orders'            => 'Orders',
 
-    'orders' => [
+    // a singular Order
+    'order' => [
+        'title'                     => 'Order',
         'no-orders'                 => 'You have no orders.',
-        'code'                      => 'ID',
-        'title'                     => 'Title',
-        'payer'                     => 'Payer',
-        'amount'                    => 'Amount',
-        'currency'                  => 'Currency',
-        'vat'                       => 'VAT',
+
+        'item-title'                => 'Reference',
+        'value'                     => 'Value',
+    ],
+
+    // all user's orders
+    'orders' => [
+        'title'                     => 'Orders',
+        'no-items'                  => 'There are no items in this order.',
+
+        'reference'                 => 'Reference',
+        'value'                     => 'Value',
         'status'                    => 'Status',
         'date'                      => 'Date of payment',
         'action'                    => 'Action',

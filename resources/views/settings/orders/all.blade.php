@@ -1,6 +1,6 @@
 @extends('layouts.settings')
 
-@section('settings.title', Helper::tra('settings.panel.title.orders'))
+@section('settings.title', Helper::tra('settings.orders.title'))
 
 @section('content')
 
@@ -9,9 +9,8 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <td>{{ Helper::tra('settings.orders.code') }}</td>
-                    <td>{{ Helper::tra('settings.orders.title') }}</td>
-                    <td>{{ Helper::tra('settings.orders.amount') }}</td>
+                    <td>{{ Helper::tra('settings.orders.reference') }}</td>
+                    <td>{{ Helper::tra('settings.orders.value') }}</td>
                     <td>{{ Helper::tra('settings.orders.status') }}</td>
                     <td>{{ Helper::tra('settings.orders.date') }}</td>
                     <td>{{ Helper::tra('settings.orders.action') }}</td>
@@ -20,12 +19,11 @@
             <tbody>
                 @foreach($orders as $order)
                     <tr class="{{ ($order->status == "pending") ? "info" : "" }}">
-                        <td>{{ $order->code }}</td>
-                        <td>{{ $order->title }}</td>
-                        <td>{{ Helper::decimalMoneyFormatter($order->total, $order->currency) }}</td>
+                        <td>{{ $order->reference }}</td>
+                        <td>{{ Helper::decimalMoneyFormatter($order->value, $order->currency) }}</td>
                         <td>{{ $order->status }}</td>
-                        <td>{{ $order->created_at }}</td>
-                        <td><a href="#">View</a></td>
+                        <td title="{{ $order->created_at->diffForHumans() }}">{{ $order->created_at }}</td>
+                        <td><a href="{{ route('settings.orders.specific', ['order' => $order->reference]) }}">View full order</a></td>
                     </tr>
                 @endforeach
             </tbody>

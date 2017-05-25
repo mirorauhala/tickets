@@ -83,24 +83,35 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Transactions
+    | Orders
     |--------------------------------------------------------------------------
     |
-    | The following language lines are used within the transactions table in
+    | The following language lines are used within the orders table in
     | settings.
     |
     */
 
-    'nav.transactions'              => 'Transaktiot',
-    'panel.title.transactions'      => 'Transaktiot',
+    'nav.orders'                    => 'Tilaukset',
 
-    'transactions' => [
-        'no-transactions'           => 'Ei ole yhtään transaktiota.',
-        'id'                        => 'ID',
-        'title'                     => 'Otsikko',
-        'cost'                      => 'Hinta',
-        'currency'                  => 'Valuutta',
-        'vat'                       => 'ALV',
+    // a singular Order
+    'order' => [
+        'title'                     => 'Tilaus',
+        'no-orders'                 => 'Sinulla ei ole tilauksia.',
+
+        'item-title'                => 'Tuote',
+        'value'                     => 'Arvo',
+    ],
+
+    // all user's orders
+    'orders' => [
+        'title'                     => 'Tilaukset',
+        'no-items'                  => 'Tilauksessa ei ole tuotteita.',
+
+        'reference'                 => 'Koodi',
+        'value'                     => 'Arvo',
+        'status'                    => 'Tila',
+        'date'                      => 'Ostopäivämäärä',
+        'action'                    => 'Toiminto',
     ],
 
 ];

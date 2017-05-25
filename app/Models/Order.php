@@ -12,7 +12,7 @@ class Order extends Model
      * @var array
      */
     protected $fillable = [
-        'title', 'value', 'status', 'ticket_id', 'event_id', 'user_id',
+        'reference', 'currency', 'value', 'status', 'payer_name', 'event_id', 'user_id',
     ];
 
     /**
@@ -43,6 +43,15 @@ class Order extends Model
     {
         return $query->where('status', '=', 'pending')
             ->orWhere('status', '=', 'paid');
+    }
+
+    /**
+     * Get order's items e.g. tickets.
+     *
+     * @return belongsToMany
+     */
+    public function items() {
+        return $this->hasMany('Tikematic\Models\OrderItem');
     }
 
 }
