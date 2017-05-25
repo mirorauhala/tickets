@@ -15,9 +15,13 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('reference');
             $table->string('title');
+            $table->string('barcode');
             $table->integer('value');
             $table->string('status');
+            $table->string('payer_name');
+            $table->dateTimeTz('release_lock_after')->nullable();
 
             // add possible boolean sleep fields here?
 
@@ -29,6 +33,9 @@ class CreateOrdersTable extends Migration
 
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
+
+            $table->integer('transaction_id')->unsigned()->nullable();
+            $table->foreign('transaction_id')->references('id')->on('transactions');
             $table->timestamps();
         });
     }
