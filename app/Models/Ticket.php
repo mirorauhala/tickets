@@ -28,7 +28,7 @@ class Ticket extends Model
      * @param \Illuminate\Database\Eloquent\Builder $query
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function scopeAvailable($query)
+    public function scopeAvailableAtThisTime($query)
     {
         return $query->where('availableAt', '<', Carbon::now())
             ->where('unavailableAt', '>', Carbon::now());
