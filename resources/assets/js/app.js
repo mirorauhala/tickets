@@ -6,6 +6,7 @@
  */
 
 require('./bootstrap');
+require('./qrcode.min.js');
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -29,3 +30,4 @@ const app = new Vue({
  * Add scripts for the application to work.
  */
 require('./sidebar');
+require('./qrcode');

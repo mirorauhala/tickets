@@ -24,8 +24,9 @@ class OrderRequest extends FormRequest
     public function rules()
     {
         return [
-            "tickets.*.id" => "required|validateTicketTypeAndAvailablility",
-            "tickets.*.amount" => "required|min:0",
+            "tickets" => "required|array",
+            "tickets.*.id" => "required|numeric|validateTicketAvailabilityAtThisTime|min:1",
+            "tickets.*.amount" => "required|numeric",
         ];
     }
 }

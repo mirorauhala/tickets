@@ -7,7 +7,7 @@
 <br>
 
 @if(count($tickets) > 0)
-    <form method="POST" action="{{ route('order.view') }}">
+    <form method="POST" action="{{ route('order.new') }}">
         {{ csrf_field() }}
 
         @if(count($errors) > 0)
@@ -35,13 +35,10 @@
         @endforeach
 
         <div class="row ticket">
-            <div class="col-sm-4 col-xs-9">
-
+            <div class="col-md-9 col-xs-3 text-right">
+                <!--You have pending orders-->
             </div>
-            <div class="col-sm-4 col-xs-3 text-right">
-
-            </div>
-            <div class="col-md-2 col-md-offset-2 col-sm-4 col-sm-offset-0 col-xs-5 col-xs-offset-7">
+            <div class="col-md-2 col-md-offset-1 col-sm-4 col-sm-offset-0 col-xs-5 col-xs-offset-7">
                 <input type="submit" class="btn btn-block btn-primary" value="Purchase">
             </div>
         </div>

@@ -2,6 +2,7 @@
 
 namespace Tikematic\Http\Controllers\User\Settings;
 
+use Tikematic\Models\Order;
 use Illuminate\Http\Request;
 use Tikematic\Http\Controllers\Controller;
 
@@ -28,9 +29,15 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function showSpecificOrder()
+    public function showSpecificOrder($order)
     {
-        return view('settings.orders.specific');
+        $order = Order::where('reference', $order)->firstOrFail();
+
+        return view('settings.orders.specific')
+            ->with([
+                "order" => $order,
+                "order_items" => $order->items,
+            ]);
     }
 
 }

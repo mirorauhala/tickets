@@ -26,7 +26,7 @@ class OrderController extends Controller
     public function viewEventOrders()
     {
         // do ugly hard code for event ID
-        $event = Event::with('orders')->findOrFail(1);
+        $event = Event::findOrFail(1);
 
         // restrict access to authorized users only
         $this->authorize('update', $event);

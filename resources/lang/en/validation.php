@@ -100,8 +100,11 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'tickets.*' => [
+            'validate_ticket_type_and_availablility' => 'Tickets are not available or you didn\'t choose any.',
+        ],
+        'tickets.*.id' => [
+            'required' => 'You must choose at least 1 ticket.',
         ],
     ],
 

@@ -13,3 +13,14 @@
     background-color: #cc7878;
     border-color: #9d5151;
 }
+
+.map .btn {
+    position: absolute;
+    padding: 0;
+    border-radius: 0;
+}
+
+.map .btn.active {
+    background-color: #6586d0;
+    border-color: #1c4fc1;
+}

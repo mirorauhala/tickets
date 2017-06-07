@@ -70,6 +70,6 @@ class User extends Authenticatable
      * @return belongsToMany
      */
     public function orderItems() {
-        return $this->hasMany('Tikematic\Models\Seat');
+        return $this->hasMany('Tikematic\Models\OrderItem');
     }
 }

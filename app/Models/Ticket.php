@@ -13,7 +13,7 @@ class Ticket extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'price', 'vat', 'currency', 'standalone', 'availableAt', 'unavailableAt', 'event_id',
+        'name', 'price', 'vat', 'reserved', 'maxAmountPerTransaction', 'availableAt', 'unavailableAt', 'is_seatable', 'is_sleepable', 'event_id',
     ];
 
     protected $dates = [

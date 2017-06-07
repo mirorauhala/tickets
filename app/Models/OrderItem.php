@@ -22,5 +22,12 @@ class OrderItem extends Model
      */
     protected $hidden = [];
 
-
+    /**
+     * Get items ticket.
+     *
+     * @return hasMany
+     */
+    public function ticket() {
+        return $this->belongsTo('Tikematic\Models\Ticket');
+    }
 }

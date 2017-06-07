@@ -28,6 +28,7 @@ Route::get('/auth/callback/discord', 'Auth\SocialiteController@callbackDiscord')
 */
 Route::get('/', 'Event\DetailsController@index')->name('events.details');
 Route::get('/tickets', 'User\TicketController@index')->name('tickets');
+Route::get('/tickets/{order}', 'User\TicketController@viewTicket')->name('tickets.view');
 Route::get('/tournaments', 'User\TournamentController@index')->name('tournaments');
 
 /*
@@ -57,15 +58,15 @@ Route::get('/event/admin/prices', 'EventAdmin\CustomerController@customers')->na
 Route::get('/event/admin/settings', 'EventAdmin\SettingsController@viewEventSettings')->name('events.admin.settings');
 Route::post('/event/admin/settings', 'EventAdmin\SettingsController@processEventSettings');
 
-
-
 /*
 |--------------------------------------------------------------------------
 | Ticket purchase routes
 |--------------------------------------------------------------------------
 */
 
-Route::post('/order/view', 'Order\OrderController@viewOrder')->name('order.view');
+Route::post('/order/new', 'Order\OrderController@createNewOrder')->name('order.new');
+Route::get('/order/view/{order}', 'Order\OrderController@viewOrder')->name('order.view');
+Route::post('/order/place', 'Order\OrderController@processOrderPlacement')->name('order.place');
 
 
 /*

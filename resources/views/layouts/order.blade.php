@@ -13,9 +13,11 @@
         </div>
     </section>
 
-    <div class="container">
-        <div class="row">
-            @yield('content')
+    <div class="application-contents">
+        <div class="container">
+            <div class="row">
+                @yield('content')
+            </div>
         </div>
     </div>
 </section>

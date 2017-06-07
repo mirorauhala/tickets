@@ -99,9 +99,11 @@ return [
     |
     */
 
+    'validate_ticket_type_and_availablility ' => 'Chosen tickets are not available.',
+
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'tickets.*' => [
+            'validate_ticket_type_and_availablility' => 'Liput eivät ole saatavilla tai et valinnut yhtään.',
         ],
     ],
 
