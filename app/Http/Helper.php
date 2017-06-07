@@ -82,5 +82,7 @@ class Helper {
             Log::info("Cannot get translate key for ". $key ." in " .app()->getLocale());
         }
 
+        return $key;
+
     }
 }
