@@ -18,6 +18,7 @@ class CreateOrderItemsTable extends Migration
             $table->string('title');
             $table->string('barcode');
             $table->integer('value');
+            $table->string('status');
             $table->dateTimeTz('release_lock_after')->nullable();
 
             $table->boolean('seatable')->default(0);
@@ -31,7 +32,7 @@ class CreateOrderItemsTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
 
             $table->integer('order_id')->unsigned();
-            $table->foreign('order_id')->references('id')->on('orders');
+            $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
             $table->timestamps();
         });
     }
