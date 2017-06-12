@@ -33,4 +33,15 @@ class Ticket extends Model
         return $query->where('availableAt', '<', Carbon::now())
             ->where('unavailableAt', '>', Carbon::now());
     }
+
+    /**
+     * Scope a query to only include available tickets.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeVisitorTicket($query)
+    {
+        return $query->where('is_seatable', false);
+    }
 }
