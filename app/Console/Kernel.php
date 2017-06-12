@@ -13,6 +13,7 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
+        \Tikematic\Console\Commands\ClearPendingOrders::class,
         \Tikematic\Console\Commands\PopulateBasicEventData::class,
     ];
 
@@ -24,8 +25,10 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')
-        //          ->hourly();
+
+        // clear pending tickets that are exceeding their 30 minute lock down
+        $schedule->command('orders:clear-pending-orders')
+                  ->everyMinute();
     }
 
     /**
