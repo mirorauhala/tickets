@@ -15,7 +15,6 @@
 @if(count($ticket) > 0)
 
     <h2>{{ $ticket->name }}</h2>
-    {{ env('PAYTRAIL_KEY', '13466') }}
     <p>Hinta: {{ Helper::decimalMoneyFormatter($ticket->price, "EUR") }}</p>
     <form action="{{ route('events.tickets.visitor') }}" method="post">
 
