@@ -41,4 +41,16 @@ class OrderItem extends Model
         return $query->where('status', '=', 'pending')
             ->orWhere('status', '=', 'paid');
     }
+
+    /**
+     * Scope a query to only include order items that are pending.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopePending($query)
+    {
+        return $query->where('status', '=', "pending");
+    }
+
 }
