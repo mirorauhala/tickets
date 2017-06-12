@@ -8,6 +8,7 @@ return [
     |--------------------------------------------------------------------------
     */
 
+    'automatic' => 'Automatically selected',
     'english' => 'English',
     'finnish' => 'Finnish',
 
