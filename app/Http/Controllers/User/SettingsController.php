@@ -43,6 +43,10 @@ class SettingsController extends Controller
             "first_name" => "required|max:255",
             "last_name" => "required|max:255",
             "email" => "required|email|max:255|unique:users,id,". $request->user()->id, // unique email with exception to this user
+            'street_address' => 'required',
+            'postal_code' => 'required',
+            'postal_office' => 'required',
+            'country_code' => 'required|max:2',
         ]);
 
         // save the user data
