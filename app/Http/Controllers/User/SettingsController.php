@@ -40,9 +40,8 @@ class SettingsController extends Controller
     {
         // validate the request
         $this->validate($request, [
-            "first_name" => "required|max:255",
-            "last_name" => "required|max:255",
-            "email" => "required|email|max:255|unique:users,id,". $request->user()->id, // unique email with exception to this user
+            'first_name' => 'required|max:255',
+            'last_name' => 'required|max:255',
             'street_address' => 'required',
             'postal_code' => 'required',
             'postal_office' => 'required',
@@ -64,8 +63,8 @@ class SettingsController extends Controller
         return redirect()
             ->route('settings.profile')
             ->with([
-                "flash_status" => "success",
-                "flash_message" => Helper::tra('settings.flash.profile'),
+                'flash_status' => 'success',
+                'flash_message' => Helper::tra('settings.flash.profile'),
             ]);
     }
 
