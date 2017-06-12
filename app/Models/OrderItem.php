@@ -30,4 +30,15 @@ class OrderItem extends Model
     public function ticket() {
         return $this->belongsTo('Tikematic\Models\Ticket');
     }
+    /**
+     * Scope a query to only include order items that are paid or pending.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopePaidOrPending($query)
+    {
+        return $query->where('status', '=', 'pending')
+            ->orWhere('status', '=', 'paid');
+    }
 }
