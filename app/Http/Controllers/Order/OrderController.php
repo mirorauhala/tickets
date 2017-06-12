@@ -3,10 +3,9 @@
 namespace Tikematic\Http\Controllers\Order;
 
 use Carbon\Carbon;
-use Tikematic\Models\{Map, Ticket, Order, OrderItem};
-use Tikematic\Models\Transaction;
+use Tikematic\Models\{Map, Ticket, Order, OrderItem, Transaction};
 use Illuminate\Http\Request;
-use Tikematic\Http\Requests\OrderRequest;
+use Tikematic\Http\Requests\{OrderRequest, VisitorOrderRequest};
 use Tikematic\Http\Controllers\Controller;
 
 use Paytrail\Object\UrlSet as PaytrailUrlSet;
@@ -313,4 +312,35 @@ class OrderController extends Controller
                 "tickets" => $request->tickets,
             ]);
     }
+
+
+    /**
+     * Validate visitor ticket paytrail callback.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function processVisitorOrderPlacement(VisitorOrderRequest $request)
+    {
+        // update order and order items' status to paid if they are not within lock perioid
+        if($order = Order::where("reference", $request->ORDER_NUMBER)->where('status', '!=', 'paid')->first()) {
+
+            // update the base order
+            $order->status = "paid";
+            $order->save();
+
+            // update order items
+            $order->items()->update([
+                "status" => "paid"
+            ]);
+
+
+            return redirect()->route('order.view', ['order' => $order->reference]);
+        } else {
+            dump("Error: order not found or already marked paid");
+        }
+
+    }
+
+
+
 }
