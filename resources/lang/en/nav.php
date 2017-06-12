@@ -15,6 +15,12 @@ return [
         'organizations' => 'Organizations',
     ],
 
+    'home' => 'Etusivu',
+    'details' => 'Details',
+    'map' => 'Map',
+    'tickets' => 'Tickets',
+    'tournaments' => 'Tournaments',
+
     // Personal
     'my-tickets' => 'My Tickets',
     'my-tournaments' => 'My Tournaments',

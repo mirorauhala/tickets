@@ -14,12 +14,12 @@
 
             <ul class="nav">
                 <li class="{{ Helper::route_active(['events*'], ['events.admin*']) }}">
-                    <a href="{{ route('events.details') }}">Home</a>
+                    <a href="{{ route('events.details') }}">{{ Helper::tra('nav.home') }}</a>
                     <ul class="nav">
-                        <li class="{{ Helper::route_active(['events.details*'], ['events.admin*']) }}"><a href="{{ route('events.details') }}">Details</a></li>
-                        <li class="{{ Helper::route_active(['events.maps*'], ['events.admin*']) }}"><a href="{{ route('events.maps') }}">Maps</a></li>
-                        <li class="{{ Helper::route_active(['events.tickets*'], ['events.admin*']) }}"><a href="{{ route('events.tickets') }}">Tickets</a></li>
-                        <li class="{{ Helper::route_active(['events.tournaments*'], ['events.admin*']) }}"><a href="{{ route('events.tournaments') }}">Tournaments</a></li>
+                        <li class="{{ Helper::route_active(['events.details*'], ['events.admin*']) }}"><a href="{{ route('events.details') }}">{{ Helper::tra('nav.details') }}</a></li>
+                        <li class="{{ Helper::route_active(['events.map*'], ['events.admin*']) }}"><a href="{{ route('events.map') }}">{{ Helper::tra('nav.map') }}</a></li>
+                        <li class="{{ Helper::route_active(['events.tickets*'], ['events.admin*']) }}"><a href="{{ route('events.tickets') }}">{{ Helper::tra('nav.tickets') }}</a></li>
+                        <li class="{{ Helper::route_active(['events.tournaments*'], ['events.admin*']) }}"><a href="{{ route('events.tournaments') }}">{{ Helper::tra('nav.tournaments') }}</a></li>
                     </ul>
                 </li>
                 <li class="{{ Helper::route_active(['tickets*']) }}"><a href="{{ route('tickets') }}">{{ Helper::tra('nav.my-tickets') }}</a></li>

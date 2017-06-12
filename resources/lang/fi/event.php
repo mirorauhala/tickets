@@ -10,7 +10,7 @@ return [
 
     'nav' => [
         'details'                   => 'Tietoa',
-        'maps'                      => 'Kartat',
+        'map'                       => 'Kartta',
         'tickets'                   => 'Liput',
         'tournaments'               => 'Kilpailut',
     ],

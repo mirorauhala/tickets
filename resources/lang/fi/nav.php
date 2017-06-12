@@ -15,6 +15,12 @@ return [
         'organizations' => 'Organisaatiot',
     ],
 
+    'home' => 'Etusivu',
+    'details' => 'Tiedot',
+    'map' => 'Kartta',
+    'tickets' => 'Liput',
+    'tournaments' => 'Turnaukset',
+
     // Personal
     'my-tickets' => 'Omat liput',
     'my-tournaments' => 'Omat turnaukset',

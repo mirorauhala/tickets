@@ -10,7 +10,7 @@ return [
 
     'nav' => [
         'details'                   => 'Details',
-        'maps'                      => 'Maps',
+        'map'                       => 'Map',
         'tickets'                   => 'Tickets',
         'tournaments'               => 'Tournaments'
     ],

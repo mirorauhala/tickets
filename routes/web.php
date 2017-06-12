@@ -36,8 +36,7 @@ Route::get('/tournaments', 'User\TournamentController@index')->name('tournaments
 | Event
 |--------------------------------------------------------------------------
 */
-Route::get('/event/map/{map}', 'Event\MapController@map')->name('events.map');
-Route::get('/event/maps', 'Event\MapController@maps')->name('events.maps');
+Route::get('/event/map', 'Event\MapController@map')->name('events.map');
 Route::get('/event/tickets', 'Event\TicketController@showTickets')->name('events.tickets');
 Route::get('/event/tickets/visitor', 'Event\TicketController@showVisitorTicket')->name('events.tickets.visitor');
 Route::post('/event/tickets/visitor', 'Event\TicketController@processVisitorTicket');
