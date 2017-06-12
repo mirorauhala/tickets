@@ -38,7 +38,10 @@ Route::get('/tournaments', 'User\TournamentController@index')->name('tournaments
 */
 Route::get('/event/map/{map}', 'Event\MapController@map')->name('events.map');
 Route::get('/event/maps', 'Event\MapController@maps')->name('events.maps');
-Route::get('/event/tickets', 'Event\TicketController@tickets')->name('events.tickets');
+Route::get('/event/tickets', 'Event\TicketController@showTickets')->name('events.tickets');
+Route::get('/event/tickets/visitor', 'Event\TicketController@showVisitorTicket')->name('events.tickets.visitor');
+Route::post('/event/tickets/visitor', 'Event\TicketController@processVisitorTicket');
+Route::get('/event/tickets/gamer', 'Event\TicketController@showGamerTickets')->name('events.tickets.gamer');
 Route::get('/event/tournaments', 'Event\TournamentController@tournaments')->name('events.tournaments');
 
 
@@ -66,7 +69,8 @@ Route::post('/event/admin/settings', 'EventAdmin\SettingsController@processEvent
 
 Route::post('/order/new', 'Order\OrderController@createNewOrder')->name('order.new');
 Route::get('/order/view/{order}', 'Order\OrderController@viewOrder')->name('order.view');
-Route::post('/order/place', 'Order\OrderController@processOrderPlacement')->name('order.place');
+Route::get('/order/place/gamer', 'Order\OrderController@processGamerOrderPlacement')->name('order.place.gamer');
+Route::get('/order/place/visitor', 'Order\OrderController@processVisitorOrderPlacement')->name('order.place.visitor');
 
 
 /*
