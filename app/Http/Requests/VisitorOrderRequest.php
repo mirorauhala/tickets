@@ -6,7 +6,7 @@ use Tikematic\Models\{OrderItem, Ticket};
 use Illuminate\Foundation\Http\FormRequest;
 use Paytrail\Http\Client as PaytrailClient;
 
-class VisitorOrderRequest extends FormRequest
+class PaytrailRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -63,7 +63,13 @@ class VisitorOrderRequest extends FormRequest
                 )
             ) {
 
-                $validator->errors()->add('ticket_amount', 'Not enough tickets left!');
+                $validator->errors()->add('custom_error', 'Payment checksum is invalid');
+
+                return view('errors.custom', [
+                    'error_title' => 'Payment checksum is invalid',
+                    'error_subtext' => 'Couldn\'t finish order. Contact support.'
+                ]);
+
             }
         });
     }
