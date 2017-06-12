@@ -2,6 +2,7 @@
 
 namespace Tikematic\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class OrderItem extends Model
@@ -30,6 +31,7 @@ class OrderItem extends Model
     public function ticket() {
         return $this->belongsTo('Tikematic\Models\Ticket');
     }
+
     /**
      * Scope a query to only include order items that are paid or pending.
      *
@@ -53,4 +55,15 @@ class OrderItem extends Model
         return $query->where('status', '=', "pending");
     }
 
+    /**
+     * Scope a query to only include order items that are exceeding their
+     * 30 minute lock.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeExceedingLockTime($query)
+    {
+        return $query->where('release_lock_after', '<', Carbon::now());
+    }
 }
