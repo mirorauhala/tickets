@@ -12,7 +12,7 @@ class OrderItem extends Model
      * @var array
      */
     protected $fillable = [
-        'title', 'barcode', 'value', 'release_lock_after', 'sleeps', 'airmattress', 'ticket_id', 'user_id', 'order_id',
+        'title', 'barcode', 'value', 'status', 'release_lock_after', 'sleeps', 'airmattress', 'ticket_id', 'user_id', 'order_id',
     ];
 
     /**
