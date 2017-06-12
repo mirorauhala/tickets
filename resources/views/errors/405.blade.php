@@ -1,5 +1,7 @@
 @extends('layouts.auth')
 
+@section('base.title', Helper::tra('errors.method-not-allowed.title'))
+
 @section('content')
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
