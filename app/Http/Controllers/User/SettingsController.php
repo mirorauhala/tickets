@@ -54,6 +54,10 @@ class SettingsController extends Controller
         $user->first_name = $request->first_name;
         $user->last_name = $request->last_name;
         $user->email = $request->email;
+        $user->street_address = $request->street_address;
+        $user->postal_code = $request->postal_code;
+        $user->postal_office = $request->postal_office;
+        $user->country_code = $request->country_code;
         $user->save();
 
         // return to view with flash message
