@@ -77,6 +77,10 @@ class PopulateBasicEventData extends Command
             'email' => 'john.doe@email.com',
             'password' => 'secret', // THIS IS FOR TESTING PURPOSES, NOT PRODUCTION
             'superuser' => true,
+            'street_address' => 'Ankkalinnantie 13',
+            'postal_code' => '00100',
+            'postal_office' => 'Helsinki',
+            'country_code' => 'FI',
         ]);
     }
 }

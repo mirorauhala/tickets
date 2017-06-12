@@ -21,6 +21,10 @@ class CreateUsersTable extends Migration
             $table->string('language')->nullable();
             $table->string('password');
             $table->string('superuser')->default(0);
+            $table->string('street_address');
+            $table->string('postal_code');
+            $table->string('postal_office');
+            $table->string('country_code');
             $table->rememberToken();
             $table->timestamps();
         });

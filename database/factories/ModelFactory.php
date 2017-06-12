@@ -21,6 +21,11 @@ $factory->define(Tikematic\Models\User::class, function (Faker\Generator $faker)
         'email' => $faker->unique()->safeEmail,
         'password' => $password ?: $password = 'secret',
         'remember_token' => str_random(10),
+
+        'street_address' => 'Ankkalinnantie 13',
+        'postal_code' => '00100',
+        'postal_office' => 'Helsinki',
+        'country_code' => 'FI',
     ];
 });
 
