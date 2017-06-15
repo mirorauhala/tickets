@@ -2,9 +2,6 @@
 
 @section('admin.content')
     <h1 id="adminTitle">Orders</h1>
-
-    {{ uniqid("YS") }}
-
     @if(count($orders) > 0)
         {{ $orders->links() }}
         <table class="table table-bordered">
