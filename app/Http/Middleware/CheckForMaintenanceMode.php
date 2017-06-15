@@ -40,6 +40,10 @@ class CheckForMaintenanceMode
         if ($this->app->isDownForMaintenance() && !$this->isIpWhiteListed($request)) {
             $data = json_decode(file_get_contents($this->app->storagePath().'/framework/down'), true);
             throw new MaintenanceModeException($data['time'], $data['retry'], $data['message']);
+        } elseif($this->app->isDownForMaintenance()) {
+            \Session::flash('system_maintenance_status', true);
+            \Session::save();
+
         }
         return $next($request);
     }
