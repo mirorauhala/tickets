@@ -35,7 +35,7 @@ class Ticket extends Model
     }
 
     /**
-     * Scope a query to only include available tickets.
+     * Scope a query to only include visitor tickets.
      *
      * @param \Illuminate\Database\Eloquent\Builder $query
      * @return \Illuminate\Database\Eloquent\Builder
@@ -43,5 +43,16 @@ class Ticket extends Model
     public function scopeVisitorTicket($query)
     {
         return $query->where('is_seatable', false);
+    }
+
+    /**
+     * Scope a query to only include gamer tickets.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeGamerTickets($query)
+    {
+        return $query->where('is_seatable', true);
     }
 }

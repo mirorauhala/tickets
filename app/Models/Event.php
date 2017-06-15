@@ -37,7 +37,7 @@ class Event extends Model
      * @return belongsToMany
      */
     public function maps() {
-        return $this->hasMany('Tikematic\Models\Map');
+        return $this->hasOne('Tikematic\Models\Map');
     }
 
     /**

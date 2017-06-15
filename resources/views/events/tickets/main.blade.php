@@ -6,19 +6,14 @@
 
 <br>
 <div class="row">
-    <div class="col-md-5">
-        <a class="thumbnail clearfix" href="{{ route('events.tickets.visitor') }}">
-            <div class="col-md-12">
-                <h2>Kävijälippu</h2>
-            </div>
-        </a>
-    </div>
-    <div class="col-md-5">
-        <a class="thumbnail clearfix" href="{{ route('events.tickets.gamer') }}">
-            <div class="col-md-12">
-                <h2>Pelaajalippu</h2>
-            </div>
-        </a>
-    </div>
+    @foreach($tickets as $ticket)
+        <div class="col-md-5">
+            <a class="thumbnail clearfix" href="{{ route('events.tickets.ticket', ['ticket' => $ticket->id]) }}">
+                <div class="col-md-12">
+                    <h2>{{ $ticket->name }}</h2>
+                </div>
+            </a>
+        </div>
+    @endforeach
 </div>
 @endsection

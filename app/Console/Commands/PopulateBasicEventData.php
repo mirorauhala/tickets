@@ -56,8 +56,8 @@ class PopulateBasicEventData extends Command
             $map->seats()->create([
                 'name' => '1A' . $i,
                 'status' => 'available',
-                'top' => 50,
-                'left' => 20 * $i + 150,
+                'top' => 90,
+                'left' => 15 * $i + 110,
             ]);
         }
 
@@ -66,8 +66,8 @@ class PopulateBasicEventData extends Command
             $map->seats()->create([
                 'name' => '1A' . ($i + 15),
                 'status' => 'available',
-                'top' => 70,
-                'left' => 20 * $i + 150,
+                'top' => 105,
+                'left' => 15 * $i + 110,
             ]);
         }
 

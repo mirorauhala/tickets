@@ -33,6 +33,15 @@ class OrderItem extends Model
     }
 
     /**
+     * Get item's seat.
+     *
+     * @return hasMany
+     */
+    public function seat() {
+        return $this->hasOne('Tikematic\Models\Seat');
+    }
+
+    /**
      * Scope a query to only include order items that are paid or pending.
      *
      * @param \Illuminate\Database\Eloquent\Builder $query

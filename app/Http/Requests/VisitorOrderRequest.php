@@ -4,9 +4,8 @@ namespace Tikematic\Http\Requests;
 
 use Tikematic\Models\{OrderItem, Ticket};
 use Illuminate\Foundation\Http\FormRequest;
-use Paytrail\Http\Client as PaytrailClient;
 
-class PaytrailRequest extends FormRequest
+class VisitorOrderRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,11 +25,8 @@ class PaytrailRequest extends FormRequest
     public function rules()
     {
         return [
-            "ORDER_NUMBER"      => "required",
-            "TIMESTAMP"         => "required",
-            "PAID"              => "required",
-            "METHOD"            => "required",
-            "RETURN_AUTHCODE"   => "required",
+            "ticket_id" => "required|validateTicketAvailabilityAtThisTime",
+            "ticket_amount" => "required|numeric|min:1",
         ];
     }
 
@@ -47,29 +43,24 @@ class PaytrailRequest extends FormRequest
         // validate ticket amount
         $validator->after(function ($validator) {
 
-            // make new PaytrailClient
-            $client = new PaytrailClient(
-                env('PAYTRAIL_KEY', '13466'),
-                env('PAYTRAIL_SECRET', '6pKF4jkv97zmqBJ3ZL8gUw5DfT2NMQ')
-            );
+            // get ticket
+            $ticket = Ticket::find($validator->getData()['ticket_id']);
 
-            $client->connect();
-            if (!$client->validateChecksum(
-                    $validator->getData()['RETURN_AUTHCODE'],
-                    $validator->getData()['ORDER_NUMBER'],
-                    $validator->getData()['TIMESTAMP'],
-                    $validator->getData()['PAID'],
-                    $validator->getData()['METHOD']
-                )
-            ) {
+            // ticket has a reserved amount, 0 means no tickets are reserved
+            if ($ticket->reserved > 0) {
 
-                $validator->errors()->add('custom_error', 'Payment checksum is invalid');
+                // get amount of paidOrLocked tickets
+                $paidOrPendingTickets = OrderItem::paidOrPending()->count();
 
-                return view('errors.custom', [
-                    'error_title' => 'Payment checksum is invalid',
-                    'error_subtext' => 'Couldn\'t finish order. Contact support.'
-                ]);
 
+                // maximum amount of tickets that can be reserved but the
+                // requested order can still continue
+                $maxTicketsReserved = $ticket->reserved - $validator->getData()['ticket_amount'];
+
+                // check that there are enough tickets left for the order to continue
+                if($paidOrPendingTickets > $maxTicketsReserved) {
+                    $validator->errors()->add('ticket_amount', 'Not enough tickets left!');
+                }
             }
         });
     }
