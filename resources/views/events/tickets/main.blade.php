@@ -17,7 +17,7 @@
             </div>
         @endforeach
     @else
-        <p>{{ Helper::tra('event.tickets.no-tickets')}}
+        <p>{{ Helper::tra('event.pages.tickets.no-tickets')}}
     @endif
 </div>
 @endsection
