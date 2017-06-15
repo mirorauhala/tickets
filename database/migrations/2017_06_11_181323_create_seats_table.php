@@ -17,11 +17,13 @@ class CreateSeatsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('status');
+            $table->integer('width')->nullable();
+            $table->integer('height')->nullable();
             $table->integer('top')->nullable();
             $table->integer('left')->nullable();
 
-            $table->integer('transaction_id')->unsigned()->nullable();
-            $table->foreign('transaction_id')->references('id')->on('transactions')->onDelete('cascade');
+            $table->integer('order_item_id')->unsigned()->nullable();
+            $table->foreign('order_item_id')->references('id')->on('order_items');
 
             $table->integer('map_id')->unsigned();
             $table->foreign('map_id')->references('id')->on('maps')->onDelete('cascade');
