@@ -1,12 +1,14 @@
 $(document).ready(function() {
 
+    if($("#qrcode")) {
+        new QRious({
+            element: document.getElementById('qrcode'),
+            level: 'H',
+            size: 250,
+            padding: 25,
+            value: $("#qrcode").data('qrcode')
+        });
 
-    var qrcode = new QRCode($(".qrcode"), {
-        text: $(".qrcode").data('qrcode'),
-        width: 128,
-        height: 128,
-        colorDark : "#000000",
-        colorLight : "#ffffff",
-        correctLevel : QRCode.CorrectLevel.L
-    });
+    }
+
 })

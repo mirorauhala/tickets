@@ -13,21 +13,14 @@
                 <div class="ticket-details">
                     <h1>{{ $order_item->title }}</h1>
                     <p>{{ Helper::decimalMoneyFormatter($order_item->value, "EUR") }}</p>
-                    @if($order_item->status == "pending")
-                        <p>Pending</p>
-                    @elseif($order_item->status == "paid")
-                        <p>Paid</p>
-                    @elseif($order_item->status == "unassigned")
-                        <p>Paid but unassigned</p>
-                    @endif
                 </div>
 
                 @if($order_item->status == "pending")
-                    <a href="{{ route('settings.orders.specific', ['order' => $order_item->reference ]) }}" class="ticket-action">
+                    <a href="{{ route('settings.orders.specific', ['order' => $order_item->order->reference ]) }}" class="ticket-action">
                         <span>Finish order</span>
                     </a>
                 @elseif($order_item->status == "paid")
-                    <a href="{{ route('tickets.view', ['order' => $order_item->reference ]) }}" class="ticket-action">
+                    <a href="{{ route('tickets.view', ['order' => $order_item->order->reference ]) }}" class="ticket-action">
                         <span>View ticket</span>
                     </a>
                 @elseif($order_item->status == "unassigned")

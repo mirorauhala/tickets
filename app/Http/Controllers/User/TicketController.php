@@ -3,7 +3,7 @@
 namespace Tikematic\Http\Controllers\User;
 
 use Auth;
-use Tikematic\Models\Order;
+use Tikematic\Models\{Order, OrderItem};
 use Illuminate\Http\Request;
 use Tikematic\Http\Controllers\Controller;
 
@@ -27,11 +27,11 @@ class TicketController extends Controller
     public function showPaidTickets()
     {
 
-        $order_items = Auth::user()->orderItems()->paid()->get();
+        $user = Auth::user()->with('orderItems.order')->first();
 
         return view('tickets.paid')
             ->with([
-                "order_items" => $order_items,
+                "order_items" => $user->orderItems->where('status', 'paid'),
             ]);
     }
 
@@ -43,11 +43,11 @@ class TicketController extends Controller
     public function showPendingTickets()
     {
 
-        $order_items = Auth::user()->orderItems()->pending()->get();
+        $user = Auth::user()->with('orderItems.order')->first();
 
         return view('tickets.pending')
             ->with([
-                "order_items" => $order_items,
+                "order_items" => $user->orderItems->where('status', 'pending'),
             ]);
     }
 
@@ -59,11 +59,11 @@ class TicketController extends Controller
     public function showUnassignedTickets()
     {
 
-        $order_items = Auth::user()->orderItems()->unassigned()->get();
+        $user = Auth::user()->with('orderItems.order')->first();
 
         return view('tickets.unassigned')
             ->with([
-                "order_items" => $order_items,
+                "order_items" => $user->orderItems->where('status', 'unassigned'),
             ]);
     }
 
@@ -88,13 +88,13 @@ class TicketController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function viewTicket($order)
+    public function viewTicket($barcode)
     {
-        $ticket = Order::where('reference', $order)->first();
+        $order_item = OrderItem::where('barcode', $barcode)->first();
 
         return view('tickets.view')
             ->with([
-                "ticket" => $ticket,
+                "order_item" => $order_item,
             ]);
     }
 }

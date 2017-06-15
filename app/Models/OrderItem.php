@@ -38,7 +38,16 @@ class OrderItem extends Model
      * @return hasMany
      */
     public function seat() {
-        return $this->hasOne('Tikematic\Models\Seat');
+        return $this->belongsTo('Tikematic\Models\Seat');
+    }
+
+    /**
+     * Get item's order.
+     *
+     * @return hasMany
+     */
+    public function order() {
+        return $this->belongsTo('Tikematic\Models\Order');
     }
 
     /**

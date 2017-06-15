@@ -10,7 +10,7 @@ require('./crisp');
  */
 
 require('./bootstrap');
-require('./qrcode.min.js');
+window.QRious = require('qrious');
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
