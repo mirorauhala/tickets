@@ -36,3 +36,4 @@ const app = new Vue({
 require('./sidebar');
 require('./qrcode');
 require('./numberIncrease');
+require('./ga');
