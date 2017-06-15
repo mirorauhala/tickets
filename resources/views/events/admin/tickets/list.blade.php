@@ -25,7 +25,7 @@
                     @foreach($tickets as $ticket)
                         <tr>
                             <td>{{ $ticket->name }}</td>
-                            <td>{{ $ticket->price }}</td>
+                            <td>{{ Helper::decimalMoneyFormatter($ticket->price, "EUR") }}</td>
                             <td>{{ $ticket->vat }}</td>
                             <td>{{ $ticket->reserved }}</td>
                             <td>{{ $ticket->maxAmountPerTransaction }}</td>
