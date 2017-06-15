@@ -2,3 +2,8 @@
 *.css linguist-vendored
 *.scss linguist-vendored
 *.js linguist-vendored
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.ttf binary
+*.gif binary
