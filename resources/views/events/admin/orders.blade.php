@@ -8,7 +8,6 @@
             <thead>
                 <tr>
                     <td>Reference</td>
-                    <td>Title</td>
                     <td>Value</td>
                     <td>Status</td>
                     <td>Name</td>
@@ -19,8 +18,7 @@
                 @foreach($orders as $order)
                     <tr>
                         <td>{{ $order->reference }}</td>
-                        <td>{{ $order->title }}</td>
-                        <td>{{ $order->value }}</td>
+                        <td>{{ Helper::decimalMoneyFormatter($order->value, "EUR") }}</td>
                         <td>{{ $order->status }}</td>
                         <td>{{ $order->payer_name }}</td>
                         <td><a href="#">View complete transaction</a></td>
