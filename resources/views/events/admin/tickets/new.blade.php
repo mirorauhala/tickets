@@ -71,21 +71,6 @@
                 </span>
             @endif
         </div>
-        <div class="form-group{{ $errors->has('ticket_sleepable') ? ' has-error' : '' }}">
-            <label for="ticket_sleepable" class="control-label">{{ Helper::tra('event.admin.pages.tickets.new.form.ticket-sleepable') }}</label>
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox" name="ticket_sleepable" id="ticket_sleepable" value="0">
-                    {{ Helper::tra('event.admin.pages.tickets.new.form.ticket-sleepable-checkbox-label') }}
-                </label>
-            </div>
-
-            @if ($errors->has('ticket_sleepable'))
-                <span class="help-block">
-                    <strong>{{ $errors->first('ticket_sleepable') }}</strong>
-                </span>
-            @endif
-        </div>
         <div class="form-group{{ $errors->has('ticket_availableAt') ? ' has-error' : '' }}">
             <label for="ticket_availableAt" class="control-label">{{ Helper::tra('event.admin.pages.tickets.new.form.ticket-availableAt') }}</label>
             <input type="text" class="form-control" id="ticket_availableAt" name="ticket_availableAt">

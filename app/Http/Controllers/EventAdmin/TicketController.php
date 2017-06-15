@@ -79,7 +79,6 @@ class TicketController extends Controller
             "reserved"              => $request->ticket_reserved,
             "max"                   => $request->ticket_max,
             "is_seatable"           => $request->ticket_seatable,
-            "is_sleepable"          => $request->ticket_sleepable,
             "availableAt"           => $request->ticket_availableAt,
             "unavailableAt"         => $request->ticket_unavailableAt,
         ]);
@@ -133,7 +132,6 @@ class TicketController extends Controller
         $ticket->reserved                      = $request->ticket_reserved;
         $ticket->maxAmountPerTransaction       = $request->ticket_max;
         $ticket->is_seatable                   = $request->ticket_seatable;
-        $ticket->is_sleepable                  = $request->ticket_sleepable;
         $ticket->availableAt                   = $request->ticket_availableAt;
         $ticket->unavailableAt                 = $request->ticket_unavailableAt;
         $ticket->save();
