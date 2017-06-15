@@ -20,16 +20,64 @@ class TicketController extends Controller
     }
 
     /**
-     * Show the user's tickets.
+     * Show the user's paid tickets.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function showPaidTickets()
     {
 
-        $order_items = Auth::user()->orderItems()->get();
+        $order_items = Auth::user()->orderItems()->paid()->get();
 
-        return view('tickets.all')
+        return view('tickets.paid')
+            ->with([
+                "order_items" => $order_items,
+            ]);
+    }
+
+    /**
+     * Show the user's pending tickets.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showPendingTickets()
+    {
+
+        $order_items = Auth::user()->orderItems()->pending()->get();
+
+        return view('tickets.pending')
+            ->with([
+                "order_items" => $order_items,
+            ]);
+    }
+
+    /**
+     * Show the user's unassigned tickets.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showUnassignedTickets()
+    {
+
+        $order_items = Auth::user()->orderItems()->unassigned()->get();
+
+        return view('tickets.unassigned')
+            ->with([
+                "order_items" => $order_items,
+            ]);
+    }
+
+    /**
+     * Show the user's unassigned tickets.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showTicketRedeemView()
+    {
+
+        $order_items = Auth::user()->orderItems()->unassigned()->get();
+
+        return view('tickets.redeem')
             ->with([
                 "order_items" => $order_items,
             ]);

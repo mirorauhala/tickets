@@ -6,7 +6,6 @@
 @if(count($order_items) > 0)
     @foreach($order_items as $order_item)
         <div class="col-lg-5 col-md-6 col-sm-6">
-
             <div class="ticket-card">
                 <div class="ticket-details">
                     <h1>{{ $order_item->title }}</h1>
@@ -21,7 +20,7 @@
                 </div>
 
                 @if($order_item->status == "pending")
-                    <a href="{{ route('order.view', ['order' => $order_item->reference ]) }}" class="ticket-action">
+                    <a href="{{ route('settings.orders.specific', ['order' => $order_item->reference ]) }}" class="ticket-action">
                         <span>Finish order</span>
                     </a>
                 @elseif($order_item->status == "paid")
@@ -33,14 +32,14 @@
                         <span>Assign</span>
                     </a>
                 @endif
-
-
                 </a>
             </div>
         </div>
     @endforeach
 @else
-    <p>There are no tickets to show at this time.</p>
+    <div class="col-md-12">
+        <p>{{ Helper::tra('tickets.no-unassigned') }}</p>
+    </div>
 @endif
 </div>
 @endsection

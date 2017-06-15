@@ -54,6 +54,17 @@ class OrderItem extends Model
     }
 
     /**
+     * Scope a query to only include order items that are paid.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopePaid($query)
+    {
+        return $query->where('status', '=', "paid");
+    }
+
+    /**
      * Scope a query to only include order items that are pending.
      *
      * @param \Illuminate\Database\Eloquent\Builder $query
@@ -62,6 +73,17 @@ class OrderItem extends Model
     public function scopePending($query)
     {
         return $query->where('status', '=', "pending");
+    }
+
+    /**
+     * Scope a query to only include order items that are unassigned.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeUnassigned($query)
+    {
+        return $query->where('status', '=', "unassigned");
     }
 
     /**

@@ -22,7 +22,7 @@
                         <li class="{{ Helper::route_active(['events.tournaments*'], ['events.admin*']) }}"><a href="{{ route('events.tournaments') }}">{{ Helper::tra('nav.tournaments') }}</a></li>
                     </ul>
                 </li>
-                <li class="{{ Helper::route_active(['tickets*']) }}"><a href="{{ route('tickets') }}">{{ Helper::tra('nav.my-tickets') }}</a></li>
+                <li class="{{ Helper::route_active(['tickets*']) }}"><a href="{{ route('tickets.paid') }}">{{ Helper::tra('nav.my-tickets') }}</a></li>
                 <li class="{{ Helper::route_active(['tournaments*']) }}"><a href="{{ route('tournaments') }}">{{ Helper::tra('nav.my-tournaments') }}</a></li>
             </ul>
 

@@ -15,6 +15,8 @@
         </div>
     </section>
 
+    @include('partials.nav.topbar-tickets')
+
     <section class="application-contents">
         <div class="application-container">
             @yield('content')

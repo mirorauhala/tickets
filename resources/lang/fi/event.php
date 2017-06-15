@@ -35,6 +35,7 @@ return [
         ],
         'tickets' => [
             'title' => 'Liput',
+            'payment-note' => 'Lippujen maksu täytyy suorittaa 1 tunnin sisällä tilauksen aloittamisesta.',
             'no-tickets' => 'Tällä hetkellä lippuja ei ole.',
         ],
         'tournaments' => [

@@ -35,6 +35,7 @@ return [
         ],
         'tickets' => [
             'title' => 'Tickets',
+            'payment-note' => 'Ticket payment must be completed within 1 hour of ordering.',
             'no-tickets' => 'There are no tickets to show at this time.',
         ],
         'tournaments' => [
