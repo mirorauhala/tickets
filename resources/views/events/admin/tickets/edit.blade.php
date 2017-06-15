@@ -6,7 +6,7 @@
     <form method="post" action="{{ route('events.admin.tickets.edit', ['ticket' => $ticket->id]) }}">
         {{ csrf_field() }}
         <div class="form-group{{ $errors->has('ticket_name') ? ' has-error' : '' }}">
-            <label for="ticket_name" class="control-label">{{ __('event.admin.pages.tickets.new.form.ticket-name') }}</label>
+            <label for="ticket_name" class="control-label">{{ Helper::tra('event.admin.pages.tickets.new.form.ticket-name') }}</label>
 
             <input type="text" class="form-control" id="ticket_name" name="ticket_name" value="{{ $ticket->name }}">
 
@@ -17,7 +17,7 @@
             @endif
         </div>
         <div class="form-group{{ $errors->has('ticket_price') ? ' has-error' : '' }}">
-            <label for="ticket_price" class="control-label">{{ __('event.admin.pages.tickets.new.form.ticket-price') }}</label>
+            <label for="ticket_price" class="control-label">{{ Helper::tra('event.admin.pages.tickets.new.form.ticket-price') }}</label>
             <input type="number" class="form-control" id="ticket_price" name="ticket_price" value="{{ $ticket->price }}">
 
             @if ($errors->has('ticket_price'))
@@ -27,7 +27,7 @@
             @endif
         </div>
         <div class="form-group{{ $errors->has('ticket_vat') ? ' has-error' : '' }}">
-            <label for="ticket_vat" class="control-label">{{ __('event.admin.pages.tickets.new.form.ticket-vat') }}</label>
+            <label for="ticket_vat" class="control-label">{{ Helper::tra('event.admin.pages.tickets.new.form.ticket-vat') }}</label>
             <input type="number" class="form-control" id="ticket_vat" name="ticket_vat" value="{{ $ticket->vat }}">
 
             @if ($errors->has('ticket_vat'))
@@ -37,7 +37,7 @@
             @endif
         </div>
         <div class="form-group{{ $errors->has('ticket_reserved') ? ' has-error' : '' }}">
-            <label for="ticket_reserved" class="control-label">{{ __('event.admin.pages.tickets.new.form.ticket-reserved') }}</label>
+            <label for="ticket_reserved" class="control-label">{{ Helper::tra('event.admin.pages.tickets.new.form.ticket-reserved') }}</label>
             <input type="number" class="form-control" id="ticket_reserved" name="ticket_reserved" value="{{ $ticket->reserved }}">
 
             @if ($errors->has('ticket_reserved'))
@@ -47,7 +47,7 @@
             @endif
         </div>
         <div class="form-group{{ $errors->has('ticket_max') ? ' has-error' : '' }}">
-            <label for="ticket_max" class="control-label">{{ __('event.admin.pages.tickets.new.form.ticket-max') }}</label>
+            <label for="ticket_max" class="control-label">{{ Helper::tra('event.admin.pages.tickets.new.form.ticket-max') }}</label>
             <input type="number" class="form-control" id="ticket_max" name="ticket_max" value="{{ $ticket->maxAmountPerTransaction }}">
 
             @if ($errors->has('ticket_max'))
@@ -57,11 +57,11 @@
             @endif
         </div>
         <div class="form-group{{ $errors->has('ticket_seatable') ? ' has-error' : '' }}">
-            <label for="ticket_seatable" class="control-label">{{ __('event.admin.pages.tickets.new.form.ticket-seatable') }}</label>
+            <label for="ticket_seatable" class="control-label">{{ Helper::tra('event.admin.pages.tickets.new.form.ticket-seatable') }}</label>
             <div class="checkbox">
                 <label>
                     <input type="checkbox" name="ticket_seatable" id="ticket_seatable" value="0" {{ ($ticket->is_seatable == 1) ? "checked" : ""  }}>
-                    {{ __('event.admin.pages.tickets.new.form.ticket-seatable-checkbox-label') }}
+                    {{ Helper::tra('event.admin.pages.tickets.new.form.ticket-seatable-checkbox-label') }}
                 </label>
             </div>
 
@@ -72,11 +72,11 @@
             @endif
         </div>
         <div class="form-group{{ $errors->has('ticket_sleepable') ? ' has-error' : '' }}">
-            <label for="ticket_sleepable" class="control-label">{{ __('event.admin.pages.tickets.new.form.ticket-sleepable') }}</label>
+            <label for="ticket_sleepable" class="control-label">{{ Helper::tra('event.admin.pages.tickets.new.form.ticket-sleepable') }}</label>
             <div class="checkbox">
                 <label>
                     <input type="checkbox" name="ticket_sleepable" id="ticket_sleepable" value="0" {{ ($ticket->is_sleepable == 1) ? "checked" : ""  }}>
-                    {{ __('event.admin.pages.tickets.new.form.ticket-sleepable-checkbox-label') }}
+                    {{ Helper::tra('event.admin.pages.tickets.new.form.ticket-sleepable-checkbox-label') }}
                 </label>
             </div>
 
@@ -87,7 +87,7 @@
             @endif
         </div>
         <div class="form-group{{ $errors->has('ticket_availableAt') ? ' has-error' : '' }}">
-            <label for="ticket_availableAt" class="control-label">{{ __('event.admin.pages.tickets.new.form.ticket-availableAt') }}</label>
+            <label for="ticket_availableAt" class="control-label">{{ Helper::tra('event.admin.pages.tickets.new.form.ticket-availableAt') }}</label>
             <input type="text" class="form-control" id="ticket_availableAt" name="ticket_availableAt" value="{{ $ticket->availableAt }}">
 
             @if ($errors->has('ticket_availableAt'))
@@ -97,7 +97,7 @@
             @endif
         </div>
         <div class="form-group{{ $errors->has('ticket_unavailableAt') ? ' has-error' : '' }}">
-            <label for="ticket_unavailableAt" class="control-label">{{ __('event.admin.pages.tickets.new.form.ticket-unavailableAt') }}</label>
+            <label for="ticket_unavailableAt" class="control-label">{{ Helper::tra('event.admin.pages.tickets.new.form.ticket-unavailableAt') }}</label>
             <input type="text" class="form-control" id="ticket_aunvailableAt" name="ticket_unavailableAt" value="{{ $ticket->unavailableAt }}">
 
             @if ($errors->has('ticket_unavailableAt'))
@@ -107,7 +107,7 @@
             @endif
         </div>
         <div class="form-group">
-            <button type="submit" class="btn btn-primary">{{ __('form.button.update') }}</button>
+            <button type="submit" class="btn btn-primary">{{ Helper::tra('form.button.update') }}</button>
         </div>
     </form>
 

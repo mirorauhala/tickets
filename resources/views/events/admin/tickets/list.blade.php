@@ -1,8 +1,8 @@
 @extends('layouts.event-admin')
 
 @section('admin.content')
-    <h1 id="adminTitle">{{ __('event.admin.pages.tickets.list.title') }}</h1>
-    <p><a href="{{ route('events.admin.tickets.new') }}" class="btn btn-primary">{{ __('event.admin.pages.tickets.list.create-ticket') }}</a></p>
+    <h1 id="adminTitle">{{ Helper::tra('event.admin.pages.tickets.list.title') }}</h1>
+    <p><a href="{{ route('events.admin.tickets.new') }}" class="btn btn-primary">{{ Helper::tra('event.admin.pages.tickets.list.create-ticket') }}</a></p>
     @if(count($tickets) > 0)
         <div class="table-responsive">
             <table class="table table-condensed table-bordered">
@@ -42,7 +42,7 @@
             </table>
         </div>
     @else
-        <p>{{ __('event.admin.pages.tickets.list.no-tickets') }}</p>
+        <p>{{ Helper::tra('event.admin.pages.tickets.list.no-tickets') }}</p>
     @endif
 
 
