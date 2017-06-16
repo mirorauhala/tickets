@@ -27,7 +27,9 @@ class TicketController extends Controller
     public function showPaidTickets()
     {
 
-        $user = Auth::user()->with('orderItems.order')->first();
+        $user = Auth::user();
+
+        $user->load('orderItems.order');
 
         return view('tickets.paid')
             ->with([
