@@ -54,7 +54,7 @@ class ConnectionLanSeats extends Command
         ]);
 
         $proTicket = factory(\Tikematic\Models\Ticket::class)->create([
-            'name' => 'Pro Ticket',
+            'name' => 'Battery Premium',
             'price' => 7000,
             'is_seatable' => 1,
             'event_id' => 1,
