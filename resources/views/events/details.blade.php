@@ -3,18 +3,27 @@
 @section('content')
 
 <h1>{{ Helper::tra('event.pages.details.title') }}</h1>
-<p class="lead">Welcome to the ticket sales for Connection Lan: eSports 2017. In here you shall find event maps,
-    tickets, and tournaments. Below we've briefly covered details that can come in handy.</p>
+<p class="lead">Tervetuloa Connection Lan: eSports 2017 tapahtuman lipunmyyntiin. Täältä löydät tapahtuman kartat, liput, sekä turnaukset.
+    Alla on myös muuta tietoa joka saattaa tulla hyvään tarpeeseen.</p>
 
-<h2>Tickets</h2>
-<p>To participate in this event you'll need a ticket. We offer multiple ticket types to best suit your needs. You
-    can view the prices and offerings on the <a href="#">tickets</a> page. All ticket types are valid for the whole event period.</p>
+<h2>Liput</h2>
+<p>Ollaksesi osa tapahtumaa tarvitset lipun. Tarjoamme useita eri lipputyyppejä joista voit valita sen minkä sopii sinulle parhaiten.
+    Kaikki lipputyypit ovat voimassa koko tapahtuman ajan.</p>
 
-<h2>Payment methods</h2>
-<p>Tikematic accepts the most major Finnish banks. Here is a complete list: Nordea, Osuuspankki, Danske Bank, Ålandsbanken,
+<p>Lipun ostaminen menee seuraavasti:</p>
+<ol>
+    <li>Valitset minkä lipputyypin haluat.</li>
+    <li>Valitset montako kappaletta.</li>
+    <li>Siirryt maksuun.</li>
+    <li>Tässä vaiheessa sinulla on 1 tunti aikaa suorittaa maksu tai liput vapautetaan.</li>
+    <li>Tulet takaisin järjestelmään, jossa voit valita haluamasi paikat mikäli lipputyyppisi sen mahdollistaa.</li>
+</ol>
+
+<p>Voit katsoa lippuvaihtoehdot <a href="{{ route('events.tickets') }}">liput</a> -sivulta.</p>
+
+<h2>Maksuvaihtoehdot</h2>
+<p>Hyväksymme Suomen suurimmat verkkopankit maksuvaihtoehtoina. Liput maksetaan oston yhteydessä. Tässä vielä koko lista pankeista: Nordea, Osuuspankki, Danske Bank, Ålandsbanken,
     Handelsbanken, Aktia, POP Pankki, Säästöpankki, S-Pankki, Visa, MasterCard, American Express, and Oma
-    Säästöpankki. Payments are handeled by Paytrail Oyj.</p>
-
-<h2>Arriving to the venue</h2>
+    Säästöpankki. Maksut käsittelee Paytrail Oyj.</p>
 
 @endsection
