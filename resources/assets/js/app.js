@@ -10,6 +10,7 @@ require('./crisp');
  */
 
 require('./bootstrap');
+require('./tooltip');
 window.QRious = require('qrious');
 
 /**
