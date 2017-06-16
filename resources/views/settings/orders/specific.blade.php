@@ -31,7 +31,7 @@
     </table>
 </div>
 
-<h3>List of items</h3>
+<h3>Lista tuotteista</h3>
 
 @if(count($errors) > 0)
     @foreach($errors->all() as $error)
@@ -76,8 +76,9 @@
                     @endforeach
                 </tbody>
             </table>
-
-            <input type="submit" class="btn btn-primary">
+            @if(count($count_seats) > 0)
+                <input type="submit" class="btn btn-primary" value="Varaa paikat">
+            @endif
         </form>
     </div>
 @else
