@@ -21,6 +21,7 @@ class CreateOrdersTable extends Migration
             $table->integer('vat');
             $table->string('status');
             $table->string('payer_name');
+            $table->dateTimeTz('release_lock_after')->nullable();
 
             $table->integer('event_id')->unsigned();
             $table->foreign('event_id')->references('id')->on('events');
