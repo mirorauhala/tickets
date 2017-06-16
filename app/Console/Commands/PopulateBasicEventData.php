@@ -50,27 +50,6 @@ class PopulateBasicEventData extends Command
             'description' => 'This map actually is located on the second floor but we chose to keep it easier for people to understand that the event\'s maps don\'t start from the second floor and wonder where the first floor is.',
         ]);
 
-
-        // first row of seats
-        for($i = 1; $i <= 15; $i++) {
-            $map->seats()->create([
-                'name' => '1A' . $i,
-                'status' => 'available',
-                'top' => 90,
-                'left' => 15 * $i + 110,
-            ]);
-        }
-
-        // second row of seats
-        for($i = 1; $i <= 15; $i++) {
-            $map->seats()->create([
-                'name' => '1A' . ($i + 15),
-                'status' => 'available',
-                'top' => 105,
-                'left' => 15 * $i + 110,
-            ]);
-        }
-
         factory(\Tikematic\Models\User::class)->create([
             'first_name' => 'john',
             'last_name' => 'doe',
