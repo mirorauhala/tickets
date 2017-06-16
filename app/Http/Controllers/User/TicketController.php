@@ -45,7 +45,9 @@ class TicketController extends Controller
     public function showPendingTickets()
     {
 
-        $user = Auth::user()->with('orderItems.order')->first();
+        $user = Auth::user();
+
+        $user->load('orderItems.order');
 
         return view('tickets.pending')
             ->with([
@@ -61,7 +63,9 @@ class TicketController extends Controller
     public function showUnassignedTickets()
     {
 
-        $user = Auth::user()->with('orderItems.order')->first();
+        $user = Auth::user();
+
+        $user->load('orderItems.order');
 
         return view('tickets.unassigned')
             ->with([
