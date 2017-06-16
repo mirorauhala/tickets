@@ -50,6 +50,9 @@ class OrderController extends Controller
         // order reference
         $order_reference = strtoupper(bin2hex(openssl_random_pseudo_bytes(6)));
 
+        // order lock release time
+        $release_lock_after = Carbon::now()->addHour();
+
         // create base order
         $order = $request->user()->orders()->create([
             "reference" => $order_reference,
@@ -58,6 +61,7 @@ class OrderController extends Controller
             "vat" => 10,
             "status" => "pending",
             "payer_name" => $request->user()->full_name(),
+            "payer_name" => $release_lock_after,
             "event_id" => 1,
         ]);
 
@@ -70,7 +74,7 @@ class OrderController extends Controller
                 "barcode"               => strtoupper(bin2hex(openssl_random_pseudo_bytes(6))),
                 "value"                 => $ticket->price,
                 "status"                => "pending",
-                "release_lock_after"    => Carbon::now()->addHour(),
+                "release_lock_after"    => $release_lock_after,
                 "user_id"               => $request->user()->id,
                 "ticket_id"             => $ticket->id,
             ]);
