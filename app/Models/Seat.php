@@ -45,4 +45,15 @@ class Seat extends Model
     {
         return $query->where('status', '=', 'available');
     }
+
+    /**
+     * Scope a query to only include seats that are of a given ticket type.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeTicketType($query, $type)
+    {
+        return $query->where('ticket_id', '=', $type);
+    }
 }
