@@ -57,13 +57,13 @@
                             <td>{{ $order_item->title }}</td>
                             <td>{{ Helper::decimalMoneyFormatter($order_item->value, $order->currency) }}</td>
                             @if($order_item->ticket->is_seatable == 1)
-                                @if(count($order_item->seat) > 0)
+                                @if($order_item->seat !== null)
                                     <td>{{ $order_item->seat->name }}</td>
                                 @else
                                     <td>
                                         <select class="form-control" name="seat[{{ $order_item->id }}]">
-                                            <option>Valitse paikka</option>
-                                            @foreach(Tikematic\Models\Seat::status("available")->get() as $seat)
+                                            <option value="">Valitse paikka</option>
+                                            @foreach(Tikematic\Models\Seat::status("available")->ticketType($order_item->ticket->id)->get() as $seat)
                                                 <option value="{{ $seat->id }}">{{ $seat->name }}</option>
                                             @endforeach
                                         </select>
