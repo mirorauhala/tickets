@@ -52,6 +52,23 @@ $factory->define(Tikematic\Models\Map::class, function (Faker\Generator $faker) 
     ];
 });
 
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(Tikematic\Models\Ticket::class, function (Faker\Generator $faker) {
+    static $password;
+
+    return [
+
+        'name' => $faker->sentence,
+        'price' => 1000,
+        'vat' => 10,
+        'reserved' => 10,
+        'maxAmountPerTransaction' => 5,
+        'availableAt' => \Carbon\Carbon::now(),
+        'unavailableAt' => \Carbon\Carbon::now()->addWeek(),
+        'is_seatable' => 1,
+        'event_id' => 1,
+    ];
+});
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(Tikematic\Models\Seat::class, function (Faker\Generator $faker) {
