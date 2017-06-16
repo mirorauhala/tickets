@@ -107,6 +107,7 @@ return [
     'orders' => [
         'title'                     => 'Orders',
         'no-items'                  => 'There are no items in this order.',
+        'no-orders'                 => 'You have no orders.',
 
         'reference'                 => 'Reference',
         'value'                     => 'Value',

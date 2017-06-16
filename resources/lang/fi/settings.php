@@ -107,6 +107,7 @@ return [
     'orders' => [
         'title'                     => 'Tilaukset',
         'no-items'                  => 'Tilauksessa ei ole tuotteita.',
+        'no-orders'                 => 'Sinulla ei ole tilauksia.',
 
         'reference'                 => 'Koodi',
         'value'                     => 'Arvo',
