@@ -100,6 +100,7 @@ return [
 
         'item-title'                => 'Tuote',
         'value'                     => 'Arvo',
+        'seating-code'              => 'Paikkakoodi',
     ],
 
     // all user's orders

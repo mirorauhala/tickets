@@ -100,6 +100,7 @@ return [
 
         'item-title'                => 'Reference',
         'value'                     => 'Value',
+        'seating-code'              => 'Seating code',
     ],
 
     // all user's orders
