@@ -61,7 +61,7 @@ class OrderController extends Controller
             "vat" => 10,
             "status" => "pending",
             "payer_name" => $request->user()->full_name(),
-            "payer_name" => $release_lock_after,
+            "release_lock_after" => $release_lock_after,
             "event_id" => 1,
         ]);
 

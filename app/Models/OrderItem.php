@@ -96,8 +96,7 @@ class OrderItem extends Model
     }
 
     /**
-     * Scope a query to only include order items that are exceeding their
-     * 30 minute lock.
+     * Scope a query to only include order items that are exceeding their lock.
      *
      * @param \Illuminate\Database\Eloquent\Builder $query
      * @return \Illuminate\Database\Eloquent\Builder
