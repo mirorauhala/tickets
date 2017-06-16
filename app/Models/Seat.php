@@ -12,7 +12,7 @@ class Seat extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'status', 'top', 'left', 'order_item_id', 'event_id', 'user_id',
+        'name', 'status', 'top', 'left', 'event_id', 'user_id',
     ];
 
     /**
@@ -24,5 +24,25 @@ class Seat extends Model
     public function scopeStatus($query, $status)
     {
         return $query->where('status', '=', $status);
+    }
+
+    /**
+     * Get seat's order item.
+     *
+     * @return belongsToMany
+     */
+    public function orderItem() {
+        return $this->belongsTo('Tikematic\Models\OrderItem');
+    }
+
+    /**
+     * Scope a query to only include seats that are available.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeAvailable($query)
+    {
+        return $query->where('status', '=', 'available');
     }
 }

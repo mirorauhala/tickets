@@ -22,9 +22,6 @@ class CreateSeatsTable extends Migration
             $table->integer('top')->nullable();
             $table->integer('left')->nullable();
 
-            $table->integer('order_item_id')->unsigned()->nullable();
-            $table->foreign('order_item_id')->references('id')->on('order_items');
-
             $table->integer('map_id')->unsigned();
             $table->foreign('map_id')->references('id')->on('maps')->onDelete('cascade');
             $table->timestamps();

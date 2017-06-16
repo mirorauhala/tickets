@@ -32,6 +32,13 @@
 </div>
 
 <h3>List of items</h3>
+
+@if(count($errors) > 0)
+    @foreach($errors->all() as $error)
+        {{ dump($error) }}
+    @endforeach
+@endif
+
 @if(count($order_items) > 0)
     <div class="table-responsive">
         <form method="post" action="{{ route('order.seats', ['order' => $order->reference]) }}">
@@ -50,8 +57,8 @@
                             <td>{{ $order_item->title }}</td>
                             <td>{{ Helper::decimalMoneyFormatter($order_item->value, $order->currency) }}</td>
                             @if($order_item->ticket->is_seatable == 1)
-                                @if(count($seat = Tikematic\Models\Seat::where('order_item_id', $order_item->id)->get()) > 0)
-                                    <td>{{ $seat->name }}</td>
+                                @if(count($order_item->seat) > 0)
+                                    <td>{{ $order_item->seat->name }}</td>
                                 @else
                                     <td>
                                         <select class="form-control" name="seat[{{ $order_item->id }}]">

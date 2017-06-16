@@ -13,7 +13,7 @@
     background-position-x: 10px;">
 
     @foreach($seats as $seat)
-        <div class="seat seat-{{ $seat->status }}" style="height: 15px; width: 15px; top: {{ $seat->top }}px; left: {{ $seat->left }}px;" data-toggle="tooltip" title="{{ $seat->name }}"></div>
+        <div class="seat seat-{{ $seat->status }}"  style="height: 15px; width: 15px; top: {{ $seat->top }}px; left: {{ $seat->left }}px;" data-toggle="tooltip" title="{{ $seat->name }}"></div>
     @endforeach
 
 

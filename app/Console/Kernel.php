@@ -14,6 +14,7 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         \Tikematic\Console\Commands\ClearPendingOrders::class,
+        \Tikematic\Console\Commands\ConnectionLanSeats::class,
         \Tikematic\Console\Commands\PopulateBasicEventData::class,
     ];
 

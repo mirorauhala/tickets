@@ -2,7 +2,7 @@
 
 namespace Tikematic\Http\Requests;
 
-use Tikematic\Models\{OrderItem, Ticket};
+use Tikematic\Models\{Seat, OrderItem, Ticket};
 use Illuminate\Foundation\Http\FormRequest;
 
 class OrderSeatRequest extends FormRequest
@@ -26,7 +26,7 @@ class OrderSeatRequest extends FormRequest
     {
         return [
             "seat" => "required|array",
-            "seat.*" => "required|numeric|validateTicketAvailabilityAtThisTime",
+            "seat.*" => "required|numeric|distinct|validateSeatAvailability",
         ];
     }
 
@@ -38,21 +38,22 @@ class OrderSeatRequest extends FormRequest
      */
     public function withValidator($validator)
     {
-
-
         // validate ticket amount
         $validator->after(function ($validator) {
 
             $seats = $validator->getData()['seat'];
 
-            $emptySeats = 0;
-            foreach($seats as $order_item_id=>$seat_id)
+            $filledItems = 0;
+            foreach($seats as $order_item_id=>$seat_id) {
 
-                Seat::find($seat_id)->order_item_id == $seat_id;
+                if(OrderItem::find($order_item_id)->seat !== null) {
+
+                    $filledItems++;
+                }
             }
 
-                    $validator->errors()->add('ticket_amount', 'Not enough tickets left!');
-                }
+            if($filledItems > 0) {
+                $validator->errors()->add('ticket_amount', 'Item already has a seat!');
             }
         });
     }

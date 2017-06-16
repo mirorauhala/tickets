@@ -20,7 +20,7 @@ class MapController extends Controller
         // do ugly hard code for event ID
         $event = Event::findOrFail(1);
 
-        $seats = Seat::all();
+        $seats = Seat::with('orderItem')->get();
 
         return view('events.map')
             ->with([

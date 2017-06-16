@@ -22,8 +22,9 @@ class CreateOrderItemsTable extends Migration
             $table->dateTimeTz('release_lock_after')->nullable();
 
             $table->boolean('seatable')->default(0);
-            $table->boolean('sleeps')->default(0);
-            $table->boolean('airmattress')->default(0);
+
+            $table->integer('seat_id')->unsigned()->nullable();
+            $table->foreign('seat_id')->references('id')->on('seats');
 
             $table->integer('ticket_id')->unsigned();
             $table->foreign('ticket_id')->references('id')->on('tickets');
