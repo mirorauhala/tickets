@@ -35,10 +35,10 @@ class OrderController extends Controller
         $order_items = $order->items;
 
         // has seatable tickets?
-        $count_seats = 0;
+        $showFormSubmit = 0;
         foreach($order_items as $key=>$item) {
-            if($item->ticket->is_seatable == 1) {
-                $count_seats++;
+            if($item->ticket->is_seatable == 1 && $item->seat == null) {
+                $showFormSubmit++;
             }
         }
 
@@ -46,7 +46,7 @@ class OrderController extends Controller
             ->with([
                 "order" => $order,
                 "order_items" => $order_items,
-                "count_seats" => $count_seats,
+                "show_form_submit" => $showFormSubmit,
             ]);
     }
 
