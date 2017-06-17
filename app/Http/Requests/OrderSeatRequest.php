@@ -25,47 +25,9 @@ class OrderSeatRequest extends FormRequest
     public function rules()
     {
         return [
-            "seat" => "required|array",
-            "seat.*" => "required|numeric|distinct|validateSeatAvailability",
+            "seat"                  => "required|array",
+            "seat.*.order_item_id"  => "required|numeric|min:1|distinct|validateOrderItemSeatAvailability",
+            "seat.*.seat_id"        => "required|numeric|min:1|distinct|validateSeatAvailability",
         ];
-    }
-
-    /**
-     * More validation.
-     *
-     * @param  \Illuminate\Validation\Validator  $validator
-     * @return void
-     */
-    public function withValidator($validator)
-    {
-        // validate ticket amount
-        $validator->after(function ($validator) {
-
-            $seats = $validator->getData()['seat'];
-
-            $filledItems = 0;
-            $sameTicketType = 0;
-            foreach($seats as $order_item_id=>$seat_id) {
-
-                $orderItem = OrderItem::find($order_item_id);
-                $seat = Seat::find($seat_id);
-                if($orderItem->seat !== null) {
-                    $filledItems++;
-                }
-
-                if($orderItem->ticket_id !== $seat->ticket_id) {
-
-                    $sameTicketType++;
-                }
-            }
-
-            if($filledItems > 0) {
-                $validator->errors()->add('ticket', 'Item already has a seat!');
-            }
-
-            if($sameTicketType > 0) {
-                $validator->errors()->add('ticket', 'Cannot choose this seat type!');
-            }
-        });
     }
 }
