@@ -23,7 +23,7 @@
 
 <h2>Maksuvaihtoehdot</h2>
 <p>Hyväksymme Suomen suurimmat verkkopankit maksuvaihtoehtoina. Liput maksetaan oston yhteydessä. Tässä vielä koko lista pankeista: Nordea, Osuuspankki, Danske Bank, Ålandsbanken,
-    Handelsbanken, Aktia, POP Pankki, Säästöpankki, S-Pankki, Visa, MasterCard, American Express, and Oma
+    Handelsbanken, Aktia, POP Pankki, Säästöpankki, S-Pankki, Visa, MasterCard, American Express, ja Oma
     Säästöpankki. Maksut käsittelee Paytrail Oyj.</p>
 
 @endsection
