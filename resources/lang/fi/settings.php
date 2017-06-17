@@ -114,6 +114,13 @@ return [
         'status'                    => 'Tila',
         'date'                      => 'Ostopäivämäärä',
         'action'                    => 'Toiminto',
+
+        'view-order'                => 'Näytä koko tilaus',
+    ],
+
+    'orderStatus' => [
+        'paid' => 'Maksettu',
+        'pending' => 'Maksamaton',
     ],
 
 ];

@@ -114,6 +114,13 @@ return [
         'status'                    => 'Status',
         'date'                      => 'Date of payment',
         'action'                    => 'Action',
+
+        'view-order'                => 'View full order',
+    ],
+
+    'orderStatus' => [
+        'paid' => 'Paid',
+        'pending' => 'Pending',
     ],
 
 ];

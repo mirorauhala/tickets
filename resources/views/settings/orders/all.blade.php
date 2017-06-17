@@ -21,9 +21,9 @@
                     <tr class="{{ ($order->status == "pending") ? "info" : "" }}">
                         <td>{{ $order->reference }}</td>
                         <td>{{ Helper::decimalMoneyFormatter($order->value, $order->currency) }}</td>
-                        <td>{{ $order->status }}</td>
+                        <td>{{ Helper::tra('settings.orderStatus.' . $order->status) }}</td>
                         <td title="{{ $order->created_at->diffForHumans() }}">{{ $order->created_at }}</td>
-                        <td><a href="{{ route('settings.orders.specific', ['order' => $order->reference]) }}">View full order</a></td>
+                        <td><a href="{{ route('settings.orders.specific', ['order' => $order->reference]) }}">{{ Helper::tra('settings.orders.view-order') }}</a></td>
                     </tr>
                 @endforeach
             </tbody>

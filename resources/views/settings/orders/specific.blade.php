@@ -21,7 +21,7 @@
             <tr class="{{ ($order->status == "pending") ? "info" : "" }}">
                 <td>{{ $order->reference }}</td>
                 <td>{{ Helper::decimalMoneyFormatter($order->value, $order->currency) }}</td>
-                <td>{{ $order->status }}</td>
+                <td>{{ Helper::tra('settings.orderStatus.' . $order->status) }}</td>
                 <td title="{{ $order->created_at->diffForHumans() }}">{{ $order->created_at }}</td>
                 @if($order->status == "pending")
                     <td><a href="{{ route('settings.orders.delete', ['order' => $order->reference]) }}">Peruuta tilaus</a></td>
