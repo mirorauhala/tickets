@@ -26,14 +26,15 @@ class OrderSeatController extends Controller
      */
     public function addSeatToOrderItems( OrderSeatRequest $request, $order)
     {
-        foreach($request->seat as $order_item_id=>$seat_id) {
+        $orderSeatCombo = $request->seat;
+        foreach($orderSeatCombo as $combo) {
             // find seat and mark as taken
-            $seat = Seat::find($seat_id);
+            $seat = Seat::find($combo['seat_id']);
             $seat->status = "taken";
             $seat->save();
 
             // attach the seat to the orderItem
-            $orderItem = OrderItem::find($order_item_id);
+            $orderItem = OrderItem::find($combo['order_item_id']);
             $orderItem->seat()->associate($seat);
             $orderItem->save();
         }
