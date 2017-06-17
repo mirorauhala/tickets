@@ -105,4 +105,15 @@ class OrderItem extends Model
     {
         return $query->where('release_lock_after', '<', Carbon::now());
     }
+
+    /**
+     * Scope a query to only include order items that don't have seat set.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeEmptySeat($query)
+    {
+        return $query->where('seat_id', '=', null);
+    }
 }
