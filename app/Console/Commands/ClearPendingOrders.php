@@ -3,7 +3,7 @@
 namespace Tikematic\Console\Commands;
 
 use Log;
-use Tikematic\Models\OrderItem;
+use Tikematic\Models\Order;
 use Illuminate\Console\Command;
 
 class ClearPendingOrders extends Command
@@ -13,14 +13,14 @@ class ClearPendingOrders extends Command
      *
      * @var string
      */
-    protected $signature = 'orders:clear-pending-orders';
+    protected $signature = 'orders:clear-pending';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Will check for tickets that have exceeded their lock time.';
+    protected $description = 'Will check for orders that have exceeded their lock time and delete them.';
 
     /**
      * Create a new command instance.
@@ -39,6 +39,9 @@ class ClearPendingOrders extends Command
      */
     public function handle()
     {
-        // needs rework OrderItem::pending()->exceedingLockTime()->delete();
+        // Get pending tickets that exceed their lock time and delete them
+        // This will also delete the OrderItem via onDelete('cascade') in the
+        // CreateOrderItemsTable migration
+        Order::pending()->exceedingLockTime()->delete();
     }
 }

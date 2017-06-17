@@ -28,8 +28,8 @@ class Kernel extends ConsoleKernel
     {
 
         // clear pending tickets that are exceeding their 30 minute lock down
-        //$schedule->command('orders:clear-pending-orders')
-        //          ->everyMinute();
+        //$schedule->command('orders:clear-pending')
+                  //->everyMinute();
     }
 
     /**
