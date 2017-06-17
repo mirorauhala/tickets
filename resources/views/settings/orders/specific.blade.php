@@ -42,7 +42,6 @@
 @if(count($order_items) > 0)
     <div class="table-responsive">
         <form method="post" action="{{ route('order.seats', ['order' => $order->reference]) }}">
-            {{ csrf_field() }}
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -52,7 +51,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($order_items as $order_item)
+                    @foreach($order_items as $key=>$order_item)
                         <tr>
                             <td>{{ $order_item->title }}</td>
                             <td>{{ Helper::decimalMoneyFormatter($order_item->value, $order->currency) }}</td>
@@ -61,7 +60,9 @@
                                     <td>{{ $order_item->seat->name }}</td>
                                 @else
                                     <td>
-                                        <select class="form-control" name="seat[{{ $order_item->id }}]">
+                                        {{ csrf_field() }}
+                                        <input type="hidden" name="seat[{{ $key }}][order_item_id]" value="{{ $order_item->id }}">
+                                        <select class="form-control" name="seat[{{ $key }}][seat_id]">
                                             <option value="">Valitse paikka</option>
                                             @foreach(Tikematic\Models\Seat::status("available")->ticketType($order_item->ticket->id)->get() as $seat)
                                                 <option value="{{ $seat->id }}">{{ $seat->name }}</option>
@@ -76,7 +77,7 @@
                     @endforeach
                 </tbody>
             </table>
-            @if(count($count_seats) > 0)
+            @if($show_form_submit > 0)
                 <input type="submit" class="btn btn-primary" value="Varaa paikat">
             @endif
         </form>
