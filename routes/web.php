@@ -29,7 +29,6 @@ Auth::routes();
 Route::get('/', 'Event\DetailsController@index')->name('events.details');
 Route::get('/tickets', 'User\TicketController@showPaidTickets')->name('tickets.paid');
 Route::get('/tickets/pending', 'User\TicketController@showPendingTickets')->name('tickets.pending');
-Route::get('/tickets/unassigned', 'User\TicketController@showUnassignedTickets')->name('tickets.unassigned');
 Route::get('/tickets/redeem', 'User\TicketController@showTicketRedeemView')->name('tickets.redeem');
 Route::get('/tickets/view/{order}', 'User\TicketController@viewTicket')->name('tickets.view');
 Route::get('/tournaments', 'User\TournamentController@index')->name('tournaments');

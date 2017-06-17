@@ -60,24 +60,6 @@ class TicketController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function showUnassignedTickets()
-    {
-
-        $user = Auth::user();
-
-        $user->load('orderItems.order');
-
-        return view('tickets.unassigned')
-            ->with([
-                "order_items" => $user->orderItems->where('status', 'unassigned'),
-            ]);
-    }
-
-    /**
-     * Show the user's unassigned tickets.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function showTicketRedeemView()
     {
 
