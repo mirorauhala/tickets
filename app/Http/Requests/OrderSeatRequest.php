@@ -26,7 +26,7 @@ class OrderSeatRequest extends FormRequest
     {
         return [
             "seat"                  => "required|array",
-            "seat.*.order_item_id"  => "required|numeric|min:1|distinct|validateOrderItemSeatAvailability",
+            "seat.*.order_item_id"  => "required|numeric|min:1|distinct|validateOrderItemStatusAndSeatAvailability",
             "seat.*.seat_id"        => "required|numeric|min:1|distinct|validateSeatAvailability",
         ];
     }

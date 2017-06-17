@@ -16,7 +16,7 @@ class ValidationProvider extends ServiceProvider
     {
         Validator::extend('validateTicketAvailabilityAtThisTime', 'Tikematic\Validators\OrderValidator@validateTicketAvailabilityAtThisTime');
         Validator::extend('validateSeatAvailability', 'Tikematic\Validators\OrderValidator@validateSeatAvailability');
-        Validator::extend('validateOrderItemSeatAvailability', 'Tikematic\Validators\OrderValidator@validateOrderItemSeatAvailability');
+        Validator::extend('validateOrderItemStatusAndSeatAvailability', 'Tikematic\Validators\OrderValidator@validateOrderItemStatusAndSeatAvailability');
     }
 
     /**
