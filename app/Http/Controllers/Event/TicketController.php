@@ -25,7 +25,7 @@ class TicketController extends Controller
         return view('events.tickets.main')
             ->with([
                 "event" => $event,
-                "tickets" => $event->tickets()->availableAtThisTime()->get(),
+                "tickets" => $event->tickets()->availableAtThisTime()->orderBy("price", "asc")->get(),
             ]);
     }
 
