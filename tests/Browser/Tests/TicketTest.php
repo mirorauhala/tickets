@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Browser\Tests;
+namespace Tests\Browser\Tests\EventTests;
 
 use Tikematic\Models\User;
 use Tests\DuskTestCase;
