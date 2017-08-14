@@ -27,7 +27,7 @@ class SettingsChangePasswordPage extends Page
     }
 
     /**
-     * Assert that user can sign up.
+     * Assert that user can change password.
      *
      * @return void
      */

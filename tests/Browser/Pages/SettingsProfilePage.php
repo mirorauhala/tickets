@@ -27,7 +27,7 @@ class SettingsProfilePage extends Page
     }
 
     /**
-     * Assert that user can sign up.
+     * Assert that user can change profile information.
      *
      * @return void
      */
