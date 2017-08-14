@@ -20,7 +20,7 @@
         @endif
     </div>
     <div class="form-group">
-        <button type="submit" class="btn btn-default">{{ Helper::tra('form.button.update') }}</button>
+        <button type="submit" class="btn btn-default">{{ Helper::tra('form.button.change') }}</button>
     </div>
 </form>
 @endsection
