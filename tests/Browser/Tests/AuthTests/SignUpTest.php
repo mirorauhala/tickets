@@ -20,8 +20,21 @@ class SignUpTest extends DuskTestCase
     public function a_user_can_sign_up()
     {
         $this->browse(function (Browser $browser) {
+
+            $details = [
+                'John',
+                'Doe',
+                'john.testing@email.com',
+                'Street Address 402',
+                '00100',
+                'Postal Office LA',
+                'Finland',
+                'secret',
+                'secret'
+            ];
+
             $browser->visit(new SignUpPage)
-                    ->signUp('John', 'Doe', 'john.doe@email.com', 'secret', 'secret')
+                    ->signUp(...$details)
                     ->assertPathIs('/');
         });
     }
