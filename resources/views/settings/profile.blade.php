@@ -77,8 +77,8 @@
         <label for="country_code" class="control-label">{{ Helper::tra('auth.register.country_code') }}</label>
 
         <select class="form-control" name="country_code" id="country_code" required>
-            <option value="{{ Helper::tra('country.finland.iso-3166-1') }}" {{ (Auth::user()->country_code == Helper::tra('country.finland.iso-3166-1')) ? "checked" : "" }}>{{ Helper::tra('country.finland.name') }}</option>
-            <option value="{{ Helper::tra('country.sweden.iso-3166-1') }}" {{ (Auth::user()->country_code == Helper::tra('country.sweden.iso-3166-1')) ? "checked" : "" }}>{{ Helper::tra('country.sweden.name') }}</option>
+            <option value="{{ Helper::tra('country.finland.iso-3166-1') }}" {!! (Auth::user()->country_code == Helper::tra('country.finland.iso-3166-1')) ? "selected='true'" : "" !!}>{{ Helper::tra('country.finland.name') }}</option>
+            <option value="{{ Helper::tra('country.sweden.iso-3166-1') }}" {!! (Auth::user()->country_code == Helper::tra('country.sweden.iso-3166-1')) ? "selected='true'" : "" !!}>{{ Helper::tra('country.sweden.name') }}</option>
         </select>
 
         @if ($errors->has('country_code'))
