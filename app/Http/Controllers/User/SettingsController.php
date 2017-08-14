@@ -122,7 +122,7 @@ class SettingsController extends Controller
 
         $user = Auth::user();
 
-        $user->language = $request->language;
+        $user->language = $request->display_language;
         $user->save();
 
         return redirect()
