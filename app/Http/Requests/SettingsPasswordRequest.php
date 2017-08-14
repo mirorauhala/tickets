@@ -1,10 +1,10 @@
 <?php
 
-namespace Tickematic\Http\Requests;
+namespace Tikematic\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class SettingsPassword extends FormRequest
+class SettingsPasswordRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.

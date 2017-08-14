@@ -6,7 +6,7 @@ use Auth;
 use Hash;
 use Helper;
 use Illuminate\Http\Request;
-use Tikematic\Http\Requests\SettingsPassword;
+use Tikematic\Http\Requests\SettingsPasswordRequest;
 use Tikematic\Http\Controllers\Controller;
 
 class SettingsController extends Controller
@@ -83,7 +83,7 @@ class SettingsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function updatePassword(SettingsPassword $request)
+    public function updatePassword(SettingsPasswordRequest $request)
     {
 
         // get the user model
