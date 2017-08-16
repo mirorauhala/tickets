@@ -24,7 +24,7 @@ return [
     */
 
     'login' => [
-        'title' => 'Log in',
+        'title' => 'Log In',
         'email' => 'Email',
         'password' => 'Password',
         'remember-me' => 'Remember me',
