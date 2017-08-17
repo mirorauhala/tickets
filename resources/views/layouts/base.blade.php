@@ -12,7 +12,7 @@
     <title>{{ config('app.name', 'Tikematic') }} - @yield('base.title', 'Untitled')</title>
 
     <!-- Styles -->
-    <meta name="theme-color" content="#FF3D78">
+    <meta name="theme-color" content="#2A5CFF">
     <link rel="manifest" href="/manifest.json">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" async="true">
 </head>
