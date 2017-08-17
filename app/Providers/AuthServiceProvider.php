@@ -14,6 +14,7 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
         'Tikematic\Models\Event' => 'Tikematic\Policies\EventPolicy',
+        'Tikematic\Models\Order' => 'Tikematic\Policies\OrderPolicy',
     ];
 
     /**

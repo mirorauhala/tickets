@@ -41,6 +41,9 @@ class OrderController extends Controller
     public function showSpecificOrder($order)
     {
         $order = Order::where('reference', $order)->firstOrFail();
+
+        $this->authorize('view', $order);
+
         $order_items = $order->items;
 
         // has seatable tickets?
@@ -66,7 +69,14 @@ class OrderController extends Controller
      */
     public function deleteOrder($order, Request $request)
     {
+        // get order from the reference
+        $order = Order::where('reference', $order)->firstOrFail();
+
+        // get user model from request
         $user = $request->user();
+
+        // authorize current action
+        $this->authorize('delete', $order);
 
         if($order->user_id == $user->id) {
             Order::where('reference', $order)->delete();
