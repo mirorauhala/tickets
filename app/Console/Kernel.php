@@ -27,9 +27,9 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
 
-        // clear pending tickets that are exceeding their 30 minute lock down
-        //$schedule->command('orders:clear-pending')
-                  //->everyMinute();
+        // clear pending tickets that are exceeding their lock down time
+        $schedule->command('orders:clear-pending')
+                ->everyMinute();
     }
 
     /**
