@@ -54,6 +54,6 @@ class OrderPolicy
      */
     public function delete(User $user, Order $order)
     {
-        return $user->orders()->where('id', $order->id)->first();
+        return $user->orders()->status("pending")->where('id', $order->id)->first();
     }
 }

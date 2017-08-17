@@ -2,6 +2,7 @@
 
 namespace Tikematic\Http\Requests;
 
+use Auth;
 use Tikematic\Models\{OrderItem, Ticket};
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -43,23 +44,28 @@ class OrderRequest extends FormRequest
         // validate ticket amount
         $validator->after(function ($validator) {
 
-            // get ticket
-            $ticket = Ticket::find($validator->getData()['ticket_id']);
+            // user can only have one pending order
+            if(Auth::user()->orders()->status("pending")->count() < 1) {
+                // get ticket
+                $ticket = Ticket::find($validator->getData()['ticket_id']);
 
-            // ticket has a reserved amount, 0 means no tickets are reserved
-            if ($ticket->reserved > 0) {
+                // ticket has a reserved amount, 0 means no tickets are reserved
+                if ($ticket->reserved > 0) {
 
-                // get amount of paidOrLocked tickets
-                $paidOrPendingTickets = OrderItem::paidOrPending()->where('ticket_id', $validator->getData()['ticket_id'])->count();
+                    // get amount of paidOrLocked tickets
+                    $paidOrPendingTickets = OrderItem::paidOrPending()->where('ticket_id', $validator->getData()['ticket_id'])->count();
 
-                // maximum amount of tickets that can be reserved but the
-                // requested order can still continue
-                $maxTicketsReserved = $ticket->reserved - $validator->getData()['ticket_amount'];
+                    // maximum amount of tickets that can be reserved but the
+                    // requested order can still continue
+                    $maxTicketsReserved = $ticket->reserved - $validator->getData()['ticket_amount'];
 
-                // check that there are enough tickets left for the order to continue
-                if($paidOrPendingTickets > $maxTicketsReserved) {
-                    $validator->errors()->add('ticket_amount', 'Not enough tickets left!');
+                    // check that there are enough tickets left for the order to continue
+                    if($paidOrPendingTickets > $maxTicketsReserved) {
+                        $validator->errors()->add('ticket_amount', 'Not enough tickets left!');
+                    }
                 }
+            } else {
+                $validator->errors()->add('existing_order', 'You already have a pre-existing pending order! Order not created.');
             }
         });
     }

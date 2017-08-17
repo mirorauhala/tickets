@@ -70,30 +70,22 @@ class OrderController extends Controller
     public function deleteOrder($order, Request $request)
     {
         // get order from the reference
-        $order = Order::where('reference', $order)->firstOrFail();
+        $orderModel = Order::where('reference', $order)->firstOrFail();
 
         // get user model from request
         $user = $request->user();
 
         // authorize current action
-        $this->authorize('delete', $order);
+        $this->authorize('delete', $orderModel);
 
-        if($order->user_id == $user->id) {
-            Order::where('reference', $order)->delete();
-
-            return redirect()
-                ->route('settings.orders.all')
-                ->with([
-                    "flash_status" => 200,
-                    "flash_message" => 'Tilaus poistettu.',
-                ]);
-        }
+        // delete order
+        Order::where('reference', $orderModel->reference)->delete();
 
         return redirect()
             ->route('settings.orders.all')
             ->with([
-                "flash_status" => 500,
-                "flash_message" => 'Tilausta ei poistettu.',
+                "flash_status" => 'success',
+                "flash_message" => 'Tilaus poistettu.',
             ]);
     }
 
