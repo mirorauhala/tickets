@@ -3,7 +3,7 @@
 namespace Tikematic\Http\Requests;
 
 use Auth;
-use Tikematic\Models\{OrderItem, Ticket};
+use Tikematic\Models\{OrderItem, Ticket, Seat};
 use Illuminate\Foundation\Http\FormRequest;
 
 class OrderRequest extends FormRequest
@@ -46,14 +46,31 @@ class OrderRequest extends FormRequest
 
             // user can only have one pending order
             if(Auth::user()->orders()->status("pending")->count() < 1) {
+
                 // get ticket
                 $ticket = Ticket::find($validator->getData()['ticket_id']);
 
-                // ticket has a reserved amount, 0 means no tickets are reserved
-                if ($ticket->reserved > 0) {
+                // if ticket is seatable
+                if($ticket->is_seatable == true) {
+
+                    // number of seats in total for same ticket type
+                    $seats = Seat::ticketType($ticket->id)->count();
+
+                    // number of paidOrPending orders
+                    $orders = OrderItem::paidOrPending()->ticketType($ticket->id)->count();
+
+                    // maximum amount of tickets that can be sold
+                    $maxOrderItems = $seats - $validator->getData()['ticket_amount'];
+
+                    // maximum amount of order items that can be paidOrPending
+                    // but the requested order can still continue
+                    if($orders > $maxOrderItems) {
+                        $validator->errors()->add('ticket_amount', 'Not enough tickets left!');
+                    }
+                } elseif ($ticket->reserved > 0) {
 
                     // get amount of paidOrLocked tickets
-                    $paidOrPendingTickets = OrderItem::paidOrPending()->where('ticket_id', $validator->getData()['ticket_id'])->count();
+                    $paidOrPendingTickets = OrderItem::paidOrPending()->ticketType($ticket->id)->count();
 
                     // maximum amount of tickets that can be reserved but the
                     // requested order can still continue
@@ -64,6 +81,8 @@ class OrderRequest extends FormRequest
                         $validator->errors()->add('ticket_amount', 'Not enough tickets left!');
                     }
                 }
+
+
             } else {
                 $validator->errors()->add('existing_order', 'You already have a pre-existing pending order! Order not created.');
             }

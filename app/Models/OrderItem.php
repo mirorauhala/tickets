@@ -116,4 +116,15 @@ class OrderItem extends Model
     {
         return $query->where('seat_id', '=', null);
     }
+
+    /**
+     * Scope a query to only include order items that are of a given ticket type.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeTicketType($query, $type)
+    {
+        return $query->where('ticket_id', '=', $type);
+    }
 }
