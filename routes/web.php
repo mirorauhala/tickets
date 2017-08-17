@@ -79,14 +79,14 @@ Route::post('/order/{order}/addSeats', 'Order\OrderSeatController@addSeatToOrder
 | Settings
 |--------------------------------------------------------------------------
 */
-Route::get('/settings', 'User\SettingsController@showSettings')->name('settings.profile');
-Route::post('/settings', 'User\SettingsController@updateProfile');
+Route::get('/settings', 'User\Settings\ProfileController@showSettings')->name('settings.profile');
+Route::post('/settings', 'User\Settings\ProfileController@updateProfile');
 
-Route::get('/settings/password', 'User\SettingsController@showPasswordForm')->name('settings.password');
-Route::post('/settings/password', 'User\SettingsController@updatePassword');
+Route::get('/settings/password', 'User\Settings\PasswordController@showPasswordForm')->name('settings.password');
+Route::post('/settings/password', 'User\Settings\PasswordController@updatePassword');
 
-Route::get('/settings/language', 'User\SettingsController@showLanguages')->name('settings.language');
-Route::post('/settings/language', 'User\SettingsController@updateLanguage');
+Route::get('/settings/language', 'User\Settings\LanguageController@showLanguages')->name('settings.language');
+Route::post('/settings/language', 'User\Settings\LanguageController@updateLanguage');
 
 Route::get('/settings/orders', 'User\Settings\OrderController@showOrders')->name('settings.orders.all');
 Route::get('/settings/orders/{order}', 'User\Settings\OrderController@showSpecificOrder')->name('settings.orders.specific');
