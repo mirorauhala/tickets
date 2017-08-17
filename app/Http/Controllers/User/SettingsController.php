@@ -6,6 +6,7 @@ use Auth;
 use Hash;
 use Helper;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 use Tikematic\Http\Requests\SettingsPasswordRequest;
 use Tikematic\Http\Controllers\Controller;
 
@@ -120,8 +121,13 @@ class SettingsController extends Controller
     public function updateLanguage(Request $request)
     {
 
-        $user = Auth::user();
+        $this->validate($request, [
+            'display_language' => [
+                Rule::in(['none', 'fi', 'en']),
+            ],
+        ]);
 
+        $user = Auth::user();
         $user->language = $request->display_language;
         $user->save();
 
