@@ -4,6 +4,12 @@
 
 <h1>{{ Helper::tra('event.pages.maps.title') }}</h1>
 
+<ul class="list-unstyled">
+    <li>Paikkoja yhteensä: {{ count($seats) }}</li>
+    <li>Paikkoja vapaana: {{ count($seats->where('status', '=', 'available')) }}</li>
+    <li>Paikkoja varattu: {{ count($seats->where('status', '!=', 'available')) }}</li>
+</ul>
+
 </div>
 </section>
 <div class="map" style="height: 1003px;
