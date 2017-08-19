@@ -99,7 +99,7 @@ class OrderController extends Controller
         $address->configure(array(
             'streetAddress'   => $request->user()->street_address,
             'postalCode'      => $request->user()->postal_code,
-            'postOffice'      => $request->user()->postal_office,
+            'postalOffice'    => $request->user()->postal_office,
             'countryCode'     => $request->user()->country_code,
         ));
 
