@@ -1,0 +1,48 @@
+.navigation {
+    position: fixed;
+    bottom: 0;
+    height: 45px;
+    width: 100%;
+    background: #F3F5F6;
+    box-shadow: 0 -2px 6px rgba(0,0,0,.16);
+    z-index: 1000000;
+}
+
+.links {
+    display: grid;
+    grid-auto-flow: column;
+    grid-column-gap: 0px;
+    height: 100%;
+}
+
+.link {
+    height: 100%;
+    display: grid;
+    grid-auto-rows: max-content;
+    justify-items: center;
+    align-content: center;
+    text-decoration: none !important;
+}
+
+.link span {
+    color: #707070;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.link svg {
+    display: block;
+    fill: #707070;
+}
+
+.link.active span,
+.link.active svg {
+    color: #333;
+    fill: #333;
+}
+
+@media(min-width: 1022px) {
+    .navigation {
+        display: none;
+    }
+}

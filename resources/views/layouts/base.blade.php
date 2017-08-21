@@ -17,6 +17,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" async="true">
 </head>
 <body>
+    @include('partials.nav.navigation')
     @yield('base.content')
 
     <!-- Scripts -->
