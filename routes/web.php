@@ -26,8 +26,8 @@ Auth::routes();
 | Basic routes
 |--------------------------------------------------------------------------
 */
-Route::get('/', 'Event\DetailsController@index')->name('events.details');
-Route::get('/tickets', 'User\TicketController@showPaidTickets')->name('tickets.paid');
+Route::get('/', 'Event\DetailsController@index')->name('event');
+Route::get('/tickets', 'User\TicketController@showPaidTickets')->name('tickets');
 Route::get('/tickets/pending', 'User\TicketController@showPendingTickets')->name('tickets.pending');
 Route::get('/tickets/redeem', 'User\TicketController@showTicketRedeemView')->name('tickets.redeem');
 Route::get('/tickets/view/{order}', 'User\TicketController@viewTicket')->name('tickets.view');
@@ -79,7 +79,7 @@ Route::post('/order/{order}/addSeats', 'Order\OrderSeatController@addSeatToOrder
 | Settings
 |--------------------------------------------------------------------------
 */
-Route::get('/settings', 'User\Settings\ProfileController@showSettings')->name('settings.profile');
+Route::get('/settings', 'User\Settings\ProfileController@showSettings')->name('settings');
 Route::post('/settings', 'User\Settings\ProfileController@updateProfile');
 
 Route::get('/settings/password', 'User\Settings\PasswordController@showPasswordForm')->name('settings.password');

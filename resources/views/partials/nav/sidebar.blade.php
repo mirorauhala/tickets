@@ -13,16 +13,16 @@
             </a>
 
             <ul class="nav">
-                <li class="{{ Helper::route_active(['events*'], ['events.admin*']) }}">
-                    <a href="{{ route('events.details') }}">{{ Helper::tra('nav.home') }}</a>
+                <li class="{{ Helper::route_active(['event*'], ['events.admin*']) }}">
+                    <a href="{{ route('event') }}">{{ Helper::tra('nav.home') }}</a>
                     <ul class="nav">
-                        <li class="{{ Helper::route_active(['events.details*'], ['events.admin*']) }}"><a href="{{ route('events.details') }}">{{ Helper::tra('nav.details') }}</a></li>
+                        <li class="{{ Helper::route_active(['event*'], ['events.admin*']) }}"><a href="{{ route('event') }}">{{ Helper::tra('nav.details') }}</a></li>
                         <li class="{{ Helper::route_active(['events.map*'], ['events.admin*']) }}"><a href="{{ route('events.map') }}">{{ Helper::tra('nav.map') }}</a></li>
                         <li class="{{ Helper::route_active(['events.tickets*'], ['events.admin*']) }}"><a href="{{ route('events.tickets') }}">{{ Helper::tra('nav.tickets') }}</a></li>
                         <li class="{{ Helper::route_active(['events.tournaments*'], ['events.admin*']) }}"><a href="{{ route('events.tournaments') }}">{{ Helper::tra('nav.tournaments') }}</a></li>
                     </ul>
                 </li>
-                <li class="{{ Helper::route_active(['tickets*']) }}"><a href="{{ route('tickets.paid') }}">{{ Helper::tra('nav.my-tickets') }}</a></li>
+                <li class="{{ Helper::route_active(['tickets*']) }}"><a href="{{ route('tickets') }}">{{ Helper::tra('nav.my-tickets') }}</a></li>
                 <li class="{{ Helper::route_active(['tournaments*']) }}"><a href="{{ route('tournaments') }}">{{ Helper::tra('nav.my-tournaments') }}</a></li>
             </ul>
 
@@ -36,7 +36,7 @@
 
             <div class="sidebar-nav-bottom">
                 <ul class="nav">
-                    <li class="{{ Helper::route_active(['settings*']) }}"><a href="{{ route('settings.profile') }}">{{ Helper::tra('nav.settings') }}</a></li>
+                    <li class="{{ Helper::route_active(['settings*']) }}"><a href="{{ route('settings') }}">{{ Helper::tra('nav.settings') }}</a></li>
 
                     @if (Auth::guest())
                         <li class="{{ Helper::route_active(['login*']) }}"><a href="{{ route('login') }}">{{ Helper::tra('nav.login') }}</a></li>

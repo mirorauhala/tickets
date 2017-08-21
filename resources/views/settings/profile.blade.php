@@ -3,7 +3,7 @@
 @section('settings.title', Helper::tra('settings.panel.title.profile'))
 
 @section('content')
-<form method="post" action="{{ route('settings.profile') }}">
+<form method="post" action="{{ route('settings') }}">
     {{ csrf_field() }}
     <div class="form-group{{ $errors->has('first_name') ? ' has-error' : '' }}">
         <label for="first_name" class="control-label">{{ Helper::tra('settings.profile.first-name') }}</label>

@@ -1,7 +1,7 @@
 <section class="application-navigation">
     <div class="application-container">
         <div class="application-navigation-links">
-            <a role="presentation" class="app-link {{ Helper::route_active(['tickets.paid'], [], 'active') }}" href="{{ route('tickets.paid') }}">{{ Helper::tra('tickets.nav.paid') }}</a>
+            <a role="presentation" class="app-link {{ Helper::route_active(['tickets'], [], 'active') }}" href="{{ route('tickets') }}">{{ Helper::tra('tickets.nav.paid') }}</a>
 
             <a role="presentation" class="app-link {{ Helper::route_active(['tickets.pending'], [], 'active') }}" href="{{ route('tickets.pending') }}">{{ Helper::tra('tickets.nav.pending') }}</a>
 

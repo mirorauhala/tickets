@@ -58,7 +58,7 @@ class ProfileController extends Controller
 
         // return to view with flash message
         return redirect()
-            ->route('settings.profile')
+            ->route('settings')
             ->with([
                 'flash_status' => 'success',
                 'flash_message' => Helper::tra('settings.flash.profile'),
