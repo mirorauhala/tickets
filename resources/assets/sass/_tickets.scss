@@ -1,50 +1,77 @@
 .ticket {
-    padding-top: 30px;
-    padding-bottom: 30px;
-    border-bottom: 1px solid #ccc;
-
-    &:last-child {
-        border-bottom: none;
-    }
-}
-
-.ticket-card {
+    border-radius: 4px;
     background-color: #fff;
     box-shadow: 0 3px 6px rgba(0,0,0,.16);
     margin-bottom: 30px;
-    display: flex;
-    justify-content: space-between;
 }
 
-.ticket-details {
-    padding: 15px;
-    min-width: 70%;
+.ticket-heading {
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    h1 {
+      font-size: 25px;
+      margin: 0;
+      padding: 0;
+    }
 }
 
-.ticket-details h1 {
-    font-size: 18px;
-    font-weight: 400;
-    margin: 0;
-    margin-bottom: 5px;
+.ticket-meta {
+    color: #767676;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 15px;
+
+    p {
+        margin: 0;
+    }
 }
 
-.ticket-details .text-muted {
-    font-size: 14px;
+.ticket-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 15px;
 }
 
-.ticket-details p {
-    margin-bottom: 0;
+.ticket-price h2,
+.ticket-seating-code h2 {
+  font-size: 16px;
+  color: #999;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
 }
 
-.ticket-action {
-    padding: 15px;
-    min-width: 30%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none !important;
+.ticket-price p,
+.ticket-seating-code p {
+  font-size: 35px;
+  color: #333;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
 }
 
-.ticket-action {
-    min-width: 30%;
+.ticket-actions {
+  background-color: #FAFAFA;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.ticket-actions a {
+  display: block;
+  padding: 20px;
+  text-decoration: none;
+  color: #333;
+
+}
+
+.ticket-actions svg {
+  vertical-align: bottom;
+  margin-right: 8px;
+
 }

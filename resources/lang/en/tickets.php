@@ -20,4 +20,10 @@ return [
 
     'pending-message' => 'Pending tickets will be automatically cancelled after 1 hour of the order has passed.',
 
+    'card' => [
+        'price'             => 'Price',
+        'seating-code'      => 'Seating Code',
+        'action-details'    => 'View details',
+        'action-code'       => 'View code',
+    ]
 ];

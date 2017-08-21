@@ -47,6 +47,15 @@ class Order extends Model
     }
 
     /**
+     * Get event
+     *
+     * @return belongsTo
+     */
+    public function event() {
+        return $this->belongsTo('Tikematic\Models\Event');
+    }
+
+    /**
      * Get order's items e.g. tickets.
      *
      * @return belongsToMany

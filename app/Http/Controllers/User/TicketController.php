@@ -29,7 +29,7 @@ class TicketController extends Controller
 
         $user = Auth::user();
 
-        $user->load('orderItems.order');
+        $user->load('orderItems.order', 'orderItems.order.event', 'orderItems.seat');
 
         return view('tickets.paid')
             ->with([

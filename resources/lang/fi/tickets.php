@@ -20,4 +20,10 @@ return [
 
     'pending-message' => 'Maksamattomat liput perutaan automaattisesti, kun tilauksesta on kulunut 1 tunti.',
 
+    'card' => [
+        'price'             => 'Hinta',
+        'seating-code'      => 'Paikkakoodi',
+        'action-details'    => 'Näytä tiedot',
+        'action-code'       => 'Näytä koodi',
+    ]
 ];
