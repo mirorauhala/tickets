@@ -52,7 +52,7 @@ class LanguageController extends Controller
             ->route('settings.language')
             ->with([
                 "flash_status" => "success",
-                "flash_message" => Helper::tra('settings.flash.language', [], $request->language),
+                "flash_message" => Helper::tra('settings.flash.language', [], $request->display_language),
             ]);
     }
 }
