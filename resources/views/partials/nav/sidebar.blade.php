@@ -16,7 +16,7 @@
                 <li class="{{ Helper::route_active(['event*'], ['events.admin*']) }}">
                     <a href="{{ route('event') }}">{{ Helper::tra('nav.home') }}</a>
                     <ul class="nav">
-                        <li class="{{ Helper::route_active(['event*'], ['events.admin*']) }}"><a href="{{ route('event') }}">{{ Helper::tra('nav.details') }}</a></li>
+                        <li class="{{ Helper::route_active(['event'], ['events.admin*']) }}"><a href="{{ route('event') }}">{{ Helper::tra('nav.details') }}</a></li>
                         <li class="{{ Helper::route_active(['events.map*'], ['events.admin*']) }}"><a href="{{ route('events.map') }}">{{ Helper::tra('nav.map') }}</a></li>
                         <li class="{{ Helper::route_active(['events.tickets*'], ['events.admin*']) }}"><a href="{{ route('events.tickets') }}">{{ Helper::tra('nav.tickets') }}</a></li>
                         <li class="{{ Helper::route_active(['events.tournaments*'], ['events.admin*']) }}"><a href="{{ route('events.tournaments') }}">{{ Helper::tra('nav.tournaments') }}</a></li>
