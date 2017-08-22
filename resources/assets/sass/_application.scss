@@ -87,9 +87,8 @@
 }
 
 .application-navigation-links {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+    display: grid;
+    grid-auto-flow: column;
 
     a {
         color: #292C33;
