@@ -8,7 +8,7 @@
 <div class="row">
     @if(count($tickets) > 0)
         @foreach($tickets as $ticket)
-            <div class="col-lg-5 col-md-5 col-sm-5">
+            <div class="col-lg-4 col-md-4 col-sm-6">
                 <div class="ticket">
                     <div class="ticket-heading">
                         <h1>{{ $ticket->name }}</h1>
