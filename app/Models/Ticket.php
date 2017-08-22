@@ -21,6 +21,14 @@ class Ticket extends Model
         'unavailableAt',
     ];
 
+    /**
+     * Get event
+     *
+     * @return belongsTo
+     */
+    public function event() {
+        return $this->belongsTo('Tikematic\Models\Event');
+    }
 
     /**
      * Scope a query to only include available tickets.

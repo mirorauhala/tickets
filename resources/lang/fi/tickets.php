@@ -25,5 +25,6 @@ return [
         'seating-code'      => 'Paikkakoodi',
         'action-details'    => 'Näytä tiedot',
         'action-code'       => 'Näytä koodi',
+        'action-book'       => 'Varaa liput',
     ]
 ];

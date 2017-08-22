@@ -22,10 +22,14 @@ class TicketController extends Controller
         // do ugly hard code for event ID
         $event = Event::findOrFail(1);
 
+        $tickets = $event->tickets()->availableAtThisTime()->orderBy("price", "asc")->get();
+
+        $tickets->load('event');
+
         return view('events.tickets.main')
             ->with([
                 "event" => $event,
-                "tickets" => $event->tickets()->availableAtThisTime()->orderBy("price", "asc")->get(),
+                "tickets" => $tickets,
             ]);
     }
 
