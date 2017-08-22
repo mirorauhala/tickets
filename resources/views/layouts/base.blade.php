@@ -14,7 +14,8 @@
     <!-- Styles -->
     <meta name="theme-color" content="#2A5CFF">
     <link rel="manifest" href="/manifest.json">
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet" async="true">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
 </head>
 <body>
     @include('partials.nav.navigation')
