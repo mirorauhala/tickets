@@ -5,7 +5,6 @@
 <h1>{{ Helper::tra('event.pages.tickets.title') }}</h1>
 
 <p>{{ Helper::tra('event.pages.tickets.payment-note') }}</p>
-<br>
 
 @if(count($errors) > 0)
     <div class="alert alert-danger">
