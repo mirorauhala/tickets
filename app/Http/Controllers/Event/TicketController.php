@@ -49,39 +49,4 @@ class TicketController extends Controller
                 "ticket" => $ticket,
             ]);
     }
-
-    /**
-     * Show visitor ticket view.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function showVisitorTicket()
-    {
-        // do ugly hard code for event ID
-        $event = Event::findOrFail(1);
-
-        return view('events.tickets.visitor')
-            ->with([
-                "event" => $event,
-                "ticket" => $event->tickets()->availableAtThisTime()->visitorTicket()->first(),
-            ]);
-    }
-
-    /**
-     * Show gamer ticket view.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function showGamerTickets()
-    {
-        // do ugly hard code for event ID
-        $event = Event::findOrFail(1);
-
-        return view('events.tickets.gamer')
-            ->with([
-                "event" => $event,
-                "ticket" => $event->tickets()->availableAtThisTime()->gamerTickets()->get(),
-                "seats" => Seat::all(),
-            ]);
-    }
 }
