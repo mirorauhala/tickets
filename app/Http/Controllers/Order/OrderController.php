@@ -3,9 +3,9 @@
 namespace Tikematic\Http\Controllers\Order;
 
 use Carbon\Carbon;
-use Tikematic\Models\{Event, Map, Ticket, Order, OrderItem, Transaction};
+use Tikematic\Models\{Event, Ticket, Order, OrderItem};
 use Illuminate\Http\Request;
-use Tikematic\Http\Requests\{OrderRequest, VisitorOrderRequest, PaytrailRequest};
+use Tikematic\Http\Requests\{OrderRequest, PaytrailRequest};
 use Tikematic\Http\Controllers\Controller;
 
 use Money\Currencies\ISOCurrencies;

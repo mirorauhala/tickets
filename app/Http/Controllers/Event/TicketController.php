@@ -3,8 +3,7 @@
 namespace Tikematic\Http\Controllers\Event;
 
 use Auth;
-use Carbon\Carbon;
-use Tikematic\Models\{Event, Ticket, Seat};
+use Tikematic\Models\{Event, Ticket};
 use Illuminate\Http\Request;
 use Tikematic\Http\Controllers\Controller;
 use Tikematic\Http\Requests\VisitorTicketRequest;
