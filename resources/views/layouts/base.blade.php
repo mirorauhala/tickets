@@ -14,7 +14,7 @@
     <!-- Styles -->
     <meta name="theme-color" content="#2A5CFF">
     <link rel="manifest" href="/manifest.json">
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
 </head>
 <body>
@@ -22,6 +22,6 @@
     @yield('base.content')
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" async="true"></script>
+    <script src="{{ mix('js/app.js') }}" async="true"></script>
 </body>
 </html>
