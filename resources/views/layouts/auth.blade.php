@@ -14,7 +14,7 @@
     <!-- Styles -->
     <meta name="theme-color" content="#2A5CFF">
     <link rel="manifest" href="/manifest.json">
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet" async="true">
+    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
     @include('partials.nav.sidebar')
