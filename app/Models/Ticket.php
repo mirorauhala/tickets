@@ -26,20 +26,9 @@ class Ticket extends Model
      *
      * @return belongsTo
      */
-    public function event() {
-        return $this->belongsTo('Tikematic\Models\Event');
-    }
-
-    /**
-     * Scope a query to only include available tickets.
-     *
-     * @param \Illuminate\Database\Eloquent\Builder $query
-     * @return \Illuminate\Database\Eloquent\Builder
-     */
-    public function scopeAvailableAtThisTime($query)
+    public function event()
     {
-        return $query->where('availableAt', '<', Carbon::now())
-            ->where('unavailableAt', '>', Carbon::now());
+        return $this->belongsTo('Tikematic\Models\Event');
     }
 
     /**
