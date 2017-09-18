@@ -2,22 +2,26 @@
 
 namespace Tikematic\Http\Controllers\User\Settings;
 
-use Auth;
 use Helper;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Tikematic\Http\Controllers\Controller;
+use Tikematic\Repositories\Contracts\UserRepository;
 
 class LanguageController extends Controller
 {
+
+    protected $user;
+
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(UserRepository $user)
     {
         $this->middleware('auth');
+        $this->user = $user;
     }
 
     /**
@@ -44,9 +48,10 @@ class LanguageController extends Controller
             ],
         ]);
 
-        $user = Auth::user();
-        $user->language = $request->display_language;
-        $user->save();
+        $this->user->update(
+            $this->user->authenticated()->id,
+            ["language" => $request->display_language]
+        );
 
         return redirect()
             ->route('settings.language')
