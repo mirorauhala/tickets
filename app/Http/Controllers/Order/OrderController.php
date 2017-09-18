@@ -13,11 +13,14 @@ use Money\Currency;
 use Money\Formatter\DecimalMoneyFormatter;
 use Money\Money;
 
-use Paytrail\Object\UrlSet as PaytrailUrlSet;
-use Paytrail\Object\Address as PaytrailAddress;
-use Paytrail\Object\Contact as PaytrailContact;
-use Paytrail\Object\Payment as PaytrailPayment;
-use Paytrail\Object\Product as PaytrailProduct;
+use Paytrail\Object\{
+    UrlSet as PaytrailUrlSet,
+    Address as PaytrailAddress,
+    Contact as PaytrailContact,
+    Payment as PaytrailPayment,
+    Product as PaytrailProduct
+};
+
 use Paytrail\Http\Client as PaytrailClient;
 
 class OrderController extends Controller
