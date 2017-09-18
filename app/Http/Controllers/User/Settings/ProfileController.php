@@ -5,17 +5,21 @@ namespace Tikematic\Http\Controllers\User\Settings;
 use Helper;
 use Illuminate\Http\Request;
 use Tikematic\Http\Controllers\Controller;
+use Tikematic\Repositories\Contracts\UserRepository;
 
 class ProfileController extends Controller
 {
+    protected $user;
+
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(UserRepository $user)
     {
         $this->middleware('auth');
+        $this->user = $user;
     }
 
     /**
@@ -45,16 +49,19 @@ class ProfileController extends Controller
             'country_code' => 'required|max:2',
         ]);
 
-        // save the user data
-        $user = $request->user();
-        $user->first_name = $request->first_name;
-        $user->last_name = $request->last_name;
-        $user->email = $request->email;
-        $user->street_address = $request->street_address;
-        $user->postal_code = $request->postal_code;
-        $user->postal_office = $request->postal_office;
-        $user->country_code = $request->country_code;
-        $user->save();
+        // save profile
+        $this->user->update(
+            $this->user->authenticated()->id,
+            [
+                "first_name"        => $request->first_name,
+                "last_name"         => $request->last_name,
+                "email"             => $request->email,
+                "street_address"    => $request->street_address,
+                "postal_code"       => $request->postal_code,
+                "postal_office"     => $request->postal_office,
+                "country_code"      => $request->country_code,
+            ]
+        );
 
         // return to view with flash message
         return redirect()
