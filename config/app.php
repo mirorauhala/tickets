@@ -181,6 +181,9 @@ return [
         Tikematic\Providers\RouteServiceProvider::class,
         Tikematic\Providers\ValidationProvider::class,
 
+
+        Tikematic\Providers\RepositoryServiceProvider::class,
+
     ],
 
     /*
