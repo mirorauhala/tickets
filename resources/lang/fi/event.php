@@ -66,6 +66,7 @@ return [
             'tickets'               => 'Liput',
             'prices'                => 'Hinnat',
             'settings'              => 'Asetukset',
+            'scanner'               => 'Skanneri',
         ],
 
         'pages' => [

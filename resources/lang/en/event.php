@@ -66,6 +66,7 @@ return [
             'tickets'               => 'Tickets',
             'prices'                => 'Prices',
             'settings'              => 'Settings',
+            'scanner'               => 'Scanner',
         ],
 
         'pages' => [
