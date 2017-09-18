@@ -2,20 +2,29 @@
 
 namespace Tikematic\Http\Controllers\User\Settings;
 
-use Tikematic\Models\Order;
 use Illuminate\Http\Request;
 use Tikematic\Http\Controllers\Controller;
 
+use Tikematic\Repositories\Contracts\{
+    UserRepository,
+    OrderRepository
+};
+
 class OrderController extends Controller
 {
+    protected $user;
+    protected $order;
+
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(UserRepository $user, OrderRepository $order)
     {
         $this->middleware('auth');
+        $this->user = $user;
+        $this->order = $order;
     }
 
     /**
@@ -25,11 +34,11 @@ class OrderController extends Controller
      */
     public function showOrders(Request $request)
     {
-        $user = $request->user();
+        $orders = $this->user->authenticated()->orders->sortByDesc('created_at');
 
         return view('settings.orders.all')
             ->with([
-                "orders" => $user->orders->sortByDesc('created_at'),
+                "orders" => $orders,
             ]);
     }
 
@@ -38,27 +47,28 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function showSpecificOrder($order)
+    public function showSpecificOrder($reference)
     {
-        $order = Order::where('reference', $order)->firstOrFail();
+        // find the event
+        $order = $this->order->findByReference($reference);
 
+        // authorize action
         $this->authorize('view', $order);
 
-        $order_items = $order->items;
+        // eager load tickets
+        $order->load('items.ticket', 'items.seat');
 
-        // has seatable tickets?
-        $showFormSubmit = 0;
-        foreach($order_items as $key=>$item) {
-            if($item->ticket->is_seatable == 1 && $item->seat == null) {
-                $showFormSubmit++;
+        // count orders that need to select a seat
+        $ordersCount = ($order->items->filter(function ($value, $key) {
+            if ($value->ticket->is_seatable == 1 && $value->seat == null) {
+                return true;
             }
-        }
+        })->count() > 0) ? true : false;
 
         return view('settings.orders.specific')
             ->with([
                 "order" => $order,
-                "order_items" => $order_items,
-                "show_form_submit" => $showFormSubmit,
+                "show_form_submit" => $ordersCount,
             ]);
     }
 
@@ -67,19 +77,16 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function deleteOrder($order, Request $request)
+    public function deleteOrder($reference, Request $request)
     {
         // get order from the reference
-        $orderModel = Order::where('reference', $order)->firstOrFail();
-
-        // get user model from request
-        $user = $request->user();
+        $order = $this->order->findByReference($reference);
 
         // authorize current action
-        $this->authorize('delete', $orderModel);
+        $this->authorize('delete', $order);
 
         // delete order
-        Order::where('reference', $orderModel->reference)->delete();
+        $this->order->deleteByReference($reference);
 
         return redirect()
             ->route('settings.orders.all')
@@ -88,5 +95,4 @@ class OrderController extends Controller
                 "flash_message" => 'Tilaus poistettu.',
             ]);
     }
-
 }

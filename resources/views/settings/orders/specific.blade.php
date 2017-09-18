@@ -39,7 +39,7 @@
     @endforeach
 @endif
 
-@if(count($order_items) > 0)
+@if(count($order->items) > 0)
     <div class="table-responsive">
         <form method="post" action="{{ route('order.seats', ['order' => $order->reference]) }}">
             <table class="table table-striped">
@@ -51,7 +51,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($order_items as $key=>$order_item)
+                    @foreach($order->items as $key=>$order_item)
                         <tr>
                             <td>{{ $order_item->title }}</td>
                             <td>{{ Helper::decimalMoneyFormatter($order_item->value, $order->currency) }}</td>
@@ -77,7 +77,7 @@
                     @endforeach
                 </tbody>
             </table>
-            @if($show_form_submit > 0)
+            @if($show_form_submit)
                 <input type="submit" class="btn btn-primary" value="Varaa paikat">
             @endif
         </form>
