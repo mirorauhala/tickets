@@ -2,15 +2,25 @@
 
 namespace Tikematic\Http\Controllers\Event;
 
-use Auth;
-use Tikematic\Models\{Event, Ticket};
+use Tikematic\Models\Event;
 use Illuminate\Http\Request;
 use Tikematic\Http\Controllers\Controller;
-use Tikematic\Http\Requests\VisitorTicketRequest;
-use Illuminate\Contracts\Validation\Validator;
+use Tikematic\Repositories\Contracts\TicketRepository;
+use Tikematic\Repositories\Eloquent\Criteria\{
+    EagerLoad,
+    TicketsAvailable,
+    TicketsCheapestFirst
+};
 
 class TicketController extends Controller
 {
+    protected $tickets;
+
+    public function __construct(TicketRepository $tickets)
+    {
+        $this->tickets = $tickets;
+    }
+
     /**
      * Show event tickets.
      *
@@ -21,10 +31,14 @@ class TicketController extends Controller
         // do ugly hard code for event ID
         $event = Event::findOrFail(1);
 
-        $tickets = $event->tickets()->availableAtThisTime()->orderBy("price", "asc")->get();
+        // get all tickets
+        $tickets = $this->tickets->withCriteria(
+            new TicketsAvailable(),
+            new TicketsCheapestFirst(),
+            new EagerLoad(['event'])
+        )->all();
 
-        $tickets->load('event');
-
+        // return event and tickets
         return view('events.tickets.main')
             ->with([
                 "event" => $event,
