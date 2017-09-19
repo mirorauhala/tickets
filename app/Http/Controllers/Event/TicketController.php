@@ -2,7 +2,7 @@
 
 namespace Tikematic\Http\Controllers\Event;
 
-use Tikematic\Models\Event;
+use Tikematic\Models\{Ticket, Event};
 use Illuminate\Http\Request;
 use Tikematic\Http\Controllers\Controller;
 use Tikematic\Repositories\Contracts\TicketRepository;
