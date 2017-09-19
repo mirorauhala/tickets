@@ -4,9 +4,12 @@ namespace Tikematic\Models;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Tikematic\Traits\Eloquent\Purchasable;
 
 class Ticket extends Model
 {
+    use Purchasable;
+
     /**
      * The attributes that are mass assignable.
      *
