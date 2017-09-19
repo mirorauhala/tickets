@@ -2,27 +2,51 @@
 
 namespace Tikematic\Validators;
 
-use Tikematic\Models\{Ticket, Seat, OrderItem};
+use Tikematic\Repositories\Contracts\{
+    TicketRepository,
+    SeatRepository,
+    OrderItemRepository
+};
 
-class OrderValidator {
+use Tikematic\Repositories\Eloquent\Criteria\{
+    TicketsAvailable,
+    SeatsAvailable
+};
+
+class OrderValidator
+{
+    protected $ticket;
+    protected $seat;
+    protected $orderItem;
+
+    public function __construct(TicketRepository $ticket, SeatRepository $seat, OrderItemRepository $orderItem)
+    {
+        $this->ticket = $ticket;
+        $this->seat = $seat;
+        $this->orderItem = $orderItem;
+    }
+
     /**
-    * Validate ticket availability at this time
+    * Validate ticket availability
     **/
-    public function validateTicketAvailabilityAtThisTime($attribute, $value, $parameters, $validator) {
-        return (Ticket::where('id', $value)->availableAtThisTime()->count() > 0) ? true : false;
+    public function validateTicketAvailabilityAtThisTime($attribute, $value)
+    {
+        return $this->ticket->isPurchasable($value);
     }
 
     /**
     * Validate seat availability
     **/
-    public function validateSeatAvailability($attribute, $value, $parameters, $validator) {
-        return (Seat::where('id', $value)->available()->count() > 0) ? true : false;
+    public function validateSeatAvailability($attribute, $value)
+    {
+        return $this->seat->isAvailable($value);
     }
 
     /**
     * Validate seat availability
     **/
-    public function validateOrderItemStatusAndSeatAvailability($attribute, $value, $parameters, $validator) {
-        return (OrderItem::where('id', $value)->paid()->emptySeat()->count() > 0) ? true : false;
+    public function validateOrderItemStatusAndSeatAvailability($attribute, $value)
+    {
+        return $this->orderItem->seatSelectable($value);
     }
 }
