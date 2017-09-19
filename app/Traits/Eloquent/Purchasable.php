@@ -7,12 +7,12 @@ use Carbon\Carbon;
 trait Purchasable
 {
     /**
-     * Return only available tickets.
+     * Return only purchasable tickets.
      *
      * @param \Illuminate\Database\Eloquent\Builder $query
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function scopeAvailable($query)
+    public function scopePurchasable($query)
     {
         return $query->where('availableAt', '<', Carbon::now())
             ->where('unavailableAt', '>', Carbon::now());
