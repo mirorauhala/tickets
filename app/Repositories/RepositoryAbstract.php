@@ -42,6 +42,12 @@ abstract class RepositoryAbstract implements RepositoryInterface
         return $model;
     }
 
+    /**
+     * Return query results with values that match given rules.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @return Collection
+     */
     public function findWhere($column, $value)
     {
         return $this->entity->where($column, $value)->get();
