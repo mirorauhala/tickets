@@ -24,10 +24,10 @@ class OrderSeatController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function addSeatToOrderItems( OrderSeatRequest $request, $order)
+    public function addSeatToOrderItems(OrderSeatRequest $request, $order)
     {
         $orderSeatCombo = $request->seat;
-        foreach($orderSeatCombo as $combo) {
+        foreach ($orderSeatCombo as $combo) {
             // find seat and mark as taken
             $seat = Seat::find($combo['seat_id']);
             $seat->status = "taken";
@@ -43,7 +43,5 @@ class OrderSeatController extends Controller
             ->route('settings.orders.specific', [
                 "order" => $order,
             ]);
-
     }
-
 }
