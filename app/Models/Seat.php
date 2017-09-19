@@ -3,9 +3,12 @@
 namespace Tikematic\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Tikematic\Traits\Eloquent\SeatAvailable;
 
 class Seat extends Model
 {
+    use SeatAvailable;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -31,19 +34,9 @@ class Seat extends Model
      *
      * @return belongsToMany
      */
-    public function orderItem() {
-        return $this->belongsTo('Tikematic\Models\OrderItem');
-    }
-
-    /**
-     * Scope a query to only include seats that are available.
-     *
-     * @param \Illuminate\Database\Eloquent\Builder $query
-     * @return \Illuminate\Database\Eloquent\Builder
-     */
-    public function scopeAvailable($query)
+    public function orderItem()
     {
-        return $query->where('status', '=', 'available');
+        return $this->belongsTo('Tikematic\Models\OrderItem');
     }
 
     /**
