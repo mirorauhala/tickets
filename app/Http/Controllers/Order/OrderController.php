@@ -3,9 +3,19 @@
 namespace Tikematic\Http\Controllers\Order;
 
 use Carbon\Carbon;
-use Tikematic\Models\{Event, Ticket, Order, OrderItem};
+use Tikematic\Models\{
+    Event,
+    Ticket,
+    Order,
+    OrderItem
+};
+
 use Illuminate\Http\Request;
-use Tikematic\Http\Requests\{OrderRequest, PaytrailRequest};
+use Tikematic\Http\Requests\{
+    OrderRequest,
+    PaytrailRequest
+};
+
 use Tikematic\Http\Controllers\Controller;
 
 use Money\Currencies\ISOCurrencies;
@@ -70,7 +80,7 @@ class OrderController extends Controller
 
         // add orderitems
         $items = [];
-        for($i = 0; $i < $ticket_amount; $i++) {
+        for ($i = 0; $i < $ticket_amount; $i++) {
             // save them to the db
             $items[] = new OrderItem([
                 "title"                 => $ticket->name,
@@ -160,7 +170,7 @@ class OrderController extends Controller
     public function processOrderCallback(PaytrailRequest $request)
     {
         // update order and order items' status to paid if they are not within lock perioid
-        if($order = Order::where("reference", $request->ORDER_NUMBER)->where('status', '!=', 'paid')->first()) {
+        if ($order = Order::where("reference", $request->ORDER_NUMBER)->where('status', '!=', 'paid')->first()) {
 
             // update the base order
             $order->status = "paid";
@@ -176,9 +186,5 @@ class OrderController extends Controller
         } else {
             dump("Error: order not found or already marked paid");
         }
-
     }
-
-
-
 }
