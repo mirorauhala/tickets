@@ -2,16 +2,18 @@
 
 namespace Tikematic\Traits\Eloquent;
 
-trait SeatAvailable
+use Carbon\Carbon;
+
+trait Status
 {
     /**
-     * Return only available seats.
+     * Query for status.
      *
      * @param \Illuminate\Database\Eloquent\Builder $query
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function scopeAvailable($query)
+    public function scopeStatus($query, $status)
     {
-        return $query->where('status', 'available');
+        return $query->where('status', '=', $status);
     }
 }

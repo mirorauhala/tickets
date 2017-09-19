@@ -4,9 +4,12 @@ namespace Tikematic\Models;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Tikematic\Traits\Eloquent\Status;
 
 class OrderItem extends Model
 {
+    use Status;
+
     /**
      * The attributes that are mass assignable.
      *

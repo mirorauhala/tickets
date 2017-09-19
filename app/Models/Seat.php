@@ -3,11 +3,11 @@
 namespace Tikematic\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Tikematic\Traits\Eloquent\SeatAvailable;
+use Tikematic\Traits\Eloquent\Status;
 
 class Seat extends Model
 {
-    use SeatAvailable;
+    use Status;
 
     /**
      * The attributes that are mass assignable.
