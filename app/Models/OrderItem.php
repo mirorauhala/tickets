@@ -28,7 +28,8 @@ class OrderItem extends Model
      *
      * @return hasMany
      */
-    public function ticket() {
+    public function ticket()
+    {
         return $this->belongsTo('Tikematic\Models\Ticket');
     }
 
@@ -37,7 +38,8 @@ class OrderItem extends Model
      *
      * @return hasMany
      */
-    public function seat() {
+    public function seat()
+    {
         return $this->belongsTo('Tikematic\Models\Seat');
     }
 
@@ -46,7 +48,8 @@ class OrderItem extends Model
      *
      * @return hasMany
      */
-    public function order() {
+    public function order()
+    {
         return $this->belongsTo('Tikematic\Models\Order');
     }
 
