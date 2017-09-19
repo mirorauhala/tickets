@@ -9,8 +9,6 @@ class TicketsAvailable implements CriterionInterface
 {
     public function apply($entity)
     {
-        return $entity->where('availableAt', '<', Carbon::now())
-            ->where('unavailableAt', '>', Carbon::now());
-        ;
+        return $entity->purchasable();
     }
 }

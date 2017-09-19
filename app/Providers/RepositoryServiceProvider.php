@@ -6,14 +6,18 @@ use Illuminate\Support\ServiceProvider;
 
 use Tikematic\Repositories\Contracts\{
     UserRepository,
+    SeatRepository,
     TicketRepository,
-    OrderRepository
+    OrderRepository,
+    OrderItemRepository
 };
 
 use Tikematic\Repositories\Eloquent\{
     EloquentUserRepository,
+    EloquentSeatRepository,
     EloquentTicketRepository,
-    EloquentOrderRepository
+    EloquentOrderRepository,
+    EloquentOrderItemRepository
 };
 
 class RepositoryServiceProvider extends ServiceProvider
@@ -26,8 +30,10 @@ class RepositoryServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->app->bind(UserRepository::class, EloquentUserRepository::class);
+        $this->app->bind(SeatRepository::class, EloquentSeatRepository::class);
         $this->app->bind(TicketRepository::class, EloquentTicketRepository::class);
         $this->app->bind(OrderRepository::class, EloquentOrderRepository::class);
+        $this->app->bind(OrderItemRepository::class, EloquentOrderItemRepository::class);
     }
 
     /**

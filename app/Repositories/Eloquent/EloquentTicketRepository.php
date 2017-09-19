@@ -12,4 +12,14 @@ class EloquentTicketRepository extends RepositoryAbstract implements TicketRepos
     {
         return Ticket::class;
     }
+
+    /**
+     * Is given ticket purchasable.
+     *
+     * @return boolean;
+     */
+    public function isPurchasable($id)
+    {
+        return ($this->entity->where('id', $id)->purchasable()->count() > 0) ? true : false;
+    }
 }
