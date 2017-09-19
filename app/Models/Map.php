@@ -3,9 +3,12 @@
 namespace Tikematic\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Tikematic\Traits\Eloquent\IsActive;
 
 class Map extends Model
 {
+    use IsActive;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -22,16 +25,5 @@ class Map extends Model
      */
     public function seats() {
         return $this->hasMany('Tikematic\Models\Seat');
-    }
-
-    /**
-     * Scope a query to only include active maps.
-     *
-     * @param \Illuminate\Database\Eloquent\Builder $query
-     * @return \Illuminate\Database\Eloquent\Builder
-     */
-    public function scopeActive($query)
-    {
-        return $query->where('active', '=', true);
     }
 }
