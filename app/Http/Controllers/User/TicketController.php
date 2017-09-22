@@ -26,7 +26,6 @@ class TicketController extends Controller
      */
     public function showPaidTickets()
     {
-
         $user = Auth::user();
 
         $user->load('orderItems.order', 'orderItems.order.event', 'orderItems.seat');
@@ -44,7 +43,6 @@ class TicketController extends Controller
      */
     public function showPendingTickets()
     {
-
         $user = Auth::user();
 
         $user->load('orderItems.order');
@@ -62,7 +60,6 @@ class TicketController extends Controller
      */
     public function showTicketRedeemView()
     {
-
         $order_items = Auth::user()->orderItems()->unassigned()->get();
 
         return view('tickets.redeem')
