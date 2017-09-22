@@ -80,6 +80,8 @@ class TicketController extends Controller
     {
         $order_item = OrderItem::where('barcode', $barcode)->first();
 
+        $this->authorize('view', $order_item);
+
         return view('tickets.view')
             ->with([
                 "order_item" => $order_item,
