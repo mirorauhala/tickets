@@ -64,6 +64,7 @@ Route::get('/event/admin/tournaments', 'EventAdmin\TournamentController@tourname
 Route::get('/event/admin/prices', 'EventAdmin\CustomerController@customers')->name('events.admin.prices');
 Route::get('/event/admin/settings', 'EventAdmin\SettingsController@viewEventSettings')->name('events.admin.settings');
 Route::post('/event/admin/settings', 'EventAdmin\SettingsController@processEventSettings');
+Route::get('/event/admin/scanner', 'EventAdmin\ScannerController@viewScanner')->name('events.admin.scanner');
 
 /*
 |--------------------------------------------------------------------------

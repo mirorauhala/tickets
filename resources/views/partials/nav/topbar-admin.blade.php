@@ -9,7 +9,10 @@
             <a role="presentation" class="app-link {{ Helper::route_active(['events.admin.maps*'], [], 'active') }}" href="{{ route('events.admin.maps') }}">{{ Helper::tra('event.admin.nav.maps') }}</a>
 
             <a role="presentation" class="app-link {{ Helper::route_active(['events.admin.tournaments*'], [], 'active') }}" href="{{ route('events.admin.tournaments') }}">{{ Helper::tra('event.admin.nav.tournaments') }}</a>
+
             <a role="presentation" class="app-link {{ Helper::route_active(['events.admin.settings*'], [], 'active') }}" href="{{ route('events.admin.settings') }}">{{ Helper::tra('event.admin.nav.settings') }}</a>
+
+            <a role="presentation" class="app-link {{ Helper::route_active(['events.admin.scanner*'], [], 'active') }}" href="{{ route('events.admin.scanner') }}">{{ Helper::tra('event.admin.nav.scanner') }}</a>
 
         </div>
     </div>
