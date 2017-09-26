@@ -27,6 +27,16 @@ class OrderItem extends Model
     protected $hidden = [];
 
     /**
+     * Get owner user model.
+     *
+     * @return hasMany
+     */
+    public function user()
+    {
+        return $this->belongsTo('Tikematic\Models\User');
+    }
+
+    /**
      * Get items ticket.
      *
      * @return hasMany
