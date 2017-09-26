@@ -3,7 +3,8 @@
 namespace Tikematic\Repositories;
 
 use Tikematic\Repositories\Contracts\RepositoryInterface;
-use Tikematic\Repositories\Exceptions\NoEntitiyDefinedException;
+use Tikematic\Repositories\Exceptions\NoEntityDefinedException;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 abstract class RepositoryAbstract implements RepositoryInterface
 {
@@ -17,7 +18,7 @@ abstract class RepositoryAbstract implements RepositoryInterface
     protected function resolveEntity()
     {
         if (!method_exists($this, 'entity')) {
-            throw new NoEntitiyDefinedException();
+            throw new NoEntityDefinedException();
         }
 
         return app()->make($this->entity());
