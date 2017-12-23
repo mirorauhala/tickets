@@ -7,7 +7,6 @@
 <ul class="list-unstyled">
     <li>Paikkoja yhteensä: {{ count($seats) }}</li>
     <li>Paikkoja vapaana: {{ count($seats->where('status', '=', 'available')) }}</li>
-    <li>Paikkoja varattu: {{ count($seats->where('status', '!=', 'available')) }}</li>
 </ul>
 
 </div>
