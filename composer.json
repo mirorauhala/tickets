@@ -5,8 +5,8 @@
     "license": "MIT",
     "type": "project",
     "require": {
-        "php": ">=5.6.4",
-        "barryvdh/laravel-debugbar": "^2.3",
+        "php": ">=7.0.0",
+        "barryvdh/laravel-debugbar": "^3.1",
         "doctrine/dbal": "^2.6",
         "fideloper/proxy": "~3.3",
         "graham-campbell/markdown": "^8.0",
@@ -22,13 +22,15 @@
         "spatie/laravel-fractal": "^5.2"
     },
     "require-dev": {
+        "filp/whoops": "~2.0",
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
         "phpunit/phpunit": "~6.0"
     },
     "autoload": {
         "classmap": [
-            "database"
+            "database/seeds",
+            "database/factories"
         ],
         "psr-4": {
             "Tikematic\\": "app/"
