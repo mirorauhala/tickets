@@ -36,7 +36,7 @@
             "Tikematic\\": "app/"
         },
         "files": [
-            "app/Http/Helper.php"
+            "app/Http/helper.php"
         ]
     },
     "autoload-dev": {
