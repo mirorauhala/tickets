@@ -165,9 +165,7 @@ return [
          * Package Service Providers...
          */
         Laravel\Tinker\TinkerServiceProvider::class,
-        GrahamCampbell\Markdown\MarkdownServiceProvider::class,
         Sentry\SentryLaravel\SentryLaravelServiceProvider::class,
-        \SocialiteProviders\Manager\ServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -228,6 +226,5 @@ return [
         'Validator'    => Illuminate\Support\Facades\Validator::class,
         'View'         => Illuminate\Support\Facades\View::class,
         'Sentry'       => Sentry\SentryLaravel\SentryFacade::class,
-        'Socialite'    => Laravel\Socialite\Facades\Socialite::class,
     ],
 ];

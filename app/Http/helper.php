@@ -6,7 +6,6 @@ use Illuminate\Support\Facades\Log;
 use Money\Currencies\ISOCurrencies;
 use Illuminate\Support\Facades\Route;
 use Money\Formatter\IntlMoneyFormatter;
-use GrahamCampbell\Markdown\Facades\Markdown;
 use App\Exceptions\TranslationStringNotFoundException;
 
 /**
@@ -38,18 +37,6 @@ if (! function_exists('active')) {
         });
 
         return $filtered->isNotEmpty() ? $active : $notActive;
-    }
-}
-
-/**
- * Convert markdown to html
- *
- * @return string
- */
-if (! function_exists('markdown')) {
-    function markdown($string)
-    {
-        return Markdown::convertToHtml($string);
     }
 }
 
