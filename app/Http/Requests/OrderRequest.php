@@ -2,8 +2,9 @@
 
 namespace App\Http\Requests;
 
-use Auth;
-use App\Models\{OrderItem, Ticket, Seat};
+use App\Rules\TicketForSale;
+use App\Rules\NoPendingOrders;
+use App\Rules\CheckTicketReservation;
 use Illuminate\Foundation\Http\FormRequest;
 
 class OrderRequest extends FormRequest
@@ -26,66 +27,18 @@ class OrderRequest extends FormRequest
     public function rules()
     {
         return [
-            "ticket_id" => "required|validateTicketAvailabilityAtThisTime",
-            "ticket_amount" => "required|numeric|min:1",
+            'ticket_id'     => [
+                'bail',
+                'required',
+                new NoPendingOrders,
+                new TicketForSale,
+            ],
+            'ticket_amount' => [
+                'required',
+                'integer',
+                'min:1',
+                new CheckTicketReservation($this->ticket_id),
+            ],
         ];
-    }
-
-    /**
-     * More validation.
-     *
-     * @param  \Illuminate\Validation\Validator  $validator
-     * @return void
-     */
-    public function withValidator($validator)
-    {
-
-
-        // validate ticket amount
-        $validator->after(function ($validator) {
-
-            // user can only have one pending order
-            if(Auth::user()->orders()->status("pending")->count() < 1) {
-
-                // get ticket
-                $ticket = Ticket::find($validator->getData()['ticket_id']);
-
-                // if ticket is seatable
-                if($ticket->is_seatable == true) {
-
-                    // number of seats in total for same ticket type
-                    $seats = Seat::ticketType($ticket->id)->count();
-
-                    // number of paidOrPending orders
-                    $orders = OrderItem::paidOrPending()->ticketType($ticket->id)->count();
-
-                    // maximum amount of tickets that can be sold
-                    $maxOrderItems = $seats - $validator->getData()['ticket_amount'];
-
-                    // maximum amount of order items that can be paidOrPending
-                    // but the requested order can still continue
-                    if($orders > $maxOrderItems) {
-                        $validator->errors()->add('ticket_amount', 'Not enough tickets left!');
-                    }
-                } elseif ($ticket->reserved > 0) {
-
-                    // get amount of paidOrLocked tickets
-                    $paidOrPendingTickets = OrderItem::paidOrPending()->ticketType($ticket->id)->count();
-
-                    // maximum amount of tickets that can be reserved but the
-                    // requested order can still continue
-                    $maxTicketsReserved = $ticket->reserved - $validator->getData()['ticket_amount'];
-
-                    // check that there are enough tickets left for the order to continue
-                    if($paidOrPendingTickets > $maxTicketsReserved) {
-                        $validator->errors()->add('ticket_amount', 'Not enough tickets left!');
-                    }
-                }
-
-
-            } else {
-                $validator->errors()->add('existing_order', 'You already have a pre-existing pending order! Order not created.');
-            }
-        });
     }
 }
