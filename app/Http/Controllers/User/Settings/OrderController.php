@@ -32,11 +32,11 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function showOrders(Request $request)
+    public function index(Request $request)
     {
         $orders = $this->user->authenticated()->orders->sortByDesc('created_at');
 
-        return view('settings.orders.all')
+        return view('settings.orders.index')
             ->with([
                 "orders" => $orders,
             ]);
@@ -89,7 +89,7 @@ class OrderController extends Controller
         $this->order->deleteByReference($reference);
 
         return redirect()
-            ->route('settings.orders.all')
+            ->route('settings.orders')
             ->with([
                 "flash_status" => 'success',
                 "flash_message" => 'Tilaus poistettu.',

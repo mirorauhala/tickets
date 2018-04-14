@@ -18,7 +18,7 @@
             </thead>
             <tbody>
                 @foreach($orders as $order)
-                    <tr class="{{ ($order->status == "pending") ? "info" : "" }}">
+                    <tr>
                         <td>{{ $order->reference }}</td>
                         <td>{{ money($order->value, $order->currency) }}</td>
                         <td>{{ tra('settings.orderStatus.' . $order->status) }}</td>
