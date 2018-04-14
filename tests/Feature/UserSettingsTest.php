@@ -2,14 +2,14 @@
 
 namespace Tests\Feature;
 
-use Tikematic\Model\User;
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithoutMiddleware;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Tikematic\Models\User;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class UserSettingsTest extends TestCase
 {
+    use RefreshDatabase;
+
     /**
      * @test A user can sign in.
      *
@@ -17,20 +17,19 @@ class UserSettingsTest extends TestCase
      */
     public function user_can_edit_own_settings()
     {
-
         // create user
         $user = factory(User::class)->create();
 
         // prepare settings form fill
         $payload = [
-            "first_name" => "John",
-            "last_name" => "Doe",
-            "email" => "john.doe@email.com",
+            'first_name' => 'John',
+            'last_name' => 'Doe',
+            'email' => 'john.doe@email.com',
         ];
 
         $response = $this->actingAs($user)
                          ->post('/settings', $payload)
-                         ->assertSessionMissing("errors");
+                         ->assertSessionMissing('errors');
 
         $response->assertStatus(200);
     }
