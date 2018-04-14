@@ -41,16 +41,14 @@ Route::get('/tournaments', 'User\TournamentController@index')->name('tournaments
 Route::get('/event/map', 'Event\MapController@map')->name('events.map');
 
 // view ticket types
-Route::post('/event/tickets/ticket/{ticket}', 'Order\OrderController@createOrder');
 Route::get('/event/tickets', 'Event\TicketController@index')->name('events.tickets');
 Route::get('/event/tickets/{ticket}', 'Event\TicketController@show')->name('events.tickets.ticket');
+Route::post('/event/tickets/{ticket}', 'Order\OrderController@create');
 
-// tournaments
+// Tournaments
 Route::get('/event/tournaments', 'Event\TournamentController@tournaments')->name('events.tournaments');
 
-
 // Admin routes
-
 Route::get('/event/admin', 'EventAdmin\OrderController@viewEventOrders')->name('events.admin.orders');
 
 Route::get('/event/admin/tickets', 'EventAdmin\TicketController@viewEventTickets')->name('events.admin.tickets.list');

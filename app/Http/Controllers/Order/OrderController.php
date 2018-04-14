@@ -50,7 +50,7 @@ class OrderController extends Controller
      *
      * @return void
      */
-    public function createOrder(OrderRequest $request)
+    public function create(OrderRequest $request)
     {
         // do ugly hard code for event ID
         $event = Event::findOrFail(1);
