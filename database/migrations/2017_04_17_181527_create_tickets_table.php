@@ -13,12 +13,12 @@ class CreateTicketsTable extends Migration
      */
     public function up()
     {
-        Schema::create('tickets', function(Blueprint $table) {
+        Schema::create('tickets', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name')->nullable();
             $table->integer('price')->unsigned();
             $table->integer('vat')->unsigned();
-            $table->boolean('reserved')->unsigned()->default(0);
+            $table->integer('reserved')->unsigned()->default(0);
             $table->boolean('maxAmountPerTransaction')->unsigned()->default(5);
             $table->dateTimeTz('availableAt');
             $table->dateTimeTz('unavailableAt');
