@@ -1,9 +1,9 @@
 <?php
 
-namespace Tikematic\Models;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Tikematic\Traits\Eloquent\Status;
+use App\Traits\Eloquent\Status;
 
 class Seat extends Model
 {
@@ -36,7 +36,7 @@ class Seat extends Model
      */
     public function orderItem()
     {
-        return $this->belongsTo('Tikematic\Models\OrderItem');
+        return $this->belongsTo('App\Models\OrderItem');
     }
 
     /**

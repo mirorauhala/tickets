@@ -1,6 +1,6 @@
 <?php
 
-namespace Tikematic\Models;
+namespace App\Models;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
@@ -52,7 +52,7 @@ class Order extends Model
      * @return belongsTo
      */
     public function event() {
-        return $this->belongsTo('Tikematic\Models\Event');
+        return $this->belongsTo('App\Models\Event');
     }
 
     /**
@@ -61,7 +61,7 @@ class Order extends Model
      * @return belongsToMany
      */
     public function items() {
-        return $this->hasMany('Tikematic\Models\OrderItem');
+        return $this->hasMany('App\Models\OrderItem');
     }
 
     /**

@@ -9,7 +9,7 @@
     <!-- CSRF Token -->
     <meta id="csrfToken" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Tikematic') }} - @yield('base.title', 'Untitled')</title>
+    <title>{{ config('app.name', 'Tickets') }} - @yield('base.title', 'Untitled')</title>
 
     <!-- Styles -->
     <meta name="theme-color" content="#2A5CFF">

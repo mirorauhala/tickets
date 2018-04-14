@@ -1,10 +1,10 @@
 <?php
 
-namespace Tikematic\Models;
+namespace App\Models;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
-use Tikematic\Traits\Eloquent\Purchasable;
+use App\Traits\Eloquent\Purchasable;
 
 class Ticket extends Model
 {
@@ -31,7 +31,7 @@ class Ticket extends Model
      */
     public function event()
     {
-        return $this->belongsTo('Tikematic\Models\Event');
+        return $this->belongsTo('App\Models\Event');
     }
 
     /**

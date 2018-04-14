@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -12,7 +11,7 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => 'Tikematic',
+    'name' => 'Tickets',
 
     /*
     |--------------------------------------------------------------------------
@@ -136,7 +135,6 @@ return [
     */
 
     'providers' => [
-
         /*
          * Laravel Framework Service Providers...
          */
@@ -174,16 +172,14 @@ return [
         /*
          * Application Service Providers...
          */
-        Tikematic\Providers\AppServiceProvider::class,
-        Tikematic\Providers\AuthServiceProvider::class,
-        // Tikematic\Providers\BroadcastServiceProvider::class,
-        Tikematic\Providers\EventServiceProvider::class,
-        Tikematic\Providers\RouteServiceProvider::class,
-        Tikematic\Providers\ValidationProvider::class,
+        App\Providers\AppServiceProvider::class,
+        App\Providers\AuthServiceProvider::class,
+        // App\Providers\BroadcastServiceProvider::class,
+        App\Providers\EventServiceProvider::class,
+        App\Providers\RouteServiceProvider::class,
+        App\Providers\ValidationProvider::class,
 
-
-        Tikematic\Providers\RepositoryServiceProvider::class,
-
+        App\Providers\RepositoryServiceProvider::class,
     ],
 
     /*
@@ -198,7 +194,6 @@ return [
     */
 
     'aliases' => [
-
         'App' => Illuminate\Support\Facades\App::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,
         'Auth' => Illuminate\Support\Facades\Auth::class,
@@ -233,9 +228,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Sentry' => Sentry\SentryLaravel\SentryFacade::class,
-        'Helper' => Tikematic\Http\Helper::class,
+        'Helper' => App\Http\Helper::class,
 
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
     ],
-
 ];

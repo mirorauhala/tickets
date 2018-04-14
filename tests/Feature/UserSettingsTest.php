@@ -3,7 +3,7 @@
 namespace Tests\Feature;
 
 use Tests\TestCase;
-use Tikematic\Models\User;
+use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class UserSettingsTest extends TestCase
@@ -28,9 +28,9 @@ class UserSettingsTest extends TestCase
         ];
 
         $response = $this->actingAs($user)
-                         ->post('/settings', $payload)
-                         ->assertSessionMissing('errors');
+                         ->post('/settings', $payload);
 
-        $response->assertStatus(200);
+        $response->assertSessionMissing('errors');
+        $this->assertDatabaseHas('users', $payload);
     }
 }

@@ -2,10 +2,10 @@
 
 namespace Tests\Browser\Tests\AuthTests;
 
-use Tikematic\Models\User;
+use App\Models\User;
 use Tests\DuskTestCase;
-use Tests\Browser\Pages\SignInPage;
 use Laravel\Dusk\Browser;
+use Tests\Browser\Pages\SignInPage;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class SignInTest extends DuskTestCase
@@ -20,7 +20,7 @@ class SignInTest extends DuskTestCase
     public function a_user_can_sign_in()
     {
         $user = factory(User::class)->create([
-            'email'         => "john.doe@email.com",
+            'email' => 'john.doe@email.com',
         ]);
 
         $this->browse(function (Browser $browser) use ($user) {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Tikematic\Transformers;
+namespace App\Transformers;
 
-use Tikematic\Models\User;
+use App\Models\User;
 use League\Fractal\TransformerAbstract;
 
 class UserTransformer extends TransformerAbstract

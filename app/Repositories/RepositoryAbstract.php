@@ -1,9 +1,9 @@
 <?php
 
-namespace Tikematic\Repositories;
+namespace App\Repositories;
 
-use Tikematic\Repositories\Contracts\RepositoryInterface;
-use Tikematic\Repositories\Exceptions\NoEntityDefinedException;
+use App\Repositories\Contracts\RepositoryInterface;
+use App\Repositories\Exceptions\NoEntityDefinedException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 abstract class RepositoryAbstract implements RepositoryInterface

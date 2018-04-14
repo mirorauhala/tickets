@@ -1,12 +1,12 @@
 <?php
 
-namespace Tikematic\Http\Controllers\User\Settings;
+namespace App\Http\Controllers\User\Settings;
 
 use Helper;
 use Illuminate\Http\Request;
-use Tikematic\Http\Requests\SettingsPasswordRequest;
-use Tikematic\Http\Controllers\Controller;
-use Tikematic\Repositories\Contracts\UserRepository;
+use App\Http\Requests\SettingsPasswordRequest;
+use App\Http\Controllers\Controller;
+use App\Repositories\Contracts\UserRepository;
 
 class PasswordController extends Controller
 {

@@ -1,12 +1,12 @@
 <?php
 
-namespace Tikematic\Http\Controllers\User\Settings;
+namespace App\Http\Controllers\User\Settings;
 
 use Helper;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
-use Tikematic\Http\Controllers\Controller;
-use Tikematic\Repositories\Contracts\UserRepository;
+use App\Http\Controllers\Controller;
+use App\Repositories\Contracts\UserRepository;
 
 class LanguageController extends Controller
 {

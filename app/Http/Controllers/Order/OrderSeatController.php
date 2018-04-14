@@ -1,11 +1,11 @@
 <?php
 
-namespace Tikematic\Http\Controllers\Order;
+namespace App\Http\Controllers\Order;
 
-use Tikematic\Models\{Event, Seat, Order, OrderItem};
+use App\Models\{Event, Seat, Order, OrderItem};
 use Illuminate\Http\Request;
-use Tikematic\Http\Requests\OrderSeatRequest;
-use Tikematic\Http\Controllers\Controller;
+use App\Http\Requests\OrderSeatRequest;
+use App\Http\Controllers\Controller;
 
 class OrderSeatController extends Controller
 {

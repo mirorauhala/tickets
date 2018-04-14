@@ -1,11 +1,11 @@
 <?php
 
-namespace Tikematic\Transformers;
+namespace App\Transformers;
 
 use Helper;
-use Tikematic\Models\OrderItem;
+use App\Models\OrderItem;
 use League\Fractal\TransformerAbstract;
-use Tikematic\Transformers\{
+use App\Transformers\{
     TicketTransformer,
     SeatTransformer,
     UserTransformer,

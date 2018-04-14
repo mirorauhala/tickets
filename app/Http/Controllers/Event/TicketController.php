@@ -1,12 +1,12 @@
 <?php
 
-namespace Tikematic\Http\Controllers\Event;
+namespace App\Http\Controllers\Event;
 
-use Tikematic\Models\{Ticket, Event};
+use App\Models\{Ticket, Event};
 use Illuminate\Http\Request;
-use Tikematic\Http\Controllers\Controller;
-use Tikematic\Repositories\Contracts\TicketRepository;
-use Tikematic\Repositories\Eloquent\Criteria\{
+use App\Http\Controllers\Controller;
+use App\Repositories\Contracts\TicketRepository;
+use App\Repositories\Eloquent\Criteria\{
     EagerLoad,
     TicketsAvailable,
     TicketsCheapestFirst

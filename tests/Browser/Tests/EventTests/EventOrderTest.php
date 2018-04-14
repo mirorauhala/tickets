@@ -2,10 +2,9 @@
 
 namespace Tests\Browser\Tests\EventTests;
 
-use Tikematic\Models\User;
 use Tests\DuskTestCase;
-use Tests\Browser\Pages\EventOrdersPage;
 use Laravel\Dusk\Browser;
+use Tests\Browser\Pages\EventOrdersPage;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class EventOrdersTest extends DuskTestCase

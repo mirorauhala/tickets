@@ -1,9 +1,9 @@
 <?php
 
-namespace Tikematic\Http\Controllers\User;
+namespace App\Http\Controllers\User;
 
 use Illuminate\Http\Request;
-use Tikematic\Http\Controllers\Controller;
+use App\Http\Controllers\Controller;
 
 class TournamentController extends Controller
 {

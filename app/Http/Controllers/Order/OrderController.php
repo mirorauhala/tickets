@@ -1,9 +1,9 @@
 <?php
 
-namespace Tikematic\Http\Controllers\Order;
+namespace App\Http\Controllers\Order;
 
 use Carbon\Carbon;
-use Tikematic\Models\{
+use App\Models\{
     Event,
     Ticket,
     Order,
@@ -11,12 +11,12 @@ use Tikematic\Models\{
 };
 
 use Illuminate\Http\Request;
-use Tikematic\Http\Requests\{
+use App\Http\Requests\{
     OrderRequest,
     PaytrailRequest
 };
 
-use Tikematic\Http\Controllers\Controller;
+use App\Http\Controllers\Controller;
 
 use Money\Currencies\ISOCurrencies;
 use Money\Currency;

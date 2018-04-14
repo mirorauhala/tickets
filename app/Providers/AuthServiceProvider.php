@@ -1,6 +1,6 @@
 <?php
 
-namespace Tikematic\Providers;
+namespace App\Providers;
 
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
@@ -13,9 +13,9 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        'Tikematic\Models\Event' => 'Tikematic\Policies\EventPolicy',
-        'Tikematic\Models\Order' => 'Tikematic\Policies\OrderPolicy',
-        'Tikematic\Models\OrderItem' => 'Tikematic\Policies\OrderItemPolicy',
+        'App\Models\Event' => 'App\Policies\EventPolicy',
+        'App\Models\Order' => 'App\Policies\OrderPolicy',
+        'App\Models\OrderItem' => 'App\Policies\OrderItemPolicy',
     ];
 
     /**

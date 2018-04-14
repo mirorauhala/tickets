@@ -1,6 +1,6 @@
 <?php
 
-namespace Tikematic\Traits\Eloquent;
+namespace App\Traits\Eloquent;
 
 trait IsActive
 {

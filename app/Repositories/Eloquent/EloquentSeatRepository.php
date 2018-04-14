@@ -1,10 +1,10 @@
 <?php
 
-namespace Tikematic\Repositories\Eloquent;
+namespace App\Repositories\Eloquent;
 
-use Tikematic\Models\Seat;
-use Tikematic\Repositories\RepositoryAbstract;
-use Tikematic\Repositories\Contracts\SeatRepository;
+use App\Models\Seat;
+use App\Repositories\RepositoryAbstract;
+use App\Repositories\Contracts\SeatRepository;
 
 class EloquentSeatRepository extends RepositoryAbstract implements SeatRepository
 {

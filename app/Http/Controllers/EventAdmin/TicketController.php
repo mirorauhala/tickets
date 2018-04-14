@@ -1,11 +1,11 @@
 <?php
 
-namespace Tikematic\Http\Controllers\EventAdmin;
+namespace App\Http\Controllers\EventAdmin;
 
-use Tikematic\Models\{Event, Ticket};
+use App\Models\{Event, Ticket};
 use Illuminate\Http\Request;
-use Tikematic\Http\Controllers\Controller;
-use Tikematic\Http\Requests\EventAdminTicketRequest;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\EventAdminTicketRequest;
 
 class TicketController extends Controller
 {

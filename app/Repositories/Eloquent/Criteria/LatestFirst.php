@@ -1,8 +1,8 @@
 <?php
 
-namespace Tikematic\Repositories\Eloquent\Criteria;
+namespace App\Repositories\Eloquent\Criteria;
 
-use Tikematic\Repositories\Criteria\CriterionInterface;
+use App\Repositories\Criteria\CriterionInterface;
 
 class LatestFirst implements CriterionInterface
 {

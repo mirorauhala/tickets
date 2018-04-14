@@ -24,5 +24,5 @@ if (mix.config.inProduction) {
 mix.browserSync({
     https: true,
     host: '192.168.0.109',
-    proxy: 'https://tikematic.app'
+    proxy: 'https://tickets.app'
 });

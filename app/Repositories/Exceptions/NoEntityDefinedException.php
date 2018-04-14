@@ -1,6 +1,6 @@
 <?php
 
-namespace Tikematic\Repositories\Exceptions;
+namespace App\Repositories\Exceptions;
 
 use Exception;
 

@@ -64,7 +64,7 @@
                                         <input type="hidden" name="seat[{{ $key }}][order_item_id]" value="{{ $order_item->id }}">
                                         <select class="form-control" name="seat[{{ $key }}][seat_id]">
                                             <option value="">Valitse paikka</option>
-                                            @foreach(Tikematic\Models\Seat::status("available")->ticketType($order_item->ticket->id)->get() as $seat)
+                                            @foreach(App\Models\Seat::status("available")->ticketType($order_item->ticket->id)->get() as $seat)
                                                 <option value="{{ $seat->id }}">{{ $seat->name }}</option>
                                             @endforeach
                                         </select>

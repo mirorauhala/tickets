@@ -1,9 +1,9 @@
 <?php
 
-namespace Tikematic\Policies;
+namespace App\Policies;
 
-use Tikematic\Models\User;
-use Tikematic\Models\OrderItem;
+use App\Models\User;
+use App\Models\OrderItem;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class OrderItemPolicy
@@ -13,8 +13,8 @@ class OrderItemPolicy
     /**
      * Determine whether the user can view the order.
      *
-     * @param  \Tikematic\User  $user
-     * @param  \Tikematic\Order  $order
+     * @param  \App\User  $user
+     * @param  \App\Order  $order
      * @return mixed
      */
     public function view(User $user, OrderItem $order)
@@ -25,7 +25,7 @@ class OrderItemPolicy
     /**
      * Determine whether the user can create orders.
      *
-     * @param  \Tikematic\User  $user
+     * @param  \App\User  $user
      * @return mixed
      */
     public function create(User $user)
@@ -36,8 +36,8 @@ class OrderItemPolicy
     /**
      * Determine whether the user can update orders.
      *
-     * @param  \Tikematic\User  $user
-     * @param  \Tikematic\Event  $order
+     * @param  \App\User  $user
+     * @param  \App\Event  $order
      * @return mixed
      */
     public function update(User $user, OrderItem $order)
@@ -48,8 +48,8 @@ class OrderItemPolicy
     /**
      * Determine whether the user can delete orders.
      *
-     * @param  \Tikematic\User  $user
-     * @param  \Tikematic\Event  $order
+     * @param  \App\User  $user
+     * @param  \App\Event  $order
      * @return mixed
      */
     public function delete(User $user, OrderItem $order)

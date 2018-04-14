@@ -1,11 +1,11 @@
 <?php
 
-namespace Tikematic\Http\Controllers\User\Settings;
+namespace App\Http\Controllers\User\Settings;
 
 use Helper;
 use Illuminate\Http\Request;
-use Tikematic\Http\Controllers\Controller;
-use Tikematic\Repositories\Contracts\UserRepository;
+use App\Http\Controllers\Controller;
+use App\Repositories\Contracts\UserRepository;
 
 class ProfileController extends Controller
 {
@@ -53,13 +53,13 @@ class ProfileController extends Controller
         $this->user->update(
             $this->user->authenticated()->id,
             [
-                "first_name"        => $request->first_name,
-                "last_name"         => $request->last_name,
-                "email"             => $request->email,
-                "street_address"    => $request->street_address,
-                "postal_code"       => $request->postal_code,
-                "postal_office"     => $request->postal_office,
-                "country_code"      => $request->country_code,
+                'first_name' => $request->first_name,
+                'last_name' => $request->last_name,
+                'email' => $request->email,
+                'street_address' => $request->street_address,
+                'postal_code' => $request->postal_code,
+                'postal_office' => $request->postal_office,
+                'country_code' => $request->country_code,
             ]
         );
 

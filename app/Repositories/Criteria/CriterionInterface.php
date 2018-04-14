@@ -1,6 +1,6 @@
 <?php
 
-namespace Tikematic\Repositories\Criteria;
+namespace App\Repositories\Criteria;
 
 interface CriterionInterface
 {

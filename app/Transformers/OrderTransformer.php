@@ -1,9 +1,9 @@
 <?php
 
-namespace Tikematic\Transformers;
+namespace App\Transformers;
 
 use Helper;
-use Tikematic\Models\Order;
+use App\Models\Order;
 use League\Fractal\TransformerAbstract;
 
 class OrderTransformer extends TransformerAbstract

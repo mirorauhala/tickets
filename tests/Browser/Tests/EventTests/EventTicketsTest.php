@@ -2,10 +2,11 @@
 
 namespace Tests\Browser\Tests\EventTests;
 
-use Tikematic\Models\{Event, User};
+use App\Models\User;
+use App\Models\Event;
 use Tests\DuskTestCase;
-use Tests\Browser\Pages\EventTicketsPage;
 use Laravel\Dusk\Browser;
+use Tests\Browser\Pages\EventTicketsPage;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class EvenTicketsTest extends DuskTestCase
@@ -28,11 +29,11 @@ class EvenTicketsTest extends DuskTestCase
             $browser->loginAs($user)
                     ->visit(new EventTicketsPage)
                     ->createTicket(
-                        "The Best Event of The Year",
-                        "Milky Way, Earth",
-                        "http://eventoftheyear.com/",
-                        "EUR", // currency not available
-                        "1" // visible
+                        'The Best Event of The Year',
+                        'Milky Way, Earth',
+                        'http://eventoftheyear.com/',
+                        'EUR', // currency not available
+                        '1' // visible
                     );
         });
     }

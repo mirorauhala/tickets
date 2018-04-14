@@ -1,14 +1,14 @@
 <?php
 
-namespace Tikematic\Validators;
+namespace App\Validators;
 
-use Tikematic\Repositories\Contracts\{
+use App\Repositories\Contracts\{
     TicketRepository,
     SeatRepository,
     OrderItemRepository
 };
 
-use Tikematic\Repositories\Eloquent\Criteria\{
+use App\Repositories\Eloquent\Criteria\{
     TicketsAvailable,
     SeatsAvailable
 };

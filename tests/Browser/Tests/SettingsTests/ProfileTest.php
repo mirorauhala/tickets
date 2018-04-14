@@ -2,10 +2,10 @@
 
 namespace Tests\Browser\Tests\SettingsTests;
 
-use Tikematic\Models\User;
+use App\Models\User;
 use Tests\DuskTestCase;
-use Tests\Browser\Pages\SettingsProfilePage;
 use Laravel\Dusk\Browser;
+use Tests\Browser\Pages\SettingsProfilePage;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class ProfileTest extends DuskTestCase
@@ -19,7 +19,6 @@ class ProfileTest extends DuskTestCase
      */
     public function a_user_can_update_profile()
     {
-
         $user = factory(User::class)->create();
 
         $this->browse(function (Browser $browser) use ($user) {
@@ -32,7 +31,7 @@ class ProfileTest extends DuskTestCase
                 'Gagas street',
                 '00200',
                 'Postal Office GAGA',
-                'sv'
+                'sv',
             ];
 
             $browser->loginAs($user)

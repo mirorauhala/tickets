@@ -1,10 +1,10 @@
 <?php
 
-namespace Tikematic\Models;
+namespace App\Models;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
-use Tikematic\Traits\Eloquent\Status;
+use App\Traits\Eloquent\Status;
 
 class OrderItem extends Model
 {
@@ -33,7 +33,7 @@ class OrderItem extends Model
      */
     public function user()
     {
-        return $this->belongsTo('Tikematic\Models\User');
+        return $this->belongsTo('App\Models\User');
     }
 
     /**
@@ -43,7 +43,7 @@ class OrderItem extends Model
      */
     public function ticket()
     {
-        return $this->belongsTo('Tikematic\Models\Ticket');
+        return $this->belongsTo('App\Models\Ticket');
     }
 
     /**
@@ -53,7 +53,7 @@ class OrderItem extends Model
      */
     public function seat()
     {
-        return $this->belongsTo('Tikematic\Models\Seat');
+        return $this->belongsTo('App\Models\Seat');
     }
 
     /**
@@ -63,7 +63,7 @@ class OrderItem extends Model
      */
     public function order()
     {
-        return $this->belongsTo('Tikematic\Models\Order');
+        return $this->belongsTo('App\Models\Order');
     }
 
     /**

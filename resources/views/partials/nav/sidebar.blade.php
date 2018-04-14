@@ -56,7 +56,6 @@
 
 
                     <p class="legal">
-                        <img src="/images/tikematic-small.svg" alt="Tikematic"><br>
                         <a href="https://goo.gl/QhFTuI" target="_blank" rel="noopener">{{ Helper::tra('nav.privacy-policy') }}</a> &nbsp; {{ Helper::tra('nav.made-in') }}
                     </p>
 

@@ -1,9 +1,9 @@
 <?php
 
-namespace Tikematic\Http\Controllers\Api;
+namespace App\Http\Controllers\Api;
 
-use Tikematic\Models\OrderItem;
-use Tikematic\Transformers\OrderItemTransformer;
+use App\Models\OrderItem;
+use App\Transformers\OrderItemTransformer;
 
 class OrderItemController
 {

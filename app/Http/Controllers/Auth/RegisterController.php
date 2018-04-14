@@ -1,9 +1,9 @@
 <?php
 
-namespace Tikematic\Http\Controllers\Auth;
+namespace App\Http\Controllers\Auth;
 
-use Tikematic\Models\User;
-use Tikematic\Http\Controllers\Controller;
+use App\Models\User;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 

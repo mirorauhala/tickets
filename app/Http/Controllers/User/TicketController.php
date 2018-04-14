@@ -1,11 +1,11 @@
 <?php
 
-namespace Tikematic\Http\Controllers\User;
+namespace App\Http\Controllers\User;
 
 use Auth;
-use Tikematic\Models\{Order, OrderItem};
+use App\Models\{Order, OrderItem};
 use Illuminate\Http\Request;
-use Tikematic\Http\Controllers\Controller;
+use App\Http\Controllers\Controller;
 
 class TicketController extends Controller
 {

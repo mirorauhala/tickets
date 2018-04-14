@@ -1,10 +1,10 @@
 <?php
 
-namespace Tikematic\Repositories\Eloquent;
+namespace App\Repositories\Eloquent;
 
-use Tikematic\Models\Ticket;
-use Tikematic\Repositories\RepositoryAbstract;
-use Tikematic\Repositories\Contracts\TicketRepository;
+use App\Models\Ticket;
+use App\Repositories\RepositoryAbstract;
+use App\Repositories\Contracts\TicketRepository;
 
 class EloquentTicketRepository extends RepositoryAbstract implements TicketRepository
 {

@@ -1,12 +1,12 @@
 <?php
 
-namespace Tikematic\Repositories\Eloquent;
+namespace App\Repositories\Eloquent;
 
 use Auth;
 
-use Tikematic\Models\User;
-use Tikematic\Repositories\RepositoryAbstract;
-use Tikematic\Repositories\Contracts\UserRepository;
+use App\Models\User;
+use App\Repositories\RepositoryAbstract;
+use App\Repositories\Contracts\UserRepository;
 
 class EloquentUserRepository extends RepositoryAbstract implements UserRepository
 {
@@ -18,7 +18,7 @@ class EloquentUserRepository extends RepositoryAbstract implements UserRepositor
     /*
     * Returns the user model that is authenticated.
     *
-    * @returns \Tikematic\Models\User
+    * @returns \App\Models\User
     */
     public function authenticated()
     {

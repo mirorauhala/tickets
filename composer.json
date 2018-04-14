@@ -33,7 +33,7 @@
             "database/factories"
         ],
         "psr-4": {
-            "Tikematic\\": "app/"
+            "App\\": "app/"
         },
         "files": [
             "app/Http/helper.php"

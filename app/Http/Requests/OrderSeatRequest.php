@@ -1,8 +1,8 @@
 <?php
 
-namespace Tikematic\Http\Requests;
+namespace App\Http\Requests;
 
-use Tikematic\Models\{Seat, OrderItem, Ticket};
+use App\Models\{Seat, OrderItem, Ticket};
 use Illuminate\Foundation\Http\FormRequest;
 
 class OrderSeatRequest extends FormRequest

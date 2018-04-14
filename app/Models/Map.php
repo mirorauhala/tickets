@@ -1,9 +1,9 @@
 <?php
 
-namespace Tikematic\Models;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Tikematic\Traits\Eloquent\IsActive;
+use App\Traits\Eloquent\IsActive;
 
 class Map extends Model
 {
@@ -24,6 +24,6 @@ class Map extends Model
      * @return belongsToMany
      */
     public function seats() {
-        return $this->hasMany('Tikematic\Models\Seat');
+        return $this->hasMany('App\Models\Seat');
     }
 }

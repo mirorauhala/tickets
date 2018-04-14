@@ -1,6 +1,6 @@
 <?php
 
-namespace Tikematic\Console\Commands;
+namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 
@@ -11,7 +11,7 @@ class PopulateBasicEventData extends Command
      *
      * @var string
      */
-    protected $signature = 'tikematic:dev-populate';
+    protected $signature = 'tickets:dev-populate';
 
     /**
      * The console command description.
@@ -37,12 +37,12 @@ class PopulateBasicEventData extends Command
      */
     public function handle()
     {
-        $event = factory(\Tikematic\Models\Event::class)->create([
+        $event = factory(\App\Models\Event::class)->create([
             'name' => 'Connection Lan: eSports 2017',
             'location' => 'Alaseinäjoenkatu 15, 60220 Seinäjoki, Finland',
             'details' => 'Welcome to the ticket sales for Connection Lan: eSports 2017. In here you shall find event...',
-            'url' => "http://connectionlan.fi",
-            'currency' => "EUR",
+            'url' => 'http://connectionlan.fi',
+            'currency' => 'EUR',
         ]);
 
         $map = $event->maps()->create([
@@ -50,7 +50,7 @@ class PopulateBasicEventData extends Command
             'description' => 'This map actually is located on the second floor but we chose to keep it easier for people to understand that the event\'s maps don\'t start from the second floor and wonder where the first floor is.',
         ]);
 
-        factory(\Tikematic\Models\User::class)->create([
+        factory(\App\Models\User::class)->create([
             'first_name' => 'john',
             'last_name' => 'doe',
             'email' => 'john.doe@email.com',

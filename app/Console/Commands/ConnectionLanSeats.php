@@ -1,8 +1,8 @@
 <?php
 
-namespace Tikematic\Console\Commands;
+namespace App\Console\Commands;
 
-use Tikematic\Models\Map;
+use App\Models\Map;
 use Illuminate\Console\Command;
 
 class ConnectionLanSeats extends Command
@@ -39,28 +39,28 @@ class ConnectionLanSeats extends Command
     public function handle()
     {
 
-        $visitorTicket = factory(\Tikematic\Models\Ticket::class)->create([
+        $visitorTicket = factory(\App\Models\Ticket::class)->create([
             'name' => 'Kävijälippu',
             'price' => 1500,
             'is_seatable' => 0,
             'event_id' => 1,
         ]);
 
-        $gamerTicket = factory(\Tikematic\Models\Ticket::class)->create([
+        $gamerTicket = factory(\App\Models\Ticket::class)->create([
             'name' => 'Peruspaikka',
             'price' => 3500,
             'is_seatable' => 1,
             'event_id' => 1,
         ]);
 
-        $proTicket = factory(\Tikematic\Models\Ticket::class)->create([
+        $proTicket = factory(\App\Models\Ticket::class)->create([
             'name' => 'Battery Premium',
             'price' => 7000,
             'is_seatable' => 1,
             'event_id' => 1,
         ]);
 
-        $ultraTicket = factory(\Tikematic\Models\Ticket::class)->create([
+        $ultraTicket = factory(\App\Models\Ticket::class)->create([
             'name' => 'Battery Ultra',
             'price' => 9900,
             'is_seatable' => 1,

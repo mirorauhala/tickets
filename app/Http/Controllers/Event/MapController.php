@@ -1,10 +1,10 @@
 <?php
 
-namespace Tikematic\Http\Controllers\Event;
+namespace App\Http\Controllers\Event;
 
-use Tikematic\Models\{Event, Seat};
+use App\Models\{Event, Seat};
 use Illuminate\Http\Request;
-use Tikematic\Http\Controllers\Controller;
+use App\Http\Controllers\Controller;
 
 class MapController extends Controller
 {

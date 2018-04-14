@@ -1,6 +1,6 @@
 {
-  "short_name": "Tikematic",
-  "name": "Tikematic",
+  "short_name": "Tickets",
+  "name": "Tickets",
   "start_url": "./?utm_source=web_app_manifest",
   "icons": [
     {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Tikematic\Http;
+namespace App\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -15,11 +15,11 @@ class Kernel extends HttpKernel
      */
     protected $middleware = [
         //\Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode::class,
-        \Tikematic\Http\Middleware\CheckForMaintenanceMode::class,
+        \App\Http\Middleware\CheckForMaintenanceMode::class,
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
-        \Tikematic\Http\Middleware\TrimStrings::class,
+        \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
-        \Tikematic\Http\Middleware\TrustProxies::class,
+        \App\Http\Middleware\TrustProxies::class,
     ];
 
     /**
@@ -29,13 +29,13 @@ class Kernel extends HttpKernel
      */
     protected $middlewareGroups = [
         'web' => [
-            \Tikematic\Http\Middleware\EncryptCookies::class,
+            \App\Http\Middleware\EncryptCookies::class,
             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
             \Illuminate\Session\Middleware\StartSession::class,
             // \Illuminate\Session\Middleware\AuthenticateSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-            \Tikematic\Http\Middleware\VerifyCsrfToken::class,
-            \Tikematic\Http\Middleware\PreferredLanguage::class,
+            \App\Http\Middleware\VerifyCsrfToken::class,
+            \App\Http\Middleware\PreferredLanguage::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
 
@@ -57,7 +57,7 @@ class Kernel extends HttpKernel
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
-        'guest' => \Tikematic\Http\Middleware\RedirectIfAuthenticated::class,
+        'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
     ];
 }

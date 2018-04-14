@@ -1,8 +1,8 @@
 <?php
 
-namespace Tikematic\Http\Requests;
+namespace App\Http\Requests;
 
-use Tikematic\Models\{OrderItem, Ticket};
+use App\Models\{OrderItem, Ticket};
 use Illuminate\Foundation\Http\FormRequest;
 use Paytrail\Http\Client as PaytrailClient;
 

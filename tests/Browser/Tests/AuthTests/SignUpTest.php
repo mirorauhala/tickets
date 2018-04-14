@@ -2,10 +2,10 @@
 
 namespace Tests\Browser\Tests\AuthTests;
 
-use Tikematic\Models\User;
+use App\Models\User;
 use Tests\DuskTestCase;
-use Tests\Browser\Pages\SignUpPage;
 use Laravel\Dusk\Browser;
+use Tests\Browser\Pages\SignUpPage;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class SignUpTest extends DuskTestCase
@@ -20,7 +20,6 @@ class SignUpTest extends DuskTestCase
     public function a_user_can_sign_up()
     {
         $this->browse(function (Browser $browser) {
-
             $details = [
                 'John',
                 'Doe',
@@ -30,7 +29,7 @@ class SignUpTest extends DuskTestCase
                 'Postal Office LA',
                 'Finland',
                 'secret',
-                'secret'
+                'secret',
             ];
 
             $browser->visit(new SignUpPage)

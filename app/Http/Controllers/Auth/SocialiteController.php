@@ -1,10 +1,10 @@
 <?php
 
-namespace Tikematic\Http\Controllers\Auth;
+namespace App\Http\Controllers\Auth;
 
-use Tikematic\Platform;
+use App\Platform;
 use Socialite;
-use Tikematic\Http\Controllers\Controller;
+use App\Http\Controllers\Controller;
 
 class SocialiteController extends Controller
 {

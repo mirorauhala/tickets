@@ -1,8 +1,8 @@
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
-## About Tikematic
+## About mirorauhala/tickets
 
-Tikematic is built to be an open-source ticket sales system for LAN events.
+Tickets is built to be an open-source ticket sales system for LAN events.
 
 - [Simple, fast routing engine](https://laravel.com/docs/routing).
 - [Powerful dependency injection container](https://laravel.com/docs/container).
@@ -20,8 +20,8 @@ Thank you for considering contributing to the Laravel framework! The contributio
 
 ## Security Vulnerabilities
 
-If you discover a security vulnerability within Tikematic, please send `mirorauhala` a messsage over [Keybase.io Chat](https://keybase.io/) or [manually encrypt](https://keybase.io/encrypt) the message and send to my email miro.rauhala.99@gmail.com. All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within Tickets, please send `mirorauhala` a messsage over [Keybase.io Chat](https://keybase.io/) or [manually encrypt](https://keybase.io/encrypt) the message and send to my email miro.rauhala.99@gmail.com. All security vulnerabilities will be promptly addressed.
 
 ## License
 
-Tikematic is licensed under [MIT license](http://opensource.org/licenses/MIT) as is its Laravel framework.
+Tickets is licensed under [MIT license](http://opensource.org/licenses/MIT) as is its Laravel framework.

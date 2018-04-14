@@ -1,9 +1,9 @@
 <?php
 
-namespace Tikematic\Repositories\Eloquent\Criteria;
+namespace App\Repositories\Eloquent\Criteria;
 
 use Carbon\Carbon;
-use Tikematic\Repositories\Criteria\CriterionInterface;
+use App\Repositories\Criteria\CriterionInterface;
 
 class TicketsAvailable implements CriterionInterface
 {

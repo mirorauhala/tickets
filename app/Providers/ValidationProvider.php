@@ -1,6 +1,6 @@
 <?php
 
-namespace Tikematic\Providers;
+namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Validator;
@@ -14,10 +14,10 @@ class ValidationProvider extends ServiceProvider
      */
     public function boot()
     {
-        Validator::extend('validateTicketAvailabilityAtThisTime', 'Tikematic\Validators\OrderValidator@validateTicketAvailabilityAtThisTime');
-        Validator::extend('validateSeatAvailability', 'Tikematic\Validators\OrderValidator@validateSeatAvailability');
-        Validator::extend('validateOrderItemStatusAndSeatAvailability', 'Tikematic\Validators\OrderValidator@validateOrderItemStatusAndSeatAvailability');
-        Validator::extend('password', 'Tikematic\Validators\PasswordValidator@validatePassword');
+        Validator::extend('validateTicketAvailabilityAtThisTime', 'App\Validators\OrderValidator@validateTicketAvailabilityAtThisTime');
+        Validator::extend('validateSeatAvailability', 'App\Validators\OrderValidator@validateSeatAvailability');
+        Validator::extend('validateOrderItemStatusAndSeatAvailability', 'App\Validators\OrderValidator@validateOrderItemStatusAndSeatAvailability');
+        Validator::extend('password', 'App\Validators\PasswordValidator@validatePassword');
     }
 
     /**

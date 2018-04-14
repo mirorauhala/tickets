@@ -1,9 +1,9 @@
 <?php
 
-namespace Tikematic\Transformers;
+namespace App\Transformers;
 
 use Helper;
-use Tikematic\Models\Ticket;
+use App\Models\Ticket;
 use League\Fractal\TransformerAbstract;
 
 class TicketTransformer extends TransformerAbstract

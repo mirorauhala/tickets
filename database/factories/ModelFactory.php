@@ -12,7 +12,7 @@
 */
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(Tikematic\Models\User::class, function (Faker\Generator $faker) {
+$factory->define(App\Models\User::class, function (Faker\Generator $faker) {
     static $password;
 
     return [
@@ -30,7 +30,7 @@ $factory->define(Tikematic\Models\User::class, function (Faker\Generator $faker)
 });
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(Tikematic\Models\Event::class, function (Faker\Generator $faker) {
+$factory->define(App\Models\Event::class, function (Faker\Generator $faker) {
     static $password;
 
     return [
@@ -43,7 +43,7 @@ $factory->define(Tikematic\Models\Event::class, function (Faker\Generator $faker
 });
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(Tikematic\Models\Map::class, function (Faker\Generator $faker) {
+$factory->define(App\Models\Map::class, function (Faker\Generator $faker) {
     static $password;
 
     return [
@@ -53,7 +53,7 @@ $factory->define(Tikematic\Models\Map::class, function (Faker\Generator $faker) 
 });
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(Tikematic\Models\Ticket::class, function (Faker\Generator $faker) {
+$factory->define(App\Models\Ticket::class, function (Faker\Generator $faker) {
     static $password;
 
     return [
@@ -71,7 +71,7 @@ $factory->define(Tikematic\Models\Ticket::class, function (Faker\Generator $fake
 });
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(Tikematic\Models\Seat::class, function (Faker\Generator $faker) {
+$factory->define(App\Models\Seat::class, function (Faker\Generator $faker) {
     static $password;
 
     return [

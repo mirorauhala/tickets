@@ -1,6 +1,6 @@
 <?php
 
-namespace Tikematic\Repositories\Contracts;
+namespace App\Repositories\Contracts;
 
 interface OrderRepository
 {

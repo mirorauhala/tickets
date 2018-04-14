@@ -1,8 +1,8 @@
 <?php
 
-namespace Tikematic\Transformers;
+namespace App\Transformers;
 
-use Tikematic\Models\Seat;
+use App\Models\Seat;
 use League\Fractal\TransformerAbstract;
 
 class SeatTransformer extends TransformerAbstract

@@ -1,10 +1,10 @@
 <?php
 
-namespace Tikematic\Repositories\Eloquent;
+namespace App\Repositories\Eloquent;
 
-use Tikematic\Models\Order;
-use Tikematic\Repositories\RepositoryAbstract;
-use Tikematic\Repositories\Contracts\OrderRepository;
+use App\Models\Order;
+use App\Repositories\RepositoryAbstract;
+use App\Repositories\Contracts\OrderRepository;
 
 class EloquentOrderRepository extends RepositoryAbstract implements OrderRepository
 {
@@ -15,7 +15,7 @@ class EloquentOrderRepository extends RepositoryAbstract implements OrderReposit
 
     /*
     * Find Order by reference.
-    * @returns Tikematic\Models\Order
+    * @returns App\Models\Order
     */
     public function findByReference($reference)
     {

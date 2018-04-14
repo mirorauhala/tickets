@@ -1,9 +1,9 @@
 <?php
 
-namespace Tikematic\Http;
+namespace App\Http;
 
 use Log;
-use Tikematic\Exceptions\TranslationStringNotFoundException;
+use App\Exceptions\TranslationStringNotFoundException;
 use Illuminate\Support\Facades\Route;
 use GrahamCampbell\Markdown\Facades\Markdown;
 use Money\Currencies\ISOCurrencies;

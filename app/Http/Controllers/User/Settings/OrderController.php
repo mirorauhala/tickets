@@ -1,11 +1,11 @@
 <?php
 
-namespace Tikematic\Http\Controllers\User\Settings;
+namespace App\Http\Controllers\User\Settings;
 
 use Illuminate\Http\Request;
-use Tikematic\Http\Controllers\Controller;
+use App\Http\Controllers\Controller;
 
-use Tikematic\Repositories\Contracts\{
+use App\Repositories\Contracts\{
     UserRepository,
     OrderRepository
 };

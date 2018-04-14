@@ -1,10 +1,10 @@
 <?php
 
-namespace Tikematic\Repositories\Eloquent;
+namespace App\Repositories\Eloquent;
 
-use Tikematic\Models\OrderItem;
-use Tikematic\Repositories\RepositoryAbstract;
-use Tikematic\Repositories\Contracts\OrderItemRepository;
+use App\Models\OrderItem;
+use App\Repositories\RepositoryAbstract;
+use App\Repositories\Contracts\OrderItemRepository;
 
 class EloquentOrderItemRepository extends RepositoryAbstract implements OrderItemRepository
 {
@@ -15,7 +15,7 @@ class EloquentOrderItemRepository extends RepositoryAbstract implements OrderIte
 
     /*
     * Find order by barcode.
-    * @returns Tikematic\Models\Order
+    * @returns App\Models\Order
     */
     public function findByBarcode($barcode)
     {

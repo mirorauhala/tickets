@@ -1,10 +1,10 @@
 <?php
 
-namespace Tikematic\Http\Controllers\Event;
+namespace App\Http\Controllers\Event;
 
-use Tikematic\Models\Event;
+use App\Models\Event;
 use Illuminate\Http\Request;
-use Tikematic\Http\Controllers\Controller;
+use App\Http\Controllers\Controller;
 
 class TournamentController extends Controller
 {

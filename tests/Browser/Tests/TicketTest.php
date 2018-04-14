@@ -2,10 +2,10 @@
 
 namespace Tests\Browser\Tests\EventTests;
 
-use Tikematic\Models\User;
+use App\Models\User;
 use Tests\DuskTestCase;
-use Tests\Browser\Pages\TicketsPage;
 use Laravel\Dusk\Browser;
+use Tests\Browser\Pages\TicketsPage;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class TicketTest extends DuskTestCase

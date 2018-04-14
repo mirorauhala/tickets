@@ -1,10 +1,10 @@
 <?php
 
-namespace Tikematic\Providers;
+namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
-use Tikematic\Repositories\Contracts\{
+use App\Repositories\Contracts\{
     UserRepository,
     SeatRepository,
     TicketRepository,
@@ -12,7 +12,7 @@ use Tikematic\Repositories\Contracts\{
     OrderItemRepository
 };
 
-use Tikematic\Repositories\Eloquent\{
+use App\Repositories\Eloquent\{
     EloquentUserRepository,
     EloquentSeatRepository,
     EloquentTicketRepository,

@@ -1,9 +1,9 @@
 <?php
 
-namespace Tikematic\Console\Commands;
+namespace App\Console\Commands;
 
 use Log;
-use Tikematic\Models\Order;
+use App\Models\Order;
 use Illuminate\Console\Command;
 
 class ClearPendingOrders extends Command
