@@ -1,0 +1,38 @@
+language: php
+
+php:
+  - '7.1'
+  - '7.2'
+
+sudo: false
+
+addons:
+  mariadb: '10.2'
+
+cache:
+  directories:
+  - vendor/
+
+before_script:
+  - mysql -e 'CREATE DATABASE tickets;'
+  - cp .env.ci .env
+  - composer install --dev --prefer-source --no-interaction
+  - php artisan key:generate
+  - php artisan migrate --seed
+
+script:
+  - vendor/bin/phpunit
+
+notifications:
+  email:
+    on_success: never
+    on_failure: never
+
+after_success:
+  - wget https://raw.githubusercontent.com/k3rn31p4nic/travis-ci-discord-webhook/master/send.sh
+  - chmod +x send.sh
+  - ./send.sh success $WEBHOOK_URL
+after_failure:
+  - wget https://raw.githubusercontent.com/k3rn31p4nic/travis-ci-discord-webhook/master/send.sh
+  - chmod +x send.sh
+  - ./send.sh failure $WEBHOOK_URL
