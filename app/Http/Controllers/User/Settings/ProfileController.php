@@ -3,23 +3,19 @@
 namespace App\Http\Controllers\User\Settings;
 
 use Helper;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Repositories\Contracts\UserRepository;
+use App\Http\Requests\UserProfileRequest;
 
 class ProfileController extends Controller
 {
-    protected $user;
-
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct(UserRepository $user)
+    public function __construct()
     {
         $this->middleware('auth');
-        $this->user = $user;
     }
 
     /**
@@ -37,31 +33,14 @@ class ProfileController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function updateProfile(Request $request)
+    public function updateProfile(UserProfileRequest $request)
     {
-        // validate the request
-        $this->validate($request, [
-            'first_name' => 'required|max:255',
-            'last_name' => 'required|max:255',
-            'street_address' => 'required',
-            'postal_code' => 'required',
-            'postal_office' => 'required',
-            'country_code' => 'required|max:2',
-        ]);
-
         // save profile
-        $this->user->update(
-            $this->user->authenticated()->id,
-            [
-                'first_name' => $request->first_name,
-                'last_name' => $request->last_name,
-                'email' => $request->email,
-                'street_address' => $request->street_address,
-                'postal_code' => $request->postal_code,
-                'postal_office' => $request->postal_office,
-                'country_code' => $request->country_code,
-            ]
-        );
+        auth()->user()->update([
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+            'email' => $request->email,
+        ]);
 
         // return to view with flash message
         return redirect()
