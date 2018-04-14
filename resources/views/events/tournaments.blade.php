@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1>{{ Helper::tra('event.pages.tournaments.title') }}</h1>
+<h1>{{ tra('event.pages.tournaments.title') }}</h1>
 
-<p>{{ Helper::tra('event.pages.tournaments.no-tournaments') }}</p>
+<p>{{ tra('event.pages.tournaments.no-tournaments') }}</p>
 @endsection

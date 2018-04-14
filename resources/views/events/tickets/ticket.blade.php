@@ -2,9 +2,9 @@
 
 @section('content')
 
-<h1>{{ Helper::tra('event.pages.tickets.title') }}</h1>
+<h1>{{ tra('event.pages.tickets.title') }}</h1>
 
-<p>{{ Helper::tra('event.pages.tickets.payment-note') }}</p>
+<p>{{ tra('event.pages.tickets.payment-note') }}</p>
 
 @if(count($errors) > 0)
     <div class="alert alert-danger">
@@ -15,7 +15,7 @@
 @if(count($ticket) > 0)
 
     <h2>{{ $ticket->name }}</h2>
-    <p>Hinta per lippu: {{ Helper::decimalMoneyFormatter($ticket->price, "EUR") }}</p>
+    <p>Hinta per lippu: {{ money($ticket->price, "EUR") }}</p>
     <form action="{{ route('events.tickets.ticket', ['ticket' => $ticket->id]) }}" method="post">
 
         <div class="row">

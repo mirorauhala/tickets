@@ -1,6 +1,6 @@
 @extends('layouts.settings')
 
-@section('settings.title', Helper::tra('settings.order.title') ." ".  $order->reference)
+@section('settings.title', tra('settings.order.title') ." ".  $order->reference)
 
 @section('content')
 
@@ -8,20 +8,20 @@
     <table class="table table-striped">
         <thead>
             <tr>
-                <td>{{ Helper::tra('settings.orders.reference') }}</td>
-                <td>{{ Helper::tra('settings.orders.value') }}</td>
-                <td>{{ Helper::tra('settings.orders.status') }}</td>
-                <td>{{ Helper::tra('settings.orders.date') }}</td>
+                <td>{{ tra('settings.orders.reference') }}</td>
+                <td>{{ tra('settings.orders.value') }}</td>
+                <td>{{ tra('settings.orders.status') }}</td>
+                <td>{{ tra('settings.orders.date') }}</td>
                 @if($order->status == "pending")
-                    <td>{{ Helper::tra('settings.orders.action') }}</td>
+                    <td>{{ tra('settings.orders.action') }}</td>
                 @endif
             </tr>
         </thead>
         <tbody>
             <tr class="{{ ($order->status == "pending") ? "info" : "" }}">
                 <td>{{ $order->reference }}</td>
-                <td>{{ Helper::decimalMoneyFormatter($order->value, $order->currency) }}</td>
-                <td>{{ Helper::tra('settings.orderStatus.' . $order->status) }}</td>
+                <td>{{ money($order->value, $order->currency) }}</td>
+                <td>{{ tra('settings.orderStatus.' . $order->status) }}</td>
                 <td title="{{ $order->created_at->diffForHumans() }}">{{ $order->created_at }}</td>
                 @if($order->status == "pending")
                     <td><a href="{{ route('settings.orders.delete', ['order' => $order->reference]) }}">Peruuta tilaus</a></td>
@@ -45,16 +45,16 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <td>{{ Helper::tra('settings.order.item-title') }}</td>
-                        <td>{{ Helper::tra('settings.order.value') }}</td>
-                        <td>{{ Helper::tra('settings.order.seating-code') }}</td>
+                        <td>{{ tra('settings.order.item-title') }}</td>
+                        <td>{{ tra('settings.order.value') }}</td>
+                        <td>{{ tra('settings.order.seating-code') }}</td>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach($order->items as $key=>$order_item)
                         <tr>
                             <td>{{ $order_item->title }}</td>
-                            <td>{{ Helper::decimalMoneyFormatter($order_item->value, $order->currency) }}</td>
+                            <td>{{ money($order_item->value, $order->currency) }}</td>
                             @if($order_item->ticket->is_seatable == 1)
                                 @if($order_item->seat !== null)
                                     <td>{{ $order_item->seat->name }}</td>
@@ -83,6 +83,6 @@
         </form>
     </div>
 @else
-    <p>{{ Helper::tra('settings.orders.no-items') }}</p>
+    <p>{{ tra('settings.orders.no-items') }}</p>
 @endif
 @endsection

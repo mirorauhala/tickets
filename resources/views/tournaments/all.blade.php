@@ -4,7 +4,7 @@
 
 <div class="row">
 
-    <p>{{ Helper::tra('tournaments.no-tournaments') }}</p>
+    <p>{{ tra('tournaments.no-tournaments') }}</p>
 
 </div>
 @endsection

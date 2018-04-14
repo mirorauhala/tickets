@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1>{{ Helper::tra('event.pages.tickets.title') }}</h1>
+<h1>{{ tra('event.pages.tickets.title') }}</h1>
 
 <br>
 
@@ -25,7 +25,7 @@
                     </ul>
                 </div>
                 <div class="col-sm-4 col-xs-3 text-right">
-                    {{ Helper::decimalMoneyFormatter($ticket->price, $event->currency) }}
+                    {{ money($ticket->price, $event->currency) }}
                 </div>
                 <div class="col-md-2 col-md-offset-2 col-sm-4 col-sm-offset-0 col-xs-5 col-xs-offset-7">
                     <input type="hidden" name="tickets[{{ $key }}][id]" value="{{ $ticket->id }}">
@@ -45,7 +45,7 @@
 
     </form>
 @else
-    <p>{{ Helper::tra('event.pages.tickets.no-tickets') }}</p>
+    <p>{{ tra('event.pages.tickets.no-tickets') }}</p>
 @endif
 
 

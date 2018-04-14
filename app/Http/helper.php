@@ -1,58 +1,66 @@
 <?php
 
-namespace App\Http;
-
-use Log;
-use App\Exceptions\TranslationStringNotFoundException;
-use Illuminate\Support\Facades\Route;
-use GrahamCampbell\Markdown\Facades\Markdown;
-use Money\Currencies\ISOCurrencies;
-use Money\Currency;
-use Money\Formatter\IntlMoneyFormatter;
 use Money\Money;
+use Money\Currency;
+use Illuminate\Support\Facades\Log;
+use Money\Currencies\ISOCurrencies;
+use Illuminate\Support\Facades\Route;
+use Money\Formatter\IntlMoneyFormatter;
+use GrahamCampbell\Markdown\Facades\Markdown;
+use App\Exceptions\TranslationStringNotFoundException;
 
-class Helper {
+/**
+ * Get active class for an active route.
+ *
+ * @param string|array $routes
+ * @param array $excludeRoutes
+ * @param string $active
+ * @param string $notActive
+ * @return string
+ */
+if (! function_exists('active')) {
+    function active($routes, array $excludeRoutes = [], $active = 'active', $notActive = '')
+    {
+        if (! is_array($routes)) {
+            $routes = collect($routes);
+        }
 
-    /**
-     * Set the current active page with an array and wildcards using the route
-     * name instead of the URL.
-     *
-     * @return boolean
-     */
-    static function route_active($routes, $excludeRoutes = array(), $active = 'active', $notActive = "") {
-
-        // get current route
         $currentRoute = Route::currentRouteName();
 
-        // remove excluded routes
         foreach ($excludeRoutes as $route) {
-            if(str_is($route, $currentRoute)) {
+            if (str_is($route, $currentRoute)) {
                 return false;
             }
         }
 
-        // check wanted routes
-        foreach ($routes as $route) {
-          return (str_is($route, $currentRoute)) ? $active : $notActive;
-        }
+        $filtered = $routes->filter(function ($route) use ($currentRoute) {
+            return str_is($route, $currentRoute);
+        });
 
+        return $filtered->isNotEmpty() ? $active : $notActive;
     }
+}
 
-    /**
-     * Convert markdown to html
-     *
-     * @return string
-     */
-    static function toHtml($string) {
+/**
+ * Convert markdown to html
+ *
+ * @return string
+ */
+if (! function_exists('markdown')) {
+    function markdown($string)
+    {
         return Markdown::convertToHtml($string);
     }
+}
 
-    /**
-     * Format money.
-     *
-     * @return string
-     */
-    static function decimalMoneyFormatter($amount, $currency) {
+/**
+ * Format money.
+ *
+ * @return string
+ */
+if (! function_exists('money')) {
+    function money($amount, $currency)
+    {
         $money = new Money($amount, new Currency($currency));
         $currencies = new ISOCurrencies();
 
@@ -61,28 +69,29 @@ class Helper {
 
         return $moneyFormatter->format($money);
     }
+}
 
-    /**
-     * String translator with error reporting.
-     *
-     * @return string
-     */
-    static function tra($key = null, $replace = [], $locale = null) {
-
+/**
+ * String translator with error reporting.
+ *
+ * @return string
+ */
+if (! function_exists('tra')) {
+    function tra($key = null, $replace = [], $locale = null)
+    {
         try {
             $string = app('translator')->getFromJson($key, $replace, $locale);
 
             // no translation was found
-            if($string == $key) {
+            if ($string == $key) {
                 throw new TranslationStringNotFoundException;
             }
 
             return $string;
-        } catch(TranslationStringNotFoundException $e) {
-            Log::info("Cannot get translate key for ". $key ." in " .app()->getLocale());
+        } catch (TranslationStringNotFoundException $e) {
+            Log::info('Cannot get translate key for ' . $key . ' in ' . app()->getLocale());
         }
 
         return $key;
-
     }
 }

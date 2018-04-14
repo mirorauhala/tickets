@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1>{{ Helper::tra('event.pages.details.title') }}</h1>
+<h1>{{ tra('event.pages.details.title') }}</h1>
 <p class="lead">Tervetuloa Connection Lan: eSports 2017 tapahtuman lipunmyyntiin. Täältä löydät tapahtuman kartat, liput, sekä turnaukset.
     Alla on myös muuta tietoa joka saattaa tulla hyvään tarpeeseen.</p>
 

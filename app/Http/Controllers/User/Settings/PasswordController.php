@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\User\Settings;
 
-use Helper;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\SettingsPasswordRequest;
 
@@ -45,7 +44,7 @@ class PasswordController extends Controller
             ->route('settings.password')
             ->with([
                 'flash_status'  => 'success',
-                'flash_message' => Helper::tra('settings.flash.password'),
+                'flash_message' => tra('settings.flash.password'),
             ]);
     }
 }

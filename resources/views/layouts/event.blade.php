@@ -24,8 +24,8 @@
             @if((Auth::user() && Auth::user()->events->contains('id', $event->id)))
                 @yield('content')
             @elseif($event->is_visible == 0)
-                <h1>{{ Helper::tra('event.pages.not-published.title') }}</h1>
-                <p class="lead">{{ Helper::tra('event.pages.not-published.subtext') }}</p>
+                <h1>{{ tra('event.pages.not-published.title') }}</h1>
+                <p class="lead">{{ tra('event.pages.not-published.subtext') }}</p>
             @else
                 @yield('content')
             @endif

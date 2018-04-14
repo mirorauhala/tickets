@@ -1,11 +1,11 @@
 <section class="application-navigation">
     <div class="application-container">
         <div class="application-navigation-links">
-            <a role="presentation" class="app-link {{ Helper::route_active(['tickets'], [], 'active') }}" href="{{ route('tickets') }}">{{ Helper::tra('tickets.nav.paid') }}</a>
+            <a role="presentation" class="app-link {{ active('tickets') }}" href="{{ route('tickets') }}">{{ tra('tickets.nav.paid') }}</a>
 
-            <a role="presentation" class="app-link {{ Helper::route_active(['tickets.pending'], [], 'active') }}" href="{{ route('tickets.pending') }}">{{ Helper::tra('tickets.nav.pending') }}</a>
+            <a role="presentation" class="app-link {{ active('tickets.pending') }}" href="{{ route('tickets.pending') }}">{{ tra('tickets.nav.pending') }}</a>
 
-            <a role="presentation" class="app-link {{ Helper::route_active(['tickets.redeem'], [], 'active') }}" href="{{ route('tickets.redeem') }}">{{ Helper::tra('tickets.nav.redeem') }}</a>
+            <a role="presentation" class="app-link {{ active('tickets.redeem') }}" href="{{ route('tickets.redeem') }}">{{ tra('tickets.nav.redeem') }}</a>
 
         </div>
     </div>

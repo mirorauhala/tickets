@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1>{{ Helper::tra('event.pages.maps.title') }}</h1>
+<h1>{{ tra('event.pages.maps.title') }}</h1>
 
 <ul class="list-unstyled">
     <li>Paikkoja yhteensä: {{ count($seats) }}</li>

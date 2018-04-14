@@ -1,6 +1,6 @@
 @extends('layouts.base')
 
-@section('base.title', Helper::tra('settings.header'))
+@section('base.title', tra('settings.header'))
 
 @section('base.content')
 
@@ -10,7 +10,7 @@
     <section class="application-header">
         <div class="application-container">
             <div class="application-header-wrapper">
-                <h1>{{ Helper::tra('settings.header') }}</h1>
+                <h1>{{ tra('settings.header') }}</h1>
             </div>
         </div>
     </section>

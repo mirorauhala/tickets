@@ -3,8 +3,6 @@
 namespace App\Http\Controllers\EventAdmin;
 
 use App\Models\Event;
-use App\Http\Helper;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\EventAdminSettingsRequest;
 
@@ -27,8 +25,6 @@ class SettingsController extends Controller
      */
     public function viewEventSettings()
     {
-
-
         // do ugly hard code for event ID
         $event = Event::findOrFail(1);
 
@@ -37,7 +33,7 @@ class SettingsController extends Controller
 
         return view('events.admin.settings')
             ->with([
-                "event" => $event,
+                'event' => $event,
             ]);
     }
 
@@ -64,10 +60,9 @@ class SettingsController extends Controller
         return redirect()
             ->route('events.admin.settings')
             ->with([
-                "event" => $event,
-                "flash_status" => "success",
-                "flash_message" => Helper::tra('event.admin.flash'),
+                'event'         => $event,
+                'flash_status'  => 'success',
+                'flash_message' => tra('event.admin.flash'),
             ]);
     }
-
 }

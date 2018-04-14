@@ -1,8 +1,8 @@
 @extends('layouts.event-admin')
 
 @section('admin.content')
-    <h1 id="adminTitle">{{ Helper::tra('event.admin.pages.tickets.list.title') }}</h1>
-    <p><a href="{{ route('events.admin.tickets.new') }}" class="btn btn-primary">{{ Helper::tra('event.admin.pages.tickets.list.create-ticket') }}</a></p>
+    <h1 id="adminTitle">{{ tra('event.admin.pages.tickets.list.title') }}</h1>
+    <p><a href="{{ route('events.admin.tickets.new') }}" class="btn btn-primary">{{ tra('event.admin.pages.tickets.list.create-ticket') }}</a></p>
     @if(count($tickets) > 0)
         <div class="table-responsive">
             <table class="table table-condensed table-bordered">
@@ -25,7 +25,7 @@
                     @foreach($tickets as $ticket)
                         <tr>
                             <td>{{ $ticket->name }}</td>
-                            <td>{{ Helper::decimalMoneyFormatter($ticket->price, "EUR") }}</td>
+                            <td>{{ money($ticket->price, "EUR") }}</td>
                             <td>{{ $ticket->vat }}</td>
                             <td>{{ $ticket->reserved }}</td>
                             <td>{{ $ticket->maxAmountPerTransaction }}</td>
@@ -40,7 +40,7 @@
             </table>
         </div>
     @else
-        <p>{{ Helper::tra('event.admin.pages.tickets.list.no-tickets') }}</p>
+        <p>{{ tra('event.admin.pages.tickets.list.no-tickets') }}</p>
     @endif
 
 

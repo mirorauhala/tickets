@@ -2,15 +2,8 @@
 
 namespace App\Transformers;
 
-use Helper;
 use App\Models\OrderItem;
 use League\Fractal\TransformerAbstract;
-use App\Transformers\{
-    TicketTransformer,
-    SeatTransformer,
-    UserTransformer,
-    OrderTransformer
-};
 
 class OrderItemTransformer extends TransformerAbstract
 {
@@ -19,11 +12,11 @@ class OrderItemTransformer extends TransformerAbstract
     public function transform(OrderItem $orderItem)
     {
         return [
-            'id' => $orderItem->id,
-            'title' => $orderItem->title,
-            'barcode' => $orderItem->barcode,
-            'value' => $orderItem->value,
-            'value_pretty' => Helper::decimalMoneyFormatter($orderItem->value, "EUR"),
+            'id'           => $orderItem->id,
+            'title'        => $orderItem->title,
+            'barcode'      => $orderItem->barcode,
+            'value'        => $orderItem->value,
+            'value_pretty' => money($orderItem->value, 'EUR'),
         ];
     }
 

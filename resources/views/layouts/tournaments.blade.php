@@ -1,6 +1,6 @@
 @extends('layouts.base')
 
-@section('base.title', Helper::tra('tournaments.header'))
+@section('base.title', tra('tournaments.header'))
 
 @section('base.content')
 
@@ -8,7 +8,7 @@
 <section class="application">
     <section class="application-header">
         <div class="container">
-            <h1>{{ Helper::tra('tournaments.header') }}</h1>
+            <h1>{{ tra('tournaments.header') }}</h1>
         </div>
     </section>
 

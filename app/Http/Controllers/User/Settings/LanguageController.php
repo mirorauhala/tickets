@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\User\Settings;
 
-use Helper;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use App\Http\Controllers\Controller;
@@ -10,7 +9,6 @@ use App\Repositories\Contracts\UserRepository;
 
 class LanguageController extends Controller
 {
-
     protected $user;
 
     /**
@@ -41,7 +39,6 @@ class LanguageController extends Controller
      */
     public function updateLanguage(Request $request)
     {
-
         $this->validate($request, [
             'display_language' => [
                 Rule::in(['none', 'fi', 'en']),
@@ -50,14 +47,14 @@ class LanguageController extends Controller
 
         $this->user->update(
             $this->user->authenticated()->id,
-            ["language" => $request->display_language]
+            ['language' => $request->display_language]
         );
 
         return redirect()
             ->route('settings.language')
             ->with([
-                "flash_status" => "success",
-                "flash_message" => Helper::tra('settings.flash.language', [], $request->display_language),
+                'flash_status'  => 'success',
+                'flash_message' => tra('settings.flash.language', [], $request->display_language),
             ]);
     }
 }

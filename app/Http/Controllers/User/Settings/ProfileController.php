@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\User\Settings;
 
-use Helper;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UserProfileRequest;
 
@@ -38,16 +37,16 @@ class ProfileController extends Controller
         // save profile
         auth()->user()->update([
             'first_name' => $request->first_name,
-            'last_name' => $request->last_name,
-            'email' => $request->email,
+            'last_name'  => $request->last_name,
+            'email'      => $request->email,
         ]);
 
         // return to view with flash message
         return redirect()
             ->route('settings')
             ->with([
-                'flash_status' => 'success',
-                'flash_message' => Helper::tra('settings.flash.profile'),
+                'flash_status'  => 'success',
+                'flash_message' => tra('settings.flash.profile'),
             ]);
     }
 }
