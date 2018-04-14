@@ -17,7 +17,6 @@ class ValidationProvider extends ServiceProvider
         Validator::extend('validateTicketAvailabilityAtThisTime', 'App\Validators\OrderValidator@validateTicketAvailabilityAtThisTime');
         Validator::extend('validateSeatAvailability', 'App\Validators\OrderValidator@validateSeatAvailability');
         Validator::extend('validateOrderItemStatusAndSeatAvailability', 'App\Validators\OrderValidator@validateOrderItemStatusAndSeatAvailability');
-        Validator::extend('password', 'App\Validators\PasswordValidator@validatePassword');
     }
 
     /**
