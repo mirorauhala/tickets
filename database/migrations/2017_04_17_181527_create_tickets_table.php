@@ -24,7 +24,6 @@ class CreateTicketsTable extends Migration
             $table->dateTimeTz('unavailableAt');
 
             $table->boolean('is_seatable')->nullable()->default(0);
-            $table->boolean('is_sleepable')->nullable()->default(0);
 
             $table->integer('event_id')->unsigned();
             $table->foreign('event_id')->references('id')->on('events')->onDelete('cascade');
