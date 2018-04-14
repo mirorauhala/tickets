@@ -2,14 +2,11 @@
 
 namespace App\Models;
 
-use Carbon\Carbon;
+use Illuminate\Support\Carbon;
 use Illuminate\Database\Eloquent\Model;
-use App\Traits\Eloquent\Purchasable;
 
 class Ticket extends Model
 {
-    use Purchasable;
-
     /**
      * The attributes that are mass assignable.
      *
@@ -54,5 +51,29 @@ class Ticket extends Model
     public function scopeGamerTickets($query)
     {
         return $query->where('is_seatable', true);
+    }
+
+    /**
+     * Return only purchasable tickets.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopePurchasable($query)
+    {
+        return $query->where('availableAt', '<', Carbon::now())
+            ->where('unavailableAt', '>', Carbon::now());
+    }
+
+    /**
+     * Order by price.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @param string $order
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeOrderByPrice($query, $order = 'asc')
+    {
+        return $query->orderBy('price', $order);
     }
 }

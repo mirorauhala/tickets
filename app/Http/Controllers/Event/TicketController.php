@@ -2,47 +2,30 @@
 
 namespace App\Http\Controllers\Event;
 
-use App\Models\{Ticket, Event};
-use Illuminate\Http\Request;
+use App\Models\Event;
+use App\Models\Ticket;
 use App\Http\Controllers\Controller;
-use App\Repositories\Contracts\TicketRepository;
-use App\Repositories\Eloquent\Criteria\{
-    EagerLoad,
-    TicketsAvailable,
-    TicketsCheapestFirst
-};
 
 class TicketController extends Controller
 {
-    protected $tickets;
-
-    public function __construct(TicketRepository $tickets)
-    {
-        $this->tickets = $tickets;
-    }
-
     /**
      * Show event tickets.
      *
      * @return \Illuminate\Http\Response
      */
-    public function showTickets()
+    public function index()
     {
         // do ugly hard code for event ID
         $event = Event::findOrFail(1);
 
         // get all tickets
-        $tickets = $this->tickets->withCriteria(
-            new TicketsAvailable(),
-            new TicketsCheapestFirst(),
-            new EagerLoad(['event'])
-        )->all();
+        $tickets = Ticket::with('event')->purchasable()->orderByPrice()->get();
 
         // return event and tickets
         return view('events.tickets.main')
             ->with([
-                "event" => $event,
-                "tickets" => $tickets,
+                'event'   => $event,
+                'tickets' => $tickets,
             ]);
     }
 
@@ -51,15 +34,15 @@ class TicketController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function showTicket(Ticket $ticket)
+    public function show(Ticket $ticket)
     {
         // do ugly hard code for event ID
         $event = Event::findOrFail(1);
 
         return view('events.tickets.ticket')
             ->with([
-                "event" => $event,
-                "ticket" => $ticket,
+                'event'  => $event,
+                'ticket' => $ticket,
             ]);
     }
 }
