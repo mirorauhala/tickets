@@ -3,27 +3,26 @@
 namespace App\Http\Controllers\EventAdmin;
 
 use App\Models\Event;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class MapsController extends Controller
 {
-  /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
+    /**
+       * Create a new controller instance.
+       *
+       * @return void
+       */
     public function __construct()
     {
         $this->middleware('auth');
     }
 
     /**
-     * Show the event tournaments.
+     * Show list of maps.
      *
      * @return \Illuminate\Http\Response
      */
-    public function viewEventTickets()
+    public function index()
     {
         // do ugly hard code for event ID
         $event = Event::with('tickets')->findOrFail(1);
@@ -33,8 +32,8 @@ class MapsController extends Controller
 
         return view('events.admin.tickets.list')
             ->with([
-                "event" => $event,
-                "tickets" => $event->tickets()->paginate(15),
+                'event'   => $event,
+                'tickets' => $event->tickets()->paginate(15),
             ]);
     }
 
@@ -43,7 +42,7 @@ class MapsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function viewEventNewTicket()
+    public function show()
     {
         // do ugly hard code for event ID
         $event = Event::with('tickets')->findOrFail(1);
@@ -53,8 +52,8 @@ class MapsController extends Controller
 
         return view('events.admin.tickets.new')
             ->with([
-                "event" => $event,
-                "tickets" => $event->tickets()->paginate(15),
+                'event'   => $event,
+                'tickets' => $event->tickets()->paginate(15),
             ]);
     }
 
@@ -73,8 +72,8 @@ class MapsController extends Controller
 
         return view('events.admin.tickets.edit')
             ->with([
-                "event" => $event,
-                "tickets" => $event->tickets()->paginate(15),
+                'event'   => $event,
+                'tickets' => $event->tickets()->paginate(15),
             ]);
     }
 
@@ -93,8 +92,8 @@ class MapsController extends Controller
 
         return view('events.admin.tickets.delete')
             ->with([
-                "event" => $event,
-                "tickets" => $event->tickets()->paginate(15),
+                'event'   => $event,
+                'tickets' => $event->tickets()->paginate(15),
             ]);
     }
 
@@ -113,11 +112,10 @@ class MapsController extends Controller
 
         return view('events.admin.tickets.list')
             ->with([
-                "event" => $event,
-                "tickets" => $event->tickets()->paginate(15),
-                "flash_status" => 200,
-                "flash_message" => "Ticket has been deleted.",
+                'event'         => $event,
+                'tickets'       => $event->tickets()->paginate(15),
+                'flash_status'  => 200,
+                'flash_message' => 'Ticket has been deleted.',
             ]);
     }
-
 }
