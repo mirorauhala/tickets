@@ -23,7 +23,7 @@
                         <td>{{ money($order->value, $order->currency) }}</td>
                         <td>{{ tra('settings.orderStatus.' . $order->status) }}</td>
                         <td title="{{ $order->created_at->diffForHumans() }}">{{ $order->created_at }}</td>
-                        <td><a href="{{ route('settings.orders.specific', ['order' => $order->reference]) }}">{{ tra('settings.orders.view-order') }}</a></td>
+                        <td><a href="{{ route('settings.orders.show', ['order' => $order->reference]) }}">{{ tra('settings.orders.view-order') }}</a></td>
                     </tr>
                 @endforeach
             </tbody>

@@ -23,6 +23,11 @@ class Order extends Model
      */
     protected $hidden = [];
 
+    public function getRouteKeyName()
+    {
+        return 'reference';
+    }
+
     /**
      * Scope a query to only include orders that are of a given status.
      *
@@ -51,7 +56,8 @@ class Order extends Model
      *
      * @return belongsTo
      */
-    public function event() {
+    public function event()
+    {
         return $this->belongsTo('App\Models\Event');
     }
 
@@ -60,7 +66,8 @@ class Order extends Model
      *
      * @return belongsToMany
      */
-    public function items() {
+    public function items()
+    {
         return $this->hasMany('App\Models\OrderItem');
     }
 
@@ -72,7 +79,7 @@ class Order extends Model
      */
     public function scopePending($query)
     {
-        return $query->where('status', '=', "pending");
+        return $query->where('status', '=', 'pending');
     }
 
     /**
@@ -85,5 +92,4 @@ class Order extends Model
     {
         return $query->where('release_lock_after', '<', Carbon::now());
     }
-
 }

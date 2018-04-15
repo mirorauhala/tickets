@@ -2,29 +2,20 @@
 
 namespace App\Http\Controllers\User\Settings;
 
+use App\Models\Order;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-use App\Repositories\Contracts\{
-    UserRepository,
-    OrderRepository
-};
-
 class OrderController extends Controller
 {
-    protected $user;
-    protected $order;
-
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct(UserRepository $user, OrderRepository $order)
+    public function __construct()
     {
         $this->middleware('auth');
-        $this->user = $user;
-        $this->order = $order;
     }
 
     /**
@@ -34,11 +25,11 @@ class OrderController extends Controller
      */
     public function index(Request $request)
     {
-        $orders = $this->user->authenticated()->orders->sortByDesc('created_at');
+        $orders = auth()->user()->orders->sortByDesc('created_at');
 
         return view('settings.orders.index')
             ->with([
-                "orders" => $orders,
+                'orders' => $orders,
             ]);
     }
 
@@ -47,15 +38,10 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function showSpecificOrder($reference)
+    public function show(Order $order)
     {
-        // find the event
-        $order = $this->order->findByReference($reference);
-
-        // authorize action
         $this->authorize('view', $order);
 
-        // eager load tickets
         $order->load('items.ticket', 'items.seat');
 
         // count orders that need to select a seat
@@ -65,10 +51,10 @@ class OrderController extends Controller
             }
         })->count() > 0) ? true : false;
 
-        return view('settings.orders.specific')
+        return view('settings.orders.show')
             ->with([
-                "order" => $order,
-                "show_form_submit" => $ordersCount,
+                'order'            => $order,
+                'show_form_submit' => $ordersCount,
             ]);
     }
 
@@ -77,22 +63,19 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function deleteOrder($reference, Request $request)
+    public function delete(Order $order)
     {
-        // get order from the reference
-        $order = $this->order->findByReference($reference);
-
         // authorize current action
         $this->authorize('delete', $order);
 
         // delete order
-        $this->order->deleteByReference($reference);
+        $order->delete();
 
         return redirect()
             ->route('settings.orders')
             ->with([
-                "flash_status" => 'success',
-                "flash_message" => 'Tilaus poistettu.',
+                'flash_status'  => 'success',
+                'flash_message' => 'Tilaus poistettu.',
             ]);
     }
 }

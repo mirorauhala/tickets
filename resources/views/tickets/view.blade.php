@@ -11,7 +11,7 @@
         <h1>{{ $order_item->title }}</h1>
         <ul class="list-unstyled">
             <li><b>Hinta</b>: {{ money($order_item->value, "EUR") }}</li>
-            <li><b>Pohjautuu tilaukseen</b>: <a href="{{ route('settings.orders.specific', ['order' => $order_item->order->reference]) }}">{{ $order_item->order->reference }}</a></li>
+            <li><b>Pohjautuu tilaukseen</b>: <a href="{{ route('settings.orders.show', ['order' => $order_item->order->reference]) }}">{{ $order_item->order->reference }}</a></li>
         </ul>
     </div>
 </div>

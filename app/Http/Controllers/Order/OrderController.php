@@ -169,7 +169,7 @@ class OrderController extends Controller
                 'status' => 'paid',
             ]);
 
-            return redirect()->route('settings.orders.specific', ['order' => $order->reference]);
+            return redirect()->route('settings.orders.show', ['order' => $order->reference]);
         } else {
             dump('Error: order not found or already marked paid');
         }

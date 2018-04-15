@@ -88,5 +88,5 @@ Route::get('/settings/language', 'User\Settings\LanguageController@showLanguages
 Route::post('/settings/language', 'User\Settings\LanguageController@updateLanguage');
 
 Route::get('/settings/orders', 'User\Settings\OrderController@index')->name('settings.orders');
-Route::get('/settings/orders/{order}', 'User\Settings\OrderController@showSpecificOrder')->name('settings.orders.specific');
-Route::get('/settings/orders/delete/{order}', 'User\Settings\OrderController@deleteOrder')->name('settings.orders.delete');
+Route::get('/settings/orders/{order}', 'User\Settings\OrderController@show')->name('settings.orders.show');
+Route::get('/settings/orders/delete/{order}', 'User\Settings\OrderController@delete')->name('settings.orders.delete');

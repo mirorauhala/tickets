@@ -40,8 +40,8 @@ class OrderSeatController extends Controller
         }
 
         return redirect()
-            ->route('settings.orders.specific', [
-                "order" => $order,
+            ->route('settings.orders.show', [
+                'order' => $order,
             ]);
     }
 }
