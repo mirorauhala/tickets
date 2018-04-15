@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers\User\Settings;
 
-use Illuminate\Http\Request;
-use Illuminate\Validation\Rule;
 use App\Http\Controllers\Controller;
-use App\Repositories\Contracts\UserRepository;
+use App\Http\Requests\UpdateLanguageRequest;
 
 class LanguageController extends Controller
 {
@@ -16,10 +14,9 @@ class LanguageController extends Controller
      *
      * @return void
      */
-    public function __construct(UserRepository $user)
+    public function __construct()
     {
         $this->middleware('auth');
-        $this->user = $user;
     }
 
     /**
@@ -27,7 +24,7 @@ class LanguageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function showLanguages()
+    public function show()
     {
         return view('settings.languages');
     }
@@ -37,18 +34,11 @@ class LanguageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function updateLanguage(Request $request)
+    public function update(UpdateLanguageRequest $request)
     {
-        $this->validate($request, [
-            'display_language' => [
-                Rule::in(['none', 'fi', 'en']),
-            ],
+        auth()->user()->update([
+            'language' => $request->display_language,
         ]);
-
-        $this->user->update(
-            $this->user->authenticated()->id,
-            ['language' => $request->display_language]
-        );
 
         return redirect()
             ->route('settings.language')
