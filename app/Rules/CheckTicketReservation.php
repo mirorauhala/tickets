@@ -2,6 +2,7 @@
 
 namespace App\Rules;
 
+use App\Models\Seat;
 use App\Models\Ticket;
 use App\Models\OrderItem;
 use Illuminate\Contracts\Validation\Rule;

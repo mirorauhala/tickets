@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Order;
 
-use App\Models\{Event, Seat, Order, OrderItem};
-use Illuminate\Http\Request;
-use App\Http\Requests\OrderSeatRequest;
+use App\Models\Seat;
+use App\Models\Event;
+use App\Models\Order;
+use App\Models\OrderItem;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\OrderSeatRequest;
 
 class OrderSeatController extends Controller
 {
@@ -30,7 +32,7 @@ class OrderSeatController extends Controller
         foreach ($orderSeatCombo as $combo) {
             // find seat and mark as taken
             $seat = Seat::find($combo['seat_id']);
-            $seat->status = "taken";
+            $seat->status = 'taken';
             $seat->save();
 
             // attach the seat to the orderItem

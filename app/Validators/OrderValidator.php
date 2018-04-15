@@ -2,36 +2,18 @@
 
 namespace App\Validators;
 
-use App\Repositories\Contracts\{
-    TicketRepository,
-    SeatRepository,
-    OrderItemRepository
-};
-
-use App\Repositories\Eloquent\Criteria\{
-    TicketsAvailable,
-    SeatsAvailable
-};
+use App\Repositories\Contracts\SeatRepository;
+use App\Repositories\Contracts\OrderItemRepository;
 
 class OrderValidator
 {
-    protected $ticket;
     protected $seat;
     protected $orderItem;
 
-    public function __construct(TicketRepository $ticket, SeatRepository $seat, OrderItemRepository $orderItem)
+    public function __construct(SeatRepository $seat, OrderItemRepository $orderItem)
     {
-        $this->ticket = $ticket;
         $this->seat = $seat;
         $this->orderItem = $orderItem;
-    }
-
-    /**
-    * Validate ticket availability
-    **/
-    public function validateTicketAvailabilityAtThisTime($attribute, $value)
-    {
-        return $this->ticket->isPurchasable($value);
     }
 
     /**

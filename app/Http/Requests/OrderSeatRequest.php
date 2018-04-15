@@ -2,7 +2,7 @@
 
 namespace App\Http\Requests;
 
-use App\Models\{Seat, OrderItem, Ticket};
+use App\Models\Seat;
 use Illuminate\Foundation\Http\FormRequest;
 
 class OrderSeatRequest extends FormRequest
@@ -25,9 +25,9 @@ class OrderSeatRequest extends FormRequest
     public function rules()
     {
         return [
-            "seat"                  => "required|array",
-            "seat.*.order_item_id"  => "required|numeric|min:1|distinct|validateOrderItemStatusAndSeatAvailability",
-            "seat.*.seat_id"        => "required|numeric|min:1|distinct|validateSeatAvailability",
+            'seat'                  => 'required|array',
+            'seat.*.order_item_id'  => 'required|integer|min:1|distinct|validateOrderItemStatusAndSeatAvailability',
+            'seat.*.seat_id'        => 'required|integer|min:1|distinct|validateSeatAvailability',
         ];
     }
 }
