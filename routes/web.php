@@ -31,7 +31,6 @@ Route::get('/tickets', 'User\TicketController@showPaidTickets')->name('tickets')
 Route::get('/tickets/pending', 'User\TicketController@showPendingTickets')->name('tickets.pending');
 Route::get('/tickets/redeem', 'User\TicketController@showTicketRedeemView')->name('tickets.redeem');
 Route::get('/tickets/view/{order}', 'User\TicketController@viewTicket')->name('tickets.view');
-Route::get('/tournaments', 'User\TournamentController@index')->name('tournaments');
 
 /*
 |--------------------------------------------------------------------------
@@ -45,9 +44,6 @@ Route::get('/event/tickets', 'Event\TicketController@index')->name('events.ticke
 Route::get('/event/tickets/{ticket}', 'Event\TicketController@show')->name('events.tickets.ticket');
 Route::post('/event/tickets/{ticket}', 'Order\OrderController@create');
 
-// Tournaments
-Route::get('/event/tournaments', 'Event\TournamentController@tournaments')->name('events.tournaments');
-
 // Admin routes
 Route::get('/event/admin', 'EventAdmin\OrderController@viewEventOrders')->name('events.admin.orders');
 
@@ -58,7 +54,6 @@ Route::get('/event/admin/tickets/edit/{ticket}', 'EventAdmin\TicketController@vi
 Route::post('/event/admin/tickets/edit/{ticket}', 'EventAdmin\TicketController@processEventEditTicket');
 
 Route::get('/event/admin/maps', 'EventAdmin\MapsController@customers')->name('events.admin.maps');
-Route::get('/event/admin/tournaments', 'EventAdmin\TournamentController@tournaments')->name('events.admin.tournaments');
 Route::get('/event/admin/prices', 'EventAdmin\CustomerController@customers')->name('events.admin.prices');
 Route::get('/event/admin/settings', 'EventAdmin\SettingsController@viewEventSettings')->name('events.admin.settings');
 Route::post('/event/admin/settings', 'EventAdmin\SettingsController@processEventSettings');

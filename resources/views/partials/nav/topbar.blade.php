@@ -8,8 +8,6 @@
 
             <a role="presentation" class="app-link {{ active('events.tickets*') }}" href="{{ route('events.tickets') }}">{{ tra('event.nav.tickets') }}</a>
 
-            <a role="presentation" class="app-link {{ active('events.tournaments*') }}" href="{{ route('events.tournaments') }}">{{ tra('event.nav.tournaments') }}</a>
-
         </div>
     </div>
 </section>

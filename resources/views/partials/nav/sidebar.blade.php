@@ -19,11 +19,9 @@
                         <li class="{{ active('event', ['events.admin*']) }}"><a href="{{ route('event') }}">{{ tra('nav.details') }}</a></li>
                         <li class="{{ active('events.map*', ['events.admin*']) }}"><a href="{{ route('events.map') }}">{{ tra('nav.map') }}</a></li>
                         <li class="{{ active('events.tickets*', ['events.admin*']) }}"><a href="{{ route('events.tickets') }}">{{ tra('nav.tickets') }}</a></li>
-                        <li class="{{ active('events.tournaments*', ['events.admin*']) }}"><a href="{{ route('events.tournaments') }}">{{ tra('nav.tournaments') }}</a></li>
                     </ul>
                 </li>
                 <li class="{{ active('tickets*') }}"><a href="{{ route('tickets') }}">{{ tra('nav.my-tickets') }}</a></li>
-                <li class="{{ active('tournaments*') }}"><a href="{{ route('tournaments') }}">{{ tra('nav.my-tournaments') }}</a></li>
             </ul>
 
             @if(Auth::user() && count(Auth::user()->events) > 0)

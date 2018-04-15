@@ -8,8 +8,6 @@
 
             <a role="presentation" class="app-link {{ active('events.admin.maps*') }}" href="{{ route('events.admin.maps') }}">{{ tra('event.admin.nav.maps') }}</a>
 
-            <a role="presentation" class="app-link {{ active('events.admin.tournaments*') }}" href="{{ route('events.admin.tournaments') }}">{{ tra('event.admin.nav.tournaments') }}</a>
-
             <a role="presentation" class="app-link {{ active('events.admin.settings*') }}" href="{{ route('events.admin.settings') }}">{{ tra('event.admin.nav.settings') }}</a>
 
             <a role="presentation" class="app-link {{ active('events.admin.scanner*') }}" href="{{ route('events.admin.scanner') }}">{{ tra('event.admin.nav.scanner') }}</a>
