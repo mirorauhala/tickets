@@ -7,7 +7,7 @@
     <link rel="icon" href="{{ asset('images/favicon.png') }}">
 
     <!-- CSRF Token -->
-    <meta id="csrfToken" content="{{ csrf_token() }}">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Tickets') }} - @yield('base.title', 'Untitled')</title>
 
@@ -18,8 +18,10 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
 </head>
 <body>
-    @include('partials.nav.navigation')
-    @yield('base.content')
+    <div id="app">
+        @include('partials.nav.navigation')
+        @yield('base.content')
+    </div>
 
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}" async="true"></script>

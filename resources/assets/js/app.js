@@ -5,30 +5,27 @@
  */
 require('./bootstrap');
 require('./tooltip');
-window.QRious = require('qrious');
+
+window.Vue = require('vue');
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
+import VueQRCodeComponent from 'vue-qrcode-component'
 
-/*
-
-// Vue will be used later on...
-
-Vue.component('example', require('./components/Example.vue'));
+Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.component('qr-code', VueQRCodeComponent)
 
 const app = new Vue({
     el: '#app'
 });
 
-*/
-
 /**
  * Add scripts for the application to work.
  */
-require('./sidebar');
-require('./qrcode');
 require('./numberIncrease');
-require('./ga');
+
+
+

@@ -1,9 +1,7 @@
 {
-  "/js/app.js": "/js/app.js",
-  "/css/app.css": "/css/app.css",
-  "/js/scanner.js": "/js/scanner.js",
-  "/mix.js": "/mix.js",
-  "/css/scanner.js": "/css/scanner.284ff741a64276cca831.js",
-  "/css/scanner.css": "/css/scanner.css",
-  "/css/new.css": "/css/new.css"
+    "/js/app.js": "/js/app.js",
+    "/css/scanner.css": "/css/scanner.css",
+    "/css/new.css": "/css/new.css",
+    "/css/app.css": "/css/app.css",
+    "/js/scanner.js": "/js/scanner.js"
 }

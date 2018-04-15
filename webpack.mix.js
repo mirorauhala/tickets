@@ -1,4 +1,4 @@
-const { mix } = require('laravel-mix');
+let mix = require('laravel-mix');
 
 /*
  |--------------------------------------------------------------------------
@@ -20,9 +20,3 @@ mix.js('resources/assets/js/app.js', 'public/js')
 if (mix.config.inProduction) {
     mix.version();
 }
-
-mix.browserSync({
-    https: true,
-    host: '192.168.0.109',
-    proxy: 'https://tickets.app'
-});

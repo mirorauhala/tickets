@@ -4,7 +4,7 @@
 
 <div class="row">
     <div class="col-md-3">
-        <canvas id="qrcode" data-qrcode="{{ $order_item->barcode }}"></canvas>
+        <qr-code text="{{ $order_item->barcode }}" :size="200" bg-color="transparent"></qr-code>
         <p class="text-muted text-center">{{ $order_item->barcode }}</p>
     </div>
     <div class="col-md-8">
