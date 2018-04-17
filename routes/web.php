@@ -26,7 +26,7 @@ Auth::routes();
 | Basic routes
 |--------------------------------------------------------------------------
 */
-Route::get('/', 'Event\DetailsController@index')->name('event');
+Route::get('/', 'EventController@index')->name('event');
 Route::get('/tickets', 'User\TicketController@showPaidTickets')->name('tickets');
 Route::get('/tickets/pending', 'User\TicketController@showPendingTickets')->name('tickets.pending');
 Route::get('/tickets/redeem', 'User\TicketController@showTicketRedeemView')->name('tickets.redeem');
@@ -37,11 +37,11 @@ Route::get('/tickets/view/{order}', 'User\TicketController@viewTicket')->name('t
 | Event
 |--------------------------------------------------------------------------
 */
-Route::get('/event/map', 'Event\MapController@map')->name('events.map');
+Route::get('/event/map', 'EventController@map')->name('events.map');
 
 // view ticket types
-Route::get('/event/tickets', 'Event\TicketController@index')->name('events.tickets');
-Route::get('/event/tickets/{ticket}', 'Event\TicketController@show')->name('events.tickets.ticket');
+Route::get('/event/tickets', 'EventController@index')->name('events.tickets');
+Route::get('/event/tickets/{ticket}', 'EventController@show')->name('events.tickets.ticket');
 Route::post('/event/tickets/{ticket}', 'Order\OrderController@create');
 
 // Admin routes

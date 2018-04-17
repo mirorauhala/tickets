@@ -1,4 +1,4 @@
-@extends('layouts.event')
+@extends('events._layout')
 
 @section('content')
 
@@ -48,4 +48,5 @@
 @else
     <p class="lead">Tämä lippu ei vielä myynnissä.</p>
 @endif
+
 @endsection

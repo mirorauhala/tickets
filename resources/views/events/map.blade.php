@@ -1,4 +1,4 @@
-@extends('layouts.event')
+@extends('events._layout')
 
 @section('content')
 

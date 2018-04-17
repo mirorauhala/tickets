@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Http\Controllers\Event;
+namespace App\Http\Controllers;
 
+use App\Models\Seat;
 use App\Models\Event;
 use App\Models\Ticket;
-use App\Http\Controllers\Controller;
 
-class TicketController extends Controller
+class EventController extends Controller
 {
     /**
-     * Show event tickets.
+     * Show the application dashboard.
      *
      * @return \Illuminate\Http\Response
      */
@@ -22,7 +22,7 @@ class TicketController extends Controller
         $tickets = Ticket::with('event')->purchasable()->orderByPrice()->get();
 
         // return event and tickets
-        return view('events.tickets.main')
+        return view('events.index')
             ->with([
                 'event'   => $event,
                 'tickets' => $tickets,
@@ -39,10 +39,29 @@ class TicketController extends Controller
         // do ugly hard code for event ID
         $event = Event::findOrFail(1);
 
-        return view('events.tickets.ticket')
+        return view('events.ticket')
             ->with([
                 'event'  => $event,
                 'ticket' => $ticket,
+            ]);
+    }
+
+    /**
+     * Show specific map for the event.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function map()
+    {
+        // do ugly hard code for event ID
+        $event = Event::findOrFail(1);
+
+        $seats = Seat::with('orderItem')->get();
+
+        return view('events.map')
+            ->with([
+                'event' => $event,
+                'seats' => $seats,
             ]);
     }
 }
