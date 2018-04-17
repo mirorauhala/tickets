@@ -27,7 +27,8 @@ class Event extends Model
      *
      * @return hasMany
      */
-    public function orders() {
+    public function orders()
+    {
         return $this->hasMany('App\Models\Order');
     }
 
@@ -36,7 +37,8 @@ class Event extends Model
      *
      * @return belongsToMany
      */
-    public function maps() {
+    public function maps()
+    {
         return $this->hasOne('App\Models\Map');
     }
 
@@ -45,16 +47,8 @@ class Event extends Model
      *
      * @return belongsToMany
      */
-    public function tickets() {
+    public function tickets()
+    {
         return $this->hasMany('App\Models\Ticket');
-    }
-
-    /**
-     * Get event's tournaments.
-     *
-     * @return belongsToMany
-     */
-    public function tournaments() {
-        return $this->belongsToMany('App\Models\Tournament');
     }
 }

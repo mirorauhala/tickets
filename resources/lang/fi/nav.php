@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Navigation Lines
@@ -10,29 +9,26 @@ return [
 
     'title' => [
         'featured-event' => 'Suositeltu tapahtuma',
-        'personal' => 'Henkilökohtainen',
-        'account' => 'Oma tili',
-        'organizations' => 'Organisaatiot',
+        'personal'       => 'Henkilökohtainen',
+        'account'        => 'Oma tili',
+        'organizations'  => 'Organisaatiot',
     ],
 
-    'home' => 'Etusivu',
+    'home'    => 'Etusivu',
     'details' => 'Tiedot',
-    'map' => 'Kartta',
+    'map'     => 'Kartta',
     'tickets' => 'Liput',
-    'tournaments' => 'Turnaukset',
 
     // Personal
-    'my-tickets' => 'Omat liput',
-    'my-tournaments' => 'Omat turnaukset',
+    'my-tickets'     => 'Omat liput',
 
     // Account
-    'profile' => 'Profiili',
+    'profile'  => 'Profiili',
     'settings' => 'Asetukset',
-    'login' => 'Kirjaudu sisään',
-    'logout' => 'Kirjaudu ulos',
+    'login'    => 'Kirjaudu sisään',
+    'logout'   => 'Kirjaudu ulos',
 
     // Legal
     'privacy-policy' => 'Rekisteriseloste',
-    'made-in' => 'Tehty Suomessa.',
-
+    'made-in'        => 'Tehty Suomessa.',
 ];

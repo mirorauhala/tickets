@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Navigation Lines
@@ -10,29 +9,26 @@ return [
 
     'title' => [
         'featured-event' => 'Featured Event',
-        'personal' => 'Personal',
-        'account' => 'Account',
-        'organizations' => 'Organizations',
+        'personal'       => 'Personal',
+        'account'        => 'Account',
+        'organizations'  => 'Organizations',
     ],
 
-    'home' => 'Etusivu',
+    'home'    => 'Etusivu',
     'details' => 'Details',
-    'map' => 'Map',
+    'map'     => 'Map',
     'tickets' => 'Tickets',
-    'tournaments' => 'Tournaments',
 
     // Personal
-    'my-tickets' => 'My Tickets',
-    'my-tournaments' => 'My Tournaments',
+    'my-tickets'     => 'My Tickets',
 
     // Account
-    'profile' => 'Profile',
+    'profile'  => 'Profile',
     'settings' => 'Settings',
-    'login' => 'Log In',
-    'logout' => 'Log Out',
+    'login'    => 'Log In',
+    'logout'   => 'Log Out',
 
     // Legal
     'privacy-policy' => 'Privacy Policy',
-    'made-in' => 'Made in Finland.',
-
+    'made-in'        => 'Made in Finland.',
 ];

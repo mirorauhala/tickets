@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Event Lines
@@ -12,7 +11,6 @@ return [
         'details'                   => 'Tietoa',
         'map'                       => 'Kartta',
         'tickets'                   => 'Liput',
-        'tournaments'               => 'Kilpailut',
     ],
 
     /*
@@ -23,24 +21,20 @@ return [
 
     'pages' => [
         'not-published' => [
-            'title' => 'Tapahtumaa ei ole vielä julkaistu',
+            'title'   => 'Tapahtumaa ei ole vielä julkaistu',
             'subtext' => 'Yritä myöhemmin uudelleen.',
         ],
         'details' => [
             'title' => 'Tiedot',
         ],
         'maps' => [
-            'title' => 'Kartat',
+            'title'   => 'Kartat',
             'no-maps' => 'Tällä hetkellä karttoja ei ole.',
         ],
         'tickets' => [
-            'title' => 'Liput',
+            'title'        => 'Liput',
             'payment-note' => 'Lippujen maksu täytyy suorittaa 1 tunnin sisällä tilauksen aloittamisesta.',
-            'no-tickets' => 'Tällä hetkellä lippuja ei ole.',
-        ],
-        'tournaments' => [
-            'title' => 'Kilpailut',
-            'no-tournaments' => 'Tällä hetkellä turnauksia ei ole.',
+            'no-tickets'   => 'Tällä hetkellä lippuja ei ole.',
         ],
     ],
 
@@ -51,17 +45,15 @@ return [
     */
 
     'admin' => [
-
         'visibility' => [
             'offline' => '<strong>Jee!</strong> Tapahtuma on näkyvissä vierailijoille. <a :attributes>Muuta</a>',
-            'online' => '<strong>Huomaathan!</strong> Tapahtuma ei ole näkyvissä vierailijoille. <a :attributes>Muuta</a>',
+            'online'  => '<strong>Huomaathan!</strong> Tapahtuma ei ole näkyvissä vierailijoille. <a :attributes>Muuta</a>',
         ],
 
         'flash' => 'Tapahtuman asetukset päivitetty.',
 
         'nav' => [
             'orders'                => 'Tilaukset',
-            'tournaments'           => 'Kilpailut',
             'maps'                  => 'Kartat',
             'tickets'               => 'Liput',
             'prices'                => 'Hinnat',
@@ -72,9 +64,7 @@ return [
         'pages' => [
             'orders' => [
                 'title' => 'Tilaukset',
-
             ],
-            'tournaments'   => [],
             'maps'          => [],
             'tickets'       => [],
             'prices'        => [],
@@ -82,27 +72,25 @@ return [
                 'title' => 'Asetukset',
 
                 'form' => [
-                    'event-name' => 'Tapahtuman nimi',
+                    'event-name'             => 'Tapahtuman nimi',
                     'event-name-placeholder' => 'Tapahtuman nimi',
 
-                    'event-location' => 'Tapahtuman sijainti',
+                    'event-location'             => 'Tapahtuman sijainti',
                     'event-location-placeholder' => 'Tapahtuman sijainti',
 
-                    'event-url' => 'Tapahtuman URL',
+                    'event-url'             => 'Tapahtuman URL',
                     'event-url-placeholder' => 'Tapahtuman URL',
 
-                    'event-currency' => 'Tapahtuman valuutta',
+                    'event-currency'             => 'Tapahtuman valuutta',
                     'event-currency-placeholder' => 'Tapahtuman valuutta',
 
-                    'event-visibility' => 'Tapahtuman näkyvyys',
+                    'event-visibility'             => 'Tapahtuman näkyvyys',
                     'event-visibility-placeholder' => 'Tapahtuman näkyvyys',
 
                     'event-visibility-offline' => 'Tapahtuma on näkymätön. Maksuja ei voida suorittaa.',
-                    'event-visibility-online' => 'Tapahtuma on näkyvissä. Maksuja voidaan suorittaa kunhan liput ovat näkyvissä.',
-
+                    'event-visibility-online'  => 'Tapahtuma on näkyvissä. Maksuja voidaan suorittaa kunhan liput ovat näkyvissä.',
                 ],
             ],
         ],
     ],
-
 ];
