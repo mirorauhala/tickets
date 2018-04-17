@@ -40,8 +40,9 @@ class User extends Authenticatable
      *
      * @return string
      */
-    public function full_name() {
-        return $this->first_name . " " . $this->last_name;
+    public function full_name()
+    {
+        return $this->first_name . ' ' . $this->last_name;
     }
 
     /**
@@ -49,34 +50,38 @@ class User extends Authenticatable
      *
      * @return void
      */
-    public function setPasswordAttribute($value) {
+    public function setPasswordAttribute($value)
+    {
         $this->attributes['password'] = Hash::make($value);
     }
 
     /**
      * Get events the user is associated with.
      *
-     * @return belongsToMany
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function events() {
+    public function events()
+    {
         return $this->belongsToMany('App\Models\Event');
     }
 
     /**
      * Get user's orders.
      *
-     * @return hasMany
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function orders() {
+    public function orders()
+    {
         return $this->hasMany('App\Models\Order');
     }
 
     /**
      * Get user's order items e.g. tickets.
      *
-     * @return belongsToMany
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function orderItems() {
+    public function orderItems()
+    {
         return $this->hasMany('App\Models\OrderItem');
     }
 }
