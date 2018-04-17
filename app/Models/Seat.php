@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use App\Traits\Eloquent\Status;
+use Illuminate\Database\Eloquent\Model;
 
 class Seat extends Model
 {
@@ -32,7 +32,7 @@ class Seat extends Model
     /**
      * Get seat's order item.
      *
-     * @return belongsToMany
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function orderItem()
     {

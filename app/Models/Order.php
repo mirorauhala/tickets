@@ -54,7 +54,7 @@ class Order extends Model
     /**
      * Get event
      *
-     * @return belongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function event()
     {
@@ -64,7 +64,7 @@ class Order extends Model
     /**
      * Get order's items e.g. tickets.
      *
-     * @return belongsToMany
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function items()
     {

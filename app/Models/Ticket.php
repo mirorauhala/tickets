@@ -13,7 +13,15 @@ class Ticket extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'price', 'vat', 'reserved', 'maxAmountPerTransaction', 'availableAt', 'unavailableAt', 'is_seatable', 'event_id',
+        'name',
+        'price',
+        'vat',
+        'reserved',
+        'maxAmountPerTransaction',
+        'availableAt',
+        'unavailableAt',
+        'is_seatable',
+        'event_id',
     ];
 
     protected $dates = [
@@ -22,9 +30,9 @@ class Ticket extends Model
     ];
 
     /**
-     * Get event
+     * Get event.
      *
-     * @return belongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function event()
     {

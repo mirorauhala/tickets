@@ -3,8 +3,8 @@
 namespace App\Models;
 
 use Carbon\Carbon;
-use Illuminate\Database\Eloquent\Model;
 use App\Traits\Eloquent\Status;
+use Illuminate\Database\Eloquent\Model;
 
 class OrderItem extends Model
 {
@@ -29,7 +29,7 @@ class OrderItem extends Model
     /**
      * Get owner user model.
      *
-     * @return hasMany
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function user()
     {
@@ -39,7 +39,7 @@ class OrderItem extends Model
     /**
      * Get items ticket.
      *
-     * @return hasMany
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function ticket()
     {
@@ -49,7 +49,7 @@ class OrderItem extends Model
     /**
      * Get item's seat.
      *
-     * @return hasMany
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function seat()
     {
@@ -59,7 +59,7 @@ class OrderItem extends Model
     /**
      * Get item's order.
      *
-     * @return hasMany
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function order()
     {
@@ -86,7 +86,7 @@ class OrderItem extends Model
      */
     public function scopePaid($query)
     {
-        return $query->where('status', '=', "paid");
+        return $query->where('status', '=', 'paid');
     }
 
     /**
@@ -97,7 +97,7 @@ class OrderItem extends Model
      */
     public function scopePending($query)
     {
-        return $query->where('status', '=', "pending");
+        return $query->where('status', '=', 'pending');
     }
 
     /**
@@ -108,7 +108,7 @@ class OrderItem extends Model
      */
     public function scopeUnassigned($query)
     {
-        return $query->where('status', '=', "unassigned");
+        return $query->where('status', '=', 'unassigned');
     }
 
     /**
