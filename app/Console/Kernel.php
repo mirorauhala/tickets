@@ -14,8 +14,6 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         \App\Console\Commands\ClearPendingOrders::class,
-        \App\Console\Commands\ConnectionLanSeats::class,
-        \App\Console\Commands\PopulateBasicEventData::class,
     ];
 
     /**
@@ -26,7 +24,6 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-
         // clear pending tickets that are exceeding their lock down time
         $schedule->command('orders:clear-pending')
                 ->everyMinute();
