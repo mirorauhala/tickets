@@ -4,45 +4,37 @@ namespace App\Http\Controllers;
 
 use App\Models\Seat;
 use App\Models\Event;
-use App\Models\Ticket;
 
 class EventController extends Controller
 {
     /**
-     * Show the application dashboard.
+     * Show featured events.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        // do ugly hard code for event ID
-        $event = Event::findOrFail(1);
-
-        // get all tickets
-        $tickets = Ticket::with('event')->purchasable()->orderByPrice()->get();
+        $events = Event::featured()->get();
 
         // return event and tickets
-        return view('events.index')
+        return view('featured')
             ->with([
-                'event'   => $event,
-                'tickets' => $tickets,
+                'events' => $events,
             ]);
     }
 
     /**
-     * Show one ticket type.
+     * Show event page with tickets.
      *
+     * @param App\Models\Event
      * @return \Illuminate\Http\Response
      */
-    public function show(Ticket $ticket)
+    public function show(Event $event)
     {
-        // do ugly hard code for event ID
-        $event = Event::findOrFail(1);
-
-        return view('events.ticket')
+        return view('events.index')
             ->with([
-                'event'  => $event,
-                'ticket' => $ticket,
+                'event'   => $event,
+                'tickets' => $event->tickets()->purchasable()->orderByPrice()->get(),
             ]);
     }
 
@@ -51,11 +43,8 @@ class EventController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function map()
+    public function map(Event $event)
     {
-        // do ugly hard code for event ID
-        $event = Event::findOrFail(1);
-
         $seats = Seat::with('orderItem')->get();
 
         return view('events.map')

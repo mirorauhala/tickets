@@ -1,40 +1,37 @@
-@extends('layouts.auth')
+@extends('layouts.base')
 
 @section('base.title', tra('auth.reset.title'))
 
-@section('content')
-<div class="row">
-    <div class="col-md-6 col-md-offset-3">
-        <h1>{{ tra('auth.reset.title') }}</h1>
-        @if (session('status'))
-            <div class="alert alert-success">
-                {{ session('status') }}
+@section('base.content')
+<div class="container h-100">
+    <div class="bg-white px-3 h-100">
+        <div class="row justify-content-center align-items-center h-25">
+            <div class="col-md-6">
+                <h1>Reset password</h1>
+                <p class="lead">We'll send a link to your email.</h1>
             </div>
-        @endif
-
-        <form class="form-horizontal" role="form" method="POST" action="{{ route('password.email') }}">
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+            <form role="form" method="POST" action="{{ route('password.email') }}">
             {{ csrf_field() }}
 
-            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                <label for="email" class="col-md-4 control-label">{{ tra('auth.reset.email') }}</label>
+            <div class="form-group">
+                <label for="email">{{ tra('auth.reset.email') }}</label>
+                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" autocomplete="email" required>
 
-                <div class="col-md-6">
-                    <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
-
-                    @if ($errors->has('email'))
-                        <span class="help-block">
-                            <strong>{{ $errors->first('email') }}</strong>
-                        </span>
-                    @endif
-                </div>
+                @if ($errors->has('email'))
+                    <div class="invalid-feedback">
+                        {{ $errors->first('email') }}
+                    </div>
+                @endif
             </div>
 
-            <div class="form-group">
-                <div class="col-md-6 col-md-offset-4">
-                    <button type="submit" class="btn btn-primary">
-                        {{ tra('form.button.send-password-reset') }}
-                    </button>
-                </div>
+            <div class="form-group align-items-center d-flex">
+                <a href="{{ route('login') }}" class="d-inline-block">
+                    Didn't forget password?
+                </a>
+                <input type="submit" class="btn px-4 ml-auto btn-primary" value="{{ tra('form.button.send-password-reset') }}">
             </div>
         </form>
     </div>

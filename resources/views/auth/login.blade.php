@@ -1,63 +1,52 @@
-@extends('layouts.auth')
+@extends('layouts.base')
 
 @section('base.title', tra('auth.login.title'))
 
-@section('content')
-<div class="row">
-    <div class="col-md-6 col-md-offset-3">
-        <h1 class="text-center">{{ tra('auth.login.title') }}</h1>
-        <br>
-        <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">
-            {{ csrf_field() }}
-
-            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                <label for="email" class="control-label">{{ tra('auth.login.email') }}</label>
-                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
-                @if ($errors->has('email'))
-                    <span class="help-block">
-                        <strong>{{ $errors->first('email') }}</strong>
-                    </span>
-                @endif
+@section('base.content')
+<div class="container h-100">
+    <div class="bg-white px-3 h-100">
+        <div class="row justify-content-center align-items-center h-25">
+            <div class="col-md-6">
+                <h1>Sign In</h1>
+                <p class="lead">To access and book tickets.</h1>
             </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">
+                {{ csrf_field() }}
 
-            <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                <label for="password" class="control-label">{{ tra('auth.login.password') }}</label>
-                <input id="password" type="password" class="form-control" name="password" required>
-                @if ($errors->has('password'))
-                    <span class="help-block">
-                        <strong>{{ $errors->first('password') }}</strong>
-                    </span>
-                @endif
-            </div>
+                <div class="form-group">
+                    <label for="email">{{ tra('auth.login.email') }}</label>
+                    <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" autocomplete="email" required autofocus>
+                    @if ($errors->has('email'))
+                        <div class="invalid-feedback">
+                            {{ $errors->first('email') }}
+                        </div>
+                    @endif
+                </div>
+
+                <div class="form-group">
+                    <label for="password">{{ tra('auth.login.password') }}</label>
+                    <input id="password" type="password" class="form-control" name="password" autocomplete="current-password" required>
+                </div>
 
             <div class="form-group">
-                <div class="col-md-6">
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> {{ tra('auth.login.remember-me') }}
-                        </label>
-                    </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="remember" id="rememberMe"{{ old('remember') ? ' checked' : '' }}>
+                    <label class="form-check-label" for="rememberMe">
+                        {{ tra('auth.login.remember-me') }}
+                    </label>
                 </div>
             </div>
 
-            <div class="form-group">
-                <div class="col-md-8 col-md-offset-3">
-                    <button type="submit" class="btn btn-primary">
-                        {{ tra('form.button.login') }}
-                    </button>
-
-                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                        {{ tra('form.button.forgot-password') }}
-                    </a>
-                </div>
+            <div class="form-group align-items-center d-flex">
+                <a href="{{ route('password.request') }}" class="d-inline-block">
+                    {{ tra('form.button.forgot-password') }}
+                </a>
+                <input type="submit" class="btn px-4 ml-auto btn-primary" value="{{ tra('form.button.login') }}">
             </div>
         </form>
-
-        <hr>
-
-        <a class="btn btn-link" href="{{ route('register') }}">
-            {{ tra('auth.login.no-account') }}
-        </a>
     </div>
 </div>
 @endsection

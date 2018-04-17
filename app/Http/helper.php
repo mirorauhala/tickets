@@ -18,22 +18,23 @@ use App\Exceptions\TranslationStringNotFoundException;
  * @return string
  */
 if (! function_exists('active')) {
-    function active($routes, array $excludeRoutes = [], $active = 'active', $notActive = '')
+    function active($routes, array $excludeRoutes = [], $active = ' active', $notActive = '')
     {
         if (! is_array($routes)) {
-            $routes = collect($routes);
+            $routes = [$routes];
         }
 
+        $routeCollection = collect($routes);
         $currentRoute = Route::currentRouteName();
 
         foreach ($excludeRoutes as $route) {
             if (str_is($route, $currentRoute)) {
-                return false;
+                return $notActive;
             }
         }
 
-        $filtered = $routes->filter(function ($route) use ($currentRoute) {
-            return str_is($route, $currentRoute);
+        $filtered = $routeCollection->filter(function ($value) use ($currentRoute) {
+            return str_is($value, $currentRoute);
         });
 
         return $filtered->isNotEmpty() ? $active : $notActive;

@@ -12,7 +12,7 @@ class Event extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'location', 'details', 'url', 'currency', 'is_visible',
+        'name', 'slug', 'location', 'details', 'url', 'currency', 'is_visible', 'is_featured',
     ];
 
     /**
@@ -22,10 +22,15 @@ class Event extends Model
      */
     protected $hidden = [];
 
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
     /**
-     * Get event's orders.
+     * Get orders for an event.
      *
-     * @return hasMany
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function orders()
     {
@@ -33,9 +38,9 @@ class Event extends Model
     }
 
     /**
-     * Get event's maps.
+     * Get maps for an event.
      *
-     * @return belongsToMany
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function maps()
     {
@@ -43,12 +48,23 @@ class Event extends Model
     }
 
     /**
-     * Get event's tickets.
+     * Get tickets for an event.
      *
-     * @return belongsToMany
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function tickets()
     {
         return $this->hasMany('App\Models\Ticket');
+    }
+
+    /**
+     * Filter featured events.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeFeatured($query)
+    {
+        return $query->where('is_featured', 1);
     }
 }

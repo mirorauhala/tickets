@@ -1,6 +1,6 @@
-@extends('events._layout')
+@extends('layouts.base')
 
-@section('content')
+@section('base.content')
 
 <h1>{{ tra('event.pages.maps.title') }}</h1>
 

@@ -1,18 +1,4 @@
-@extends('events._layout')
-
-@section('content')
-
-<h1>{{ tra('event.pages.tickets.title') }}</h1>
-
-<p>{{ tra('event.pages.tickets.payment-note') }}</p>
-
-@if(count($errors) > 0)
-    <div class="alert alert-danger">
-        {{ $errors->first() }}
-    </div>
-@endif
-
-@if(count($ticket) > 0)
+@if(count($tickets) > 0)
 
     <h2>{{ $ticket->name }}</h2>
     <p>Hinta per lippu: {{ money($ticket->price, "EUR") }}</p>
@@ -48,5 +34,3 @@
 @else
     <p class="lead">Tämä lippu ei vielä myynnissä.</p>
 @endif
-
-@endsection

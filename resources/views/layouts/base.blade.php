@@ -18,8 +18,8 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
 </head>
 <body>
-    <div id="app">
-        @include('partials.nav.navigation')
+    <div id="app" class="h-100">
+        @include('partials._navigation')
         @yield('base.content')
     </div>
 

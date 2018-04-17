@@ -1,41 +1,81 @@
-@extends('events._layout')
+@extends('layouts.base')
 
-@section('content')
+@section('base.content')
+<div class="container h-100">
+    <div class="bg-white px-3 h-100">
+        <div class="row align-items-center h-25">
+            <div class="col-md-12">
+                <h1>{{ $event->name }}</h1>
+                <p class="lead">{{ $event->location }} {{ $event->date }}</h1>
+            </div>
+        </div>
+        <div class="row h-25">
 
-<h1>{{ tra('event.pages.tickets.title') }}</h1>
-
-<br>
-<div class="row">
-    @if(count($tickets) > 0)
-        @foreach($tickets as $ticket)
-            <div class="col-lg-4 col-md-4 col-sm-6">
-                <div class="ticket">
-                    <div class="ticket-heading">
-                        <h1>{{ $ticket->name }}</h1>
-                    </div>
-
-                    <div class="ticket-meta">
-                        <p>{{ $ticket->event->name }}</p>
-                    </div>
-
-                    <div class="ticket-body">
-                        <div class="ticket-price">
-                            <h2>{{ tra('tickets.card.price') }}</h2>
-                            <p>{{ money($ticket->price, "EUR") }}</p>
+        @if(count($tickets) > 0)
+            @foreach($tickets as $ticket)
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $ticket->name}}</h5>
                         </div>
                     </div>
+                </div>
+            @endforeach
+        @else
+            <div class="col align-self-center">
+                <p class="lead text-center text-muted">There are no tickets to show.</p>
+            </div>
+        @endif
+        </div>
 
-                    <div class="ticket-actions">
-                        <a class="ticket-details" href="{{ route('events.tickets.ticket', ['ticket' => $ticket->id]) }}">
-                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M17,18C15.89,18 15,18.89 15,20A2,2 0 0,0 17,22A2,2 0 0,0 19,20C19,18.89 18.1,18 17,18M1,2V4H3L6.6,11.59L5.24,14.04C5.09,14.32 5,14.65 5,15A2,2 0 0,0 7,17H19V15H7.42A0.25,0.25 0 0,1 7.17,14.75C7.17,14.7 7.18,14.66 7.2,14.63L8.1,13H15.55C16.3,13 16.96,12.58 17.3,11.97L20.88,5.5C20.95,5.34 21,5.17 21,5A1,1 0 0,0 20,4H5.21L4.27,2M7,18C5.89,18 5,18.89 5,20A2,2 0 0,0 7,22A2,2 0 0,0 9,20C9,18.89 8.1,18 7,18Z" /></svg>
-                            <span>{{ tra('tickets.card.action-book') }}</span>
-                        </a>
-                    </div>
+
+    </div>
+</div>
+
+@if((Auth::user() && Auth::user()->events->contains('id', $event->id)))
+    @yield('content')
+@elseif($event->is_visible == 0)
+    <h1>{{ tra('event.pages.not-published.title') }}</h1>
+    <p class="lead">{{ tra('event.pages.not-published.subtext') }}</p>
+@else
+    @yield('content')
+@endif
+
+@if(count($tickets) > 0)
+
+    <h2>{{ $ticket->name }}</h2>
+    <p>Hinta per lippu: {{ money($ticket->price, "EUR") }}</p>
+    <form action="{{ route('events.tickets.ticket', ['ticket' => $ticket->id]) }}" method="post">
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="ticket_amount">Määrä</label>
+                    <div class="input-group">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default subtractOne" type="button">-</button>
+                        </span>
+                        <input type="number" id="ticket_amount" name="ticket_amount" class="form-control" style="height: 39px;" min="0" max="{{ $ticket->maxAmountPerTransaction }}" value="0">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default addOne" type="button">+</button>
+                        </span>
+                    </div><!-- /input-group -->
                 </div>
             </div>
-        @endforeach
-    @else
-        <p>{{ tra('event.pages.tickets.no-tickets')}}
-    @endif
-</div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <input class="btn btn-primary" type="submit" value="Siirry maksuun">
+            </div>
+        </div>
+        {{ csrf_field() }}
+        <input type="hidden" name="ticket_id" value="{{ $ticket->id }}">
+    </form>
+
+
+@else
+    <p class="lead">Tämä lippu ei vielä myynnissä.</p>
+@endif
+
 @endsection

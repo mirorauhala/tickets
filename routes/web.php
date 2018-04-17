@@ -26,7 +26,7 @@ Auth::routes();
 | Basic routes
 |--------------------------------------------------------------------------
 */
-Route::get('/', 'EventController@index')->name('event');
+Route::get('/', 'EventController@index')->name('events');
 Route::get('/tickets', 'User\TicketController@showPaidTickets')->name('tickets');
 Route::get('/tickets/pending', 'User\TicketController@showPendingTickets')->name('tickets.pending');
 Route::get('/tickets/redeem', 'User\TicketController@showTicketRedeemView')->name('tickets.redeem');
@@ -37,6 +37,7 @@ Route::get('/tickets/view/{order}', 'User\TicketController@viewTicket')->name('t
 | Event
 |--------------------------------------------------------------------------
 */
+Route::get('/event/{event}', 'EventController@show')->name('event');
 Route::get('/event/map', 'EventController@map')->name('events.map');
 
 // view ticket types
@@ -44,20 +45,19 @@ Route::get('/event/tickets', 'EventController@index')->name('events.tickets');
 Route::get('/event/tickets/{ticket}', 'EventController@show')->name('events.tickets.ticket');
 Route::post('/event/tickets/{ticket}', 'Order\OrderController@create');
 
-// Admin routes
-Route::get('/event/admin', 'EventAdmin\OrderController@viewEventOrders')->name('events.admin.orders');
-
-Route::get('/event/admin/tickets', 'EventAdmin\TicketController@viewEventTickets')->name('events.admin.tickets.list');
-Route::get('/event/admin/tickets/new', 'EventAdmin\TicketController@viewEventNewTicket')->name('events.admin.tickets.new');
-Route::post('/event/admin/tickets/new', 'EventAdmin\TicketController@processEventNewTicket');
-Route::get('/event/admin/tickets/edit/{ticket}', 'EventAdmin\TicketController@viewEventEditTicket')->name('events.admin.tickets.edit');
-Route::post('/event/admin/tickets/edit/{ticket}', 'EventAdmin\TicketController@processEventEditTicket');
-
-Route::get('/event/admin/maps', 'EventAdmin\MapsController@view')->name('events.admin.maps');
-Route::get('/event/admin/prices', 'EventAdmin\CustomerController@customers')->name('events.admin.prices');
-Route::get('/event/admin/settings', 'EventAdmin\SettingsController@viewEventSettings')->name('events.admin.settings');
-Route::post('/event/admin/settings', 'EventAdmin\SettingsController@processEventSettings');
-Route::get('/event/admin/scanner', 'EventAdmin\ScannerController@viewScanner')->name('events.admin.scanner');
+/*
+|--------------------------------------------------------------------------
+| Dashboard
+|--------------------------------------------------------------------------
+*/
+Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+Route::get('/dashboard/{event}', 'DashboardController@customers')->name('dashboard.show');
+Route::get('/dashboard/{event}/customers', 'DashboardController@customers')->name('dashboard.customers');
+Route::get('/dashboard/{event}/tickets', 'DashboardController@tickets')->name('dashboard.tickets');
+Route::get('/dashboard/{event}/orders', 'DashboardController@orders')->name('dashboard.orders');
+Route::get('/dashboard/{event}/maps', 'DashboardController@maps')->name('dashboard.maps');
+Route::get('/dashboard/{event}/seats', 'DashboardController@seats')->name('dashboard.seats');
+Route::get('/dashboard/{event}/settings', 'DashboardController@settings')->name('dashboard.settings');
 
 /*
 |--------------------------------------------------------------------------

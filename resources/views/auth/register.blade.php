@@ -1,128 +1,102 @@
-@extends('layouts.auth')
+@extends('layouts.base')
 
 @section('base.title', tra('auth.register.title'))
 
-@section('content')
-<div class="row">
-    <div class="col-md-6 col-md-offset-3">
-        <h1 class="text-center">{{ tra('auth.register.title') }}</h1>
-        <br>
-        <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
-            {{ csrf_field() }}
-
-            <div class="form-group{{ $errors->has('first_name') ? ' has-error' : '' }}">
-                <label for="first_name" class="control-label">{{ tra('auth.register.first-name') }}</label>
-
-                <input id="first_name" type="text" class="form-control" name="first_name" value="{{ old('first_name') }}" required autofocus>
-
-                @if ($errors->has('first_name'))
-                    <span class="help-block">
-                        <strong>{{ $errors->first('first_name') }}</strong>
-                    </span>
-                @endif
+@section('base.content')
+<div class="container h-100">
+    <div class="bg-white px-3 h-100">
+        <div class="row justify-content-center align-items-center h-25">
+            <div class="col-md-6">
+                <h1>Sign Up</h1>
+                <p class="lead">Create an account.</h1>
             </div>
+        </div>
+        <div class="row pb-5 justify-content-center">
+            <div class="col-md-6">
+                <form role="form" method="POST" action="{{ route('register') }}">
+                    {{ csrf_field() }}
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="first_name">{{ tra('auth.register.first-name') }}</label>
+                            <input id="first_name" type="text" class="form-control{{ $errors->has('first_name') ? ' is-invalid' : '' }}" name="first_name" value="{{ old('first_name') }}" autocomplete="given-name" required autofocus>
 
-            <div class="form-group{{ $errors->has('last_name') ? ' has-error' : '' }}">
-                <label for="last_name" class="control-label">{{ tra('auth.register.last-name') }}</label>
+                            @if ($errors->has('first_name'))
+                                <div class="invalid-feedback">
+                                    {{ $errors->first('first_name') }}
+                                </div>
+                            @endif
+                        </div>
 
-                <input id="last_name" type="text" class="form-control" name="last_name" value="{{ old('last_name') }}" required autofocus>
+                        <div class="form-group col-md-6">
+                            <label for="last_name">{{ tra('auth.register.last-name') }}</label>
+                            <input id="last_name" type="text" class="form-control{{ $errors->has('last_name') ? ' is-invalid' : '' }}" name="last_name" value="{{ old('last_name') }}" autocomplete="family-name" required autofocus>
 
-                @if ($errors->has('last_name'))
-                    <span class="help-block">
-                        <strong>{{ $errors->first('last_name') }}</strong>
-                    </span>
-                @endif
+                            @if ($errors->has('last_name'))
+                                <div class="invalid-feedback">
+                                    {{ $errors->first('last_name') }}
+                                </div>
+                            @endif
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">{{ tra('auth.register.email') }}</label>
+                        <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" autocomplete="email" required>
+
+                        @if ($errors->has('email'))
+                            <div class="invalid-feedback">
+                                {{ $errors->first('email') }}
+                            </div>
+                        @endif
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="password">{{ tra('auth.register.password') }}</label>
+                            <input id="password" type="password"  class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" aria-describedby="passwordHelpBlock" autocomplete="new-password" required>
+                            <small id="passwordHelpBlock" class="form-text text-muted">
+                                Your password must be at least 8 characters long.
+                            </small>
+
+                            @if ($errors->has('password'))
+                                <div class="invalid-feedback">
+                                    {{ $errors->first('password') }}
+                                </div>
+                            @endif
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="password_confirmation">{{ tra('auth.register.confirm-password') }}</label>
+                            <input id="password_confirmation" type="password" class="form-control{{ $errors->has('password_confirmation') ? ' is-invalid' : '' }}" name="password_confirmation" autocomplete="new-password" required>
+
+                            @if ($errors->has('password_confirmation'))
+                                <div class="invalid-feedback">
+                                    {{ $errors->first('password_confirmation') }}
+                                </div>
+                            @endif
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tel">{{ tra('auth.register.phone') }}</label>
+                        <input id="tel" type="text" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" name="phone" aria-describedby="phoneHelpBlock" value="{{ old('phone') }}" autocomplete="tel">
+                        <small id="phoneHelpBlock" class="form-text text-muted">
+                            (Optional) We will contact by phone you if there's a problem with your order.
+                        </small>
+
+                        @if ($errors->has('phone'))
+                            <div class="invalid-feedback">
+                                {{ $errors->first('phone') }}
+                            </div>
+                        @endif
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-primary px-4" value="{{ tra('form.button.register') }}">
+                    </div>
+                </form>
             </div>
-
-            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                <label for="email" class="control-label">{{ tra('auth.register.email') }}</label>
-
-                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
-
-                @if ($errors->has('email'))
-                    <span class="help-block">
-                        <strong>{{ $errors->first('email') }}</strong>
-                    </span>
-                @endif
-            </div>
-
-            <div class="form-group{{ $errors->has('street_address') ? ' has-error' : '' }}">
-                <label for="street_address" class="control-label">{{ tra('auth.register.street_address') }}</label>
-
-                <input id="street_address" type="text" class="form-control" name="street_address" value="{{ old('street_address') }}" required>
-
-                @if ($errors->has('street_address'))
-                    <span class="help-block">
-                        <strong>{{ $errors->first('street_address') }}</strong>
-                    </span>
-                @endif
-            </div>
-
-            <div class="form-group{{ $errors->has('postal_code') ? ' has-error' : '' }}">
-                <label for="postal_code" class="control-label">{{ tra('auth.register.postal_code') }}</label>
-
-                <input id="postal_code" type="text" class="form-control" name="postal_code" value="{{ old('postal_code') }}" required>
-
-                @if ($errors->has('postal_code'))
-                    <span class="help-block">
-                        <strong>{{ $errors->first('postal_code') }}</strong>
-                    </span>
-                @endif
-            </div>
-
-            <div class="form-group{{ $errors->has('postal_office') ? ' has-error' : '' }}">
-                <label for="postal_office" class="control-label">{{ tra('auth.register.postal_office') }}</label>
-
-                <input id="postal_office" type="text" class="form-control" name="postal_office" value="{{ old('postal_office') }}" required>
-
-                @if ($errors->has('postal_office'))
-                    <span class="help-block">
-                        <strong>{{ $errors->first('postal_office') }}</strong>
-                    </span>
-                @endif
-            </div>
-
-            <div class="form-group{{ $errors->has('country_code') ? ' has-error' : '' }}">
-                <label for="country_code" class="control-label">{{ tra('auth.register.country_code') }}</label>
-
-                <select class="form-control" name="country_code" id="country_code" required>
-                    <option value="{{ tra('country.finland.iso-3166-1') }}">{{ tra('country.finland.name') }}</option>
-                    <option value="{{ tra('country.sweden.iso-3166-1') }}">{{ tra('country.sweden.name') }}</option>
-                </select>
-
-                @if ($errors->has('country_code'))
-                    <span class="help-block">
-                        <strong>{{ $errors->first('country_code') }}</strong>
-                    </span>
-                @endif
-            </div>
-
-            <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                <label for="password" class="control-label">{{ tra('auth.register.password') }}</label>
-
-                <input id="password" type="password" class="form-control" name="password" required>
-
-                @if ($errors->has('password'))
-                    <span class="help-block">
-                        <strong>{{ $errors->first('password') }}</strong>
-                    </span>
-                @endif
-            </div>
-
-            <div class="form-group">
-                <label for="password_confirmation" class="control-label">{{ tra('auth.register.confirm-password') }}</label>
-
-                <input id="password_confirmation" type="password" class="form-control" name="password_confirmation" required>
-            </div>
-
-            <div class="form-group">
-                <div class="col-md-6 col-md-offset-4">
-                    <button type="submit" class="btn btn-primary">
-                        {{ tra('form.button.register') }}
-                    </button>
-                </div>
-            </div>
-        </form>
+        </div>
     </div>
 </div>
 @endsection

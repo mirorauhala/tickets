@@ -16,11 +16,13 @@ class CreateEventsTable extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('location');
-            $table->string('details'); // get rid of this, use 'messages' table instead, can have multiple languages
-            $table->string('url');
-            $table->string('currency');
+            $table->string('slug')->unique();
+            $table->string('location')->nullable();
+            $table->string('slogan')->nullable();
+            $table->timestamp('date')->nullable();
+            $table->string('url')->nullable();
             $table->boolean('is_visible')->default(0);
+            $table->boolean('is_featured')->default(0);
             $table->timestamps();
         });
     }
