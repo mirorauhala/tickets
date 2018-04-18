@@ -39,6 +39,7 @@ class ProfileController extends Controller
             'first_name' => $request->first_name,
             'last_name'  => $request->last_name,
             'email'      => $request->email,
+            'phone'      => $request->phone,
         ]);
 
         // return to view with flash message

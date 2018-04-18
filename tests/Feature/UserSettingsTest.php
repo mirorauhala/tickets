@@ -19,8 +19,9 @@ class UserSettingsTest extends TestCase
         // prepare settings form fill
         $payload = [
             'first_name' => 'John',
-            'last_name' => 'Doe',
-            'email' => 'john.doe@email.com',
+            'last_name'  => 'Doe',
+            'email'      => 'john.doe@email.com',
+            'phone'      => '+358000000000',
         ];
 
         $response = $this->actingAs($user)
@@ -39,8 +40,9 @@ class UserSettingsTest extends TestCase
         // prepare settings form fill
         $payload = [
             'first_name' => '',
-            'last_name' => 'Doe',
-            'email' => 'john.doe@email.com',
+            'last_name'  => 'Doe',
+            'email'      => 'john.doe@email.com',
+            'phone'      => '+358000000000',
         ];
 
         $response = $this->actingAs($user)
@@ -59,8 +61,9 @@ class UserSettingsTest extends TestCase
         // prepare settings form fill
         $payload = [
             'first_name' => 'John',
-            'last_name' => '',
-            'email' => 'john.doe@email.com',
+            'last_name'  => '',
+            'email'      => 'john.doe@email.com',
+            'phone'      => '+358000000000',
         ];
 
         $response = $this->actingAs($user)
@@ -79,8 +82,9 @@ class UserSettingsTest extends TestCase
         // prepare settings form fill
         $payload = [
             'first_name' => 'John',
-            'last_name' => 'Doe',
-            'email' => '',
+            'last_name'  => 'Doe',
+            'email'      => '',
+            'phone'      => '+358000000000',
         ];
 
         $response = $this->actingAs($user)
@@ -99,14 +103,35 @@ class UserSettingsTest extends TestCase
         // prepare settings form fill
         $payload = [
             'first_name' => 'John',
-            'last_name' => 'Doe',
-            'email' => 'not a valid email',
+            'last_name'  => 'Doe',
+            'email'      => 'not a valid email',
+            'phone'      => '+358000000000',
         ];
 
         $response = $this->actingAs($user)
                          ->post('/settings', $payload);
 
         $response->assertSessionHasErrors(['email']);
+        $this->assertDatabaseHas('users', $user->toArray());
+    }
+
+    /** @test */
+    public function phone_is_optional()
+    {
+        // create user
+        $user = factory(User::class)->create();
+
+        // prepare settings form fill
+        $payload = [
+            'first_name' => 'John',
+            'last_name'  => 'Doe',
+            'email'      => 'john.doe@email.com',
+        ];
+
+        $response = $this->actingAs($user)
+                         ->post('/settings', $payload);
+
+        $response->assertSessionMissing('errors');
         $this->assertDatabaseHas('users', $user->toArray());
     }
 }

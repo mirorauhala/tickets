@@ -53,7 +53,7 @@
 
                     <div class="form-group">
                         <label for="phone">{{ tra('auth.register.phone') }}</label>
-                        <input id="phone" type="text" class="form-control {{ $errors->has('phone') ? ' is-invalid' : '' }}" name="phone" value="{{ Auth::user()->phone }}" required>
+                        <input id="phone" type="text" class="form-control {{ $errors->has('phone') ? ' is-invalid' : '' }}" name="phone" value="{{ Auth::user()->phone }}">
 
                         @if ($errors->has('phone'))
                             <div class="invalid-feedback">
