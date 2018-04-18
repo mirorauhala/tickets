@@ -1,27 +1,49 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+## What is this?
 
-## About mirorauhala/tickets
+This is a website for booking tickets to a LAN event.
 
-Tickets is built to be an open-source ticket sales system for LAN events.
+##### Status
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+| Branch  | Master                                                                                                                    | pixelity                                                                                                                    |
+|---------|---------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
+| Travis  | [![Build Status](https://travis-ci.org/mirorauhala/tickets.svg?branch=master)](https://travis-ci.org/mirorauhala/tickets) | [![Build Status](https://travis-ci.org/mirorauhala/tickets.svg?branch=pixelity)](https://travis-ci.org/mirorauhala/tickets) |
+| StyleCI | [![StyleCI](https://styleci.io/repos/129506361/shield?branch=master)](https://styleci.io/repos/129506361)                 | [![StyleCI](https://styleci.io/repos/129506361/shield?branch=pixelity)](https://styleci.io/repos/129506361)                 |
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb combination of simplicity, elegance, and innovation give you tools you need to build any application with which you are tasked.
+
+## Why?
+
+At [PIXELITY](https://pixelity.fi) we needed an ecommerce solution for selling tickets online with specific requirements.
+
+- Payments via Finnish bank transfer
+- Simple ticket generation and sale
+- Seat reservation for certain ticket types.
+
+I also made this for my own curiosity in web development.
+
+## Installation
+
+To install this you need the following.
+
+- PHP 7.1 / 7.2
+- Database (MySQL/MariaDB/PostgreSQL)
+- Nginx
+- [Composer](https://getcomposer.org)
+
+### Steps to install
+
+1. Clone the project master.
+2. Install dependencies by running `composer install`
+3. Open .env file in the project root and change database configs.
+4. Run `php artisan migrate` to run database migrations.
 
 ## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+If you want, you can! Just send in an issue or pull request.
 
-## Security Vulnerabilities
+## Built on
 
-If you discover a security vulnerability within Tickets, please send `mirorauhala` a messsage over [Keybase.io Chat](https://keybase.io/) or [manually encrypt](https://keybase.io/encrypt) the message and send to my email miro.rauhala.99@gmail.com. All security vulnerabilities will be promptly addressed.
+Laravel 5.6 & Bootstrap 4
 
 ## License
 
-Tickets is licensed under [MIT license](http://opensource.org/licenses/MIT) as is its Laravel framework.
+This project is licensed under [MIT license](http://opensource.org/licenses/MIT).
