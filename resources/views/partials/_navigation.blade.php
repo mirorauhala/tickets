@@ -8,10 +8,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link{{ active('events') }}" href="{{ route('events') }}">Featured <span class="sr-only">(current)</span></a>
+                    <a class="nav-link{{ active('events') }}" href="{{ route('events') }}">{{ tra('nav.featured') }} <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link{{ active('tickets') }}" href="{{ route('tickets') }}">Tickets</a>
+                    <a class="nav-link{{ active('tickets') }}" href="{{ route('tickets') }}">{{ tra('nav.tickets') }}</a>
                 </li>
             </ul>
             <ul class="navbar-nav">
@@ -19,7 +19,7 @@
                     @if(count(auth()->user()->events) > 0)
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Manage
+                                {{ tra('nav.manage') }}
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 @foreach(auth()->user()->events as $event)
@@ -29,7 +29,7 @@
                         </li>
                     @endif
                     <li class="nav-item">
-                        <a class="nav-link{{ active('settings') }}" href="{{ route('settings') }}">Settings</a>
+                        <a class="nav-link{{ active('settings') }}" href="{{ route('settings') }}">{{ tra('nav.settings') }}</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-danger" href="{{ route('logout') }}"

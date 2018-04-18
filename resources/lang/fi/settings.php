@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Settings Language Lines
@@ -119,8 +118,7 @@ return [
     ],
 
     'orderStatus' => [
-        'paid' => 'Maksettu',
+        'paid'    => 'Maksettu',
         'pending' => 'Maksamaton',
     ],
-
 ];

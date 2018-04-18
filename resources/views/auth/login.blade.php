@@ -7,8 +7,8 @@
     <div class="bg-white px-3 h-100">
         <div class="row justify-content-center align-items-center h-25">
             <div class="col-md-6">
-                <h1>Sign In</h1>
-                <p class="lead">To access and book tickets.</h1>
+                <h1>{{ tra('auth.login.title') }}</h1>
+                <p class="lead">{{ tra('auth.login.lead') }}</h1>
             </div>
         </div>
         <div class="row justify-content-center">
@@ -42,9 +42,9 @@
 
             <div class="form-group align-items-center d-flex">
                 <a href="{{ route('password.request') }}" class="d-inline-block">
-                    {{ tra('form.button.forgot-password') }}
+                    {{ tra('auth.login.forgot-password') }}
                 </a>
-                <input type="submit" class="btn px-4 ml-auto btn-primary" value="{{ tra('form.button.login') }}">
+                <input type="submit" class="btn px-4 ml-auto btn-primary" value="{{ tra('auth.login.login') }}">
             </div>
         </form>
     </div>

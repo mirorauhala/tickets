@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Authentication Language Lines
@@ -13,8 +12,8 @@ return [
     |
     */
 
-    'failed' => 'These credentials do not match our records.',
-    'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
+    'failed'          => 'These credentials do not match our records.',
+    'throttle'        => 'Too many login attempts. Please try again in :seconds seconds.',
     'unauthenticated' => 'You need to be logged in to view this page.',
 
     /*
@@ -24,32 +23,37 @@ return [
     */
 
     'login' => [
-        'title' => 'Log In',
-        'email' => 'Email',
-        'password' => 'Password',
-        'remember-me' => 'Remember me',
-        'no-account' => 'Don\'t have an account? Register.',
+        'title'           => 'Sign In',
+        'lead'            => 'Access your account.',
+        'email'           => 'Email',
+        'password'        => 'Password',
+        'remember-me'     => 'Remember me',
+        'forgot-password' => 'Forgot password?',
+        'login'           => 'Sign In',
     ],
 
-
     'reset' => [
-        'title' => 'Reset password',
-        'email' => 'Email',
-        'new-password' => 'New password',
-        'new-password-confirmation' => 'New password confirmation'
+        'title'                     => 'Reset password',
+        'lead'                      => 'We\'ll send a link to your email.',
+        'lead-alternative'          => 'Set a new password. Keep it safe.',
+        'email'                     => 'Email',
+        'didnt-forget-password'     => 'Didn\'t forget password?',
+        'send-link'                 => 'Send link',
+        'new-password'              => 'New password',
+        'new-password-confirmation' => 'New password confirmation',
     ],
 
     'register' => [
-        'title' => 'Register',
-        'first-name' => 'First name',
-        'last-name' => 'Last name',
-        'email' => 'Email',
-        'street_address' => 'Street address',
-        'postal_code' => 'Postal code',
-        'postal_office' => 'Post office',
-        'country_code' => 'Country',
-        'password' => 'Password',
+        'title'            => 'Sign Up',
+        'lead'             => 'Create an account',
+        'first-name'       => 'First name',
+        'last-name'        => 'Last name',
+        'email'            => 'Email',
+        'phone'            => 'Phone',
+        'phone-help'       => '(Optional) We\'ll be in touch by phone in case there is a problem with your order.',
+        'password'         => 'Password',
+        'password-help'    => 'Your password must be at least 8 characters long.',
         'confirm-password' => 'Verify password',
+        'register'         => 'Register',
     ],
-
 ];

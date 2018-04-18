@@ -7,8 +7,8 @@
     <div class="bg-white px-3 h-100">
         <div class="row justify-content-center align-items-center h-25">
             <div class="col-md-6">
-                <h1>Reset password</h1>
-                <p class="lead">Set a new password. Keep it safe.</h1>
+                <h1>{{ tra('auth.reset.title') }}</h1>
+                <p class="lead">{{ tra('auth.reset.title-alternative') }}</h1>
             </div>
         </div>
         <div class="row justify-content-center">
@@ -50,7 +50,7 @@
                     </div>
 
                     <div class="form-group">
-                        <input type="submit" class="btn btn-primary px-4" value="{{ tra('form.button.reset-password') }}">
+                        <input type="submit" class="btn btn-primary px-4" value="{{ tra('auth.reset.send-link') }}">
                     </div>
                 </form>
             </div>

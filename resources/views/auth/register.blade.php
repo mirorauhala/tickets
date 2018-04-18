@@ -7,8 +7,8 @@
     <div class="bg-white px-3 h-100">
         <div class="row justify-content-center align-items-center h-25">
             <div class="col-md-6">
-                <h1>Sign Up</h1>
-                <p class="lead">Create an account.</h1>
+                <h1>{{ tra('auth.register.title') }}</h1>
+                <p class="lead">{{ tra('auth.register.lead') }}</p>
             </div>
         </div>
         <div class="row pb-5 justify-content-center">
@@ -55,7 +55,7 @@
                             <label for="password">{{ tra('auth.register.password') }}</label>
                             <input id="password" type="password"  class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" aria-describedby="passwordHelpBlock" autocomplete="new-password" required>
                             <small id="passwordHelpBlock" class="form-text text-muted">
-                                Your password must be at least 8 characters long.
+                                {{ tra('auth.register.password-help') }}
                             </small>
 
                             @if ($errors->has('password'))
@@ -81,7 +81,7 @@
                         <label for="tel">{{ tra('auth.register.phone') }}</label>
                         <input id="tel" type="text" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" name="phone" aria-describedby="phoneHelpBlock" value="{{ old('phone') }}" autocomplete="tel">
                         <small id="phoneHelpBlock" class="form-text text-muted">
-                            (Optional) We will contact by phone you if there's a problem with your order.
+                            {{ tra('auth.register.phone-help') }}
                         </small>
 
                         @if ($errors->has('phone'))
@@ -92,7 +92,7 @@
                     </div>
 
                     <div class="form-group">
-                        <input type="submit" class="btn btn-primary px-4" value="{{ tra('form.button.register') }}">
+                        <input type="submit" class="btn btn-primary px-4" value="{{ tra('auth.register.register') }}">
                     </div>
                 </form>
             </div>

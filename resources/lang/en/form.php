@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Form Language Lines
@@ -19,10 +18,4 @@ return [
     'button.reset'              => 'Reset',
     'button.send'               => 'Send',
     'button.print'              => 'Print',
-    'button.login'              => 'Log In',
-    'button.forgot-password'    => 'Forgot your password?',
-    'button.send-password-reset'=> 'Send password reset link',
-    'button.reset-password'     => 'Reset password',
-    'button.register'           => 'Register',
-
 ];
