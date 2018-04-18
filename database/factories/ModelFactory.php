@@ -16,16 +16,13 @@ $factory->define(App\Models\User::class, function (Faker\Generator $faker) {
     static $password;
 
     return [
-        'first_name' => $faker->firstName,
-        'last_name' => $faker->lastName,
-        'email' => $faker->unique()->safeEmail,
-        'password' => $password ?: $password = 'secret',
+        'first_name'     => $faker->firstName,
+        'last_name'      => $faker->lastName,
+        'email'          => $faker->unique()->safeEmail,
+        'password'       => $password ?: $password = 'secret',
         'remember_token' => str_random(10),
-
-        'street_address' => 'Ankkalinnantie 13',
-        'postal_code' => '00100',
-        'postal_office' => 'Helsinki',
-        'country_code' => 'FI',
+        'phone'          => $faker->phoneNumber,
+        'language'       => 'FI',
     ];
 });
 
@@ -34,11 +31,11 @@ $factory->define(App\Models\Event::class, function (Faker\Generator $faker) {
     static $password;
 
     return [
-        'name' => $faker->company,
-        'location' => $faker->address,
-        'details' => $faker->text,
-        'url' => $faker->url,
-        'currency' => 'EUR',
+        'name'        => $faker->company,
+        'slug'        => $faker->word,
+        'location'    => $faker->address,
+        'slogan'      => $faker->text,
+        'url'         => $faker->url,
     ];
 });
 
@@ -47,7 +44,7 @@ $factory->define(App\Models\Map::class, function (Faker\Generator $faker) {
     static $password;
 
     return [
-        'name' => 'Map ' . uniqid(),
+        'name'        => 'Map ' . uniqid(),
         'description' => $faker->sentence,
     ];
 });
@@ -57,16 +54,15 @@ $factory->define(App\Models\Ticket::class, function (Faker\Generator $faker) {
     static $password;
 
     return [
-
-        'name' => $faker->sentence,
-        'price' => 1000,
-        'vat' => 10,
-        'reserved' => 10,
+        'name'                    => $faker->sentence,
+        'price'                   => 1000,
+        'vat'                     => 10,
+        'reserved'                => 10,
         'maxAmountPerTransaction' => 5,
-        'availableAt' => \Carbon\Carbon::now(),
-        'unavailableAt' => \Carbon\Carbon::now()->addWeek(),
-        'is_seatable' => 1,
-        'event_id' => 1,
+        'availableAt'             => \Carbon\Carbon::now(),
+        'unavailableAt'           => \Carbon\Carbon::now()->addWeek(),
+        'is_seatable'             => 1,
+        'event_id'                => 1,
     ];
 });
 
@@ -75,7 +71,7 @@ $factory->define(App\Models\Seat::class, function (Faker\Generator $faker) {
     static $password;
 
     return [
-        'name' => uniqid(),
-        'status' => "available",
+        'name'   => uniqid(),
+        'status' => 'available',
     ];
 });
