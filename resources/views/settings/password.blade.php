@@ -7,8 +7,8 @@
     <div class="bg-white px-3 h-100">
         <div class="row justify-content-center align-items-center h-25">
             <div class="col-md-10">
-                <h1>Settings</h1>
-                <p class="lead">Change your password.</h1>
+                <h1>{{ tra('settings.title') }}</h1>
+                <p class="lead">{{ tra('settings.lead-password') }}</h1>
             </div>
             <div class="col-md-10">
                 @include('settings._menu')
@@ -34,7 +34,7 @@
                             <label for="new_password">{{ tra('settings.change-password.new') }}</label>
                             <input type="password" class="form-control{{ $errors->has('new_password') ? ' is-invalid' : '' }}" id="new_password" name="new_password" aria-describedby="passwordHelpBlock" autocomplete="new-password" required>
                             <small id="passwordHelpBlock" class="form-text text-muted">
-                                Your password must be at least 8 characters long.
+                                {{ tra('auth.register.password-help') }}
                             </small>
 
                             @if ($errors->has('new_password'))

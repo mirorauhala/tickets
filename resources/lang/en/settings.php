@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Settings Language Lines
@@ -11,7 +10,7 @@ return [
     |
     */
 
-    'header' => 'Settings',
+    'title' => 'Settings',
 
     /*
     |--------------------------------------------------------------------------
@@ -24,9 +23,21 @@ return [
     */
 
     'flash' => [
-        'profile'                   => 'Profile updated!',
-        'password'                  => 'Password changed!',
-        'language'                  => 'Display language changed!',
+        'profile'  => 'Profile updated!',
+        'password' => 'Password changed!',
+        'language' => 'Display language changed!',
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Menu
+    |--------------------------------------------------------------------------
+    */
+
+    'menu' => [
+        'profile'  => 'Profile',
+        'password' => 'Password',
+        'language' => 'Language',
     ],
 
     /*
@@ -38,13 +49,13 @@ return [
     |
     */
 
-    'nav.profile'                   => 'Profile',
-    'panel.title.profile'           => 'Profile',
+    'lead-profile' => 'Change your profile.',
 
     'profile' => [
-        'first-name'                => 'First name',
-        'last-name'                 => 'Last name',
-        'email'                     => 'Email',
+        'first-name' => 'First name',
+        'last-name'  => 'Last name',
+        'email'      => 'Email',
+        'phone'      => 'Phone',
     ],
 
     /*
@@ -57,10 +68,9 @@ return [
     |
     */
 
-    'nav.language'                  => 'Language',
-    'panel.title.language'          => 'Language',
+    'lead-language' => 'Language',
 
-    'language.language'             => 'Display language',
+    'language.language' => 'Display language',
 
     /*
     |--------------------------------------------------------------------------
@@ -72,55 +82,11 @@ return [
     |
     */
 
-    'nav.change-password'           => 'Change password',
-    'panel.title.change-password'   => 'Change password',
+    'lead-password' => 'Change your password.',
 
     'change-password' => [
-        'current'                   => 'Current password',
-        'new'                       => 'New password',
-        'confirmation'              => 'New password again',
+        'current'      => 'Current password',
+        'new'          => 'New password',
+        'confirmation' => 'New password again',
     ],
-
-    /*
-    |--------------------------------------------------------------------------
-    | Orders
-    |--------------------------------------------------------------------------
-    |
-    | The following language lines are used within the orders table in
-    | settings.
-    |
-    */
-
-    'nav.orders'                    => 'Orders',
-
-    // a singular Order
-    'order' => [
-        'title'                     => 'Order',
-        'no-orders'                 => 'You have no orders.',
-
-        'item-title'                => 'Reference',
-        'value'                     => 'Value',
-        'seating-code'              => 'Seating code',
-    ],
-
-    // all user's orders
-    'orders' => [
-        'title'                     => 'Orders',
-        'no-items'                  => 'There are no items in this order.',
-        'no-orders'                 => 'You have no orders.',
-
-        'reference'                 => 'Reference',
-        'value'                     => 'Value',
-        'status'                    => 'Status',
-        'date'                      => 'Date of payment',
-        'action'                    => 'Action',
-
-        'view-order'                => 'View full order',
-    ],
-
-    'orderStatus' => [
-        'paid' => 'Paid',
-        'pending' => 'Pending',
-    ],
-
 ];

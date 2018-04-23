@@ -10,7 +10,7 @@ return [
     |
     */
 
-    'header' => 'Asetukset',
+    'title'  => 'Asetukset',
 
     /*
     |--------------------------------------------------------------------------
@@ -23,9 +23,21 @@ return [
     */
 
     'flash' => [
-        'profile'                   => 'Profiili päivitetty!',
-        'password'                  => 'Salasana vaihdettu!',
-        'language'                  => 'Näyttökieli vaihdettu!',
+        'profile'  => 'Profiili päivitetty!',
+        'password' => 'Salasana vaihdettu!',
+        'language' => 'Näyttökieli vaihdettu!',
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Menu
+    |--------------------------------------------------------------------------
+    */
+
+    'menu' => [
+        'profile'  => 'Profiili',
+        'password' => 'Salasana',
+        'language' => 'Kieli',
     ],
 
     /*
@@ -37,13 +49,13 @@ return [
     |
     */
 
-    'nav.profile'                   => 'Profiili',
-    'panel.title.profile'           => 'Profiili',
+    'lead-profile' => 'Profiili',
 
     'profile' => [
-        'first-name'                => 'Etunimi',
-        'last-name'                 => 'Sukunimi',
-        'email'                     => 'Sähköposti',
+        'first-name' => 'Etunimi',
+        'last-name'  => 'Sukunimi',
+        'email'      => 'Sähköposti',
+        'phone'      => 'Puhelinnumero',
     ],
 
     /*
@@ -56,10 +68,9 @@ return [
     |
     */
 
-    'nav.language'                  => 'Kieli',
-    'panel.title.language'          => 'Kieli',
+    'lead-language' => 'Kieli',
 
-    'language.language'             => 'Näyttökieli',
+    'language.language' => 'Näyttökieli',
 
     /*
     |--------------------------------------------------------------------------
@@ -71,54 +82,11 @@ return [
     |
     */
 
-    'nav.change-password'           => 'Vaihda salasana',
-    'panel.title.change-password'   => 'Vaihda salasana',
+    'lead-password' => 'Vaihda salasanasi.',
 
     'change-password' => [
-        'current'                   => 'Nykyinen salasana',
-        'new'                       => 'Uusi salasana',
-        'confirmation'              => 'Uusi salasana uudelleen',
-    ],
-
-    /*
-    |--------------------------------------------------------------------------
-    | Orders
-    |--------------------------------------------------------------------------
-    |
-    | The following language lines are used within the orders table in
-    | settings.
-    |
-    */
-
-    'nav.orders'                    => 'Tilaukset',
-
-    // a singular Order
-    'order' => [
-        'title'                     => 'Tilaus',
-        'no-orders'                 => 'Sinulla ei ole tilauksia.',
-
-        'item-title'                => 'Tuote',
-        'value'                     => 'Arvo',
-        'seating-code'              => 'Paikkakoodi',
-    ],
-
-    // all user's orders
-    'orders' => [
-        'title'                     => 'Tilaukset',
-        'no-items'                  => 'Tilauksessa ei ole tuotteita.',
-        'no-orders'                 => 'Sinulla ei ole tilauksia.',
-
-        'reference'                 => 'Koodi',
-        'value'                     => 'Arvo',
-        'status'                    => 'Tila',
-        'date'                      => 'Ostopäivämäärä',
-        'action'                    => 'Toiminto',
-
-        'view-order'                => 'Näytä koko tilaus',
-    ],
-
-    'orderStatus' => [
-        'paid'    => 'Maksettu',
-        'pending' => 'Maksamaton',
+        'current'      => 'Nykyinen salasana',
+        'new'          => 'Uusi salasana',
+        'confirmation' => 'Uusi salasana uudelleen',
     ],
 ];

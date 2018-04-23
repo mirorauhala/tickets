@@ -7,8 +7,8 @@
     <div class="bg-white px-3 h-100">
         <div class="row justify-content-center align-items-center h-25">
             <div class="col-md-10">
-                <h1>Settings</h1>
-                <p class="lead">Change your profile.</h1>
+                <h1>{{ tra('settings.title') }}</h1>
+                <p class="lead">{{ tra('settings.lead-profile') }}</h1>
             </div>
             <div class="col-md-10">
                 @include('settings._menu')
@@ -52,7 +52,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="phone">{{ tra('auth.register.phone') }}</label>
+                        <label for="phone">{{ tra('settings.profile.phone') }}</label>
                         <input id="phone" type="text" class="form-control {{ $errors->has('phone') ? ' is-invalid' : '' }}" name="phone" value="{{ Auth::user()->phone }}">
 
                         @if ($errors->has('phone'))
