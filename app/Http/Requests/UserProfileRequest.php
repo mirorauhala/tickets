@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class UserProfileRequest extends FormRequest
@@ -26,7 +27,13 @@ class UserProfileRequest extends FormRequest
         return [
             'first_name' => 'required|string|max:255',
             'last_name'  => 'required|string|max:255',
-            'email'      => 'required|string|email|unique:users|max:255',
+            'email'      => [
+                'required',
+                'string',
+                'email',
+                Rule::unique('users')->ignore(auth()->user()->id),
+                'max:255',
+            ],
             'phone'      => 'nullable',
         ];
     }
