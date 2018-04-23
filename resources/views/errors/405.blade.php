@@ -1,8 +1,8 @@
-@extends('layouts.auth')
+@extends('layouts.base')
 
 @section('base.title', tra('errors.method-not-allowed.title'))
 
-@section('content')
+@section('base.content')
 <div class="container h-100">
     <div class="bg-white px-3 h-100">
         <div class="row justify-content-center h-75">
