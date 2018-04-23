@@ -34,17 +34,17 @@
                     <li class="nav-item">
                         <a class="nav-link text-danger" href="{{ route('logout') }}"
                             onclick="event.preventDefault();
-                                    document.getElementById('logout-form').submit();">{{ tra('nav.logout')}}</a>
+                                    document.getElementById('logout-form').submit();">{{ tra('nav.sign-out')}}</a>
                     </li>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         {{ csrf_field() }}
                     </form>
                 @else
                     <li class="nav-item">
-                        <a class="nav-link{{ active('login') }}" href="{{ route('login') }}">Sign In</a>
+                        <a class="nav-link{{ active('login') }}" href="{{ route('login') }}">{{ tra('nav.sign-in') }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link{{ active('register') }}" href="{{ route('register') }}">Sign Up</a>
+                        <a class="nav-link{{ active('register') }}" href="{{ route('register') }}">{{ tra('nav.sign-up') }}</a>
                     </li>
                 @endauth
             </ul>
