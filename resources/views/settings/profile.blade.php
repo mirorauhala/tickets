@@ -16,6 +16,7 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-md-10">
+                @include('partials.messages.flashbox')
                 <form method="post" action="{{ route('settings') }}">
                     {{ csrf_field() }}
                     <div class="form-row">

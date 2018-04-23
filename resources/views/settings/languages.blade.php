@@ -7,6 +7,7 @@
     <div class="bg-white px-3 h-100">
         <div class="row justify-content-center align-items-center h-25">
             <div class="col-md-10">
+
                 <h1>{{ tra('settings.title') }}</h1>
                 <p class="lead">{{ tra('settings.lead-language') }}</h1>
             </div>
@@ -16,6 +17,7 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-md-10">
+                @include('partials.messages.flashbox')
                 <form method="post" action="{{ route('settings.language') }}">
                     {{ csrf_field() }}
                     <div class="form-group">
