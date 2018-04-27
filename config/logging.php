@@ -47,12 +47,12 @@ return [
             'days'   => 7,
         ],
 
-        'slack' => [
+        'discord' => [
             'driver'   => 'slack',
-            'url'      => env('LOG_SLACK_WEBHOOK_URL'),
-            'username' => 'Laravel Log',
+            'url'      => env('LOG_DISCORD_WEBHOOK_URL'),
+            'username' => 'Paikanvaraus',
             'emoji'    => ':boom:',
-            'level'    => 'critical',
+            'level'    => 'info',
         ],
 
         'syslog' => [
