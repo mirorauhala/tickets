@@ -2,8 +2,8 @@
 
 namespace App\Providers;
 
-use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Event;
+use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -13,7 +13,9 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        //
+        'Illuminate\Auth\Events\Registered' => [
+            'App\Listeners\LogRegisteredUser',
+        ],
     ];
 
     /**
