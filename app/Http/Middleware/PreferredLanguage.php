@@ -2,11 +2,12 @@
 
 namespace App\Http\Middleware;
 
-use Closure, Session, Auth;
+use Auth;
+use Closure;
+use Session;
 
 class PreferredLanguage
 {
-
     /**
      * Available languages.
      *
@@ -17,18 +18,19 @@ class PreferredLanguage
     /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
+     * @param \Illuminate\Http\Request $request
+     * @param \Closure                 $next
+     *
      * @return mixed
      */
     public function handle($request, Closure $next)
     {
 
         // check if the user is logged in
-        if(Auth::check()) {
+        if (Auth::check()) {
             // get the locale from database and set to app
 
-            if(Auth::user()->language == null) {
+            if (Auth::user()->language == null) {
                 app()->setLocale($request->getPreferredLanguage($this->languages));
             } else {
                 app()->setLocale(Auth::user()->language);

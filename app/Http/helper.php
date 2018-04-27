@@ -1,14 +1,14 @@
 <?php
 
-use Money\Money;
-use Money\Currency;
-use Illuminate\Support\Facades\Log;
-use Money\Currencies\ISOCurrencies;
-use Illuminate\Support\Facades\Route;
-use Money\Formatter\IntlMoneyFormatter;
 use App\Exceptions\TranslationStringNotFoundException;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Route;
+use Money\Currencies\ISOCurrencies;
+use Money\Currency;
+use Money\Formatter\IntlMoneyFormatter;
+use Money\Money;
 
-/**
+/*
  * Get active class for an active route.
  *
  * @param string|array $routes
@@ -17,10 +17,10 @@ use App\Exceptions\TranslationStringNotFoundException;
  * @param string $notActive
  * @return string
  */
-if (! function_exists('active')) {
+if (!function_exists('active')) {
     function active($routes, array $excludeRoutes = [], $active = ' active', $notActive = '')
     {
-        if (! is_array($routes)) {
+        if (!is_array($routes)) {
             $routes = [$routes];
         }
 
@@ -41,12 +41,12 @@ if (! function_exists('active')) {
     }
 }
 
-/**
+/*
  * Format money.
  *
  * @return string
  */
-if (! function_exists('money')) {
+if (!function_exists('money')) {
     function money($amount, $currency)
     {
         $money = new Money($amount, new Currency($currency));
@@ -59,12 +59,12 @@ if (! function_exists('money')) {
     }
 }
 
-/**
+/*
  * String translator with error reporting.
  *
  * @return string
  */
-if (! function_exists('tra')) {
+if (!function_exists('tra')) {
     function tra($key = null, $replace = [], $locale = null)
     {
         try {
@@ -72,12 +72,12 @@ if (! function_exists('tra')) {
 
             // no translation was found
             if ($string == $key) {
-                throw new TranslationStringNotFoundException;
+                throw new TranslationStringNotFoundException();
             }
 
             return $string;
         } catch (TranslationStringNotFoundException $e) {
-            Log::info('Cannot get translate key for ' . $key . ' in ' . app()->getLocale());
+            Log::info('Cannot get translate key for '.$key.' in '.app()->getLocale());
         }
 
         return $key;

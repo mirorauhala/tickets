@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers\EventAdmin;
 
-use App\Models\{Event, Ticket};
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\EventAdminTicketRequest;
+use App\Models\Event;
+use App\Models\Ticket;
 
 class TicketController extends Controller
 {
-  /**
+    /**
      * Create a new controller instance.
      *
      * @return void
@@ -34,8 +34,8 @@ class TicketController extends Controller
 
         return view('events.admin.tickets.list')
             ->with([
-                "event" => $event,
-                "tickets" => $event->tickets()->paginate(15),
+                'event'   => $event,
+                'tickets' => $event->tickets()->paginate(15),
             ]);
     }
 
@@ -54,7 +54,7 @@ class TicketController extends Controller
 
         return view('events.admin.tickets.new')
             ->with([
-                "event" => $event,
+                'event' => $event,
             ]);
     }
 
@@ -73,23 +73,22 @@ class TicketController extends Controller
         $this->authorize('update', $event);
 
         $event->tickets()->create([
-            "name"                  => $request->ticket_name,
-            "price"                 => $request->ticket_price,
-            "vat"                   => $request->ticket_vat,
-            "reserved"              => $request->ticket_reserved,
-            "max"                   => $request->ticket_max,
-            "is_seatable"           => $request->ticket_seatable,
-            "availableAt"           => $request->ticket_availableAt,
-            "unavailableAt"         => $request->ticket_unavailableAt,
+            'name'                  => $request->ticket_name,
+            'price'                 => $request->ticket_price,
+            'vat'                   => $request->ticket_vat,
+            'reserved'              => $request->ticket_reserved,
+            'max'                   => $request->ticket_max,
+            'is_seatable'           => $request->ticket_seatable,
+            'availableAt'           => $request->ticket_availableAt,
+            'unavailableAt'         => $request->ticket_unavailableAt,
         ]);
-
 
         return view('events.admin.tickets.list')
             ->with([
-                "event" => $event,
-                "tickets" => $event->tickets()->paginate(15),
-                "flash_status" => 200,
-                "flash_message" => "Ticket created!",
+                'event'         => $event,
+                'tickets'       => $event->tickets()->paginate(15),
+                'flash_status'  => 200,
+                'flash_message' => 'Ticket created!',
             ]);
     }
 
@@ -108,8 +107,8 @@ class TicketController extends Controller
 
         return view('events.admin.tickets.edit')
             ->with([
-                "event" => $event,
-                "ticket" => $ticket,
+                'event'  => $event,
+                'ticket' => $ticket,
             ]);
     }
 
@@ -126,21 +125,20 @@ class TicketController extends Controller
         // restrict access to authorized users only
         $this->authorize('update', $event);
 
-        $ticket->name                          = $request->ticket_name;
-        $ticket->price                         = $request->ticket_price;
-        $ticket->vat                           = $request->ticket_vat;
-        $ticket->reserved                      = $request->ticket_reserved;
-        $ticket->maxAmountPerTransaction       = $request->ticket_max;
-        $ticket->is_seatable                   = $request->ticket_seatable;
-        $ticket->availableAt                   = $request->ticket_availableAt;
-        $ticket->unavailableAt                 = $request->ticket_unavailableAt;
+        $ticket->name = $request->ticket_name;
+        $ticket->price = $request->ticket_price;
+        $ticket->vat = $request->ticket_vat;
+        $ticket->reserved = $request->ticket_reserved;
+        $ticket->maxAmountPerTransaction = $request->ticket_max;
+        $ticket->is_seatable = $request->ticket_seatable;
+        $ticket->availableAt = $request->ticket_availableAt;
+        $ticket->unavailableAt = $request->ticket_unavailableAt;
         $ticket->save();
-
 
         return view('events.admin.tickets.edit')
             ->with([
-                "event" => $event,
-                "ticket" => $ticket,
+                'event'  => $event,
+                'ticket' => $ticket,
             ]);
     }
 
@@ -159,8 +157,8 @@ class TicketController extends Controller
 
         return view('events.admin.tickets.delete')
             ->with([
-                "event" => $event,
-                "tickets" => $event->tickets()->paginate(15),
+                'event'   => $event,
+                'tickets' => $event->tickets()->paginate(15),
             ]);
     }
 
@@ -179,11 +177,10 @@ class TicketController extends Controller
 
         return view('events.admin.tickets.list')
             ->with([
-                "event" => $event,
-                "tickets" => $event->tickets()->paginate(15),
-                "flash_status" => 200,
-                "flash_message" => "Ticket has been deleted.",
+                'event'         => $event,
+                'tickets'       => $event->tickets()->paginate(15),
+                'flash_status'  => 200,
+                'flash_message' => 'Ticket has been deleted.',
             ]);
     }
-
 }

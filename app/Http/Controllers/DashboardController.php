@@ -35,7 +35,8 @@ class DashboardController extends Controller
     /**
      * Display event customers.
      *
-     * @param  App\Models\Event  $event
+     * @param App\Models\Event $event
+     *
      * @return \Illuminate\Http\Response
      */
     public function customers(Event $event)
@@ -52,7 +53,8 @@ class DashboardController extends Controller
     /**
      * Show listing of tickets.
      *
-     * @param  App\Models\Event  $event
+     * @param App\Models\Event $event
+     *
      * @return \Illuminate\Http\Response
      */
     public function tickets(Event $event)
@@ -69,7 +71,8 @@ class DashboardController extends Controller
     /**
      * Show listing of orders.
      *
-     * @param  App\Models\Event  $event
+     * @param App\Models\Event $event
+     *
      * @return \Illuminate\Http\Response
      */
     public function orders(Event $event)
@@ -86,7 +89,8 @@ class DashboardController extends Controller
     /**
      * Show listing of maps.
      *
-     * @param  App\Models\Event  $event
+     * @param App\Models\Event $event
+     *
      * @return \Illuminate\Http\Response
      */
     public function maps(Event $event)
@@ -103,7 +107,8 @@ class DashboardController extends Controller
     /**
      * Show listing of seats.
      *
-     * @param  App\Models\Event  $event
+     * @param App\Models\Event $event
+     *
      * @return \Illuminate\Http\Response
      */
     public function seats(Event $event)
@@ -120,7 +125,8 @@ class DashboardController extends Controller
     /**
      * Display event settings.
      *
-     * @param  App\Models\Event  $event
+     * @param App\Models\Event $event
+     *
      * @return \Illuminate\Http\Response
      */
     public function settings(Event $event)
@@ -134,9 +140,10 @@ class DashboardController extends Controller
     }
 
     /**
-     * Store event settings
+     * Store event settings.
      *
-     * @param  App\Models\Event  $event
+     * @param App\Models\Event $event
+     *
      * @return \Illuminate\Http\Response
      */
     public function update(Event $event, Request $request)

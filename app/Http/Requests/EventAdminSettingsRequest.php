@@ -25,11 +25,11 @@ class EventAdminSettingsRequest extends FormRequest
     public function rules()
     {
         return [
-            "event_name"            => "required|filled",
-            "event_location"        => "required|max:100",
-            "event_url"             => "required|url",
+            'event_name'            => 'required|filled',
+            'event_location'        => 'required|max:100',
+            'event_url'             => 'required|url',
             //"event_currency"        => "required", // currency validator???
-            "event_visibility"      => "required|boolean",
+            'event_visibility'      => 'required|boolean',
         ];
     }
 }

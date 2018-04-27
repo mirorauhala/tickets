@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers\EventAdmin;
 
-use App\Models\Event;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Event;
 
 class ScannerController extends Controller
 {
@@ -33,7 +32,7 @@ class ScannerController extends Controller
 
         return view('events.admin.scanner')
             ->with([
-                "event" => $event
+                'event' => $event,
             ]);
     }
 }

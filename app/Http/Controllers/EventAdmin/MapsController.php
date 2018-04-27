@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers\EventAdmin;
 
-use App\Models\Event;
 use App\Http\Controllers\Controller;
+use App\Models\Event;
 
 class MapsController extends Controller
 {
     /**
-       * Create a new controller instance.
-       *
-       * @return void
-       */
+     * Create a new controller instance.
+     *
+     * @return void
+     */
     public function __construct()
     {
         $this->middleware('auth');

@@ -2,14 +2,14 @@
 
 namespace Tests\Browser\Tests\EventTests;
 
-use App\Models\User;
 use App\Models\Event;
-use Tests\DuskTestCase;
+use App\Models\User;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Laravel\Dusk\Browser;
 use Tests\Browser\Pages\EventTicketsPage;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Tests\DuskTestCase;
 
-class EvenTicketsTest extends DuskTestCase
+class EventTicketsTest extends DuskTestCase
 {
     use DatabaseMigrations;
 
@@ -27,7 +27,7 @@ class EvenTicketsTest extends DuskTestCase
 
         $this->browse(function (Browser $browser) use ($user) {
             $browser->loginAs($user)
-                    ->visit(new EventTicketsPage)
+                    ->visit(new EventTicketsPage())
                     ->createTicket(
                         'The Best Event of The Year',
                         'Milky Way, Earth',

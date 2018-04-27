@@ -2,9 +2,9 @@
 
 namespace App\Rules;
 
+use Illuminate\Contracts\Validation\Rule;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Contracts\Validation\Rule;
 
 class CurrentPassword implements Rule
 {
@@ -21,8 +21,9 @@ class CurrentPassword implements Rule
     /**
      * Determine if the password is the current one.
      *
-     * @param  string  $attribute
-     * @param  mixed  $value
+     * @param string $attribute
+     * @param mixed  $value
+     *
      * @return bool
      */
     public function passes($attribute, $value)

@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use Illuminate\Support\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Carbon;
 
 class Ticket extends Model
 {
@@ -43,6 +43,7 @@ class Ticket extends Model
      * Scope a query to only include visitor tickets.
      *
      * @param \Illuminate\Database\Eloquent\Builder $query
+     *
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeVisitorTicket($query)
@@ -54,6 +55,7 @@ class Ticket extends Model
      * Scope a query to only include gamer tickets.
      *
      * @param \Illuminate\Database\Eloquent\Builder $query
+     *
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeGamerTickets($query)
@@ -65,6 +67,7 @@ class Ticket extends Model
      * Return only purchasable tickets.
      *
      * @param \Illuminate\Database\Eloquent\Builder $query
+     *
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopePurchasable($query)
@@ -77,7 +80,8 @@ class Ticket extends Model
      * Order by price.
      *
      * @param \Illuminate\Database\Eloquent\Builder $query
-     * @param string $order
+     * @param string                                $order
+     *
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeOrderByPrice($query, $order = 'asc')

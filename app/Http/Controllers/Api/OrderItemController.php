@@ -14,7 +14,7 @@ class OrderItemController
         return fractal()
             ->item($orderItem)
             ->parseIncludes(['ticket', 'seat', 'user', 'order'])
-            ->transformWith(new OrderItemTransformer)
+            ->transformWith(new OrderItemTransformer())
             ->toArray();
     }
 }

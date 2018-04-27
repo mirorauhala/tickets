@@ -52,7 +52,8 @@ class EventTicketsPage extends Page
      *
      * @return void
      */
-    public function createTicket(Browser $browser, $eventName = null, $eventLocation = null, $eventUrl = null, $eventCurrency = null, $eventVisibility = null) {
+    public function createTicket(Browser $browser, $eventName = null, $eventLocation = null, $eventUrl = null, $eventCurrency = null, $eventVisibility = null)
+    {
         $browser->type('@ticket_name', $eventName)
             ->type('@ticket_price', $eventLocation)
             ->type('@ticket_vat', $eventUrl)

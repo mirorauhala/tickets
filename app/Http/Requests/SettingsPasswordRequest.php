@@ -25,7 +25,7 @@ class SettingsPasswordRequest extends FormRequest
     public function rules()
     {
         return [
-            'current_password'          => ['required', 'string', new CurrentPassword],
+            'current_password'          => ['required', 'string', new CurrentPassword()],
             'new_password'              => 'required|string|min:8|different:current_password',
             'new_password_confirmation' => 'required|string|same:new_password',
         ];

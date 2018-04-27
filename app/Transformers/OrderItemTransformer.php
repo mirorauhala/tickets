@@ -22,21 +22,21 @@ class OrderItemTransformer extends TransformerAbstract
 
     public function includeTicket(OrderItem $orderItem)
     {
-        return $this->item($orderItem->ticket, new TicketTransformer);
+        return $this->item($orderItem->ticket, new TicketTransformer());
     }
 
     public function includeSeat(OrderItem $orderItem)
     {
-        return $this->item($orderItem->seat, new SeatTransformer);
+        return $this->item($orderItem->seat, new SeatTransformer());
     }
 
     public function includeUser(OrderItem $orderItem)
     {
-        return $this->item($orderItem->user, new UserTransformer);
+        return $this->item($orderItem->user, new UserTransformer());
     }
 
     public function includeOrder(OrderItem $orderItem)
     {
-        return $this->item($orderItem->order, new OrderTransformer);
+        return $this->item($orderItem->order, new OrderTransformer());
     }
 }

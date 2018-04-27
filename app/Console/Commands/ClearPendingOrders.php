@@ -2,7 +2,6 @@
 
 namespace App\Console\Commands;
 
-use Log;
 use App\Models\Order;
 use Illuminate\Console\Command;
 

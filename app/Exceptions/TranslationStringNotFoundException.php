@@ -4,4 +4,6 @@ namespace App\Exceptions;
 
 use Exception;
 
-class TranslationStringNotFoundException extends Exception { }
+class TranslationStringNotFoundException extends Exception
+{
+}

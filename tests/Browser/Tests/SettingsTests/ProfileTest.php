@@ -3,10 +3,10 @@
 namespace Tests\Browser\Tests\SettingsTests;
 
 use App\Models\User;
-use Tests\DuskTestCase;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Laravel\Dusk\Browser;
 use Tests\Browser\Pages\SettingsProfilePage;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Tests\DuskTestCase;
 
 class ProfileTest extends DuskTestCase
 {
@@ -35,7 +35,7 @@ class ProfileTest extends DuskTestCase
             ];
 
             $browser->loginAs($user)
-                    ->visit(new SettingsProfilePage)
+                    ->visit(new SettingsProfilePage())
                     ->updateProfile(...$updated_details)
                     ->assertInputValue('@first_name', 'Lady')
                     ->assertInputValue('@last_name', 'Gaga')

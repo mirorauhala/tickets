@@ -2,8 +2,8 @@
 
 namespace App\Rules;
 
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Contracts\Validation\Rule;
+use Illuminate\Support\Facades\Auth;
 
 class NoPendingOrders implements Rule
 {
@@ -20,8 +20,9 @@ class NoPendingOrders implements Rule
     /**
      * Determine if the validation rule passes.
      *
-     * @param  string  $attribute
-     * @param  mixed  $value
+     * @param string $attribute
+     * @param mixed  $value
+     *
      * @return bool
      */
     public function passes($attribute, $value)

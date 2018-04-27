@@ -27,11 +27,12 @@ class SettingsChangeLanguagePage extends Page
     }
 
     /**
-     * Assert that user can change display language
+     * Assert that user can change display language.
      *
      * @return void
      */
-    public function changeLanguage(Browser $browser, $language = null) {
+    public function changeLanguage(Browser $browser, $language = null)
+    {
         $browser->select('@display_language', $language)
             ->press('Change');
     }

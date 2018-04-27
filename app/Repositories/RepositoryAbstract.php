@@ -34,7 +34,7 @@ abstract class RepositoryAbstract implements RepositoryInterface
         $model = $this->entity->find($id);
 
         if (!$model) {
-            throw (new ModelNotFoundException)->setModel(
+            throw (new ModelNotFoundException())->setModel(
                 get_class($this->entity->getModel()),
                 $id
             );
@@ -47,6 +47,7 @@ abstract class RepositoryAbstract implements RepositoryInterface
      * Return query results with values that match given rules.
      *
      * @param \Illuminate\Database\Eloquent\Builder $query
+     *
      * @return Collection
      */
     public function findWhere($column, $value)
@@ -59,7 +60,7 @@ abstract class RepositoryAbstract implements RepositoryInterface
         $model = $this->entity->where($column, $value)->first();
 
         if (!$model) {
-            throw (new ModelNotFoundException)->setModel(
+            throw (new ModelNotFoundException())->setModel(
                 get_class($this->entity->getModel())
             );
         }

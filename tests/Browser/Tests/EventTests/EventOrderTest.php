@@ -2,12 +2,12 @@
 
 namespace Tests\Browser\Tests\EventTests;
 
-use Tests\DuskTestCase;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Laravel\Dusk\Browser;
 use Tests\Browser\Pages\EventOrdersPage;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Tests\DuskTestCase;
 
-class EventOrdersTest extends DuskTestCase
+class EventOrderTest extends DuskTestCase
 {
     use DatabaseMigrations;
 
@@ -19,7 +19,7 @@ class EventOrdersTest extends DuskTestCase
     public function a_user_can_see_events_orders()
     {
         $this->browse(function (Browser $browser) {
-            $browser->visit(new EventOrdersPage)
+            $browser->visit(new EventOrdersPage())
                     ->assertSeeIn('@adminTitle', 'Orders');
         });
     }
