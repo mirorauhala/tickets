@@ -10,17 +10,12 @@ use App\Models\Order;
 use App\Models\Ticket;
 use App\Models\OrderItem;
 use Illuminate\Http\Request;
+use App\Payments\CheckoutPayment;
 use App\Http\Requests\OrderRequest;
+use Illuminate\Support\Facades\Log;
 use Money\Currencies\ISOCurrencies;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\PaytrailRequest;
 use Money\Formatter\DecimalMoneyFormatter;
-use Paytrail\Http\Client as PaytrailClient;
-use Paytrail\Object\UrlSet as PaytrailUrlSet;
-use Paytrail\Object\Address as PaytrailAddress;
-use Paytrail\Object\Contact as PaytrailContact;
-use Paytrail\Object\Payment as PaytrailPayment;
-use Paytrail\Object\Product as PaytrailProduct;
 
 class OrderController extends Controller
 {
@@ -39,11 +34,8 @@ class OrderController extends Controller
      *
      * @return void
      */
-    public function create(OrderRequest $request)
+    public function create(Event $event, OrderRequest $request)
     {
-        // do ugly hard code for event ID
-        $event = Event::findOrFail(1);
-
         // get ticket
         $ticket = Ticket::find($request->ticket_id);
         $ticket_amount = $request->ticket_amount;
@@ -64,7 +56,7 @@ class OrderController extends Controller
             'status'             => 'pending',
             'payer_name'         => $request->user()->full_name(),
             'release_lock_after' => $release_lock_after,
-            'event_id'           => 1,
+            'event_id'           => $event->id,
         ]);
 
         // add orderitems
@@ -90,65 +82,27 @@ class OrderController extends Controller
         // save order items
         $order->items()->saveMany($items);
 
-        $urlSet = new PaytrailUrlSet;
-        $urlSet->configure([
-            'successUrl'      => route('order.callback'),
-            'failureUrl'      => 'https://www.demoshop.com/sv/failure',
-            'notificationUrl' => 'https://www.demoshop.com/sv/notify',
-        ]);
+        $checkoutOrder = [
+            'STAMP'         => time(),
+            'AMOUNT'        => $order_value,
+            'MESSAGE'       => $ticket->name,
+            'REFERENCE'     => $order_reference,
+            'RETURN'        => route('orders.callback'),
+            'CANCEL'        => route('orders.callback'),
+            'DELIVERY_DATE' => date('Ymd'),
+        ];
 
-        $address = new PaytrailAddress;
-        $address->configure([
-            'streetAddress'   => $request->user()->street_address,
-            'postalCode'      => $request->user()->postal_code,
-            'postalOffice'    => $request->user()->postal_office,
-            'countryCode'     => $request->user()->country_code,
-        ]);
+        Log::warning('Use config() instead of env() in prodcution.');
+        $checkout = new CheckoutPayment(env('CHECKOUT_MERCHANT'), env('CHECKOUT_SECRET'));
 
-        $contact = new PaytrailContact;
-        $contact->configure([
-            'firstName'       => $request->user()->first_name,
-            'lastName'        => $request->user()->last_name,
-            'email'           => $request->user()->email,
-            //'phoneNumber'     => '040123456', // optional
-            //'companyName'     => 'Demo Company Ltd', // optional
-            'address'         => $address,
-        ]);
+        $checkout->load($checkoutOrder);
+        $checkout->validate();
+        $checkout->send();
 
-        $payment = new PaytrailPayment;
-        $payment->configure([
-            'orderNumber'       => $order_reference,
-            'urlSet'            => $urlSet,
-            'contact'           => $contact,
-            //'locale'            => PaytrailPayment::LOCALE_FIFI, // optional, if we can determine the locale why can't they.
-        ]);
-
-        $product = new PaytrailProduct;
-        $product->configure([
-            'title'             => $ticket->name,
-            'code'              => $ticket->id,
-            'amount'            => number_format($ticket_amount, 2),
-            'price'             => $moneyFormatter->format($money),
-            'vat'               => 10.00,
-            'discount'          => 0.00,
-            'type'              => PaytrailProduct::TYPE_NORMAL,
-        ]);
-
-        $payment->addProduct($product);
-
-        $client = new PaytrailClient(
-            env('PAYTRAIL_KEY', '13466'),
-            env('PAYTRAIL_SECRET', '6pKF4jkv97zmqBJ3ZL8gUw5DfT2NMQ')
-        );
-
-        $client->connect();
-        try {
-            $result = $client->processPayment($payment);
-        } catch (Exception $e) {
-            die('Paytrail payment failed! We\'ve dispatched a group of higly trained monkeys to fix the issue. Details: ' . $e->getMessage());
-        }
-
-        return redirect()->to($result->getUrl());
+        return view('orders.bank')
+            ->with([
+                'banks' => $checkout->banks(),
+            ]);
     }
 
     /**
@@ -156,22 +110,29 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function processOrderCallback(PaytrailRequest $request)
+    public function processOrderCallback(Request $request)
     {
-        // update order and order items' status to paid if they are not within lock perioid
-        if ($order = Order::where('reference', $request->ORDER_NUMBER)->where('status', '!=', 'paid')->first()) {
-            // update the base order
-            $order->status = 'paid';
-            $order->save();
+        $checkout = new CheckoutPayment(env('CHECKOUT_MERCHANT'), env('CHECKOUT_SECRET'));
+        $checkout->processCallback($request->toArray());
 
-            // update order items
-            $order->items()->update([
-                'status' => 'paid',
-            ]);
+        if ($checkout->isPaid()) {
+            // update order and order items' status to paid if they are not within lock perioid
+            if ($order = Order::where('reference', $request->REFERENCE)->where('status', '!=', 'paid')->first()) {
+                // update the base order
+                $order->status = 'paid';
+                $order->save();
 
-            return redirect()->route('settings.orders.show', ['order' => $order->reference]);
+                // update order items
+                $order->items()->update([
+                    'status' => 'paid',
+                ]);
+
+                return redirect()->route('orders.show', ['order' => $order]);
+            } else {
+                dump('Error: order not found or already marked paid');
+            }
         } else {
-            dump('Error: order not found or already marked paid');
+            dump('Error: order not paid');
         }
     }
 }

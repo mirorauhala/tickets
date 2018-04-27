@@ -1,6 +1,6 @@
-@extends('layouts.tickets')
+@extends('layouts.base')
 
-@section('content')
+@section('base.content')
 <div class="container h-100">
     <div class="bg-white px-3 h-100">
         <div class="row justify-content-center align-items-center h-25">
@@ -21,7 +21,7 @@
                 <h1>{{ $order_item->title }}</h1>
                 <ul class="list-unstyled">
                     <li><b>Hinta</b>: {{ money($order_item->value, "EUR") }}</li>
-                    <li><b>Pohjautuu tilaukseen</b>: <a href="{{ route('settings.orders.show', ['order' => $order_item->order->reference]) }}">{{ $order_item->order->reference }}</a></li>
+                    <li><b>Pohjautuu tilaukseen</b>: <a href="{{ route('orders.show', ['order' => $order_item->order->reference]) }}">{{ $order_item->order->reference }}</a></li>
                 </ul>
             </div>
         </div>

@@ -13,6 +13,9 @@
                 <li class="nav-item">
                     <a class="nav-link{{ active('tickets') }}" href="{{ route('tickets') }}">{{ tra('nav.tickets') }}</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link{{ active('orders*') }}" href="{{ route('orders') }}">{{ tra('nav.orders') }}</a>
+                </li>
             </ul>
             <ul class="navbar-nav">
                 @auth()

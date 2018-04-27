@@ -19,7 +19,7 @@ class OrderItemPolicy
      */
     public function view(User $user, OrderItem $order)
     {
-        return $user->orderItems()->where('id', $order->id)->first();
+        return $user->orderItems()->where('id', $order->id)->count() > 0;
     }
 
     /**
@@ -54,6 +54,6 @@ class OrderItemPolicy
      */
     public function delete(User $user, OrderItem $order)
     {
-        return $user->orderItems()->status("pending")->where('id', $order->id)->first();
+        return $user->orderItems()->status('pending')->where('id', $order->id)->first();
     }
 }

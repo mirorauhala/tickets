@@ -9,6 +9,7 @@ return [
 
     'featured' => 'Esillä',
     'tickets'  => 'Liput',
+    'orders'   => 'Tilaukset',
     'manage'   => 'Hallitse',
     'settings' => 'Asetukset',
     'sign-in'  => 'Kirjaudu sisään',

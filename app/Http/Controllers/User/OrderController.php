@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\User\Settings;
+namespace App\Http\Controllers\User;
 
 use App\Models\Order;
 use Illuminate\Http\Request;
@@ -27,7 +27,7 @@ class OrderController extends Controller
     {
         $orders = auth()->user()->orders->sortByDesc('created_at');
 
-        return view('settings.orders.index')
+        return view('orders.index')
             ->with([
                 'orders' => $orders,
             ]);
@@ -51,7 +51,7 @@ class OrderController extends Controller
             }
         })->count() > 0) ? true : false;
 
-        return view('settings.orders.show')
+        return view('orders.show')
             ->with([
                 'order'            => $order,
                 'show_form_submit' => $ordersCount,
@@ -72,7 +72,7 @@ class OrderController extends Controller
         $order->delete();
 
         return redirect()
-            ->route('settings.orders')
+            ->route('orders')
             ->with([
                 'flash_status'  => 'success',
                 'flash_message' => 'Tilaus poistettu.',

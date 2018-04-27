@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\User;
 
 use Auth;
-use App\Models\{Order, OrderItem};
-use Illuminate\Http\Request;
+use App\Models\Order;
+use App\Models\OrderItem;
 use App\Http\Controllers\Controller;
 
 class TicketController extends Controller
@@ -24,7 +24,7 @@ class TicketController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function showPaidTickets()
+    public function index()
     {
         $user = Auth::user();
 
@@ -32,7 +32,7 @@ class TicketController extends Controller
 
         return view('tickets.paid')
             ->with([
-                "order_items" => $user->orderItems->where('status', 'paid'),
+                'order_items' => $user->orderItems->where('status', 'paid'),
             ]);
     }
 
@@ -49,7 +49,7 @@ class TicketController extends Controller
 
         return view('tickets.pending')
             ->with([
-                "order_items" => $user->orderItems->where('status', 'pending'),
+                'order_items' => $user->orderItems->where('status', 'pending'),
             ]);
     }
 
@@ -64,7 +64,7 @@ class TicketController extends Controller
 
         return view('tickets.redeem')
             ->with([
-                "order_items" => $order_items,
+                'order_items' => $order_items,
             ]);
     }
 
@@ -81,7 +81,7 @@ class TicketController extends Controller
 
         return view('tickets.view')
             ->with([
-                "order_item" => $order_item,
+                'order_item' => $order_item,
             ]);
     }
 }

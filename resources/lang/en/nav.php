@@ -9,6 +9,7 @@ return [
 
     'featured' => 'Featured',
     'tickets'  => 'Tickets',
+    'orders'   => 'Orders',
     'manage'   => 'Manage',
     'settings' => 'Settings',
     'sign-in'  => 'Sign In',

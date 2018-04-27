@@ -19,10 +19,20 @@ Auth::routes();
 |--------------------------------------------------------------------------
 */
 Route::get('/', 'EventController@index')->name('events');
-Route::get('/tickets', 'User\TicketController@showPaidTickets')->name('tickets');
+Route::get('/tickets', 'User\TicketController@index')->name('tickets');
 Route::get('/tickets/pending', 'User\TicketController@showPendingTickets')->name('tickets.pending');
 Route::get('/tickets/redeem', 'User\TicketController@showTicketRedeemView')->name('tickets.redeem');
 Route::get('/tickets/view/{order}', 'User\TicketController@viewTicket')->name('tickets.view');
+
+/*
+|--------------------------------------------------------------------------
+| Orders
+|--------------------------------------------------------------------------
+*/
+Route::get('/orders', 'User\OrderController@index')->name('orders');
+Route::post('/orders/create/{event}', 'Order\OrderController@create')->name('orders.create');
+Route::get('/orders/{order}', 'User\OrderController@show')->name('orders.show');
+Route::get('/orders/delete/{order}', 'User\OrderController@delete')->name('orders.delete');
 
 /*
 |--------------------------------------------------------------------------
@@ -64,7 +74,7 @@ Route::post('/dashboard/{event}/tickets', 'Dashboard\TicketController@store');
 |--------------------------------------------------------------------------
 */
 
-Route::get('/order/callback', 'Order\OrderController@processOrderCallback')->name('order.callback');
+Route::get('/order/callback', 'Order\OrderController@processOrderCallback')->name('orders.callback');
 Route::post('/order/{order}/addSeats', 'Order\OrderSeatController@addSeatToOrderItems')->name('order.seats');
 
 /*
@@ -80,7 +90,3 @@ Route::post('/settings/password', 'User\Settings\PasswordController@updatePasswo
 
 Route::get('/settings/language', 'User\Settings\LanguageController@show')->name('settings.language');
 Route::post('/settings/language', 'User\Settings\LanguageController@update');
-
-Route::get('/settings/orders', 'User\Settings\OrderController@index')->name('settings.orders');
-Route::get('/settings/orders/{order}', 'User\Settings\OrderController@show')->name('settings.orders.show');
-Route::get('/settings/orders/delete/{order}', 'User\Settings\OrderController@delete')->name('settings.orders.delete');
