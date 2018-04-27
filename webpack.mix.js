@@ -12,11 +12,8 @@ let mix = require('laravel-mix');
  */
 
 mix.js('resources/assets/js/app.js', 'public/js')
-    .js('resources/assets/js/scanner.js', 'public/js')
-    .sass('resources/assets/sass/scanner.scss', 'public/css')
-    .sass('resources/assets/sass/new.scss', 'public/css')
     .sass('resources/assets/sass/app.scss', 'public/css');
 
-if (mix.config.inProduction) {
+if (mix.inProduction()) {
     mix.version();
 }

@@ -15,7 +15,7 @@ window.Vue = require('vue');
  */
 import VueQRCodeComponent from 'vue-qrcode-component'
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.component('input-counter', require('./components/InputCounter.vue'));
 Vue.component('qr-code', VueQRCodeComponent)
 
 const app = new Vue({
@@ -25,7 +25,6 @@ const app = new Vue({
 /**
  * Add scripts for the application to work.
  */
-require('./numberIncrease');
 
 
 
