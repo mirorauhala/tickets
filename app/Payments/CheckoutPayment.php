@@ -2,8 +2,8 @@
 
 namespace App\Payments;
 
-use Illuminate\Support\Facades\Validator;
 use App\Exceptions\NullCheckoutCredentialsException;
+use Illuminate\Support\Facades\Validator;
 
 class CheckoutPayment
 {
@@ -50,7 +50,7 @@ class CheckoutPayment
     /**
      * Has the order been validated.
      *
-     * @var boolean
+     * @var bool
      */
     protected $isValidated = false;
 
@@ -108,12 +108,12 @@ class CheckoutPayment
      * Constructor for Checkout.
      *
      * @param string $mercant - Merchant ID
-     * @param string $secret - Merchant sercret key
+     * @param string $secret  - Merchant sercret key
      */
     public function __construct($merchant, $secret)
     {
         if (empty($merchant) || empty($secret)) {
-            throw new NullCheckoutCredentialsException;
+            throw new NullCheckoutCredentialsException();
         }
 
         $this->merchant = [
@@ -126,6 +126,7 @@ class CheckoutPayment
      * Load order information.
      *
      * @param array $order
+     *
      * @return void
      */
     public function load(array $order)
@@ -159,7 +160,7 @@ class CheckoutPayment
             'MAC'           => 'required',
         ]);
 
-        $this->isValidated = ! $validator->fails();
+        $this->isValidated = !$validator->fails();
 
         return $validator;
     }
@@ -171,7 +172,7 @@ class CheckoutPayment
      */
     public function send()
     {
-        if (! $this->isValidated) {
+        if (!$this->isValidated) {
             return false;
         }
 
@@ -205,7 +206,8 @@ class CheckoutPayment
      * Execute a HTTP connection to endpoint.
      *
      * @param string $endpoint
-     * @param array $payload
+     * @param array  $payload
+     *
      * @return void
      */
     protected function http($endpoint, $payload)
@@ -231,15 +233,15 @@ class CheckoutPayment
         // XML Error parsing
         $errors = libxml_get_errors();
 
-        if (! empty($errors)) {
-            throw new \Exception('Error: ' . $response);
+        if (!empty($errors)) {
+            throw new \Exception('Error: '.$response);
         }
 
         $this->response = $result;
     }
 
     /**
-     * Validate return URL signature
+     * Validate return URL signature.
      *
      * @param array $response
      */
@@ -259,7 +261,7 @@ class CheckoutPayment
     /**
      * Checks if the order is paid.
      *
-     * @return boolean
+     * @return bool
      */
     public function isPaid()
     {
@@ -274,6 +276,7 @@ class CheckoutPayment
      * Builds payload to send to the endpoint.
      *
      * @param array $order
+     *
      * @return array
      */
     protected function buildPayload($order)
@@ -295,13 +298,14 @@ class CheckoutPayment
      * Builds the correct order of fields for HMAC.
      *
      * @param string $delimiter
-     * @param array $parameters
-     * @param array $fields
+     * @param array  $parameters
+     * @param array  $fields
+     *
      * @return string
      */
     protected function calculateHashString($delimiter, $parameters, $fields)
     {
-        return join(
+        return implode(
             $delimiter,
             array_map(
                 function ($field) use (&$parameters) {
@@ -317,6 +321,7 @@ class CheckoutPayment
      *
      * @param string $string
      * @param string $secret
+     *
      * @return string
      */
     protected function calculateMac($string, $secret)

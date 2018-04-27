@@ -3,10 +3,10 @@
 namespace Tests\Browser\Tests\AuthTests;
 
 use App\Models\User;
-use Tests\DuskTestCase;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Laravel\Dusk\Browser;
 use Tests\Browser\Pages\SignUpPage;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Tests\DuskTestCase;
 
 class SignUpTest extends DuskTestCase
 {
@@ -32,7 +32,7 @@ class SignUpTest extends DuskTestCase
                 'secret',
             ];
 
-            $browser->visit(new SignUpPage)
+            $browser->visit(new SignUpPage())
                     ->signUp(...$details)
                     ->assertPathIs('/');
         });

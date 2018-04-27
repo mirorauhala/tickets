@@ -2,7 +2,7 @@
 
 namespace App\Http\Requests;
 
-use App\Models\{OrderItem, Ticket};
+use App\Models\Ticket;
 use Illuminate\Foundation\Http\FormRequest;
 use Paytrail\Http\Client as PaytrailClient;
 
@@ -26,23 +26,23 @@ class PaytrailRequest extends FormRequest
     public function rules()
     {
         return [
-            "ORDER_NUMBER"      => "required",
-            "TIMESTAMP"         => "required",
-            "PAID"              => "required",
-            "METHOD"            => "required",
-            "RETURN_AUTHCODE"   => "required",
+            'ORDER_NUMBER'      => 'required',
+            'TIMESTAMP'         => 'required',
+            'PAID'              => 'required',
+            'METHOD'            => 'required',
+            'RETURN_AUTHCODE'   => 'required',
         ];
     }
 
     /**
      * More validation.
      *
-     * @param  \Illuminate\Validation\Validator  $validator
+     * @param \Illuminate\Validation\Validator $validator
+     *
      * @return void
      */
     public function withValidator($validator)
     {
-
 
         // validate ticket amount
         $validator->after(function ($validator) {
@@ -62,14 +62,12 @@ class PaytrailRequest extends FormRequest
                     $validator->getData()['METHOD']
                 )
             ) {
-
                 $validator->errors()->add('custom_error', 'Payment checksum is invalid');
 
                 return view('errors.custom', [
-                    'error_title' => 'Payment checksum is invalid',
-                    'error_subtext' => 'Couldn\'t finish order. Contact support.'
+                    'error_title'   => 'Payment checksum is invalid',
+                    'error_subtext' => 'Couldn\'t finish order. Contact support.',
                 ]);
-
             }
         });
     }

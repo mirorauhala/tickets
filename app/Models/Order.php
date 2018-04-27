@@ -32,6 +32,7 @@ class Order extends Model
      * Scope a query to only include orders that are of a given status.
      *
      * @param \Illuminate\Database\Eloquent\Builder $query
+     *
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeStatus($query, $status)
@@ -43,6 +44,7 @@ class Order extends Model
      * Scope a query to only include orders that are paid or pending.
      *
      * @param \Illuminate\Database\Eloquent\Builder $query
+     *
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopePaidOrPending($query)
@@ -52,7 +54,7 @@ class Order extends Model
     }
 
     /**
-     * Get event
+     * Get event.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -75,6 +77,7 @@ class Order extends Model
      * Scope a query to only include orders that are pending.
      *
      * @param \Illuminate\Database\Eloquent\Builder $query
+     *
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopePending($query)
@@ -86,6 +89,7 @@ class Order extends Model
      * Scope a query to only include orders that are exceeding their lock.
      *
      * @param \Illuminate\Database\Eloquent\Builder $query
+     *
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeExceedingLockTime($query)

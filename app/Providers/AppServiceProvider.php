@@ -2,9 +2,9 @@
 
 namespace App\Providers;
 
-use Laravel\Dusk\DuskServiceProvider;
-use Illuminate\Support\ServiceProvider;
 use Barryvdh\Debugbar\ServiceProvider as DebugbarServiceProvider;
+use Illuminate\Support\ServiceProvider;
+use Laravel\Dusk\DuskServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {

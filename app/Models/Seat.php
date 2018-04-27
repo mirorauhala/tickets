@@ -22,6 +22,7 @@ class Seat extends Model
      * Scope a query to only include seats that are of a given status.
      *
      * @param \Illuminate\Database\Eloquent\Builder $query
+     *
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeStatus($query, $status)
@@ -43,6 +44,7 @@ class Seat extends Model
      * Scope a query to only include seats that are available or taken.
      *
      * @param \Illuminate\Database\Eloquent\Builder $query
+     *
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeAvailableOrTaken($query)
@@ -55,6 +57,7 @@ class Seat extends Model
      * Scope a query to only include seats that are of a given ticket type.
      *
      * @param \Illuminate\Database\Eloquent\Builder $query
+     *
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeTicketType($query, $type)

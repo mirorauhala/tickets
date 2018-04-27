@@ -10,8 +10,8 @@ class SeatTransformer extends TransformerAbstract
     public function transform(Seat $seat)
     {
         return [
-            'id' => $seat->id,
-            'name' => $seat->name,
+            'id'     => $seat->id,
+            'name'   => $seat->name,
             'status' => $seat->status,
         ];
     }

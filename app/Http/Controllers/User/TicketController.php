@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\User;
 
-use Auth;
+use App\Http\Controllers\Controller;
 use App\Models\Order;
 use App\Models\OrderItem;
-use App\Http\Controllers\Controller;
+use Auth;
 
 class TicketController extends Controller
 {

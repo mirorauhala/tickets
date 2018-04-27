@@ -8,14 +8,14 @@ return [
     |--------------------------------------------------------------------------
     */
 
-    'header' => 'Omat liput',
-    'no-paid' => 'Sinulla ei ole yhtään lippua.',
+    'header'     => 'Omat liput',
+    'no-paid'    => 'Sinulla ei ole yhtään lippua.',
     'no-pending' => 'Sinulla ei ole yhtään maksamatonta lippua.',
 
     'nav' => [
-        'paid' => 'Maksetut',
+        'paid'    => 'Maksetut',
         'pending' => 'Maksamattomat',
-        'redeem' => 'Lunasta',
+        'redeem'  => 'Lunasta',
     ],
 
     'pending-message' => 'Maksamattomat liput perutaan automaattisesti, kun tilauksesta on kulunut 1 tunti.',
@@ -26,5 +26,5 @@ return [
         'action-details'    => 'Näytä tiedot',
         'action-code'       => 'Näytä koodi',
         'action-book'       => 'Varaa liput',
-    ]
+    ],
 ];

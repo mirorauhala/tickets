@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use App\Models\Event;
-use App\Models\Ticket;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\TicketRequest;
+use App\Models\Event;
+use App\Models\Ticket;
 
 class TicketController extends Controller
 {
@@ -23,6 +23,7 @@ class TicketController extends Controller
      * Ticket creating view.
      *
      * @param App\Models\Event $event
+     *
      * @return \Illuminate\Http\Response
      */
     public function create(Event $event)
@@ -39,6 +40,7 @@ class TicketController extends Controller
      * Storing a ticket.
      *
      * @param App\Models\Event $event
+     *
      * @return \Illuminate\Http\Response
      */
     public function store(Event $event, TicketRequest $request)

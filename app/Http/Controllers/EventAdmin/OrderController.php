@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers\EventAdmin;
 
-use App\Models\Event;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Event;
 
 class OrderController extends Controller
 {
@@ -33,9 +32,8 @@ class OrderController extends Controller
 
         return view('events.admin.orders')
             ->with([
-                "event" => $event,
-                "orders" => $event->orders()->paginate(15),
+                'event'  => $event,
+                'orders' => $event->orders()->paginate(15),
             ]);
     }
-
 }

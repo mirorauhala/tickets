@@ -16,7 +16,7 @@ $factory->define(App\Models\Map::class, function (Faker\Generator $faker) {
     static $password;
 
     return [
-        'name'        => 'Map ' . uniqid(),
+        'name'        => 'Map '.uniqid(),
         'description' => $faker->sentence,
     ];
 });

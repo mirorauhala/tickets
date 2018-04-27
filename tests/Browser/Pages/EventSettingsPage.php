@@ -46,7 +46,8 @@ class EventSettingsPage extends Page
      *
      * @return void
      */
-    public function editSettings(Browser $browser, $eventName = null, $eventLocation = null, $eventUrl = null, $eventCurrency = null, $eventVisibility = null) {
+    public function editSettings(Browser $browser, $eventName = null, $eventLocation = null, $eventUrl = null, $eventCurrency = null, $eventVisibility = null)
+    {
         $browser->type('@event_name', $eventName)
             ->type('@event_location', $eventLocation)
             ->type('@event_url', $eventUrl)

@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Seat;
 use App\Models\Event;
+use App\Models\Seat;
 
 class EventController extends Controller
 {
@@ -27,6 +27,7 @@ class EventController extends Controller
      * Show event page with tickets.
      *
      * @param App\Models\Event
+     *
      * @return \Illuminate\Http\Response
      */
     public function show(Event $event)

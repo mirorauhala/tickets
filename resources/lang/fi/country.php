@@ -9,13 +9,13 @@ return [
     */
 
     'finland' => [
-        'name' => 'Suomi',
-        'iso-3166-1' => 'fi'
+        'name'       => 'Suomi',
+        'iso-3166-1' => 'fi',
     ],
 
     'sweden' => [
-        'name' => 'Ruotsi',
-        'iso-3166-1' => 'sv'
+        'name'       => 'Ruotsi',
+        'iso-3166-1' => 'sv',
     ],
 
 ];

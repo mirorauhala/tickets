@@ -9,7 +9,7 @@ return [
     */
 
     'automatic' => 'Automaattisesti valittu',
-    'english' => 'Englanti',
-    'finnish' => 'Suomi',
+    'english'   => 'Englanti',
+    'finnish'   => 'Suomi',
 
 ];

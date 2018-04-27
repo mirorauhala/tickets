@@ -3,10 +3,10 @@
 namespace Tests\Browser\Tests\EventTests;
 
 use App\Models\User;
-use Tests\DuskTestCase;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Laravel\Dusk\Browser;
 use Tests\Browser\Pages\TicketsPage;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Tests\DuskTestCase;
 
 class TicketTest extends DuskTestCase
 {
@@ -20,7 +20,7 @@ class TicketTest extends DuskTestCase
     public function a_user_can_see_tickets()
     {
         $this->browse(function (Browser $browser) {
-            $browser->visit(new TicketsPage)
+            $browser->visit(new TicketsPage())
                     ->assertPathIs('/event/tickets');
         });
     }

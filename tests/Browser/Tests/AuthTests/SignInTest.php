@@ -3,10 +3,10 @@
 namespace Tests\Browser\Tests\AuthTests;
 
 use App\Models\User;
-use Tests\DuskTestCase;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Laravel\Dusk\Browser;
 use Tests\Browser\Pages\SignInPage;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Tests\DuskTestCase;
 
 class SignInTest extends DuskTestCase
 {
@@ -24,7 +24,7 @@ class SignInTest extends DuskTestCase
         ]);
 
         $this->browse(function (Browser $browser) use ($user) {
-            $browser->visit(new SignInPage)
+            $browser->visit(new SignInPage())
                     ->signIn($user->email, 'secret')
                     ->assertPathIs('/');
         });

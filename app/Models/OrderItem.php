@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use Carbon\Carbon;
 use App\Traits\Eloquent\Status;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class OrderItem extends Model
@@ -70,6 +70,7 @@ class OrderItem extends Model
      * Scope a query to only include order items that are paid or pending.
      *
      * @param \Illuminate\Database\Eloquent\Builder $query
+     *
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopePaidOrPending($query)
@@ -82,6 +83,7 @@ class OrderItem extends Model
      * Scope a query to only include order items that are paid.
      *
      * @param \Illuminate\Database\Eloquent\Builder $query
+     *
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopePaid($query)
@@ -93,6 +95,7 @@ class OrderItem extends Model
      * Scope a query to only include order items that are pending.
      *
      * @param \Illuminate\Database\Eloquent\Builder $query
+     *
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopePending($query)
@@ -104,6 +107,7 @@ class OrderItem extends Model
      * Scope a query to only include order items that are unassigned.
      *
      * @param \Illuminate\Database\Eloquent\Builder $query
+     *
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeUnassigned($query)
@@ -115,6 +119,7 @@ class OrderItem extends Model
      * Scope a query to only include order items that are exceeding their lock.
      *
      * @param \Illuminate\Database\Eloquent\Builder $query
+     *
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeExceedingLockTime($query)
@@ -126,6 +131,7 @@ class OrderItem extends Model
      * Scope a query to only include order items that don't have seat set.
      *
      * @param \Illuminate\Database\Eloquent\Builder $query
+     *
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeEmptySeat($query)
@@ -137,6 +143,7 @@ class OrderItem extends Model
      * Scope a query to only include order items that are of a given ticket type.
      *
      * @param \Illuminate\Database\Eloquent\Builder $query
+     *
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeTicketType($query, $type)

@@ -3,10 +3,10 @@
 namespace Tests\Browser\Tests\SettingsTests;
 
 use App\Models\User;
-use Tests\DuskTestCase;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Laravel\Dusk\Browser;
 use Tests\Browser\Pages\SettingsChangeLanguagePage;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Tests\DuskTestCase;
 
 class ChangeLanguageTest extends DuskTestCase
 {
@@ -23,7 +23,7 @@ class ChangeLanguageTest extends DuskTestCase
 
         $this->browse(function (Browser $browser) use ($user) {
             $browser->loginAs($user)
-                    ->visit(new SettingsChangeLanguagePage)
+                    ->visit(new SettingsChangeLanguagePage())
                     ->changeLanguage('fi')
                     ->assertPathIs('/settings/language')
                     ->assertSelected('display_language', 'fi');

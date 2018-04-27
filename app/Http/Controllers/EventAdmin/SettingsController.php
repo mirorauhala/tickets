@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\EventAdmin;
 
-use App\Models\Event;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\EventAdminSettingsRequest;
+use App\Models\Event;
 
 class SettingsController extends Controller
 {

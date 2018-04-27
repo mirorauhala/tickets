@@ -61,6 +61,7 @@ class Event extends Model
      * Filter featured events.
      *
      * @param \Illuminate\Database\Eloquent\Builder $query
+     *
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeFeatured($query)

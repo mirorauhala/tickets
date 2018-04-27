@@ -8,6 +8,6 @@ class TicketsCheapestFirst implements CriterionInterface
 {
     public function apply($entity)
     {
-        return $entity->orderBy("price", "asc");
+        return $entity->orderBy('price', 'asc');
     }
 }

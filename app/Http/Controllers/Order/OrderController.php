@@ -2,20 +2,20 @@
 
 namespace App\Http\Controllers\Order;
 
-use Money\Money;
-use Carbon\Carbon;
-use Money\Currency;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\OrderRequest;
 use App\Models\Event;
 use App\Models\Order;
-use App\Models\Ticket;
 use App\Models\OrderItem;
-use Illuminate\Http\Request;
+use App\Models\Ticket;
 use App\Payments\CheckoutPayment;
-use App\Http\Requests\OrderRequest;
+use Carbon\Carbon;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Money\Currencies\ISOCurrencies;
-use App\Http\Controllers\Controller;
+use Money\Currency;
 use Money\Formatter\DecimalMoneyFormatter;
+use Money\Money;
 
 class OrderController extends Controller
 {
