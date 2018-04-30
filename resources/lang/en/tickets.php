@@ -1,16 +1,18 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Tickets Lines
     |--------------------------------------------------------------------------
     */
 
-    'header'     => 'My Tickets',
-    'no-paid'    => 'You don\'t have any tickets.',
-    'no-pending' => 'You don\'t have any pending tickets.',
+    'title'         => 'My Tickets',
+    'lead-paid'     => 'These tickets are paid.',
+    'lead-pending'  => 'These tickets are not paid.',
+    'lead-redeem'   => 'Redeem a ticket.',
+    'no-paid'       => 'You don\'t have any tickets.',
+    'no-pending'    => 'You don\'t have any pending tickets.',
 
     'nav' => [
         'paid'    => 'Paid',

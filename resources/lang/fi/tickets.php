@@ -1,16 +1,18 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Tickets Lines
     |--------------------------------------------------------------------------
     */
 
-    'header'     => 'Omat liput',
-    'no-paid'    => 'Sinulla ei ole yhtään lippua.',
-    'no-pending' => 'Sinulla ei ole yhtään maksamatonta lippua.',
+    'title'         => 'Omat liput',
+    'lead-paid'     => 'Nämä liput ovat maksetut.',
+    'lead-pending'  => 'Nämä liput ovat maksamattomat.',
+    'lead-redeem'   => 'Lunasta lippu.',
+    'no-paid'       => 'Sinulla ei ole yhtään lippua.',
+    'no-pending'    => 'Sinulla ei ole yhtään maksamatonta lippua.',
 
     'nav' => [
         'paid'    => 'Maksetut',
