@@ -5,8 +5,8 @@
     <div class="bg-white px-3 h-100">
         <div class="row justify-content-center align-items-center h-25">
             <div class="col-md-10">
-                <p class="mb-2"><a href="{{ route('orders') }}" class="text-muted">&laquo; Back</a></h1>
-                <h1>Orders<small class="text-muted"> / {{ $order->reference }}</small></h1>
+                <p class="mb-2"><a href="{{ route('orders') }}" class="text-muted">&laquo; {{ tra('order.back') }}</a></h1>
+                <h1>{{ tra('order.title') }}<small class="text-muted"> / {{ $order->reference }}</small></h1>
                 <p class="lead"></h1>
             </div>
         </div>
@@ -16,29 +16,29 @@
                     <table class="table table-striped">
                         <tbody>
                             <tr>
-                                <th scope="row">Reference</th>
+                                <th scope="row">{{ tra('order.parent.reference') }}</th>
                                 <td>{{ $order->reference }}</td>
                             </tr>
                             <tr>
-                                <th scope="row">Date</th>
+                                <th scope="row">{{ tra('order.parent.date') }}</th>
                                 <td title="{{ $order->created_at->diffForHumans() }}">{{ $order->created_at }}</td>
                             </tr>
                             <tr>
-                                <th scope="row">Value</th>
+                                <th scope="row">{{ tra('order.parent.value') }}</th>
                                 <td>{{ money($order->value, $order->currency) }}</td>
                             </tr>
                             <tr>
-                                <th scope="row">Status</th>
-                                <td>{{ tra('orderStatus.' . $order->status) }}</td>
+                                <th scope="row">{{ tra('order.parent.status') }}</th>
+                                <td>{{ tra('order.status.' . $order->status) }}</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
                 @if($order->status == "pending")
-                    <p><a class="btn btn-primary px-4" href="{{ route('orders.delete', ['order' => $order->reference]) }}">Peruuta tilaus</a></p>
+                    <p><a class="btn btn-primary px-4" href="{{ route('orders.delete', ['order' => $order->reference]) }}">{{ tra('order.action') }}</a></p>
                 @endif
 
-<h3 class="pt-3">Lista tuotteista</h3>
+<h3 class="pt-3">{{ tra('order.list-of-products') }}</h3>
 
 @if(count($errors) > 0)
     @foreach($errors->all() as $error)
@@ -53,9 +53,9 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <td>{{ tra('order.item-title') }}</td>
-                        <td>{{ tra('order.value') }}</td>
-                        <td>{{ tra('order.seating-code') }}</td>
+                        <td>{{ tra('order.table.item') }}</td>
+                        <td>{{ tra('order.table.value') }}</td>
+                        <td>{{ tra('order.table.seating-code') }}</td>
                     </tr>
                 </thead>
                 <tbody>
@@ -91,7 +91,7 @@
         </form>
     </div>
 @else
-    <p>{{ tra('orders.no-items') }}</p>
+    <p>{{ tra('order.no-items') }}</p>
 @endif
         </div>
     </div>

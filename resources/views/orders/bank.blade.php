@@ -5,8 +5,8 @@
     <div class="bg-white py-3 pb-5 h-100">
         <div class="row justify-content-center align-items-center h-25">
             <div class="col-md-10">
-                <h1>Choose bank</h1>
-                <p class="lead">Asd</h1>
+                <h1>{{ tra('bank.title') }}</h1>
+                <p class="lead">{{ tra('bank.lead') }}</h1>
             </div>
         </div>
         <div class="row justify-content-center">
