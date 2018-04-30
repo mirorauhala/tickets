@@ -20,7 +20,9 @@
 <body>
     <div id="app" class="h-100">
         @include('partials._navigation')
-        @yield('base.content')
+        <main class="py-5 h-100">
+            @yield('base.content')
+        </main>
     </div>
 
     <!-- Scripts -->

@@ -1,5 +1,5 @@
-<div class="container">
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+<nav class="navbar fixed-top navbar-expand-md navbar-light bg-white w-100">
+    <div class="container">
         <a class="navbar-brand" href="{{ route('events') }}">{{ config('app.name') }}</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -52,8 +52,8 @@
                 @endauth
             </ul>
         </div>
-    </nav>
-</div>
+    </div>
+</nav>
 
 <div class="navigation">
     <div class="links">
