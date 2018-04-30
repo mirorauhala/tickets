@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Event;
 use App\Models\Seat;
+use App\Models\Event;
+use Illuminate\Support\Facades\Cache;
 
 class EventController extends Controller
 {
@@ -24,7 +25,7 @@ class EventController extends Controller
     }
 
     /**
-     * Show event page with tickets.
+     * Show event page.
      *
      * @param App\Models\Event
      *
@@ -32,26 +33,19 @@ class EventController extends Controller
      */
     public function show(Event $event)
     {
+        $seats = Cache::remember('event.{$event->slug}.seats', 2, function () {
+            return Seat::with('orderItem')->get();
+        });
+
+        $tickets = Cache::remember('event.{$event->slug}.tickets', 2, function () use ($event) {
+            return $event->tickets()->purchasable()->orderByPrice()->get();
+        });
+
         return view('events.index')
             ->with([
                 'event'   => $event,
-                'tickets' => $event->tickets()->purchasable()->orderByPrice()->get(),
-            ]);
-    }
-
-    /**
-     * Show specific map for the event.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function map(Event $event)
-    {
-        $seats = Seat::with('orderItem')->get();
-
-        return view('events.map')
-            ->with([
-                'event' => $event,
-                'seats' => $seats,
+                'tickets' => $tickets,
+                'seats'   => $seats,
             ]);
     }
 }

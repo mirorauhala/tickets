@@ -40,7 +40,6 @@ Route::get('/orders/delete/{order}', 'User\OrderController@delete')->name('order
 |--------------------------------------------------------------------------
 */
 Route::get('/event/{event}', 'EventController@show')->name('event');
-Route::get('/event/map', 'EventController@map')->name('events.map');
 
 // view ticket types
 Route::get('/event/tickets', 'EventController@index')->name('events.tickets');
