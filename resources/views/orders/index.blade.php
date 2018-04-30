@@ -39,7 +39,7 @@
                         </table>
                     </div>
                 @else
-                    <p>{{ tra('orders.no-transactions') }}</p>
+                    <p class="lead text-muted">{{ tra('orders.no-transactions') }}</p>
                 @endif
             </div>
         </div>
