@@ -2,20 +2,19 @@
 
 namespace App\Http\Controllers\Order;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\OrderRequest;
+use Money\Money;
+use Carbon\Carbon;
+use Money\Currency;
 use App\Models\Event;
 use App\Models\Order;
-use App\Models\OrderItem;
 use App\Models\Ticket;
-use App\Payments\CheckoutPayment;
-use Carbon\Carbon;
+use App\Models\OrderItem;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
+use App\Payments\CheckoutPayment;
+use App\Http\Requests\OrderRequest;
 use Money\Currencies\ISOCurrencies;
-use Money\Currency;
+use App\Http\Controllers\Controller;
 use Money\Formatter\DecimalMoneyFormatter;
-use Money\Money;
 
 class OrderController extends Controller
 {
@@ -92,8 +91,7 @@ class OrderController extends Controller
             'DELIVERY_DATE' => date('Ymd'),
         ];
 
-        Log::warning('Use config() instead of env() in prodcution.');
-        $checkout = new CheckoutPayment(env('CHECKOUT_MERCHANT'), env('CHECKOUT_SECRET'));
+        $checkout = new CheckoutPayment(config('checkout.merchant'), config('checkout.secret'));
 
         $checkout->load($checkoutOrder);
         $checkout->validate();
@@ -112,7 +110,7 @@ class OrderController extends Controller
      */
     public function processOrderCallback(Request $request)
     {
-        $checkout = new CheckoutPayment(env('CHECKOUT_MERCHANT'), env('CHECKOUT_SECRET'));
+        $checkout = new CheckoutPayment(config('checkout.merchant'), config('checkout.secret'));
         $checkout->processCallback($request->toArray());
 
         if ($checkout->isPaid()) {
