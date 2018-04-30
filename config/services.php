@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Third Party Services
@@ -34,11 +33,4 @@ return [
         'key'    => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],
-
-    'discord' => [
-        'client_id'     => env('DISCORD_KEY'),
-        'client_secret' => env('DISCORD_SECRET'),
-        'redirect'      => env('DISCORD_REDIRECT_URI'),
-    ],
-
 ];
