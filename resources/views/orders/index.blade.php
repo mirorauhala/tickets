@@ -1,5 +1,7 @@
 @extends('layouts.base')
 
+@section('base.title', tra('orders.title'))
+
 @section('base.content')
 <div class="container h-100">
     <div class="bg-white px-3 h-100">

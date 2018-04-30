@@ -1,5 +1,7 @@
 @extends('layouts.base')
 
+@section('base.title', tra('bank.title'))
+
 @section('base.content')
 <div class="container h-100">
     <div class="bg-white py-3 pb-5 h-100">

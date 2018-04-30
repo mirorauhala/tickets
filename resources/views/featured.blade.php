@@ -1,6 +1,6 @@
 @extends('layouts.base')
 
-@section('base.title', 'Featured')
+@section('base.title', tra('featured.title'))
 
 @section('base.content')
 <div class="container h-100">

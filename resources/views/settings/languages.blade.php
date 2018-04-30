@@ -1,6 +1,6 @@
 @extends('layouts.base')
 
-@section('settings.title', tra('settings.panel.title.language'))
+@section('settings.title', tra('settings.title'))
 
 @section('base.content')
 <div class="container h-100">
