@@ -33,9 +33,11 @@ class EventController extends Controller
      */
     public function show(Event $event)
     {
-        $seats = Cache::remember('event.{$event->slug}.seats', 2, function () {
-            return Seat::with('orderItem')->get();
-        });
+        // $seats = Cache::remember('event.{$event->slug}.seats', 2, function () {
+        //     return Seat::with('orderItem')->get();
+        // });
+
+        $seats = Seat::with('orderItem')->get();
 
         $tickets = Cache::remember('event.{$event->slug}.tickets', 2, function () use ($event) {
             return $event->tickets()->purchasable()->orderByPrice()->get();
