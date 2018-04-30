@@ -1,28 +1,18 @@
 
+// Colors
+$primary: #ff5353;
 
-// Body
-$body-bg: #f5f8fa;
+$body-bg: #F6F8FD;
+$body-color: #1D2B54;
 
 // Typography
-$font-family-sans-serif: "Rubik", sans-serif;
+$font-family-sans-serif: "Open Sans", sans-serif;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
 
-// Body
-$body-bg: #fafafa;
+$headings-color: $body-color;
+$headings-font-weight: 800 !default;
+$lead-font-weight: 700 !default;
 
-// Borders
-$laravel-border-color: #E4E4E4;
-$list-group-border: $laravel-border-color;
-$navbar-default-border: $laravel-border-color;
-$panel-default-border: #fff;
-$panel-inner-border: $laravel-border-color;
 
-// Brands
-$brand-primary: #2A5CFF;
-$brand-info: #8eb4cb;
-$brand-success: #2ab27b;
-$brand-warning: #cbb956;
-$brand-danger: #bf5329;
 
-$text-color: #3F4148;
