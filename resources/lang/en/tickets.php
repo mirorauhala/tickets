@@ -25,8 +25,7 @@ return [
     'card' => [
         'price'             => 'Price',
         'seating-code'      => 'Seating Code',
-        'action-details'    => 'View details',
-        'action-code'       => 'View code',
-        'action-book'       => 'Book tickets',
+        'show-ticket'       => 'Show ticket',
+        'show-order'        => 'Show order',
     ],
 ];

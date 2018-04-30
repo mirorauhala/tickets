@@ -14,53 +14,34 @@
                 @include('tickets._menu')
             </div>
         </div>
-        <div class="row justify-content-center">
+        <div class="row pb-5 justify-content-center">
             <div class="col-md-10">
-                @if(count($order_items) > 0)
-                    @foreach($order_items as $order_item)
-                        <div class="col-md-4">
-                            <div class="ticket">
-                                <div class="ticket-heading">
-                                    <h1>{{ $order_item->title }}</h1>
-                                </div>
-
-                                <div class="ticket-meta">
-                                    <p>{{ $order_item->order->event->name }}</p>
-                                </div>
-
-                                <div class="ticket-body">
-                                    <div class="ticket-price">
-                                        <h2>{{ tra('tickets.card.price') }}</h2>
-                                        <p>{{ money($order_item->value, "EUR") }}</p>
+                <div class="row">
+                    @if(count($order_items) > 0)
+                        @foreach($order_items as $order_item)
+                            <div class="col-md-4">
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ $order_item->title }}</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted">{{ $order_item->order->event->name }}</h6>
                                     </div>
-
-                                    <div class="ticket-seating-code">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">{{ tra('tickets.card.price') }}: {{ money($order_item->value, "EUR") }}</li>
                                         @if($order_item->seat)
-                                            <h2>{{ tra('tickets.card.seating-code') }}</h2>
-                                            <p>{{ $order_item->seat->name }}</p>
-                                        @else
-                                            <h2>{{ tra('tickets.card.seating-code') }}</h2>
-                                            <p>-</p>
+                                            <li class="list-group-item">{{ tra('tickets.card.seating-code') }}: {{ $order_item->seat->name }}</li>
                                         @endif
+                                    </ul>
+                                    <div class="card-body">
+                                        <a href="{{ route('tickets.view', ['order' => $order_item->barcode ]) }}" class="card-link">{{ tra('tickets.card.show-ticket') }}</a>
+                                        <a href="{{ route('orders.show', ['order' => $order_item->order->reference ]) }}" class="card-link">{{ tra('tickets.card.show-order') }}</a>
                                     </div>
-                                </div>
-
-                                <div class="ticket-actions">
-                                    <a class="ticket-details" href="{{ route('orders.show', ['order' => $order_item->order->reference ]) }}">
-                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path fill="#333" d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z" /></svg><span>{{ tra('tickets.card.action-details') }}</span>
-                                    </a>
-
-                                    <a class="ticket-code" href="{{ route('tickets.view', ['order' => $order_item->barcode ]) }}">
-                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path fill="#333" d="M3,11H5V13H3V11M11,5H13V9H11V5M9,11H13V15H11V13H9V11M15,11H17V13H19V11H21V13H19V15H21V19H19V21H17V19H13V21H11V17H15V15H17V13H15V11M19,19V15H17V19H19M15,3H21V9H15V3M17,5V7H19V5H17M3,3H9V9H3V3M5,5V7H7V5H5M3,15H9V21H3V15M5,17V19H7V17H5Z" /></svg>
-                                        <span>{{ tra('tickets.card.action-code') }}</span>
-                                    </a>
                                 </div>
                             </div>
-                        </div>
-                    @endforeach
-                @else
-                    <p class="lead text-muted text-center">{{ tra('tickets.no-paid') }}</p>
-                @endif
+                        @endforeach
+                    @else
+                        <p class="lead text-muted text-center">{{ tra('tickets.no-paid') }}</p>
+                    @endif
+                </div>
             </div>
         </div>
     </div>

@@ -25,8 +25,7 @@ return [
     'card' => [
         'price'             => 'Hinta',
         'seating-code'      => 'Paikkakoodi',
-        'action-details'    => 'Näytä tiedot',
-        'action-code'       => 'Näytä koodi',
-        'action-book'       => 'Varaa liput',
+        'show-ticket'       => 'Näytä lippu',
+        'show-order'        => 'Näytä tilaus',
     ],
 ];
