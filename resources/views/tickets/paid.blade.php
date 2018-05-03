@@ -20,6 +20,9 @@
                         <div class="card-body">
                             <h5 class="card-title">{{ $order_item->title }}</h5>
                             <h6 class="card-subtitle mb-2 text-muted">{{ $order_item->order->event->name }}</h6>
+                            <qr-code text="{{ $order_item->barcode }}" :size="200" bg-color="transparent"></qr-code>
+                            <p class="text-muted">{{ $order_item->barcode }}</p>
+
                         </div>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">{{ tra('tickets.card.price') }}: {{ money($order_item->value, "EUR") }}</li>

@@ -15,7 +15,7 @@
     <div class="row">
         <div class="col-md-4">
             <qr-code text="{{ $order_item->barcode }}" :size="200" bg-color="transparent"></qr-code>
-            <p class="text-muted text-center">{{ $order_item->barcode }}</p>
+            <p class="text-muted">{{ $order_item->barcode }}</p>
         </div>
         <div class="col-md-8">
             <h1>{{ $order_item->title }}</h1>
