@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use App\Traits\Eloquent\Status;
 use Carbon\Carbon;
+use App\Traits\Eloquent\Status;
 use Illuminate\Database\Eloquent\Model;
 
 class OrderItem extends Model
@@ -16,7 +16,16 @@ class OrderItem extends Model
      * @var array
      */
     protected $fillable = [
-        'title', 'barcode', 'value', 'status', 'release_lock_after', 'ticket_id', 'user_id', 'order_id', 'seat_id',
+        'title',
+        'barcode',
+        'value',
+        'status',
+        'release_lock_after',
+        'redeem_code',
+        'ticket_id',
+        'user_id',
+        'order_id',
+        'seat_id',
     ];
 
     /**
@@ -25,6 +34,16 @@ class OrderItem extends Model
      * @var array
      */
     protected $hidden = [];
+
+    /**
+     * Get attribute for route-model binding.
+     *
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return 'barcode';
+    }
 
     /**
      * Get owner user model.

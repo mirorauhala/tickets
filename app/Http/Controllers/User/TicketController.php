@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\User;
 
-use App\Http\Controllers\Controller;
+use Auth;
 use App\Models\Order;
 use App\Models\OrderItem;
-use Auth;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class TicketController extends Controller
 {
@@ -20,7 +21,7 @@ class TicketController extends Controller
     }
 
     /**
-     * Show the user's paid tickets.
+     * Show the user's tickets.
      *
      * @return \Illuminate\Http\Response
      */
@@ -30,42 +31,12 @@ class TicketController extends Controller
 
         $user->load('orderItems.order', 'orderItems.order.event', 'orderItems.seat');
 
-        return view('tickets.paid')
+        return view('tickets.index')
             ->with([
-                'order_items' => $user->orderItems->where('status', 'paid'),
+                'items' => $user->orderItems->where('status', 'paid'),
             ]);
-    }
 
-    /**
-     * Show the user's pending tickets.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function showPendingTickets()
-    {
-        $user = Auth::user();
-
-        $user->load('orderItems.order');
-
-        return view('tickets.pending')
-            ->with([
-                'order_items' => $user->orderItems->where('status', 'pending'),
-            ]);
-    }
-
-    /**
-     * Show the user's unassigned tickets.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function showTicketRedeemView()
-    {
-        $order_items = Auth::user()->orderItems()->unassigned()->get();
-
-        return view('tickets.redeem')
-            ->with([
-                'order_items' => $order_items,
-            ]);
+        $get = auth();
     }
 
     /**
@@ -73,15 +44,86 @@ class TicketController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function viewTicket($barcode)
+    public function showTicket(OrderItem $item)
     {
-        $order_item = OrderItem::where('barcode', $barcode)->first();
+        $this->authorize('view', $item);
 
-        $this->authorize('view', $order_item);
+        $item->load('order', 'order.user');
 
-        return view('tickets.view')
+        return view('tickets.share')
             ->with([
-                'order_item' => $order_item,
+                'item' => $item,
+            ]);
+    }
+
+    /**
+     * Show ticket's redeem form.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showRedeem()
+    {
+        return view('tickets.redeem');
+    }
+
+    /**
+     * Create redeem code.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function createRedeemCode(OrderItem $item)
+    {
+        $this->authorize('update', $item);
+
+        $item->redeem_code = strtoupper(bin2hex(openssl_random_pseudo_bytes(6)));
+        $item->save();
+
+        return redirect()
+            ->route('tickets.share', $item);
+    }
+
+    /**
+     * Delete redeem code.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function deleteRedeemCode(OrderItem $item)
+    {
+        $this->authorize('update', $item);
+
+        $item->redeem_code = null;
+        $item->save();
+
+        return redirect()
+            ->route('tickets.share', $item);
+    }
+
+    /**
+     * Create redeem code.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function processRedeemCode(Request $request)
+    {
+        $item = OrderItem::where('redeem_code', $request->redeem_code)->first();
+        if (! $item == null) {
+            $item->redeem_code = null;
+            $item->user_id = auth()->user()->id;
+            $item->save();
+
+            return redirect()
+            ->route('tickets.redeem')
+            ->with([
+                'status'         => 'success',
+                'status_message' => 'Redeem code applied.',
+            ]);
+        }
+
+        return redirect()
+            ->route('tickets.redeem')
+            ->with([
+                'status'         => 'danger',
+                'status_message' => 'Not a valid redeem code.',
             ]);
     }
 }

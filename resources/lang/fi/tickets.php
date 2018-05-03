@@ -8,24 +8,20 @@ return [
     */
 
     'title'         => 'Omat liput',
-    'lead-paid'     => 'Nämä liput ovat maksetut.',
-    'lead-pending'  => 'Nämä liput ovat maksamattomat.',
+    'lead'          => 'Omistat nämä liput.',
     'lead-redeem'   => 'Lunasta lippu.',
+    'lead-share'    => 'Luo koodi ja anna se kaverillesi lunastettavaksi.',
     'no-paid'       => 'Sinulla ei ole yhtään lippua.',
-    'no-pending'    => 'Sinulla ei ole yhtään maksamatonta lippua.',
 
     'nav' => [
-        'paid'    => 'Maksetut',
-        'pending' => 'Maksamattomat',
+        'tickets' => 'Liput',
         'redeem'  => 'Lunasta',
     ],
-
-    'pending-message' => 'Maksamattomat liput perutaan automaattisesti, kun tilauksesta on kulunut 1 tunti.',
 
     'card' => [
         'price'             => 'Hinta',
         'seating-code'      => 'Paikkakoodi',
-        'show-ticket'       => 'Näytä lippu',
+        'share-ticket'      => 'Jaa lippu',
         'show-order'        => 'Näytä tilaus',
     ],
 ];

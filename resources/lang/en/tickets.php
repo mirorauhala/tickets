@@ -8,24 +8,20 @@ return [
     */
 
     'title'         => 'My Tickets',
-    'lead-paid'     => 'These tickets are paid.',
-    'lead-pending'  => 'These tickets are not paid.',
+    'lead'          => 'These tickets are paid.',
     'lead-redeem'   => 'Redeem a ticket.',
+    'lead-share'    => 'Create a code and give it to your friend for redeeming.',
     'no-paid'       => 'You don\'t have any tickets.',
-    'no-pending'    => 'You don\'t have any pending tickets.',
 
     'nav' => [
-        'paid'    => 'Paid',
-        'pending' => 'Pending',
+        'tickets' => 'Tickets',
         'redeem'  => 'Redeem',
     ],
-
-    'pending-message' => 'Pending tickets will be automatically cancelled after 1 hour of the order has passed.',
 
     'card' => [
         'price'             => 'Price',
         'seating-code'      => 'Seating Code',
-        'show-ticket'       => 'Show ticket',
+        'share-ticket'      => 'Share ticket',
         'show-order'        => 'Show order',
     ],
 ];

@@ -12,9 +12,16 @@
             @include('tickets._menu')
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-12">
-            <p class="lead text-muted text-center">Feature coming soon!</P>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form method="POST" action="{{ route('tickets.redeem') }}">
+                {{ csrf_field() }}
+                <div class="form-group">
+                    <label for="redeemCode">Redeem code</label>
+                   <input type="text" class="form-control" name="redeem_code" id="redeemCode" required>
+                </div>
+                <input type="submit" class="btn btn-primary px-3" value="{{ tra('form.button.submit') }}">
+            </form>
         </div>
     </div>
 </div>

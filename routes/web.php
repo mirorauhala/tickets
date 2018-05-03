@@ -20,9 +20,11 @@ Auth::routes();
 */
 Route::get('/', 'EventController@index')->name('events');
 Route::get('/tickets', 'User\TicketController@index')->name('tickets');
-Route::get('/tickets/pending', 'User\TicketController@showPendingTickets')->name('tickets.pending');
-Route::get('/tickets/redeem', 'User\TicketController@showTicketRedeemView')->name('tickets.redeem');
-Route::get('/tickets/view/{order}', 'User\TicketController@viewTicket')->name('tickets.view');
+Route::get('/tickets/redeem', 'User\TicketController@showRedeem')->name('tickets.redeem');
+Route::post('/tickets/redeem', 'User\TicketController@processRedeemCode');
+Route::get('/tickets/{item}', 'User\TicketController@showTicket')->name('tickets.share');
+Route::post('/tickets/redeem/{item}/create', 'User\TicketController@createRedeemCode')->name('tickets.redeem.create');
+Route::post('/tickets/redeem/{item}/delete', 'User\TicketController@deleteRedeemCode')->name('tickets.redeem.delete');
 
 /*
 |--------------------------------------------------------------------------
