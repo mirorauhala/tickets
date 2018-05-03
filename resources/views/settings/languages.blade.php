@@ -18,8 +18,8 @@
             <form method="post" action="{{ route('settings.language') }}">
                 {{ csrf_field() }}
                 <div class="form-group">
-                    <label for="display_language">{{ tra('settings.language.language') }}</label>
-                    <select class="form-control{{ $errors->has('first_name') ? ' is-invalid' : '' }}" name="display_language" id="display_language">
+                    <label for="language">{{ tra('settings.language.language') }}</label>
+                    <select class="form-control{{ $errors->has('first_name') ? ' is-invalid' : '' }}" name="language" id="language">
                         <option value="none" {!! (Auth::user()->language == "") ? "selected='true'" : "" !!}>{{ tra('language.automatic') }}</option>
                         <option value="en" {!! (Auth::user()->language == "en") ? "selected='true'" : "" !!}>{{ tra('language.english') }}</option>
                         <option value="fi" {!! (Auth::user()->language == "fi") ? "selected='true'" : "" !!}>{{ tra('language.finnish') }}</option>

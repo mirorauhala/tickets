@@ -37,14 +37,14 @@ class LanguageController extends Controller
     public function update(UpdateLanguageRequest $request)
     {
         auth()->user()->update([
-            'language' => $request->display_language,
+            'language' => $request->language,
         ]);
 
         return redirect()
             ->route('settings.language')
             ->with([
                 'flash_status'  => 'success',
-                'flash_message' => tra('settings.flash.language', [], $request->display_language),
+                'flash_message' => tra('settings.flash.language', [], $request->language),
             ]);
     }
 }

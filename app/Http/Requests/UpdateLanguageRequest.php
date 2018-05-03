@@ -2,8 +2,8 @@
 
 namespace App\Http\Requests;
 
-use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
+use Illuminate\Foundation\Http\FormRequest;
 
 class UpdateLanguageRequest extends FormRequest
 {
@@ -25,7 +25,7 @@ class UpdateLanguageRequest extends FormRequest
     public function rules()
     {
         return [
-            'display_language' => [
+            'language' => [
                 Rule::in(['none', 'fi', 'en']),
             ],
         ];
