@@ -22,6 +22,11 @@ class Event extends Model
      */
     protected $hidden = [];
 
+    /**
+     * Get attribute for route-model binding.
+     *
+     * @return string
+     */
     public function getRouteKeyName()
     {
         return 'slug';
