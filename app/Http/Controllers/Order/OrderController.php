@@ -10,7 +10,6 @@ use App\Models\Order;
 use App\Models\Ticket;
 use App\Models\OrderItem;
 use Illuminate\Http\Request;
-use App\Jobs\ProcessLogOrder;
 use App\Payments\CheckoutPayment;
 use App\Http\Requests\OrderRequest;
 use Money\Currencies\ISOCurrencies;
@@ -125,8 +124,6 @@ class OrderController extends Controller
                 $order->items()->update([
                     'status' => 'paid',
                 ]);
-
-                ProcessLogOrder::dispatch();
 
                 return redirect()->route('orders.show', ['order' => $order]);
             } else {

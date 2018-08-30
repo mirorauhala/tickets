@@ -47,10 +47,10 @@ return [
             'days'   => 7,
         ],
 
-        'discord' => [
+        'slack' => [
             'driver'   => 'slack',
-            'url'      => env('LOG_DISCORD_WEBHOOK_URL'),
-            'username' => 'Paikanvaraus',
+            'url'      => '',
+            'username' => config('app.name'),
             'emoji'    => ':boom:',
             'level'    => 'info',
         ],
