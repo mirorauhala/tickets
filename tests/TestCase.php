@@ -7,4 +7,6 @@ use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
 abstract class TestCase extends BaseTestCase
 {
     use CreatesApplication;
+    use Traits\CreateUser;
+    use Traits\DoRequest;
 }

@@ -2,24 +2,25 @@
 
 namespace Tests\Feature;
 
-use App\Models\Event;
-use App\Models\User;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
+use App\Models\Event;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class DashboardTicketsCreateTest extends TestCase
 {
     use RefreshDatabase;
 
-    /** @test */
-    public function user_can_create_a_ticket()
+    protected $event;
+
+    public function setUp()
     {
-        $user = factory(User::class)->create();
-        $event = factory(Event::class)->create();
+        parent::setUp();
 
-        $user->events()->attach($event);
-
-        $payload = [
+        $this->createUser();
+        $this->event = factory(Event::class)->create();
+        $this->user->events()->attach($this->event);
+        $this->uri = route('dashboard.tickets', [$this->event->slug]);
+        $this->fields = [
             'name'                    => 'Entrance',
             'price'                   => 1000,
             'vat'                     => 10,
@@ -29,219 +30,110 @@ class DashboardTicketsCreateTest extends TestCase
             'unavailableAt'           => \Carbon\Carbon::now()->addWeek(),
             'is_seatable'             => 0,
         ];
+    }
 
-        $response = $this->actingAs($user)
-                        ->post(route('dashboard.tickets', [$event]), $payload);
+    /** @test */
+    public function user_can_create_a_ticket()
+    {
+        $this->actingAs($this->user)->doRequest('post');
 
-        $response->assertRedirect();
-        $response->assertSessionMissing('errors');
+        $this->response->assertRedirect();
+        $this->response->assertSessionMissing('errors');
     }
 
     /** @test */
     public function ticket_name_is_required()
     {
-        $user = factory(User::class)->create();
-        $event = factory(Event::class)->create();
-
-        $user->events()->attach($event);
-
-        $payload = [
-            'name'                    => null,
-            'price'                   => 1000,
-            'vat'                     => 10,
-            'reserved'                => 10,
-            'maxAmountPerTransaction' => 5,
-            'availableAt'             => \Carbon\Carbon::now(),
-            'unavailableAt'           => \Carbon\Carbon::now()->addWeek(),
-            'is_seatable'             => 0,
+        $this->fieldOverrides = [
+            'name' => '',
         ];
+        $this->actingAs($this->user)->doRequest('post');
 
-        $response = $this->actingAs($user)
-                        ->post(route('dashboard.tickets', [$event]), $payload);
-
-        $response->assertRedirect();
-        $response->assertSessionHasErrors(['name']);
+        $this->response->assertRedirect();
+        $this->response->assertSessionHasErrors(['name']);
     }
 
     /** @test */
     public function ticket_price_is_required()
     {
-        $user = factory(User::class)->create();
-        $event = factory(Event::class)->create();
-
-        $user->events()->attach($event);
-
-        $payload = [
-            'name'                    => 'Entrance',
-            'price'                   => null,
-            'vat'                     => 10,
-            'reserved'                => 10,
-            'maxAmountPerTransaction' => 5,
-            'availableAt'             => \Carbon\Carbon::now(),
-            'unavailableAt'           => \Carbon\Carbon::now()->addWeek(),
-            'is_seatable'             => 0,
+        $this->fieldOverrides = [
+            'price' => '',
         ];
+        $this->actingAs($this->user)->doRequest('post');
 
-        $response = $this->actingAs($user)
-                        ->post(route('dashboard.tickets', [$event]), $payload);
-
-        $response->assertRedirect();
-        $response->assertSessionHasErrors(['price']);
+        $this->response->assertRedirect();
+        $this->response->assertSessionHasErrors(['price']);
     }
 
     /** @test */
     public function ticket_vat_is_required()
     {
-        $user = factory(User::class)->create();
-        $event = factory(Event::class)->create();
-
-        $user->events()->attach($event);
-
-        $payload = [
-            'name'                    => 'Entrance',
-            'price'                   => 1000,
-            'vat'                     => null,
-            'reserved'                => 10,
-            'maxAmountPerTransaction' => 5,
-            'availableAt'             => \Carbon\Carbon::now(),
-            'unavailableAt'           => \Carbon\Carbon::now()->addWeek(),
-            'is_seatable'             => 0,
+        $this->fieldOverrides = [
+            'vat' => '',
         ];
+        $this->actingAs($this->user)->doRequest('post');
 
-        $response = $this->actingAs($user)
-                        ->post(route('dashboard.tickets', [$event]), $payload);
-
-        $response->assertRedirect();
-        $response->assertSessionHasErrors(['vat']);
+        $this->response->assertRedirect();
+        $this->response->assertSessionHasErrors(['vat']);
     }
 
     /** @test */
     public function ticket_reserved_is_required()
     {
-        $user = factory(User::class)->create();
-        $event = factory(Event::class)->create();
-
-        $user->events()->attach($event);
-
-        $payload = [
-            'name'                    => 'Entrance',
-            'price'                   => 1000,
-            'vat'                     => 10,
-            'reserved'                => null,
-            'maxAmountPerTransaction' => 5,
-            'availableAt'             => \Carbon\Carbon::now(),
-            'unavailableAt'           => \Carbon\Carbon::now()->addWeek(),
-            'is_seatable'             => 0,
+        $this->fieldOverrides = [
+            'reserved' => '',
         ];
+        $this->actingAs($this->user)->doRequest('post');
 
-        $response = $this->actingAs($user)
-                        ->post(route('dashboard.tickets', [$event]), $payload);
-
-        $response->assertRedirect();
-        $response->assertSessionHasErrors(['reserved']);
+        $this->response->assertRedirect();
+        $this->response->assertSessionHasErrors(['reserved']);
     }
 
     /** @test */
     public function ticket_maxAmountPerTransaction_is_required()
     {
-        $user = factory(User::class)->create();
-        $event = factory(Event::class)->create();
-
-        $user->events()->attach($event);
-
-        $payload = [
-            'name'                    => 'Entrance',
-            'price'                   => 1000,
-            'vat'                     => 10,
-            'reserved'                => 10,
-            'maxAmountPerTransaction' => null,
-            'availableAt'             => \Carbon\Carbon::now(),
-            'unavailableAt'           => \Carbon\Carbon::now()->addWeek(),
-            'is_seatable'             => 0,
+        $this->fieldOverrides = [
+            'maxAmountPerTransaction' => '',
         ];
+        $this->actingAs($this->user)->doRequest('post');
 
-        $response = $this->actingAs($user)
-                        ->post(route('dashboard.tickets', [$event]), $payload);
-
-        $response->assertRedirect();
-        $response->assertSessionHasErrors(['maxAmountPerTransaction']);
+        $this->response->assertRedirect();
+        $this->response->assertSessionHasErrors(['maxAmountPerTransaction']);
     }
 
     /** @test */
     public function ticket_availableAt_is_required()
     {
-        $user = factory(User::class)->create();
-        $event = factory(Event::class)->create();
-
-        $user->events()->attach($event);
-
-        $payload = [
-            'name'                    => 'Entrance',
-            'price'                   => 1000,
-            'vat'                     => 10,
-            'reserved'                => 10,
-            'maxAmountPerTransaction' => 5,
-            'availableAt'             => null,
-            'unavailableAt'           => \Carbon\Carbon::now()->addWeek(),
-            'is_seatable'             => 0,
+        $this->fieldOverrides = [
+            'availableAt' => '',
         ];
+        $this->actingAs($this->user)->doRequest('post');
 
-        $response = $this->actingAs($user)
-                        ->post(route('dashboard.tickets', [$event]), $payload);
-
-        $response->assertRedirect();
-        $response->assertSessionHasErrors(['availableAt']);
+        $this->response->assertRedirect();
+        $this->response->assertSessionHasErrors(['availableAt']);
     }
 
     /** @test */
     public function ticket_unavailableAt_is_required()
     {
-        $user = factory(User::class)->create();
-        $event = factory(Event::class)->create();
-
-        $user->events()->attach($event);
-
-        $payload = [
-            'name'                    => 'Entrance',
-            'price'                   => 1000,
-            'vat'                     => 10,
-            'reserved'                => 10,
-            'maxAmountPerTransaction' => 5,
-            'availableAt'             => \Carbon\Carbon::now(),
-            'unavailableAt'           => null,
-            'is_seatable'             => 0,
+        $this->fieldOverrides = [
+            'unavailableAt' => '',
         ];
+        $this->actingAs($this->user)->doRequest('post');
 
-        $response = $this->actingAs($user)
-                        ->post(route('dashboard.tickets', [$event]), $payload);
-
-        $response->assertRedirect();
-        $response->assertSessionHasErrors(['unavailableAt']);
+        $this->response->assertRedirect();
+        $this->response->assertSessionHasErrors(['unavailableAt']);
     }
 
     /** @test */
     public function ticket_is_seatable_is_required()
     {
-        $user = factory(User::class)->create();
-        $event = factory(Event::class)->create();
-
-        $user->events()->attach($event);
-
-        $payload = [
-            'name'                    => 'Entrance',
-            'price'                   => 1000,
-            'vat'                     => 10,
-            'reserved'                => 10,
-            'maxAmountPerTransaction' => 5,
-            'availableAt'             => \Carbon\Carbon::now(),
-            'unavailableAt'           => \Carbon\Carbon::now()->addWeek(),
-            'is_seatable'             => null,
+        $this->fieldOverrides = [
+            'is_seatable' => '',
         ];
+        $this->actingAs($this->user)->doRequest('post');
 
-        $response = $this->actingAs($user)
-                        ->post(route('dashboard.tickets', [$event]), $payload);
-
-        $response->assertRedirect();
-        $response->assertSessionHasErrors(['is_seatable']);
+        $this->response->assertRedirect();
+        $this->response->assertSessionHasErrors(['is_seatable']);
     }
 }

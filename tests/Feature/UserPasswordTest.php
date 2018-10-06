@@ -2,92 +2,69 @@
 
 namespace Tests\Feature;
 
-use App\Models\User;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Support\Facades\Hash;
 use Tests\TestCase;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class UserPasswordTest extends TestCase
 {
     use RefreshDatabase;
 
-    /** @test */
-    public function user_can_update_password()
+    public function setUp()
     {
-        // create user
-        $user = factory(User::class)->create();
+        parent::setUp();
 
-        // prepare settings form fill
-        $payload = [
+        $this->createUser();
+        $this->uri = '/settings/password';
+        $this->fields = [
             'current_password'              => 'secret',
             'new_password'                  => 'newEnhancedPassword',
             'new_password_confirmation'     => 'newEnhancedPassword',
         ];
+    }
 
-        $response = $this->actingAs($user)
-                        ->post('/settings/password', $payload);
-
-        $response->assertSessionMissing('errors');
-        $this->assertTrue(Hash::check($payload['new_password'], $user->password));
+    /** @test */
+    public function user_can_update_password()
+    {
+        $this->actingAs($this->user)->doRequest('post');
+        $this->response->assertSessionMissing('errors');
+        $this->assertTrue(Hash::check($this->fields()['new_password'], $this->user->password));
     }
 
     /** @test */
     public function current_password_must_be_valid()
     {
-        // create user
-        $user = factory(User::class)->create();
-
-        // prepare settings form fill
-        $payload = [
-            'current_password'              => 'not a valid password',
-            'new_password'                  => 'newEnhancedPassword',
-            'new_password_confirmation'     => 'newEnhancedPassword',
+        $this->fieldOverrides = [
+            'current_password' => 'not a valid current password',
         ];
 
-        $response = $this->actingAs($user)
-                        ->post('/settings/password', $payload);
-
-        $response->assertSessionHasErrors(['current_password']);
-        $this->assertFalse(Hash::check($payload['new_password'], $user->password));
+        $this->actingAs($this->user)->doRequest('post');
+        $this->response->assertSessionHasErrors(['current_password']);
+        $this->assertFalse(Hash::check($this->fields()['new_password'], $this->user->password));
     }
 
     /** @test */
     public function new_passwords_must_match()
     {
-        // create user
-        $user = factory(User::class)->create();
-
-        // prepare settings form fill
-        $payload = [
-            'current_password'              => 'secret',
-            'new_password'                  => 'newEnhancedPassword',
-            'new_password_confirmation'     => 'not matching other field',
+        $this->fieldOverrides = [
+            'new_password_confirmation' => 'not a matching password',
         ];
 
-        $response = $this->actingAs($user)
-                        ->post('/settings/password', $payload);
-
-        $response->assertSessionHasErrors(['new_password_confirmation']);
-        $this->assertFalse(Hash::check($payload['new_password'], $user->password));
+        $this->actingAs($this->user)->doRequest('post');
+        $this->response->assertSessionHasErrors(['new_password_confirmation']);
+        $this->assertFalse(Hash::check($this->fields()['new_password'], $this->user->password));
     }
 
     /** @test */
     public function new_password_cant_be_old_password()
     {
-        // create user
-        $user = factory(User::class)->create();
-
-        // prepare settings form fill
-        $payload = [
-            'current_password'              => 'secret',
+        $this->fieldOverrides = [
             'new_password'                  => 'secret',
-            'new_password_confirmation'     => 'newEnhancedPassword',
+            'new_password_confirmation'     => 'secret',
         ];
 
-        $response = $this->actingAs($user)
-                        ->post('/settings/password', $payload);
-
-        $response->assertSessionHasErrors(['new_password']);
-        $this->assertFalse(Hash::check($payload['new_password_confirmation'], $user->password));
+        $this->actingAs($this->user)->doRequest('post');
+        $this->response->assertSessionHasErrors(['new_password']);
+        $this->assertTrue(Hash::check($this->fields()['current_password'], $this->user->password));
     }
 }

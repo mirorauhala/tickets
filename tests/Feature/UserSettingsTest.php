@@ -2,136 +2,93 @@
 
 namespace Tests\Feature;
 
-use App\Models\User;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class UserSettingsTest extends TestCase
 {
     use RefreshDatabase;
 
-    /** @test */
-    public function user_can_update_settings()
+    public function setUp()
     {
-        // create user
-        $user = factory(User::class)->create();
+        parent::setUp();
 
-        // prepare settings form fill
-        $payload = [
+        $this->createUser();
+        $this->uri = '/settings';
+        $this->fields = [
             'first_name' => 'John',
             'last_name'  => 'Doe',
             'email'      => 'john.doe@email.com',
             'phone'      => '+358000000000',
         ];
+    }
 
-        $response = $this->actingAs($user)
-                         ->post('/settings', $payload);
+    /** @test */
+    public function user_can_update_settings()
+    {
+        $this->actingAs($this->user)->doRequest('post');
 
-        $response->assertSessionMissing('errors');
-        $this->assertDatabaseHas('users', $payload);
+        $this->response->assertSessionMissing('errors');
+        $this->assertDatabaseHas('users', $this->fields);
     }
 
     /** @test */
     public function first_name_is_required()
     {
-        // create user
-        $user = factory(User::class)->create();
-
-        // prepare settings form fill
-        $payload = [
+        $this->fieldOverrides = [
             'first_name' => '',
-            'last_name'  => 'Doe',
-            'email'      => 'john.doe@email.com',
-            'phone'      => '+358000000000',
         ];
+        $this->actingAs($this->user)->doRequest('post');
 
-        $response = $this->actingAs($user)
-                         ->post('/settings', $payload);
-
-        $response->assertSessionHasErrors(['first_name']);
-        $this->assertDatabaseHas('users', $user->toArray());
+        $this->response->assertSessionHasErrors(['first_name']);
+        $this->assertDatabaseHas('users', $this->user->toArray());
     }
 
     /** @test */
     public function last_name_is_required()
     {
-        // create user
-        $user = factory(User::class)->create();
-
-        // prepare settings form fill
-        $payload = [
-            'first_name' => 'John',
-            'last_name'  => '',
-            'email'      => 'john.doe@email.com',
-            'phone'      => '+358000000000',
+        $this->fieldOverrides = [
+            'last_name' => '',
         ];
+        $this->actingAs($this->user)->doRequest('post');
 
-        $response = $this->actingAs($user)
-                         ->post('/settings', $payload);
-
-        $response->assertSessionHasErrors(['last_name']);
-        $this->assertDatabaseHas('users', $user->toArray());
+        $this->response->assertSessionHasErrors(['last_name']);
+        $this->assertDatabaseHas('users', $this->user->toArray());
     }
 
     /** @test */
     public function email_is_required()
     {
-        // create user
-        $user = factory(User::class)->create();
-
-        // prepare settings form fill
-        $payload = [
-            'first_name' => 'John',
-            'last_name'  => 'Doe',
-            'email'      => '',
-            'phone'      => '+358000000000',
+        $this->fieldOverrides = [
+            'email' => '',
         ];
+        $this->actingAs($this->user)->doRequest('post');
 
-        $response = $this->actingAs($user)
-                         ->post('/settings', $payload);
-
-        $response->assertSessionHasErrors(['email']);
-        $this->assertDatabaseHas('users', $user->toArray());
+        $this->response->assertSessionHasErrors(['email']);
+        $this->assertDatabaseHas('users', $this->user->toArray());
     }
 
     /** @test */
     public function email_must_be_valid()
     {
-        // create user
-        $user = factory(User::class)->create();
-
-        // prepare settings form fill
-        $payload = [
-            'first_name' => 'John',
-            'last_name'  => 'Doe',
-            'email'      => 'not a valid email',
-            'phone'      => '+358000000000',
+        $this->fieldOverrides = [
+            'email' => 'must be a valid email address',
         ];
+        $this->actingAs($this->user)->doRequest('post');
 
-        $response = $this->actingAs($user)
-                         ->post('/settings', $payload);
-
-        $response->assertSessionHasErrors(['email']);
-        $this->assertDatabaseHas('users', $user->toArray());
+        $this->response->assertSessionHasErrors(['email']);
+        $this->assertDatabaseHas('users', $this->user->toArray());
     }
 
     /** @test */
     public function phone_is_optional()
     {
-        // create user
-        $user = factory(User::class)->create();
-
-        // prepare settings form fill
-        $payload = [
-            'first_name' => 'John',
-            'last_name'  => 'Doe',
-            'email'      => 'john.doe@email.com',
+        $this->fieldOverrides = [
+            'phone' => '',
         ];
+        $this->actingAs($this->user)->doRequest('post');
 
-        $response = $this->actingAs($user)
-                         ->post('/settings', $payload);
-
-        $response->assertSessionMissing('errors');
-        $this->assertDatabaseHas('users', $user->toArray());
+        $this->response->assertSessionMissing('errors');
+        $this->assertDatabaseHas('users', $this->user->toArray());
     }
 }
