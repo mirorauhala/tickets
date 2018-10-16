@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Dashboard;
 
 use App\Models\Event;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class DashboardController extends Controller
 {
@@ -46,7 +47,7 @@ class DashboardController extends Controller
         return view('dashboard.customers')
             ->with([
                 'event'     => $event,
-                'customers' => $event->customers,
+                'customers' => [],
             ]);
     }
 
