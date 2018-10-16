@@ -40,7 +40,9 @@
                 </div>
             @endforeach
         @else
-            <p class="lead text-muted text-center">{{ tra('tickets.no-paid') }}</p>
+            <div class="col-12">
+                <p class="lead text-muted text-center">{{ tra('tickets.no-paid') }}</p>
+            </div>
         @endif
     </div>
 </div>
