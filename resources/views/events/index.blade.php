@@ -4,7 +4,7 @@
 
 @section('base.content')
 <div class="container h-100">
-    <div class="row h-25 justify-content-center align-items-center">
+    <div class="row py-5 justify-content-center align-items-center">
         <div class="col-md-12">
             <h1>{{ $event->name }}</h1>
             <p class="lead">{{ $event->location }} {{ $event->date }}</h1>
