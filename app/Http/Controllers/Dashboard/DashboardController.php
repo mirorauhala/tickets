@@ -25,11 +25,16 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        // authorize
+        $events = auth()->user()->events;
+
+        if (count($events) === 1) {
+            return redirect()
+                ->route('dashboard.show', ['event' => $events->first()]);
+        }
 
         return view('dashboard.index')
             ->with([
-                'events' => auth()->user()->events,
+                'events' => $events,
             ]);
     }
 
