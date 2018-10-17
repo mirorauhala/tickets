@@ -8,7 +8,7 @@
         <div class="row align-items-center h-25">
             <div class="col-md-10">
                 <h1>Pick an event to manage</h1>
-                <p class="lead">Start by choosing an event.</h1>
+                <p class="lead">Start by choosing an event.</p>
             </div>
         </div>
         <div class="row justify-content-center">

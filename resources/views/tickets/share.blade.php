@@ -7,7 +7,7 @@
     <div class="row py-5 justify-content-center align-items-center">
         <div class="col-md-12">
             <h1>{{ tra('tickets.title')}} <small class="text-muted"> / Share ticket {{ $item->title }}</small></h1>
-            <p class="lead">{{ tra('tickets.lead-share')}}</h1>
+            <p class="lead">{{ tra('tickets.lead-share')}}</p>
 
             @include('tickets._menu')
         </div>

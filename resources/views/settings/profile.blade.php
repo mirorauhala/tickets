@@ -7,7 +7,7 @@
     <div class="row py-5 justify-content-center align-items-center">
         <div class="col-md-12">
             <h1>{{ tra('settings.title') }}</h1>
-            <p class="lead">{{ tra('settings.lead-profile') }}</h1>
+            <p class="lead">{{ tra('settings.lead-profile') }}</p>
 
             @include('settings._menu')
         </div>

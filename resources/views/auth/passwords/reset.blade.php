@@ -7,7 +7,7 @@
     <div class="row py-5 justify-content-center align-items-center">
         <div class="col-md-6">
             <h1>{{ tra('auth.reset.title') }}</h1>
-            <p class="lead">{{ tra('auth.reset.title-alternative') }}</h1>
+            <p class="lead">{{ tra('auth.reset.title-alternative') }}</p>
         </div>
     </div>
     <div class="row justify-content-center">

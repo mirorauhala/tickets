@@ -6,9 +6,9 @@
 <div class="container h-100">
     <div class="row py-5 justify-content-center align-items-center">
         <div class="col-md-12">
-            <p class="mb-2"><a href="{{ route('orders') }}" class="text-muted">&laquo; {{ tra('order.back') }}</a></h1>
+            <p class="mb-2"><a href="{{ route('orders') }}" class="text-muted">&laquo; {{ tra('order.back') }}</a></p>
             <h1>{{ tra('order.title') }}<small class="text-muted"> / {{ $order->reference }}</small></h1>
-            <p class="lead"></h1>
+            <p class="lead"></p>
         </div>
     </div>
     <div class="row justify-content-center">

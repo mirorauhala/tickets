@@ -7,7 +7,7 @@
     <div class="row py-5 justify-content-center align-items-center">
         <div class="col-md-12">
             <h1>{{ tra('tickets.title') }}</h1>
-            <p class="lead">{{ tra('tickets.lead-redeem') }}</h1>
+            <p class="lead">{{ tra('tickets.lead-redeem') }}</p>
 
             @include('tickets._menu')
         </div>

@@ -7,7 +7,7 @@
     <div class="row py-5 justify-content-center align-items-center">
         <div class="col-md-12">
             <h1>{{ tra('bank.title') }}</h1>
-            <p class="lead">{{ tra('bank.lead') }}</h1>
+            <p class="lead">{{ tra('bank.lead') }}</p>
         </div>
     </div>
     <div class="row justify-content-center">

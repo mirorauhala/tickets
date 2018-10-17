@@ -8,7 +8,7 @@
         <div class="row align-items-center h-25">
             <div class="col-md-12">
                 <h1>Dashboard for {{ $event->name }}</h1>
-                <p class="lead">Customer listing.</h1>
+                <p class="lead">Customer listing.</p>
             </div>
         </div>
         <div class="row">

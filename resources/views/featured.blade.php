@@ -7,7 +7,7 @@
     <div class="row py-5 justify-content-center align-items-center">
         <div class="col-md-12">
             <h1>{{ tra('featured.title') }}</h1>
-            <p class="lead">{{ tra('featured.lead') }}</h1>
+            <p class="lead">{{ tra('featured.lead') }}</p>
         </div>
     </div>
     <div class="row">

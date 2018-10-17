@@ -7,7 +7,7 @@
     <div class="row py-5 justify-content-center align-items-center">
         <div class="col-md-12">
             <h1>{{ $event->name }}</h1>
-            <p class="lead">{{ $event->location }} {{ $event->date }}</h1>
+            <p class="lead">{{ $event->location }} {{ $event->date }}</p>
         </div>
     </div>
 
