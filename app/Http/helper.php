@@ -13,14 +13,13 @@ use App\Exceptions\TranslationStringNotFoundException;
  *
  * @param string|array $routes
  * @param array $excludeRoutes
- * @param string $active
- * @param string $notActive
- * @return string
+ * @param bool $return
+ * @return bool|string
  */
-if (!function_exists('active')) {
-    function active($routes, array $excludeRoutes = [], $active = ' active', $notActive = '')
+if (! function_exists('active')) {
+    function active($routes, array $excludeRoutes = [], $return = false)
     {
-        if (!is_array($routes)) {
+        if (! is_array($routes)) {
             $routes = [$routes];
         }
 
@@ -37,7 +36,11 @@ if (!function_exists('active')) {
             return str_is($value, $currentRoute);
         });
 
-        return $filtered->isNotEmpty() ? $active : $notActive;
+        if ($return) {
+            return $filtered->isNotEmpty();
+        }
+
+        return $filtered->isNotEmpty() ? ' active' : '';
     }
 }
 
