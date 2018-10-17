@@ -59,6 +59,16 @@ class Order extends Model
     }
 
     /**
+     * Get user.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User');
+    }
+
+    /**
      * Get event.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
