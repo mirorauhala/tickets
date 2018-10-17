@@ -57,24 +57,6 @@ class DashboardController extends Controller
     }
 
     /**
-     * Show listing of tickets.
-     *
-     * @param App\Models\Event $event
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function tickets(Event $event)
-    {
-        $this->authorize('update', $event);
-
-        return view('dashboard.tickets')
-            ->with([
-                'event'   => $event,
-                'tickets' => $event->tickets,
-            ]);
-    }
-
-    /**
      * Show listing of orders.
      *
      * @param App\Models\Event $event

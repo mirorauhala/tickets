@@ -20,6 +20,24 @@ class TicketController extends Controller
     }
 
     /**
+     * Show listing of tickets.
+     *
+     * @param App\Models\Event $event
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index(Event $event)
+    {
+        $this->authorize('update', $event);
+
+        return view('dashboard.tickets')
+            ->with([
+                'event'   => $event,
+                'tickets' => $event->tickets,
+            ]);
+    }
+
+    /**
      * Ticket creating view.
      *
      * @param App\Models\Event $event
