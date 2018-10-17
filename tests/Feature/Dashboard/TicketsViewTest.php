@@ -1,13 +1,13 @@
 <?php
 
-namespace Tests\Feature;
+namespace Tests\Feature\Dashboard;
 
 use Tests\TestCase;
 use App\Models\User;
 use App\Models\Ticket;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class DashboardTicketsViewTest extends TestCase
+class TicketsViewTest extends TestCase
 {
     use RefreshDatabase;
 

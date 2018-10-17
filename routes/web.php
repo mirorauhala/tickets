@@ -58,16 +58,17 @@ Route::post('/event/tickets/{ticket}', 'Order\OrderController@create');
 Route::get('/dashboard', 'Dashboard\DashboardController@index')->name('dashboard');
 Route::get('/dashboard/{event}', 'Dashboard\DashboardController@customers')->name('dashboard.show');
 Route::get('/dashboard/{event}/customers', 'Dashboard\DashboardController@customers')->name('dashboard.customers');
-Route::get('/dashboard/{event}/ticket/create', 'Dashboard\TicketController@create')->name('dashboard.tickets.create');
-Route::get('/dashboard/{event}/tickets/{ticket}', 'Dashboard\TicketController@show')->name('dashboard.ticket');
 Route::get('/dashboard/{event}/tickets', 'Dashboard\TicketController@index')->name('dashboard.tickets');
+Route::get('/dashboard/{event}/tickets/create', 'Dashboard\TicketController@create')->name('dashboard.tickets.create');
+Route::post('/dashboard/{event}/tickets/create', 'Dashboard\TicketController@store');
+Route::get('/dashboard/{event}/tickets/{ticket}', 'Dashboard\TicketController@show')->name('dashboard.tickets.view');
+Route::post('/dashboard/{event}/tickets/{ticket}', 'Dashboard\TicketController@update');
 Route::get('/dashboard/{event}/orders', 'Dashboard\DashboardController@orders')->name('dashboard.orders');
 Route::get('/dashboard/{event}/maps', 'Dashboard\DashboardController@maps')->name('dashboard.maps');
 Route::get('/dashboard/{event}/seats', 'Dashboard\DashboardController@seats')->name('dashboard.seats');
 Route::get('/dashboard/{event}/settings', 'Dashboard\DashboardController@settings')->name('dashboard.settings');
 
 // Post
-Route::post('/dashboard/{event}/tickets', 'Dashboard\TicketController@store');
 
 /*
 |--------------------------------------------------------------------------

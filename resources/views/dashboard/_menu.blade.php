@@ -4,6 +4,16 @@
     </li>
     <li class="nav-item">
         <a class="nav-link{{ active('dashboard.tickets*') }}" href="{{ route('dashboard.tickets', $event) }}">Tickets</a>
+        @if(active('dashboard.tickets*', [], true))
+        <ul class="nav flex-column pl-3 py-3">
+            <li class="nav-item">
+                <a class="nav-link{{ active(['dashboard.tickets', 'dashboard.tickets.view']) }}" href="{{ route('dashboard.tickets', $event) }}">View</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link{{ active('dashboard.tickets.create') }}" href="{{ route('dashboard.tickets.create', $event) }}">Create</a>
+            </li>
+        </ul>
+        @endif
     </li>
     <li class="nav-item">
         <a class="nav-link{{ active('dashboard.orders*') }}" href="{{ route('dashboard.orders', $event) }}">Orders</a>

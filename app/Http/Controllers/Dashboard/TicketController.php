@@ -50,7 +50,7 @@ class TicketController extends Controller
 
         return view('dashboard.ticket-create')
             ->with([
-                'events' => auth()->user()->events,
+                'event' => $event,
             ]);
     }
 
@@ -77,6 +77,42 @@ class TicketController extends Controller
         ]);
 
         return redirect()
-            ->route('dashboard.ticket', ['event' => $event, 'ticket' => $ticket]);
+            ->route('dashboard.tickets.view', ['event' => $event, 'ticket' => $ticket]);
+    }
+
+    /**
+     * Show a ticket.
+     *
+     * @param App\Models\Event $event
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Event $event, Ticket $ticket)
+    {
+        $this->authorize('update', $event);
+
+        return view('dashboard.ticket-edit')
+            ->with([
+                'event'  => $event,
+                'ticket' => $ticket,
+            ]);
+    }
+
+    /**
+     * Update a ticket.
+     *
+     * @param App\Models\Event $event
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Event $event, Ticket $ticket)
+    {
+        $this->authorize('update', $event);
+
+        return view('dashboard.ticket-edit')
+            ->with([
+                'event'  => $event,
+                'ticket' => $ticket,
+            ]);
     }
 }

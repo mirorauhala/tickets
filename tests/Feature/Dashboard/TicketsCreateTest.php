@@ -1,12 +1,12 @@
 <?php
 
-namespace Tests\Feature;
+namespace Tests\Feature\Dashboard;
 
 use Tests\TestCase;
 use App\Models\Event;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class DashboardTicketsCreateTest extends TestCase
+class TicketsCreateTest extends TestCase
 {
     use RefreshDatabase;
 
@@ -19,7 +19,7 @@ class DashboardTicketsCreateTest extends TestCase
         $this->createUser();
         $this->event = factory(Event::class)->create();
         $this->user->events()->attach($this->event);
-        $this->uri = route('dashboard.tickets', [$this->event->slug]);
+        $this->uri = route('dashboard.tickets.create', [$this->event->slug]);
         $this->fields = [
             'name'                    => 'Entrance',
             'price'                   => 1000,

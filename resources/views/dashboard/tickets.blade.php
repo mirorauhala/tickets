@@ -8,7 +8,7 @@
         <div class="row align-items-center h-25">
             <div class="col-md-12">
                 <h1>Dashboard for {{ $event->name }}</h1>
-                <p class="lead">All tickets for this event.</h1>
+                <p class="lead">All tickets for this event.</p>
             </div>
         </div>
         <div class="row">
@@ -36,10 +36,12 @@
                                 <tr>
                                     <td>{{ $ticket->name }}</td>
                                     <td>{{ $ticket->price }}</td>
-                                    <td>{{ $ticket->price }}</td>
-                                    <td>{{ $ticket->price }}</td>
+                                    <td>{{ $ticket->vat }}</td>
+                                    <td>{{ $ticket->availableAt }}</td>
+                                    <td>{{ $ticket->unavailableAt }}</td>
+                                    <td>{{ $ticket->seatable ? 'True' : 'False' }}</td>
                                     <td>{{ $ticket->reserved }}</td>
-                                    <td>Edit</td>
+                                    <td><a href="{{ route('dashboard.tickets.view', [$event, $ticket]) }}">Edit</a></td>
                                 </tr>
                             @endforeach
                         </tbody>

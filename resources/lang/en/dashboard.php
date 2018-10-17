@@ -41,8 +41,10 @@ return [
         'table' => [
             'name'     => 'Name',
             'price'    => 'Price',
+            'vat'      => 'VAT',
             'in-sale'  => 'In sale',
             'off-sale' => 'Off sale',
+            'seatable' => 'Seatable',
             'quota'    => 'Quota',
             'edit'     => 'Edit',
         ],

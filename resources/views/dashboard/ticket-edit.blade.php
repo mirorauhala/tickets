@@ -17,22 +17,22 @@
             </div>
 
             <div class="col-md-9">
-                <form method="post" action="{{ route('dashboard.tickets.create', $event) }}">
+                <form method="post" action="{{ route('dashboard.tickets.view', [$event, $ticket]) }}">
                     {{ csrf_field() }}
-                    <div class="form-group{{ $errors->has('name') ? ' is-invalid' : '' }}">
-                        <label for="name">Ticket name</label>
-                        <input type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" id="name" name="name">
+                    <div class="form-group{{ $errors->has('ticket_name') ? ' is-invalid' : '' }}">
+                        <label for="ticket_name">Ticket name</label>
+                        <input type="text" class="form-control{{ $errors->has('ticket_name') ? ' is-invalid' : '' }}" id="ticket_name" name="ticket_name" value="{{ $ticket->name }}">
 
-                        @if ($errors->has('name'))
+                        @if ($errors->has('ticket_name'))
                             <span class="invalid-feedback">
-                                {{ $errors->first('name') }}
+                                {{ $errors->first('ticket_name') }}
                             </span>
                         @endif
                     </div>
 
                     <div class="form-group{{ $errors->has('price') ? ' is-invalid' : '' }}">
                         <label for="price">Price <sup>(in cents, 1,00 &euro; = 1000)</sup></label>
-                        <input type="number" class="form-control" id="price" name="price">
+                        <input type="number" class="form-control" id="price" name="price" value="{{ $ticket->price }}">
 
                         @if ($errors->has('price'))
                             <span class="invalid-feedback">
@@ -42,7 +42,7 @@
                     </div>
                     <div class="form-group{{ $errors->has('vat') ? ' is-invalid' : '' }}">
                         <label for="vat">Value after tax percentage</label>
-                        <input type="text" class="form-control" id="vat" name="vat">
+                        <input type="number" class="form-control" id="vat" name="vat" value="{{ $ticket->vat }}">
 
                         @if ($errors->has('vat'))
                             <span class="invalid-feedback">
@@ -52,7 +52,7 @@
                     </div>
                     <div class="form-group{{ $errors->has('reserved') ? ' is-invalid' : '' }}">
                         <label for="reserved">Reserved tickets</label>
-                        <input type="number" class="form-control" id="reserved" name="reserved">
+                        <input type="text" class="form-control" id="reserved" name="reserved" value="{{ $ticket->reserved }}">
                         <small class="form-text text-muted">
                             Maximum amount of tickets that can be sold.
                         </small>
@@ -63,9 +63,24 @@
                             </span>
                         @endif
                     </div>
+                    <div class="form-group{{ $errors->has('is_seatable') ? ' is-invalid' : '' }}">
+
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="is_seatable" value="0" {{ ($event->is_seatable == 0) ? "checked" : ""  }}>
+                                Is seatable?
+                            </label>
+                        </div>
+
+                        @if ($errors->has('is_seatable'))
+                            <span class="invalid-feedback">
+                                {{ $errors->first('is_seatable') }}
+                            </span>
+                        @endif
+                    </div>
                     <div class="form-group{{ $errors->has('maxAmountPerTransaction') ? ' is-invalid' : '' }}">
                         <label for="maxAmountPerTransaction">Max ticket amount per transaction</label>
-                        <input type="number" class="form-control" id="maxAmountPerTransaction" name="maxAmountPerTransaction">
+                        <input type="text" class="form-control" id="maxAmountPerTransaction" name="maxAmountPerTransaction" value="{{ $ticket->maxAmountPerTransaction }}">
 
                         <small class="form-text text-muted">
                             How many tickets can be bought simultaneously.
@@ -77,17 +92,10 @@
                             </span>
                         @endif
                     </div>
-                    <div class="form-group{{ $errors->has('is_seatable') ? ' is-invalid' : '' }}">
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox" name="is_seatable" value="0" {{ ($event->is_seatable == 0) ? "checked" : ""  }}>
-                                Is seatable?
-                            </label>
-                        </div>
-                    </div>
+
                     <div class="form-group{{ $errors->has('availableAt') ? ' is-invalid' : '' }}">
                         <label for="availableAt">Sales start date</label>
-                        <input type="text" class="form-control" id="availableAt" name="availableAt" value="{{ \Carbon\Carbon::now() }}">
+                        <input type="text" class="form-control" id="availableAt" name="availableAt" value="{{ $ticket->availableAt }}">
 
                         @if ($errors->has('availableAt'))
                             <span class="invalid-feedback">
@@ -98,7 +106,7 @@
 
                     <div class="form-group{{ $errors->has('unavailableAt') ? ' is-invalid' : '' }}">
                         <label for="unavailableAt">Sales end date</label>
-                        <input type="text" class="form-control" id="unavailableAt" name="unavailableAt" value="{{ \Carbon\Carbon::now()->addWeek() }}">
+                        <input type="text" class="form-control" id="unavailableAt" name="unavailableAt" value="{{ $ticket->unavailableAt }}">
 
                         @if ($errors->has('unavailableAt'))
                             <span class="invalid-feedback">
@@ -107,7 +115,7 @@
                         @endif
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary px-4">{{ tra('form.button.create') }}</button>
+                        <button type="submit" class="btn btn-primary px-4">{{ tra('form.button.update') }}</button>
                     </div>
                 </form>
             </div>
