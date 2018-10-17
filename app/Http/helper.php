@@ -1,12 +1,12 @@
 <?php
 
-use App\Exceptions\TranslationStringNotFoundException;
-use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Route;
-use Money\Currencies\ISOCurrencies;
-use Money\Currency;
-use Money\Formatter\IntlMoneyFormatter;
 use Money\Money;
+use Money\Currency;
+use Illuminate\Support\Facades\Log;
+use Money\Currencies\ISOCurrencies;
+use Illuminate\Support\Facades\Route;
+use Money\Formatter\IntlMoneyFormatter;
+use App\Exceptions\TranslationStringNotFoundException;
 
 /*
  * Get active class for an active route.
@@ -46,7 +46,7 @@ if (!function_exists('active')) {
  *
  * @return string
  */
-if (!function_exists('money')) {
+if (! function_exists('money')) {
     function money($amount, $currency)
     {
         $money = new Money($amount, new Currency($currency));
@@ -64,7 +64,7 @@ if (!function_exists('money')) {
  *
  * @return string
  */
-if (!function_exists('tra')) {
+if (! function_exists('tra')) {
     function tra($key = null, $replace = [], $locale = null)
     {
         try {
@@ -77,7 +77,7 @@ if (!function_exists('tra')) {
 
             return $string;
         } catch (TranslationStringNotFoundException $e) {
-            Log::info('Cannot get translate key for '.$key.' in '.app()->getLocale());
+            Log::info('Cannot get translate key for ' . $key . ' in ' . app()->getLocale());
         }
 
         return $key;
