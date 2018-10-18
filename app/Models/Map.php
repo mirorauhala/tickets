@@ -15,7 +15,7 @@ class Map extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'description', 'active', 'event_id',
+        'name', 'active', 'event_id',
     ];
 
     /**
