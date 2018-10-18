@@ -1,8 +1,9 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends Seeder
+class UsersTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,7 +12,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(UsersTableSeeder::class);
-        $this->call(EventTableSeeder::class);
+        factory(User::class)->times(10)->create();
     }
 }
