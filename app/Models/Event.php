@@ -45,11 +45,11 @@ class Event extends Model
     /**
      * Get maps for an event.
      *
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function maps()
     {
-        return $this->hasOne('App\Models\Map');
+        return $this->hasMany('App\Models\Map');
     }
 
     /**
