@@ -22,10 +22,8 @@
                         <thead>
                             <tr>
                                 <th scope="col">Name</th>
-                                <th scope="col">Price</th>
-                                <th scope="col">In sale</th>
-                                <th scope="col">Off sale</th>
-                                <th scope="col">Quota</th>
+                                <th scope="col">Seats</th>
+                                <th scope="col">Active</th>
                                 <th scope="col">Edit</th>
                             </tr>
                         </thead>
@@ -33,7 +31,9 @@
                             @foreach ($maps as $map)
                                 <tr>
                                     <td>{{ $map->name }}</td>
-                                    <td>Edit</td>
+                                    <td>{{ $map->seats()->count() }}</td>
+                                    <td>{{ $map->active ? 'Yes' : 'No'}}</td>
+                                    <td><a href="{{ route('dashboard.maps.edit', [$event, $map]) }}"></a></td>
                                 </tr>
                             @endforeach
                         </tbody>
