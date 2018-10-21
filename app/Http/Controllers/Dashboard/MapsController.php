@@ -48,7 +48,7 @@ class MapsController extends Controller
 
         return view('dashboard.map-create')
             ->with([
-                'events' => auth()->user()->events,
+                'event'  => $event,
             ]);
     }
 
