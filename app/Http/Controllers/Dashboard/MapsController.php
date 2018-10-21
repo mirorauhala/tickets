@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Dashboard;
 
+use App\Models\Map;
 use App\Models\Event;
 use App\Http\Requests\MapRequest;
 use App\Http\Controllers\Controller;
@@ -69,6 +70,51 @@ class MapsController extends Controller
         ]);
 
         return redirect()
-            ->route('dashboard.maps', ['event' => $event, 'map' => $map]);
+            ->route('dashboard.maps', ['event' => $event, 'map' => $map])
+            ->with([
+                'flash_status'  => 'success',
+                'flash_message' => 'Map created.',
+            ]);
+    }
+
+    /**
+     * Show a map.
+     *
+     * @param App\Models\Event $event
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Event $event, Map $map)
+    {
+        $this->authorize('update', $event);
+
+        return view('dashboard.map-edit')
+            ->with([
+                'event' => $event,
+                'map'   => $map,
+            ]);
+    }
+
+    /**
+     * Update a map.
+     *
+     * @param App\Models\Event $event
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Event $event, Map $map, MapRequest $request)
+    {
+        $this->authorize('update', $event);
+
+        $map->update([
+            'name' => $request->name,
+        ]);
+
+        return redirect()
+            ->route('dashboard.maps.edit', ['event' => $event, 'map' => $map])
+            ->with([
+                'flash_status'  => 'success',
+                'flash_message' => 'Map updated.',
+            ]);
     }
 }
