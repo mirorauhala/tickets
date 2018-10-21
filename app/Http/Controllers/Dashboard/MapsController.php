@@ -68,6 +68,6 @@ class MapsController extends Controller
         ]);
 
         return redirect()
-            ->route('dashboard.map', ['event' => $event, 'map' => $map]);
+            ->route('dashboard.maps', ['event' => $event, 'map' => $map]);
     }
 }
