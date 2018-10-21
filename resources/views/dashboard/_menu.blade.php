@@ -20,6 +20,16 @@
     </li>
     <li class="nav-item">
         <a class="nav-link{{ active('dashboard.maps*') }}" href="{{ route('dashboard.maps', $event) }}">Maps</a>
+        @if(active('dashboard.maps*', [], true))
+        <ul class="nav flex-column pl-3 py-3">
+            <li class="nav-item">
+                <a class="nav-link{{ active(['dashboard.maps', 'dashboard.maps.view', 'dashboard.maps.edit']) }}" href="{{ route('dashboard.maps', $event) }}">View</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link{{ active('dashboard.maps.create') }}" href="{{ route('dashboard.maps.create', $event) }}">Create</a>
+            </li>
+        </ul>
+        @endif
     </li>
     <li class="nav-item">
         <a class="nav-link{{ active('dashboard.seats*') }}" href="{{ route('dashboard.seats', $event) }}">Seats</a>
