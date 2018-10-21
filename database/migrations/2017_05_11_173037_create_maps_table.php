@@ -17,7 +17,7 @@ class CreateMapsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->integer('event_id')->unsigned();
-            $table->boolean('active')->default(true);
+            $table->boolean('active')->default(false);
 
             $table->foreign('event_id')->references('id')->on('events')->onDelete('cascade');
             $table->timestamps();
