@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Models\Event;
+use App\Http\Requests\MapRequest;
 use App\Http\Controllers\Controller;
 
 class MapsController extends Controller
