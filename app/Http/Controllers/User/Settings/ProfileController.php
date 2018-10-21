@@ -34,7 +34,6 @@ class ProfileController extends Controller
      */
     public function updateProfile(UserProfileRequest $request)
     {
-        // save profile
         auth()->user()->update([
             'first_name' => $request->first_name,
             'last_name'  => $request->last_name,
@@ -42,7 +41,6 @@ class ProfileController extends Controller
             'phone'      => $request->phone,
         ]);
 
-        // return to view with flash message
         return redirect()
             ->route('settings')
             ->with([
