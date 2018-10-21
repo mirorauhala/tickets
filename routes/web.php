@@ -64,6 +64,10 @@ Route::get('/dashboard/{event}/tickets/{ticket}', 'Dashboard\TicketController@sh
 Route::post('/dashboard/{event}/tickets/{ticket}', 'Dashboard\TicketController@update');
 Route::get('/dashboard/{event}/orders', 'Dashboard\DashboardController@orders')->name('dashboard.orders');
 Route::get('/dashboard/{event}/maps', 'Dashboard\MapsController@index')->name('dashboard.maps');
+Route::get('/dashboard/{event}/maps/create', 'Dashboard\MapsController@create')->name('dashboard.maps.create');
+Route::post('/dashboard/{event}/maps/create', 'Dashboard\MapsController@store');
+Route::get('/dashboard/{event}/maps/{map}', 'Dashboard\MapsController@show')->name('dashboard.maps.edit');
+Route::post('/dashboard/{event}/maps/{map}', 'Dashboard\MapsController@update');
 Route::get('/dashboard/{event}/seats', 'Dashboard\DashboardController@seats')->name('dashboard.seats');
 Route::get('/dashboard/{event}/settings', 'Dashboard\DashboardController@settings')->name('dashboard.settings');
 
