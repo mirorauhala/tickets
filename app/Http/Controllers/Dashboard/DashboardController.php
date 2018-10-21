@@ -75,24 +75,6 @@ class DashboardController extends Controller
     }
 
     /**
-     * Show listing of maps.
-     *
-     * @param App\Models\Event $event
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function maps(Event $event)
-    {
-        $this->authorize('update', $event);
-
-        return view('dashboard.maps')
-            ->with([
-                'event' => $event,
-                'maps'  => $event->maps,
-            ]);
-    }
-
-    /**
      * Show listing of seats.
      *
      * @param App\Models\Event $event

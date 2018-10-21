@@ -18,6 +18,24 @@ class MapsController extends Controller
     }
 
     /**
+     * Show listing of maps.
+     *
+     * @param App\Models\Event $event
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index(Event $event)
+    {
+        $this->authorize('update', $event);
+
+        return view('dashboard.maps')
+            ->with([
+                'event' => $event,
+                'maps'  => $event->maps,
+            ]);
+    }
+
+    /**
      * Map creating view.
      *
      * @param App\Models\Event $event
