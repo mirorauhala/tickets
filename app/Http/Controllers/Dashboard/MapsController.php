@@ -64,14 +64,7 @@ class MapsController extends Controller
         $this->authorize('update', $event);
 
         $map = $event->maps()->create([
-            'name'                    => $request->name,
-            'price'                   => $request->price,
-            'vat'                     => $request->vat,
-            'reserved'                => $request->reserved,
-            'maxAmountPerTransaction' => $request->maxAmountPerTransaction,
-            'availableAt'             => $request->availableAt,
-            'unavailableAt'           => $request->unavailableAt,
-            'is_seatable'             => $request->is_seatable,
+            'name' => $request->name,
         ]);
 
         return redirect()
