@@ -18,6 +18,7 @@
 
             @if(count($maps) > 0 )
                 <div class="col-md-9">
+                    @include('partials.messages.flashbox')
                     <table class="table table-striped">
                         <thead>
                             <tr>
