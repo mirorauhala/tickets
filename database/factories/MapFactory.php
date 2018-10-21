@@ -13,9 +13,7 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(App\Models\Map::class, function (Faker\Generator $faker) {
-    static $password;
-
     return [
-        'name'        => 'Map ' . uniqid(),
+        'name' => 'Map ' . uniqid(),
     ];
 });
