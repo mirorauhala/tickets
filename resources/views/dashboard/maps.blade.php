@@ -43,6 +43,7 @@
             @else
                 <div class="col-md-9 align-self-center">
                     <p class="lead text-muted text-center">Start by creating a new map.</p>
+                    <p class="lead text-muted text-center"><a href="{{ route('dashboard.maps.create', ['event' => $event]) }}" class="btn btn-primary px-4">New map</a></p>
                 </div>
             @endif
         </div>
