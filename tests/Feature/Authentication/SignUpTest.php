@@ -1,0 +1,128 @@
+<?php
+
+namespace Tests\Feature\Authentication;
+
+use Tests\TestCase;
+use App\Models\User;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+
+class SignUpTest extends TestCase
+{
+    use RefreshDatabase;
+
+    public function setUp()
+    {
+        parent::setUp();
+
+        $this->uri = '/register';
+        $this->fields = [
+            'first_name'            => 'John',
+            'last_name'             => 'Doe',
+            'email'                 => 'john.doe@email.com',
+            'password'              => 'secret',
+            'password_confirmation' => 'secret',
+            'phone'                 => '0101001010',
+        ];
+    }
+
+    /** @test */
+    public function user_can_signup()
+    {
+        $this->doRequest('post');
+        $this->response->assertSessionMissing('errors');
+        $this->assertAuthenticated();
+    }
+
+    /** @test */
+    public function first_name_is_required()
+    {
+        $this->fieldOverrides = [
+            'first_name' => '',
+        ];
+        $this->doRequest('post');
+        $this->response->assertSessionHasErrors(['first_name']);
+        $this->assertDatabaseMissing('users', [
+            'email' => $this->fields()['email'],
+        ]);
+    }
+
+    /** @test */
+    public function last_name_is_required()
+    {
+        $this->fieldOverrides = [
+            'last_name' => '',
+        ];
+        $this->doRequest('post');
+        $this->response->assertSessionHasErrors(['last_name']);
+        $this->assertDatabaseMissing('users', [
+            'email' => $this->fields()['email'],
+        ]);
+    }
+
+    /** @test */
+    public function email_is_required()
+    {
+        $this->fieldOverrides = [
+            'email' => '',
+        ];
+        $this->doRequest('post');
+        $this->response->assertSessionHasErrors(['email']);
+        $this->assertDatabaseMissing('users', [
+            'email' => $this->fields()['email'],
+        ]);
+    }
+
+    /** @test */
+    public function password_is_required()
+    {
+        $this->fieldOverrides = [
+            'password' => '',
+        ];
+        $this->doRequest('post');
+        $this->response->assertSessionHasErrors(['password']);
+        $this->assertDatabaseMissing('users', [
+            'email' => $this->fields()['email'],
+        ]);
+    }
+
+    /** @test */
+    public function password_confirmation_is_required()
+    {
+        $this->fieldOverrides = [
+            'password_confirmation' => '',
+        ];
+        $this->doRequest('post');
+        $this->response->assertSessionHasErrors(['password']);
+        $this->assertDatabaseMissing('users', [
+            'email' => $this->fields()['email'],
+        ]);
+    }
+
+    /** @test */
+    public function phone_can_be_empty()
+    {
+        $this->fieldOverrides = [
+            'phone' => '',
+        ];
+        $this->doRequest('post');
+        $this->response->assertSessionHasNoErrors();
+        $this->assertDatabaseHas('users', [
+            'email' => $this->fields()['email'],
+        ]);
+    }
+
+    /** @test */
+    public function phone_is_unique()
+    {
+        factory(User::class)->create(['phone' => '0101001010']);
+
+        $this->fieldOverrides = [
+            'phone' => '0101001010',
+        ];
+        $this->doRequest('post');
+        $this->response->assertSessionHasErrors(['phone']);
+        $this->assertDatabaseMissing('users', [
+            'email' => $this->fields()['email'],
+        ]);
+    }
+}
