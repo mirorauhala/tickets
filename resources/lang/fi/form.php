@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Form Language Lines
@@ -24,5 +23,4 @@ return [
     'button.send-password-reset'=> 'Lähetä salasananpalautuslinkki',
     'button.reset-password'     => 'Palauta salasana',
     'button.register'           => 'Rekisteröidy',
-
 ];

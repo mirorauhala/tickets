@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Error Page Lines
@@ -31,5 +30,4 @@ return [
         'title'   => '500 Sisäinen palvelinvirhe',
         'subtext' => 'Pyynnön käsittelyssä meillä tapahtui sisäinen virhe. Anteeksi siitä.',
     ],
-
 ];

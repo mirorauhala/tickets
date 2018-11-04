@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Flash Message Language Lines
@@ -13,5 +12,4 @@ return [
     */
 
     'event.updated' => 'Event updated!',
-
 ];

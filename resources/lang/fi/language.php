@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Language Lines
@@ -11,5 +10,4 @@ return [
     'automatic' => 'Automaattisesti valittu',
     'english'   => 'Englanti',
     'finnish'   => 'Suomi',
-
 ];

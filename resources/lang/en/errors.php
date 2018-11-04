@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Error Page Lines
@@ -31,5 +30,4 @@ return [
         'title'   => '500 Internal Server Error',
         'subtext' => 'While processing your request we had an internal error. Sorry about that.',
     ],
-
 ];
