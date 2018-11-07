@@ -15,7 +15,9 @@
         "moneyphp/money": "^3.0",
         "nordsoftware/paytrail-php": "^1.0.0",
         "omnipay/stripe": "^3.0",
-        "sentry/sentry-laravel": "^0.10.0"
+        "predis/predis": "^1.1",
+        "sentry/sentry-laravel": "^0.10.0",
+        "spatie/laravel-fractal": "^5.4"
     },
     "require-dev": {
         "filp/whoops": "~2.0",
