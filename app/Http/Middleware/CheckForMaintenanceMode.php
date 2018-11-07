@@ -3,9 +3,9 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Http\Request;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Foundation\Http\Exceptions\MaintenanceModeException;
-use Illuminate\Http\Request;
 
 class CheckForMaintenanceMode
 {
@@ -40,8 +40,8 @@ class CheckForMaintenanceMode
      */
     public function handle($request, Closure $next)
     {
-        if ($this->app->isDownForMaintenance() && !$this->isIpWhiteListed($request)) {
-            $data = json_decode(file_get_contents($this->app->storagePath().'/framework/down'), true);
+        if ($this->app->isDownForMaintenance() && ! $this->isIpWhiteListed($request)) {
+            $data = json_decode(file_get_contents($this->app->storagePath() . '/framework/down'), true);
 
             throw new MaintenanceModeException($data['time'], $data['retry'], $data['message']);
         } elseif ($this->app->isDownForMaintenance()) {
