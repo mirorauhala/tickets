@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Default Cache Store
@@ -29,7 +28,6 @@ return [
     */
 
     'stores' => [
-
         'apc' => [
             'driver' => 'apc',
         ],
@@ -69,10 +67,15 @@ return [
         ],
 
         'redis' => [
-            'driver'     => 'redis',
-            'connection' => 'default',
+            'driver'  => 'redis',
+            'client'  => 'predis',
+            'default' => [
+                'host'     => env('REDIS_HOST', 'localhost'),
+                'password' => env('REDIS_PASSWORD', null),
+                'port'     => env('REDIS_PORT', 6379),
+                'database' => 0,
+            ],
         ],
-
     ],
 
     /*
@@ -87,5 +90,4 @@ return [
     */
 
     'prefix' => 'laravel',
-
 ];
