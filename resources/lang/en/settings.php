@@ -49,8 +49,6 @@ return [
     |
     */
 
-    'lead-profile' => 'Change your profile.',
-
     'profile' => [
         'first-name' => 'First name',
         'last-name'  => 'Last name',
@@ -68,8 +66,6 @@ return [
     |
     */
 
-    'lead-language' => 'Language',
-
     'language.language' => 'Display language',
 
     /*
@@ -81,8 +77,6 @@ return [
     | settings.
     |
     */
-
-    'lead-password' => 'Change your password.',
 
     'change-password' => [
         'current'      => 'Current password',

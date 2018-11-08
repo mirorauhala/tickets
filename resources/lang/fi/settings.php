@@ -49,8 +49,6 @@ return [
     |
     */
 
-    'lead-profile' => 'Profiili',
-
     'profile' => [
         'first-name' => 'Etunimi',
         'last-name'  => 'Sukunimi',
@@ -68,8 +66,6 @@ return [
     |
     */
 
-    'lead-language' => 'Kieli',
-
     'language.language' => 'Näyttökieli',
 
     /*
@@ -81,8 +77,6 @@ return [
     | settings.
     |
     */
-
-    'lead-password' => 'Vaihda salasanasi.',
 
     'change-password' => [
         'current'      => 'Nykyinen salasana',

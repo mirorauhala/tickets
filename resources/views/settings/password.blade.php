@@ -3,17 +3,17 @@
 @section('settings.title', tra('settings.title'))
 
 @section('base.content')
-<div class="container h-100">
-    <div class="row py-5 justify-content-center align-items-center">
+<div class="container">
+    <div class="row py-5">
         <div class="col-md-12">
-            <h1>{{ tra('settings.title') }}</h1>
-            <p class="lead">{{ tra('settings.lead-password') }}</p>
-
-            @include('settings._menu')
+            <h1 class="text-uppercase">{{ tra('settings.title') }}</h1>
         </div>
     </div>
-    <div class="row justify-content-center">
-        <div class="col-md-12">
+    <div class="row">
+        <div class="col-md-3">
+            @include('settings._menu')
+        </div>
+        <div class="col-md-8 offset-md-1">
             @include('partials.messages.flashbox')
             <form method="post" action="{{ route('settings.password') }}">
                 {{ csrf_field() }}

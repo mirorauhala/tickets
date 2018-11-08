@@ -1,5 +1,5 @@
-<nav>
-    <ul class="nav nav-pills nav-fill">
+<nav class="mb-5">
+    <ul class="nav nav-pills flex-column">
         <li class="nav-item">
             <a class="nav-link{{ active('settings') }}" href="{{ route('settings') }}">{{ tra('settings.menu.profile') }}</a>
         </li>
