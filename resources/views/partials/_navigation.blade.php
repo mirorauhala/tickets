@@ -1,58 +1,39 @@
-<nav class="navbar fixed-top navbar-expand-md navbar-light bg-white w-100">
-    <div class="container">
-        <a class="navbar-brand" href="{{ route('events') }}">{{ config('app.name') }}</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link{{ active('events') }}" href="{{ route('events') }}">{{ tra('nav.featured') }} <span class="sr-only">(current)</span></a>
+<nav class="menu">
+    <ul class="menu__links">
+        <li class="menu__item">
+            <a class="menu__link{{ active('events') }}" href="{{ route('events') }}">{{ tra('nav.featured') }} <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="menu__item">
+            <a class="menu__link{{ active('tickets') }}" href="{{ route('tickets') }}">{{ tra('nav.tickets') }}</a>
+        </li>
+        <li class="menu__item menu__item--search">
+            <form class="form--search">
+                <input type="search" class="input--search" placeholder="Search...">
+            </form>
+        </li>
+        @auth()
+            @if(count(auth()->user()->events) > 0)
+                <li class="menu__item">
+                    <a class="menu__link{{ active('dashboard*') }}" href="{{ route('dashboard') }}">{{ tra('nav.manage') }}</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link{{ active('tickets') }}" href="{{ route('tickets') }}">{{ tra('nav.tickets') }}</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link{{ active('orders*') }}" href="{{ route('orders') }}">{{ tra('nav.orders') }}</a>
-                </li>
-            </ul>
-            <ul class="navbar-nav">
-                @auth()
-                    @if(count(auth()->user()->events) > 0)
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                {{ tra('nav.manage') }}
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                @foreach(auth()->user()->events as $event)
-                                    <a class="dropdown-item" href="{{ route('dashboard.show', $event) }}">{{ $event->name }}</a>
-                                @endforeach
-                            </div>
-                        </li>
-                    @endif
-                    <li class="nav-item">
-                        <a class="nav-link{{ active('settings') }}" href="{{ route('settings') }}">{{ tra('nav.settings') }}</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-danger" href="{{ route('logout') }}"
-                            onclick="event.preventDefault();
-                                    document.getElementById('logout-form').submit();">{{ tra('nav.sign-out')}}</a>
-                    </li>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        {{ csrf_field() }}
-                    </form>
-                @else
-                    <li class="nav-item">
-                        <a class="nav-link{{ active('login') }}" href="{{ route('login') }}">{{ tra('nav.sign-in') }}</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link{{ active('register') }}" href="{{ route('register') }}">{{ tra('nav.sign-up') }}</a>
-                    </li>
-                @endauth
-            </ul>
-        </div>
-    </div>
+            @endif
+            <li class="menu__item">
+                <a class="menu__link{{ active('settings*') }}" href="{{ route('settings') }}">{{ tra('nav.settings') }}</a>
+            </li>
+            <li class="menu__item">
+                <a class="menu__link text-danger" href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">{{ tra('nav.sign-out')}}</a>
+            </li>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                {{ csrf_field() }}
+            </form>
+        @else
+            <li class="menu__item">
+                <a class="menu__link{{ active('login') }}" href="{{ route('login') }}">LOG IN</a>
+            </li>
+        @endauth
+    </ul>
 </nav>
 
 <div class="navigation">
