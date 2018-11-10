@@ -76,7 +76,11 @@ class TicketController extends Controller
         ]);
 
         return redirect()
-            ->route('dashboard.tickets.view', ['event' => $event, 'ticket' => $ticket]);
+            ->route('dashboard.tickets.view', ['event' => $event, 'ticket' => $ticket])
+            ->with([
+                'flash_status'  => 'success',
+                'flash_message' => 'Ticket created.',
+            ]);
     }
 
     /**
@@ -104,7 +108,6 @@ class TicketController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function update(Event $event, Ticket $ticket)
     public function update(Event $event, Ticket $ticket, TicketRequest $request)
     {
         $this->authorize('update', $event);
@@ -119,9 +122,11 @@ class TicketController extends Controller
             'unavailableAt'           => $request->unavailableAt,
         ]);
 
+        return redirect()
+            ->route('dashboard.tickets.view', ['event' => $event, 'ticket' => $ticket])
             ->with([
-                'event'  => $event,
-                'ticket' => $ticket,
+                'flash_status'  => 'success',
+                'flash_message' => 'Ticket updated.',
             ]);
     }
 }
