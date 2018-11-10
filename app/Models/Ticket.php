@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
+use Illuminate\Database\Eloquent\Model;
 
 class Ticket extends Model
 {
@@ -20,7 +20,6 @@ class Ticket extends Model
         'maxAmountPerTransaction',
         'availableAt',
         'unavailableAt',
-        'is_seatable',
         'event_id',
     ];
 
@@ -37,30 +36,6 @@ class Ticket extends Model
     public function event()
     {
         return $this->belongsTo('App\Models\Event');
-    }
-
-    /**
-     * Scope a query to only include visitor tickets.
-     *
-     * @param \Illuminate\Database\Eloquent\Builder $query
-     *
-     * @return \Illuminate\Database\Eloquent\Builder
-     */
-    public function scopeVisitorTicket($query)
-    {
-        return $query->where('is_seatable', false);
-    }
-
-    /**
-     * Scope a query to only include gamer tickets.
-     *
-     * @param \Illuminate\Database\Eloquent\Builder $query
-     *
-     * @return \Illuminate\Database\Eloquent\Builder
-     */
-    public function scopeGamerTickets($query)
-    {
-        return $query->where('is_seatable', true);
     }
 
     /**

@@ -73,7 +73,6 @@ class TicketController extends Controller
             'maxAmountPerTransaction' => $request->maxAmountPerTransaction,
             'availableAt'             => $request->availableAt,
             'unavailableAt'           => $request->unavailableAt,
-            'is_seatable'             => $request->is_seatable,
         ]);
 
         return redirect()

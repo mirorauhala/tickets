@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\User;
 
-use App\Http\Controllers\Controller;
 use App\Models\Order;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class OrderController extends Controller
 {
@@ -45,6 +45,7 @@ class OrderController extends Controller
         $order->load('items.ticket', 'items.seat');
 
         // count orders that need to select a seat
+        // NEEDS REWORK DUE TO is_seatable BEING DROPPED OFF
         $ordersCount = ($order->items->filter(function ($value, $key) {
             if ($value->ticket->is_seatable == 1 && $value->seat == null) {
                 return true;

@@ -23,7 +23,6 @@ $factory->define(App\Models\Ticket::class, function (Faker\Generator $faker) {
         'maxAmountPerTransaction' => 5,
         'availableAt'             => \Carbon\Carbon::now(),
         'unavailableAt'           => \Carbon\Carbon::now()->addWeek(),
-        'is_seatable'             => 1,
         'event_id'                => function () {
             return factory(Event::class)->create()->id;
         },

@@ -65,6 +65,7 @@
                                     <tr>
                                         <td>{{ $order_item->title }}</td>
                                         <td>{{ money($order_item->value, $order->currency) }}</td>
+                                        {{-- NEEDS REWORK DUE TO is_seatable BEING DROPPED OFF --}}
                                         @if($order_item->ticket->is_seatable == 1)
                                             @if($order_item->seat !== null)
                                                 <td>{{ $order_item->seat->name }}</td>

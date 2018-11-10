@@ -56,21 +56,6 @@
                 </span>
             @endif
         </div>
-        <div class="form-group{{ $errors->has('ticket_seatable') ? ' has-error' : '' }}">
-            <label for="ticket_seatable" class="control-label">{{ tra('event.admin.pages.tickets.new.form.ticket-seatable') }}</label>
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox" name="ticket_seatable" id="ticket_seatable" value="0" {{ ($ticket->is_seatable == 1) ? "checked" : ""  }}>
-                    {{ tra('event.admin.pages.tickets.new.form.ticket-seatable-checkbox-label') }}
-                </label>
-            </div>
-
-            @if ($errors->has('ticket_seatable'))
-                <span class="help-block">
-                    <strong>{{ $errors->first('ticket_seatable') }}</strong>
-                </span>
-            @endif
-        </div>
         <div class="form-group{{ $errors->has('ticket_availableAt') ? ' has-error' : '' }}">
             <label for="ticket_availableAt" class="control-label">{{ tra('event.admin.pages.tickets.new.form.ticket-availableAt') }}</label>
             <input type="text" class="form-control" id="ticket_availableAt" name="ticket_availableAt" value="{{ $ticket->availableAt }}">

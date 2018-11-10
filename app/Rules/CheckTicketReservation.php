@@ -2,9 +2,9 @@
 
 namespace App\Rules;
 
-use App\Models\OrderItem;
 use App\Models\Seat;
 use App\Models\Ticket;
+use App\Models\OrderItem;
 use Illuminate\Contracts\Validation\Rule;
 
 class CheckTicketReservation implements Rule
@@ -32,6 +32,7 @@ class CheckTicketReservation implements Rule
     public function passes($attribute, $value)
     {
         // if ticket is seatable
+        // NEEDS REWORK DUE TO is_seatable BEING DROPPED OFF
         if ($this->ticket->is_seatable == true) {
             // number of seats in total for same ticket type
             $seats = Seat::ticketType($this->ticket->id)->count();

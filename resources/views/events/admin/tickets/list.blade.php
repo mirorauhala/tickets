@@ -29,7 +29,6 @@
                             <td>{{ $ticket->vat }}</td>
                             <td>{{ $ticket->reserved }}</td>
                             <td>{{ $ticket->maxAmountPerTransaction }}</td>
-                            <td>{{ ($ticket->is_seatable == 1) ? "True" : "False"  }}</td>
                             <td title="{{ $ticket->availableAt->diffForHumans() }}">{{ $ticket->availableAt }}</td>
                             <td title="{{ $ticket->unavailableAt->diffForHumans() }}">{{ $ticket->unavailableAt }}</td>
                             <td><a href="{{ route('events.admin.tickets.edit', ['id' => $ticket->id ]) }}">Edit</a></td>

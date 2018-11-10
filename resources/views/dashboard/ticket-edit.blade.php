@@ -62,21 +62,6 @@
                         </span>
                     @endif
                 </div>
-                <div class="form-group{{ $errors->has('is_seatable') ? ' is-invalid' : '' }}">
-
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox" name="is_seatable" value="0" {{ ($event->is_seatable == 0) ? "checked" : ""  }}>
-                            Is seatable?
-                        </label>
-                    </div>
-
-                    @if ($errors->has('is_seatable'))
-                        <span class="invalid-feedback">
-                            {{ $errors->first('is_seatable') }}
-                        </span>
-                    @endif
-                </div>
                 <div class="form-group{{ $errors->has('maxAmountPerTransaction') ? ' is-invalid' : '' }}">
                     <label for="maxAmountPerTransaction">Max ticket amount per transaction</label>
                     <input type="text" class="form-control" id="maxAmountPerTransaction" name="maxAmountPerTransaction" value="{{ $ticket->maxAmountPerTransaction }}">

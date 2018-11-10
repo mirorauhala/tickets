@@ -31,7 +31,6 @@ class TicketRequest extends FormRequest
             'maxAmountPerTransaction' => 'required',
             'availableAt'             => 'required',
             'unavailableAt'           => 'required',
-            'is_seatable'             => 'required',
         ];
     }
 }

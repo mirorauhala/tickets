@@ -16,7 +16,6 @@ class TicketTransformer extends TransformerAbstract
             'price_pretty'            => money($ticket->price, 'EUR'),
             'vat'                     => $ticket->vat,
             'maxAmountPerTransaction' => $ticket->maxAmountPerTransaction,
-            'is_seatable'             => $ticket->is_seatable,
             'event_id'                => $ticket->event_id,
         ];
     }

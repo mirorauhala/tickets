@@ -76,14 +76,6 @@
                         </span>
                     @endif
                 </div>
-                <div class="form-group{{ $errors->has('is_seatable') ? ' is-invalid' : '' }}">
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox" name="is_seatable" value="0" {{ ($event->is_seatable == 0) ? "checked" : ""  }}>
-                            Is seatable?
-                        </label>
-                    </div>
-                </div>
                 <div class="form-group{{ $errors->has('availableAt') ? ' is-invalid' : '' }}">
                     <label for="availableAt">Sales start date</label>
                     <input type="text" class="form-control" id="availableAt" name="availableAt" value="{{ \Carbon\Carbon::now() }}">

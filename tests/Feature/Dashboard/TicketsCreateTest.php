@@ -28,7 +28,6 @@ class TicketsCreateTest extends TestCase
             'maxAmountPerTransaction' => 5,
             'availableAt'             => \Carbon\Carbon::now(),
             'unavailableAt'           => \Carbon\Carbon::now()->addWeek(),
-            'is_seatable'             => 0,
         ];
     }
 
@@ -123,17 +122,5 @@ class TicketsCreateTest extends TestCase
 
         $this->response->assertRedirect();
         $this->response->assertSessionHasErrors(['unavailableAt']);
-    }
-
-    /** @test */
-    public function ticket_is_seatable_is_required()
-    {
-        $this->fieldOverrides = [
-            'is_seatable' => '',
-        ];
-        $this->actingAs($this->user)->doRequest('post');
-
-        $this->response->assertRedirect();
-        $this->response->assertSessionHasErrors(['is_seatable']);
     }
 }
