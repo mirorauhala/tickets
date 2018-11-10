@@ -18,13 +18,13 @@
         <div class="col-md-9">
             <form method="post" action="{{ route('dashboard.tickets.view', [$event, $ticket]) }}">
                 {{ csrf_field() }}
-                <div class="form-group{{ $errors->has('ticket_name') ? ' is-invalid' : '' }}">
-                    <label for="ticket_name">Ticket name</label>
-                    <input type="text" class="form-control{{ $errors->has('ticket_name') ? ' is-invalid' : '' }}" id="ticket_name" name="ticket_name" value="{{ $ticket->name }}">
+                <div class="form-group{{ $errors->has('name') ? ' is-invalid' : '' }}">
+                    <label for="name">Ticket name</label>
+                    <input type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" id="ticket_name" name="name" value="{{ $ticket->name }}">
 
-                    @if ($errors->has('ticket_name'))
+                    @if ($errors->has('name'))
                         <span class="invalid-feedback">
-                            {{ $errors->first('ticket_name') }}
+                            {{ $errors->first('name') }}
                         </span>
                     @endif
                 </div>
