@@ -30,7 +30,7 @@ class TicketController extends Controller
     {
         $this->authorize('update', $event);
 
-        return view('dashboard.tickets')
+        return view('dashboard.tickets.index')
             ->with([
                 'event'   => $event,
                 'tickets' => $event->tickets,
@@ -48,7 +48,7 @@ class TicketController extends Controller
     {
         $this->authorize('update', $event);
 
-        return view('dashboard.ticket-create')
+        return view('dashboard.tickets.create')
             ->with([
                 'event' => $event,
             ]);
@@ -94,7 +94,7 @@ class TicketController extends Controller
     {
         $this->authorize('update', $event);
 
-        return view('dashboard.ticket-edit')
+        return view('dashboard.tickets.edit')
             ->with([
                 'event'  => $event,
                 'ticket' => $ticket,
