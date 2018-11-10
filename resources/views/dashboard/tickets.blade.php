@@ -25,7 +25,6 @@
                             <th scope="col">{{ tra('dashboard.tickets.table.vat') }}</th>
                             <th scope="col">{{ tra('dashboard.tickets.table.in-sale') }}</th>
                             <th scope="col">{{ tra('dashboard.tickets.table.off-sale') }}</th>
-                            <th scope="col">{{ tra('dashboard.tickets.table.seatable') }}</th>
                             <th scope="col">{{ tra('dashboard.tickets.table.quota') }}</th>
                             <th scope="col">{{ tra('dashboard.tickets.table.edit') }}</th>
                         </tr>
@@ -38,7 +37,6 @@
                                 <td>{{ $ticket->vat }}</td>
                                 <td>{{ $ticket->availableAt }}</td>
                                 <td>{{ $ticket->unavailableAt }}</td>
-                                <td>{{ $ticket->seatable ? 'True' : 'False' }}</td>
                                 <td>{{ $ticket->reserved }}</td>
                                 <td><a href="{{ route('dashboard.tickets.view', [$event, $ticket]) }}">Edit</a></td>
                             </tr>

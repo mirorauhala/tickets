@@ -14,7 +14,6 @@
                         <td>VAT</td>
                         <td>Amount of tickets reserved</td>
                         <td>Max. transaction amount?</td>
-                        <td>Is seatable?</td>
                         <td>Available at</td>
                         <td>Unavailable at</td>
                         <td>Action</td>

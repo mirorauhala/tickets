@@ -40,7 +40,6 @@ class EventTicketsPage extends Page
             '@ticket_vat'               => '#ticket_vat',
             '@ticket_reserved'          => '#ticket_reserved',
             '@ticket_max'               => '#ticket_max',
-            '@ticket_seatable'          => '#ticket_seatable',
             '@ticket_sleepable'         => '#ticket_sleepable',
             '@ticket_availableAt'       => '#ticket_availableAt',
             '@ticket_unavailableAt'     => '#ticket_unavailableAt',

@@ -44,7 +44,6 @@ return [
             'vat'      => 'VAT',
             'in-sale'  => 'In sale',
             'off-sale' => 'Off sale',
-            'seatable' => 'Seatable',
             'quota'    => 'Quota',
             'edit'     => 'Edit',
         ],
