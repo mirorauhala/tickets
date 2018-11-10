@@ -16,6 +16,7 @@
         </div>
 
         <div class="col-md-9">
+            @include('partials/messages/flashbox')
             <form method="post" action="{{ route('dashboard.maps.edit', [$event, $map]) }}">
                 {{ csrf_field() }}
                 <div class="form-group{{ $errors->has('name') ? ' is-invalid' : '' }}">
