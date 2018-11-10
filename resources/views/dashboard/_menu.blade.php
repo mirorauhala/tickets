@@ -32,9 +32,6 @@
         @endif
     </li>
     <li class="nav-item">
-        <a class="nav-link{{ active('dashboard.seats*') }}" href="{{ route('dashboard.seats', $event) }}">Seats</a>
-    </li>
-    <li class="nav-item">
         <a class="nav-link{{ active('dashboard.settings*') }}" href="{{ route('dashboard.settings', $event) }}">Settings</a>
     </li>
 </ul>
