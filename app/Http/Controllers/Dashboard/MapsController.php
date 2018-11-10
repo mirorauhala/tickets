@@ -30,7 +30,7 @@ class MapsController extends Controller
     {
         $this->authorize('update', $event);
 
-        return view('dashboard.maps')
+        return view('dashboard.maps.index')
             ->with([
                 'event' => $event,
                 'maps'  => $event->maps,
@@ -48,7 +48,7 @@ class MapsController extends Controller
     {
         $this->authorize('update', $event);
 
-        return view('dashboard.map-create')
+        return view('dashboard.maps.create')
             ->with([
                 'event'  => $event,
             ]);
@@ -88,7 +88,7 @@ class MapsController extends Controller
     {
         $this->authorize('update', $event);
 
-        return view('dashboard.map-edit')
+        return view('dashboard.maps.edit')
             ->with([
                 'event' => $event,
                 'map'   => $map,
