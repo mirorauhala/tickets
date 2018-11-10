@@ -73,4 +73,14 @@ class Event extends Model
     {
         return $query->where('is_featured', 1);
     }
+
+    /**
+     * Checks wether the event has active maps.
+     *
+     * @return boolean
+     */
+    public function hasActiveMaps()
+    {
+        return $this->maps()->where('active', true)->count() > 0;
+    }
 }

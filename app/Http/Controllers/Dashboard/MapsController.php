@@ -107,7 +107,8 @@ class MapsController extends Controller
         $this->authorize('update', $event);
 
         $map->update([
-            'name' => $request->name,
+            'name'   => $request->name,
+            'active' => optional($request)->active ? true : false,
         ]);
 
         return redirect()

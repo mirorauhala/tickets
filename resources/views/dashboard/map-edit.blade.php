@@ -29,6 +29,16 @@
                         </span>
                     @endif
                 </div>
+                @if(false === $event->hasActiveMaps() || $map->active)
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="true" name="active" id="active"{{ $map->active ? ' checked' : '' }}>
+                            <label class="form-check-label" for="active">
+                                Set as currently active
+                            </label>
+                        </div>
+                    </div>
+                @endif
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary px-4">{{ tra('form.button.update') }}</button>
                 </div>
