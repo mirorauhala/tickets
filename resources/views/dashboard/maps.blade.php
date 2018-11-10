@@ -33,7 +33,7 @@
                                 <td>{{ $map->name }}</td>
                                 <td>{{ $map->seats()->count() }}</td>
                                 <td>{{ $map->active ? 'Yes' : 'No'}}</td>
-                                <td><a href="{{ route('dashboard.maps.edit', [$event, $map]) }}"></a></td>
+                                <td><a href="{{ route('dashboard.maps.edit', [$event, $map]) }}">Edit</a></td>
                             </tr>
                         @endforeach
                     </tbody>
