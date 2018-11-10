@@ -6,8 +6,8 @@
 <div class="container h-100">
     <div class="row align-items-center h-25">
         <div class="col-md-12">
-            <h1>Dashboard for {{ $event->name }}</h1>
-            <p class="lead">All tickets for this event.</p>
+            <p class="lead mb-0">{{ $event->name }}</p>
+            <h1 class="mt-0 text-uppercase">Tickets / Create</h1>
         </div>
     </div>
     <div class="row">
