@@ -105,10 +105,20 @@ class TicketController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Event $event, Ticket $ticket)
+    public function update(Event $event, Ticket $ticket, TicketRequest $request)
     {
         $this->authorize('update', $event);
 
-        return view('dashboard.ticket-edit')
+        $ticket->update([
+            'name'                    => $request->name,
+            'price'                   => $request->price,
+            'vat'                     => $request->vat,
+            'reserved'                => $request->reserved,
+            'maxAmountPerTransaction' => $request->maxAmountPerTransaction,
+            'availableAt'             => $request->availableAt,
+            'unavailableAt'           => $request->unavailableAt,
+        ]);
+
             ->with([
                 'event'  => $event,
                 'ticket' => $ticket,
