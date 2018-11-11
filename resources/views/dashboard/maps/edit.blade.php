@@ -32,7 +32,7 @@
                 @if(false === $event->hasActiveMaps() || $map->active)
                     <div class="form-group">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="true" name="active" id="active"{{ $map->active ? ' checked' : '' }}>
+                            <input class="form-check-input" type="checkbox" value="1" name="active" id="active"{{ $map->active ? ' checked' : '' }}>
                             <label class="form-check-label" for="active">
                                 Set as currently active
                             </label>
