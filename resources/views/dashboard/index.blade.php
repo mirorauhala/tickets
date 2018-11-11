@@ -3,8 +3,8 @@
 @section('base.title', 'Featured')
 
 @section('base.content')
-<div class="container h-100">
-    <div class="row align-items-center h-25">
+<div class="container">
+    <div class="row pb-5">
         <div class="col-md-10">
             <h1>Pick an event to manage</h1>
             <p class="lead">Start by choosing an event.</p>
