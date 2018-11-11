@@ -12,3 +12,9 @@ steps:
     - php artisan key:generate
     - php artisan migrate
     - ./vendor/bin/phpunit
+
+services:
+- name: database
+  image: mariadb:10.3
+  environment:
+    MYSQL_ROOT_PASSWORD = root
