@@ -14,6 +14,16 @@ steps:
     - php artisan migrate
     - ./vendor/bin/phpunit
 
+- name: ssh
+  image: appleboy/drone-ssh
+  host: mirorauhala.fi
+  username: drone
+  secrets: [ SSH_DRONE_PASS ]
+  port: 22
+  script:
+    - echo hello
+    - echo world
+
 services:
 - name: database
   image: mariadb
