@@ -26,7 +26,8 @@ class MapEditTest extends TestCase
         ]);
         $this->user->events()->save($this->event);
         $this->fields = [
-            'name' => 'New map name',
+            'name'   => 'New map name',
+            'active' => 1,
         ];
 
         $this->uri = route('dashboard.maps.edit', [$this->event, $this->map]);
@@ -35,11 +36,43 @@ class MapEditTest extends TestCase
     /** @test */
     public function user_can_edit_maps()
     {
-        $this->withoutExceptionHandling();
         $this->actingAs($this->user)->doRequest('post');
 
         $this->response->assertRedirect();
         $this->assertDatabaseHas('maps', array_merge($this->map->toArray(), $this->fields()));
+    }
+
+    /** @test */
+    public function map_name_is_required()
+    {
+        $this->fieldOverrides = [
+            'name' => '',
+        ];
+        $this->actingAs($this->user)->doRequest('post');
+
+        $this->response->assertSessionHasErrors(['name']);
+    }
+
+    /** @test */
+    public function active_map_checkbox_can_be_unticked()
+    {
+        $this->fieldOverrides = [
+            'active' => 0,
+        ];
+        $this->actingAs($this->user)->doRequest('post');
+
+        $this->response->assertSessionHasNoErrors();
+    }
+
+    /** @test */
+    public function active_map_checkbox_must_be_able_to_be_cast_as_boolean()
+    {
+        $this->fieldOverrides = [
+            'active' => null,
+        ];
+        $this->actingAs($this->user)->doRequest('post');
+
+        $this->response->assertSessionHasErrors(['active']);
     }
 
     /** @test */
