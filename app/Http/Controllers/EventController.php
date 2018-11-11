@@ -17,8 +17,22 @@ class EventController extends Controller
     {
         $events = Event::featured()->get();
 
-        // return event and tickets
-        return view('featured')
+        return view('events.featured')
+            ->with([
+                'events' => $events,
+            ]);
+    }
+
+    /**
+     * Show all events.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function all()
+    {
+        $events = Event::paginate(15)->all();
+
+        return view('events.all')
             ->with([
                 'events' => $events,
             ]);
@@ -43,7 +57,7 @@ class EventController extends Controller
             return $event->tickets()->purchasable()->orderByPrice()->get();
         });
 
-        return view('events.index')
+        return view('events.view')
             ->with([
                 'event'   => $event,
                 'tickets' => $tickets,

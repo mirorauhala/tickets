@@ -19,6 +19,7 @@ Auth::routes();
 |--------------------------------------------------------------------------
 */
 Route::get('/', 'EventController@index')->name('events');
+Route::get('/all', 'EventController@all')->name('events.all');
 Route::get('/tickets', 'User\TicketController@index')->name('tickets');
 Route::get('/tickets/redeem', 'User\TicketController@showRedeem')->name('tickets.redeem');
 Route::post('/tickets/redeem', 'User\TicketController@processRedeemCode');

@@ -1,7 +1,7 @@
 <nav class="menu">
     <ul class="menu__links">
         <li class="menu__item">
-            <a class="menu__link{{ active('events') }}" href="{{ route('events') }}">{{ tra('nav.featured') }} <span class="sr-only">(current)</span></a>
+            <a class="menu__link{{ active('events*') }}" href="{{ route('events') }}">{{ tra('nav.featured') }} <span class="sr-only">(current)</span></a>
         </li>
         <li class="menu__item">
             <a class="menu__link{{ active('tickets') }}" href="{{ route('tickets') }}">{{ tra('nav.tickets') }}</a>
