@@ -20,7 +20,7 @@ steps:
   username: drone
   secrets:
   - source: ssh_password
-    target: ssh_password
+    target: password
 
   port: 22
   script:
