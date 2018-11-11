@@ -19,8 +19,7 @@ steps:
   host: mirorauhala.fi
   username: drone
   secrets:
-  - source: ssh_password
-    target: password
+  - password: ssh_password
   port: 22
   script:
     - echo hello
