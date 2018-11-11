@@ -78,7 +78,8 @@ Route::get('/dashboard/{event}/maps/{map}', 'Dashboard\MapsController@show')->na
 Route::post('/dashboard/{event}/maps/{map}', 'Dashboard\MapsController@update');
 
 // Settings
-Route::get('/dashboard/{event}/settings', 'Dashboard\DashboardController@settings')->name('dashboard.settings');
+Route::get('/dashboard/{event}/settings', 'Dashboard\EventController@show')->name('dashboard.settings');
+Route::post('/dashboard/{event}/settings', 'Dashboard\EventController@update');
 
 /*
 |--------------------------------------------------------------------------

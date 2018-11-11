@@ -18,20 +18,20 @@
         <div class="col-md-9">
             <form method="post" action="{{ route('dashboard.settings', $event) }}">
                 {{ csrf_field() }}
-                <div class="form-group{{ $errors->has('event_name') ? ' is-invalid' : '' }}">
-                    <label for="event_name">{{ tra('event.admin.pages.settings.form.event-name') }}</label>
-                    <input type="text" class="form-control{{ $errors->has('event_name') ? ' is-invalid' : '' }}" id="event_name" name="event_name" placeholder="{{ tra('event.admin.pages.settings.form.event-name-placeholder') }}" value="{{ $event->name }}">
+                <div class="form-group{{ $errors->has('name') ? ' is-invalid' : '' }}">
+                    <label for="name">{{ tra('event.admin.pages.settings.form.event-name') }}</label>
+                    <input type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" id="name" name="name" placeholder="{{ tra('event.admin.pages.settings.form.event-name-placeholder') }}" value="{{ $event->name }}">
 
-                    @if ($errors->has('event_name'))
+                    @if ($errors->has('name'))
                         <span class="invalid-feedback">
-                            {{ $errors->first('event_name') }}
+                            {{ $errors->first('name') }}
                         </span>
                     @endif
                 </div>
 
                 <div class="form-group{{ $errors->has('slug') ? ' is-invalid' : '' }}">
                     <label for="slug">{{ tra('event.admin.pages.settings.form.event-url') }}</label>
-                    <input type="text" class="form-control" id="slug" name="slug" value="{{ $event->url }}">
+                    <input type="text" class="form-control" id="slug" name="slug" value="{{ $event->slug }}">
 
                     @if ($errors->has('slug'))
                         <span class="invalid-feedback">
@@ -39,37 +39,37 @@
                         </span>
                     @endif
                 </div>
-                <div class="form-group{{ $errors->has('event_location') ? ' is-invalid' : '' }}">
-                    <label for="event_location">{{ tra('event.admin.pages.settings.form.event-location') }}</label>
-                    <input type="text" class="form-control" id="event_location" name="event_location" placeholder="{{ tra('event.admin.pages.settings.form.event-location-placeholder') }}" value="{{ $event->location }}">
+                <div class="form-group{{ $errors->has('location') ? ' is-invalid' : '' }}">
+                    <label for="location">{{ tra('event.admin.pages.settings.form.event-location') }}</label>
+                    <input type="text" class="form-control" id="location" name="location" placeholder="{{ tra('event.admin.pages.settings.form.event-location-placeholder') }}" value="{{ $event->location }}">
 
-                    @if ($errors->has('event_location'))
+                    @if ($errors->has('location'))
                         <span class="invalid-feedback">
-                            {{ $errors->first('event_location') }}
+                            {{ $errors->first('location') }}
                         </span>
                     @endif
                 </div>
-                <div class="form-group{{ $errors->has('event_url') ? ' is-invalid' : '' }}">
-                    <label for="event_url">{{ tra('event.admin.pages.settings.form.event-url') }}</label>
-                    <input type="url" class="form-control" id="event_url" name="event_url" placeholder="{{ tra('event.admin.pages.settings.form.event-url-placeholder') }}" value="{{ $event->url }}">
+                <div class="form-group{{ $errors->has('url') ? ' is-invalid' : '' }}">
+                    <label for="url">{{ tra('event.admin.pages.settings.form.event-url') }}</label>
+                    <input type="url" class="form-control" id="url" name="url" placeholder="{{ tra('event.admin.pages.settings.form.event-url-placeholder') }}" value="{{ $event->url }}">
 
-                    @if ($errors->has('event_url'))
+                    @if ($errors->has('url'))
                         <span class="invalid-feedback">
-                            {{ $errors->first('event_url') }}
+                            {{ $errors->first('url') }}
                         </span>
                     @endif
                 </div>
-                <div class="form-group{{ $errors->has('event_currency') ? ' is-invalid' : '' }}">
-                    <label for="event_currency">{{ tra('event.admin.pages.settings.form.event-currency') }}</label>
-                    <input type="text" class="form-control" id="event_currency" name="event_currency" placeholder="{{ tra('event.admin.pages.settings.form.event-currency-placeholder') }}" value="{{ $event->currency }}" disabled>
+                <div class="form-group{{ $errors->has('currency') ? ' is-invalid' : '' }}">
+                    <label for="currency">{{ tra('event.admin.pages.settings.form.event-currency') }}</label>
+                    <input type="text" class="form-control" id="currency" name="currency" value="EUR" placeholder="{{ tra('event.admin.pages.settings.form.event-currency-placeholder') }}" value="{{ $event->currency }}" disabled>
 
                     <span class="invalid-feedback">
                         Not editable at this moment.
                     </span>
 
-                    @if ($errors->has('event_currency'))
+                    @if ($errors->has('currency'))
                         <span class="invalid-feedback">
-                            {{ $errors->first('event_currency') }}
+                            {{ $errors->first('currency') }}
                         </span>
                     @endif
                 </div>

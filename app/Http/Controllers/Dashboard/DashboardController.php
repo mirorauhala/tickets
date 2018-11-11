@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Models\Event;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class DashboardController extends Controller
@@ -72,37 +71,5 @@ class DashboardController extends Controller
                 'event'  => $event,
                 'orders' => $event->orders,
             ]);
-    }
-
-    /**
-     * Display event settings.
-     *
-     * @param App\Models\Event $event
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function settings(Event $event)
-    {
-        $this->authorize('update', $event);
-
-        return view('dashboard.settings')
-            ->with([
-                'event' => $event,
-            ]);
-    }
-
-    /**
-     * Store event settings.
-     *
-     * @param App\Models\Event $event
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Event $event, Request $request)
-    {
-        $this->authorize('update', $event);
-
-        return redirect()
-            ->route('dashboard.settings', ['event' => $event]);
     }
 }
