@@ -5,6 +5,7 @@ steps:
 - name: tickets
   image: laradock/workspace:2.2-7.2
   commands:
+    - sleep 30
     - php -v
     - composer -V
     - cp .env.example .env
