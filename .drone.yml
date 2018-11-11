@@ -18,7 +18,7 @@ steps:
   image: appleboy/drone-ssh
   host: mirorauhala.fi
   username: drone
-  secrets: [ SSH_DRONE_PASS ]
+  secrets: [ ssh_password ]
   port: 22
   script:
     - echo hello
