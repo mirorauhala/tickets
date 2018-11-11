@@ -11,6 +11,7 @@ return [
     */
 
     'button.submit'             => 'Lähetä',
+    'button.view'               => 'Selaa',
     'button.create'             => 'Luo',
     'button.update'             => 'Päivitä',
     'button.change'             => 'Vaihda',

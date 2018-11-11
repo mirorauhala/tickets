@@ -8,11 +8,10 @@ return [
     */
 
     'nav' => [
-        'customers' => 'Details',
+        'customers' => 'Customers',
         'tickets'   => 'Tickets',
         'orders'    => 'Orders',
         'maps'      => 'Maps',
-        'seats'     => 'Seats',
         'settings'  => 'Settings',
     ],
 

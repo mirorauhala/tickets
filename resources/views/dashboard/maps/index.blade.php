@@ -1,13 +1,13 @@
 @extends('layouts.base')
 
-@section('base.title', 'Featured')
+@section('base.title', tra('dashboard.nav.maps'))
 
 @section('base.content')
 <div class="container">
     <div class="row pb-5">
         <div class="col-md-12">
             <p class="lead mb-0">{{ $event->name }}</p>
-            <h1 class="mt-0 text-uppercase">Maps</h1>
+            <h1 class="mt-0 text-uppercase">{{ tra('dashboard.nav.maps') }}</h1>
         </div>
     </div>
     <div class="row">

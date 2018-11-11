@@ -7,7 +7,7 @@
     <div class="row pb-5">
         <div class="col-md-12">
             <p class="lead mb-0">{{ $event->name }}</p>
-            <h1 class="mt-0 text-uppercase">Settings</h1>
+            <h1 class="mt-0 text-uppercase">{{ tra('dashboard.nav.settings') }}</h1>
         </div>
     </div>
     <div class="row">
