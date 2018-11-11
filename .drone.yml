@@ -21,7 +21,6 @@ steps:
   secrets:
   - source: ssh_password
     target: password
-
   port: 22
   script:
     - echo hello
