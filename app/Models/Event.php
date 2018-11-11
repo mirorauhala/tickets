@@ -15,7 +15,6 @@ class Event extends Model
         'name',
         'slug',
         'location',
-        'details',
         'url',
         'date',
         'is_visible',
