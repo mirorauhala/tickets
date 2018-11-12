@@ -25,6 +25,11 @@
         </main>
     </div>
 
+
+    <footer>
+        {{ current_commit() }}
+    </footer>
+
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}"></script>
 </body>

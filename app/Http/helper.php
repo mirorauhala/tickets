@@ -2,6 +2,7 @@
 
 use Money\Money;
 use Money\Currency;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Log;
 use Money\Currencies\ISOCurrencies;
 use Illuminate\Support\Facades\Route;
@@ -84,5 +85,19 @@ if (! function_exists('tra')) {
         }
 
         return $key;
+    }
+}
+
+/*
+ * Returns the current git HEAD SHA1 hash.
+ *
+ * @return string
+ */
+if (! function_exists('current_commit')) {
+    function current_commit()
+    {
+        if (App::environment(['local', 'staging'])) {
+            return shell_exec('git rev-parse HEAD');
+        }
     }
 }
