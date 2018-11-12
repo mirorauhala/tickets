@@ -1,7 +1,7 @@
 #!/bin/bash
 php artisan down
 composer install
-php artisan migrate
+php artisan migrate:refresh
 php artisan db:seed
 php artisan config:cache
 php artisan view:cache
