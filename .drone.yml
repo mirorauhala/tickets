@@ -5,14 +5,14 @@ steps:
 - name: tickets
   image: laradock/workspace:2.2-7.2
   commands:
-    - sleep 30
-    - php -v
-    - composer -V
-    - cp .env.example .env
-    - composer install --prefer-dist
-    - php artisan key:generate
-    - php artisan migrate
-    - ./vendor/bin/phpunit
+  - sleep 30
+  - php -v
+  - composer -V
+  - cp .env.example .env
+  - composer install --prefer-dist
+  - php artisan key:generate
+  - php artisan migrate
+  - ./vendor/bin/phpunit
 
 - name: ssh
   image: appleboy/drone-ssh
@@ -23,8 +23,11 @@ steps:
       from_secret: ssh_password
   port: 22
   script:
-    - cd /var/www/tickets
-    - git pull origin master
+  - cd /var/www/tickets
+  - git pull origin develop
+  trigger:
+    branch:
+    - develop
 services:
 - name: database
   image: mariadb
