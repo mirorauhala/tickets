@@ -23,9 +23,8 @@ steps:
       from_secret: ssh_password
   port: 22
   script:
-    - echo hello
-    - echo world
-
+    - cd /var/www/tickets
+    - git pull origin master
 services:
 - name: database
   image: mariadb
