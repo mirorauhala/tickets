@@ -15,7 +15,7 @@
     <meta name="theme-color" content="#2A5CFF">
     <link rel="manifest" href="/manifest.json">
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800,800i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,700,800,800i" rel="stylesheet">
 </head>
 <body>
     <div id="app" class="h-100">
