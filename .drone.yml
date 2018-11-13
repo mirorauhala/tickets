@@ -25,6 +25,7 @@ steps:
   script:
   - cd /var/www/tickets
   - git pull
+  - ./deploy.sh
   trigger:
     branch:
     - develop
