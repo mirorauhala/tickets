@@ -18,9 +18,9 @@
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,700,800,800i" rel="stylesheet">
 </head>
 <body>
-    <div id="app" class="h-100">
+    <div id="app">
         @include('partials._navigation')
-        <main class="py-5 h-100">
+        <main class="py-5">
             @yield('base.content')
         </main>
     </div>
