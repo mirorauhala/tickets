@@ -23,9 +23,7 @@ steps:
       from_secret: ssh_password
   port: 22
   script:
-  - cd /var/www/tickets
-  - git pull
-  - ./deploy.sh
+  - /var/www/tickets/deploy.sh
   trigger:
     branch:
     - develop

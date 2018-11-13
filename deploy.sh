@@ -1,4 +1,6 @@
 #!/bin/bash
+touch hasthisbeenrun
+git pull
 php artisan down
 composer install
 php artisan migrate:refresh
