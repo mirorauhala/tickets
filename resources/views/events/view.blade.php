@@ -6,7 +6,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1>{{ $event->name }}</h1>
+            <h1 class="text-uppercase">{{ $event->name }}</h1>
             <p class="lead">{{ $event->location }} {{ $event->date }}</p>
         </div>
     </div>

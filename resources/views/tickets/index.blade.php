@@ -6,7 +6,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1>{{ tra('tickets.title') }}</h1>
+            <h1 class="text-uppercase">{{ tra('tickets.title') }}</h1>
             <p class="lead">{{ tra('tickets.lead') }}</p>
 
             @include('tickets._menu')

@@ -6,7 +6,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1>{{ tra('tickets.title')}} <small class="text-muted"> / Share ticket {{ $item->title }}</small></h1>
+            <h1 class="text-uppercase">{{ tra('tickets.title')}} <small class="text-muted"> / Share ticket {{ $item->title }}</small></h1>
             <p class="lead">{{ tra('tickets.lead-share')}}</p>
 
             @include('tickets._menu')
