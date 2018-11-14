@@ -8,7 +8,7 @@ steps:
   - sleep 30
   - php -v
   - composer -V
-  - cp .env.example .env
+  - cp .env.ci .env
   - composer install --prefer-dist
   - php artisan key:generate
   - php artisan migrate
