@@ -39,7 +39,7 @@ class MapEditTest extends TestCase
         $this->actingAs($this->user)->doRequest('post');
 
         $this->response->assertRedirect();
-        $this->assertDatabaseHas('maps', array_merge($this->map->toArray(), $this->fields()));
+        $this->assertDatabaseHas('maps', $this->fields());
     }
 
     /** @test */

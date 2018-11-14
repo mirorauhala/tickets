@@ -25,7 +25,7 @@ class UserLanguageTest extends TestCase
         $this->actingAs($this->user)->doRequest('post');
 
         $this->response->assertSessionMissing('errors');
-        $this->assertDatabaseHas('users', array_merge($this->user->toArray(), $this->fields()));
+        $this->assertDatabaseHas('users', $this->fields());
     }
 
     /** @test */
@@ -38,7 +38,7 @@ class UserLanguageTest extends TestCase
             ];
             $this->actingAs($this->user)->doRequest('post');
             $this->response->assertSessionMissing(['language']);
-            $this->assertDatabaseHas('users', array_merge($this->user->toArray(), $this->fields()));
+            $this->assertDatabaseHas('users', $this->fields());
         }
     }
 
@@ -52,6 +52,6 @@ class UserLanguageTest extends TestCase
         $this->actingAs($this->user)->doRequest('post');
 
         $this->response->assertSessionHasErrors(['language']);
-        $this->assertDatabaseMissing('users', array_merge($this->user->toArray(), $this->fields()));
+        $this->assertDatabaseMissing('users', $this->fields());
     }
 }
