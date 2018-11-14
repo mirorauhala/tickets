@@ -4,7 +4,7 @@
 
 @section('base.content')
 <div class="container h-100">
-    <div class="row py-5 justify-content-center align-items-center">
+    <div class="row pb-5 pt-4">
         <div class="col-md-12">
             <p class="mb-2"><a href="{{ route('orders') }}" class="text-muted">&laquo; {{ tra('order.back') }}</a></p>
             <h1 class="text-uppercase">{{ tra('order.title') }}<small class="text-muted"> / {{ $order->reference }}</small></h1>

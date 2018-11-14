@@ -4,7 +4,7 @@
 
 @section('base.content')
 <div class="container h-100">
-    <div class="row py-5 justify-content-center align-items-center">
+    <div class="row pb-5 pt-4">
         <div class="col-md-12">
             <h1 class="text-uppercase">{{ tra('bank.title') }}</h1>
             <p class="lead">{{ tra('bank.lead') }}</p>

@@ -4,7 +4,7 @@
 
 @section('base.content')
 <div class="container">
-    <div class="row">
+    <div class="row pb-5 pt-4">
         <div class="col-md-12">
             <h1 class="text-uppercase">{{ $event->name }}</h1>
             <p class="lead">{{ $event->location }} {{ $event->date }}</p>
