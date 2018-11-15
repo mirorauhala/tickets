@@ -25,7 +25,6 @@ class PreferredLanguage
      */
     public function handle($request, Closure $next)
     {
-
         // check if the user is logged in
         if (Auth::check()) {
             // get the locale from database and set to app
