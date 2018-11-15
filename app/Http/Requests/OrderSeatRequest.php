@@ -2,7 +2,6 @@
 
 namespace App\Http\Requests;
 
-use App\Models\Seat;
 use Illuminate\Foundation\Http\FormRequest;
 
 class OrderSeatRequest extends FormRequest

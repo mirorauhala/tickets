@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Order;
 
 use App\Models\Seat;
 use App\Models\Event;
-use App\Models\Order;
 use App\Models\OrderItem;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\OrderSeatRequest;
