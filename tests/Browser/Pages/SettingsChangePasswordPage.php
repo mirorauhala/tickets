@@ -31,7 +31,8 @@ class SettingsChangePasswordPage extends Page
      *
      * @return void
      */
-    public function changePassword(Browser $browser,
+    public function changePassword(
+        Browser $browser,
         $current_password = null,
         $new_password = null,
         $new_password_confirmation = null

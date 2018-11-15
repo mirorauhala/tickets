@@ -31,7 +31,8 @@ class SettingsProfilePage extends Page
      *
      * @return void
      */
-    public function updateProfile(Browser $browser,
+    public function updateProfile(
+        Browser $browser,
         $firstName = null,
         $lastName = null,
         $email = null,

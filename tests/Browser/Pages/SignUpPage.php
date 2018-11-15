@@ -31,7 +31,8 @@ class SignUpPage extends Page
      *
      * @return void
      */
-    public function signUp(Browser $browser,
+    public function signUp(
+        Browser $browser,
         $firstName = null,
         $lastName = null,
         $email = null,
