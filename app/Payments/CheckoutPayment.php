@@ -160,7 +160,7 @@ class CheckoutPayment
             'MAC'           => 'required',
         ]);
 
-        $this->isValidated = !$validator->fails();
+        $this->isValidated = ! $validator->fails();
 
         return $validator;
     }
@@ -172,7 +172,7 @@ class CheckoutPayment
      */
     public function send()
     {
-        if (!$this->isValidated) {
+        if (! $this->isValidated) {
             return false;
         }
 
@@ -233,7 +233,7 @@ class CheckoutPayment
         // XML Error parsing
         $errors = libxml_get_errors();
 
-        if (!empty($errors)) {
+        if (! empty($errors)) {
             throw new \Exception('Error: ' . $response);
         }
 

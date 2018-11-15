@@ -17,7 +17,7 @@ abstract class RepositoryAbstract implements RepositoryInterface
 
     protected function resolveEntity()
     {
-        if (!method_exists($this, 'entity')) {
+        if (! method_exists($this, 'entity')) {
             throw new NoEntityDefinedException();
         }
 
@@ -33,7 +33,7 @@ abstract class RepositoryAbstract implements RepositoryInterface
     {
         $model = $this->entity->find($id);
 
-        if (!$model) {
+        if (! $model) {
             throw (new ModelNotFoundException())->setModel(
                 get_class($this->entity->getModel()),
                 $id
@@ -59,7 +59,7 @@ abstract class RepositoryAbstract implements RepositoryInterface
     {
         $model = $this->entity->where($column, $value)->first();
 
-        if (!$model) {
+        if (! $model) {
             throw (new ModelNotFoundException())->setModel(
                 get_class($this->entity->getModel())
             );
