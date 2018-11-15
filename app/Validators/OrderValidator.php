@@ -8,6 +8,7 @@ use App\Repositories\Contracts\OrderItemRepository;
 class OrderValidator
 {
     protected $seat;
+
     protected $orderItem;
 
     public function __construct(SeatRepository $seat, OrderItemRepository $orderItem)

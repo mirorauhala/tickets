@@ -13,6 +13,7 @@ class MapViewTest extends TestCase
     use RefreshDatabase;
 
     protected $map;
+
     protected $event;
 
     public function setUp()
