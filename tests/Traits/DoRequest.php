@@ -49,7 +49,7 @@ trait DoRequest
      */
     protected function fields()
     {
-        return (is_array($this->fields) ? $this->fieldOverrides() : []);
+        return is_array($this->fields) ? $this->fieldOverrides() : [];
     }
 
     /**
