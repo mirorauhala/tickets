@@ -234,7 +234,7 @@ class CheckoutPayment
         $errors = libxml_get_errors();
 
         if (!empty($errors)) {
-            throw new \Exception('Error: '.$response);
+            throw new \Exception('Error: ' . $response);
         }
 
         $this->response = $result;
