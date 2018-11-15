@@ -3,10 +3,10 @@
 namespace Tests\Browser\Tests\EventTests;
 
 use App\Models\User;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Tests\DuskTestCase;
 use Laravel\Dusk\Browser;
 use Tests\Browser\Pages\TicketsPage;
-use Tests\DuskTestCase;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class TicketTest extends DuskTestCase
 {

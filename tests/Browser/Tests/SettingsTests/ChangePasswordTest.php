@@ -3,11 +3,11 @@
 namespace Tests\Browser\Tests\SettingsTests;
 
 use App\Models\User;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Laravel\Dusk\Browser;
-use Tests\Browser\Pages\SettingsChangePasswordPage;
-use Tests\Browser\Pages\SignInPage;
 use Tests\DuskTestCase;
+use Laravel\Dusk\Browser;
+use Tests\Browser\Pages\SignInPage;
+use Tests\Browser\Pages\SettingsChangePasswordPage;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class ChangePasswordTest extends DuskTestCase
 {

@@ -3,8 +3,8 @@
 namespace App\Repositories\Eloquent;
 
 use App\Models\OrderItem;
-use App\Repositories\Contracts\OrderItemRepository;
 use App\Repositories\RepositoryAbstract;
+use App\Repositories\Contracts\OrderItemRepository;
 
 class EloquentOrderItemRepository extends RepositoryAbstract implements OrderItemRepository
 {

@@ -3,8 +3,8 @@
 namespace App\Repositories\Eloquent;
 
 use App\Models\Ticket;
-use App\Repositories\Contracts\TicketRepository;
 use App\Repositories\RepositoryAbstract;
+use App\Repositories\Contracts\TicketRepository;
 
 class EloquentTicketRepository extends RepositoryAbstract implements TicketRepository
 {

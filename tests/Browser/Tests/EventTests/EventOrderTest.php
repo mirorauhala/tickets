@@ -2,10 +2,10 @@
 
 namespace Tests\Browser\Tests\EventTests;
 
-use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Tests\DuskTestCase;
 use Laravel\Dusk\Browser;
 use Tests\Browser\Pages\EventOrdersPage;
-use Tests\DuskTestCase;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class EventOrderTest extends DuskTestCase
 {

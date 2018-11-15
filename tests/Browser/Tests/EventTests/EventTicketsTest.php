@@ -2,12 +2,12 @@
 
 namespace Tests\Browser\Tests\EventTests;
 
-use App\Models\Event;
 use App\Models\User;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
+use App\Models\Event;
+use Tests\DuskTestCase;
 use Laravel\Dusk\Browser;
 use Tests\Browser\Pages\EventTicketsPage;
-use Tests\DuskTestCase;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class EventTicketsTest extends DuskTestCase
 {

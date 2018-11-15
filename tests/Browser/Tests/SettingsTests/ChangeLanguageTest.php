@@ -3,10 +3,10 @@
 namespace Tests\Browser\Tests\SettingsTests;
 
 use App\Models\User;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Tests\DuskTestCase;
 use Laravel\Dusk\Browser;
 use Tests\Browser\Pages\SettingsChangeLanguagePage;
-use Tests\DuskTestCase;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class ChangeLanguageTest extends DuskTestCase
 {

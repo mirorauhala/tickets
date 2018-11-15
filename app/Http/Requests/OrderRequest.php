@@ -2,9 +2,9 @@
 
 namespace App\Http\Requests;
 
-use App\Rules\CheckTicketReservation;
-use App\Rules\NoPendingOrders;
 use App\Rules\TicketForSale;
+use App\Rules\NoPendingOrders;
+use App\Rules\CheckTicketReservation;
 use Illuminate\Foundation\Http\FormRequest;
 
 class OrderRequest extends FormRequest

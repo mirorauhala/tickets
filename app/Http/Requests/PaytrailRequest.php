@@ -1,6 +1,4 @@
-<?php
-
-namespace App\Http\Requests;
+<?php namespace App\Http\Requests;
 
 use App\Models\Ticket;
 use Illuminate\Foundation\Http\FormRequest;
@@ -43,10 +41,8 @@ class PaytrailRequest extends FormRequest
      */
     public function withValidator($validator)
     {
-
         // validate ticket amount
         $validator->after(function ($validator) {
-
             // make new PaytrailClient
             $client = new PaytrailClient(
                 env('PAYTRAIL_KEY', '13466'),
@@ -54,7 +50,7 @@ class PaytrailRequest extends FormRequest
             );
 
             $client->connect();
-            if (!$client->validateChecksum(
+            if (! $client->validateChecksum(
                     $validator->getData()['RETURN_AUTHCODE'],
                     $validator->getData()['ORDER_NUMBER'],
                     $validator->getData()['TIMESTAMP'],

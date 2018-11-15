@@ -2,10 +2,10 @@
 
 namespace App\Repositories\Eloquent;
 
-use App\Models\User;
-use App\Repositories\Contracts\UserRepository;
-use App\Repositories\RepositoryAbstract;
 use Auth;
+use App\Models\User;
+use App\Repositories\RepositoryAbstract;
+use App\Repositories\Contracts\UserRepository;
 
 class EloquentUserRepository extends RepositoryAbstract implements UserRepository
 {

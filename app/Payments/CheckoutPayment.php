@@ -2,8 +2,8 @@
 
 namespace App\Payments;
 
-use App\Exceptions\NullCheckoutCredentialsException;
 use Illuminate\Support\Facades\Validator;
+use App\Exceptions\NullCheckoutCredentialsException;
 
 class CheckoutPayment
 {

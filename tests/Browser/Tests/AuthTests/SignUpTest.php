@@ -3,10 +3,10 @@
 namespace Tests\Browser\Tests\AuthTests;
 
 use App\Models\User;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Tests\DuskTestCase;
 use Laravel\Dusk\Browser;
 use Tests\Browser\Pages\SignUpPage;
-use Tests\DuskTestCase;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class SignUpTest extends DuskTestCase
 {

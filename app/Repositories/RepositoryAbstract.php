@@ -3,8 +3,8 @@
 namespace App\Repositories;
 
 use App\Repositories\Contracts\RepositoryInterface;
-use App\Repositories\Exceptions\NoEntityDefinedException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use App\Repositories\Exceptions\NoEntityDefinedException;
 
 abstract class RepositoryAbstract implements RepositoryInterface
 {

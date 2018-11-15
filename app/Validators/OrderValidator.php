@@ -2,8 +2,8 @@
 
 namespace App\Validators;
 
-use App\Repositories\Contracts\OrderItemRepository;
 use App\Repositories\Contracts\SeatRepository;
+use App\Repositories\Contracts\OrderItemRepository;
 
 class OrderValidator
 {
