@@ -9,6 +9,7 @@
         "doctrine/dbal": "^2.7",
         "fideloper/proxy": "~4.0",
         "guzzlehttp/guzzle": "^6.3",
+        "itsgoingd/clockwork": "^3.0",
         "laravel/framework": "5.7.*",
         "laravel/tinker": "~1.0",
         "league/omnipay": "^3",
@@ -17,7 +18,8 @@
         "omnipay/stripe": "^3.0",
         "predis/predis": "^1.1",
         "sentry/sentry-laravel": "^0.10.0",
-        "spatie/laravel-fractal": "^5.4"
+        "spatie/laravel-fractal": "^5.4",
+        "spomky-labs/otphp": "^9.1"
     },
     "require-dev": {
         "filp/whoops": "~2.0",
@@ -25,7 +27,6 @@
         "nunomaduro/collision": "~2.0",
         "mockery/mockery": "1.2.*",
         "phpunit/phpunit": "~7.0",
-        "barryvdh/laravel-debugbar": "^3.1",
         "laravel/dusk": "~4.0"
     },
     "autoload": {
