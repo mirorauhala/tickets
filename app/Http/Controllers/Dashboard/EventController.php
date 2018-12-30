@@ -22,8 +22,8 @@ class EventController extends Controller
      * Display event settings.
      *
      * @param App\Models\Event $event
-     *
      * @return \Illuminate\Http\Response
+     * @throws \Illuminate\Auth\Access\AuthorizationException
      */
     public function show(Event $event)
     {
@@ -39,8 +39,8 @@ class EventController extends Controller
      * Store event settings.
      *
      * @param App\Models\Event $event
-     *
      * @return \Illuminate\Http\Response
+     * @throws \Illuminate\Auth\Access\AuthorizationException
      */
     public function update(Event $event, EventRequest $request)
     {

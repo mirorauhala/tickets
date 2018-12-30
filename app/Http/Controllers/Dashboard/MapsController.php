@@ -11,8 +11,6 @@ class MapsController extends Controller
 {
     /**
      * Create a new controller instance.
-     *
-     * @return \Illuminate\Http\Response
      */
     public function __construct()
     {
@@ -22,9 +20,9 @@ class MapsController extends Controller
     /**
      * Show listing of maps.
      *
-     * @param App\Models\Event $event
-     *
+     * @param Event $event
      * @return \Illuminate\Http\Response
+     * @throws \Illuminate\Auth\Access\AuthorizationException
      */
     public function index(Event $event)
     {
@@ -41,8 +39,8 @@ class MapsController extends Controller
      * Map creating view.
      *
      * @param App\Models\Event $event
-     *
      * @return \Illuminate\Http\Response
+     * @throws \Illuminate\Auth\Access\AuthorizationException
      */
     public function create(Event $event)
     {
@@ -58,8 +56,8 @@ class MapsController extends Controller
      * Storing a map.
      *
      * @param App\Models\Event $event
-     *
      * @return \Illuminate\Http\Response
+     * @throws \Illuminate\Auth\Access\AuthorizationException
      */
     public function store(Event $event, MapRequest $request)
     {
@@ -81,8 +79,8 @@ class MapsController extends Controller
      * Show a map.
      *
      * @param App\Models\Event $event
-     *
      * @return \Illuminate\Http\Response
+     * @throws \Illuminate\Auth\Access\AuthorizationException
      */
     public function show(Event $event, Map $map)
     {
@@ -99,8 +97,8 @@ class MapsController extends Controller
      * Update a map.
      *
      * @param App\Models\Event $event
-     *
      * @return \Illuminate\Http\Response
+     * @throws \Illuminate\Auth\Access\AuthorizationException
      */
     public function update(Event $event, Map $map, MapRequest $request)
     {

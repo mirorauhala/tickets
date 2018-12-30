@@ -9,8 +9,6 @@ class DashboardController extends Controller
 {
     /**
      * Create a new controller instance.
-     *
-     * @return \Illuminate\Http\Response
      */
     public function __construct()
     {
@@ -39,10 +37,9 @@ class DashboardController extends Controller
 
     /**
      * Display event customers.
-     *
-     * @param App\Models\Event $event
-     *
-     * @return \Illuminate\Http\Response
+     * @param Event $event
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @throws \Illuminate\Auth\Access\AuthorizationException
      */
     public function customers(Event $event)
     {
@@ -59,8 +56,8 @@ class DashboardController extends Controller
      * Show listing of orders.
      *
      * @param App\Models\Event $event
-     *
      * @return \Illuminate\Http\Response
+     * @throws \Illuminate\Auth\Access\AuthorizationException
      */
     public function orders(Event $event)
     {
