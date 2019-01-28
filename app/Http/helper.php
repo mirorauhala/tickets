@@ -97,7 +97,7 @@ if (! function_exists('current_commit')) {
     function current_commit()
     {
         if (App::environment(['local', 'staging'])) {
-            return shell_exec('git rev-parse HEAD');
+            return trim(shell_exec('git rev-parse HEAD'));
         }
     }
 }
