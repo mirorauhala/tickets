@@ -16,6 +16,8 @@
     <link rel="manifest" href="/manifest.json">
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,700,800,800i" rel="stylesheet">
+
+    <!-- SHA1: {{ current_commit() }} -->
 </head>
 <body>
     <div id="app">
@@ -24,13 +26,6 @@
             @yield('base.content')
         </main>
     </div>
-
-
-    <footer>
-        {{ current_commit() }}
-    </footer>
-
-    <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}"></script>
 </body>
 </html>
