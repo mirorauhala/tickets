@@ -15,11 +15,10 @@
     <meta name="theme-color" content="#2A5CFF">
     <link rel="manifest" href="/manifest.json">
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,700,800,800i" rel="stylesheet">
 
     <!-- SHA1: {{ current_commit() }} -->
 </head>
-<body>
+<body class="bg-light">
     <div id="app">
         @include('partials._navigation')
         <main class="py-5">
