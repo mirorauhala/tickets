@@ -34,7 +34,7 @@
             </form>
         @else
             <li class="nav-item">
-                <a class="nav-link{{ active('login') }}" href="{{ route('login') }}">LOG IN</a>
+                <a class="nav-link{{ active('login') }}" href="{{ route('login') }}">{{ tra('nav.sign-in') }}</a>
             </li>
         @endauth
         </ul>
