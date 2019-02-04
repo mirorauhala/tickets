@@ -39,6 +39,16 @@ class Event extends Model
     }
 
     /**
+     * Get users the event is associated with.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function users()
+    {
+        return $this->belongsToMany('App\Models\User');
+    }
+
+    /**
      * Get orders for an event.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
