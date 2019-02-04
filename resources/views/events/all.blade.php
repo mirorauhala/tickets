@@ -6,8 +6,7 @@
 <div class="container">
     <div class="row pb-5 pt-4">
         <div class="col-md-12">
-            <h1 class="text-uppercase">{{ tra('featured.title') }} / All</h1>
-            <p class="lead">{{ tra('featured.lead') }}</p>
+            <h1>{{ tra('featured.title') }} / All</h1>
         </div>
         <div class="col-md-12">
             @include('events._menu')
@@ -17,7 +16,7 @@
         @if(count($events) > 0)
             @foreach($events as $event)
             <div class="col-md-4 col-lg-4">
-                <div class="card mb-3 ">
+                <div class="card mb-3">
                     <div class="card-body">
                         <h5 class="card-title">{{ $event->name }}</h5>
                         <p class="card-text mb-2 text-muted">{{ $event->location }}</p>

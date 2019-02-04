@@ -7,7 +7,7 @@
     <div class="row pb-5 pt-4">
         <div class="col-md-12">
             <p class="mb-2"><a href="{{ route('orders') }}" class="text-muted">&laquo; {{ tra('order.back') }}</a></p>
-            <h1 class="text-uppercase">{{ tra('order.title') }}<small class="text-muted"> / {{ $order->reference }}</small></h1>
+            <h1>{{ tra('order.title') }}<small class="text-muted"> / {{ $order->reference }}</small></h1>
             <p class="lead"></p>
         </div>
     </div>

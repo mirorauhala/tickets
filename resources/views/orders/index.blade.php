@@ -6,7 +6,7 @@
 <div class="container h-100">
     <div class="row pb-5 pt-4">
         <div class="col-md-12">
-            <h1 class="text-uppercase">{{ tra('orders.title') }}</h1>
+            <h1>{{ tra('orders.title') }}</h1>
             <p class="lead">{{ tra('orders.lead') }}</p>
         </div>
     </div>
