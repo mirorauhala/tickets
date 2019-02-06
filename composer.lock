@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "516257912a04edadc327ffde95393f94",
+    "content-hash": "6b5337c10396fdd3bb146f40639364aa",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -603,6 +603,62 @@
                 "validator"
             ],
             "time": "2018-12-04T22:38:24+00:00"
+        },
+        {
+            "name": "elhebert/laravel-sri",
+            "version": "1.4.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Elhebert/laravel-sri.git",
+                "reference": "f848bd45f6e9418cd2cf00f3e0b4ab443421f0d6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Elhebert/laravel-sri/zipball/f848bd45f6e9418cd2cf00f3e0b4ab443421f0d6",
+                "reference": "f848bd45f6e9418cd2cf00f3e0b4ab443421f0d6",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.5.* || 5.6.* || 5.7.*",
+                "php": "^7.1"
+            },
+            "require-dev": {
+                "orchestra/testbench": "~3.0",
+                "phpunit/phpunit": "^7.3"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Elhebert\\SubresourceIntegrity\\SriServiceProvider"
+                    ],
+                    "aliases": {
+                        "Sri": "Elhebert\\SubresourceIntegrity\\SriFacade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Elhebert\\SubresourceIntegrity\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dieter Stinglhamber",
+                    "email": "elhebert@hotmail.be"
+                }
+            ],
+            "description": "Subresource Integrity hash generator for laravel",
+            "keywords": [
+                "laravel-sri",
+                "sri",
+                "subresource integrity"
+            ],
+            "time": "2018-10-01T05:40:58+00:00"
         },
         {
             "name": "erusev/parsedown",

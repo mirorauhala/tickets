@@ -14,7 +14,7 @@
     <!-- Styles -->
     <meta name="theme-color" content="#2A5CFF">
     <link rel="manifest" href="/manifest.json">
-    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    <link href="{{ mix('css/app.css') }}" integrity="{{ Sri::hash('css/app.css') }}" crossorigin="anonymous" rel="stylesheet">
 
     <!-- SHA1: {{ current_commit() }} -->
 </head>
@@ -25,6 +25,6 @@
             @yield('base.content')
         </main>
     </div>
-    <script src="{{ mix('js/app.js') }}"></script>
+    <script src="{{ mix('js/app.js') }}" integrity="{{ Sri::hash('js/app.js') }}" crossorigin="anonymous"></script>
 </body>
 </html>
