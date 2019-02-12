@@ -4,10 +4,10 @@ This is a website for booking tickets to a LAN event.
 
 ##### Status
 
-| Branch  | Master                                                                                                                    | pixelity                                                                                                                    |
-|---------|---------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
-| Travis  | [![Build Status](https://travis-ci.org/mirorauhala/tickets.svg?branch=master)](https://travis-ci.org/mirorauhala/tickets) | [![Build Status](https://travis-ci.org/mirorauhala/tickets.svg?branch=pixelity)](https://travis-ci.org/mirorauhala/tickets) |
-| StyleCI | [![StyleCI](https://styleci.io/repos/129506361/shield?branch=master)](https://styleci.io/repos/129506361)                 | [![StyleCI](https://styleci.io/repos/129506361/shield?branch=pixelity)](https://styleci.io/repos/129506361)                 |
+| Branch  | Status |
+|---------|--------|
+| master  | [![Build Status](https://drone.mirorauhala.fi/api/badges/mirorauhala/tickets/status.svg?branch=master)](https://drone.mirorauhala.fi/mirorauhala/tickets) |
+| develop | [![Build Status](https://drone.mirorauhala.fi/api/badges/mirorauhala/tickets/status.svg?branch=develop)](https://drone.mirorauhala.fi/mirorauhala/tickets) |
 
 
 ## Why?
