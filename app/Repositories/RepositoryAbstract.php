@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use Illuminate\Support\Arr;
 use App\Repositories\Contracts\RepositoryInterface;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use App\Repositories\Exceptions\NoEntityDefinedException;
@@ -95,7 +96,7 @@ abstract class RepositoryAbstract implements RepositoryInterface
 
     public function withCriteria(...$criteria)
     {
-        $criteria = array_flatten($criteria);
+        $criteria = Arr::flatten($criteria);
 
         foreach ($criteria as $criterion) {
             $this->entity = $criterion->apply($this->entity);

@@ -2,6 +2,7 @@
 
 use Money\Money;
 use Money\Currency;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Log;
 use Money\Currencies\ISOCurrencies;
@@ -28,13 +29,13 @@ if (! function_exists('active')) {
         $currentRoute = Route::currentRouteName();
 
         foreach ($excludeRoutes as $route) {
-            if (str_is($route, $currentRoute)) {
+            if (Str::is($route, $currentRoute)) {
                 return $notActive;
             }
         }
 
         $filtered = $routeCollection->filter(function ($value) use ($currentRoute) {
-            return str_is($value, $currentRoute);
+            return Str::is($value, $currentRoute);
         });
 
         if ($return) {
