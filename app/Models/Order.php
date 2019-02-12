@@ -13,7 +13,15 @@ class Order extends Model
      * @var array
      */
     protected $fillable = [
-        'reference', 'currency', 'value', 'vat', 'status', 'payer_name', 'release_lock_after', 'event_id', 'user_id',
+        'reference',
+        'currency',
+        'value',
+        'vat',
+        'status',
+        'payer_name',
+        'release_lock_after',
+        'event_id',
+        'user_id',
     ];
 
     /**
