@@ -104,7 +104,7 @@ class OrderController extends Controller
     }
 
     /**
-     * Validate gamer ticket paytrail callback.
+     * Validate ticket payment callback.
      *
      * @return \Illuminate\Http\Response
      */
