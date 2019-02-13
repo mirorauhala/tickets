@@ -61,7 +61,6 @@ class OrderController extends Controller
         // add orderitems
         $items = [];
         for ($i = 0; $i < $ticket_amount; $i++) {
-            // save them to the db
             $items[] = new OrderItem([
                 'title'                 => $ticket->name,
                 'barcode'               => strtoupper(bin2hex(openssl_random_pseudo_bytes(6))),

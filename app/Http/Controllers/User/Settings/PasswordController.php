@@ -34,12 +34,10 @@ class PasswordController extends Controller
      */
     public function updatePassword(SettingsPasswordRequest $request)
     {
-        // update password
         auth()->user()->update([
             'password' => $request->new_password,
         ]);
 
-        // return to view with flash message
         return redirect()
             ->route('settings.password')
             ->with([

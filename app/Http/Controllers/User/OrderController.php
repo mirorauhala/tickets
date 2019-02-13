@@ -66,10 +66,8 @@ class OrderController extends Controller
      */
     public function delete(Order $order)
     {
-        // authorize current action
         $this->authorize('delete', $order);
 
-        // delete order
         $order->delete();
 
         return redirect()
