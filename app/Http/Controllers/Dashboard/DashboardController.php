@@ -63,6 +63,8 @@ class DashboardController extends Controller
     {
         $this->authorize('update', $event);
 
+        $event = $event->load('orders.items');
+
         return view('dashboard.orders')
             ->with([
                 'event'  => $event,

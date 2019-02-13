@@ -21,10 +21,11 @@
                     <thead>
                         <tr>
                             <th scope="col">Reference</th>
-                            <th scope="col">Price</th>
-                            <th scope="col">In sale</th>
-                            <th scope="col">Off sale</th>
-                            <th scope="col">Quota</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Value</th>
+                            <th scope="col">Tickets</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Time of purchase</th>
                             <th scope="col">Edit</th>
                         </tr>
                     </thead>
@@ -32,10 +33,11 @@
                         @foreach ($orders as $order)
                             <tr>
                                 <td>{{ $order->reference }}</td>
-                                <td>{{ $ticket->price }}</td>
-                                <td>{{ $ticket->price }}</td>
-                                <td>{{ $ticket->price }}</td>
-                                <td>{{ $ticket->reserved }}</td>
+                                <td>{{ $order->payer_name }}</td>
+                                <td>{{ money($order->value, $order->currency) }}</td>
+                                <td>{{ $order->items->count() }}</td>
+                                <td>{{ $order->status }}</td>
+                                <td>{{ $order->created_at->toFormattedDateString() }}</td>
                                 <td>Edit</td>
                             </tr>
                         @endforeach
