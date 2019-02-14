@@ -29,10 +29,10 @@ class PreferredLanguage
         if (Auth::check()) {
             // get the locale from database and set to app
 
-            if (Auth::user()->language == null) {
+            if ($request->user()->language == null) {
                 app()->setLocale($request->getPreferredLanguage($this->languages));
             } else {
-                app()->setLocale(Auth::user()->language);
+                app()->setLocale($request->user()->language);
             }
         } else {
             // get the locale from session and set to app

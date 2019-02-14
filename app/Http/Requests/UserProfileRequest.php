@@ -31,7 +31,7 @@ class UserProfileRequest extends FormRequest
                 'required',
                 'string',
                 'email',
-                Rule::unique('users')->ignore(auth()->user()->id),
+                Rule::unique('users')->ignore($this->user()->id),
                 'max:255',
             ],
             'phone'      => 'nullable',

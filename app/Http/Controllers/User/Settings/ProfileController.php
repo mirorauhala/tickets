@@ -34,7 +34,7 @@ class ProfileController extends Controller
      */
     public function updateProfile(UserProfileRequest $request)
     {
-        auth()->user()->update([
+        $request->user()->update([
             'first_name' => $request->first_name,
             'last_name'  => $request->last_name,
             'email'      => $request->email,

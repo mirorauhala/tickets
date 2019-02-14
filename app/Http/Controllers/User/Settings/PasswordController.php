@@ -34,7 +34,7 @@ class PasswordController extends Controller
      */
     public function updatePassword(SettingsPasswordRequest $request)
     {
-        auth()->user()->update([
+        $request->user()->update([
             'password' => $request->new_password,
         ]);
 

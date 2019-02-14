@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\User;
 
-use Auth;
 use App\Models\OrderItem;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -24,18 +23,14 @@ class TicketController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $user = Auth::user();
-
-        $user->load('orderItems.order', 'orderItems.order.event', 'orderItems.seat');
+        $user = $request->user()->load('orderItems.order', 'orderItems.order.event', 'orderItems.seat');
 
         return view('tickets.index')
             ->with([
                 'items' => $user->orderItems->where('status', 'paid'),
             ]);
-
-        $get = auth();
     }
 
     /**
@@ -107,7 +102,7 @@ class TicketController extends Controller
         $item = OrderItem::where('redeem_code', $request->redeem_code)->first();
         if (! $item == null) {
             $item->redeem_code = null;
-            $item->user_id = auth()->user()->id;
+            $item->user_id = $requests->user()->id;
             $item->save();
 
             return redirect()

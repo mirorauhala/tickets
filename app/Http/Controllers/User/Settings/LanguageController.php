@@ -36,7 +36,7 @@ class LanguageController extends Controller
      */
     public function update(UpdateLanguageRequest $request)
     {
-        auth()->user()->update([
+        $request->user()->update([
             'language' => $request->language,
         ]);
 
