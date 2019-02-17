@@ -14,6 +14,7 @@ class DashboardController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware('dashboard.hasMultipleEvents')->only('index');
     }
 
     /**
@@ -24,11 +25,6 @@ class DashboardController extends Controller
     public function index(Request $requests)
     {
         $events = $requests->user()->events;
-
-        if (count($events) === 1) {
-            return redirect()
-                ->route('dashboard.show', ['event' => $events->first()]);
-        }
 
         return view('dashboard.index')
             ->with([
