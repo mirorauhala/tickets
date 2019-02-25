@@ -3,10 +3,10 @@
 return [
     /*
     |--------------------------------------------------------------------------
-    | Checkout
+    | Stripe API keys
     |--------------------------------------------------------------------------
     */
 
-    'merchant' => env('CHECKOUT_MERCHANT'),
-    'secret'   => env('CHECKOUT_SECRET'),
+    'publish'   => env('STRIPE_PUBLISH'),
+    'secret'    => env('STRIPE_SECRET'),
 ];

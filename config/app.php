@@ -176,7 +176,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\ValidationProvider::class,
-
+        App\Providers\PaymentGatewayServiceProvider::class,
         App\Providers\RepositoryServiceProvider::class,
     ],
 
