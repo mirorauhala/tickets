@@ -84,23 +84,44 @@ Route::post('/dashboard/{event}/settings', 'Dashboard\EventController@update');
 
 /*
 |--------------------------------------------------------------------------
-| Ticket purchase routes
+| Settings
 |--------------------------------------------------------------------------
 */
 
 Route::get('/order/callback', 'Order\OrderController@processOrderCallback')->name('orders.callback');
 Route::post('/order/{order}/addSeats', 'Order\OrderSeatController@addSeatToOrderItems')->name('order.seats');
+Route::group(['prefix' => '/settings'], function () {
+    Route::get('/', 'User\Settings\ProfileController@showSettings')->name('settings');
+    Route::post('/', 'User\Settings\ProfileController@updateProfile');
+
+    Route::get('/password', 'User\Settings\PasswordController@showPasswordForm')->name('settings.password');
+    Route::post('/password', 'User\Settings\PasswordController@updatePassword');
+
+    Route::get('/language', 'User\Settings\LanguageController@show')->name('settings.language');
+    Route::post('/language', 'User\Settings\LanguageController@update');
+
+    Route::get('/two-factor', 'User\Settings\TwoFactorSettingsController@index')->name('settings.language');
+    Route::post('/two-factor/install', 'User\Settings\TwoFactorSettingsController@create');
+    Route::get('/two-factor/view', 'User\Settings\TwoFactorSettingsController@show');
+    Route::get('/two-factor/view', 'User\Settings\TwoFactorSettingsController@store');
+});
 
 /*
 |--------------------------------------------------------------------------
-| Settings
+| Language routes
 |--------------------------------------------------------------------------
 */
-Route::get('/settings', 'User\Settings\ProfileController@showSettings')->name('settings');
-Route::post('/settings', 'User\Settings\ProfileController@updateProfile');
 
-Route::get('/settings/password', 'User\Settings\PasswordController@showPasswordForm')->name('settings.password');
-Route::post('/settings/password', 'User\Settings\PasswordController@updatePassword');
+Route::get('/lang/{lang}', function (Request $request, $lang) {
+    if (! in_array($lang, ['fi', 'en'])) {
+        return abort(400, 'Language not supported.');
+    }
 
-Route::get('/settings/language', 'User\Settings\LanguageController@show')->name('settings.language');
-Route::post('/settings/language', 'User\Settings\LanguageController@update');
+    $request->session()->put('override_language', $lang);
+
+    if ($request->header('referer')) {
+        return redirect($request->header('referer'));
+    }
+
+    return redirect()->route('events');
+})->name('lang');

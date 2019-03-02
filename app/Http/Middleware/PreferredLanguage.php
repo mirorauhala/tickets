@@ -2,9 +2,7 @@
 
 namespace App\Http\Middleware;
 
-use Auth;
 use Closure;
-use Session;
 
 class PreferredLanguage
 {
@@ -16,6 +14,13 @@ class PreferredLanguage
     protected $languages = ['en', 'fi'];
 
     /**
+     * Language to be set.
+     *
+     * @string $language
+     */
+    protected $language;
+
+    /**
      * Handle an incoming request.
      *
      * @param \Illuminate\Http\Request $request
@@ -25,21 +30,50 @@ class PreferredLanguage
      */
     public function handle($request, Closure $next)
     {
-        // check if the user is logged in
-        if (Auth::check()) {
-            // get the locale from database and set to app
-
-            if ($request->user()->language == null) {
-                app()->setLocale($request->getPreferredLanguage($this->languages));
-            } else {
-                app()->setLocale($request->user()->language);
-            }
-        } else {
-            // get the locale from session and set to app
-            app()->setLocale($request->getPreferredLanguage($this->languages));
+        if (! $this->overrideLanguage($request)) {
+            $this->browserLanguage($request);
+            $this->userModelLanguage($request);
         }
 
-        // return
+        if (! empty($this->language)) {
+            app()->setLocale($this->language);
+        }
+
         return $next($request);
+    }
+
+    /**
+     * Set the language to manually chosen one.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return string
+     */
+    protected function overrideLanguage($request)
+    {
+        return $this->language = $request->session()->get('override_language');
+    }
+
+    /**
+     * Set language to the preferred one by the browser.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return void
+     */
+    protected function browserLanguage($request)
+    {
+        $this->language = $request->getPreferredLanguage($this->languages);
+    }
+
+    /**
+     * Set the language to the preferred one after logging in.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return void
+     */
+    protected function userModelLanguage($request)
+    {
+        if (optional($request->user())->language) {
+            $this->language = $request->user()->language;
+        }
     }
 }
