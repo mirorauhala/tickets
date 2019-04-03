@@ -38,6 +38,7 @@ return [
         'profile'  => 'Profiili',
         'password' => 'Salasana',
         'language' => 'Kieli',
+        'about'    => 'Tietoa',
     ],
 
     /*

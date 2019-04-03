@@ -38,6 +38,7 @@ return [
         'profile'  => 'Profile',
         'password' => 'Password',
         'language' => 'Language',
+        'about'    => 'About',
     ],
 
     /*
