@@ -83,4 +83,18 @@ return [
         'new'          => 'New password',
         'confirmation' => 'New password again',
     ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | About
+    |--------------------------------------------------------------------------
+    |
+    | The following language lines are used within the about page in settings.
+    |
+    */
+
+    'about' => [
+        'title' => 'About',
+        'current-commit'  => 'System version:',
+    ],
 ];

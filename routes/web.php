@@ -96,14 +96,16 @@ Route::group(['prefix' => '/settings'], function () {
 
     Route::get('/password', 'User\Settings\PasswordController@showPasswordForm')->name('settings.password');
     Route::post('/password', 'User\Settings\PasswordController@updatePassword');
-
+    
     Route::get('/language', 'User\Settings\LanguageController@show')->name('settings.language');
     Route::post('/language', 'User\Settings\LanguageController@update');
+    
+    // Route::get('/two-factor', 'User\Settings\TwoFactorSettingsController@index')->name('settings.two-factor');
+    // Route::post('/two-factor/install', 'User\Settings\TwoFactorSettingsController@create');
+    // Route::get('/two-factor/view', 'User\Settings\TwoFactorSettingsController@show');
+    // Route::get('/two-factor/view', 'User\Settings\TwoFactorSettingsController@store');
 
-    Route::get('/two-factor', 'User\Settings\TwoFactorSettingsController@index')->name('settings.language');
-    Route::post('/two-factor/install', 'User\Settings\TwoFactorSettingsController@create');
-    Route::get('/two-factor/view', 'User\Settings\TwoFactorSettingsController@show');
-    Route::get('/two-factor/view', 'User\Settings\TwoFactorSettingsController@store');
+    Route::get('/about', 'User\Settings\AboutController')->name('settings.about');
 });
 
 /*

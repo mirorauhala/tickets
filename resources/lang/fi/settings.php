@@ -83,4 +83,18 @@ return [
         'new'          => 'Uusi salasana',
         'confirmation' => 'Uusi salasana uudelleen',
     ],
+    
+    /*
+    |--------------------------------------------------------------------------
+    | About
+    |--------------------------------------------------------------------------
+    |
+    | The following language lines are used within the about page in settings.
+    |
+    */
+
+    'about' => [
+        'title' => 'Tietoa',
+        'current-commit'  => 'Järjestelmän versio:',
+    ],
 ];

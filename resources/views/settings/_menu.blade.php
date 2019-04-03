@@ -9,5 +9,8 @@
         <li class="nav-item">
             <a class="nav-link{{ active('settings.language') }}" href="{{ route('settings.language') }}">{{ tra('settings.menu.language') }}</a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link{{ active('settings.about') }}" href="{{ route('settings.about') }}">{{ tra('settings.menu.about') }}</a>
+        </li>
     </ul>
 </nav>
