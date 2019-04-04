@@ -11,8 +11,12 @@
 
     <meta name="theme-color" content="#2A5CFF">
     <link rel="manifest" href="/manifest.json">
-    <link href="{{ mix('css/app.css') }}" integrity="{{ Sri::hash('css/app.css') }}" crossorigin="anonymous" rel="stylesheet">
 
+    @if(app()->environment('production'))
+    <link href="{{ mix('css/app.css') }}" integrity="{{ Sri::hash('css/app.css') }}" crossorigin="anonymous" rel="stylesheet">
+    @else
+    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    @endif
 </head>
 <body class="bg-light">
     <div id="app">
@@ -21,6 +25,12 @@
             @yield('base.content')
         </main>
     </div>
+
+    @if(app()->environment('production'))
     <script src="{{ mix('js/app.js') }}" integrity="{{ Sri::hash('js/app.js') }}" crossorigin="anonymous"></script>
+    @else
+    <script src="{{ mix('js/app.js') }}"></script>
+    @endif
+    
 </body>
 </html>
