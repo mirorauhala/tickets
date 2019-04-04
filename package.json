@@ -22,10 +22,10 @@
         "sass": "^1.17.0",
         "sass-loader": "^7.1.0",
         "vue": "^2.6.6",
-        "vue-template-compiler": "^2.6.6"
+        "vue-template-compiler": "^2.6.6",
+        "vue-qrcode-component": "^2.1.1"
     },
     "dependencies": {
-        "npm": "^6.7.0",
-        "vue-qrcode-component": "^2.1.1"
+        "npm": "^6.7.0"
     }
 }
