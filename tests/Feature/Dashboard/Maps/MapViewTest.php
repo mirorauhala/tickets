@@ -16,7 +16,7 @@ class MapViewTest extends TestCase
 
     protected $event;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 
