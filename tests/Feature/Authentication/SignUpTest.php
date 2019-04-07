@@ -4,6 +4,8 @@ namespace Tests\Feature\Authentication;
 
 use Tests\TestCase;
 use App\Models\User;
+use App\Jobs\QueuedVerifyEmail;
+use Illuminate\Support\Facades\Queue;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class SignUpTest extends TestCase
@@ -28,9 +30,11 @@ class SignUpTest extends TestCase
     /** @test */
     public function user_can_signup()
     {
+        Queue::fake();
         $this->doRequest('post');
         $this->response->assertSessionMissing('errors');
         $this->assertAuthenticated();
+        Queue::assertPushed(QueuedVerifyEmail::class);
     }
 
     /** @test */
