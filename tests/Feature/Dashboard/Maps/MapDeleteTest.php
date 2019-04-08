@@ -8,7 +8,7 @@ use App\Models\User;
 use App\Models\Event;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class MapViewTest extends TestCase
+class MapDeleteTest extends TestCase
 {
     use RefreshDatabase;
 
@@ -26,16 +26,16 @@ class MapViewTest extends TestCase
             'event_id' => $this->event->id,
         ]);
         $this->user->events()->save($this->event);
-        $this->uri = route('dashboard.maps.index', [$this->event, $this->map]);
+        $this->uri = route('dashboard.maps.destroy', [$this->event, $this->map]);
     }
 
     /** @test */
-    public function user_can_view_maps()
+    public function user_can_delete_maps()
     {
-        $this->actingAs($this->user)->doRequest('get');
+        $this->actingAs($this->user)->doRequest('delete');
 
-        $this->response->assertSuccessful();
-        $this->response->assertSeeText($this->map->name);
+        $this->response->assertRedirect();
+        $this->response->assertSessionMissing('errors');
     }
 
     /** @test */
@@ -44,7 +44,7 @@ class MapViewTest extends TestCase
         // This user doesn't have authorization.
         $user = factory(User::class)->create();
 
-        $this->actingAs($user)->doRequest('get');
+        $this->actingAs($user)->doRequest('delete');
 
         $this->response->assertStatus(403);
     }

@@ -16,7 +16,7 @@
         </div>
 
         <div class="col-md-9">
-            <form method="post" action="{{ route('dashboard.maps.create', $event) }}">
+            <form method="post" action="{{ route('dashboard.maps.store', $event) }}">
                 {{ csrf_field() }}
                 <div class="form-group{{ $errors->has('name') ? ' is-invalid' : '' }}">
                     <label for="name">Map name</label>

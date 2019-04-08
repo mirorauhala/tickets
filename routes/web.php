@@ -72,11 +72,9 @@ Route::post('/dashboard/{event}/tickets/{ticket}', 'Dashboard\TicketController@u
 Route::get('/dashboard/{event}/orders', 'Dashboard\DashboardController@orders')->name('dashboard.orders');
 
 // Maps
-Route::get('/dashboard/{event}/maps', 'Dashboard\MapsController@index')->name('dashboard.maps');
-Route::get('/dashboard/{event}/maps/create', 'Dashboard\MapsController@create')->name('dashboard.maps.create');
-Route::post('/dashboard/{event}/maps/create', 'Dashboard\MapsController@store');
-Route::get('/dashboard/{event}/maps/{map}', 'Dashboard\MapsController@show')->name('dashboard.maps.edit');
-Route::post('/dashboard/{event}/maps/{map}', 'Dashboard\MapsController@update');
+Route::group(['namespace' => 'Dashboard', 'prefix' => '/dashboard/{event}', 'as' => 'dashboard.'], function() {
+    Route::resource('maps', 'MapsController');
+});
 
 // Settings
 Route::get('/dashboard/{event}/settings', 'Dashboard\EventController@show')->name('dashboard.settings');

@@ -19,11 +19,11 @@
         <a class="nav-link{{ active('dashboard.orders*') }}" href="{{ route('dashboard.orders', $event) }}">{{ tra('dashboard.nav.orders') }}</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link{{ active('dashboard.maps*') }}" href="{{ route('dashboard.maps', $event) }}">{{ tra('dashboard.nav.maps') }}</a>
+        <a class="nav-link{{ active('dashboard.maps*') }}" href="{{ route('dashboard.maps.index', $event) }}">{{ tra('dashboard.nav.maps') }}</a>
         @if(active('dashboard.maps*', [], true))
         <ul class="nav flex-column pl-3 py-3">
             <li class="nav-item">
-                <a class="nav-link{{ active(['dashboard.maps', 'dashboard.maps.view', 'dashboard.maps.edit']) }}" href="{{ route('dashboard.maps', $event) }}">{{ tra('form.button.view') }}</a>
+                <a class="nav-link{{ active(['dashboard.maps.index', 'dashboard.maps.view', 'dashboard.maps.edit']) }}" href="{{ route('dashboard.maps.index', $event) }}">{{ tra('form.button.view') }}</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link{{ active('dashboard.maps.create') }}" href="{{ route('dashboard.maps.create', $event) }}">{{ tra('form.button.create') }}</a>

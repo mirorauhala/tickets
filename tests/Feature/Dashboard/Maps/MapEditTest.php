@@ -31,13 +31,13 @@ class MapEditTest extends TestCase
             'active' => 1,
         ];
 
-        $this->uri = route('dashboard.maps.edit', [$this->event, $this->map]);
+        $this->uri = route('dashboard.maps.update', [$this->event, $this->map]);
     }
 
     /** @test */
     public function user_can_edit_maps()
     {
-        $this->actingAs($this->user)->doRequest('post');
+        $this->actingAs($this->user)->doRequest('PUT');
 
         $this->response->assertRedirect();
         $this->assertDatabaseHas('maps', $this->fields());
@@ -49,7 +49,7 @@ class MapEditTest extends TestCase
         $this->fieldOverrides = [
             'name' => '',
         ];
-        $this->actingAs($this->user)->doRequest('post');
+        $this->actingAs($this->user)->doRequest('PUT');
 
         $this->response->assertSessionHasErrors(['name']);
     }
@@ -60,7 +60,7 @@ class MapEditTest extends TestCase
         $this->fieldOverrides = [
             'active' => 0,
         ];
-        $this->actingAs($this->user)->doRequest('post');
+        $this->actingAs($this->user)->doRequest('PUT');
 
         $this->response->assertSessionHasNoErrors();
     }
@@ -71,7 +71,7 @@ class MapEditTest extends TestCase
         $this->fieldOverrides = [
             'active' => null,
         ];
-        $this->actingAs($this->user)->doRequest('post');
+        $this->actingAs($this->user)->doRequest('PUT');
 
         $this->response->assertSessionHasErrors(['active']);
     }
@@ -82,7 +82,7 @@ class MapEditTest extends TestCase
         // This user doesn't have authorization.
         $user = factory(User::class)->create();
 
-        $this->actingAs($user)->doRequest('post');
+        $this->actingAs($user)->doRequest('PUT');
 
         $this->response->assertStatus(403);
     }

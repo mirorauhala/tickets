@@ -41,7 +41,14 @@
                 @endif
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary px-4">{{ tra('form.button.update') }}</button>
+                    <a href="#" class="btn btn-danger px-4"
+                        onclick="event.preventDefault();
+                        document.getElementById('destroy-form').submit();">{{ tra('form.button.delete') }}</a>
                 </div>
+            </form>
+            <form id="destroy-form" action="{{ route('dashboard.maps.destroy', ['event' => $event, 'map' => $map]) }}" method="POST" style="display: none;">
+                @method('DELETE')
+                {{ csrf_field() }}
             </form>
         </div>
     </div>

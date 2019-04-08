@@ -68,7 +68,7 @@ class MapsController extends Controller
         ]);
 
         return redirect()
-            ->route('dashboard.maps', ['event' => $event, 'map' => $map])
+            ->route('dashboard.maps.show', ['event' => $event, 'map' => $map])
             ->with([
                 'flash_status'  => 'success',
                 'flash_message' => 'Map created.',
@@ -83,6 +83,24 @@ class MapsController extends Controller
      * @throws \Illuminate\Auth\Access\AuthorizationException
      */
     public function show(Event $event, Map $map)
+    {
+        $this->authorize('update', $event);
+
+        return view('dashboard.maps.edit')
+            ->with([
+                'event' => $event,
+                'map'   => $map,
+            ]);
+    }
+
+    /**
+     * Edit a map.
+     *
+     * @param App\Models\Event $event
+     * @return \Illuminate\Http\Response
+     * @throws \Illuminate\Auth\Access\AuthorizationException
+     */
+    public function edit(Event $event, Map $map)
     {
         $this->authorize('update', $event);
 
@@ -114,6 +132,27 @@ class MapsController extends Controller
             ->with([
                 'flash_status'  => 'success',
                 'flash_message' => 'Map updated.',
+            ]);
+    }
+
+    /**
+     * Destroy the map.
+     *
+     * @param App\Models\Event $event
+     * @return \Illuminate\Http\Response
+     * @throws \Illuminate\Auth\Access\AuthorizationException
+     */
+    public function destroy(Event $event, Map $map)
+    {
+        $this->authorize('update', $event);
+
+        $map->delete();
+
+        return redirect()
+            ->route('dashboard.maps.index', ['event' => $event])
+            ->with([
+                'flash_status'  => 'success',
+                'flash_message' => 'Map deleted.',
             ]);
     }
 }
