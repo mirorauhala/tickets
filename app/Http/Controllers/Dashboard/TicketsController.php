@@ -7,7 +7,7 @@ use App\Models\Ticket;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\TicketRequest;
 
-class TicketController extends Controller
+class TicketsController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -76,7 +76,7 @@ class TicketController extends Controller
         ]);
 
         return redirect()
-            ->route('dashboard.tickets.view', ['event' => $event, 'ticket' => $ticket])
+            ->route('dashboard.tickets.show', ['event' => $event, 'ticket' => $ticket])
             ->with([
                 'flash_status'  => 'success',
                 'flash_message' => 'Ticket created.',
@@ -91,6 +91,24 @@ class TicketController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Event $event, Ticket $ticket)
+    {
+        $this->authorize('update', $event);
+
+        return view('dashboard.tickets.edit')
+            ->with([
+                'event'  => $event,
+                'ticket' => $ticket,
+            ]);
+    }
+
+    /**
+     * Edit a ticket.
+     *
+     * @param App\Models\Event $event
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Event $event, Ticket $ticket)
     {
         $this->authorize('update', $event);
 
@@ -123,10 +141,31 @@ class TicketController extends Controller
         ]);
 
         return redirect()
-            ->route('dashboard.tickets.view', ['event' => $event, 'ticket' => $ticket])
+            ->route('dashboard.tickets.show', ['event' => $event, 'ticket' => $ticket])
             ->with([
                 'flash_status'  => 'success',
                 'flash_message' => 'Ticket updated.',
+            ]);
+    }
+
+    /**
+     * Deleted a ticket.
+     *
+     * @param App\Models\Event $event
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Event $event, Ticket $ticket)
+    {
+        $this->authorize('update', $event);
+
+        $ticket->delete();
+
+        return redirect()
+            ->route('dashboard.tickets.index', ['event' => $event])
+            ->with([
+                'flash_status'  => 'success',
+                'flash_message' => 'Ticket deleted.',
             ]);
     }
 }

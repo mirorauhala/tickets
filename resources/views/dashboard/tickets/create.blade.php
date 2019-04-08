@@ -16,7 +16,7 @@
         </div>
 
         <div class="col-md-9">
-            <form method="post" action="{{ route('dashboard.tickets.create', $event) }}">
+            <form method="post" action="{{ route('dashboard.tickets.store', $event) }}">
                 {{ csrf_field() }}
                 <div class="form-group{{ $errors->has('name') ? ' is-invalid' : '' }}">
                     <label for="name">Ticket name</label>

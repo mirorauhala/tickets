@@ -38,7 +38,7 @@
                                 <td>{{ $ticket->availableAt }}</td>
                                 <td>{{ $ticket->unavailableAt }}</td>
                                 <td>{{ $ticket->reserved }}</td>
-                                <td><a href="{{ route('dashboard.tickets.view', [$event, $ticket]) }}">Edit</a></td>
+                                <td><a href="{{ route('dashboard.tickets.show', [$event, $ticket]) }}">Edit</a></td>
                             </tr>
                         @endforeach
                     </tbody>

@@ -17,7 +17,7 @@
 
         <div class="col-md-9">
             @include('partials/messages/flashbox')
-            <form method="post" action="{{ route('dashboard.tickets.view', [$event, $ticket]) }}">
+            <form method="post" action="{{ route('dashboard.tickets.edit', [$event, $ticket]) }}">
                 {{ csrf_field() }}
                 <div class="form-group{{ $errors->has('name') ? ' is-invalid' : '' }}">
                     <label for="name">Ticket name</label>

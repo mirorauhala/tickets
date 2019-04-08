@@ -20,7 +20,7 @@ class TicketsViewTest extends TestCase
         $this->createUser();
         $this->ticket = factory(Ticket::class)->create();
         $this->user->events()->attach($this->ticket->event);
-        $this->uri = route('dashboard.tickets', [$this->ticket->event]);
+        $this->uri = route('dashboard.tickets.index', [$this->ticket->event]);
     }
 
     /** @test */

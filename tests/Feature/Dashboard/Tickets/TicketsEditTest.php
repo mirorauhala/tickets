@@ -22,7 +22,7 @@ class TicketsEditTest extends TestCase
         $this->ticket = factory(Ticket::class)->make();
         $this->user->events()->attach($this->event);
         $this->user->events->first()->tickets()->save($this->ticket);
-        $this->uri = route('dashboard.tickets.view', [$this->event, $this->ticket]);
+        $this->uri = route('dashboard.tickets.update', [$this->event, $this->ticket]);
         $this->fields = [
             'name'                    => 'Entrance',
             'price'                   => 1000,
@@ -37,7 +37,7 @@ class TicketsEditTest extends TestCase
     /** @test */
     public function user_can_edit_a_ticket()
     {
-        $this->actingAs($this->user)->doRequest('post');
+        $this->actingAs($this->user)->doRequest('put');
 
         $this->response->assertRedirect();
         $this->response->assertSessionMissing('errors');
@@ -50,7 +50,7 @@ class TicketsEditTest extends TestCase
         $this->fieldOverrides = [
             'name' => '',
         ];
-        $this->actingAs($this->user)->doRequest('post');
+        $this->actingAs($this->user)->doRequest('put');
 
         $this->response->assertRedirect();
         $this->response->assertSessionHasErrors(['name']);
@@ -62,7 +62,7 @@ class TicketsEditTest extends TestCase
         $this->fieldOverrides = [
             'price' => '',
         ];
-        $this->actingAs($this->user)->doRequest('post');
+        $this->actingAs($this->user)->doRequest('put');
 
         $this->response->assertRedirect();
         $this->response->assertSessionHasErrors(['price']);
@@ -74,7 +74,7 @@ class TicketsEditTest extends TestCase
         $this->fieldOverrides = [
             'vat' => '',
         ];
-        $this->actingAs($this->user)->doRequest('post');
+        $this->actingAs($this->user)->doRequest('put');
 
         $this->response->assertRedirect();
         $this->response->assertSessionHasErrors(['vat']);
@@ -86,7 +86,7 @@ class TicketsEditTest extends TestCase
         $this->fieldOverrides = [
             'reserved' => '',
         ];
-        $this->actingAs($this->user)->doRequest('post');
+        $this->actingAs($this->user)->doRequest('put');
 
         $this->response->assertRedirect();
         $this->response->assertSessionHasErrors(['reserved']);
@@ -98,7 +98,7 @@ class TicketsEditTest extends TestCase
         $this->fieldOverrides = [
             'maxAmountPerTransaction' => '',
         ];
-        $this->actingAs($this->user)->doRequest('post');
+        $this->actingAs($this->user)->doRequest('put');
 
         $this->response->assertRedirect();
         $this->response->assertSessionHasErrors(['maxAmountPerTransaction']);
@@ -110,7 +110,7 @@ class TicketsEditTest extends TestCase
         $this->fieldOverrides = [
             'availableAt' => '',
         ];
-        $this->actingAs($this->user)->doRequest('post');
+        $this->actingAs($this->user)->doRequest('put');
 
         $this->response->assertRedirect();
         $this->response->assertSessionHasErrors(['availableAt']);
@@ -122,7 +122,7 @@ class TicketsEditTest extends TestCase
         $this->fieldOverrides = [
             'unavailableAt' => '',
         ];
-        $this->actingAs($this->user)->doRequest('post');
+        $this->actingAs($this->user)->doRequest('put');
 
         $this->response->assertRedirect();
         $this->response->assertSessionHasErrors(['unavailableAt']);
