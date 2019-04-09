@@ -25,7 +25,7 @@ class OrderController extends Controller
      */
     public function index(Request $request)
     {
-        $orders = $requests->user()->orders->sortByDesc('created_at');
+        $orders = $request->user()->orders->sortByDesc('created_at');
 
         return view('orders.index')
             ->with([

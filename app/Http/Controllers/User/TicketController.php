@@ -102,7 +102,7 @@ class TicketController extends Controller
         $item = OrderItem::where('redeem_code', $request->redeem_code)->first();
         if (! $item == null) {
             $item->redeem_code = null;
-            $item->user_id = $requests->user()->id;
+            $item->user_id = $request->user()->id;
             $item->save();
 
             return redirect()

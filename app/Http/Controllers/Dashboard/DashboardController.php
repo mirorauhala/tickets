@@ -22,9 +22,9 @@ class DashboardController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $requests)
+    public function index(Request $request)
     {
-        $events = $requests->user()->events;
+        $events = $request->user()->events;
 
         return view('dashboard.index')
             ->with([
