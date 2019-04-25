@@ -18,8 +18,7 @@ Auth::routes(['verify' => true]);
 | Basic routes
 |--------------------------------------------------------------------------
 */
-Route::get('/', 'EventController@index')->name('events');
-Route::get('/all', 'EventController@all')->name('events.all');
+Route::get('/',                 'FeaturedEventController@index')->name('events');
 
 Route::get('/tickets',          'TicketController@index')->name('tickets');
 Route::get('/tickets/{item}',   'TicketController@show')->name('tickets.show');
@@ -41,12 +40,9 @@ Route::delete('/orders/{order}',    'OrderController@delete')->name('orders.dele
 | Event
 |--------------------------------------------------------------------------
 */
-Route::get('/event/{event}', 'EventController@show')->name('event');
 
-// view ticket types
-Route::get('/event/tickets', 'EventController@index')->name('events.tickets');
-Route::get('/event/tickets/{ticket}', 'EventController@show')->name('events.tickets.ticket');
-Route::post('/event/tickets/{ticket}', 'Order\OrderController@create');
+Route::get('/events',           'EventController@index')->name('events.index');
+Route::get('/events/{event}',   'EventController@show')->name('events.show');
 
 /*
 |--------------------------------------------------------------------------

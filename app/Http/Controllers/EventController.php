@@ -9,30 +9,15 @@ use Illuminate\Support\Facades\Cache;
 class EventController extends Controller
 {
     /**
-     * Show featured events.
+     * Return all events paginated.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $events = Event::featured()->get();
-
-        return view('events.featured')
-            ->with([
-                'events' => $events,
-            ]);
-    }
-
-    /**
-     * Show all events.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function all()
-    {
         $events = Event::paginate(15)->all();
 
-        return view('events.all')
+        return view('events.index')
             ->with([
                 'events' => $events,
             ]);
@@ -57,7 +42,7 @@ class EventController extends Controller
             return $event->tickets()->purchasable()->orderByPrice()->get();
         });
 
-        return view('events.view')
+        return view('events.show')
             ->with([
                 'event'   => $event,
                 'tickets' => $tickets,
