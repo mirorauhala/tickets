@@ -21,11 +21,6 @@ Auth::routes(['verify' => true]);
 Route::get('/', 'EventController@index')->name('events');
 Route::get('/all', 'EventController@all')->name('events.all');
 Route::get('/tickets', 'User\TicketController@index')->name('tickets');
-Route::get('/tickets/redeem', 'User\TicketController@showRedeem')->name('tickets.redeem');
-Route::post('/tickets/redeem', 'User\TicketController@processRedeemCode');
-Route::get('/tickets/{item}', 'User\TicketController@showTicket')->name('tickets.share');
-Route::post('/tickets/redeem/{item}/create', 'User\TicketController@createRedeemCode')->name('tickets.redeem.create');
-Route::post('/tickets/redeem/{item}/delete', 'User\TicketController@deleteRedeemCode')->name('tickets.redeem.delete');
 
 /*
 |--------------------------------------------------------------------------

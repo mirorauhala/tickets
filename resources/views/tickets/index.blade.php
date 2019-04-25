@@ -32,7 +32,6 @@
                         </ul>
                         @can('update', $item)
                         <div class="card-body">
-                            <a href="{{ route('tickets.share', ['order' => $item->barcode ]) }}" class="card-link">{{ tra('tickets.card.share-ticket') }}</a>
                             <a href="{{ route('orders.show', ['order' => $item->order->reference ]) }}" class="card-link">{{ tra('tickets.card.show-order') }}</a>
                         </div>
                         @endcan
