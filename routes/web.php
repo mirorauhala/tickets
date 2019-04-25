@@ -20,17 +20,21 @@ Auth::routes(['verify' => true]);
 */
 Route::get('/', 'EventController@index')->name('events');
 Route::get('/all', 'EventController@all')->name('events.all');
-Route::get('/tickets', 'User\TicketController@index')->name('tickets');
+
+Route::get('/tickets',          'TicketController@index')->name('tickets');
+Route::get('/tickets/{item}',   'TicketController@show')->name('tickets.show');
 
 /*
 |--------------------------------------------------------------------------
 | Orders
 |--------------------------------------------------------------------------
 */
-Route::get('/orders', 'User\OrderController@index')->name('orders');
-Route::post('/orders/create/{event}', 'Order\OrderController@create')->name('orders.create');
-Route::get('/orders/{order}', 'User\OrderController@show')->name('orders.show');
-Route::get('/orders/delete/{order}', 'User\OrderController@delete')->name('orders.delete');
+
+Route::get('/orders',               'OrderController@index')->name('orders');
+Route::get('/orders/create',        'OrderController@create')->name('orders.create');
+Route::post('/orders/create',       'OrderController@store');
+Route::get('/orders/{order}',       'OrderController@show')->name('orders.show');
+Route::delete('/orders/{order}',    'OrderController@delete')->name('orders.delete');
 
 /*
 |--------------------------------------------------------------------------
@@ -77,22 +81,14 @@ Route::post('/dashboard/{event}/settings', 'Dashboard\EventController@update');
 
 Route::get('/order/callback', 'Order\OrderController@processOrderCallback')->name('orders.callback');
 Route::post('/order/{order}/addSeats', 'Order\OrderSeatController@addSeatToOrderItems')->name('order.seats');
-Route::group(['prefix' => '/settings'], function () {
-    Route::get('/', 'User\Settings\ProfileController@showSettings')->name('settings');
-    Route::post('/', 'User\Settings\ProfileController@updateProfile');
-
-    Route::get('/password', 'User\Settings\PasswordController@showPasswordForm')->name('settings.password');
-    Route::post('/password', 'User\Settings\PasswordController@updatePassword');
-    
-    Route::get('/language', 'User\Settings\LanguageController@show')->name('settings.language');
-    Route::post('/language', 'User\Settings\LanguageController@update');
-    
-    // Route::get('/two-factor', 'User\Settings\TwoFactorSettingsController@index')->name('settings.two-factor');
-    // Route::post('/two-factor/install', 'User\Settings\TwoFactorSettingsController@create');
-    // Route::get('/two-factor/view', 'User\Settings\TwoFactorSettingsController@show');
-    // Route::get('/two-factor/view', 'User\Settings\TwoFactorSettingsController@store');
-
-    Route::get('/about', 'User\Settings\AboutController')->name('settings.about');
+Route::group(['prefix' => '/settings', 'namespace' => 'Settings'], function () {
+    Route::get('/', 'ProfileController@showSettings')->name('settings');
+    Route::post('/', 'ProfileController@updateProfile');
+    Route::get('/password', 'PasswordController@showPasswordForm')->name('settings.password');
+    Route::post('/password', 'PasswordController@updatePassword');
+    Route::get('/language', 'LanguageController@show')->name('settings.language');
+    Route::post('/language', 'LanguageController@update');
+    Route::get('/about', 'AboutController')->name('settings.about');
 });
 
 /*
