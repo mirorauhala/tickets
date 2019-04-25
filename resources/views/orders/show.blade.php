@@ -42,56 +42,31 @@
 
             <h3 class="pt-3">{{ tra('order.list-of-products') }}</h3>
 
-            @if(count($errors) > 0)
-                @foreach($errors->all() as $error)
-                    {{ dump($error) }}
-                @endforeach
-            @endif
-
             @if(count($order->items) > 0)
                 <div class="table-responsive">
-                    <form method="post" action="{{ route('order.seats', ['order' => $order->reference]) }}">
-                        {{ csrf_field() }}
-                        <table class="table table-striped">
-                            <thead>
+                    {{ csrf_field() }}
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <td>{{ tra('order.table.item') }}</td>
+                                <td>{{ tra('order.table.value') }}</td>
+                                <td>{{ tra('order.table.seating-code') }}</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($order->items as $key=>$order_item)
                                 <tr>
-                                    <td>{{ tra('order.table.item') }}</td>
-                                    <td>{{ tra('order.table.value') }}</td>
-                                    <td>{{ tra('order.table.seating-code') }}</td>
+                                    <td>{{ $order_item->title }}</td>
+                                    <td>{{ money($order_item->value, $order->currency) }}</td>
+                                    @if($order_item->ticket->is_seatable == 1 && $order_item->seat !== null)
+                                        <td>{{ $order_item->seat->name }}</td>
+                                    @else
+                                        <td>N/A</td>
+                                    @endif
                                 </tr>
-                            </thead>
-                            <tbody>
-                                @foreach($order->items as $key=>$order_item)
-                                    <tr>
-                                        <td>{{ $order_item->title }}</td>
-                                        <td>{{ money($order_item->value, $order->currency) }}</td>
-                                        {{-- NEEDS REWORK DUE TO is_seatable BEING DROPPED OFF --}}
-                                        @if($order_item->ticket->is_seatable == 1)
-                                            @if($order_item->seat !== null)
-                                                <td>{{ $order_item->seat->name }}</td>
-                                            @else
-                                                <td>
-
-                                                    <input type="hidden" name="seat[{{ $key }}][order_item_id]" value="{{ $order_item->id }}">
-                                                    <select class="form-control" name="seat[{{ $key }}][seat_id]">
-                                                        <option value="">Valitse paikka</option>
-                                                        @foreach(App\Models\Seat::status("available")->ticketType($order_item->ticket->id)->get() as $seat)
-                                                            <option value="{{ $seat->id }}">{{ $seat->name }}</option>
-                                                        @endforeach
-                                                    </select>
-                                                </td>
-                                            @endif
-                                        @else
-                                            <td>N/A</td>
-                                        @endif
-                                    </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                        @if($show_form_submit)
-                            <input type="submit" class="btn btn-primary" value="Varaa paikat">
-                        @endif
-                    </form>
+                            @endforeach
+                        </tbody>
+                    </table>
                 </div>
             @else
                 <p>{{ tra('order.no-items') }}</p>
