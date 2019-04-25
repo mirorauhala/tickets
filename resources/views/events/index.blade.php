@@ -20,7 +20,7 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ $event->name }}</h5>
                         <p class="card-text mb-2 text-muted">{{ $event->location }}</p>
-                        <a href="{{ route('event', ['event' => $event]) }}" class="card-link">{{ tra('featured.card-cta') }}</a>
+                        <a href="{{ route('events.show', ['event' => $event]) }}" class="card-link">{{ tra('featured.card-cta') }}</a>
                     </div>
                 </div>
             </div>
