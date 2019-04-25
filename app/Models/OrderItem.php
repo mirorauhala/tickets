@@ -21,7 +21,6 @@ class OrderItem extends Model
         'value',
         'status',
         'release_lock_after',
-        'redeem_code',
         'ticket_id',
         'user_id',
         'order_id',
