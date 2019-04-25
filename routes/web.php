@@ -49,34 +49,24 @@ Route::get('/events/{event}',   'EventController@show')->name('events.show');
 | Dashboard
 |--------------------------------------------------------------------------
 */
-
-Route::get('/dashboard', 'Dashboard\DashboardController@index')->name('dashboard');
-
-// Customers
-Route::get('/dashboard/{event}', 'Dashboard\DashboardController@customers')->name('dashboard.show');
-Route::get('/dashboard/{event}/customers', 'Dashboard\DashboardController@customers')->name('dashboard.customers');
-
-// Orders
-Route::get('/dashboard/{event}/orders', 'Dashboard\DashboardController@orders')->name('dashboard.orders');
-
-// Maps
-Route::group(['namespace' => 'Dashboard', 'prefix' => '/dashboard/{event}', 'as' => 'dashboard.'], function() {
-    Route::resource('tickets', 'TicketsController');
-    Route::resource('maps', 'MapsController');
+Route::group(['prefix' => '/dashboard'], function () {
+    Route::get('', 'Dashboard\DashboardController@index')->name('dashboard');
+    Route::get('/{event}', 'Dashboard\DashboardController@customers')->name('dashboard.show');
+    Route::get('/{event}/customers', 'Dashboard\DashboardController@customers')->name('dashboard.customers');
+    Route::get('/{event}/orders', 'Dashboard\DashboardController@orders')->name('dashboard.orders');
+    Route::group(['namespace' => 'Dashboard', 'prefix' => '/{event}', 'as' => 'dashboard.'], function () {
+        Route::resource('tickets', 'TicketsController');
+        Route::resource('maps', 'MapsController');
+    });
+    Route::get('/{event}/settings', 'Dashboard\EventController@show')->name('dashboard.settings');
+    Route::post('/{event}/settings', 'Dashboard\EventController@update');
 });
-
-// Settings
-Route::get('/dashboard/{event}/settings', 'Dashboard\EventController@show')->name('dashboard.settings');
-Route::post('/dashboard/{event}/settings', 'Dashboard\EventController@update');
-
 /*
 |--------------------------------------------------------------------------
 | Settings
 |--------------------------------------------------------------------------
 */
 
-Route::get('/order/callback', 'Order\OrderController@processOrderCallback')->name('orders.callback');
-Route::post('/order/{order}/addSeats', 'Order\OrderSeatController@addSeatToOrderItems')->name('order.seats');
 Route::group(['prefix' => '/settings', 'namespace' => 'Settings'], function () {
     Route::get('/', 'ProfileController@showSettings')->name('settings');
     Route::post('/', 'ProfileController@updateProfile');
