@@ -13,26 +13,26 @@
         </div>
     </div>
     <div class="row">
-        @if(count($items) > 0)
-            @foreach($items as $item)
+        @if(count($tickets) > 0)
+            @foreach($tickets as $ticket)
                 <div class="col-sm-6 col-md-6 col-lg-3">
                     <div class="card mb-3">
                         <div class="card-body">
-                            <h5 class="card-title">{{ $item->title }}</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">{{ $item->order->event->name }}</h6>
-                            <qr-code text="{{ $item->barcode }}" :size="200" bg-color="transparent"></qr-code>
-                            <p class="text-muted">{{ $item->barcode }}</p>
+                            <h5 class="card-title">{{ $ticket->title }}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">{{ $ticket->order->event->name }}</h6>
+                            <qr-code text="{{ $ticket->barcode }}" :size="200" bg-color="transparent"></qr-code>
+                            <p class="text-muted">{{ $ticket->barcode }}</p>
 
                         </div>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">{{ tra('tickets.card.price') }}: {{ money($item->value, "EUR") }}</li>
-                            @if($item->seat)
-                                <li class="list-group-item">{{ tra('tickets.card.seating-code') }}: {{ $item->seat->name }}</li>
+                            <li class="list-group-item">{{ tra('tickets.card.price') }}: {{ money($ticket->value, "EUR") }}</li>
+                            @if($ticket->seat)
+                                <li class="list-group-item">{{ tra('tickets.card.seating-code') }}: {{ $ticket->seat->name }}</li>
                             @endif
                         </ul>
-                        @can('update', $item)
+                        @can('update', $ticket)
                         <div class="card-body">
-                            <a href="{{ route('orders.show', ['order' => $item->order->reference ]) }}" class="card-link">{{ tra('tickets.card.show-order') }}</a>
+                            <a href="{{ route('orders.show', ['order' => $ticket->order->reference ]) }}" class="card-link">{{ tra('tickets.card.show-order') }}</a>
                         </div>
                         @endcan
                     </div>
