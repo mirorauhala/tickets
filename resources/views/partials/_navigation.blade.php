@@ -16,22 +16,24 @@
 
         <ul class="navbar-nav ml-auto">
         @auth()
-            @if(count(auth()->user()->events) > 0)
-                <li class="nav-item{{ active('dashboard*') }}">
-                    <a class="nav-link" href="{{ route('dashboard') }}">{{ tra('nav.manage') }} <span class="sr-only">(current)</span></a>
-                </li>
-            @endif
-            <li class="nav-item">
-                <a class="nav-link{{ active('settings*') }}" href="{{ route('settings') }}">{{ tra('nav.settings') }}</a>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Hei, {{ auth()->user()->full_name() }}</a>
+                <div class="dropdown-menu">
+
+                    @if(count(auth()->user()->events) > 0)
+                    <a class="dropdown-item{{ active('dashboard*') }}" href="{{ route('dashboard') }}">{{ tra('nav.manage') }}</a>
+                    <div class="dropdown-divider"></div>
+                    @endif
+
+                    <a class="dropdown-item{{ active('settings*') }}" href="{{ route('settings') }}">{{ tra('nav.settings') }}</a>
+                    <a class="dropdown-item text-danger" href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                                 document.getElementById('logout-form').submit();">{{ tra('nav.sign-out')}}</a>
+                </div>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>
             </li>
-            <li class="nav-item">
-                <a class="nav-link text-danger" href="{{ route('logout') }}"
-                    onclick="event.preventDefault();
-                            document.getElementById('logout-form').submit();">{{ tra('nav.sign-out')}}</a>
-            </li>
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                {{ csrf_field() }}
-            </form>
         @else
             <li class="nav-item">
                 <a class="nav-link{{ active('login') }}" href="{{ route('login') }}">{{ tra('nav.sign-in') }}</a>
