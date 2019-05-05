@@ -5,7 +5,7 @@
 @section('base.content')
 <div class="container">
     <div class="row pb-5 pt-4">
-        <div class="col-md-12">
+        <div class="col-md-12 text-center">
             <h1>{{ $event->name }}</h1>
             <p class="lead">{{ $event->location }} {{ $event->date }}</p>
         </div>
@@ -26,7 +26,7 @@
     <div class="row">
         @if(count($tickets) > 0)
             @foreach($tickets as $ticket)
-                <div class="col-6 col-md-4 col-lg-4 mb-3">
+                <div class="col-8 offset-2 mb-3">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">{{ $ticket->name}}</h5>
