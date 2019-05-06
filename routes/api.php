@@ -11,6 +11,7 @@
 |
 */
 
-Route::prefix('v1')->group(function () {
+Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function () {
     Route::get('order_item/{ticket}', 'Api\OrderItemController@get');
+    Route::post('settings-profile', 'Api\SettingsProfileController@update');
 });

@@ -16,6 +16,7 @@ window.Vue = require('vue');
 import VueQRCodeComponent from 'vue-qrcode-component'
 
 Vue.component('input-counter', require('./components/InputCounter.vue').default);
+Vue.component('settings-profile', require('./components/SettingsProfile.vue').default);
 Vue.component('qr-code', VueQRCodeComponent)
 
 const app = new Vue({

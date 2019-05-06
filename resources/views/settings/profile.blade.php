@@ -15,7 +15,10 @@
         </div>
         <div class="col-md-8 offset-md-1">
             @include('partials.messages.flashbox')
-            <form method="post" action="{{ route('settings') }}">
+
+            <settings-profile />
+
+            <form method="post" action="{{ route('settings') }}" class="d-none">
                 {{ csrf_field() }}
                 <div class="form-row">
                     <div class="form-group col-6 col-md-6">
