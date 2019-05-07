@@ -14,6 +14,7 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 import VueQRCodeComponent from 'vue-qrcode-component'
+import store from './store'
 
 Vue.component('input-counter', require('./components/InputCounter.vue').default);
 Vue.component('form-input', require('./components/FormInput.vue').default);
@@ -21,5 +22,6 @@ Vue.component('settings-profile', require('./components/SettingsProfile.vue').de
 Vue.component('qr-code', VueQRCodeComponent)
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    store: store
 });
