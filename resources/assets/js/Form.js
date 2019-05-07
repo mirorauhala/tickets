@@ -41,8 +41,6 @@ class Form {
     }
 
     onSuccess(response) {
-        this.clear()
-
         this.state = 'success';
     }
 

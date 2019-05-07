@@ -16,7 +16,12 @@
         <div class="col-md-8 offset-md-1">
             @include('partials.messages.flashbox')
 
-            <settings-profile />
+            <settings-profile
+                first_name="{{ Auth::user()->first_name }}"
+                last_name="{{ Auth::user()->last_name }}"
+                email="{{ Auth::user()->email }}"
+                phone="{{ Auth::user()->phone }}"
+            />
 
             <form method="post" action="{{ route('settings') }}" class="d-none">
                 {{ csrf_field() }}
