@@ -4,42 +4,42 @@
             Profile
         </div>
         <div class="card-body">
-            <form method="post" action="#" @submit.prevent="onSubmit" @keydown="form.errors.clear($event.target.name)">
+            <form method="post" action="#" @submit.prevent="onSubmit" @input="form.errors.clear($event.target.name)">
                 <div class="alert alert-success" v-if="form.state == 'success'" aria-live="polite">
                     Profile updated!
                 </div>
                 <div class="form-row">
                     <div class="form-group col-6 col-md-6">
                         <label for="first_name">First name</label>
-                        <form-input name="first_name" v-model="form.first_name" :error="form.errors.has('first_name')" />
+                        <form-input name="first_name" v-model="form.fields.first_name" :error="form.errors.has('first_name')" />
 
                         <div class="invalid-feedback" v-text="form.errors.get('first_name')"></div>
                     </div>
                     <div class="form-group col-6 col-md-6">
                         <label for="last_name">Last name</label>
-                        <form-input name="last_name" v-model="form.last_name" :error="form.errors.has('last_name')" />
+                        <form-input name="last_name" v-model="form.fields.last_name" :error="form.errors.has('last_name')" />
 
                         <div class="invalid-feedback" v-text="form.errors.get('last_name')"></div>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <form-input name="email" v-model="form.email" :error="form.errors.has('email')" />
+                    <form-input name="email" v-model="form.fields.email" :error="form.errors.has('email')" />
 
                     <div class="invalid-feedback" v-text="form.errors.get('email')"></div>
                 </div>
 
                 <div class="form-group">
                     <label for="phone">Phone</label>
-                    <form-input name="phone" v-model="form.phone" :error="form.errors.has('phone')" />
+                    <form-input name="phone" v-model="form.fields.phone" :error="form.errors.has('phone')" />
 
                     <div class="invalid-feedback" v-text="form.errors.get('phone')"></div>
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary px-4" :disabled="form.state == 'loading'">
+                    <app-button type="submit" variant="primary" :disabled="isLoading()">
                         Update
-                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" v-if="form.state == 'loading'"></span>
-                    </button>
+                        <span class="spinner-border spinner-border-sm" v-if="isLoading()" role="status" aria-hidden="true"></span>
+                    </app-button>
                 </div>
             </form>
         </div>
@@ -76,20 +76,23 @@ export default {
     data: function () {
         return {
             form: new Form({
-                first_name: this.first_name,
-                last_name: this.last_name,
-                email: this.email,
-                phone: this.phone
+                fields: {
+                    first_name: this.first_name,
+                    last_name: this.last_name,
+                    email: this.email,
+                    phone: this.phone
+                },
+                state: ''
             })
         }
     },
 
     methods: {
-        buttonClass() {
-            return
-        },
         onSubmit() {
             this.form.post('/api/v1/settings-profile');
+        },
+        isLoading() {
+            return this.form.state === 'loading';
         }
     }
 
