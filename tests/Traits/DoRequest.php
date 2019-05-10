@@ -2,6 +2,8 @@
 
 namespace Tests\Traits;
 
+use Laravel\Passport\Passport;
+
 trait DoRequest
 {
     /**
@@ -31,6 +33,22 @@ trait DoRequest
      * @var array
      */
     protected $fieldOverrides;
+
+    /**
+     * Sets user for Passport authentication. Additional scopes can be passed.
+     *
+     * @param \App\Models\User $user
+     * @param array $scopes
+     * @return self
+     */
+    protected function passportActingAs($user = null, $scopes = []) {
+        Passport::actingAs(
+            $user === null ? $this->user : $user,
+            $scopes
+        );
+        
+        return $this;
+    }
 
     /**
      * Run the request.
