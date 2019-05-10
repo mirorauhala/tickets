@@ -1,12 +1,12 @@
 <template>
     <div class="card">
         <div class="card-header">
-            Profile
+            Account
         </div>
         <div class="card-body">
             <form method="post" action="#" @submit.prevent="onSubmit" @input="form.errors.clear($event.target.name)">
                 <div class="alert alert-success" v-if="form.state == 'success'" aria-live="polite">
-                    Profile updated!
+                    Account updated!
                 </div>
                 <div class="form-row">
                     <div class="form-group col-6 col-md-6">
@@ -89,7 +89,7 @@ export default {
 
     methods: {
         onSubmit() {
-            this.form.post('/api/v1/settings-profile');
+            this.form.post('/api/v1/settings-account');
         },
         isLoading() {
             return this.form.state === 'loading';

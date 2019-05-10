@@ -19,7 +19,7 @@ import store from './store'
 Vue.component('app-button', require('./components/AppButton.vue').default);
 Vue.component('input-counter', require('./components/InputCounter.vue').default);
 Vue.component('form-input', require('./components/FormInput.vue').default);
-Vue.component('settings-profile', require('./components/SettingsProfile.vue').default);
+Vue.component('settings-account', require('./components/SettingsAccount.vue').default);
 Vue.component('qr-code', VueQRCodeComponent)
 
 const app = new Vue({

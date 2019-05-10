@@ -68,7 +68,7 @@ Route::group(['prefix' => '/dashboard'], function () {
 */
 
 Route::group(['prefix' => '/settings', 'namespace' => 'Settings'], function () {
-    Route::get('/', 'ProfileController@showSettings')->name('settings');
+    Route::get('/', 'SettingsAccountController@show')->name('settings');
     Route::get('/password', 'PasswordController@showPasswordForm')->name('settings.password');
     Route::post('/password', 'PasswordController@updatePassword');
     Route::get('/language', 'LanguageController@show')->name('settings.language');

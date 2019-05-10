@@ -14,7 +14,7 @@
             @include('settings._menu')
         </div>
         <div class="col-md-8 offset-md-1">
-            <settings-profile
+            <settings-account
                 first_name="{{ Auth::user()->first_name }}"
                 last_name="{{ Auth::user()->last_name }}"
                 email="{{ Auth::user()->email }}"

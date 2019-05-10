@@ -23,7 +23,7 @@ return [
     */
 
     'flash' => [
-        'profile'  => 'Profiili päivitetty!',
+        'account'  => 'Tili päivitetty!',
         'password' => 'Salasana vaihdettu!',
         'language' => 'Näyttökieli vaihdettu!',
     ],
@@ -35,7 +35,7 @@ return [
     */
 
     'menu' => [
-        'profile'  => 'Profiili',
+        'account'  => 'Tili',
         'password' => 'Salasana',
         'language' => 'Kieli',
         'about'    => 'Tietoa',

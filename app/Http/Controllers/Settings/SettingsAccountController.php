@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Settings;
 
 use App\Http\Controllers\Controller;
 
-class ProfileController extends Controller
+class SettingsAccountController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -17,12 +17,12 @@ class ProfileController extends Controller
     }
 
     /**
-     * Show the application settings.
+     * Show user's account editing view.
      *
      * @return \Illuminate\Http\Response
      */
-    public function showSettings()
+    public function show()
     {
-        return view('settings.profile');
+        return view('settings.account');
     }
 }

@@ -23,7 +23,7 @@ return [
     */
 
     'flash' => [
-        'profile'  => 'Profile updated!',
+        'account'  => 'Account updated!',
         'password' => 'Password changed!',
         'language' => 'Display language changed!',
     ],
@@ -35,7 +35,7 @@ return [
     */
 
     'menu' => [
-        'profile'  => 'Profile',
+        'account'  => 'Account',
         'password' => 'Password',
         'language' => 'Language',
         'about'    => 'About',

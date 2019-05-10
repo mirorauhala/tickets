@@ -5,17 +5,17 @@ namespace App\Http\Controllers\Api;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\UserProfileRequest;
+use App\Http\Requests\UserAccountRequest;
 
-class SettingsProfileController extends Controller
+class SettingsAccountController extends Controller
 {
     /**
-     * Update the user's profile.
+     * Update the user's account.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function update(UserProfileRequest $request)
+    public function update(UserAccountRequest $request)
     {
         $request->user()->update([
             'first_name' => $request->first_name,

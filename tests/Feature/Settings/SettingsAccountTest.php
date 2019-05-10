@@ -5,7 +5,7 @@ namespace Tests\Feature;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class UserSettingsTest extends TestCase
+class SettingsAccountTest extends TestCase
 {
     use RefreshDatabase;
 
@@ -14,7 +14,7 @@ class UserSettingsTest extends TestCase
         parent::setUp();
 
         $this->createUser();
-        $this->uri = '/api/v1/settings-profile';
+        $this->uri = '/api/v1/settings-account';
         $this->fields = [
             'first_name' => 'John',
             'last_name'  => 'Doe',
