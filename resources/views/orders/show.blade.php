@@ -36,10 +36,6 @@
                 </table>
             </div>
 
-            @if($order->status == "pending")
-                <p><a class="btn btn-primary px-4" href="{{ route('orders.delete', ['order' => $order->reference]) }}">{{ tra('order.action') }}</a></p>
-            @endif
-
             <h3 class="pt-3">{{ tra('order.list-of-products') }}</h3>
 
             @if(count($order->items) > 0)
