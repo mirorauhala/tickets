@@ -21,7 +21,7 @@
                 <div class="dropdown-menu">
 
                     @if(count(auth()->user()->events) > 0)
-                    <a class="dropdown-item{{ active('dashboard*') }}" href="{{ route('dashboard') }}">{{ tra('nav.manage') }}</a>
+                    <a class="dropdown-item{{ active('dashboard*') }}" href="{{ route('dashboard') }}">{{ tra('nav.dashboard') }}</a>
                     <div class="dropdown-divider"></div>
                     @endif
 

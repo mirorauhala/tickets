@@ -7,12 +7,12 @@ return [
     |--------------------------------------------------------------------------
     */
 
-    'featured' => 'Esillä',
-    'tickets'  => 'Liput',
-    'orders'   => 'Tilaukset',
-    'manage'   => 'Hallitse',
-    'settings' => 'Asetukset',
-    'sign-in'  => 'Kirjaudu sisään',
-    'sign-out' => 'Kirjaudu ulos',
-    'sign-up'  => 'Rekisteröidy',
+    'featured'  => 'Esillä',
+    'tickets'   => 'Liput',
+    'orders'    => 'Tilaukset',
+    'dashboard' => 'Hallintapaneeli',
+    'settings'  => 'Asetukset',
+    'sign-in'   => 'Kirjaudu sisään',
+    'sign-out'  => 'Kirjaudu ulos',
+    'sign-up'   => 'Rekisteröidy',
 ];
