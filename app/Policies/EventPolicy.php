@@ -16,11 +16,11 @@ class EventPolicy
      * @param \App\User  $user
      * @param \App\Event $event
      *
-     * @return mixed
+     * @return boolean
      */
     public function view(User $user, Event $event)
     {
-        return true;
+        return $user->events()->where('event_id', $event->id)->exists();
     }
 
     /**
@@ -28,7 +28,7 @@ class EventPolicy
      *
      * @param \App\User $user
      *
-     * @return mixed
+     * @return boolean
      */
     public function create(User $user)
     {
@@ -41,11 +41,11 @@ class EventPolicy
      * @param \App\User  $user
      * @param \App\Event $event
      *
-     * @return mixed
+     * @return boolean
      */
     public function update(User $user, Event $event)
     {
-        return $user->events()->where('event_id', $event->id)->first();
+        return $user->events()->where('event_id', $event->id)->exists();
     }
 
     /**
@@ -54,10 +54,10 @@ class EventPolicy
      * @param \App\User  $user
      * @param \App\Event $event
      *
-     * @return mixed
+     * @return boolean
      */
     public function delete(User $user, Event $event)
     {
-        return $user->events()->where('event_id', $event->id)->first();
+        return $user->events()->where('event_id', $event->id)->exists();
     }
 }

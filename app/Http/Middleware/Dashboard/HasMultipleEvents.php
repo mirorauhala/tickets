@@ -16,7 +16,7 @@ class HasMultipleEvents
      */
     public function handle($request, Closure $next)
     {
-        if (($event = $request->user()->events)->count()) {
+        if (($event = $request->user()->events)->count() === 1) {
             return redirect()->route('dashboard.show', ['event' => $event->first()]);
         }
 

@@ -40,7 +40,7 @@ class DashboardController extends Controller
      */
     public function customers(Event $event)
     {
-        $this->authorize('update', $event);
+        $this->authorize('view', $event);
 
         return view('dashboard.customers')
             ->with([
@@ -58,7 +58,7 @@ class DashboardController extends Controller
      */
     public function orders(Event $event)
     {
-        $this->authorize('update', $event);
+        $this->authorize('view', $event);
 
         $event = $event->load('orders.items');
 
