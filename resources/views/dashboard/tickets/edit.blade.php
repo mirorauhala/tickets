@@ -31,7 +31,7 @@
                 </div>
 
                 <div class="form-group{{ $errors->has('price') ? ' is-invalid' : '' }}">
-                    <label for="price">Price <sup>(in cents, 1,00 &euro; = 1000)</sup></label>
+                    <label for="price">Price <sup>(in cents: 10,00 &euro; = 1000)</sup></label>
                     <input type="number" class="form-control" id="price" name="price" value="{{ $ticket->price }}">
 
                     @if ($errors->has('price'))
