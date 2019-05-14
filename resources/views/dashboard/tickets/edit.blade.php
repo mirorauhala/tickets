@@ -17,8 +17,9 @@
 
         <div class="col-md-9">
             @include('partials/messages/flashbox')
-            <form method="post" action="{{ route('dashboard.tickets.edit', [$event, $ticket]) }}">
+            <form method="post" action="{{ route('dashboard.tickets.update', [$event, $ticket]) }}">
                 {{ csrf_field() }}
+                @method('PUT')
                 <div class="form-group{{ $errors->has('name') ? ' is-invalid' : '' }}">
                     <label for="name">Ticket name</label>
                     <input type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" id="ticket_name" name="name" value="{{ $ticket->name }}">
