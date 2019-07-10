@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bc8799b4e675ca68ff4a6ef0babf62ab",
+    "content-hash": "2037b4ff47579226647cb24357470b11",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -1119,16 +1119,16 @@
         },
         {
             "name": "itsgoingd/clockwork",
-            "version": "v3.1.4",
+            "version": "v4.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itsgoingd/clockwork.git",
-                "reference": "529b6f9e2ce487b900213cf1d0694d0aebd5977f"
+                "reference": "26e248dc599b2326b19cb1269947f47a85499d4c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itsgoingd/clockwork/zipball/529b6f9e2ce487b900213cf1d0694d0aebd5977f",
-                "reference": "529b6f9e2ce487b900213cf1d0694d0aebd5977f",
+                "url": "https://api.github.com/repos/itsgoingd/clockwork/zipball/26e248dc599b2326b19cb1269947f47a85499d4c",
+                "reference": "26e248dc599b2326b19cb1269947f47a85499d4c",
                 "shasum": ""
             },
             "require": {
@@ -1173,7 +1173,7 @@
                 "profiling",
                 "slim"
             ],
-            "time": "2019-03-21T20:24:39+00:00"
+            "time": "2019-07-09T20:20:57+00:00"
         },
         {
             "name": "jakub-onderka/php-console-color",
