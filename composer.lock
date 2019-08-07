@@ -6024,24 +6024,24 @@
         },
         {
             "name": "laravel/dusk",
-            "version": "v5.3.0",
+            "version": "v5.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/dusk.git",
-                "reference": "17bcb092516805e68d598035f6315bcb9845bbe7"
+                "reference": "525076aa34f6935b1f54d4c5a155f84182194bbb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/dusk/zipball/17bcb092516805e68d598035f6315bcb9845bbe7",
-                "reference": "17bcb092516805e68d598035f6315bcb9845bbe7",
+                "url": "https://api.github.com/repos/laravel/dusk/zipball/525076aa34f6935b1f54d4c5a155f84182194bbb",
+                "reference": "525076aa34f6935b1f54d4c5a155f84182194bbb",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "ext-zip": "*",
                 "facebook/webdriver": "^1.7",
-                "illuminate/console": "~5.7.0|~5.8.0|~5.9.0",
-                "illuminate/support": "~5.7.0|~5.8.0|~5.9.0",
+                "illuminate/console": "~5.7.0|~5.8.0|^6.0",
+                "illuminate/support": "~5.7.0|~5.8.0|^6.0",
                 "nesbot/carbon": "^1.20|^2.0",
                 "php": ">=7.1.0",
                 "symfony/console": "^4.0",
@@ -6085,7 +6085,7 @@
                 "testing",
                 "webdriver"
             ],
-            "time": "2019-07-11T21:05:48+00:00"
+            "time": "2019-08-06T17:53:56+00:00"
         },
         {
             "name": "mockery/mockery",
