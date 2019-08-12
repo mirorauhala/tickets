@@ -1641,8 +1641,8 @@
             "authors": [
                 {
                     "name": "Luís Otávio Cobucci Oblonczyk",
-                    "email": "lcobucci@gmail.com",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "lcobucci@gmail.com"
                 }
             ],
             "description": "A simple library to work with JSON Web Token and JSON Web Signature",
@@ -3903,16 +3903,16 @@
         },
         {
             "name": "stripe/stripe-php",
-            "version": "v6.41.0",
+            "version": "v6.43.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/stripe/stripe-php.git",
-                "reference": "abd52aed846b52db9365b470be696d0905c08b01"
+                "reference": "c06eb0da0e73750cab75948dd9ca4a15cf829e68"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/abd52aed846b52db9365b470be696d0905c08b01",
-                "reference": "abd52aed846b52db9365b470be696d0905c08b01",
+                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/c06eb0da0e73750cab75948dd9ca4a15cf829e68",
+                "reference": "c06eb0da0e73750cab75948dd9ca4a15cf829e68",
                 "shasum": ""
             },
             "require": {
@@ -3955,7 +3955,7 @@
                 "payment processing",
                 "stripe"
             ],
-            "time": "2019-08-01T01:41:19+00:00"
+            "time": "2019-08-09T20:54:08+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -6302,18 +6302,18 @@
             "authors": [
                 {
                     "name": "Arne Blankerts",
-                    "email": "arne@blankerts.de",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "arne@blankerts.de"
                 },
                 {
                     "name": "Sebastian Heuer",
-                    "email": "sebastian@phpeople.de",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "sebastian@phpeople.de"
                 },
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "Component for reading phar.io manifest information from a PHP Archive (PHAR)",
