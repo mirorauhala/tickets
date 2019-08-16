@@ -13,12 +13,13 @@ jobs:
       run: |
         sudo apt-get install php-fpm php-gd php-xml php-zip unzip -yy
         wget https://raw.githubusercontent.com/composer/getcomposer.org/76a7060ccb93902cd7576b67264ad91c8a2700e2/web/installer -O - -q | php -- --quiet
+        php -v
+        composer -V
         cp .env.ci .env
+        touch /home/runner/work/tickets/tickets/database/database.sqlite
         composer install
         pwd
         ls -la
         php artisan key:generate
-        php artisan config:cache
-        php artisan view:cache
-        php artisan optimize
+        php artisan migrate
         ./vendor/bin/phpunit
