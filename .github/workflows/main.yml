@@ -9,11 +9,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@master
-    - name: Run unit testing
+    - name: Run unit testing.
       run: |
         sudo apt-get install php-fpm php-gd php-xml php-zip unzip -yy
         wget https://raw.githubusercontent.com/composer/getcomposer.org/76a7060ccb93902cd7576b67264ad91c8a2700e2/web/installer -O - -q | php -- --quiet
+        cp .env.ci .env
         composer install
+        pwd
+        ls -la
         php artisan key:generate
         php artisan config:cache
         php artisan view:cache
