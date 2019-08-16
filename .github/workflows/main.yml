@@ -9,9 +9,10 @@ jobs:
     
     steps:
     - uses: actions/checkout@master
-    - name: Run a one-line script
-      run: echo Hello, world!
-    - name: Run a multi-line script
+    - name: Run unit testing
       run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+        sudo apt install php-fpm php-gd php-xml php-zip unzip -yy
+        wget https://raw.githubusercontent.com/composer/getcomposer.org/76a7060ccb93902cd7576b67264ad91c8a2700e2/web/installer -O - -q | php -- --quiet
+        composer
+        ./vendor/bin/phpunit
+        
