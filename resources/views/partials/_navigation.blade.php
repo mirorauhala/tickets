@@ -13,7 +13,7 @@
                 <a class="nav-link" href="{{ route('tickets') }}">{{ tra('nav.tickets') }}</a>
             </li>
             <li class="nav-item{{ active('orders*') }}">
-                <a class="nav-link" href="{{ route('orders') }}">{{ tra('nav.orders') }}</a>
+                <a class="nav-link" href="{{ route('orders.index') }}">{{ tra('nav.orders') }}</a>
             </li>
         </ul>
 

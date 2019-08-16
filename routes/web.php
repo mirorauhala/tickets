@@ -18,31 +18,10 @@ Auth::routes(['verify' => true]);
 | Basic routes
 |--------------------------------------------------------------------------
 */
-Route::get('/',                 'FeaturedEventController@index')->name('events');
-
-Route::get('/tickets',          'TicketController@index')->name('tickets');
-Route::get('/tickets/{item}',   'TicketController@show')->name('tickets.show');
-
-/*
-|--------------------------------------------------------------------------
-| Orders
-|--------------------------------------------------------------------------
-*/
-
-Route::get('/orders',               'OrderController@index')->name('orders');
-Route::get('/orders/create',        'OrderController@create')->name('orders.create');
-Route::post('/orders/create',       'OrderController@store');
-Route::get('/orders/{order}',       'OrderController@show')->name('orders.show');
-Route::delete('/orders/{order}',    'OrderController@delete')->name('orders.delete');
-
-/*
-|--------------------------------------------------------------------------
-| Event
-|--------------------------------------------------------------------------
-*/
-
-Route::get('/events',           'EventController@index')->name('events.index');
-Route::get('/events/{event}',   'EventController@show')->name('events.show');
+Route::get('/', 'FeaturedEventController@index')->name('events');
+Route::resource('/tickets', 'TicketController')->only(['index', 'show']);
+Route::resource('/orders', 'OrderController')->except(['edit', 'update']);
+Route::resource('/events', 'EventController')->only(['index', 'show']);
 
 /*
 |--------------------------------------------------------------------------

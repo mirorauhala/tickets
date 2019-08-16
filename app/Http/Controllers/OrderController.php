@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Order;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class OrderController extends Controller
 {
@@ -62,7 +61,7 @@ class OrderController extends Controller
         $order->delete();
 
         return redirect()
-            ->route('orders')
+            ->route('orders.index')
             ->with([
                 'flash_status'  => 'success',
                 'flash_message' => 'Tilaus poistettu.',
