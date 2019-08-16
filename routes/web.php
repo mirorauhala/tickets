@@ -18,7 +18,7 @@ Auth::routes(['verify' => true]);
 | Basic routes
 |--------------------------------------------------------------------------
 */
-Route::get('/', 'FeaturedEventController@index')->name('events');
+Route::get('/', 'FeaturedEventController@index')->name('home');
 Route::resource('/tickets', 'TicketController')->only(['index', 'show']);
 Route::resource('/orders', 'OrderController')->except(['edit', 'update']);
 Route::resource('/events', 'EventController')->only(['index', 'show']);
@@ -72,5 +72,5 @@ Route::get('/lang/{lang}', function (Request $request, $lang) {
         return redirect($request->header('referer'));
     }
 
-    return redirect()->route('events');
+    return redirect()->route('home');
 })->name('lang');
