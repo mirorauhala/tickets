@@ -44,13 +44,13 @@
             "authors": [
                 {
                     "name": "Benjamin Eberlei",
-                    "role": "Lead Developer",
-                    "email": "kontakt@beberlei.de"
+                    "email": "kontakt@beberlei.de",
+                    "role": "Lead Developer"
                 },
                 {
                     "name": "Richard Quadling",
-                    "role": "Collaborator",
-                    "email": "rquadling@gmail.com"
+                    "email": "rquadling@gmail.com",
+                    "role": "Collaborator"
                 }
             ],
             "description": "Thin assertion library for input validation in business models.",
@@ -1641,8 +1641,8 @@
             "authors": [
                 {
                     "name": "Luís Otávio Cobucci Oblonczyk",
-                    "email": "lcobucci@gmail.com",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "lcobucci@gmail.com"
                 }
             ],
             "description": "A simple library to work with JSON Web Token and JSON Web Signature",
@@ -1897,15 +1897,15 @@
             "authors": [
                 {
                     "name": "Alex Bilbie",
-                    "role": "Developer",
                     "email": "hello@alexbilbie.com",
-                    "homepage": "http://www.alexbilbie.com"
+                    "homepage": "http://www.alexbilbie.com",
+                    "role": "Developer"
                 },
                 {
                     "name": "Andy Millington",
-                    "role": "Developer",
                     "email": "andrew@noexceptions.io",
-                    "homepage": "https://www.noexceptions.io"
+                    "homepage": "https://www.noexceptions.io",
+                    "role": "Developer"
                 }
             ],
             "description": "A lightweight and powerful OAuth 2.0 authorization and resource server library with support for all the core specification grants. This library will allow you to secure your API with OAuth and allow your applications users to approve apps that want to access their data from your API.",
@@ -3745,9 +3745,9 @@
             "authors": [
                 {
                     "name": "Freek Van der Herten",
+                    "role": "Developer",
                     "email": "freek@spatie.be",
-                    "homepage": "https://spatie.be",
-                    "role": "Developer"
+                    "homepage": "https://spatie.be"
                 }
             ],
             "description": "A developer friendly wrapper around Fractal",
@@ -3812,9 +3812,9 @@
             "authors": [
                 {
                     "name": "Freek Van der Herten",
+                    "role": "Developer",
                     "email": "freek@spatie.be",
-                    "homepage": "https://spatie.be",
-                    "role": "Developer"
+                    "homepage": "https://spatie.be"
                 }
             ],
             "description": "An easy to use Fractal integration for Laravel applications",
@@ -3832,16 +3832,16 @@
         },
         {
             "name": "spomky-labs/otphp",
-            "version": "v10.0",
+            "version": "v10.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Spomky-Labs/otphp.git",
-                "reference": "3ff28fc30efdedacf1bc99e66232225a9354dbba"
+                "reference": "7c4e59c6a1cfe7798e5bf33cca6e5e5cdc5df9ff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Spomky-Labs/otphp/zipball/3ff28fc30efdedacf1bc99e66232225a9354dbba",
-                "reference": "3ff28fc30efdedacf1bc99e66232225a9354dbba",
+                "url": "https://api.github.com/repos/Spomky-Labs/otphp/zipball/7c4e59c6a1cfe7798e5bf33cca6e5e5cdc5df9ff",
+                "reference": "7c4e59c6a1cfe7798e5bf33cca6e5e5cdc5df9ff",
                 "shasum": ""
             },
             "require": {
@@ -3899,20 +3899,20 @@
                 "otp",
                 "totp"
             ],
-            "time": "2019-05-07T21:08:23+00:00"
+            "time": "2019-07-30T14:43:55+00:00"
         },
         {
             "name": "stripe/stripe-php",
-            "version": "v6.41.0",
+            "version": "v6.43.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/stripe/stripe-php.git",
-                "reference": "abd52aed846b52db9365b470be696d0905c08b01"
+                "reference": "42fcdaf99c44bb26937223f8eae1f263491d5ab8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/abd52aed846b52db9365b470be696d0905c08b01",
-                "reference": "abd52aed846b52db9365b470be696d0905c08b01",
+                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/42fcdaf99c44bb26937223f8eae1f263491d5ab8",
+                "reference": "42fcdaf99c44bb26937223f8eae1f263491d5ab8",
                 "shasum": ""
             },
             "require": {
@@ -3955,7 +3955,7 @@
                 "payment processing",
                 "stripe"
             ],
-            "time": "2019-08-01T01:41:19+00:00"
+            "time": "2019-08-29T16:56:12+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -6302,18 +6302,18 @@
             "authors": [
                 {
                     "name": "Arne Blankerts",
-                    "email": "arne@blankerts.de",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "arne@blankerts.de"
                 },
                 {
                     "name": "Sebastian Heuer",
-                    "email": "sebastian@phpeople.de",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "sebastian@phpeople.de"
                 },
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "Component for reading phar.io manifest information from a PHP Archive (PHAR)",
@@ -7692,8 +7692,8 @@
             "authors": [
                 {
                     "name": "Arne Blankerts",
-                    "email": "arne@blankerts.de",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "arne@blankerts.de"
                 }
             ],
             "description": "A small library for converting tokenized PHP source code into XML and potentially other formats",
@@ -7798,9 +7798,9 @@
             "authors": [
                 {
                     "name": "Stefan Zweifel",
-                    "role": "Developer",
                     "email": "hello@stefanzweifel.io",
-                    "homepage": "https://stefanzweifel.io"
+                    "homepage": "https://stefanzweifel.io",
+                    "role": "Developer"
                 }
             ],
             "description": "Get insights about your Laravel Project",
