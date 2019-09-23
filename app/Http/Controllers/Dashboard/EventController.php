@@ -46,13 +46,7 @@ class EventController extends Controller
     {
         $this->authorize('update', $event);
 
-        $event->update([
-            'name'        => $request->name,
-            'slug'        => $request->slug,
-            'location'    => $request->location,
-            'url'         => $request->url,
-            'currency'    => $request->currency,
-        ]);
+        $event->update($request->validated());
 
         return redirect()
             ->route('dashboard.settings', ['event' => $event])

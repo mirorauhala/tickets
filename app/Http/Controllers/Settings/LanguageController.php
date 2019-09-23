@@ -36,9 +36,7 @@ class LanguageController extends Controller
      */
     public function update(UpdateLanguageRequest $request)
     {
-        $request->user()->update([
-            'language' => $request->language,
-        ]);
+        $request->user()->update($request->validated());
 
         return redirect()
             ->route('settings.language')
