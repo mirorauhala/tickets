@@ -41,12 +41,13 @@ trait DoRequest
      * @param array $scopes
      * @return self
      */
-    protected function passportActingAs($user = null, $scopes = []) {
+    protected function passportActingAs($user = null, $scopes = [])
+    {
         Passport::actingAs(
             $user === null ? $this->user : $user,
             $scopes
         );
-        
+
         return $this;
     }
 
@@ -77,6 +78,6 @@ trait DoRequest
      */
     protected function fieldOverrides()
     {
-        return array_merge($this->fields, (array)$this->fieldOverrides);
+        return array_merge($this->fields, (array) $this->fieldOverrides);
     }
 }

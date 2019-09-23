@@ -1,9 +1,8 @@
 <?php
 
-use Illuminate\Database\Seeder;
-
 use App\Models\Event;
 use App\Models\Ticket;
+use Illuminate\Database\Seeder;
 
 class TicketsTableSeeder extends Seeder
 {
@@ -14,7 +13,7 @@ class TicketsTableSeeder extends Seeder
      */
     public function run()
     {
-        $event = Event::find(1);
+        $event   = Event::find(1);
         $tickets = factory(Ticket::class)->times(3)->create(['event_id' => $event->id]);
     }
 }

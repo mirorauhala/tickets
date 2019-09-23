@@ -22,7 +22,7 @@ class MapDeleteTest extends TestCase
 
         $this->createUser();
         $this->event = factory(Event::class)->create();
-        $this->map = factory(Map::class)->create([
+        $this->map   = factory(Map::class)->create([
             'event_id' => $this->event->id,
         ]);
         $this->user->events()->save($this->event);

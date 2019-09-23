@@ -14,18 +14,18 @@ class EloquentOrderRepository extends RepositoryAbstract implements OrderReposit
     }
 
     /*
-    * Find Order by reference.
-    * @returns App\Models\Order
-    */
+     * Find Order by reference.
+     * @returns App\Models\Order
+     */
     public function findByReference($reference)
     {
         return $this->findWhereFirst('reference', $reference);
     }
 
     /*
-    * Delete order by reference.
-    * @returns mixed
-    */
+     * Delete order by reference.
+     * @returns mixed
+     */
     public function deleteByReference($reference)
     {
         return $this->deleteWhere('reference', $reference);

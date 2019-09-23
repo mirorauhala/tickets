@@ -26,5 +26,4 @@ class SettingsAccountController extends Controller
 
         return $request->user();
     }
-
 }

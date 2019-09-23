@@ -8,7 +8,7 @@ return [
     |
     | The following language lines are used within the user settings.
     |
-    */
+     */
 
     'title' => 'Settings',
 
@@ -20,7 +20,7 @@ return [
     | The following language lines are displayed when an action has been
     | executed.
     |
-    */
+     */
 
     'flash' => [
         'account'  => 'Account updated!',
@@ -32,7 +32,7 @@ return [
     |--------------------------------------------------------------------------
     | Menu
     |--------------------------------------------------------------------------
-    */
+     */
 
     'menu' => [
         'account'  => 'Account',
@@ -49,7 +49,7 @@ return [
     | The following language lines are used within the language form in
     | settings.
     |
-    */
+     */
 
     'language.language' => 'Display language',
 
@@ -61,7 +61,7 @@ return [
     | The following language lines are used within the language form in
     | settings.
     |
-    */
+     */
 
     'change-password' => [
         'current'      => 'Current password',
@@ -76,10 +76,10 @@ return [
     |
     | The following language lines are used within the about page in settings.
     |
-    */
+     */
 
     'about' => [
-        'title' => 'About',
+        'title'           => 'About',
         'current-commit'  => 'System version:',
     ],
 ];

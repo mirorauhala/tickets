@@ -16,7 +16,7 @@ class SignUpTest extends TestCase
     {
         parent::setUp();
 
-        $this->uri = '/register';
+        $this->uri    = '/register';
         $this->fields = [
             'first_name'            => 'John',
             'last_name'             => 'Doe',

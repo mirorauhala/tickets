@@ -21,7 +21,7 @@ class EventTicketsTest extends DuskTestCase
     public function a_user_can_create_new_tickets()
     {
         $event = factory(Event::class)->create();
-        $user = factory(User::class)->create();
+        $user  = factory(User::class)->create();
 
         $user->events()->attach($event);
 

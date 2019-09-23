@@ -15,10 +15,10 @@ class EloquentUserRepository extends RepositoryAbstract implements UserRepositor
     }
 
     /*
-    * Returns the user model that is authenticated.
-    *
-    * @returns \App\Models\User
-    */
+     * Returns the user model that is authenticated.
+     *
+     * @returns \App\Models\User
+     */
     public function authenticated()
     {
         return Auth::user();

@@ -19,7 +19,7 @@ class TicketsCreateTest extends TestCase
         $this->createUser();
         $this->event = factory(Event::class)->create();
         $this->user->events()->attach($this->event);
-        $this->uri = route('dashboard.tickets.store', [$this->event->slug]);
+        $this->uri    = route('dashboard.tickets.store', [$this->event->slug]);
         $this->fields = [
             'name'                    => 'Entrance',
             'price'                   => 1000,

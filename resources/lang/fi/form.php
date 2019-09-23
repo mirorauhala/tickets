@@ -8,7 +8,7 @@ return [
     |
     | The following language lines are used globally in forms.
     |
-    */
+     */
 
     'button.submit'             => 'Lähetä',
     'button.view'               => 'Selaa',

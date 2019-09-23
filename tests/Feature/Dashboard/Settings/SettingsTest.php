@@ -19,7 +19,7 @@ class SettingsTest extends TestCase
         $this->createUser();
         $this->event = factory(Event::class)->create();
         $this->user->events()->attach($this->event);
-        $this->uri = route('dashboard.settings', [$this->event->slug]);
+        $this->uri    = route('dashboard.settings', [$this->event->slug]);
         $this->fields = [
             'name'        => 'Event name',
             'slug'        => 'slug',

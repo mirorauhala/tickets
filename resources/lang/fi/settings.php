@@ -8,7 +8,7 @@ return [
     |
     | The following language lines are used within the user settings.
     |
-    */
+     */
 
     'title'  => 'Asetukset',
 
@@ -20,7 +20,7 @@ return [
     | The following language lines are displayed when an action has been
     | executed.
     |
-    */
+     */
 
     'flash' => [
         'account'  => 'Tili päivitetty!',
@@ -32,7 +32,7 @@ return [
     |--------------------------------------------------------------------------
     | Menu
     |--------------------------------------------------------------------------
-    */
+     */
 
     'menu' => [
         'account'  => 'Tili',
@@ -49,7 +49,7 @@ return [
     | The following language lines are used within the language form in
     | settings.
     |
-    */
+     */
 
     'language.language' => 'Näyttökieli',
 
@@ -61,14 +61,14 @@ return [
     | The following language lines are used within the language form in
     | settings.
     |
-    */
+     */
 
     'change-password' => [
         'current'      => 'Nykyinen salasana',
         'new'          => 'Uusi salasana',
         'confirmation' => 'Uusi salasana uudelleen',
     ],
-    
+
     /*
     |--------------------------------------------------------------------------
     | About
@@ -76,10 +76,10 @@ return [
     |
     | The following language lines are used within the about page in settings.
     |
-    */
+     */
 
     'about' => [
-        'title' => 'Tietoa',
+        'title'           => 'Tietoa',
         'current-commit'  => 'Järjestelmän versio:',
     ],
 ];

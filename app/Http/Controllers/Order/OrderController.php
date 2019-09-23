@@ -36,9 +36,9 @@ class OrderController extends Controller
     public function create(Event $event, OrderRequest $request)
     {
         // get ticket
-        $ticket = Ticket::find($request->ticket_id);
+        $ticket        = Ticket::find($request->ticket_id);
         $ticket_amount = $request->ticket_amount;
-        $order_value = $ticket_amount * $ticket->price;
+        $order_value   = $ticket_amount * $ticket->price;
 
         // order reference
         $order_reference = strtoupper(bin2hex(openssl_random_pseudo_bytes(6)));
@@ -73,8 +73,8 @@ class OrderController extends Controller
         }
 
         // get ticket value in decimals
-        $money = new Money($ticket->price, new Currency('EUR'));
-        $currencies = new ISOCurrencies();
+        $money          = new Money($ticket->price, new Currency('EUR'));
+        $currencies     = new ISOCurrencies();
         $moneyFormatter = new DecimalMoneyFormatter($currencies);
 
         // save order items

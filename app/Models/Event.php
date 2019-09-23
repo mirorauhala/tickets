@@ -93,7 +93,7 @@ class Event extends Model
     /**
      * Checks wether the event has active maps.
      *
-     * @return boolean
+     * @return bool
      */
     public function hasActiveMaps()
     {

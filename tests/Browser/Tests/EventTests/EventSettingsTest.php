@@ -21,7 +21,7 @@ class EventSettingsTest extends DuskTestCase
     public function a_user_can_edit_events_settings()
     {
         $event = factory(Event::class)->create();
-        $user = factory(User::class)->create();
+        $user  = factory(User::class)->create();
 
         $user->events()->attach($event);
 

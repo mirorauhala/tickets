@@ -14,7 +14,7 @@ class SettingsAccountTest extends TestCase
         parent::setUp();
 
         $this->createUser();
-        $this->uri = '/api/v1/settings-account';
+        $this->uri    = '/api/v1/settings-account';
         $this->fields = [
             'first_name' => 'John',
             'last_name'  => 'Doe',

@@ -26,7 +26,7 @@ if (! function_exists('active')) {
         }
 
         $routeCollection = collect($routes);
-        $currentRoute = Route::currentRouteName();
+        $currentRoute    = Route::currentRouteName();
 
         foreach ($excludeRoutes as $route) {
             if (Str::is($route, $currentRoute)) {
@@ -54,11 +54,11 @@ if (! function_exists('active')) {
 if (! function_exists('money')) {
     function money($amount, $currency)
     {
-        $money = new Money($amount, new Currency($currency));
+        $money      = new Money($amount, new Currency($currency));
         $currencies = new ISOCurrencies();
 
         $numberFormatter = new \NumberFormatter('fi', \NumberFormatter::CURRENCY);
-        $moneyFormatter = new IntlMoneyFormatter($numberFormatter, $currencies);
+        $moneyFormatter  = new IntlMoneyFormatter($numberFormatter, $currencies);
 
         return $moneyFormatter->format($money);
     }

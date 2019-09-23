@@ -10,7 +10,7 @@ return [
     | by the framework. The "local" disk, as well as a variety of cloud
     | based disks are available to your application. Just store away!
     |
-    */
+     */
 
     'default' => 'local',
 
@@ -23,7 +23,7 @@ return [
     | reason, you may specify a default "cloud" driver here. This driver
     | will be bound as the Cloud disk implementation in the container.
     |
-    */
+     */
 
     'cloud' => 's3',
 
@@ -38,7 +38,7 @@ return [
     |
     | Supported Drivers: "local", "ftp", "s3", "rackspace"
     |
-    */
+     */
 
     'disks' => [
         'local' => [

@@ -14,18 +14,18 @@ class EloquentOrderItemRepository extends RepositoryAbstract implements OrderIte
     }
 
     /*
-    * Find order by barcode.
-    * @returns App\Models\Order
-    */
+     * Find order by barcode.
+     * @returns App\Models\Order
+     */
     public function findByBarcode($barcode)
     {
         return $this->findWhereFirst('barcode', $barcode);
     }
 
     /*
-    * Delete order by barcode.
-    * @returns mixed
-    */
+     * Delete order by barcode.
+     * @returns mixed
+     */
     public function deleteByBarcode($barcode)
     {
         return $this->deleteWhere('barcode', $barcode);

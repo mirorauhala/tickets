@@ -9,7 +9,7 @@ return [
     | The following language lines are used when the server responds with an
     | HTTP status code that needs to display an error message.
     |
-    */
+     */
 
     'forbidden' => [
         'title'   => '403 Pääsy evätty',

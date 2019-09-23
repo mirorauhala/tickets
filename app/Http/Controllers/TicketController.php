@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\OrderItem;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class TicketController extends Controller
 {
@@ -28,7 +27,8 @@ class TicketController extends Controller
         $user = $request->user()->load(
             'orderItems.order',
             'orderItems.order.event',
-            'orderItems.seat');
+            'orderItems.seat'
+        );
 
         return view('tickets.index')
             ->with([

@@ -9,7 +9,7 @@
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+ */
 
 Auth::routes(['verify' => true]);
 
@@ -17,7 +17,7 @@ Auth::routes(['verify' => true]);
 |--------------------------------------------------------------------------
 | Basic routes
 |--------------------------------------------------------------------------
-*/
+ */
 Route::get('/', 'FeaturedEventController@index')->name('home');
 Route::resource('/tickets', 'TicketController')->only(['index', 'show']);
 Route::resource('/orders', 'OrderController')->except(['edit', 'update']);
@@ -27,7 +27,7 @@ Route::resource('/events', 'EventController')->only(['index', 'show']);
 |--------------------------------------------------------------------------
 | Dashboard
 |--------------------------------------------------------------------------
-*/
+ */
 Route::group(['prefix' => '/dashboard'], function () {
     Route::get('', 'Dashboard\DashboardController@index')->name('dashboard');
     Route::get('/{event}', 'Dashboard\DashboardController@customers')->name('dashboard.show');
@@ -44,7 +44,7 @@ Route::group(['prefix' => '/dashboard'], function () {
 |--------------------------------------------------------------------------
 | Settings
 |--------------------------------------------------------------------------
-*/
+ */
 
 Route::group(['prefix' => '/settings', 'namespace' => 'Settings'], function () {
     Route::get('/', 'SettingsAccountController@show')->name('settings');
@@ -59,7 +59,7 @@ Route::group(['prefix' => '/settings', 'namespace' => 'Settings'], function () {
 |--------------------------------------------------------------------------
 | Language routes
 |--------------------------------------------------------------------------
-*/
+ */
 
 Route::get('/lang/{lang}', function (Request $request, $lang) {
     if (! in_array($lang, ['fi', 'en'])) {

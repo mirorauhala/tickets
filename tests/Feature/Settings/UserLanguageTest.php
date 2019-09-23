@@ -13,7 +13,7 @@ class UserLanguageTest extends TestCase
     {
         parent::setUp();
         $this->createUser();
-        $this->uri = '/settings/language';
+        $this->uri    = '/settings/language';
         $this->fields = [
             'language' => 'fi',
         ];

@@ -16,7 +16,7 @@ class EventPolicy
      * @param \App\User  $user
      * @param \App\Event $event
      *
-     * @return boolean
+     * @return bool
      */
     public function view(User $user, Event $event)
     {
@@ -28,7 +28,7 @@ class EventPolicy
      *
      * @param \App\User $user
      *
-     * @return boolean
+     * @return bool
      */
     public function create(User $user)
     {
@@ -41,7 +41,7 @@ class EventPolicy
      * @param \App\User  $user
      * @param \App\Event $event
      *
-     * @return boolean
+     * @return bool
      */
     public function update(User $user, Event $event)
     {
@@ -54,7 +54,7 @@ class EventPolicy
      * @param \App\User  $user
      * @param \App\Event $event
      *
-     * @return boolean
+     * @return bool
      */
     public function delete(User $user, Event $event)
     {

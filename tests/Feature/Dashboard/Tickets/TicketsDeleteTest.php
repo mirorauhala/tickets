@@ -2,7 +2,6 @@
 
 namespace Tests\Feature\Dashboard;
 
-use App\Models\Map;
 use Tests\TestCase;
 use App\Models\User;
 use App\Models\Event;
@@ -22,7 +21,7 @@ class TicketsDeleteTest extends TestCase
         parent::setUp();
 
         $this->createUser();
-        $this->event = factory(Event::class)->create();
+        $this->event  = factory(Event::class)->create();
         $this->ticket = factory(Ticket::class)->make();
         $this->user->events()->attach($this->event);
         $this->event->tickets()->save($this->ticket);

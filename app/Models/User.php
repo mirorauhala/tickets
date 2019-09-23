@@ -6,7 +6,6 @@ use App\Jobs\QueuedVerifyEmail;
 use Laravel\Passport\HasApiTokens;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -95,7 +94,8 @@ class User extends Authenticatable implements MustVerifyEmail
      *
      * @return void
      */
-    public function sendEmailVerificationNotification() {
+    public function sendEmailVerificationNotification()
+    {
         QueuedVerifyEmail::dispatch($this);
     }
 }

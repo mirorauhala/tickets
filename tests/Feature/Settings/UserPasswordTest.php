@@ -15,7 +15,7 @@ class UserPasswordTest extends TestCase
         parent::setUp();
 
         $this->createUser();
-        $this->uri = '/settings/password';
+        $this->uri    = '/settings/password';
         $this->fields = [
             'current_password'              => 'secret',
             'new_password'                  => 'newEnhancedPassword',

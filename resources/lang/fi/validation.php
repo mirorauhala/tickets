@@ -10,7 +10,7 @@ return [
     | the validator class. Some of these rules have multiple versions such
     | as the size rules. Feel free to tweak each of these messages here.
     |
-    */
+     */
 
     'accepted'             => 'Kenttä :attribute täytyy olla hyväksytty.',
     'active_url'           => 'Kenttä :attribute ei ole sallittava URL osoite.',
@@ -96,7 +96,7 @@ return [
     | convention "attribute.rule" to name the lines. This makes it quick to
     | specify a specific custom language line for a given attribute rule.
     |
-    */
+     */
 
     'validate_ticket_type_and_availablility ' => 'Chosen tickets are not available.',
 
@@ -115,7 +115,7 @@ return [
     | with something more reader friendly such as E-Mail Address instead
     | of "email". This simply helps us make messages a little cleaner.
     |
-    */
+     */
 
     'attributes' => [],
 ];

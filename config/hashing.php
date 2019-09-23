@@ -12,7 +12,7 @@ return [
     |
     | Supported: "bcrypt", "argon"
     |
-    */
+     */
 
     'driver' => 'bcrypt',
 ];
