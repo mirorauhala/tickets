@@ -243,7 +243,7 @@ return PhpCsFixer\Config::create()
         // Binary operators should be surrounded by space as configured.
         'binary_operator_spaces' => [
             'operators' => [
-                '=' => 'align',
+                '=' => 'single_space',
                 '=>' => 'align',
                 '==' => 'align',
             ],
