@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
     - uses: actions/checkout@master
-    - name: Run unit testing.
+    - name: Set up php
       uses: shivammathur/setup-php@master
       with:
         php-version: 7.3
