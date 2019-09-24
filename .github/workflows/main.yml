@@ -10,7 +10,7 @@ jobs:
     - name: Run unit testing.
       run: |
         DEBIAN_FRONTEND=noninteractive
-        sudo apt-get -yqq install php-fpm php-gd php-xml php-zip php-intl > /dev/null
+        sudo apt-get -y install php-fpm php-gd php-xml php-zip php-intl
         wget https://raw.githubusercontent.com/composer/getcomposer.org/76a7060ccb93902cd7576b67264ad91c8a2700e2/web/installer -O - -q | php -- --quiet
         php -v
         composer -V
