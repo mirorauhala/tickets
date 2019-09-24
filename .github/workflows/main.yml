@@ -4,16 +4,26 @@ on: [push]
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     steps:
     - uses: actions/checkout@master
     - name: Run unit testing.
+      uses: shivammathur/setup-php@master
+      with:
+        php-version: 7.3
+        extension-csv: mbstring, xdebug, zip, gd, intl, xml #optional
+
+    - name: Check PHP Version
+      run: php -v
+
+    - name: Check Composer Version
+      run: composer -V
+
+    - name: Check PHP Extensions
+      run: php -m
+
+    - name: Setup project
       run: |
-        DEBIAN_FRONTEND=noninteractive
-        sudo apt-get -y install php-fpm php-gd php-xml php-zip php-intl
-        wget https://raw.githubusercontent.com/composer/getcomposer.org/76a7060ccb93902cd7576b67264ad91c8a2700e2/web/installer -O - -q | php -- --quiet
-        php -v
-        composer -V
         cp .env.ci .env
         touch /home/runner/work/tickets/tickets/database/database.sqlite
         composer install
@@ -21,4 +31,7 @@ jobs:
         ls -la
         php artisan key:generate
         php artisan migrate
+
+    - name: Run phpunit
+      run: |
         ./vendor/bin/phpunit
