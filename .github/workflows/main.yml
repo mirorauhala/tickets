@@ -11,6 +11,7 @@ jobs:
     - uses: actions/checkout@master
     - name: Run unit testing.
       run: |
+        echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
         sudo apt-get -yqq install php-fpm php-intl php-gd php-xml php-zip > /dev/null
         wget https://raw.githubusercontent.com/composer/getcomposer.org/76a7060ccb93902cd7576b67264ad91c8a2700e2/web/installer -O - -q | php -- --quiet
         php -v
