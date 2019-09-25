@@ -20,16 +20,17 @@ class ChangePasswordTest extends DuskTestCase
      */
     public function a_user_can_change_password()
     {
-        $user = factory(User::class)->create();
-
-        $this->browse(function (Browser $first, Browser $second) use ($user) {
+        $this->browse(function (Browser $first) {
+            $user = factory(User::class)->create();
             $first->loginAs($user)
                     ->visit(new SettingsChangePasswordPage())
                     ->changePassword('secret', 'secret_new_password', 'secret_new_password')
-                    ->assertPathIs('/settings/password');
-
-            // try to log in
-            $second->visit(new SignInPage())
+                    ->assertPathIs('/settings/password')
+                    ->click('#nav-dropdown')
+                    ->click('#nav-logout')
+                    ->assertGuest()
+                    // try to log in with new password
+                    ->visit(new SignInPage())
                     ->signIn($user->email, 'secret_new_password')
                     ->assertPathIs('/');
         });

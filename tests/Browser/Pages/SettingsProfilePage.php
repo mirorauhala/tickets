@@ -36,39 +36,27 @@ class SettingsProfilePage extends Page
         $firstName = null,
         $lastName = null,
         $email = null,
-        $streetAddress = null,
-        $postalCode = null,
-        $postalOffice = null,
-        $countryCode = null
+        $phone = null
     ) {
         $browser->type('@first_name', $firstName)
             ->type('@last_name', $lastName)
             ->type('@email', $email)
-            ->type('@street_address', $streetAddress)
-            ->type('@postal_code', $postalCode)
-            ->type('@postal_office', $postalOffice)
-            ->select('@country_code', $countryCode)
+            ->type('@phone', $phone)
             ->press('Update');
     }
 
     /**
      * Get the element shortcuts for the page.
      *
-     * [1] If a CSS selector is not provided, Dusk will search for an input
-     *     field with the given name attribute.
-     *
      * @return array
      */
     public function elements()
     {
         return [
-            '@first_name'               => '#first_name',
-            '@last_name'                => '#last_name',
-            '@email'                    => '#email',
-            '@street_address'           => '#street_address',
-            '@postal_code'              => '#postal_code',
-            '@postal_office'            => '#postal_office',
-            '@country_code'             => 'country_code', // [1]
+            '@first_name' => '#first_name',
+            '@last_name'  => '#last_name',
+            '@email'      => '#email',
+            '@phone'      => '#phone',
         ];
     }
 }

@@ -33,7 +33,7 @@ class SettingsChangeLanguagePage extends Page
      */
     public function changeLanguage(Browser $browser, $language = null)
     {
-        $browser->select('@display_language', $language)
+        $browser->select('@language', $language)
             ->press('Change');
     }
 
@@ -45,7 +45,7 @@ class SettingsChangeLanguagePage extends Page
     public function elements()
     {
         return [
-            '@display_language'             => 'display_language',
+            '@language' => 'language',
         ];
     }
 }

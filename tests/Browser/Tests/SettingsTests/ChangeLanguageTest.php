@@ -26,7 +26,7 @@ class ChangeLanguageTest extends DuskTestCase
                     ->visit(new SettingsChangeLanguagePage())
                     ->changeLanguage('fi')
                     ->assertPathIs('/settings/language')
-                    ->assertSelected('display_language', 'fi');
+                    ->assertSelected('language', 'fi');
         });
     }
 }

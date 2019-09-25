@@ -77,8 +77,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="tel">{{ tra('auth.register.phone') }}</label>
-                    <input id="tel" type="text" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" name="phone" aria-describedby="phoneHelpBlock" value="{{ old('phone') }}" autocomplete="tel">
+                    <label for="phone">{{ tra('auth.register.phone') }}</label>
+                    <input id="phone" type="text" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" name="phone" aria-describedby="phoneHelpBlock" value="{{ old('phone') }}" autocomplete="tel">
                     <small id="phoneHelpBlock" class="form-text text-muted">
                         {{ tra('auth.register.phone-help') }}
                     </small>

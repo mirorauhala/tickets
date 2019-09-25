@@ -43,8 +43,8 @@
                         @endif
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="newPassConfirm">{{ tra('settings.change-password.confirmation') }}</label>
-                        <input type="password" class="form-control{{ $errors->has('new_password_confirmation') ? ' is-invalid' : '' }}" id="newPassConfirm" name="new_password_confirmation" autocomplete="new-password" required>
+                        <label for="new_password_confirmation">{{ tra('settings.change-password.confirmation') }}</label>
+                        <input type="password" class="form-control{{ $errors->has('new_password_confirmation') ? ' is-invalid' : '' }}" id="new_password_confirmation" name="new_password_confirmation" autocomplete="new-password" required>
 
                         @if ($errors->has('new_password_confirmation'))
                             <div class="invalid-feedback">

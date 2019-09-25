@@ -20,7 +20,7 @@
         <ul class="navbar-nav ml-auto">
         @auth()
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Hei, {{ auth()->user()->full_name() }}</a>
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="nav-dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hei, {{ auth()->user()->full_name() }}</a>
                 <div class="dropdown-menu">
 
                     @if(count(auth()->user()->events) > 0)
@@ -29,7 +29,7 @@
                     @endif
 
                     <a class="dropdown-item{{ active('settings*') }}" href="{{ route('settings') }}">{{ tra('nav.settings') }}</a>
-                    <a class="dropdown-item text-danger" href="{{ route('logout') }}"
+                    <a class="dropdown-item text-danger" id="nav-logout" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                                  document.getElementById('logout-form').submit();">{{ tra('nav.sign-out')}}</a>
                 </div>

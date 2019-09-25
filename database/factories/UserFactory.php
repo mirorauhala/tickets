@@ -22,6 +22,6 @@ $factory->define(App\Models\User::class, function (Faker\Generator $faker) {
         'password'       => $password ?: $password = 'secret',
         'remember_token' => str_random(10),
         'phone'          => $faker->phoneNumber,
-        'language'       => 'FI',
+        'language'       => 'EN',
     ];
 });

@@ -24,12 +24,9 @@ class SignUpTest extends DuskTestCase
                 'John',
                 'Doe',
                 'john.testing@email.com',
-                'Street Address 402',
-                '00100',
-                'Postal Office LA',
-                'Finland',
                 'secret',
                 'secret',
+                '1234256789',
             ];
 
             $browser->visit(new SignUpPage())

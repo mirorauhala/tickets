@@ -28,10 +28,7 @@ class ProfileTest extends DuskTestCase
                 'Lady',
                 'Gaga',
                 'lady.gaga@testing.com',
-                'Gagas street',
-                '00200',
-                'Postal Office GAGA',
-                'sv',
+                '987654321',
             ];
 
             $browser->loginAs($user)
@@ -40,10 +37,7 @@ class ProfileTest extends DuskTestCase
                     ->assertInputValue('@first_name', 'Lady')
                     ->assertInputValue('@last_name', 'Gaga')
                     ->assertInputValue('@email', 'lady.gaga@testing.com')
-                    ->assertInputValue('@street_address', 'Gagas street')
-                    ->assertInputValue('@postal_code', '00200')
-                    ->assertInputValue('@postal_office', 'Postal Office GAGA')
-                    ->assertSelected('@country_code', 'sv');
+                    ->assertInputValue('@phone', '987654321');
         });
     }
 }

@@ -26,7 +26,10 @@ class SignInTest extends DuskTestCase
         $this->browse(function (Browser $browser) use ($user) {
             $browser->visit(new SignInPage())
                     ->signIn($user->email, 'secret')
-                    ->assertPathIs('/');
+                    ->assertPathIs('/')
+                    ->click('#nav-dropdown')
+                    ->click('#nav-logout')
+                    ->assertGuest();
         });
     }
 }
