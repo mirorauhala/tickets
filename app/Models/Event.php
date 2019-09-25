@@ -59,6 +59,16 @@ class Event extends Model
     }
 
     /**
+     * Get event tournaments.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function tournaments()
+    {
+        return $this->hasMany('App\Models\Tournament');
+    }
+
+    /**
      * Get maps for an event.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany

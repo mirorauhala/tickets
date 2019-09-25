@@ -35,6 +35,7 @@ Route::group(['prefix' => '/dashboard'], function () {
     Route::get('/{event}/orders', 'Dashboard\DashboardController@orders')->name('dashboard.orders');
     Route::group(['namespace' => 'Dashboard', 'prefix' => '/{event}', 'as' => 'dashboard.'], function () {
         Route::resource('tickets', 'TicketsController');
+        Route::resource('tournaments', 'TournamentsController');
         Route::resource('maps', 'MapsController');
     });
     Route::get('/{event}/settings', 'Dashboard\EventController@show')->name('dashboard.settings');

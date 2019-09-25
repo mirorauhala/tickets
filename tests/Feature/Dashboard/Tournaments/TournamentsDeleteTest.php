@@ -5,16 +5,15 @@ namespace Tests\Feature\Dashboard;
 use Tests\TestCase;
 use App\Models\User;
 use App\Models\Event;
-use App\Models\Ticket;
+use App\Models\Tournament;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class TicketsDeleteTest extends TestCase
+class TournamentsDeleteTest extends TestCase
 {
     use RefreshDatabase;
 
-    protected $map;
-
     protected $event;
+    protected $tournament;
 
     public function setUp(): void
     {
@@ -22,14 +21,14 @@ class TicketsDeleteTest extends TestCase
 
         $this->createUser();
         $this->event = factory(Event::class)->create();
-        $this->ticket = factory(Ticket::class)->make();
+        $this->tournament = factory(Tournament::class)->create();
         $this->user->events()->attach($this->event);
-        $this->event->tickets()->save($this->ticket);
-        $this->uri = route('dashboard.tickets.destroy', [$this->event->slug, $this->ticket->id]);
+        $this->event->tournaments()->save($this->tournament);
+        $this->uri = route('dashboard.tournaments.destroy', [$this->event->slug, $this->tournament->id]);
     }
 
     /** @test */
-    public function user_can_delete_tickets()
+    public function user_can_delete_tournament()
     {
         $this->actingAs($this->user)->doRequest('delete');
 
@@ -38,7 +37,7 @@ class TicketsDeleteTest extends TestCase
     }
 
     /** @test */
-    public function authorization_required()
+    public function unauthorized_user_cannot_delete_tournament()
     {
         // This user doesn't have authorization.
         $user = factory(User::class)->create();

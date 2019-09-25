@@ -16,8 +16,8 @@ $factory->define(App\Models\Event::class, function (Faker\Generator $faker) {
     static $password;
 
     return [
-        'name'        => $faker->company,
-        'slug'        => $faker->word,
+        'name'        => $company = $faker->company,
+        'slug'        => str_slug($company),
         'location'    => $faker->address,
         'slogan'      => $faker->text,
         'url'         => $faker->url,

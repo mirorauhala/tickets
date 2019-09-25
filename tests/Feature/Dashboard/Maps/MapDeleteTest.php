@@ -22,11 +22,9 @@ class MapDeleteTest extends TestCase
 
         $this->createUser();
         $this->event = factory(Event::class)->create();
-        $this->map   = factory(Map::class)->create([
-            'event_id' => $this->event->id,
-        ]);
+        $this->map = $this->event->maps()->create(factory(Map::class)->raw());
         $this->user->events()->save($this->event);
-        $this->uri = route('dashboard.maps.destroy', [$this->event, $this->map]);
+        $this->uri = route('dashboard.maps.destroy', [$this->event->slug, $this->map->id]);
     }
 
     /** @test */
