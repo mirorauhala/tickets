@@ -24,7 +24,7 @@ class TournamentsDeleteTest extends TestCase
         $this->tournament = factory(Tournament::class)->create();
         $this->user->events()->attach($this->event);
         $this->event->tournaments()->save($this->tournament);
-        $this->uri = route('dashboard.tournaments.destroy', [$this->event->slug, $this->tournament->id]);
+        $this->uri = route('dashboard.tournaments.destroy', [$this->event, $this->tournament]);
     }
 
     /** @test */

@@ -23,7 +23,7 @@ class TournamentsUpdateTest extends TestCase
         $this->tournament = factory(Tournament::class)->create();
         $this->user->events()->attach($this->event);
         $this->event->tournaments()->save($this->tournament);
-        $this->uri = route('dashboard.tournaments.update', [$this->event->slug, $this->tournament->id]);
+        $this->uri = route('dashboard.tournaments.update', [$this->event, $this->tournament]);
     }
 
     public function validationProvider()

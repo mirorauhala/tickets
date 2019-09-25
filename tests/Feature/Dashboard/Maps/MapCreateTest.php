@@ -19,7 +19,7 @@ class MapCreateTest extends TestCase
         $this->createUser();
         $this->event = factory(Event::class)->create();
         $this->user->events()->attach($this->event);
-        $this->uri    = route('dashboard.maps.store', [$this->event->slug]);
+        $this->uri = route('dashboard.maps.store', [$this->event]);
         $this->fields = [
             'name' => 'Map of 2018 event',
         ];

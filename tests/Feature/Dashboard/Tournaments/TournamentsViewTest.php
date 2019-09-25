@@ -20,7 +20,7 @@ class TournamentViewTest extends TestCase
         $this->createUser();
         $this->tournament = factory(Tournament::class)->create();
         $this->user->events()->attach($this->tournament->event);
-        $this->uri = route('dashboard.tournaments.index', [$this->tournament->event->slug]);
+        $this->uri = route('dashboard.tournaments.index', [$this->tournament->event]);
     }
 
     /** @test */

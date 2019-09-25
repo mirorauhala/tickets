@@ -31,7 +31,7 @@
 
                 <div class="form-group{{ $errors->has('slug') ? ' is-invalid' : '' }}">
                     <label for="slug">{{ tra('event.admin.pages.settings.form.event-url') }}</label>
-                    <input type="text" class="form-control" id="slug" name="slug" value="{{ $event->slug }}">
+                    <input type="text" class="form-control" id="slug" name="slug" value="{{ $event->getRouteKey() }}">
 
                     @if ($errors->has('slug'))
                         <span class="invalid-feedback">

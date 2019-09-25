@@ -25,7 +25,7 @@ class TicketsDeleteTest extends TestCase
         $this->ticket = factory(Ticket::class)->make();
         $this->user->events()->attach($this->event);
         $this->event->tickets()->save($this->ticket);
-        $this->uri = route('dashboard.tickets.destroy', [$this->event->slug, $this->ticket->id]);
+        $this->uri = route('dashboard.tickets.destroy', [$this->event, $this->ticket]);
     }
 
     /** @test */

@@ -31,7 +31,7 @@
                                     <td>{{ money($order->value, $order->currency) }}</td>
                                     <td>{{ tra('order.status.' . $order->status) }}</td>
                                     <td title="{{ $order->created_at->diffForHumans() }}">{{ $order->created_at }}</td>
-                                    <td><a href="{{ route('orders.show', ['order' => $order->reference]) }}">{{ tra('orders.action') }}</a></td>
+                                    <td><a href="{{ route('orders.show', ['order' => $order]) }}">{{ tra('orders.action') }}</a></td>
                                 </tr>
                             @endforeach
                         </tbody>

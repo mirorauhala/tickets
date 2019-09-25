@@ -19,7 +19,7 @@ class TournamentsCreateTest extends TestCase
         $this->createUser();
         $this->event = factory(Event::class)->create();
         $this->user->events()->attach($this->event);
-        $this->uri = route('dashboard.tournaments.store', [$this->event->slug]);
+        $this->uri = route('dashboard.tournaments.store', [$this->event]);
     }
 
     public function validationProvider()

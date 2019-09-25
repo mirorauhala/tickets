@@ -22,7 +22,7 @@ class TicketsEditTest extends TestCase
         $this->ticket = factory(Ticket::class)->create();
         $this->user->events()->attach($this->event);
         $this->user->events->first()->tickets()->save($this->ticket);
-        $this->uri = route('dashboard.tickets.update', [$this->event->slug, $this->ticket->id]);
+        $this->uri = route('dashboard.tickets.update', [$this->event, $this->ticket]);
         $this->fields = [
             'name'                    => 'Entrance',
             'price'                   => 1000,

@@ -97,6 +97,6 @@ class TournamentsController extends Controller
 
         $tournament->delete();
 
-        return redirect()->route('dashboard.tournaments.index', [$event->slug]);
+        return redirect()->route('dashboard.tournaments.index', [$event]);
     }
 }
