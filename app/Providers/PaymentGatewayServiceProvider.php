@@ -2,7 +2,6 @@
 
 namespace App\Providers;
 
-use Stripe\Stripe;
 use Illuminate\Support\ServiceProvider;
 
 class PaymentGatewayServiceProvider extends ServiceProvider
@@ -14,7 +13,6 @@ class PaymentGatewayServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        Stripe::setApiKey(config('stripe.secret'));
     }
 
     /**
