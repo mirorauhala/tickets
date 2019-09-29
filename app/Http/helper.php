@@ -73,7 +73,7 @@ if (! function_exists('tra')) {
     function tra($key = null, $replace = [], $locale = null)
     {
         try {
-            $string = app('translator')->getFromJson($key, $replace, $locale);
+            $string = app('translator')->get($key, $replace, $locale);
 
             // no translation was found
             if ($string == $key) {
