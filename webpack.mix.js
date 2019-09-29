@@ -1,4 +1,7 @@
 let mix = require('laravel-mix');
+
+const tailwindcss = require('tailwindcss');
+
 require('laravel-mix-sri')
 
 /*
@@ -12,8 +15,14 @@ require('laravel-mix-sri')
  |
  */
 
-mix.js('resources/assets/js/app.js', 'public/js')
-    .sass('resources/assets/sass/app.scss', 'public/css');
+mix.js('resources/assets/js/app.js', 'public/js');
+
+mix.sass('resources/assets/sass/app.scss', 'public/css')
+    .options({
+        processCssUrls: false,
+        postCss: [tailwindcss('./tailwind.config.js')],
+    });
+
 
 if (mix.inProduction()) {
     mix.version();
