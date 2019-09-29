@@ -3,7 +3,7 @@
 @section('base.title', 'Featured')
 
 @section('base.content')
-<div class="container">
+<div class="tw-container tw-mx-auto">
     <div class="row pb-5">
         <div class="col-md-12">
             <p class="lead mb-0">{{ $event->name }}</p>

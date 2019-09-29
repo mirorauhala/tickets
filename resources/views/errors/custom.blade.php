@@ -3,7 +3,7 @@
 @section('base.title', $error_title)
 
 @section('content')
-<div class="container h-100">
+<div class="tw-container tw-mx-auto">
     <div class="row h-75 justify-content-center">
         <div class="col-md-12 align-self-center">
             <h1 class="text-center">{{ $error_title }}</h1>

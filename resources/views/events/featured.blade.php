@@ -3,7 +3,7 @@
 @section('base.title', tra('featured.title'))
 
 @section('base.content')
-<div class="container">
+<div class="tw-container tw-mx-auto">
     <div class="row pt-4">
         <div class="col-md-12">
             <h1>{{ tra('featured.title') }}</h1>
