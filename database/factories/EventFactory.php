@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Str;
+
 /*
 |--------------------------------------------------------------------------
 | Model Factories
@@ -11,13 +13,13 @@
 |
  */
 
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
+/* @var \Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(App\Models\Event::class, function (Faker\Generator $faker) {
     static $password;
 
     return [
         'name'        => $company = $faker->company,
-        'slug'        => str_slug($company),
+        'slug'        => Str::slug($company),
         'location'    => $faker->address,
         'slogan'      => $faker->text,
         'url'         => $faker->url,
