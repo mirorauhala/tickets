@@ -875,13 +875,13 @@
             "authors": [
                 {
                     "name": "Neuman Vong",
-                    "role": "Developer",
-                    "email": "neuman+pear@twilio.com"
+                    "email": "neuman+pear@twilio.com",
+                    "role": "Developer"
                 },
                 {
                     "name": "Anant Narayanan",
-                    "role": "Developer",
-                    "email": "anant@php.net"
+                    "email": "anant@php.net",
+                    "role": "Developer"
                 }
             ],
             "description": "A simple library to encode and decode JSON Web Tokens (JWT) in PHP. Should conform to the current spec.",
@@ -1324,16 +1324,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v6.0.4",
+            "version": "v6.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "372e0add8a58e0e3deb78f87cbb2dc40d3e0ff08"
+                "reference": "a365bea7ff0dea9a50f5904be9e41656def9af4b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/372e0add8a58e0e3deb78f87cbb2dc40d3e0ff08",
-                "reference": "372e0add8a58e0e3deb78f87cbb2dc40d3e0ff08",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/a365bea7ff0dea9a50f5904be9e41656def9af4b",
+                "reference": "a365bea7ff0dea9a50f5904be9e41656def9af4b",
                 "shasum": ""
             },
             "require": {
@@ -1429,7 +1429,7 @@
                 "league/flysystem-sftp": "Required to use the Flysystem SFTP driver (^1.0).",
                 "moontoast/math": "Required to use ordered UUIDs (^1.1).",
                 "pda/pheanstalk": "Required to use the beanstalk queue driver (^4.0).",
-                "pusher/pusher-php-server": "Required to use the Pusher broadcast driver (^3.0).",
+                "pusher/pusher-php-server": "Required to use the Pusher broadcast driver (^4.0).",
                 "symfony/cache": "Required to PSR-6 cache bridge (^4.3.4).",
                 "symfony/psr-http-message-bridge": "Required to use PSR-7 bridging features (^1.2).",
                 "wildbit/swiftmailer-postmark": "Required to use Postmark mail driver (^3.0)."
@@ -1465,7 +1465,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2019-09-24T13:40:36+00:00"
+            "time": "2019-10-01T13:55:56+00:00"
         },
         {
             "name": "laravel/passport",
@@ -1839,9 +1839,9 @@
             "authors": [
                 {
                     "name": "Phil Sturgeon",
-                    "role": "Developer",
                     "email": "me@philsturgeon.uk",
-                    "homepage": "http://philsturgeon.uk/"
+                    "homepage": "http://philsturgeon.uk/",
+                    "role": "Developer"
                 }
             ],
             "description": "Handle the output of complex data structures ready for API output.",
@@ -1901,15 +1901,15 @@
             "authors": [
                 {
                     "name": "Alex Bilbie",
-                    "role": "Developer",
                     "email": "hello@alexbilbie.com",
-                    "homepage": "http://www.alexbilbie.com"
+                    "homepage": "http://www.alexbilbie.com",
+                    "role": "Developer"
                 },
                 {
                     "name": "Andy Millington",
-                    "role": "Developer",
                     "email": "andrew@noexceptions.io",
-                    "homepage": "https://www.noexceptions.io"
+                    "homepage": "https://www.noexceptions.io",
+                    "role": "Developer"
                 }
             ],
             "description": "A lightweight and powerful OAuth 2.0 authorization and resource server library with support for all the core specification grants. This library will allow you to secure your API with OAuth and allow your applications users to approve apps that want to access their data from your API.",
@@ -3843,7 +3843,7 @@
         },
         {
             "name": "spomky-labs/otphp",
-            "version": "v10.0",
+            "version": "v10.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Spomky-Labs/otphp.git",
@@ -3910,7 +3910,7 @@
                 "otp",
                 "totp"
             ],
-            "time": "2019-05-07T21:08:23+00:00"
+            "time": "2019-07-30T14:43:55+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -6037,8 +6037,8 @@
             "authors": [
                 {
                     "name": "Filipe Dobreira",
-                    "role": "Developer",
-                    "homepage": "https://github.com/filp"
+                    "homepage": "https://github.com/filp",
+                    "role": "Developer"
                 }
             ],
             "description": "php error handling for cool kids",
@@ -6686,8 +6686,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "role": "lead",
-                    "email": "sebastian@phpunit.de"
+                    "email": "sebastian@phpunit.de",
+                    "role": "lead"
                 }
             ],
             "description": "A tool for quickly measuring the size of a PHP project.",
@@ -6949,8 +6949,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "role": "lead",
-                    "email": "sebastian@phpunit.de"
+                    "email": "sebastian@phpunit.de",
+                    "role": "lead"
                 }
             ],
             "description": "Utility class for timing",
@@ -7475,8 +7475,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "role": "lead",
-                    "email": "sebastian@phpunit.de"
+                    "email": "sebastian@phpunit.de",
+                    "role": "lead"
                 }
             ],
             "description": "FinderFacade is a convenience wrapper for Symfony's Finder component.",
@@ -7762,8 +7762,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "role": "lead",
-                    "email": "sebastian@phpunit.de"
+                    "email": "sebastian@phpunit.de",
+                    "role": "lead"
                 }
             ],
             "description": "Collection of value objects that represent the types of the PHP type system",
@@ -7845,8 +7845,8 @@
             "authors": [
                 {
                     "name": "Arne Blankerts",
-                    "role": "lead",
-                    "email": "arne@blankerts.de"
+                    "email": "arne@blankerts.de",
+                    "role": "lead"
                 }
             ],
             "description": "The classes contained within this repository extend the standard DOM to use exceptions at all occasions of errors instead of PHP warnings or notices. They also add various custom methods and shortcuts for convenience and to simplify the usage of DOM.",
