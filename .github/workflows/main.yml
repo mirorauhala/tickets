@@ -1,24 +1,37 @@
-name: Laravel
+name: CI
 
 on: [push]
 
 jobs:
-  laravel-tests:
-    runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-18.04
     steps:
-    - uses: actions/checkout@v1
-    - name: Copy .env
-      run: php -r "file_exists('.env') || copy('.env.example', '.env');"
-    - name: Install Dependencies
-      run: composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
-    - name: Generate key
-      run: php artisan key:generate
-    - name: Create Database
+    - uses: actions/checkout@master
+    - name: Set up php
+      uses: shivammathur/setup-php@master
+      with:
+        php-version: 7.3
+        extension-csv: mbstring, xdebug, zip, gd, intl, xml #optional
+
+    - name: Check PHP Version
+      run: php -v
+
+    - name: Check Composer Version
+      run: composer -V
+
+    - name: Check PHP Extensions
+      run: php -m
+
+    - name: Setup project
       run: |
-        mkdir -p database
-        touch database/database.sqlite
-    - name: Execute tests (Unit and Feature tests) via PHPUnit
-      env:
-        DB_CONNECTION: sqlite
-        DB_DATABASE: database/database.sqlite
-      run: vendor/bin/phpunit
+        cp .env.ci .env
+        touch /home/runner/work/tickets/tickets/database/database.sqlite
+        composer install
+        pwd
+        ls -la
+        php artisan key:generate
+        php artisan migrate
+
+    - name: Run phpunit
+      run: |
+        ./vendor/bin/phpunit
