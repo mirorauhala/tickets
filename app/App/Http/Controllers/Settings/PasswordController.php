@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Settings;
 
 use App\Http\Controllers\Controller;
+use Domain\User\Actions\UpdatePasswordAction;
 use App\Http\Requests\SettingsPasswordRequest;
 
 class PasswordController extends Controller
@@ -32,11 +33,9 @@ class PasswordController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function updatePassword(SettingsPasswordRequest $request)
+    public function updatePassword(SettingsPasswordRequest $request, UpdatePasswordAction $updatePasswordAction)
     {
-        $request->user()->update([
-            'password' => $request->new_password,
-        ]);
+        $updatePasswordAction->run($request->user(), $request->new_password);
 
         return redirect()
             ->route('settings.password')
