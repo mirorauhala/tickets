@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\User;
+use Domain\User\User;
 use App\Models\Event;
 use Illuminate\Database\Seeder;
 

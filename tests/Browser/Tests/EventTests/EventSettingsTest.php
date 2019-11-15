@@ -2,7 +2,7 @@
 
 namespace Tests\Browser\Tests\EventTests;
 
-use App\Models\User;
+use Domain\User\User;
 use App\Models\Event;
 use Tests\DuskTestCase;
 use Laravel\Dusk\Browser;

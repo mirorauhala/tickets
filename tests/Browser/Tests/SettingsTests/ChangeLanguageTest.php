@@ -2,7 +2,7 @@
 
 namespace Tests\Browser\Tests\SettingsTests;
 
-use App\Models\User;
+use Domain\User\User;
 use Tests\DuskTestCase;
 use Laravel\Dusk\Browser;
 use Tests\Browser\Pages\SettingsChangeLanguagePage;

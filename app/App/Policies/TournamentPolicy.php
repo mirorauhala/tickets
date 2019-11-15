@@ -2,7 +2,7 @@
 
 namespace App\Policies;
 
-use App\Models\User;
+use Domain\User\User;
 use App\Models\Tournament;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
@@ -13,7 +13,7 @@ class TournamentPolicy
     /**
      * Determine whether the user can view any app models tournaments.
      *
-     * @param  \App\Models\User  $user
+     * @param  \Domain\User\User  $user
      * @return mixed
      */
     public function viewAny(User $user)
@@ -24,7 +24,7 @@ class TournamentPolicy
     /**
      * Determine whether the user can view the app models tournament.
      *
-     * @param  \App\Models\User  $user
+     * @param  \Domain\User\User  $user
      * @param  \App\Models\Tournament  $tournament
      * @return mixed
      */
@@ -36,7 +36,7 @@ class TournamentPolicy
     /**
      * Determine whether the user can create app models tournaments.
      *
-     * @param  \App\Models\User  $user
+     * @param  \Domain\User\User  $user
      * @return mixed
      */
     public function create(User $user)
@@ -47,7 +47,7 @@ class TournamentPolicy
     /**
      * Determine whether the user can update the app models tournament.
      *
-     * @param  \App\Models\User  $user
+     * @param  \Domain\User\User  $user
      * @param  \App\Models\Tournament  $tournament
      * @return mixed
      */
@@ -59,7 +59,7 @@ class TournamentPolicy
     /**
      * Determine whether the user can delete the app models tournament.
      *
-     * @param  \App\Models\User  $user
+     * @param  \Domain\User\User  $user
      * @param  \App\Models\Tournament  $tournament
      * @return mixed
      */
@@ -71,7 +71,7 @@ class TournamentPolicy
     /**
      * Determine whether the user can restore the app models tournament.
      *
-     * @param  \App\Models\User  $user
+     * @param  \Domain\User\User  $user
      * @param  \App\Models\Tournament  $tournament
      * @return mixed
      */
@@ -83,7 +83,7 @@ class TournamentPolicy
     /**
      * Determine whether the user can permanently delete the app models tournament.
      *
-     * @param  \App\Models\User  $user
+     * @param  \Domain\User\User  $user
      * @param  \App\Models\Tournament  $tournament
      * @return mixed
      */

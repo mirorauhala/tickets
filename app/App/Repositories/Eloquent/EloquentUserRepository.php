@@ -3,7 +3,7 @@
 namespace App\Repositories\Eloquent;
 
 use Auth;
-use App\Models\User;
+use Domain\User\User;
 use App\Repositories\RepositoryAbstract;
 use App\Repositories\Contracts\UserRepository;
 
@@ -17,7 +17,7 @@ class EloquentUserRepository extends RepositoryAbstract implements UserRepositor
     /*
      * Returns the user model that is authenticated.
      *
-     * @returns \App\Models\User
+     * @returns \Domain\User\User
      */
     public function authenticated()
     {

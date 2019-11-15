@@ -3,7 +3,7 @@
 namespace Tests\Feature\Dashboard;
 
 use Tests\TestCase;
-use App\Models\User;
+use Domain\User\User;
 use App\Models\Event;
 use App\Models\Ticket;
 use Illuminate\Foundation\Testing\RefreshDatabase;

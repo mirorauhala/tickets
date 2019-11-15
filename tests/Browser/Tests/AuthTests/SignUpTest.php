@@ -2,7 +2,7 @@
 
 namespace Tests\Browser\Tests\AuthTests;
 
-use App\Models\User;
+use Domain\User\User;
 use Tests\DuskTestCase;
 use Laravel\Dusk\Browser;
 use Tests\Browser\Pages\SignUpPage;

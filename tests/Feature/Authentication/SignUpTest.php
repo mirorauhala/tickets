@@ -3,7 +3,7 @@
 namespace Tests\Feature\Authentication;
 
 use Tests\TestCase;
-use App\Models\User;
+use Domain\User\User;
 use App\Jobs\QueuedVerifyEmail;
 use Illuminate\Support\Facades\Queue;
 use Illuminate\Foundation\Testing\RefreshDatabase;

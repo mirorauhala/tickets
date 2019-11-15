@@ -37,7 +37,7 @@ trait DoRequest
     /**
      * Sets user for Passport authentication. Additional scopes can be passed.
      *
-     * @param \App\Models\User $user
+     * @param \Domain\User\User $user
      * @param array $scopes
      * @return self
      */

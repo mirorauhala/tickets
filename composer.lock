@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6e915580bc5bce9caba22b7127ea8b57",
+    "content-hash": "569cccd7fc306d4d6237dc676fb6fa5a",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -3749,6 +3749,53 @@
                 "sentry"
             ],
             "time": "2019-11-11T11:30:37+00:00"
+        },
+        {
+            "name": "spatie/data-transfer-object",
+            "version": "1.10.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/data-transfer-object.git",
+                "reference": "a572b7d0e464ecdf05f03d6f61cc7b334961ca41"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/data-transfer-object/zipball/a572b7d0e464ecdf05f03d6f61cc7b334961ca41",
+                "reference": "a572b7d0e464ecdf05f03d6f61cc7b334961ca41",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1"
+            },
+            "require-dev": {
+                "larapack/dd": "^1.0",
+                "phpunit/phpunit": "^7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\DataTransferObject\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Brent Roose",
+                    "email": "brent@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Data transfer objects with batteries included",
+            "homepage": "https://github.com/spatie/data-transfer-object",
+            "keywords": [
+                "data-transfer-object",
+                "spatie"
+            ],
+            "time": "2019-10-16T08:53:35+00:00"
         },
         {
             "name": "spatie/fractalistic",

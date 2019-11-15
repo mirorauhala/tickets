@@ -4,7 +4,7 @@ namespace Tests\Feature\Dashboard;
 
 use App\Models\Map;
 use Tests\TestCase;
-use App\Models\User;
+use Domain\User\User;
 use App\Models\Event;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
