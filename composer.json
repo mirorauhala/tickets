@@ -36,10 +36,12 @@
             "database/factories"
         ],
         "psr-4": {
-            "App\\": "app/"
+            "App\\": "app/App",
+            "Domain\\": "app/App",
+            "Support\\": "app/Support"
         },
         "files": [
-            "app/Http/helper.php"
+            "app/App/Http/helper.php"
         ]
     },
     "autoload-dev": {
