@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Settings;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UpdateLanguageRequest;
+use Domain\User\Actions\UpdateLanguageAction;
 
 class LanguageController extends Controller
 {
@@ -34,9 +35,9 @@ class LanguageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateLanguageRequest $request)
+    public function update(UpdateLanguageRequest $request, UpdateLanguageAction $action)
     {
-        $request->user()->update($request->validated());
+        $action->run($request->user(), $request->language);
 
         return redirect()
             ->route('settings.language')
