@@ -12,7 +12,7 @@
         "guzzlehttp/guzzle": "^6.3",
         "itsgoingd/clockwork": "^4.0",
         "laravel/framework": "^6.0",
-        "laravel/passport": "^7.2",
+        "laravel/passport": "^8.3",
         "laravel/tinker": "^1.0",
         "moneyphp/money": "^3.0",
         "predis/predis": "^1.1",
