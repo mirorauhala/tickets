@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateTicketsTable extends Migration
 {
@@ -22,6 +22,8 @@ class CreateTicketsTable extends Migration
             $table->boolean('maxAmountPerTransaction')->unsigned()->default(5);
             $table->dateTimeTz('availableAt');
             $table->dateTimeTz('unavailableAt');
+
+            $table->boolean('is_seatable')->nullable()->default(0);
 
             $table->integer('event_id')->unsigned();
             $table->foreign('event_id')->references('id')->on('events')->onDelete('cascade');
