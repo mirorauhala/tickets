@@ -4,10 +4,14 @@
     "keywords": ["tickets", "ecommerce", "lan party"],
     "license": "MIT",
     "type": "project",
+    "_comment": [
+        "Bug in laravel-sri regarding PHP 7.4",
+        "See: https://github.com/Elhebert/laravel-sri/pull/38",
+        "elhebert/laravel-sri ^2.0"
+    ],
     "require": {
         "php": "^7.4",
         "doctrine/dbal": "^2.7",
-        "elhebert/laravel-sri": "^2.0",
         "fideloper/proxy": "^4.0",
         "guzzlehttp/guzzle": "^6.3",
         "itsgoingd/clockwork": "^4.0",

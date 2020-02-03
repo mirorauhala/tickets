@@ -13,7 +13,9 @@
     <link rel="manifest" href="/manifest.json">
 
     @if(app()->environment('production'))
-    <link href="{{ mix('css/app.css') }}" integrity="{{ Sri::hash('css/app.css') }}" crossorigin="anonymous" rel="stylesheet">
+    {{-- Bug in laravel-sri --}}
+    {{-- integrity="{{ Sri::hash('css/app.css') }}" crossorigin="anonymous"  --}}
+    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     @else
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     @endif
@@ -27,10 +29,12 @@
     </div>
 
     @if(app()->environment('production'))
-    <script src="{{ mix('js/app.js') }}" integrity="{{ Sri::hash('js/app.js') }}" crossorigin="anonymous"></script>
+    {{-- Bug in laravel-sri --}}
+    {{-- integrity="{{ Sri::hash('css/app.css') }}" crossorigin="anonymous"  --}}
+    <script src="{{ mix('js/app.js') }}"></script>
     @else
     <script src="{{ mix('js/app.js') }}"></script>
     @endif
-    
+
 </body>
 </html>
