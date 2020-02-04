@@ -31,7 +31,7 @@
         },
         {
             text: 'Settings',
-            href: '/Settings',
+            href: '{{ route('settings') }}',
             active: {{ active('settings*') ? 'true' : 'false' }}
         }
     ]"
