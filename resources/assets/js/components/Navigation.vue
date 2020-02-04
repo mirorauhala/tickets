@@ -93,12 +93,12 @@ export default {
     @apply block px-3 py-2 rounded-lg;
 
     &:hover {
-        @apply bg-gray-100;
+        @apply bg-gray-100 text-blue-500;
     }
 }
 
 .nav__link--active {
-    @apply font-bold text-blue-500;
+    @apply font-medium text-blue-500;
 
 }
 </style>
