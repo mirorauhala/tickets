@@ -3,7 +3,7 @@
 @section('base.title', tra('orders.title'))
 
 @section('base.content')
-<div class="tw-container tw-mx-auto">
+<div class="container mx-auto">
     <div class="row pb-5 pt-4">
         <div class="col-md-12">
             <h1>{{ tra('orders.title') }}</h1>

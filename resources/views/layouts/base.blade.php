@@ -20,7 +20,7 @@
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     @endif
 </head>
-<body class="bg-light">
+<body class="bg-gray-100">
     <div id="app">
         @include('partials._navigation')
         <main class="py-5">

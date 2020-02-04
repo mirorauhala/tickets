@@ -3,7 +3,7 @@
 @section('base.title', tra('auth.reset.title'))
 
 @section('base.content')
-<div class="tw-container tw-mx-auto">
+<div class="container mx-auto">
     <div class="row py-5 justify-content-center align-items-center">
         <div class="col-md-6">
             <h1>{{ tra('auth.reset.title') }}</h1>

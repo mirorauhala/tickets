@@ -3,7 +3,7 @@
 @section('base.title', $event->name)
 
 @section('base.content')
-<div class="tw-container tw-mx-auto">
+<div class="container mx-auto">
     <div class="row pb-5 pt-4">
         <div class="col-md-12 text-center">
             <h1>{{ $event->name }}</h1>
