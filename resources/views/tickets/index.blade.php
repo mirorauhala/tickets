@@ -4,15 +4,10 @@
 
 @section('base.content')
 <div class="container mx-auto">
-    <div class="row pb-5 pt-4">
-        <div class="col-md-12">
-            <h1>{{ tra('tickets.title') }}</h1>
-            <p class="lead">{{ tra('tickets.lead') }}</p>
-
-            @include('tickets._menu')
-        </div>
+    <div class="w-full">
+        <h1 class="text-5xl font-bold mb-3">{{ tra('tickets.title') }}</h1>
     </div>
-    <div class="row">
+    <div class="w-full">
         @if(count($tickets) > 0)
             @foreach($tickets as $ticket)
                 <div class="col-sm-6 col-md-6 col-lg-3">
@@ -39,9 +34,7 @@
                 </div>
             @endforeach
         @else
-            <div class="col-12">
-                <p class="lead text-muted text-center">{{ tra('tickets.no-paid') }}</p>
-            </div>
+            <p class="lead text-muted text-center">{{ tra('tickets.no-paid') }}</p>
         @endif
     </div>
 </div>

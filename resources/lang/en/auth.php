@@ -24,7 +24,6 @@ return [
 
     'login' => [
         'title'           => 'Sign In',
-        'lead'            => 'Access your account.',
         'email'           => 'Email',
         'password'        => 'Password',
         'remember-me'     => 'Remember me',
@@ -45,7 +44,6 @@ return [
 
     'register' => [
         'title'            => 'Sign Up',
-        'lead'             => 'Create an account',
         'first-name'       => 'First name',
         'last-name'        => 'Last name',
         'email'            => 'Email',

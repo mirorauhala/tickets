@@ -8,5 +8,4 @@ return [
      */
 
     'title' => 'Valitse maksuvaihtoehto',
-    'lead'  => 'Siirryt pankin sivuille',
 ];

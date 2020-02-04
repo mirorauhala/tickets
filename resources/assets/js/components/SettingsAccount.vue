@@ -36,7 +36,7 @@
                     <div class="invalid-feedback" v-text="form.errors.get('phone')"></div>
                 </div>
                 <div class="form-group">
-                    <app-button type="submit" variant="primary" :disabled="isLoading()">
+                    <app-button type="submit" theme="primary" :disabled="isLoading()">
                         Update
                         <span class="spinner-border spinner-border-sm" v-if="isLoading()" role="status" aria-hidden="true"></span>
                     </app-button>

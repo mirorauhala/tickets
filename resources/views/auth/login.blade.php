@@ -6,7 +6,6 @@
 <div class="container mx-auto">
     <div class="w-full">
         <h1 class="text-5xl font-bold">{{ tra('auth.login.title') }}</h1>
-        <p class="text-lg text-gray-700">{{ tra('auth.login.lead') }}</p>
     </div>
     <div class="w-full">
         <form role="form" method="POST" action="{{ route('login') }}">
@@ -40,7 +39,7 @@
                 <a href="{{ route('password.request') }}" class="d-inline-block">
                     {{ tra('auth.login.forgot-password') }}
                 </a>
-                <input type="submit" class="btn px-4 ml-auto btn-primary" value="{{ tra('auth.login.login') }}">
+                <app-button type="submit" theme="primary">{{ tra('auth.login.login') }}</app-button>
             </div>
         </form>
     </div>

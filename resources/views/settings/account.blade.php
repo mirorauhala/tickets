@@ -4,16 +4,14 @@
 
 @section('base.content')
 <div class="container mx-auto">
-    <div class="row pb-5 pt-4">
-        <div class="col-md-12">
-            <h1>{{ tra('settings.title') }}</h1>
-        </div>
+    <div class="w-full">
+        <h1 class="text-5xl font-bold mb-3">{{ tra('settings.title') }}</h1>
     </div>
-    <div class="row">
-        <div class="col-md-3">
+    <div class="flex">
+        <div class="w-3/12">
             @include('settings._menu')
         </div>
-        <div class="col-md-8 offset-md-1">
+        <div class="w-9/12">
             <settings-account
                 first_name="{{ Auth::user()->first_name }}"
                 last_name="{{ Auth::user()->last_name }}"
