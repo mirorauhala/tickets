@@ -70,7 +70,7 @@ export default {
 
 <style lang="scss" scoped>
 .navigation {
-    @apply bg-black text-white;
+    @apply bg-gray-900 text-white;
 }
 
 .nav__row {
@@ -100,7 +100,7 @@ export default {
 }
 
 .nav__link--active {
-    @apply bg-gray-800 text-gray-100;
+    @apply bg-gray-800 text-gray-100 font-bold;
 
 }
 </style>
