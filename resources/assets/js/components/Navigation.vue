@@ -5,16 +5,16 @@
                 <a class="nav__app" :href="app.link">{{ app.name }}</a>
 
                 <ul class="nav__left">
-                    <li class="py-1" v-for="(link, id) in leftLinks" :key="id">
+                    <li class="py-2" v-for="(link, id) in leftLinks" :key="id">
                         <a class="nav__link" :class="{'nav__link--active' : link.active }" :href="link.href">{{ link.text }} <span class="sr-only" v-if="link.active">(current)</span></a>
                     </li>
                 </ul>
 
                 <ul class="nav__right">
-                    <li class="py-1" v-for="link in rightLinks" :key="link.id">
+                    <li class="py-2" v-for="link in rightLinks" :key="link.id">
                         <a class="nav__link" :class="{'nav__link--active' : link.active }" :href="link.href">{{ link.text }} <span class="sr-only" v-if="link.active">(current)</span></a>
                     </li>
-                    <li class="py-1" v-if="showLogout">
+                    <li class="py-2" v-if="showLogout">
                         <button class="nav__link" href="#" @click="logout" id="nav-logout">Logout</button>
                     </li>
                 </ul>
@@ -70,7 +70,7 @@ export default {
 
 <style lang="scss" scoped>
 .navigation {
-    @apply shadow bg-white;
+    @apply bg-black text-white;
 }
 
 .nav__row {
@@ -90,15 +90,17 @@ export default {
 }
 
 .nav__link {
-    @apply block px-3 py-2 rounded-lg;
+    @apply block font-medium rounded-lg text-gray-500 px-3 py-1 mr-1;
+
+    transition: 150ms ease all;
 
     &:hover {
-        @apply bg-gray-100 text-blue-500;
+        @apply bg-gray-800 text-white;
     }
 }
 
 .nav__link--active {
-    @apply font-medium text-blue-500;
+    @apply bg-gray-800 text-gray-100;
 
 }
 </style>
