@@ -16,7 +16,7 @@ use App\Models\Event;
 /* @var \Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(App\Models\Ticket::class, function (Faker\Generator $faker) {
     return [
-        'name'                    => $faker->sentence,
+        'name'                    => $faker->word,
         'price'                   => 1000,
         'vat'                     => 10,
         'reserved'                => 10,
