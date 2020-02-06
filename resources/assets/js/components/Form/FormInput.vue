@@ -43,7 +43,7 @@ export default {
 
 <style lang="scss" scoped>
 .textInput {
-    @apply block px-3 py-2 border rounded outline-none;
+    @apply block px-3 py-2 border rounded outline-none w-full;
 
     &:focus {
         @apply border-blue-500;

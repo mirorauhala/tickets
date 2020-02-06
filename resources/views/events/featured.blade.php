@@ -3,9 +3,9 @@
 @section('base.title', tra('featured.title'))
 
 @section('base.content')
-<div class="container mx-auto">
+<div class="container mx-auto pt-6">
     <div class="w-7/12 mx-auto">
-        <h1 class="text-5xl font-bold mb-3">{{ tra('featured.title') }}</h1>
+        <h1 class="text-6xl font-bold mb-3">{{ tra('featured.title') }}</h1>
         @include('events._menu')
         @if(count($events) > 0)
             @foreach($events as $event)

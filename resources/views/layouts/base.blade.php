@@ -23,7 +23,7 @@
 <body>
     <div id="app">
         @include('partials._navigation')
-        <main class="py-5">
+        <main>
             @yield('base.content')
         </main>
     </div>
