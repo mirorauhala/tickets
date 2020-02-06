@@ -11,11 +11,22 @@
                 </ul>
 
                 <ul class="nav__right">
-                    <li class="py-2" v-for="link in rightLinks" :key="link.id">
-                        <a class="nav__link" :class="{'nav__link--active' : link.active }" :href="link.href">{{ link.text }} <span class="sr-only" v-if="link.active">(current)</span></a>
+                    <li class="py-2">
+                        <button class="nav__link" href="#"><span class="sr-only">Cart</span> 0,00 €</button>
                     </li>
-                    <li class="py-2" v-if="showLogout">
-                        <button class="nav__link" href="#" @click="logout" id="nav-logout">Logout</button>
+                    <li class="py-2">
+                        <button class="nav__link" id="meMenu" href="#" @click="toggleDropdown">Hei, Miro</button>
+                        <div class="nav__dropdown" id="dropdown">
+                            <ul>
+                                <li class="pt-1" v-for="link in dropdownLinks" :key="link.id">
+                                    <a class="nav__dropdownLink" :class="{'nav__dropdownLink--active' : link.active }" :href="link.href">{{ link.text }} <span class="sr-only" v-if="link.active">(current)</span></a>
+                                </li>
+                                <li class="pt-1" v-if="showLogout">
+                                    <a class="nav__dropdownLink" href="#" @click="logout" id="nav-logout">Logout</a>
+                                </li>
+                            </ul>
+                            <div class="arrow" data-popper-arrow></div>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -24,6 +35,8 @@
 </template>
 
 <script>
+import { createPopper } from '@popperjs/core';
+
 export default {
     props: {
         app: {
@@ -38,7 +51,7 @@ export default {
             type: Array,
             required: false,
         },
-        rightLinks: {
+        dropdownLinks: {
             type: Array,
             required: false,
         },
@@ -50,11 +63,53 @@ export default {
     },
     data: function () {
         return {
-
+            dropdown: null,
+            dropdownLink: null,
+            popperInstance: null
         }
     },
 
+    mounted() {
+        this.dropdown = document.querySelector('#dropdown');
+        this.dropdownLink = document.querySelector('#meMenu');
+    },
+
     methods: {
+        createDropdown() {
+            this.popperInstance = createPopper(this.dropdownLink, this.dropdown, {
+                strategy: 'absolute',
+                placement: 'bottom-end',
+                modifiers: [
+                    {
+                        name: 'offset',
+                        options: {
+                            offset: [0, 5],
+                        },
+                    },
+                ],
+            });
+        },
+        showDropdown() {
+            this.dropdown.setAttribute('data-show', '')
+            this.createDropdown();
+        },
+        hideDropdown() {
+            this.dropdown.removeAttribute('data-show', '')
+            this.destroyDropdown();
+        },
+        toggleDropdown() {
+            if (this.popperInstance) {
+                this.hideDropdown();
+            } else {
+                this.showDropdown();
+            }
+        },
+        destroyDropdown() {
+            if (this.popperInstance) {
+                this.popperInstance.destroy();
+                this.popperInstance = null;
+            }
+        },
         logout() {
             axios.post('/logout')
                 .then(response => {
@@ -101,6 +156,63 @@ export default {
 
 .nav__link--active {
     @apply bg-gray-800 text-gray-100 font-bold;
-
 }
+
+.nav__dropdownLink {
+    @apply block w-full px-3 py-1 text-black rounded;
+
+    &:hover {
+        @apply bg-gray-100;
+    }
+}
+.nav__dropdownLink--active {
+    @apply bg-gray-900 text-white font-bold;
+
+    &:hover {
+        @apply bg-gray-700;
+    }
+}
+
+.nav__dropdown {
+    position: absolute;
+    background: white;
+    display: none;
+    min-width: 13rem;
+    @apply p-2 rounded shadow-lg;
+}
+
+.nav__dropdown[data-show] {
+    display: block;
+}
+
+.arrow,
+.arrow::before {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    z-index: -1;
+}
+
+.arrow::before {
+    content: '';
+    transform: rotate(45deg);
+    background: #fff;
+}
+
+.nav__dropdown[data-popper-placement^='top'] > .arrow {
+    bottom: -4px;
+}
+
+.nav__dropdown[data-popper-placement^='bottom'] > .arrow {
+    top: -4px;
+}
+
+.nav__dropdown[data-popper-placement^='left'] > .arrow {
+    right: -4px;
+}
+
+.nav__dropdown[data-popper-placement^='right'] > .arrow {
+    left: -4px;
+}
+
 </style>

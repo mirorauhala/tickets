@@ -23,7 +23,7 @@
     ]"
 
     @auth()
-    :right-links="[
+    :dropdown-links="[
         {
             text: 'Dashboard',
             href: '{{ route('dashboard') }}',
@@ -39,7 +39,7 @@
     :show-logout="true"
 
     @else
-    :right-links="[
+    :dropdown-links="[
         {
             text: 'Sign in',
             href: '{{ route('login') }}',
