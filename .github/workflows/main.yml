@@ -10,7 +10,7 @@ jobs:
     - name: Set up php
       uses: shivammathur/setup-php@master
       with:
-        php-version: 7.3
+        php-version: 7.4
         extension-csv: mbstring, xdebug, zip, gd, intl, xml #optional
 
     - name: Check PHP Version
