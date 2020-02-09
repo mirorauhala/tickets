@@ -1,56 +1,47 @@
-<navigation
-    :app="{
-        name: 'Lippukauppa',
-        link: '/'
-    }"
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <a class="navbar-brand" href="{{ route('home') }}">{{ config('app.name') }}</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-    :left-links="[
-        {
-            text: 'Events',
-            href: '{{ route('home') }}',
-            active: {{ active(['home', 'events*']) ? 'true' : 'false' }}
-        },
-        {
-            text: 'Tickets',
-            href: '{{ route('tickets.index') }}',
-            active: {{ active('tickets*') ? 'true' : 'false' }}
-        },
-        {
-            text: 'Orders',
-            href: '{{ route('orders.index') }}',
-            active: {{ active('orders*') ? 'true' : 'false' }}
-        }
-    ]"
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item{{ active('events*') }}">
+                <a class="nav-link" href="{{ route('events.index') }}">{{ tra('nav.featured') }} <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item{{ active('tickets*') }}">
+                <a class="nav-link" href="{{ route('tickets.index') }}">{{ tra('nav.tickets') }}</a>
+            </li>
+            <li class="nav-item{{ active('orders*') }}">
+                <a class="nav-link" href="{{ route('orders.index') }}">{{ tra('nav.orders') }}</a>
+            </li>
+        </ul>
 
-    @auth()
-    :dropdown-links="[
-        {
-            text: 'Dashboard',
-            href: '{{ route('dashboard') }}',
-            active: {{ active('dashboard*') ? 'true' : 'false' }}
-        },
-        {
-            text: 'Settings',
-            href: '{{ route('settings') }}',
-            active: {{ active('settings*') ? 'true' : 'false' }}
-        }
-    ]"
+        <ul class="navbar-nav ml-auto">
+        @auth()
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="nav-dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hei, {{ auth()->user()->full_name() }}</a>
+                <div class="dropdown-menu">
 
-    :show-logout="true"
+                    @if(count(auth()->user()->events) > 0)
+                    <a class="dropdown-item{{ active('dashboard*') }}" href="{{ route('dashboard') }}">{{ tra('nav.dashboard') }}</a>
+                    <div class="dropdown-divider"></div>
+                    @endif
 
-    @else
-    :dropdown-links="[
-        {
-            text: 'Sign in',
-            href: '{{ route('login') }}',
-            active: {{ active('login') ? 'true' : 'false' }}
-        },
-        {
-            text: 'Sign up',
-            href: '{{ route('register') }}',
-            active: {{ active('register') ? 'true' : 'false' }}
-        }
-    ]"
-
-    @endauth
-    ></navigation>
+                    <a class="dropdown-item{{ active('settings*') }}" href="{{ route('settings') }}">{{ tra('nav.settings') }}</a>
+                    <a class="dropdown-item text-danger" id="nav-logout" href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                                 document.getElementById('logout-form').submit();">{{ tra('nav.sign-out')}}</a>
+                </div>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>
+            </li>
+        @else
+            <li class="nav-item">
+                <a class="nav-link{{ active('login') }}" href="{{ route('login') }}">{{ tra('nav.sign-in') }}</a>
+            </li>
+        @endauth
+        </ul>
+    </div>
+</nav>
