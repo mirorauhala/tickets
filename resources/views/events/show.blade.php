@@ -4,7 +4,7 @@
 
 @section('base.content')
 <header class="h-40 bg-cover bg-no-repeat bg-center" style="background-image: url('https://images.unsplash.com/photo-1517433456452-f9633a875f6f?ixlib=rb-1.2.1&auto=format&fit=crop&w=2378&q=80')">
-    <div class="container mx-auto h-full flex flex-col items-center text-white">
+    <div class="container h-full flex flex-col items-center text-white">
         <h1 class="text-5xl font-bold mb-3">{{ $event->name }}</h1>
         <p class="text-xl ">{{ $event->location }} &middot; {{ optional($event->date)->format("d/m/Y") }}</p>
     </div>
@@ -26,7 +26,7 @@
     </nav>
 </div>
 
-<div class="container mx-auto flex flex-col items-center pt-5">
+<div class="container flex flex-col items-center pt-5">
     @if(count($tickets) > 0)
         @foreach($tickets as $ticket)
             <div class="w-7/12 mb-3">

@@ -3,7 +3,7 @@
 @section('base.title', tra('dashboard.nav.maps-create'))
 
 @section('base.content')
-<div class="container mx-auto">
+<div class="container">
     <div class="row pb-5">
         <div class="col-md-12">
             <p class="lead mb-0">{{ $event->name }}</p>

@@ -3,7 +3,7 @@
 @section('base.title', tra('featured.title'))
 
 @section('base.content')
-<div class="container mx-auto pt-6">
+<div class="container pt-6">
     <div class="row pb-5 pt-4">
         <div class="col-md-12">
             <h1>{{ tra('featured.title') }} / All</h1>
