@@ -7,7 +7,7 @@ This is a website for booking tickets to a LAN event.
 | Branch  | Status |
 |---------|--------|
 | master  | [![Laravel](https://github.com/mirorauhala/tickets/workflows/Laravel/badge.svg?branch=master)](https://github.com/mirorauhala/tickets/actions?query=workflow%3ALaravel+branch%3Amaster) |
-| develop | [![Laravel](https://github.com/mirorauhala/tickets/workflows/Laravel/badge.svg?branch=develop))](https://github.com/mirorauhala/tickets/actions?query=workflow%3ALaravel+branch%3Adevelop) |
+| develop | [![Laravel](https://github.com/mirorauhala/tickets/workflows/Laravel/badge.svg?branch=develop)](https://github.com/mirorauhala/tickets/actions?query=workflow%3ALaravel+branch%3Adevelop) |
 
 
 ## Why?
