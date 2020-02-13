@@ -6,8 +6,8 @@ This is a website for booking tickets to a LAN event.
 
 | Branch  | Status |
 |---------|--------|
-| master  | [![Build Status](https://drone.mirorauhala.fi/api/badges/mirorauhala/tickets/status.svg?branch=master)](https://drone.mirorauhala.fi/mirorauhala/tickets) |
-| develop | [![Build Status](https://drone.mirorauhala.fi/api/badges/mirorauhala/tickets/status.svg?branch=develop)](https://drone.mirorauhala.fi/mirorauhala/tickets) |
+| master  | [![Laravel](https://github.com/mirorauhala/tickets/workflows/Laravel/badge.svg?branch=master)](https://github.com/mirorauhala/tickets/actions?query=workflow%3ALaravel+branch%3Amaster) |
+| develop | [![Laravel](https://github.com/mirorauhala/tickets/workflows/Laravel/badge.svg?branch=develop))](https://github.com/mirorauhala/tickets/actions?query=workflow%3ALaravel+branch%3Adevelop) |
 
 
 ## Why?
