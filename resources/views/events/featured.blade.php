@@ -3,8 +3,8 @@
 @section('base.title', tra('featured.title'))
 
 @section('base.content')
-<div class="container pt-6">
-    <div class="w-7/12 mx-auto">
+<div class="container pt-5">
+    <div class="col-12">
         <h1 class="text-6xl font-bold mb-3">{{ tra('featured.title') }}</h1>
         @include('events._menu')
         @if(count($events) > 0)
