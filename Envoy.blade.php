@@ -74,7 +74,7 @@
         echo "Updating current release symlink."
         ln -nfs {{ $newReleaseDir }} {{ $currentDir }}
 
-        chown miro:www-data -R {{ $baseDir }}
+        sudo chown www-data:www-data -R {{ $baseDir }}
 
         {{ logMessage("⚡️   Initialisation done!") }}
         echo "This tool has created the following structure"
@@ -123,7 +123,7 @@
     mkdir {{ $newReleaseDir }};
 
     {{-- Temporarily own the release permissions --}}
-    chown miro:miro -R {{ $newReleaseDir }};
+    sudo chown miro:www-data -R {{ $newReleaseDir }};
 
     {{-- Clone the repo --}}
     git clone --depth 1 git@github.com:{{ $repository }} {{ $newReleaseName }}
@@ -145,6 +145,7 @@
     {{ logMessage("🚚  Running Composer. This might take a while") }}
     cd {{ $newReleaseDir }};
     composer install --prefer-dist --no-scripts --no-dev -q -o;
+    sudo chown www-data:www-data -R {{ $newReleaseDir }};
 @endtask
 
 @task('updateSymlinks', ['on' => 'remote'])
@@ -183,11 +184,8 @@
 @task('blessNewRelease', ['on' => 'remote'])
     {{ logMessage("🙏  Blessing new release...") }}
 
-    {{-- Restore permissions for webserver --}}
-    [[ -d {{ $currentDir }}]] || chown www-data:www-data -R {{ $currentDir }}
-
     ln -nfs {{ $newReleaseDir }} {{ $currentDir }};
-    cd {{ $newReleaseDir }}
+    cd {{ $currentDir }}
 
     sudo -u www-data php artisan config:clear
     sudo -u www-data php artisan cache:clear
@@ -199,12 +197,20 @@
     {{ logMessage("🚾  Cleaning up old releases...") }}
     # Delete all but the 5 most recent.
     cd {{ $releasesDir }}
-    ls -dt {{ $releasesDir }}/* | tail -n +6 | xargs -d "\n" sudo chown -R www-data .;
+    ls -dt {{ $releasesDir }}/* | tail -n +6 | xargs -d "\n" sudo chown -R www-data:www-data .;
     ls -dt {{ $releasesDir }}/* | tail -n +6 | xargs -d "\n" rm -rf;
 @endtask
 
 @task('finishDeploy', ['on' => 'local'])
     {{ logMessage("🚀  Application deployed!") }}
+@endtask
+
+@task('releases', ['on' => 'remote'])
+    cd {{ $releasesDir }}
+    ls -la
+    echo "---"
+    {{ logYellow('Current release') }}
+    readlink -f {{ $currentDir }}
 @endtask
 
 @task('deployOnlyCode',['on' => 'remote'])
