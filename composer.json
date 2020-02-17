@@ -4,11 +4,6 @@
     "keywords": ["tickets", "ecommerce", "lan party"],
     "license": "MIT",
     "type": "project",
-    "_comment": [
-        "Bug in laravel-sri regarding PHP 7.4",
-        "See: https://github.com/Elhebert/laravel-sri/pull/38",
-        "elhebert/laravel-sri ^2.0"
-    ],
     "require": {
         "php": "^7.4",
         "doctrine/dbal": "^2.7",
@@ -22,7 +17,8 @@
         "predis/predis": "^1.1",
         "sentry/sentry-laravel": "^1.6",
         "spatie/laravel-fractal": "^5.6",
-        "spomky-labs/otphp": "^10.0"
+        "spomky-labs/otphp": "^10.0",
+        "elhebert/laravel-sri": "^2.0"
     },
     "require-dev": {
         "facade/ignition": "^1.4",
