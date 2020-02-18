@@ -19,8 +19,8 @@ export default {
     data: function () {
         return {
             themes: {
-                primary: 'bg-blue-600',
-                secondary: 'bg-gray-600',
+                primary: 'btn-primary',
+                secondary: 'btn-secondary',
                 success: 'btn-success',
                 danger: 'btn-danger',
                 warning: 'btn-warning',

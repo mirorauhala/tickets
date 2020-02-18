@@ -3,15 +3,17 @@
 @section('base.title', tra('settings.title'))
 
 @section('base.content')
-<div class="container">
-    <div class="w-full">
-        <h1 class="text-5xl font-bold mb-3">{{ tra('settings.title') }}</h1>
+<div class="container pt-5">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-5xl font-bold mb-3">{{ tra('settings.title') }}</h1>
+        </div>
     </div>
-    <div class="flex">
-        <div class="w-3/12">
+    <div class="row">
+        <div class="col-12 col-md-3 mb-3">
             @include('settings._menu')
         </div>
-        <div class="w-9/12">
+        <div class="col-12 col-md-8 md-offset-1">
             @include('partials.messages.flashbox')
             <form method="post" action="{{ route('settings.password') }}">
                 {{ csrf_field() }}

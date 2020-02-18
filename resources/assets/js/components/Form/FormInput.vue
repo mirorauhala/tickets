@@ -1,7 +1,7 @@
 <template>
     <input
         type="text"
-        class="textInput"
+        class="form-control"
         :class="{'textInput--error': error}"
         :name="name"
         :id="name"
@@ -40,21 +40,3 @@ export default {
 
 }
 </script>
-
-<style lang="scss" scoped>
-.textInput {
-    @apply block px-3 py-2 border rounded outline-none w-full;
-
-    &:focus {
-        @apply border-blue-500;
-    }
-}
-
-.textInput--error {
-    @apply border-red-500;
-
-    &:focus {
-        @apply border-red-500 bg-red-100;
-    }
-}
-</style>

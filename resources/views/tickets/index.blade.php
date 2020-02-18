@@ -3,11 +3,13 @@
 @section('base.title', tra('tickets.title'))
 
 @section('base.content')
-<div class="container">
-    <div class="w-full">
-        <h1 class="text-5xl font-bold mb-3">{{ tra('tickets.title') }}</h1>
+<div class="container pt-5">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-5xl font-bold mb-3">{{ tra('tickets.title') }}</h1>
+        </div>
     </div>
-    <div class="w-full">
+    <div class="row">
         @if(count($tickets) > 0)
             @foreach($tickets as $ticket)
                 <div class="col-sm-6 col-md-6 col-lg-3">
@@ -34,7 +36,9 @@
                 </div>
             @endforeach
         @else
-            <p class="lead text-muted text-center">{{ tra('tickets.no-paid') }}</p>
+            <div class="col">
+                <p class="lead text-muted">{{ tra('tickets.no-paid') }}</p>
+            </div>
         @endif
     </div>
 </div>

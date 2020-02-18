@@ -29,8 +29,8 @@
         @if(count($tickets) > 0)
             @foreach($tickets as $ticket)
                 <div class="w-7/12 mb-3">
-                    <div class="border border-gray-200">
-                        <div class="p-5">
+                    <div class="card">
+                        <div class="card-body">
                             <h2 class="font-bold text-3xl">{{ $ticket->name}} - {{ money($ticket->price, "EUR") }}</h2>
                             <p class="card-text">Alkaen </p>
                             <form action="{{ route('orders.create', $event) }}" method="post">
