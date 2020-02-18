@@ -7,7 +7,6 @@
     <div class="row py-5 justify-content-center align-items-center">
         <div class="col-md-6">
             <h1>{{ tra('auth.register.title') }}</h1>
-            <p class="lead">{{ tra('auth.register.lead') }}</p>
         </div>
     </div>
     <div class="row pb-5 justify-content-center">
