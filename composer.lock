@@ -8212,31 +8212,32 @@
         },
         {
             "name": "wnx/laravel-stats",
-            "version": "v2.0.0",
+            "version": "v2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/stefanzweifel/laravel-stats.git",
-                "reference": "1b3c60bfbf81233973cbc2a63be4e6f83b2d6205"
+                "reference": "c9f7b599a441f92b6e0b28d43830a492606aa84f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stefanzweifel/laravel-stats/zipball/1b3c60bfbf81233973cbc2a63be4e6f83b2d6205",
-                "reference": "1b3c60bfbf81233973cbc2a63be4e6f83b2d6205",
+                "url": "https://api.github.com/repos/stefanzweifel/laravel-stats/zipball/c9f7b599a441f92b6e0b28d43830a492606aa84f",
+                "reference": "c9f7b599a441f92b6e0b28d43830a492606aa84f",
                 "shasum": ""
             },
             "require": {
-                "illuminate/console": "~5.8.0|^6.0",
-                "illuminate/support": "~5.8.0|^6.0",
+                "illuminate/console": "~5.8.0|^6.0|^7.0",
+                "illuminate/support": "~5.8.0|^6.0|^7.0",
                 "php": ">=7.2.0",
-                "phploc/phploc": "~4.0|~5.0",
-                "symfony/finder": "~3.3|~4.0"
+                "phploc/phploc": "~5.0",
+                "symfony/finder": "~4.0"
             },
             "require-dev": {
-                "laravel/browser-kit-testing": "~2.0|~3.0|~4.0|~5.0",
-                "laravel/dusk": "~3.0|~4.0|~5.0",
+                "friendsofphp/php-cs-fixer": "^2.15",
+                "laravel/browser-kit-testing": "~5.0",
+                "laravel/dusk": "~5.0",
                 "mockery/mockery": "^1.1",
-                "orchestra/testbench": "^3.8",
-                "phpunit/phpunit": "6.*|7.*|8.*"
+                "orchestra/testbench": "^3.8|^4.0|^5.0",
+                "phpunit/phpunit": "8.*|9.*"
             },
             "type": "library",
             "extra": {
@@ -8271,7 +8272,7 @@
                 "stats",
                 "wnx"
             ],
-            "time": "2019-09-01T14:18:49+00:00"
+            "time": "2020-02-18T19:04:58+00:00"
         }
     ],
     "aliases": [],
