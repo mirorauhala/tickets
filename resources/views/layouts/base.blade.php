@@ -27,7 +27,7 @@
     </div>
 
     @if(app()->environment('production'))
-    <script src="{{ mix('js/app.js') }}" integrity="{{ Sri::hash('css/app.css') }}" crossorigin="anonymous"></script>
+    <script src="{{ mix('js/app.js') }}" integrity="{{ Sri::hash('css/app.js') }}" crossorigin="anonymous"></script>
     @else
     <script src="{{ mix('js/app.js') }}"></script>
     @endif
