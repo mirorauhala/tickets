@@ -7,18 +7,19 @@
     "require": {
         "php": "^7.4",
         "doctrine/dbal": "^2.7",
+        "elhebert/laravel-sri": "^2.0",
         "fideloper/proxy": "^4.0",
         "guzzlehttp/guzzle": "^6.3",
         "itsgoingd/clockwork": "^4.0",
         "laravel/framework": "^6.0",
         "laravel/passport": "^8.3",
         "laravel/tinker": "^2.1",
+        "laravel/ui": "^1.2",
         "moneyphp/money": "^3.3",
         "predis/predis": "^1.1",
         "sentry/sentry-laravel": "^1.6",
         "spatie/laravel-fractal": "^5.6",
-        "spomky-labs/otphp": "^10.0",
-        "elhebert/laravel-sri": "^2.0"
+        "spomky-labs/otphp": "^10.0"
     },
     "require-dev": {
         "facade/ignition": "^1.4",
