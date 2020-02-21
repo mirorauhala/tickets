@@ -4,7 +4,9 @@ namespace Domain\Events\Controllers;
 
 use App\Models\Seat;
 use Domain\Events\Event;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Cache;
+use Domain\Events\ViewModels\EventIndexViewModel;
 
 class EventController extends Controller
 {
