@@ -1,22 +1,11 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
- */
-
 
 /*
 |--------------------------------------------------------------------------
 | Basic routes
 |--------------------------------------------------------------------------
- */
+*/
 Route::get('/', 'Domain\Events\Controllers\FeaturedEventController@index')->name('home');
 Route::resource('/events', 'Domain\Events\Controllers\EventController')->only(['index', 'show']);
 
@@ -50,7 +39,7 @@ Route::group(['prefix' => '/dashboard'], function () {
 |--------------------------------------------------------------------------
 | Settings
 |--------------------------------------------------------------------------
- */
+*/
 
 Route::group(['prefix' => '/settings', 'namespace' => 'Domain\\Users\\Controllers'], function () {
     Route::get('/', 'AccountController@show')->name('settings');
@@ -69,7 +58,7 @@ Route::group(['prefix' => '/settings', 'namespace' => 'Domain\\Users\\Controller
 |--------------------------------------------------------------------------
 | Language routes
 |--------------------------------------------------------------------------
- */
+*/
 
 Route::get('/lang/{lang}', function (Request $request, $lang) {
     if (! in_array($lang, ['fi', 'en'])) {
