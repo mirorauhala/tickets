@@ -10,8 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
  */
+Route::group(['namespace' => 'App\Http\Controllers'], function() {
 
 Auth::routes(['verify' => true]);
+
 
 /*
 |--------------------------------------------------------------------------
@@ -25,7 +27,6 @@ Route::resource('/events', 'EventController')->only(['index', 'show']);
 
 /*
 |--------------------------------------------------------------------------
-| Dashboard
 |--------------------------------------------------------------------------
  */
 Route::group(['prefix' => '/dashboard'], function () {
@@ -41,13 +42,15 @@ Route::group(['prefix' => '/dashboard'], function () {
     Route::get('/{event}/settings', 'Dashboard\EventController@show')->name('dashboard.settings');
     Route::post('/{event}/settings', 'Dashboard\EventController@update');
 });
+
+});
 /*
 |--------------------------------------------------------------------------
 | Settings
 |--------------------------------------------------------------------------
  */
 
-Route::group(['prefix' => '/settings', 'namespace' => 'Settings'], function () {
+Route::group(['prefix' => '/settings', 'namespace' => 'Domain\\User\\Controllers'], function () {
     Route::get('/', 'AccountController@show')->name('settings');
     Route::post('/', 'AccountController@update');
 
