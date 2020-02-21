@@ -18,7 +18,7 @@
 |--------------------------------------------------------------------------
  */
 Route::get('/', 'Domain\Events\Controllers\FeaturedEventController@index')->name('home');
-Route::resource('/events', 'EventController')->only(['index', 'show']);
+Route::resource('/events', 'Domain\Events\Controllers\EventController')->only(['index', 'show']);
 
 Route::group(['namespace' => 'App\Http\Controllers'], function() {
 
