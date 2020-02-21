@@ -2,9 +2,7 @@
 
 namespace Domain\User\ApiControllers;
 
-use App\Models\User;
 use Domain\User\UserData;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UserAccountRequest;
 use Domain\User\Actions\UpdateUserAction;
