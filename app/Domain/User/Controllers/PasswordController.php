@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Settings;
+namespace Domain\User\Controllers;
 
 use App\Http\Controllers\Controller;
 use Domain\User\Actions\UpdatePasswordAction;
@@ -37,11 +37,13 @@ class PasswordController extends Controller
     {
         $updatePasswordAction->run($request->user(), $request->new_password);
 
+        $viewModel = new LanguageViewModel([
+            'flash_status'  => 'success',
+            'flash_message' => tra('settings.flash.password'),
+        ]);
+
         return redirect()
             ->route('settings.password')
-            ->with([
-                'flash_status'  => 'success',
-                'flash_message' => tra('settings.flash.password'),
-            ]);
+            ->with($viewModel);
     }
 }

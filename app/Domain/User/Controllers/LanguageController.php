@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Settings;
+namespace Domain\User\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UpdateLanguageRequest;
 use Domain\User\Actions\UpdateLanguageAction;
+use Domain\User\ViewModels\LanguageViewModel;
 
 class LanguageController extends Controller
 {
@@ -38,6 +39,11 @@ class LanguageController extends Controller
     public function update(UpdateLanguageRequest $request, UpdateLanguageAction $action)
     {
         $action->run($request->user(), $request->language);
+
+        $viewModel = new LanguageViewModel(
+            $request->user(),
+            $request->user()->language
+        );
 
         return redirect()
             ->route('settings.language')

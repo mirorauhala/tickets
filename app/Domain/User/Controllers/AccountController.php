@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Settings;
+namespace Domain\User\Controllers;
 
 use Domain\User\UserData;
 use App\Http\Controllers\Controller;
