@@ -7,7 +7,7 @@ use Domain\User\UserData;
 
 class UpdateUserAction {
     public function run(User $user, UserData $data) {
-        return $user->update([
+        $user->update([
             'first_name' => $data->first_name ?? null,
             'last_name'  => $data->last_name ?? null,
             'email'      => $data->email ?? null,
