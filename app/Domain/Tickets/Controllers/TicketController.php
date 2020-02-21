@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Domain\Tickets\Controllers;
 
 use App\Models\OrderItem;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class TicketController extends Controller
 {
