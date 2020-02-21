@@ -1,6 +1,6 @@
 <?php
 
-namespace Domain\User;
+namespace Domain\Users;
 
 use Illuminate\Http\Request;
 use Spatie\DataTransferObject\DataTransferObject;

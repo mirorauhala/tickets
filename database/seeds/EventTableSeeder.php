@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Event;
+use Domain\Events\Event;
 use Illuminate\Database\Seeder;
 
 class EventTableSeeder extends Seeder

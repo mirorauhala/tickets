@@ -2,7 +2,7 @@
 
 namespace App\Jobs;
 
-use Domain\User\User;
+use Domain\Users\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;

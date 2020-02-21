@@ -1,6 +1,6 @@
 <?php
 
-namespace Domain\User;
+namespace Domain\Users;
 
 use App\Jobs\QueuedVerifyEmail;
 use Laravel\Passport\HasApiTokens;
@@ -66,7 +66,7 @@ class User extends Authenticatable implements MustVerifyEmail
      */
     public function events()
     {
-        return $this->belongsToMany('App\Models\Event');
+        return $this->belongsToMany('Domain\Events\Event');
     }
 
     /**

@@ -2,7 +2,7 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 use Carbon\Carbon;
-use Domain\User\User;
+use Domain\Users\User;
 use App\Models\Order;
 use App\Models\Ticket;
 use App\Models\OrderItem;

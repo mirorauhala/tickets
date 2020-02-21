@@ -2,14 +2,14 @@
 
 namespace Tests\Traits;
 
-use Domain\User\User;
+use Domain\Users\User;
 
 trait CreateUser
 {
     /**
      * User model.
      *
-     * @var Domain\User\User
+     * @var Domain\Users\User
      */
     protected $user;
 

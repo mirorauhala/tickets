@@ -2,7 +2,7 @@
 
 namespace App\Transformers;
 
-use Domain\User\User;
+use Domain\Users\User;
 use League\Fractal\TransformerAbstract;
 
 class UserTransformer extends TransformerAbstract

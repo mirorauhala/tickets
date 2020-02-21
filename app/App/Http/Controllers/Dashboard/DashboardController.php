@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use App\Models\Event;
+use Domain\Events\Event;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -52,7 +52,7 @@ class DashboardController extends Controller
     /**
      * Show listing of orders.
      *
-     * @param App\Models\Event $event
+     * @param Domain\Events\Event $event
      * @return \Illuminate\Http\Response
      * @throws \Illuminate\Auth\Access\AuthorizationException
      */

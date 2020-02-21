@@ -4,8 +4,8 @@ namespace Tests\Feature\Dashboard;
 
 use App\Models\Map;
 use Tests\TestCase;
-use Domain\User\User;
-use App\Models\Event;
+use Domain\Users\User;
+use Domain\Events\Event;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class MapEditTest extends TestCase

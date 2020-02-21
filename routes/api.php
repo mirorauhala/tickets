@@ -12,5 +12,5 @@
  */
 
 Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function () {
-    Route::post('/settings-account', 'Domain\User\ApiControllers\AccountController@update');
+    Route::post('/settings-account', 'Domain\Users\ApiControllers\AccountController@update');
 });

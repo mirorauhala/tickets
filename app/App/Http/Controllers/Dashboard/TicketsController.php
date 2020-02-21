@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use App\Models\Event;
+use Domain\Events\Event;
 use App\Models\Ticket;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\TicketRequest;
@@ -22,7 +22,7 @@ class TicketsController extends Controller
     /**
      * Show listing of tickets.
      *
-     * @param App\Models\Event $event
+     * @param Domain\Events\Event $event
      *
      * @return \Illuminate\Http\Response
      */
@@ -40,7 +40,7 @@ class TicketsController extends Controller
     /**
      * Ticket creating view.
      *
-     * @param App\Models\Event $event
+     * @param Domain\Events\Event $event
      *
      * @return \Illuminate\Http\Response
      */
@@ -57,7 +57,7 @@ class TicketsController extends Controller
     /**
      * Storing a ticket.
      *
-     * @param App\Models\Event $event
+     * @param Domain\Events\Event $event
      *
      * @return \Illuminate\Http\Response
      */
@@ -86,7 +86,7 @@ class TicketsController extends Controller
     /**
      * Show a ticket.
      *
-     * @param App\Models\Event $event
+     * @param Domain\Events\Event $event
      *
      * @return \Illuminate\Http\Response
      */
@@ -104,7 +104,7 @@ class TicketsController extends Controller
     /**
      * Edit a ticket.
      *
-     * @param App\Models\Event $event
+     * @param Domain\Events\Event $event
      *
      * @return \Illuminate\Http\Response
      */
@@ -122,7 +122,7 @@ class TicketsController extends Controller
     /**
      * Update a ticket.
      *
-     * @param App\Models\Event $event
+     * @param Domain\Events\Event $event
      *
      * @return \Illuminate\Http\Response
      */
@@ -151,7 +151,7 @@ class TicketsController extends Controller
     /**
      * Deleted a ticket.
      *
-     * @param App\Models\Event $event
+     * @param Domain\Events\Event $event
      *
      * @return \Illuminate\Http\Response
      */

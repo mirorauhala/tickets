@@ -14,7 +14,7 @@ use Illuminate\Support\Str;
  */
 
 /* @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(Domain\User\User::class, function (Faker\Generator $faker) {
+$factory->define(Domain\Users\User::class, function (Faker\Generator $faker) {
     static $password;
 
     return [

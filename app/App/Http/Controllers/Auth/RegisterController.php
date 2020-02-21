@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
-use Domain\User\User;
+use Domain\Users\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;

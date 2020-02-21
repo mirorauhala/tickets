@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Event;
+use Domain\Events\Event;
 use App\Models\Ticket;
 use Illuminate\Database\Seeder;
 

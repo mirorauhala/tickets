@@ -1,11 +1,11 @@
 <?php
 
-namespace Domain\User\Controllers;
+namespace Domain\Users\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UpdateLanguageRequest;
-use Domain\User\Actions\UpdateLanguageAction;
-use Domain\User\ViewModels\LanguageViewModel;
+use Domain\Users\Actions\UpdateLanguageAction;
+use Domain\Users\ViewModels\LanguageViewModel;
 
 class LanguageController extends Controller
 {

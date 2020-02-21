@@ -1,9 +1,9 @@
 <?php
 
-namespace Domain\User\Controllers;
+namespace Domain\Users\Controllers;
 
 use App\Http\Controllers\Controller;
-use Domain\User\Actions\UpdatePasswordAction;
+use Domain\Users\Actions\UpdatePasswordAction;
 use App\Http\Requests\SettingsPasswordRequest;
 
 class PasswordController extends Controller

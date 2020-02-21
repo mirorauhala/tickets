@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use App\Models\Event;
+use Domain\Events\Event;
 use App\Models\Tournament;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;

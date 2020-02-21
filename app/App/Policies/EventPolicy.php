@@ -2,8 +2,8 @@
 
 namespace App\Policies;
 
-use Domain\User\User;
-use App\Models\Event;
+use Domain\Users\User;
+use Domain\Events\Event;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class EventPolicy

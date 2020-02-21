@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Domain\Events\Controllers;
 
-use App\Models\Event;
+use App\Http\Controllers\Controller;
+use Domain\Events\Event;
 
 class FeaturedEventController extends Controller
 {

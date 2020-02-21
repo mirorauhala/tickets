@@ -2,8 +2,8 @@
 
 namespace Tests\Browser\Tests\EventTests;
 
-use Domain\User\User;
-use App\Models\Event;
+use Domain\Users\User;
+use Domain\Events\Event;
 use Tests\DuskTestCase;
 use Laravel\Dusk\Browser;
 use Tests\Browser\Pages\EventSettingsPage;

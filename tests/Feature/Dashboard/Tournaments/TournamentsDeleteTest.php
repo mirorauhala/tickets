@@ -3,8 +3,8 @@
 namespace Tests\Feature\Dashboard;
 
 use Tests\TestCase;
-use Domain\User\User;
-use App\Models\Event;
+use Domain\Users\User;
+use Domain\Events\Event;
 use App\Models\Tournament;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 

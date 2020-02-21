@@ -3,7 +3,7 @@
 namespace Tests\Feature\Dashboard\Tickets;
 
 use Tests\TestCase;
-use App\Models\Event;
+use Domain\Events\Event;
 use App\Models\Ticket;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 

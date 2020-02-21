@@ -1,8 +1,8 @@
 <?php
 
-namespace Domain\User\Actions;
+namespace Domain\Users\Actions;
 
-use Domain\User\User;
+use Domain\Users\User;
 
 class UpdateLanguageAction {
     public function run(User $user, string $language): User {

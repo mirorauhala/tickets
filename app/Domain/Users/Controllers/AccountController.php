@@ -1,11 +1,11 @@
 <?php
 
-namespace Domain\User\Controllers;
+namespace Domain\Users\Controllers;
 
-use Domain\User\UserData;
+use Domain\Users\UserData;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UserAccountRequest;
-use Domain\User\Actions\UpdateUserAction;
+use Domain\Users\Actions\UpdateUserAction;
 
 class AccountController extends Controller
 {

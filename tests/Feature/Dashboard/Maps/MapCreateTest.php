@@ -3,7 +3,7 @@
 namespace Tests\Feature\Dashboard;
 
 use Tests\TestCase;
-use App\Models\Event;
+use Domain\Events\Event;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class MapCreateTest extends TestCase

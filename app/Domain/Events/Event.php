@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Models;
+namespace Domain\Events;
 
 use Illuminate\Database\Eloquent\Model;
+use Domain\Events\Collections\EventCollection;
 
 class Event extends Model
 {
@@ -29,6 +30,13 @@ class Event extends Model
     protected $hidden = [];
 
     /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    protected $table = 'events';
+
+    /**
      * The attributes that should be mutated to dates.
      *
      * @var array
@@ -48,13 +56,24 @@ class Event extends Model
     }
 
     /**
+     * Create a new Eloquent Collection instance.
+     *
+     * @param  array  $models
+     * @return \Illuminate\Database\Eloquent\Collection
+     */
+    public function newCollection(array $models = [])
+    {
+        return new EventCollection($models);
+    }
+
+    /**
      * Get users the event is associated with.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function users()
     {
-        return $this->belongsToMany('Domain\User\User');
+        return $this->belongsToMany('Domain\Users\User');
     }
 
     /**

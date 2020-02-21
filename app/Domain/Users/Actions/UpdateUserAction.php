@@ -1,9 +1,9 @@
 <?php
 
-namespace Domain\User\Actions;
+namespace Domain\Users\Actions;
 
-use Domain\User\User;
-use Domain\User\UserData;
+use Domain\Users\User;
+use Domain\Users\UserData;
 
 class UpdateUserAction {
     public function run(User $user, UserData $data) {

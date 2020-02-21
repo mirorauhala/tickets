@@ -1,8 +1,8 @@
 <?php
 
-namespace Domain\User\Actions;
+namespace Domain\Users\Actions;
 
-use Domain\User\User;
+use Domain\Users\User;
 
 class UpdatePasswordAction {
     public function run(User $user, string $new_password): User {

@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Order;
 use Money\Money;
 use Carbon\Carbon;
 use Money\Currency;
-use App\Models\Event;
+use Domain\Events\Event;
 use App\Models\Order;
 use App\Models\Ticket;
 use App\Models\OrderItem;

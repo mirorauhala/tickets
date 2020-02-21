@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use App\Models\Event;
+use Domain\Events\Event;
 use App\Http\Requests\EventRequest;
 use App\Http\Controllers\Controller;
 
@@ -21,7 +21,7 @@ class EventController extends Controller
     /**
      * Display event settings.
      *
-     * @param App\Models\Event $event
+     * @param Domain\Events\Event $event
      * @return \Illuminate\Http\Response
      * @throws \Illuminate\Auth\Access\AuthorizationException
      */
@@ -38,7 +38,7 @@ class EventController extends Controller
     /**
      * Store event settings.
      *
-     * @param App\Models\Event $event
+     * @param Domain\Events\Event $event
      * @return \Illuminate\Http\Response
      * @throws \Illuminate\Auth\Access\AuthorizationException
      */

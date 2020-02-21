@@ -2,7 +2,7 @@
 
 /* @var \Illuminate\Database\Eloquent\Factory $factory */
 use Carbon\Carbon;
-use App\Models\Event;
+use Domain\Events\Event;
 use Faker\Generator as Faker;
 
 $factory->define(App\Models\Tournament::class, function (Faker $faker) {

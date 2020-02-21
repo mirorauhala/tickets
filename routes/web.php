@@ -10,9 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
  */
-Route::group(['namespace' => 'App\Http\Controllers'], function() {
-
-Auth::routes(['verify' => true]);
 
 
 /*
@@ -20,10 +17,15 @@ Auth::routes(['verify' => true]);
 | Basic routes
 |--------------------------------------------------------------------------
  */
-Route::get('/', 'FeaturedEventController@index')->name('home');
+Route::get('/', 'Domain\Events\Controllers\FeaturedEventController@index')->name('home');
+Route::resource('/events', 'EventController')->only(['index', 'show']);
+
+Route::group(['namespace' => 'App\Http\Controllers'], function() {
+
+    Auth::routes(['verify' => true]);
+
 Route::resource('/tickets', 'TicketController')->only(['index', 'show']);
 Route::resource('/orders', 'OrderController')->except(['edit', 'update']);
-Route::resource('/events', 'EventController')->only(['index', 'show']);
 
 /*
 |--------------------------------------------------------------------------
@@ -50,7 +52,7 @@ Route::group(['prefix' => '/dashboard'], function () {
 |--------------------------------------------------------------------------
  */
 
-Route::group(['prefix' => '/settings', 'namespace' => 'Domain\\User\\Controllers'], function () {
+Route::group(['prefix' => '/settings', 'namespace' => 'Domain\\Users\\Controllers'], function () {
     Route::get('/', 'AccountController@show')->name('settings');
     Route::post('/', 'AccountController@update');
 

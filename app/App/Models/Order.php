@@ -73,7 +73,7 @@ class Order extends Model
      */
     public function user()
     {
-        return $this->belongsTo('Domain\User\User');
+        return $this->belongsTo('Domain\Users\User');
     }
 
     /**
@@ -83,7 +83,7 @@ class Order extends Model
      */
     public function event()
     {
-        return $this->belongsTo('App\Models\Event');
+        return $this->belongsTo('Domain\Events\Event');
     }
 
     /**

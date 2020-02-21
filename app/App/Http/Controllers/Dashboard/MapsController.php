@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Models\Map;
-use App\Models\Event;
+use Domain\Events\Event;
 use App\Http\Requests\MapRequest;
 use App\Http\Controllers\Controller;
 
@@ -38,7 +38,7 @@ class MapsController extends Controller
     /**
      * Map creating view.
      *
-     * @param App\Models\Event $event
+     * @param Domain\Events\Event $event
      * @return \Illuminate\Http\Response
      * @throws \Illuminate\Auth\Access\AuthorizationException
      */
@@ -55,7 +55,7 @@ class MapsController extends Controller
     /**
      * Storing a map.
      *
-     * @param App\Models\Event $event
+     * @param Domain\Events\Event $event
      * @return \Illuminate\Http\Response
      * @throws \Illuminate\Auth\Access\AuthorizationException
      */
@@ -78,7 +78,7 @@ class MapsController extends Controller
     /**
      * Show a map.
      *
-     * @param App\Models\Event $event
+     * @param Domain\Events\Event $event
      * @return \Illuminate\Http\Response
      * @throws \Illuminate\Auth\Access\AuthorizationException
      */
@@ -96,7 +96,7 @@ class MapsController extends Controller
     /**
      * Edit a map.
      *
-     * @param App\Models\Event $event
+     * @param Domain\Events\Event $event
      * @return \Illuminate\Http\Response
      * @throws \Illuminate\Auth\Access\AuthorizationException
      */
@@ -114,7 +114,7 @@ class MapsController extends Controller
     /**
      * Update a map.
      *
-     * @param App\Models\Event $event
+     * @param Domain\Events\Event $event
      * @return \Illuminate\Http\Response
      * @throws \Illuminate\Auth\Access\AuthorizationException
      */
@@ -138,7 +138,7 @@ class MapsController extends Controller
     /**
      * Destroy the map.
      *
-     * @param App\Models\Event $event
+     * @param Domain\Events\Event $event
      * @return \Illuminate\Http\Response
      * @throws \Illuminate\Auth\Access\AuthorizationException
      */

@@ -2,8 +2,8 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 use Carbon\Carbon;
-use Domain\User\User;
-use App\Models\Event;
+use Domain\Users\User;
+use Domain\Events\Event;
 use App\Models\Order;
 use Faker\Generator as Faker;
 

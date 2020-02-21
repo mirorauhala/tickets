@@ -51,7 +51,7 @@ class OrderItem extends Model
      */
     public function user()
     {
-        return $this->belongsTo('Domain\User\User');
+        return $this->belongsTo('Domain\Users\User');
     }
 
     /**

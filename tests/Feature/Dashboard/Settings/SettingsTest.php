@@ -3,7 +3,7 @@
 namespace Tests\Feature\Dashboard\Settings;
 
 use Tests\TestCase;
-use App\Models\Event;
+use Domain\Events\Event;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class SettingsTest extends TestCase

@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Domain\Event\Controllers;
 
 use App\Models\Seat;
-use App\Models\Event;
+use Domain\Events\Event;
 use Illuminate\Support\Facades\Cache;
 
 class EventController extends Controller
@@ -13,7 +13,7 @@ class EventController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(EventIndexViewModel $viewModel)
     {
         $events = Event::paginate(15)->all();
 
@@ -26,7 +26,7 @@ class EventController extends Controller
     /**
      * Show event page.
      *
-     * @param App\Models\Event
+     * @param Domain\Events\Event
      *
      * @return \Illuminate\Http\Response
      */
