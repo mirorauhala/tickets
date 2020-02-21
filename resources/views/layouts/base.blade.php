@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="{{ asset('images/favicon.png') }}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -13,7 +13,7 @@
     <link rel="manifest" href="/manifest.json">
 
     @if(app()->environment('production'))
-    <link href="{{ mix('css/app.css') }}" integrity="{{ Sri::hash('css/app.css') }}" crossorigin="anonymous" rel="stylesheet">
+    <link href="{{ mix('css/app.css') }}" rel="stylesheet" integrity="{{ Sri::hash('css/app.css') }}" crossorigin="anonymous">
     @else
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     @endif
@@ -21,7 +21,7 @@
 <body class="bg-light">
     <div id="app">
         @include('partials._navigation')
-        <main class="py-5">
+        <main>
             @yield('base.content')
         </main>
     </div>
@@ -31,6 +31,6 @@
     @else
     <script src="{{ mix('js/app.js') }}"></script>
     @endif
-    
+
 </body>
 </html>

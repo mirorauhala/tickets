@@ -3,17 +3,17 @@
 @section('base.title', tra('settings.title'))
 
 @section('base.content')
-<div class="tw-container tw-mx-auto">
-    <div class="row pb-5 pt-4">
-        <div class="col-md-12">
-            <h1>{{ tra('settings.title') }}</h1>
+<div class="container pt-5">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-5xl font-bold mb-3">{{ tra('settings.title') }}</h1>
         </div>
     </div>
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-12 col-md-3 mb-3">
             @include('settings._menu')
         </div>
-        <div class="col-md-8 offset-md-1">
+        <div class="col-12 col-md-8 md-offset-1">
             <h2>{{ tra('settings.about.title') }}</h2>
             <p>{{ tra('settings.about.current-commit') }} {{ current_commit() }}</p>
         </div>

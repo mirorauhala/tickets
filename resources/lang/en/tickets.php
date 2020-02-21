@@ -8,7 +8,6 @@ return [
      */
 
     'title'         => 'My Tickets',
-    'lead'          => 'These tickets are paid.',
     'no-paid'       => 'You don\'t have any tickets.',
 
     'nav' => [

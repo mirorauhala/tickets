@@ -24,7 +24,6 @@ return [
 
     'login' => [
         'title'           => 'Kirjaudu sisään',
-        'lead'            => 'Päästäksesi tiliisi',
         'email'           => 'Sähköposti',
         'password'        => 'Salasana',
         'remember-me'     => 'Muista minut',
@@ -45,7 +44,6 @@ return [
 
     'register' => [
         'title'            => 'Rekisteröidy',
-        'lead'             => 'Luo tili.',
         'first-name'       => 'Etunimi',
         'last-name'        => 'Sukunimi',
         'email'            => 'Sähköposti',

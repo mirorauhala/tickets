@@ -2,7 +2,7 @@
     <input
         type="text"
         class="form-control"
-        :class="{'is-invalid': error}"
+        :class="{'textInput--error': error}"
         :name="name"
         :id="name"
         :value="value"

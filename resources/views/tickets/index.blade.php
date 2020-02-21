@@ -3,13 +3,10 @@
 @section('base.title', tra('tickets.title'))
 
 @section('base.content')
-<div class="tw-container tw-mx-auto">
-    <div class="row pb-5 pt-4">
-        <div class="col-md-12">
-            <h1>{{ tra('tickets.title') }}</h1>
-            <p class="lead">{{ tra('tickets.lead') }}</p>
-
-            @include('tickets._menu')
+<div class="container pt-5">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-5xl font-bold mb-3">{{ tra('tickets.title') }}</h1>
         </div>
     </div>
     <div class="row">
@@ -39,8 +36,8 @@
                 </div>
             @endforeach
         @else
-            <div class="col-12">
-                <p class="lead text-muted text-center">{{ tra('tickets.no-paid') }}</p>
+            <div class="col">
+                <p class="lead text-muted">{{ tra('tickets.no-paid') }}</p>
             </div>
         @endif
     </div>

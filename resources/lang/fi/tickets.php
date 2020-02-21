@@ -8,7 +8,6 @@ return [
      */
 
     'title'         => 'Omat liput',
-    'lead'          => 'Omistat nämä liput.',
     'no-paid'       => 'Sinulla ei ole yhtään lippua.',
 
     'nav' => [

@@ -3,7 +3,7 @@
 @section('base.title', 'Featured')
 
 @section('base.content')
-<div class="tw-container tw-mx-auto">
+<div class="container">
     <div class="row pb-5">
         <div class="col-md-10">
             <h1>Pick an event to manage</h1>

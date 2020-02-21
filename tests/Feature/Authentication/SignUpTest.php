@@ -114,19 +114,4 @@ class SignUpTest extends TestCase
             'email' => $this->fields()['email'],
         ]);
     }
-
-    /** @test */
-    public function phone_is_unique()
-    {
-        factory(User::class)->create(['phone' => '0101001010']);
-
-        $this->fieldOverrides = [
-            'phone' => '0101001010',
-        ];
-        $this->doRequest('post');
-        $this->response->assertSessionHasErrors(['phone']);
-        $this->assertDatabaseMissing('users', [
-            'email' => $this->fields()['email'],
-        ]);
-    }
 }

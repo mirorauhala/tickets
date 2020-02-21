@@ -3,11 +3,10 @@
 @section('base.title', tra('auth.register.title'))
 
 @section('base.content')
-<div class="tw-container tw-mx-auto">
+<div class="container h-100">
     <div class="row py-5 justify-content-center align-items-center">
         <div class="col-md-6">
             <h1>{{ tra('auth.register.title') }}</h1>
-            <p class="lead">{{ tra('auth.register.lead') }}</p>
         </div>
     </div>
     <div class="row pb-5 justify-content-center">
@@ -77,8 +76,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="phone">{{ tra('auth.register.phone') }}</label>
-                    <input id="phone" type="text" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" name="phone" aria-describedby="phoneHelpBlock" value="{{ old('phone') }}" autocomplete="tel">
+                    <label for="tel">{{ tra('auth.register.phone') }}</label>
+                    <input id="tel" type="text" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" name="phone" aria-describedby="phoneHelpBlock" value="{{ old('phone') }}" autocomplete="tel">
                     <small id="phoneHelpBlock" class="form-text text-muted">
                         {{ tra('auth.register.phone-help') }}
                     </small>

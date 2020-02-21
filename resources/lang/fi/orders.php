@@ -8,7 +8,6 @@ return [
      */
 
     'title' => 'Tilaukset',
-    'lead'  => 'Nämä ovat tilauksesi.',
 
     'no-transactions'  => 'Sinulla ei ole tilauksia.',
 

@@ -16,10 +16,9 @@ window.Vue = require('vue');
 import VueQRCodeComponent from 'vue-qrcode-component'
 import store from './store'
 
-Vue.component('app-button', require('./components/AppButton.vue').default);
-Vue.component('input-counter', require('./components/InputCounter.vue').default);
-Vue.component('form-input', require('./components/FormInput.vue').default);
-Vue.component('settings-account', require('./components/SettingsAccount.vue').default);
+const files = require.context('./', true, /\.vue$/i)
+files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
+
 Vue.component('qr-code', VueQRCodeComponent)
 
 const app = new Vue({

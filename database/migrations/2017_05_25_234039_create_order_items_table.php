@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateOrderItemsTable extends Migration
 {
@@ -20,6 +20,8 @@ class CreateOrderItemsTable extends Migration
             $table->integer('value');
             $table->string('status');
             $table->dateTimeTz('release_lock_after')->nullable();
+
+            $table->boolean('seatable')->default(0);
 
             $table->integer('seat_id')->unsigned()->nullable();
             $table->foreign('seat_id')->references('id')->on('seats');

@@ -8,7 +8,6 @@ return [
      */
 
     'title' => 'Orders',
-    'lead'  => 'These are your orders.',
 
     'no-transactions'  => 'You don\'t have any orders.',
 

@@ -3,15 +3,14 @@
 @section('base.title', tra('orders.title'))
 
 @section('base.content')
-<div class="tw-container tw-mx-auto">
-    <div class="row pb-5 pt-4">
-        <div class="col-md-12">
-            <h1>{{ tra('orders.title') }}</h1>
-            <p class="lead">{{ tra('orders.lead') }}</p>
+<div class="container pt-5">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-5xl font-bold mb-3">{{ tra('orders.title') }}</h1>
         </div>
     </div>
     <div class="row">
-        <div class="col-md-12">
+        <div class="col">
             @if(count($orders) > 0)
                 <div class="table-responsive">
                     <table class="table table-striped">

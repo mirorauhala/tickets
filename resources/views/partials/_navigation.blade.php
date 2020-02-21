@@ -41,6 +41,9 @@
             <li class="nav-item">
                 <a class="nav-link{{ active('login') }}" href="{{ route('login') }}">{{ tra('nav.sign-in') }}</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link{{ active('register') }}" href="{{ route('register') }}">{{ tra('nav.sign-up') }}</a>
+            </li>
         @endauth
         </ul>
     </div>

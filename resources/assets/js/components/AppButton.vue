@@ -1,8 +1,7 @@
 <template>
     <button
-        type="button"
-        class="btn px-4"
-        :class="themes[variant]"
+        class="rounded-lg font-bold text-white px-4 py-2"
+        :class="themes[theme]"
     >
         <slot></slot>
     </button>
@@ -11,7 +10,7 @@
 <script>
 export default {
     props: {
-        variant: {
+        theme: {
             type: String,
             required: false,
             default: 'secondary'
