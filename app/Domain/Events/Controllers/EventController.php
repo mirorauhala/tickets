@@ -1,6 +1,6 @@
 <?php
 
-namespace Domain\Event\Controllers;
+namespace Domain\Events\Controllers;
 
 use App\Models\Seat;
 use Domain\Events\Event;
