@@ -48,8 +48,8 @@
         mkdir {{ $releasesDir }}
         cd {{ $releasesDir }}
 
-        echo "Cloning repository."
-        git clone --depth 1 --branch master git@github.com:{{ $repository }} {{ $newReleaseName }}
+        echo "Cloning repository in master branch."
+        git clone --depth 1 --branch master --single-branch git@github.com:{{ $repository }} {{ $newReleaseName }}
         cd {{ $newReleaseDir }}
         echo "Running composer. This might take a while..."
         composer install --prefer-dist --no-scripts --no-dev -q -o
