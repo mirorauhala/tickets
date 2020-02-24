@@ -8271,23 +8271,23 @@
         },
         {
             "name": "wnx/laravel-stats",
-            "version": "v2.0.1",
+            "version": "v2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/stefanzweifel/laravel-stats.git",
-                "reference": "c9f7b599a441f92b6e0b28d43830a492606aa84f"
+                "reference": "e86ebfdd149383b18a41fe3efa1601d82d447140"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stefanzweifel/laravel-stats/zipball/c9f7b599a441f92b6e0b28d43830a492606aa84f",
-                "reference": "c9f7b599a441f92b6e0b28d43830a492606aa84f",
+                "url": "https://api.github.com/repos/stefanzweifel/laravel-stats/zipball/e86ebfdd149383b18a41fe3efa1601d82d447140",
+                "reference": "e86ebfdd149383b18a41fe3efa1601d82d447140",
                 "shasum": ""
             },
             "require": {
                 "illuminate/console": "~5.8.0|^6.0|^7.0",
                 "illuminate/support": "~5.8.0|^6.0|^7.0",
                 "php": ">=7.2.0",
-                "phploc/phploc": "~5.0",
+                "phploc/phploc": "~5.0|~6.0",
                 "symfony/finder": "~4.0"
             },
             "require-dev": {
@@ -8331,7 +8331,7 @@
                 "stats",
                 "wnx"
             ],
-            "time": "2020-02-18T19:04:58+00:00"
+            "time": "2020-02-22T19:09:14+00:00"
         }
     ],
     "aliases": [],
