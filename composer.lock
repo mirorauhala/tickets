@@ -709,21 +709,21 @@
         },
         {
             "name": "elhebert/laravel-sri",
-            "version": "2.0.2",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Elhebert/laravel-sri.git",
-                "reference": "c151f8390e8cd52cc12df63ce0b48b31a4c1b284"
+                "reference": "c8e25c12182b5cf087dd67514e9fd26937ffd70d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Elhebert/laravel-sri/zipball/c151f8390e8cd52cc12df63ce0b48b31a4c1b284",
-                "reference": "c151f8390e8cd52cc12df63ce0b48b31a4c1b284",
+                "url": "https://api.github.com/repos/Elhebert/laravel-sri/zipball/c8e25c12182b5cf087dd67514e9fd26937ffd70d",
+                "reference": "c8e25c12182b5cf087dd67514e9fd26937ffd70d",
                 "shasum": ""
             },
             "require": {
-                "illuminate/support": "^6.0",
-                "php": "^7.2"
+                "illuminate/support": "^6.0 || ^7.0",
+                "php": "^7.2.5"
             },
             "require-dev": {
                 "orchestra/testbench": "^4.0",
@@ -761,7 +761,7 @@
                 "sri",
                 "subresource integrity"
             ],
-            "time": "2020-02-04T14:15:46+00:00"
+            "time": "2020-02-28T09:03:18+00:00"
         },
         {
             "name": "fideloper/proxy",
