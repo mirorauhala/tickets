@@ -6,6 +6,7 @@ use App\Models\Seat;
 use Domain\Events\Event;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Cache;
+use Domain\Events\Actions\GetEventsAction;
 use Domain\Events\ViewModels\EventIndexViewModel;
 
 class EventController extends Controller
@@ -15,14 +16,12 @@ class EventController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(EventIndexViewModel $viewModel)
+    public function index(EventIndexViewModel $viewModel, GetEventsAction $action)
     {
-        $events = Event::paginate(15)->all();
+        $events = $action->run();
+        $viewModel = new EventIndexViewModel($events);
 
-        return view('events.index')
-            ->with([
-                'events' => $events,
-            ]);
+        return view('events.index', $viewModel);
     }
 
     /**
@@ -34,13 +33,13 @@ class EventController extends Controller
      */
     public function show(Event $event)
     {
-        // $seats = Cache::remember('event.{$event->getRouteKey()}.seats', 2, function () {
+        // $seats = Cache::remember('event.{$event->slug}.seats', 2, function () {
         //     return Seat::with('orderItem')->get();
         // });
 
         $seats = Seat::with('orderItem')->get();
 
-        $tickets = Cache::remember('event.{$event->getRouteKey()}.tickets', 2, function () use ($event) {
+        $tickets = Cache::remember('event.{$event->slug}.tickets', 2, function () use ($event) {
             return $event->tickets()->purchasable()->orderByPrice()->get();
         });
 
