@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Dashboard;
+namespace Domain\Dashboard\Controllers;
 
 use App\Models\Map;
 use Domain\Events\Event;
 use App\Http\Requests\MapRequest;
 use App\Http\Controllers\Controller;
 
-class MapsController extends Controller
+class DashboardMapsController extends Controller
 {
     /**
      * Create a new controller instance.

@@ -61,6 +61,6 @@ class Kernel extends HttpKernel
         'throttle'                        => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified'                        => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'signed'                          => \Illuminate\Routing\Middleware\ValidateSignature::class,
-        'dashboard.hasMultipleEvents'     => \App\Http\Middleware\Dashboard\HasMultipleEvents::class,
+        'dashboard.hasMultipleEvents'     => \Domain\Dashboard\Middleware\HasMultipleEvents::class,
     ];
 }

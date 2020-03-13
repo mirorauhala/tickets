@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Middleware\Dashboard;
+namespace Domain\Dashboard\Middleware;
 
 use Closure;
 

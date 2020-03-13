@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Dashboard;
+namespace Domain\Dashboard\Controllers;
 
-use Domain\Events\Event;
 use App\Models\Ticket;
+use Domain\Events\Event;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\TicketRequest;
 
-class TicketsController extends Controller
+class DashboardTicketsController extends Controller
 {
     /**
      * Create a new controller instance.

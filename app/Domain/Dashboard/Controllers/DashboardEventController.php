@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Dashboard;
+namespace Domain\Dashboard\Controllers;
 
 use Domain\Events\Event;
 use App\Http\Requests\EventRequest;
 use App\Http\Controllers\Controller;
 
-class EventController extends Controller
+class DashboardEventController extends Controller
 {
     /**
      * Create a new controller instance.

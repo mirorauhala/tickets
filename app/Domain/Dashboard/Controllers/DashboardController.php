@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Dashboard;
+namespace Domain\Dashboard\Controllers;
 
 use Domain\Events\Event;
 use Illuminate\Http\Request;

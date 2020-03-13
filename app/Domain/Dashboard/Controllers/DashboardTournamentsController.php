@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Dashboard;
+namespace Domain\Dashboard\Controllers;
 
 use Domain\Events\Event;
 use App\Models\Tournament;
@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\TournamentCreateRequest;
 
-class TournamentsController extends Controller
+class DashboardTournamentsController extends Controller
 {
     /**
      * Display a listing of tournaments.
