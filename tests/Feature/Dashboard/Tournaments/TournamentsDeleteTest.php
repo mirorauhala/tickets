@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Dashboard;
+namespace Tests\Feature\Dashboard\Tournaments;
 
 use Tests\TestCase;
 use Domain\Users\User;

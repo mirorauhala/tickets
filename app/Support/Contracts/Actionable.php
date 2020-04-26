@@ -1,6 +1,6 @@
 <?php
 
-namespace Support\Concerns;
+namespace Support\Contracts;
 
 interface Actionable {
     public function run();

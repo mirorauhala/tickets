@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Dashboard;
+namespace Tests\Feature\Dashboard\Tickets;
 
 use Tests\TestCase;
 use Domain\Events\Event;

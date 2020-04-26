@@ -1,13 +1,13 @@
 <?php
 
-namespace Tests\Feature\Dashboard;
+namespace Tests\Feature\Dashboard\Tournaments;
 
 use Tests\TestCase;
 use Domain\Users\User;
 use App\Models\Tournament;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class TournamentViewTest extends TestCase
+class TournamentsViewTest extends TestCase
 {
     use RefreshDatabase;
 

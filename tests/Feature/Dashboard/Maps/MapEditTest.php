@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Dashboard;
+namespace Tests\Feature\Dashboard\Maps;
 
 use App\Models\Map;
 use Tests\TestCase;
