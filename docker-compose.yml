@@ -7,7 +7,7 @@ services:
       working_dir: /application
       volumes:
         - .:/application
-        - ./database/sql:/var/lib/mysql
+        - sql:/var/lib/mysql
       environment:
         - MYSQL_ROOT_PASSWORD=passwordforroot
         - MYSQL_DATABASE=tickets
@@ -34,3 +34,5 @@ services:
         - .:/application
         - ./phpdocker/php-fpm/php-ini-overrides.ini:/etc/php/7.4/fpm/conf.d/99-overrides.ini
 
+volumes:
+  sql:
