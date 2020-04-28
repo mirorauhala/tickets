@@ -6,18 +6,17 @@
 | Basic routes
 |--------------------------------------------------------------------------
 */
-Route::get('/', 'Domain\Events\Controllers\FeaturedEventController@index')->name('home');
-Route::resource('/events', 'Domain\Events\Controllers\EventController')->only(['index', 'show']);
-
 Route::group(['namespace' => 'App\Http\Controllers'], function() {
-
     Auth::routes(['verify' => true]);
-
-    Route::resource('/tickets', 'TicketController')->only(['index', 'show']);
-    Route::resource('/orders', 'OrderController')->except(['edit', 'update']);
-
 });
 
+Route::group(['namespace' => 'Domain\Events\Controllers'], function() {
+    Route::get('/', 'FeaturedEventController@index')->name('home');
+    Route::resource('/events', 'EventController')->only(['index', 'show']);
+});
+
+Route::resource('/tickets', 'Domain\Tickets\Controllers\TicketController')->only(['index', 'show']);
+Route::resource('/orders', 'Domain\Orders\Controllers\OrderController')->except(['edit', 'update']);    
 
 
 Route::group(['prefix' => '/dashboard', 'namespace' => 'Domain\\Dashboard\\Controllers'], function () {
