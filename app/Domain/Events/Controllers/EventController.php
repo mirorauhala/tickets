@@ -16,7 +16,7 @@ class EventController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(EventIndexViewModel $viewModel, GetEventsAction $action)
+    public function index(GetEventsAction $action)
     {
         $events = $action->run();
         $viewModel = new EventIndexViewModel($events);
