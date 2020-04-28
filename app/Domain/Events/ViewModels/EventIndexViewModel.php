@@ -6,9 +6,7 @@ use Support\BaseViewModel as ViewModel;
 use Domain\Events\Collections\EventCollection;
 
 class EventIndexViewModel extends ViewModel {
-    /**
-     * @var Domain\Events\Collections\EventCollection
-     */
+
     protected $events;
 
     /**
@@ -16,7 +14,7 @@ class EventIndexViewModel extends ViewModel {
      *
      * @return void
      */
-    public function __construct(EventCollection $events) {
+    public function __construct($events) {
         $this->events = $events;
     }
 }
