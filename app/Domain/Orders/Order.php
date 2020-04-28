@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace Domain\Orders;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;

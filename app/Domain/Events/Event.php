@@ -83,7 +83,7 @@ class Event extends Model
      */
     public function orders()
     {
-        return $this->hasMany('App\Models\Order');
+        return $this->hasMany('Domain\Orders\Order');
     }
 
     /**
