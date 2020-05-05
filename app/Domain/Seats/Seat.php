@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace Domain\Seats;
 
 use App\Traits\Eloquent\Status;
 use Illuminate\Database\Eloquent\Model;
@@ -43,7 +43,7 @@ class Seat extends Model
      */
     public function orderItem()
     {
-        return $this->belongsTo('App\Models\OrderItem');
+        return $this->belongsTo('Domain\Orders\OrderItem');
     }
 
     /**

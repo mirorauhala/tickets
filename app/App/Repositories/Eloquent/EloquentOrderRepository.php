@@ -2,7 +2,7 @@
 
 namespace App\Repositories\Eloquent;
 
-use App\Models\Order;
+use Domain\Orders\Order;
 use App\Repositories\RepositoryAbstract;
 use App\Repositories\Contracts\OrderRepository;
 
@@ -13,18 +13,20 @@ class EloquentOrderRepository extends RepositoryAbstract implements OrderReposit
         return Order::class;
     }
 
-    /*
+    /**
      * Find Order by reference.
-     * @returns App\Models\Order
+     *
+     * @return Domain\Orders\Order
      */
     public function findByReference($reference)
     {
         return $this->findWhereFirst('reference', $reference);
     }
 
-    /*
+    /**
      * Delete order by reference.
-     * @returns mixed
+     *
+     * @return mixed
      */
     public function deleteByReference($reference)
     {

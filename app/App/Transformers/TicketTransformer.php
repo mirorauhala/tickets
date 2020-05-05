@@ -2,11 +2,15 @@
 
 namespace App\Transformers;
 
-use App\Models\Ticket;
+use Domain\Tickets\Ticket;
 use League\Fractal\TransformerAbstract;
 
 class TicketTransformer extends TransformerAbstract
 {
+    /**
+     * @param Domain\Tickets\Ticket
+     * @return array
+     */
     public function transform(Ticket $ticket)
     {
         return [

@@ -2,7 +2,7 @@
 
 namespace Domain\Dashboard\Controllers;
 
-use App\Models\Ticket;
+use Domain\Tickets\Ticket;
 use Domain\Events\Event;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\TicketRequest;

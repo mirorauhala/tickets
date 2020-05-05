@@ -1,7 +1,7 @@
 <?php
 
 use Domain\Events\Event;
-use App\Models\Ticket;
+use Domain\Tickets\Ticket;
 use Illuminate\Database\Seeder;
 
 class TicketsTableSeeder extends Seeder

@@ -87,23 +87,13 @@ class Event extends Model
     }
 
     /**
-     * Get event tournaments.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function tournaments()
-    {
-        return $this->hasMany('App\Models\Tournament');
-    }
-
-    /**
      * Get maps for an event.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function maps()
     {
-        return $this->hasMany('App\Models\Map');
+        return $this->hasMany('Domain\Maps\Map');
     }
 
     /**
@@ -113,7 +103,7 @@ class Event extends Model
      */
     public function tickets()
     {
-        return $this->hasMany('App\Models\Ticket');
+        return $this->hasMany('Domain\Tickets\Ticket');
     }
 
     /**

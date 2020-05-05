@@ -2,7 +2,7 @@
 
 namespace App\Repositories\Eloquent;
 
-use App\Models\OrderItem;
+use Domain\OrderItems\OrderItem;
 use App\Repositories\RepositoryAbstract;
 use App\Repositories\Contracts\OrderItemRepository;
 
@@ -13,18 +13,20 @@ class EloquentOrderItemRepository extends RepositoryAbstract implements OrderIte
         return OrderItem::class;
     }
 
-    /*
+    /**
      * Find order by barcode.
-     * @returns App\Models\Order
+     *
+     * @return Domain\Orders\Order
      */
     public function findByBarcode($barcode)
     {
         return $this->findWhereFirst('barcode', $barcode);
     }
 
-    /*
+    /**
      * Delete order by barcode.
-     * @returns mixed
+     *
+     * @return mixed
      */
     public function deleteByBarcode($barcode)
     {

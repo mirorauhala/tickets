@@ -2,11 +2,15 @@
 
 namespace App\Transformers;
 
-use App\Models\Order;
+use Domain\Orders\Order;
 use League\Fractal\TransformerAbstract;
 
 class OrderTransformer extends TransformerAbstract
 {
+    /**
+     * @param Domain\Orders\Order
+     * @return array
+     */
     public function transform(Order $order)
     {
         return [

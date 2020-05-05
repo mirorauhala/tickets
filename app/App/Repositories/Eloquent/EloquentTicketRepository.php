@@ -2,7 +2,7 @@
 
 namespace App\Repositories\Eloquent;
 
-use App\Models\Ticket;
+use Domain\Tickets\Ticket;
 use App\Repositories\RepositoryAbstract;
 use App\Repositories\Contracts\TicketRepository;
 
@@ -16,6 +16,7 @@ class EloquentTicketRepository extends RepositoryAbstract implements TicketRepos
     /**
      * Is given ticket purchasable.
      *
+     * @param int $id
      * @return boolean;
      */
     public function isPurchasable($id)

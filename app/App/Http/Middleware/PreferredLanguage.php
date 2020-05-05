@@ -9,14 +9,14 @@ class PreferredLanguage
     /**
      * Available languages.
      *
-     * @array $languages
+     * @var array
      */
     protected $languages = ['en', 'fi'];
 
     /**
      * Language to be set.
      *
-     * @string $language
+     * @var string
      */
     protected $language;
 

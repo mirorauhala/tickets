@@ -2,9 +2,9 @@
 
 namespace App\Rules;
 
-use App\Models\Seat;
-use App\Models\Ticket;
-use App\Models\OrderItem;
+use Domain\Seats\Seat;
+use Domain\Tickets\Ticket;
+use Domain\OrderItems\OrderItem;
 use Illuminate\Contracts\Validation\Rule;
 
 class CheckTicketReservation implements Rule
@@ -26,7 +26,6 @@ class CheckTicketReservation implements Rule
      *
      * @param string $attribute
      * @param mixed  $value
-     *
      * @return bool
      */
     public function passes($attribute, $value)

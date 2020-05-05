@@ -93,7 +93,7 @@ class Order extends Model
      */
     public function items()
     {
-        return $this->hasMany('App\Models\OrderItem');
+        return $this->hasMany('Domain\Orders\OrderItem');
     }
 
     /**

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace Domain\Maps;
 
 use App\Traits\Eloquent\IsActive;
 use Illuminate\Database\Eloquent\Model;
@@ -27,6 +27,6 @@ class Map extends Model
      */
     public function seats()
     {
-        return $this->hasMany('App\Models\Seat');
+        return $this->hasMany('Domain\Seats\Seat');
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace Domain\OrderItems;
 
 use Carbon\Carbon;
 use App\Traits\Eloquent\Status;
@@ -61,7 +61,7 @@ class OrderItem extends Model
      */
     public function ticket()
     {
-        return $this->belongsTo('App\Models\Ticket');
+        return $this->belongsTo('Domain\Tickets\Ticket');
     }
 
     /**
@@ -71,7 +71,7 @@ class OrderItem extends Model
      */
     public function seat()
     {
-        return $this->belongsTo('App\Models\Seat');
+        return $this->belongsTo('Domain\Seats\Seat');
     }
 
     /**
@@ -81,7 +81,7 @@ class OrderItem extends Model
      */
     public function order()
     {
-        return $this->belongsTo('App\Models\Order');
+        return $this->belongsTo('Domain\Orders\Order');
     }
 
     /**

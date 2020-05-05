@@ -2,7 +2,7 @@
 
 namespace Domain\Events\Controllers;
 
-use App\Models\Seat;
+use Domain\Seats\Seat;
 use Domain\Events\Event;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Cache;

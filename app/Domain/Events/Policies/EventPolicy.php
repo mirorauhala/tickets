@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Policies;
+namespace Domain\Events\Policies;
 
 use Domain\Users\User;
 use Domain\Events\Event;

@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\Models\Order;
+use Domains\Orders\Order;
 use Illuminate\Console\Command;
 
 class ClearPendingOrders extends Command

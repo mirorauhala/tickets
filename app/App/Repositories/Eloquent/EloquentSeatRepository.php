@@ -2,7 +2,7 @@
 
 namespace App\Repositories\Eloquent;
 
-use App\Models\Seat;
+use Domain\Seats\Seat;
 use App\Repositories\RepositoryAbstract;
 use App\Repositories\Contracts\SeatRepository;
 
@@ -16,6 +16,7 @@ class EloquentSeatRepository extends RepositoryAbstract implements SeatRepositor
     /**
      * Is given seat available.
      *
+     * @param int $id
      * @return boolean;
      */
     public function isAvailable($id)

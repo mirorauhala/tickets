@@ -4,7 +4,7 @@
 use Carbon\Carbon;
 use Domain\Users\User;
 use Domain\Events\Event;
-use App\Models\Order;
+use Domain\Orders\Order;
 use Faker\Generator as Faker;
 
 $factory->define(Order::class, function (Faker $faker) {

@@ -2,9 +2,9 @@
 
 namespace Domain\Dashboard\Controllers;
 
-use App\Models\Map;
+use Domain\Maps\Map;
 use Domain\Events\Event;
-use App\Http\Requests\MapRequest;
+use Domain\Maps\Requests\MapRequest;
 use App\Http\Controllers\Controller;
 
 class DashboardMapsController extends Controller

@@ -2,13 +2,17 @@
 
 namespace App\Transformers;
 
-use App\Models\OrderItem;
+use Domain\OrderItems\OrderItem;
 use League\Fractal\TransformerAbstract;
 
 class OrderItemTransformer extends TransformerAbstract
 {
     protected $availableIncludes = ['ticket', 'seat', 'user', 'order'];
 
+    /**
+     * @param Domain\OrderItems\OrderItem $orderItem
+     * @return array
+     */
     public function transform(OrderItem $orderItem)
     {
         return [

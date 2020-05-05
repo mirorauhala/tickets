@@ -3,9 +3,9 @@
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 use Carbon\Carbon;
 use Domain\Users\User;
-use App\Models\Order;
-use App\Models\Ticket;
-use App\Models\OrderItem;
+use Domain\Orders\Order;
+use Domain\Tickets\Ticket;
+use Domain\Orders\OrderItem;
 use Faker\Generator as Faker;
 
 $factory->define(OrderItem::class, function (Faker $faker) {

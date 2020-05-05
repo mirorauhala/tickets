@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Policies;
+namespace Domain\Orders\Policies;
 
 use Domain\Users\User;
-use App\Models\OrderItem;
+use Domain\Orders\Order;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class OrderItemPolicy
+class OrderPolicy
 {
     use HandlesAuthorization;
 
@@ -14,13 +14,13 @@ class OrderItemPolicy
      * Determine whether the user can view the order.
      *
      * @param \App\User  $user
-     * @param \App\OrderItem $item
+     * @param \App\Order $order
      *
      * @return mixed
      */
-    public function view(User $user, OrderItem $item)
+    public function view(User $user, Order $order)
     {
-        return $user->orderItems()->where('id', $item->id)->count() > 0;
+        return $user->orders()->where('id', $order->id)->first();
     }
 
     /**
@@ -39,25 +39,25 @@ class OrderItemPolicy
      * Determine whether the user can update orders.
      *
      * @param \App\User  $user
-     * @param \App\OrderItem $item
+     * @param \App\Event $order
      *
      * @return mixed
      */
-    public function update(User $user, OrderItem $item)
+    public function update(User $user, Order $order)
     {
-        return $item->order->user_id == $user->id;
+        return $user->orders()->where('id', $order->id)->first();
     }
 
     /**
      * Determine whether the user can delete orders.
      *
      * @param \App\User  $user
-     * @param \App\OrderItem $item
+     * @param \App\Event $order
      *
      * @return mixed
      */
-    public function delete(User $user, OrderItem $item)
+    public function delete(User $user, Order $order)
     {
-        return $user->orderItems()->status('pending')->where('id', $item->id)->first();
+        return $user->orders()->status('pending')->where('id', $order->id)->first();
     }
 }

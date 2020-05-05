@@ -2,7 +2,7 @@
 
 namespace Tests\Feature\Dashboard\Maps;
 
-use App\Models\Map;
+use Domain\Maps\Map;
 use Tests\TestCase;
 use Domain\Users\User;
 use Domain\Events\Event;

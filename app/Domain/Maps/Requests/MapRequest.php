@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests;
+namespace Domain\Maps\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 

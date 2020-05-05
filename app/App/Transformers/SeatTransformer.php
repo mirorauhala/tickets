@@ -2,11 +2,15 @@
 
 namespace App\Transformers;
 
-use App\Models\Seat;
+use Domain\Seats\Seat;
 use League\Fractal\TransformerAbstract;
 
 class SeatTransformer extends TransformerAbstract
 {
+    /**
+     * @param Domain\Seats\Seat
+     * @return array
+     */
     public function transform(Seat $seat)
     {
         return [

@@ -12,7 +12,7 @@
  */
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(App\Models\Seat::class, function (Faker\Generator $faker) {
+$factory->define(Domain\Seats\Seat::class, function (Faker\Generator $faker) {
     static $password;
 
     return [

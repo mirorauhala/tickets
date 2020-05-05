@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace Domain\Tickets;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;

@@ -5,7 +5,7 @@ namespace Tests\Feature\Dashboard\Tickets;
 use Tests\TestCase;
 use Domain\Users\User;
 use Domain\Events\Event;
-use App\Models\Ticket;
+use Domain\Tickets\Ticket;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class TicketsDeleteTest extends TestCase

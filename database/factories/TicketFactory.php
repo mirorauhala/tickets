@@ -14,7 +14,7 @@ use Domain\Events\Event;
  */
 
 /* @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(App\Models\Ticket::class, function (Faker\Generator $faker) {
+$factory->define(Domain\Tickets\Ticket::class, function (Faker\Generator $faker) {
     return [
         'name'                    => $faker->word,
         'price'                   => 1000,
