@@ -4,7 +4,7 @@ namespace Domain\Users\Controllers;
 
 use App\Http\Controllers\Controller;
 use Domain\Users\Actions\UpdatePasswordAction;
-use App\Http\Requests\SettingsPasswordRequest;
+use Domain\Users\Requests\SettingsPasswordRequest;
 
 class PasswordController extends Controller
 {

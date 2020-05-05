@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests;
+namespace Domain\Users\Requests;
 
 use App\Rules\CurrentPassword;
 use Illuminate\Foundation\Http\FormRequest;

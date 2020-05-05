@@ -4,7 +4,7 @@ namespace Domain\Users\Controllers;
 
 use Domain\Users\UserData;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\UserAccountRequest;
+use Domain\Users\Requests\UserAccountRequest;
 use Domain\Users\Actions\UpdateUserAction;
 
 class AccountController extends Controller

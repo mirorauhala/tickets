@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
@@ -15,6 +16,15 @@ class RouteServiceProvider extends ServiceProvider
      * @var string
      */
     protected $namespace = 'App\Http\Controllers';
+
+    protected $routes = [
+        \App\Http\AppRouter::class,
+        \Domain\Events\EventRouter::class,
+        \Domain\Users\UserRouter::class,
+        \Domain\Orders\OrderRouter::class,
+        \Domain\Tickets\TicketRouter::class,
+        \Domain\Dashboard\DashboardRouter::class,
+    ];
 
     /**
      * Define your route model bindings, pattern filters, etc.
@@ -52,7 +62,11 @@ class RouteServiceProvider extends ServiceProvider
     protected function mapWebRoutes()
     {
         Route::middleware('web')
-             ->group(base_path('routes/web.php'));
+            ->group(function(Router $router) {
+                foreach($this->routes as $route) {
+                    (new $route)($router);
+                }
+            });
     }
 
     /**
