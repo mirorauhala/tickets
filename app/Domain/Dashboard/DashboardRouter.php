@@ -30,7 +30,6 @@ class DashboardRouter {
             $router->get('/{event}/orders', 'DashboardController@orders')->name('dashboard.orders');
             $router->group(['prefix' => '/{event}', 'as' => 'dashboard.'], function () use ($router) {
                 $router->resource('tickets', 'DashboardTicketsController');
-                $router->resource('tournaments', 'DashboardTournamentsController');
                 $router->resource('maps', 'DashboardMapsController');
             });
             $router->get('/{event}/settings', 'DashboardEventController@show')->name('dashboard.settings');
