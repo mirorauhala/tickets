@@ -14,7 +14,7 @@ class SettingsAccountTest extends TestCase
         parent::setUp();
 
         $this->createUser();
-        $this->uri    = '/api/v1/settings-account';
+        $this->uri    = '/settings';
         $this->fields = [
             'first_name' => 'John',
             'last_name'  => 'Doe',
@@ -26,7 +26,7 @@ class SettingsAccountTest extends TestCase
     /** @test */
     public function user_can_update_settings()
     {
-        $this->passportActingAs($this->user)->doRequest('post');
+        $this->actingAs($this->user)->doRequest('post');
 
         $this->response->assertSessionMissing('errors');
         $this->assertDatabaseHas('users', $this->fields);
@@ -38,7 +38,7 @@ class SettingsAccountTest extends TestCase
         $this->fieldOverrides = [
             'first_name' => '',
         ];
-        $this->passportActingAs($this->user)->doRequest('post');
+        $this->actingAs($this->user)->doRequest('post');
 
         $this->response->assertSessionHasErrors(['first_name']);
         $this->assertDatabaseHas('users', $this->user->toArray());
@@ -50,7 +50,7 @@ class SettingsAccountTest extends TestCase
         $this->fieldOverrides = [
             'last_name' => '',
         ];
-        $this->passportActingAs($this->user)->doRequest('post');
+        $this->actingAs($this->user)->doRequest('post');
 
         $this->response->assertSessionHasErrors(['last_name']);
         $this->assertDatabaseHas('users', $this->user->toArray());
@@ -62,7 +62,7 @@ class SettingsAccountTest extends TestCase
         $this->fieldOverrides = [
             'email' => '',
         ];
-        $this->passportActingAs($this->user)->doRequest('post');
+        $this->actingAs($this->user)->doRequest('post');
 
         $this->response->assertSessionHasErrors(['email']);
         $this->assertDatabaseHas('users', $this->user->toArray());
@@ -74,7 +74,7 @@ class SettingsAccountTest extends TestCase
         $this->fieldOverrides = [
             'email' => 'must be a valid email address',
         ];
-        $this->passportActingAs($this->user)->doRequest('post');
+        $this->actingAs($this->user)->doRequest('post');
 
         $this->response->assertSessionHasErrors(['email']);
         $this->assertDatabaseHas('users', $this->user->toArray());
@@ -86,7 +86,7 @@ class SettingsAccountTest extends TestCase
         $this->fieldOverrides = [
             'phone' => '',
         ];
-        $this->passportActingAs($this->user)->doRequest('post');
+        $this->actingAs($this->user)->doRequest('post');
 
         $this->response->assertSessionMissing('errors');
         $this->assertDatabaseHas('users', $this->user->toArray());

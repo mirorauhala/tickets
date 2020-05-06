@@ -10,7 +10,3 @@
 | is assigned the "api" middleware group. Enjoy building your API!
 |
  */
-
-Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function () {
-    Route::post('/settings-account', 'Domain\Users\ApiControllers\AccountController@update');
-});
