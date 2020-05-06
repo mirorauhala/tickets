@@ -3,7 +3,7 @@
 namespace Domain\OrderItems\Policies;
 
 use Domain\Users\User;
-use Domain\Orders\OrderItem;
+use Domain\OrderItems\OrderItem;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class OrderItemPolicy
@@ -13,8 +13,8 @@ class OrderItemPolicy
     /**
      * Determine whether the user can view the order.
      *
-     * @param \App\User  $user
-     * @param \App\OrderItem $item
+     * @param Domain\Users\User  $user
+     * @param Domain\OrderItems\OrderItem $item
      *
      * @return mixed
      */
@@ -26,7 +26,7 @@ class OrderItemPolicy
     /**
      * Determine whether the user can create orders.
      *
-     * @param \App\User $user
+     * @param Domain\Users\User $user
      *
      * @return mixed
      */
@@ -38,8 +38,8 @@ class OrderItemPolicy
     /**
      * Determine whether the user can update orders.
      *
-     * @param \App\User  $user
-     * @param \App\OrderItem $item
+     * @param Domain\Users\User  $user
+     * @param Domain\OrderItems\OrderItem $item
      *
      * @return mixed
      */
@@ -51,8 +51,8 @@ class OrderItemPolicy
     /**
      * Determine whether the user can delete orders.
      *
-     * @param \App\User  $user
-     * @param \App\OrderItem $item
+     * @param Domain\Users\User  $user
+     * @param Domain\OrderItems\OrderItem $item
      *
      * @return mixed
      */

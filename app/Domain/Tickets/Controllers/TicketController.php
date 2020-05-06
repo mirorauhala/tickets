@@ -2,7 +2,7 @@
 
 namespace Domain\Tickets\Controllers;
 
-use Domain\Orders\OrderItem;
+use Domain\OrderItems\OrderItem;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 

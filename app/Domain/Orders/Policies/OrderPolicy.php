@@ -13,8 +13,8 @@ class OrderPolicy
     /**
      * Determine whether the user can view the order.
      *
-     * @param \App\User  $user
-     * @param \App\Order $order
+     * @param Domain\Users\User  $user
+     * @param Domain\Orders\Order $order
      *
      * @return mixed
      */
@@ -26,7 +26,7 @@ class OrderPolicy
     /**
      * Determine whether the user can create orders.
      *
-     * @param \App\User $user
+     * @param Domain\Users\User $user
      *
      * @return mixed
      */
@@ -38,7 +38,7 @@ class OrderPolicy
     /**
      * Determine whether the user can update orders.
      *
-     * @param \App\User  $user
+     * @param Domain\Users\User  $user
      * @param \App\Event $order
      *
      * @return mixed
@@ -51,7 +51,7 @@ class OrderPolicy
     /**
      * Determine whether the user can delete orders.
      *
-     * @param \App\User  $user
+     * @param Domain\Users\User  $user
      * @param \App\Event $order
      *
      * @return mixed

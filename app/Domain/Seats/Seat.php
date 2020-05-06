@@ -43,7 +43,7 @@ class Seat extends Model
      */
     public function orderItem()
     {
-        return $this->belongsTo('Domain\Orders\OrderItem');
+        return $this->belongsTo('Domain\OrderItems\OrderItem');
     }
 
     /**

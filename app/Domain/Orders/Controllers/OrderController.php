@@ -46,7 +46,7 @@ class OrderController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Order  $order
+     * @param  Domain\Orders\Order  $order
      * @return \Illuminate\Http\Response
      */
     public function show(Order $order)
@@ -57,7 +57,7 @@ class OrderController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Order  $order
+     * @param  Domain\Orders\Order  $order
      * @return \Illuminate\Http\Response
      */
     public function edit(Order $order)
@@ -69,7 +69,7 @@ class OrderController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Order  $order
+     * @param  Domain\Orders\Order  $order
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Order $order)
@@ -80,7 +80,7 @@ class OrderController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Order  $order
+     * @param  Domain\Orders\Order  $order
      * @return \Illuminate\Http\Response
      */
     public function destroy(Order $order)
