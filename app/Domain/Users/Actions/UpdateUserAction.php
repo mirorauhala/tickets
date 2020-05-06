@@ -4,9 +4,8 @@ namespace Domain\Users\Actions;
 
 use Domain\Users\User;
 use Domain\Users\UserData;
-use Support\Contracts\Actionable;
 
-class UpdateUserAction implements Actionable
+class UpdateUserAction
 {
     public function run(User $user, UserData $data)
     {

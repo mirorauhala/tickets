@@ -3,9 +3,8 @@
 namespace Domain\Events\Actions;
 
 use Domain\Events\Event;
-use Support\Contracts\Actionable;
 
-class GetFeaturedEvents implements Actionable
+class GetFeaturedEvents
 {
     public function run()
     {

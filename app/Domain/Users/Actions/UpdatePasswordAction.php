@@ -3,9 +3,8 @@
 namespace Domain\Users\Actions;
 
 use Domain\Users\User;
-use Support\Contracts\Actionable;
 
-class UpdatePasswordAction implements Actionable
+class UpdatePasswordAction
 {
     public function run(User $user, string $new_password): User
     {

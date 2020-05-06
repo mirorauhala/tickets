@@ -4,9 +4,8 @@ namespace Domain\Events\Actions;
 
 use Domain\Events\Event;
 use Domain\Events\EventData;
-use Support\Contracts\Actionable;
 
-class UpdateEventAction implements Actionable
+class UpdateEventAction
 {
     public function run(Event $event, EventData $data)
     {

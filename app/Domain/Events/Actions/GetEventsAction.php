@@ -3,10 +3,9 @@
 namespace Domain\Events\Actions;
 
 use Domain\Events\Event;
-use Support\Contracts\Actionable;
 use Domain\Events\Collections\EventCollection;
 
-class GetEventsAction implements Actionable
+class GetEventsAction
 {
 
     /**

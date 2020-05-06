@@ -3,9 +3,8 @@
 namespace Domain\Users\Actions;
 
 use Domain\Users\User;
-use Support\Contracts\Actionable;
 
-class UpdateLanguageAction implements Actionable
+class UpdateLanguageAction
 {
     public function run(User $user, string $language): User
     {
