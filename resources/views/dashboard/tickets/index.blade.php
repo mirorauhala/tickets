@@ -1,13 +1,13 @@
 @extends('layouts.base')
 
-@section('base.title', tra('dashboard.nav.tickets'))
+@section('base.title', __('dashboard.nav.tickets'))
 
 @section('base.content')
 <div class="container">
     <div class="row pb-5">
         <div class="col-md-12">
             <p class="lead mb-0">{{ $event->name }}</p>
-            <h1 class="mt-0 text-uppercase">{{ tra('dashboard.nav.tickets') }}</h1>
+            <h1 class="mt-0 text-uppercase">{{ __('dashboard.nav.tickets') }}</h1>
         </div>
     </div>
     <div class="row">
@@ -20,13 +20,13 @@
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th scope="col">{{ tra('dashboard.tickets.table.name') }}</th>
-                            <th scope="col">{{ tra('dashboard.tickets.table.price') }}</th>
-                            <th scope="col">{{ tra('dashboard.tickets.table.vat') }}</th>
-                            <th scope="col">{{ tra('dashboard.tickets.table.in-sale') }}</th>
-                            <th scope="col">{{ tra('dashboard.tickets.table.off-sale') }}</th>
-                            <th scope="col">{{ tra('dashboard.tickets.table.quota') }}</th>
-                            <th scope="col">{{ tra('dashboard.tickets.table.edit') }}</th>
+                            <th scope="col">{{ __('dashboard.tickets.table.name') }}</th>
+                            <th scope="col">{{ __('dashboard.tickets.table.price') }}</th>
+                            <th scope="col">{{ __('dashboard.tickets.table.vat') }}</th>
+                            <th scope="col">{{ __('dashboard.tickets.table.in-sale') }}</th>
+                            <th scope="col">{{ __('dashboard.tickets.table.off-sale') }}</th>
+                            <th scope="col">{{ __('dashboard.tickets.table.quota') }}</th>
+                            <th scope="col">{{ __('dashboard.tickets.table.edit') }}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -46,7 +46,7 @@
             </div>
         @else
             <div class="col-md-9 align-self-center">
-                <p class="lead text-muted text-center">{{ tra('dashboard.tickets.no-tickets') }}</p>
+                <p class="lead text-muted text-center">{{ __('dashboard.tickets.no-tickets') }}</p>
                 <p class="lead text-muted text-center"><a href="{{ route('dashboard.tickets.create', ['event' => $event]) }}" class="btn btn-primary px-4">New ticket</a></p>
             </div>
         @endif

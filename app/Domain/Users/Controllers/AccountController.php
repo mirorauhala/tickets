@@ -34,8 +34,10 @@ class AccountController extends Controller
      *
      * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
-    public function update(UserAccountRequest $request, UpdateUserAction $updateUserAction)
-    {
+    public function update(
+        UserAccountRequest $request,
+        UpdateUserAction $updateUserAction
+    ) {
         $userData = UserData::fromRequest($request);
 
         $updateUserAction->run($request->user(), $userData);
@@ -44,7 +46,7 @@ class AccountController extends Controller
             ->route('settings')
             ->with([
                 'flash_status'  => 'success',
-                'flash_message' => tra('settings.flash.account', [], $request->language),
+                'flash_message' => __('settings.flash.account', [], $request->language)
             ]);
     }
 }

@@ -1,12 +1,12 @@
 @extends('layouts.base')
 
-@section('base.title', tra('tickets.title'))
+@section('base.title', __('tickets.title'))
 
 @section('base.content')
 <div class="container pt-5">
     <div class="row">
         <div class="col-12">
-            <h1 class="text-5xl font-bold mb-3">{{ tra('tickets.title') }}</h1>
+            <h1 class="text-5xl font-bold mb-3">{{ __('tickets.title') }}</h1>
         </div>
     </div>
     <div class="row">
@@ -22,14 +22,14 @@
 
                         </div>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">{{ tra('tickets.card.price') }}: {{ money($ticket->value, "EUR") }}</li>
+                            <li class="list-group-item">{{ __('tickets.card.price') }}: {{ money($ticket->value, "EUR") }}</li>
                             @if($ticket->seat)
-                                <li class="list-group-item">{{ tra('tickets.card.seating-code') }}: {{ $ticket->seat->name }}</li>
+                                <li class="list-group-item">{{ __('tickets.card.seating-code') }}: {{ $ticket->seat->name }}</li>
                             @endif
                         </ul>
                         @can('update', $ticket)
                         <div class="card-body">
-                            <a href="{{ route('orders.show', ['order' => $ticket->order ]) }}" class="card-link">{{ tra('tickets.card.show-order') }}</a>
+                            <a href="{{ route('orders.show', ['order' => $ticket->order ]) }}" class="card-link">{{ __('tickets.card.show-order') }}</a>
                         </div>
                         @endcan
                     </div>
@@ -37,7 +37,7 @@
             @endforeach
         @else
             <div class="col">
-                <p class="lead text-muted">{{ tra('tickets.no-paid') }}</p>
+                <p class="lead text-muted">{{ __('tickets.no-paid') }}</p>
             </div>
         @endif
     </div>

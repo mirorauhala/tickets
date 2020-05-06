@@ -1,13 +1,13 @@
 @extends('layouts.base')
 
-@section('base.title', tra('dashboard.nav.tickets-create'))
+@section('base.title', __('dashboard.nav.tickets-create'))
 
 @section('base.content')
 <div class="container">
     <div class="row pb-5">
         <div class="col-md-12">
             <p class="lead mb-0">{{ $event->name }}</p>
-            <h1 class="mt-0 text-uppercase">{{ tra('dashboard.nav.tickets-create') }}</h1>
+            <h1 class="mt-0 text-uppercase">{{ __('dashboard.nav.tickets-create') }}</h1>
         </div>
     </div>
     <div class="row">
@@ -98,7 +98,7 @@
                     @endif
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary px-4">{{ tra('form.button.create') }}</button>
+                    <button type="submit" class="btn btn-primary px-4">{{ __('form.button.create') }}</button>
                 </div>
             </form>
         </div>

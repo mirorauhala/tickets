@@ -7,7 +7,7 @@
     <div class="row pb-5">
         <div class="col-md-12">
             <p class="lead mb-0">{{ $event->name }}</p>
-            <h1 class="mt-0 text-uppercase">{{ tra('dashboard.nav.settings') }}</h1>
+            <h1 class="mt-0 text-uppercase">{{ __('dashboard.nav.settings') }}</h1>
         </div>
     </div>
     <div class="row">
@@ -19,8 +19,8 @@
             <form method="post" action="{{ route('dashboard.settings', $event) }}">
                 {{ csrf_field() }}
                 <div class="form-group{{ $errors->has('name') ? ' is-invalid' : '' }}">
-                    <label for="name">{{ tra('event.admin.pages.settings.form.event-name') }}</label>
-                    <input type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" id="name" name="name" placeholder="{{ tra('event.admin.pages.settings.form.event-name-placeholder') }}" value="{{ $event->name }}">
+                    <label for="name">{{ __('event.admin.pages.settings.form.event-name') }}</label>
+                    <input type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" id="name" name="name" placeholder="{{ __('event.admin.pages.settings.form.event-name-placeholder') }}" value="{{ $event->name }}">
 
                     @if ($errors->has('name'))
                         <span class="invalid-feedback">
@@ -30,7 +30,7 @@
                 </div>
 
                 <div class="form-group{{ $errors->has('slug') ? ' is-invalid' : '' }}">
-                    <label for="slug">{{ tra('event.admin.pages.settings.form.event-url') }}</label>
+                    <label for="slug">{{ __('event.admin.pages.settings.form.event-url') }}</label>
                     <input type="text" class="form-control" id="slug" name="slug" value="{{ $event->getRouteKey() }}">
 
                     @if ($errors->has('slug'))
@@ -40,8 +40,8 @@
                     @endif
                 </div>
                 <div class="form-group{{ $errors->has('location') ? ' is-invalid' : '' }}">
-                    <label for="location">{{ tra('event.admin.pages.settings.form.event-location') }}</label>
-                    <input type="text" class="form-control" id="location" name="location" placeholder="{{ tra('event.admin.pages.settings.form.event-location-placeholder') }}" value="{{ $event->location }}">
+                    <label for="location">{{ __('event.admin.pages.settings.form.event-location') }}</label>
+                    <input type="text" class="form-control" id="location" name="location" placeholder="{{ __('event.admin.pages.settings.form.event-location-placeholder') }}" value="{{ $event->location }}">
 
                     @if ($errors->has('location'))
                         <span class="invalid-feedback">
@@ -50,8 +50,8 @@
                     @endif
                 </div>
                 <div class="form-group{{ $errors->has('url') ? ' is-invalid' : '' }}">
-                    <label for="url">{{ tra('event.admin.pages.settings.form.event-url') }}</label>
-                    <input type="url" class="form-control" id="url" name="url" placeholder="{{ tra('event.admin.pages.settings.form.event-url-placeholder') }}" value="{{ $event->url }}">
+                    <label for="url">{{ __('event.admin.pages.settings.form.event-url') }}</label>
+                    <input type="url" class="form-control" id="url" name="url" placeholder="{{ __('event.admin.pages.settings.form.event-url-placeholder') }}" value="{{ $event->url }}">
 
                     @if ($errors->has('url'))
                         <span class="invalid-feedback">
@@ -60,8 +60,8 @@
                     @endif
                 </div>
                 <div class="form-group{{ $errors->has('currency') ? ' is-invalid' : '' }}">
-                    <label for="currency">{{ tra('event.admin.pages.settings.form.event-currency') }}</label>
-                    <input type="text" class="form-control" id="currency" name="currency" value="EUR" placeholder="{{ tra('event.admin.pages.settings.form.event-currency-placeholder') }}" value="{{ $event->currency }}" disabled>
+                    <label for="currency">{{ __('event.admin.pages.settings.form.event-currency') }}</label>
+                    <input type="text" class="form-control" id="currency" name="currency" value="EUR" placeholder="{{ __('event.admin.pages.settings.form.event-currency-placeholder') }}" value="{{ $event->currency }}" disabled>
 
                     <span class="invalid-feedback">
                         Not editable at this moment.
@@ -75,17 +75,17 @@
                 </div>
                 <div class="form-group{{ $errors->has('event_visibility') ? ' is-invalid' : '' }}">
 
-                    <label for="event_visibility1">{{ tra('event.admin.pages.settings.form.event-visibility') }}</label>
+                    <label for="event_visibility1">{{ __('event.admin.pages.settings.form.event-visibility') }}</label>
                     <div class="radio">
                         <label>
                             <input type="radio" name="event_visibility" id="event_visibility1" value="0" {{ ($event->is_visible == 0) ? "checked" : ""  }}>
-                            {{ tra('event.admin.pages.settings.form.event-visibility-offline') }}
+                            {{ __('event.admin.pages.settings.form.event-visibility-offline') }}
                         </label>
                     </div>
                     <div class="radio">
                         <label>
                             <input type="radio" name="event_visibility" id="event_visibility2" value="1" {{ ($event->is_visible == 1) ? "checked" : ""  }}>
-                            {{ tra('event.admin.pages.settings.form.event-visibility-online') }}
+                            {{ __('event.admin.pages.settings.form.event-visibility-online') }}
                         </label>
                     </div>
 
@@ -96,7 +96,7 @@
                     @endif
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary px-4">{{ tra('form.button.update') }}</button>
+                    <button type="submit" class="btn btn-primary px-4">{{ __('form.button.update') }}</button>
                 </div>
             </form>
         </div>

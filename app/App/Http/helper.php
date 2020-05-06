@@ -10,15 +10,15 @@ use Illuminate\Support\Facades\Route;
 use Money\Formatter\IntlMoneyFormatter;
 use App\Exceptions\TranslationStringNotFoundException;
 
-/*
- * Get active class for an active route.
- *
- * @param string|array $routes
- * @param array $excludeRoutes
- * @param bool $return
- * @return bool|string
- */
 if (! function_exists('active')) {
+    /**
+     * Get active class for an active route.
+     *
+     * @param  string|array $routes        The routes to match against the active page.
+     * @param  array        $excludeRoutes Routes that should be excluded.
+     * @param  bool         $return        Return in boolean.
+     * @return bool|string
+     */
     function active($routes, array $excludeRoutes = [], $return = false)
     {
         if (! is_array($routes)) {
@@ -46,55 +46,35 @@ if (! function_exists('active')) {
     }
 }
 
-/*
- * Format money.
- *
- * @return string
- */
 if (! function_exists('money')) {
+    /**
+     * Format money.
+     *
+     * @param  int|string $amount   The amount of money.
+     * @param  string     $currency The currency for the money.
+     * @return string
+     */
     function money($amount, $currency)
     {
         $money = new Money($amount, new Currency($currency));
         $currencies = new ISOCurrencies();
 
-        $numberFormatter = new \NumberFormatter('fi', \NumberFormatter::CURRENCY);
+        $numberFormatter = new \NumberFormatter(
+            'fi',
+            \NumberFormatter::CURRENCY
+        );
         $moneyFormatter = new IntlMoneyFormatter($numberFormatter, $currencies);
 
         return $moneyFormatter->format($money);
     }
 }
 
-/*
- * String translator with error reporting.
- *
- * @return string
- */
-if (! function_exists('tra')) {
-    function tra($key = null, $replace = [], $locale = null)
-    {
-        try {
-            $string = app('translator')->get($key, $replace, $locale);
-
-            // no translation was found
-            if ($string == $key) {
-                throw new TranslationStringNotFoundException();
-            }
-
-            return $string;
-        } catch (TranslationStringNotFoundException $e) {
-            Log::info('Cannot get translate key for ' . $key . ' in ' . app()->getLocale());
-        }
-
-        return $key;
-    }
-}
-
-/*
- * Returns the current git HEAD SHA1 hash.
- *
- * @return string
- */
 if (! function_exists('current_commit')) {
+    /**
+     * Returns the current git HEAD SHA1 hash.
+     *
+     * @return string|void
+     */
     function current_commit()
     {
         if (App::environment(['local', 'staging'])) {

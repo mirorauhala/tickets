@@ -1,12 +1,12 @@
 @extends('layouts.base')
 
-@section('base.title', tra('settings.title'))
+@section('base.title', __('settings.title'))
 
 @section('base.content')
 <div class="container pt-5">
     <div class="row">
         <div class="col-12">
-            <h1 class="text-5xl font-bold mb-3">{{ tra('settings.title') }}</h1>
+            <h1 class="text-5xl font-bold mb-3">{{ __('settings.title') }}</h1>
         </div>
     </div>
     <div class="row">
@@ -24,7 +24,7 @@
                         {{ csrf_field() }}
                         <div class="form-row">
                             <div class="form-group col-6 col-md-6">
-                                <label for="first_name">{{ tra('settings.account.first_name') }}</label>
+                                <label for="first_name">{{ __('settings.account.first_name') }}</label>
                                 <input
                                     type="text"
                                     class="form-control{{ $errors->has('first_name') ? ' is-invalid' : '' }}"
@@ -42,7 +42,7 @@
                                 @endif
                             </div>
                             <div class="form-group col-6 col-md-6">
-                                <label for="email">{{ tra('settings.account.last_name') }}</label>
+                                <label for="email">{{ __('settings.account.last_name') }}</label>
                                 <input
                                     type="text"
                                     class="form-control{{ $errors->has('last_name') ? ' is-invalid' : '' }}"
@@ -61,7 +61,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="email">{{ tra('settings.account.email') }}</label>
+                            <label for="email">{{ __('settings.account.email') }}</label>
                             <input
                                 type="email"
                                 class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
@@ -80,7 +80,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="phone">{{ tra('settings.account.phone') }}</label>
+                            <label for="phone">{{ __('settings.account.phone') }}</label>
                             <input
                                 type="text"
                                 class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}"
@@ -98,7 +98,7 @@
                         </div>
 
                         <div class="form-group">
-                            <input type="submit" class="btn btn-primary px-4" value="{{ tra('form.button.update') }}">
+                            <input type="submit" class="btn btn-primary px-4" value="{{ __('form.button.update') }}">
                         </div>
                     </form>
                 </div>

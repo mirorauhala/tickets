@@ -7,13 +7,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item{{ active('events*') }}">
-                <a class="nav-link" href="{{ route('events.index') }}">{{ tra('nav.featured') }} <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{{ route('events.index') }}">{{ __('nav.featured') }} <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item{{ active('tickets*') }}">
-                <a class="nav-link" href="{{ route('tickets.index') }}">{{ tra('nav.tickets') }}</a>
+                <a class="nav-link" href="{{ route('tickets.index') }}">{{ __('nav.tickets') }}</a>
             </li>
             <li class="nav-item{{ active('orders*') }}">
-                <a class="nav-link" href="{{ route('orders.index') }}">{{ tra('nav.orders') }}</a>
+                <a class="nav-link" href="{{ route('orders.index') }}">{{ __('nav.orders') }}</a>
             </li>
         </ul>
 
@@ -24,14 +24,14 @@
                 <div class="dropdown-menu">
 
                     @if(count(auth()->user()->events) > 0)
-                    <a class="dropdown-item{{ active('dashboard*') }}" href="{{ route('dashboard') }}">{{ tra('nav.dashboard') }}</a>
+                    <a class="dropdown-item{{ active('dashboard*') }}" href="{{ route('dashboard') }}">{{ __('nav.dashboard') }}</a>
                     <div class="dropdown-divider"></div>
                     @endif
 
-                    <a class="dropdown-item{{ active('settings*') }}" href="{{ route('settings') }}">{{ tra('nav.settings') }}</a>
+                    <a class="dropdown-item{{ active('settings*') }}" href="{{ route('settings') }}">{{ __('nav.settings') }}</a>
                     <a class="dropdown-item text-danger" id="nav-logout" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
-                                 document.getElementById('logout-form').submit();">{{ tra('nav.sign-out')}}</a>
+                                 document.getElementById('logout-form').submit();">{{ __('nav.sign-out')}}</a>
                 </div>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     {{ csrf_field() }}
@@ -39,10 +39,10 @@
             </li>
         @else
             <li class="nav-item">
-                <a class="nav-link{{ active('login') }}" href="{{ route('login') }}">{{ tra('nav.sign-in') }}</a>
+                <a class="nav-link{{ active('login') }}" href="{{ route('login') }}">{{ __('nav.sign-in') }}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link{{ active('register') }}" href="{{ route('register') }}">{{ tra('nav.sign-up') }}</a>
+                <a class="nav-link{{ active('register') }}" href="{{ route('register') }}">{{ __('nav.sign-up') }}</a>
             </li>
         @endauth
         </ul>

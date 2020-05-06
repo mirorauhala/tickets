@@ -1,13 +1,13 @@
 @extends('layouts.base')
 
-@section('base.title', tra('dashboard.nav.customers'))
+@section('base.title', __('dashboard.nav.customers'))
 
 @section('base.content')
 <div class="container">
     <div class="row pb-5">
         <div class="col-md-12">
             <p class="lead mb-0">{{ $event->name }}</p>
-            <h1 class="mt-0 text-uppercase">{{ tra('dashboard.nav.customers') }}</h1>
+            <h1 class="mt-0 text-uppercase">{{ __('dashboard.nav.customers') }}</h1>
         </div>
     </div>
     <div class="row">
@@ -20,9 +20,9 @@
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th scope="col">{{ tra('dashboard.customers.table.name') }}</th>
-                            <th scope="col">{{ tra('dashboard.customers.table.email') }}</th>
-                            <th scope="col">{{ tra('dashboard.customers.table.phone') }}</th>
+                            <th scope="col">{{ __('dashboard.customers.table.name') }}</th>
+                            <th scope="col">{{ __('dashboard.customers.table.email') }}</th>
+                            <th scope="col">{{ __('dashboard.customers.table.phone') }}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -39,7 +39,7 @@
             </div>
         @else
             <div class="col-md-9 align-self-center">
-                <p class="lead text-muted text-center">{{ tra('dashboard.customers.no-customers') }}</p>
+                <p class="lead text-muted text-center">{{ __('dashboard.customers.no-customers') }}</p>
             </div>
         @endif
     </div>

@@ -1,13 +1,13 @@
 @extends('layouts.base')
 
-@section('base.title', tra('order.title'))
+@section('base.title', __('order.title'))
 
 @section('base.content')
 <div class="container">
     <div class="row pb-5 pt-4">
         <div class="col-md-12">
-            <p class="mb-2"><a href="{{ route('order.index') }}" class="text-muted">&laquo; {{ tra('order.back') }}</a></p>
-            <h1>{{ tra('order.title') }}<small class="text-muted"> / {{ $order->reference }}</small></h1>
+            <p class="mb-2"><a href="{{ route('order.index') }}" class="text-muted">&laquo; {{ __('order.back') }}</a></p>
+            <h1>{{ __('order.title') }}<small class="text-muted"> / {{ $order->reference }}</small></h1>
             <p class="lead"></p>
         </div>
     </div>
@@ -17,26 +17,26 @@
                 <table class="table table-striped">
                     <tbody>
                         <tr>
-                            <th scope="row">{{ tra('order.parent.reference') }}</th>
+                            <th scope="row">{{ __('order.parent.reference') }}</th>
                             <td>{{ $order->reference }}</td>
                         </tr>
                         <tr>
-                            <th scope="row">{{ tra('order.parent.date') }}</th>
+                            <th scope="row">{{ __('order.parent.date') }}</th>
                             <td title="{{ $order->created_at->diffForHumans() }}">{{ $order->created_at }}</td>
                         </tr>
                         <tr>
-                            <th scope="row">{{ tra('order.parent.value') }}</th>
+                            <th scope="row">{{ __('order.parent.value') }}</th>
                             <td>{{ money($order->value, $order->currency) }}</td>
                         </tr>
                         <tr>
-                            <th scope="row">{{ tra('order.parent.status') }}</th>
-                            <td>{{ tra('order.status.' . $order->status) }}</td>
+                            <th scope="row">{{ __('order.parent.status') }}</th>
+                            <td>{{ __('order.status.' . $order->status) }}</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
-            <h3 class="pt-3">{{ tra('order.list-of-products') }}</h3>
+            <h3 class="pt-3">{{ __('order.list-of-products') }}</h3>
 
             @if(count($order->items) > 0)
                 <div class="table-responsive">
@@ -44,9 +44,9 @@
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <td>{{ tra('order.table.item') }}</td>
-                                <td>{{ tra('order.table.value') }}</td>
-                                <td>{{ tra('order.table.seating-code') }}</td>
+                                <td>{{ __('order.table.item') }}</td>
+                                <td>{{ __('order.table.value') }}</td>
+                                <td>{{ __('order.table.seating-code') }}</td>
                             </tr>
                         </thead>
                         <tbody>
@@ -65,7 +65,7 @@
                     </table>
                 </div>
             @else
-                <p>{{ tra('order.no-items') }}</p>
+                <p>{{ __('order.no-items') }}</p>
             @endif
         </div>
     </div>

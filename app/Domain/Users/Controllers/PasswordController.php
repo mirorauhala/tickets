@@ -42,7 +42,7 @@ class PasswordController extends Controller
 
         $viewModel = new FlashBoxViewModel(
             FlashBoxViewModel::STATUS_SUCCESS,
-            tra('settings.flash.password')
+            __('settings.flash.password')
         );
 
         return redirect()
