@@ -10,9 +10,9 @@ class UpdateUserAction
     public function run(User $user, UserData $data)
     {
         $user->update([
-            'first_name' => $data->first_name ?? null,
-            'last_name'  => $data->last_name ?? null,
-            'email'      => $data->email ?? null,
+            'first_name' => $data->first_name,
+            'last_name'  => $data->last_name,
+            'email'      => $data->email,
             'phone'      => $data->phone ?? null,
         ]);
     }
