@@ -4,6 +4,6 @@ namespace Domain\Events\Collections;
 
 use Illuminate\Database\Eloquent\Collection;
 
-class EventCollection extends Collection {
-
+class EventCollection extends Collection
+{
 }

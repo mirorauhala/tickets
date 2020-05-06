@@ -4,14 +4,16 @@ namespace Domain\Orders;
 
 use Illuminate\Routing\Router;
 
-class OrderRouter {
+class OrderRouter
+{
     /**
      * Here we register the routes for the orders.
      *
      * @param Illuminate\Routing\Router $router
      * @return void
      */
-    public function __invoke(Router $router) {
+    public function __invoke(Router $router)
+    {
         $router->resource('/orders', 'Domain\Orders\Controllers\OrderController')->except(['edit', 'update']);
 
         $router->get('/lang/{lang}', function (Request $request, $lang) {

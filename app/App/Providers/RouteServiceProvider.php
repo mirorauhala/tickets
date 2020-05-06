@@ -62,8 +62,8 @@ class RouteServiceProvider extends ServiceProvider
     protected function mapWebRoutes()
     {
         Route::middleware('web')
-            ->group(function(Router $router) {
-                foreach($this->routes as $route) {
+            ->group(function (Router $router) {
+                foreach ($this->routes as $route) {
                     (new $route)($router);
                 }
             });

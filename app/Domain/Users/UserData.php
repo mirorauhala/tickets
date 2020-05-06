@@ -5,7 +5,8 @@ namespace Domain\Users;
 use Illuminate\Http\Request;
 use Spatie\DataTransferObject\DataTransferObject;
 
-class UserData extends DataTransferObject {
+class UserData extends DataTransferObject
+{
     public $first_name;
     public $last_name;
     public $email;
@@ -15,7 +16,8 @@ class UserData extends DataTransferObject {
     public $superuser;
     public $country_code;
 
-    public static function fromRequest(Request $request): self {
+    public static function fromRequest(Request $request): self
+    {
         return new self([
             'first_name' => $request->get('first_name') ?? null,
             'last_name' => $request->get('last_name'),

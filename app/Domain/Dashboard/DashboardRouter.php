@@ -4,7 +4,8 @@ namespace Domain\Dashboard;
 
 use Illuminate\Routing\Router;
 
-class DashboardRouter {
+class DashboardRouter
+{
 
     /**
      * Here you register the appropriate namespace for this router.
@@ -22,7 +23,8 @@ class DashboardRouter {
      * @param Illuminate\Routing\Router
      * @return void
      */
-    public function __invoke(Router $router) {
+    public function __invoke(Router $router)
+    {
         $router->group($this->attributes, function () use ($router) {
             $router->get('', 'DashboardController@index')->name('dashboard');
             $router->get('/{event}', 'DashboardController@customers')->name('dashboard.show');
@@ -35,6 +37,5 @@ class DashboardRouter {
             $router->get('/{event}/settings', 'DashboardEventController@show')->name('dashboard.settings');
             $router->post('/{event}/settings', 'DashboardEventController@update');
         });
-
     }
 }

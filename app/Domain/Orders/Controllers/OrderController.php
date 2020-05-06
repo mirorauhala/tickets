@@ -17,7 +17,6 @@ class OrderController extends Controller
     public function index()
     {
         $orders = Order::all();
-
         $viewModel = new OrderIndexViewModel($orders);
 
         return view('orders.index', $viewModel);
@@ -36,7 +35,7 @@ class OrderController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)

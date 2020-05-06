@@ -2,6 +2,7 @@
 
 namespace Support\Contracts;
 
-interface Actionable {
+interface Actionable
+{
     public function run();
 }

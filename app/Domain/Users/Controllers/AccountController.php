@@ -46,6 +46,5 @@ class AccountController extends Controller
                 'flash_status'  => 'success',
                 'flash_message' => tra('settings.flash.account', [], $request->language),
             ]);
-
     }
 }

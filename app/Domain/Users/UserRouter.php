@@ -4,7 +4,8 @@ namespace Domain\Users;
 
 use Illuminate\Routing\Router;
 
-class UserRouter {
+class UserRouter
+{
 
     /**
      * @var array
@@ -20,7 +21,8 @@ class UserRouter {
      * @param Illuminate\Routing\Router  $router
      * @return void
      */
-    public function __invoke(Router $router) {
+    public function __invoke(Router $router)
+    {
         $router->group($this->prefix, function () use ($router) {
             $router->get('/', 'AccountController@show')->name('settings');
             $router->post('/', 'AccountController@update');
