@@ -5,7 +5,7 @@ namespace Domain\Dashboard\Controllers;
 use Domain\Tickets\Ticket;
 use Domain\Events\Event;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\TicketRequest;
+use Domain\Tickets\Requests\TicketRequest;
 
 class DashboardTicketsController extends Controller
 {
