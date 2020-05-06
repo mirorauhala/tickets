@@ -1,6 +1,6 @@
 <?php
 
-namespace Domain\Orders\Policies;
+namespace Domain\OrderItems\Policies;
 
 use Domain\Users\User;
 use Domain\Orders\OrderItem;
