@@ -3,8 +3,8 @@
 namespace Tests\Browser\Tests\EventTests;
 
 use Domain\Users\User;
-use Domain\Events\Event;
 use Tests\DuskTestCase;
+use Domain\Events\Event;
 use Laravel\Dusk\Browser;
 use Tests\Browser\Pages\EventSettingsPage;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
@@ -21,7 +21,7 @@ class EventSettingsTest extends DuskTestCase
     public function a_user_can_edit_events_settings()
     {
         $event = factory(Event::class)->create();
-        $user  = factory(User::class)->create();
+        $user = factory(User::class)->create();
 
         $user->events()->attach($event);
 

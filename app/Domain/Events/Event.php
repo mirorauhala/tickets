@@ -42,7 +42,7 @@ class Event extends Model
      * @var array
      */
     public $dates = [
-        'date'
+        'date',
     ];
 
     /**

@@ -3,9 +3,9 @@
 namespace Domain\Users\Controllers;
 
 use App\Http\Controllers\Controller;
-use Domain\Users\Requests\UpdateLanguageRequest;
 use Domain\Users\Actions\UpdateLanguageAction;
 use Domain\Users\ViewModels\LanguageViewModel;
+use Domain\Users\Requests\UpdateLanguageRequest;
 
 class LanguageController extends Controller
 {

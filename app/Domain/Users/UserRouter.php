@@ -6,13 +6,12 @@ use Illuminate\Routing\Router;
 
 class UserRouter
 {
-
     /**
      * @var array
      */
     protected $prefix = [
-        'prefix' => '/settings',
-        'namespace' => 'Domain\\Users\\Controllers'
+        'prefix'    => '/settings',
+        'namespace' => 'Domain\\Users\\Controllers',
     ];
 
     /**

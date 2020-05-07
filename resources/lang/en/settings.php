@@ -61,13 +61,13 @@ return [
     | The following language lines are used within the account update form in
     | settings.
     |
-    */
+     */
 
     'account' => [
         'first_name' => 'First name',
-        'last_name' => 'Last name',
-        'email' => 'Email',
-        'phone' => 'Phone'
+        'last_name'  => 'Last name',
+        'email'      => 'Email',
+        'phone'      => 'Phone',
     ],
 
     /*

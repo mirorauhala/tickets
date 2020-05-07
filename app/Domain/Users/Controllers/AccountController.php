@@ -4,8 +4,8 @@ namespace Domain\Users\Controllers;
 
 use Domain\Users\UserData;
 use App\Http\Controllers\Controller;
-use Domain\Users\Requests\UserAccountRequest;
 use Domain\Users\Actions\UpdateUserAction;
+use Domain\Users\Requests\UserAccountRequest;
 
 class AccountController extends Controller
 {
@@ -46,7 +46,7 @@ class AccountController extends Controller
             ->route('settings')
             ->with([
                 'flash_status'  => 'success',
-                'flash_message' => __('settings.flash.account', [], $request->language)
+                'flash_message' => __('settings.flash.account', [], $request->language),
             ]);
     }
 }

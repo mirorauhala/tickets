@@ -4,8 +4,8 @@ namespace Domain\Dashboard\Controllers;
 
 use Domain\Maps\Map;
 use Domain\Events\Event;
-use Domain\Maps\Requests\MapRequest;
 use App\Http\Controllers\Controller;
+use Domain\Maps\Requests\MapRequest;
 
 class DashboardMapsController extends Controller
 {

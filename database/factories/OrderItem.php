@@ -5,8 +5,8 @@ use Carbon\Carbon;
 use Domain\Users\User;
 use Domain\Orders\Order;
 use Domain\Tickets\Ticket;
-use Domain\OrderItems\OrderItem;
 use Faker\Generator as Faker;
+use Domain\OrderItems\OrderItem;
 
 $factory->define(OrderItem::class, function (Faker $faker) {
     return [

@@ -11,7 +11,7 @@
 |
  */
 
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
+/* @var \Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(Domain\Maps\Map::class, function (Faker\Generator $faker) {
     return [
         'name' => 'Map ' . uniqid(),

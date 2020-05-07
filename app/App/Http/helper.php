@@ -4,11 +4,9 @@ use Money\Money;
 use Money\Currency;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\Log;
 use Money\Currencies\ISOCurrencies;
 use Illuminate\Support\Facades\Route;
 use Money\Formatter\IntlMoneyFormatter;
-use App\Exceptions\TranslationStringNotFoundException;
 
 if (! function_exists('active')) {
     /**

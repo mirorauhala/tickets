@@ -2,7 +2,6 @@
 
 namespace Domain\Events\Controllers;
 
-use Domain\Events\Event;
 use App\Http\Controllers\Controller;
 use Domain\Events\Actions\GetFeaturedEvents;
 use Domain\Events\ViewModels\EventIndexViewModel;

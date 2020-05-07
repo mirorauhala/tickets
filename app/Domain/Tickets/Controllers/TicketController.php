@@ -2,8 +2,8 @@
 
 namespace Domain\Tickets\Controllers;
 
-use Domain\OrderItems\OrderItem;
 use Illuminate\Http\Request;
+use Domain\OrderItems\OrderItem;
 use App\Http\Controllers\Controller;
 
 class TicketController extends Controller

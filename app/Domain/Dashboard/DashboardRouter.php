@@ -6,15 +6,14 @@ use Illuminate\Routing\Router;
 
 class DashboardRouter
 {
-
     /**
      * Here you register the appropriate namespace for this router.
      *
      * @var array
      */
     protected $attributes = [
-        'prefix' => '/dashboard',
-        'namespace' => 'Domain\\Dashboard\\Controllers'
+        'prefix'    => '/dashboard',
+        'namespace' => 'Domain\\Dashboard\\Controllers',
     ];
 
     /**

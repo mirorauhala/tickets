@@ -11,7 +11,7 @@
 |
  */
 
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
+/* @var \Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(Domain\Seats\Seat::class, function (Faker\Generator $faker) {
     static $password;
 

@@ -3,7 +3,6 @@
 namespace Domain\Orders\ViewModels;
 
 use Support\BaseViewModel as ViewModel;
-use Domain\Events\Collections\EventCollection;
 
 class OrderIndexViewModel extends ViewModel
 {

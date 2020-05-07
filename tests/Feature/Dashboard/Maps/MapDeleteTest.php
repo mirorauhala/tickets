@@ -2,8 +2,8 @@
 
 namespace Tests\Feature\Dashboard\Maps;
 
-use Domain\Maps\Map;
 use Tests\TestCase;
+use Domain\Maps\Map;
 use Domain\Users\User;
 use Domain\Events\Event;
 use Illuminate\Foundation\Testing\RefreshDatabase;

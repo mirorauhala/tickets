@@ -3,11 +3,9 @@
 namespace Domain\Events\Actions;
 
 use Domain\Events\Event;
-use Domain\Events\Collections\EventCollection;
 
 class GetEventsAction
 {
-
     /**
      * Return paginated collection of events.
      *

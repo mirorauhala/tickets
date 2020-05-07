@@ -13,7 +13,7 @@ class OrderValidator
 
     public function __construct(SeatRepository $seat, OrderItemRepository $orderItem)
     {
-        $this->seat      = $seat;
+        $this->seat = $seat;
         $this->orderItem = $orderItem;
     }
 

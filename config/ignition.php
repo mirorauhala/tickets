@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Editor
@@ -12,7 +11,7 @@ return [
     | Supported: "phpstorm", "vscode", "vscode-insiders",
     |            "sublime", "atom"
     |
-    */
+     */
 
     'editor' => env('IGNITION_EDITOR', 'phpstorm'),
 
@@ -25,7 +24,7 @@ return [
     |
     | Supported: "light", "dark", "auto"
     |
-    */
+     */
 
     'theme' => env('IGNITION_THEME', 'light'),
 
@@ -39,7 +38,7 @@ return [
     |
     | If necessary, you can completely disable sharing below.
     |
-    */
+     */
 
     'enable_share_button' => env('IGNITION_SHARING_ENABLED', true),
 
@@ -54,7 +53,7 @@ return [
     |
     | You can enable the command registration below.
     |
-    */
+     */
     'register_commands' => env('REGISTER_IGNITION_COMMANDS', false),
 
     /*
@@ -66,7 +65,7 @@ return [
     | names) that shouldn't be loaded. Ignition will ignore these classes
     | and possible solutions provided by them will never be displayed.
     |
-    */
+     */
 
     'ignored_solution_providers' => [
         //
@@ -81,7 +80,7 @@ return [
     | various tasks. Runnable solutions are enabled when your app has
     | debug mode enabled. You may also fully disable this feature.
     |
-    */
+     */
 
     'enable_runnable_solutions' => env('IGNITION_ENABLE_RUNNABLE_SOLUTIONS', null),
 
@@ -106,10 +105,10 @@ return [
     |
     | Example values: "/Users/<name>/Code", "C:\Users\<name>\Documents\Code"
     |
-    */
+     */
 
     'remote_sites_path' => env('IGNITION_REMOTE_SITES_PATH', ''),
-    'local_sites_path' => env('IGNITION_LOCAL_SITES_PATH', ''),
+    'local_sites_path'  => env('IGNITION_LOCAL_SITES_PATH', ''),
 
     /*
     |--------------------------------------------------------------------------
@@ -119,7 +118,6 @@ return [
     | Ignition registers a couple of routes when it is enabled. Below you may
     | specify a route prefix that will be used to host all internal links.
     |
-    */
+     */
     'housekeeping_endpoint_prefix' => '_ignition',
-
 ];

@@ -8,7 +8,7 @@ use Domain\Tickets\Controllers\TicketController;
 class TicketRouter
 {
     /**
-     * Here we register the routes for the tickets
+     * Here we register the routes for the tickets.
      *
      * @param Illuminate\Routing\Router $router
      * @return void

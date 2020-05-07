@@ -7,7 +7,6 @@ use Illuminate\Contracts\Support\Arrayable;
 
 class LanguageViewModel implements Arrayable
 {
-
     /**
      * List of supported languages.
      *
@@ -16,7 +15,7 @@ class LanguageViewModel implements Arrayable
     public $languages = [
         'none',
         'fi',
-        'en'
+        'en',
     ];
 
     public function __construct(User $user, string $current_language)

@@ -3,7 +3,6 @@
 namespace Domain\Events\ViewModels;
 
 use Support\BaseViewModel as ViewModel;
-use Domain\Events\Collections\EventCollection;
 
 class EventIndexViewModel extends ViewModel
 {

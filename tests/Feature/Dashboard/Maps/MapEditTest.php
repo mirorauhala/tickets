@@ -2,8 +2,8 @@
 
 namespace Tests\Feature\Dashboard\Maps;
 
-use Domain\Maps\Map;
 use Tests\TestCase;
+use Domain\Maps\Map;
 use Domain\Users\User;
 use Domain\Events\Event;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -22,7 +22,7 @@ class MapEditTest extends TestCase
 
         $this->createUser();
         $this->event = factory(Event::class)->create();
-        $this->map   = factory(Map::class)->create([
+        $this->map = factory(Map::class)->create([
             'event_id' => $this->event->id,
         ]);
         $this->user->events()->save($this->event);

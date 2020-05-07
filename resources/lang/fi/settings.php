@@ -61,13 +61,13 @@ return [
     | The following language lines are used within the account update form in
     | settings.
     |
-    */
+     */
 
     'account' => [
         'first_name' => 'Etunimi',
-        'last_name' => 'Sukunimi',
-        'email' => 'Sähköpostiosoite',
-        'phone' => 'Puhelin'
+        'last_name'  => 'Sukunimi',
+        'email'      => 'Sähköpostiosoite',
+        'phone'      => 'Puhelin',
     ],
 
     /*

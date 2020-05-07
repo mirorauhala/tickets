@@ -3,7 +3,6 @@
 namespace Tests\Feature\Authentication;
 
 use Tests\TestCase;
-use Domain\Users\User;
 use App\Jobs\QueuedVerifyEmail;
 use Illuminate\Support\Facades\Queue;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -16,7 +15,7 @@ class SignUpTest extends TestCase
     {
         parent::setUp();
 
-        $this->uri    = '/register';
+        $this->uri = '/register';
         $this->fields = [
             'first_name'            => 'John',
             'last_name'             => 'Doe',

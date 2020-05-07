@@ -3,8 +3,8 @@
 namespace Domain\Dashboard\Controllers;
 
 use Domain\Events\Event;
-use Domain\Events\Requests\EventRequest;
 use App\Http\Controllers\Controller;
+use Domain\Events\Requests\EventRequest;
 
 class DashboardEventController extends Controller
 {
