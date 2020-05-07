@@ -8,11 +8,15 @@ return [
      */
 
     'nav' => [
-        'customers' => 'Customers',
-        'tickets'   => 'Tickets',
-        'orders'    => 'Orders',
-        'maps'      => 'Maps',
-        'settings'  => 'Settings',
+        'customers'      => 'Customers',
+        'tickets'        => 'Tickets',
+        'tickets-create' => 'Tickets / Create a new ticket',
+        'tickets-edit'   => 'Tickets / Edit <small class="pl-3">:ticket</small>',
+        'orders'         => 'Orders',
+        'maps'           => 'Maps',
+        'maps-create'    => 'Maps / Create a new map',
+        'maps-edit'      => 'Maps / Edit <small class="pl-3">:map</small>',
+        'settings'       => 'Settings',
     ],
 
     /*
