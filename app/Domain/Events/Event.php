@@ -3,7 +3,6 @@
 namespace Domain\Events;
 
 use Illuminate\Database\Eloquent\Model;
-use Domain\Events\Collections\EventCollection;
 
 class Event extends Model
 {
@@ -53,17 +52,6 @@ class Event extends Model
     public function getRouteKeyName()
     {
         return 'slug';
-    }
-
-    /**
-     * Create a new Eloquent Collection instance.
-     *
-     * @param  array  $models
-     * @return \Illuminate\Database\Eloquent\Collection
-     */
-    public function newCollection(array $models = [])
-    {
-        return new EventCollection($models);
     }
 
     /**

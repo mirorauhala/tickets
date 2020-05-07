@@ -9,7 +9,7 @@ class GetEventsAction
     /**
      * Return paginated collection of events.
      *
-     * @return Domain\Events\Collections\EventCollection
+     * @return Illuminate\Database\Eloquent
      */
     public function run() : array
     {
