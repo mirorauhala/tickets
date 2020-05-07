@@ -39,7 +39,7 @@ class OrderPolicy
      * Determine whether the user can update orders.
      *
      * @param Domain\Users\User  $user
-     * @param \App\Event $order
+     * @param Domain\Events\Event $order
      *
      * @return mixed
      */
@@ -52,7 +52,7 @@ class OrderPolicy
      * Determine whether the user can delete orders.
      *
      * @param Domain\Users\User  $user
-     * @param \App\Event $order
+     * @param Domain\Events\Event $order
      *
      * @return mixed
      */

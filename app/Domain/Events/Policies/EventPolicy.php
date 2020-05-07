@@ -14,7 +14,7 @@ class EventPolicy
      * Determine whether the user can view the event admin page.
      *
      * @param Domain\Users\User  $user
-     * @param \App\Event $event
+     * @param Domain\Events\Event $event
      *
      * @return bool
      */
@@ -39,7 +39,7 @@ class EventPolicy
      * Determine whether the user can update the event.
      *
      * @param Domain\Users\User  $user
-     * @param \App\Event $event
+     * @param Domain\Events\Event $event
      *
      * @return bool
      */
@@ -52,7 +52,7 @@ class EventPolicy
      * Determine whether the user can delete the event.
      *
      * @param Domain\Users\User  $user
-     * @param \App\Event $event
+     * @param Domain\Events\Event $event
      *
      * @return bool
      */
