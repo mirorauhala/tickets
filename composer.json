@@ -23,6 +23,7 @@
         "spomky-labs/otphp": "^10.0"
     },
     "require-dev": {
+        "barryvdh/laravel-ide-helper": "^2.7",
         "facade/ignition": "^1.4",
         "fzaninotto/faker": "^1.9",
         "laravel/dusk": "^5.9",
