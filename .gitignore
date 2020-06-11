@@ -15,3 +15,5 @@ yarn-error.log
 .php_cs.cache
 .phpunit.*
 storage/clockwork/index
+_ide_helper.php
+/.phpstorm*
