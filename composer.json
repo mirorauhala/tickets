@@ -10,7 +10,7 @@
         "elhebert/laravel-sri": "^2.0",
         "fideloper/proxy": "^4.0",
         "guzzlehttp/guzzle": "^6.3",
-        "itsgoingd/clockwork": "^4.0",
+        "itsgoingd/clockwork": "^5.0",
         "laravel/framework": "^6.0",
         "laravel/passport": "^8.3",
         "laravel/tinker": "^2.1",
